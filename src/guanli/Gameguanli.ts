@@ -54,8 +54,6 @@ class Gameguanli extends egret.DisplayObjectContainer{
 
 		//默认需要开启饭店结算
 		Fandianjisuan.chushihuajisuan();
-		//默认进行1次垃圾添加
-		Chuangzaolaji.shengchenglaji(20);
 
 
 	}

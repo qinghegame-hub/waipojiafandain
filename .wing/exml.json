@@ -87,5 +87,15 @@
         "path": "Dasaodonghua.ts",
         "class": "Dasaodonghua",
         "parentPath": ""
+    },
+    "16fa9431bea": {
+        "path": "Cailiaoxiaohao.ts",
+        "class": "Cailiaoxiaohao",
+        "parentPath": ""
+    },
+    "16fa992703a": {
+        "path": "Weishengtishi.ts",
+        "class": "Weishengtishi",
+        "parentPath": ""
     }
 }

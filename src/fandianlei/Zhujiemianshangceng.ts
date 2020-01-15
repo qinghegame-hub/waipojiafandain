@@ -63,7 +63,7 @@ class Zhujiemianshangceng extends eui.Component implements  eui.UIComponent {
 
 	public chushihua(){
 		this.shicaiwenzi.text = "" + Gerenshuxing.yongyouyuanliao;
-		this.weishengwenzi.text = "" + (Gerenshuxing.weishengzhi + Gerenshuxing.kesaochuweisheng - Gerenshuxing.dangqiankesaoweisheng);
+		this.weishengwenzi.text = "" + Gerenshuxing.zzweishengzhi;
 	}
 	
 }

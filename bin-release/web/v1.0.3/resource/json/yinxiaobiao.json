@@ -1,0 +1,6 @@
+[
+    {"id":"1001","selltype":"1","selltext":"客流量增加","sellachievement":"10","selltime":"3","sellpay":"1000","sellissock":"1"},
+    {"id":"2001","selltype":"1","selltext":"客流量增加","sellachievement":"20","selltime":"5","sellpay":"2000","sellissock":"1"},
+    {"id":"3001","selltype":"2","selltext":"口碑值","sellachievement":"10","selltime":"1","sellpay":"1000","sellissock":"1"},
+    {"id":"4001","selltype":"2","selltext":"口碑值","sellachievement":"20","selltime":"365","sellpay":"1000000","sellissock":"1"}
+    ]

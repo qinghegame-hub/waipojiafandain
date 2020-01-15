@@ -158,15 +158,13 @@ class Donghuabifang extends egret.DisplayObjectContainer{
         this.doudingwenzixianshi();
         //查询卫生值，判断会不会需求菜品
         let jianceweisheng = Math.floor(Math.random() * 120);
-        if(jianceweisheng <= Gerenshuxing.weishengzhi + Gerenshuxing.kesaochuweisheng - Gerenshuxing.dangqiankesaoweisheng){
+        if(jianceweisheng <= Gerenshuxing.zzweishengzhi){
             this.weishengtongguo = true;
         }
-        console.log("卫生值" + this.weishengtongguo);
         //查询当前原料值，判断够不够
         if(Gerenshuxing.yongyouyuanliao >= parseInt(this.xuqiucaiid.foodMaterials) - Gerenshuxing.yuanliaoxiaohao){
             this.yuanliaozugou = true;
         }
-        console.log("材料" + this.yuanliaozugou);
 
         //给头顶气泡增加点击效果
         this.toudinggruop.but_xuqiucaiqipao0.addEventListener(egret.TouchEvent.TOUCH_TAP,this.shoudongshangcai,this);
@@ -188,7 +186,7 @@ class Donghuabifang extends egret.DisplayObjectContainer{
                             if(this.yuanliaozugou == true){
                                 this.toudinggruop.but_xuqiucaiqipao0.enabled = true;
                                 let jilvpeizhi1 = Math.floor(Math.random() * 10000);
-                                if(jilvpeizhi1 <= Gerenshuxing.chushishangcaisudu && this.shoudong == false){
+                                if(jilvpeizhi1 <= Gerenshuxing.zzchushishangcaisudu && this.shoudong == false){
                                 this.di1zuocai = true;
                                 this.tdWenzi = 1;
                                 this.xingzoustep = 1;
@@ -220,7 +218,7 @@ class Donghuabifang extends egret.DisplayObjectContainer{
                         if(this.yuanliaozugou == true){
                             this.toudinggruop.but_xuqiucaiqipao0.enabled = true;
                             let jilvpeizhi2 = Math.floor(Math.random() * 10000);
-                            if(jilvpeizhi2 <= Gerenshuxing.chushishangcaisudu && this.shoudong == false){
+                            if(jilvpeizhi2 <= Gerenshuxing.zzchushishangcaisudu && this.shoudong == false){
                                 this.di1zuocai = true;
                                 this.tdWenzi = 1;
                                 this.toudinggruop.xianshitupian0.source = "img_xiaolian_png";
@@ -313,7 +311,7 @@ class Donghuabifang extends egret.DisplayObjectContainer{
                             if(this.yuanliaozugou == true){
                                 this.toudinggruop.but_xuqiucaiqipao0.enabled = true;
                                 let jilvpeizhi3 = Math.floor(Math.random() * 10000);
-                                if(jilvpeizhi3 <= Gerenshuxing.chushishangcaisudu && this.shoudong == false){
+                                if(jilvpeizhi3 <= Gerenshuxing.zzchushishangcaisudu && this.shoudong == false){
                                 this.di1zuocai = true;
                                 this.tdWenzi = 1;
                                 this.xingzoustep = 5;
@@ -348,7 +346,7 @@ class Donghuabifang extends egret.DisplayObjectContainer{
                             if(this.yuanliaozugou == true){
                                 this.toudinggruop.but_xuqiucaiqipao0.enabled = true;
                                 let jilvpeizhi3 = Math.floor(Math.random() * 10000);
-                                if(jilvpeizhi3 <= Gerenshuxing.chushishangcaisudu && this.shoudong == false){
+                                if(jilvpeizhi3 <= Gerenshuxing.zzchushishangcaisudu && this.shoudong == false){
                                 this.di1zuocai = true;
                                 this.tdWenzi = 1;
                                 this.xingzoustep = 6;
@@ -383,7 +381,7 @@ class Donghuabifang extends egret.DisplayObjectContainer{
                         if(this.yuanliaozugou == true){
                             this.toudinggruop.but_xuqiucaiqipao0.enabled = true;
                             let jilvpeizhi3 = Math.floor(Math.random() * 10000);
-                            if(jilvpeizhi3 <= Gerenshuxing.chushishangcaisudu && this.shoudong == false){
+                            if(jilvpeizhi3 <= Gerenshuxing.zzchushishangcaisudu && this.shoudong == false){
                                 this.di1zuocai = true;
                                 this.tdWenzi = 1;
                                 this.toudinggruop.xianshitupian0.source = "img_xiaolian_png";
@@ -417,7 +415,7 @@ class Donghuabifang extends egret.DisplayObjectContainer{
                         if(this.yuanliaozugou == true){
                             this.toudinggruop.but_xuqiucaiqipao0.enabled = true;
                             let jilvpeizhi3 = Math.floor(Math.random() * 10000);
-                            if(jilvpeizhi3 <= Gerenshuxing.chushishangcaisudu && this.shoudong == false){
+                            if(jilvpeizhi3 <= Gerenshuxing.zzchushishangcaisudu && this.shoudong == false){
                                 this.di1zuocai = true;
                                 this.tdWenzi = 1;
                                 this.toudinggruop.xianshitupian0.source = "img_xiaolian_png";
@@ -525,7 +523,7 @@ class Donghuabifang extends egret.DisplayObjectContainer{
                             if(this.yuanliaozugou == true){
                                 this.toudinggruop.but_xuqiucaiqipao0.enabled = true;
                                 let jilvpeizhi3 = Math.floor(Math.random() * 10000);
-                                if(jilvpeizhi3 <= Gerenshuxing.chushishangcaisudu && this.shoudong == false){
+                                if(jilvpeizhi3 <= Gerenshuxing.zzchushishangcaisudu && this.shoudong == false){
                                 this.di1zuocai = true;
                                 this.tdWenzi = 1;
                                 this.xingzoustep = 5;
@@ -559,7 +557,7 @@ class Donghuabifang extends egret.DisplayObjectContainer{
                         if(this.yuanliaozugou == true){
                             this.toudinggruop.but_xuqiucaiqipao0.enabled = true;
                             let jilvpeizhi3 = Math.floor(Math.random() * 10000);
-                            if(jilvpeizhi3 <= Gerenshuxing.chushishangcaisudu && this.shoudong == false){
+                            if(jilvpeizhi3 <= Gerenshuxing.zzchushishangcaisudu && this.shoudong == false){
                                 this.di1zuocai = true;
                                 this.tdWenzi = 1;
                                 this.toudinggruop.xianshitupian0.source = "img_xiaolian_png";
@@ -685,7 +683,7 @@ class Donghuabifang extends egret.DisplayObjectContainer{
                             if(this.yuanliaozugou == true){
                                 this.toudinggruop.but_xuqiucaiqipao0.enabled = true;
                                 let jilvpeizhi3 = Math.floor(Math.random() * 10000);
-                                if(jilvpeizhi3 <= Gerenshuxing.chushishangcaisudu && this.shoudong == false){
+                                if(jilvpeizhi3 <= Gerenshuxing.zzchushishangcaisudu && this.shoudong == false){
                                 this.di1zuocai = true;
                                 this.tdWenzi = 1;
                                 this.xingzoustep = 5;
@@ -719,7 +717,7 @@ class Donghuabifang extends egret.DisplayObjectContainer{
                         if(this.yuanliaozugou == true){
                             this.toudinggruop.but_xuqiucaiqipao0.enabled = true;
                             let jilvpeizhi3 = Math.floor(Math.random() * 10000);
-                            if(jilvpeizhi3 <= Gerenshuxing.chushishangcaisudu && this.shoudong == false){
+                            if(jilvpeizhi3 <= Gerenshuxing.zzchushishangcaisudu && this.shoudong == false){
                                 this.di1zuocai = true;
                                 this.tdWenzi = 1;
                                 this.toudinggruop.xianshitupian0.source = "img_xiaolian_png";
@@ -843,17 +841,23 @@ class Donghuabifang extends egret.DisplayObjectContainer{
 
     private jinxinjiezhang(){
         let taodanlv = Math.floor(Math.random() * 100);
-        if(taodanlv <= Gerenshuxing.anbaozhi){
-            Weblianjie.fasongshuju("code:024","{" + '"caipin"' +":"+ '"' + this.xuqiucaiid.id + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
-            //减少卫生值
-            if(Gerenshuxing.dangqiankesaoweisheng < Gerenshuxing.kesaochuweisheng){
-                Gerenshuxing.dangqiankesaoweisheng = Gerenshuxing.dangqiankesaoweisheng + 1;
-                Chuangzaolaji.shengchenglaji(1);          
-            }
+        if(taodanlv <= Gerenshuxing.zzanbaozhi){
+            Weblianjie.fasongshuju("code:024","{" + '"caipin"' +":"+ '"' + this.xuqiucaiid.id + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");         
         }else{
             Gameguanli.Kongzhitai().cuowutishixinxi("客户趁你不备，逃单了！快加强店里的安保吧！");
             this.bujinchangdux = 0.1;
             this.dongzuoshiti.animation.timeScale = 6;
+        }
+        let weishengchanchu = Math.floor(Math.random() * 10);
+        if(weishengchanchu >= Gerenshuxing.weishengjilv){
+            //减少卫生值,开始丢垃圾
+            if(Gerenshuxing.dangqiankesaoweisheng < Gerenshuxing.kesaochuweisheng){
+                Gerenshuxing.dangqiankesaoweisheng = Gerenshuxing.dangqiankesaoweisheng + 1;
+                Chuangzaolaji.shengchenglaji(1);
+                Gerenshuxing.yuangongshuxing();
+                Weishenqipao.weishengbiangeng("- 1");
+                Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();          
+            }
         }
     }
 
@@ -962,5 +966,6 @@ class Donghuabifang extends egret.DisplayObjectContainer{
                 break;            
             }
     }
+
     
 }

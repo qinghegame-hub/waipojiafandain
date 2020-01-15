@@ -146,31 +146,31 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public lajianniuchushi(){
-		this.but_laji0.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji0,this);
-		this.but_laji1.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji1,this);
-		this.but_laji2.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji2,this);
-		this.but_laji3.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji3,this);
-		this.but_laji4.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji4,this);
-		this.but_laji5.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji5,this);
-		this.but_laji6.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji6,this);
-		this.but_laji7.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji7,this);
-		this.but_laji8.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji8,this);
-		this.but_laji9.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji9,this);
-		this.but_laji10.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji10,this);
-		this.but_laji11.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji11,this);
-		this.but_laji12.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji12,this);
-		this.but_laji13.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji13,this);
-		this.but_laji14.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji14,this);
-		this.but_laji15.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji15,this);
-		this.but_laji16.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji16,this);
-		this.but_laji17.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji17,this);
-		this.but_laji18.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji18,this);
-		this.but_laji19.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji19,this);
-		this.but_laji20.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji20,this);
-		this.but_laji21.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji21,this);
-		this.but_laji22.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji22,this);
-		this.but_laji23.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji23,this);
-		this.but_laji24.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.laji24,this);
+		this.but_laji0.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji0,this);
+		this.but_laji1.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji1,this);
+		this.but_laji2.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji2,this);
+		this.but_laji3.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji3,this);
+		this.but_laji4.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji4,this);
+		this.but_laji5.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji5,this);
+		this.but_laji6.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji6,this);
+		this.but_laji7.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji7,this);
+		this.but_laji8.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji8,this);
+		this.but_laji9.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji9,this);
+		this.but_laji10.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji10,this);
+		this.but_laji11.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji11,this);
+		this.but_laji12.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji12,this);
+		this.but_laji13.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji13,this);
+		this.but_laji14.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji14,this);
+		this.but_laji15.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji15,this);
+		this.but_laji16.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji16,this);
+		this.but_laji17.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji17,this);
+		this.but_laji18.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji18,this);
+		this.but_laji19.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji19,this);
+		this.but_laji20.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji20,this);
+		this.but_laji21.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji21,this);
+		this.but_laji22.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji22,this);
+		this.but_laji23.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji23,this);
+		this.but_laji24.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji24,this);
 	}
 
 
@@ -182,6 +182,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji0.alpha = 0;
 		this.but_laji0.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji1(){
@@ -192,6 +195,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji1.alpha = 0;
 		this.but_laji1.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji2(){
@@ -202,6 +208,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji2.alpha = 0;
 		this.but_laji2.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji3(){
@@ -212,6 +221,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji3.alpha = 0;
 		this.but_laji3.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji4(){
@@ -222,6 +234,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji4.alpha = 0;
 		this.but_laji4.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji5(){
@@ -232,6 +247,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji5.alpha = 0;
 		this.but_laji5.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji6(){
@@ -242,6 +260,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji6.alpha = 0;
 		this.but_laji6.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji7(){
@@ -252,6 +273,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji7.alpha = 0;
 		this.but_laji7.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji8(){
@@ -262,6 +286,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji8.alpha = 0;
 		this.but_laji8.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji9(){
@@ -272,6 +299,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji9.alpha = 0;
 		this.but_laji9.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji10(){
@@ -282,6 +312,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji10.alpha = 0;
 		this.but_laji10.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji11(){
@@ -292,6 +325,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji11.alpha = 0;
 		this.but_laji11.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji12(){
@@ -302,6 +338,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji12.alpha = 0;
 		this.but_laji12.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji13(){
@@ -312,6 +351,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji13.alpha = 0;
 		this.but_laji13.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji14(){
@@ -322,6 +364,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji14.alpha = 0;
 		this.but_laji14.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji15(){
@@ -332,6 +377,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji15.alpha = 0;
 		this.but_laji15.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji16(){
@@ -342,6 +390,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji16.alpha = 0;
 		this.but_laji16.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji17(){
@@ -352,6 +403,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji17.alpha = 0;
 		this.but_laji17.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji18(){
@@ -362,6 +416,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji18.alpha = 0;
 		this.but_laji18.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji19(){
@@ -372,6 +429,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji19.alpha = 0;
 		this.but_laji19.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji20(){
@@ -382,6 +442,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji20.alpha = 0;
 		this.but_laji20.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji21(){
@@ -392,6 +455,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji21.alpha = 0;
 		this.but_laji21.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji22(){
@@ -402,6 +468,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji22.alpha = 0;
 		this.but_laji22.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji23(){
@@ -412,6 +481,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji23.alpha = 0;
 		this.but_laji23.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 	public laji24(){
@@ -422,6 +494,9 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.but_laji24.alpha = 0;
 		this.but_laji24.enabled = false;
 		Gerenshuxing.dangqiankesaoweisheng -= 1;
+		Gerenshuxing.yuangongshuxing();
+		Weishenqipao.weishengbiangeng("+ 1");
+		Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
 	}
 
 

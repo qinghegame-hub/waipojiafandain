@@ -29,8 +29,6 @@ var Gameguanli = (function (_super) {
         _this.addChild(_this.dingbuui);
         //默认需要开启饭店结算
         Fandianjisuan.chushihuajisuan();
-        //默认进行1次垃圾添加
-        Chuangzaolaji.shengchenglaji(20);
         return _this;
     }
     Gameguanli.Kongzhitai = function () {

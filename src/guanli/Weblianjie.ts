@@ -10,7 +10,6 @@ class Weblianjie extends egret.DisplayObjectContainer {
        
        //设置数据格式为二进制，默认为字符串
        Weblianjie.lianjieserver.type = egret.WebSocket.TYPE_STRING;
-       console.log(Weblianjie.lianjieserver.type);
        //连接服务器
        Weblianjie.lianjieserver.connect("192.168.1.2", 3010);
        //添加收到数据侦听，收到数据会调用此方法
@@ -71,6 +70,9 @@ class Weblianjie extends egret.DisplayObjectContainer {
                 Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
                 Gameguanli.Kongzhitai().zhujiemian.chushihuaui();
                 Gameguanli.Kongzhitai().zhujiemiandingbu.anniuchuli();
+                //调用员工等数据计算
+                Gerenshuxing.yuangongshuxing();
+                Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
                 break;
     //解锁菜品时反馈
             case "code:003":
@@ -91,6 +93,7 @@ class Weblianjie extends egret.DisplayObjectContainer {
             case "code:009":
                 Gerenshuxing.jiesuojiaju = jiexijsongeshi.genxin;
                 Gerenshuxing.jinbizhi = jiexijsongeshi.youjinbi;
+                Gerenshuxing.yuangongshuxing();
                 Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
                 Gameguanli.Kongzhitai().guanLiui.neiRongZhanShi.chulishujujiajujiegou(Guanlijiemian.dangqianyeqianshu,Guanlijiemian.dangqianyeshu);
                 let guanlileixingleibiaojiaju:any = RES.getRes("jiajubiao_json");
@@ -105,25 +108,26 @@ class Weblianjie extends egret.DisplayObjectContainer {
     //收到家具使用更新时反馈
             case "code:005":
                 if(jiexijsongeshi.jiajuid >= 1000 && jiexijsongeshi.jiajuid < 2000){
-                Gerenshuxing.usexiaochao = jiexijsongeshi.jiajuid;
-                Gameguanli.Kongzhitai().cuowutishixinxi("饭店小炒区使用家具已替换！");
-                Gameguanli.Kongzhitai().guanLiui.neiRongZhanShi.chulishujujiajujiegou();
+                    Gerenshuxing.usexiaochao = jiexijsongeshi.jiajuid;
+                    Gameguanli.Kongzhitai().cuowutishixinxi("饭店小炒区使用家具已替换！");
+                    Gameguanli.Kongzhitai().guanLiui.neiRongZhanShi.chulishujujiajujiegou();
                 }
                 if(jiexijsongeshi.jiajuid >= 2000 && jiexijsongeshi.jiajuid < 3000){
-                Gerenshuxing.usehuoguo = jiexijsongeshi.jiajuid;
-                Gameguanli.Kongzhitai().cuowutishixinxi("饭店火锅区使用家具已替换！");
-                Gameguanli.Kongzhitai().guanLiui.neiRongZhanShi.chulishujujiajujiegou();
+                    Gerenshuxing.usehuoguo = jiexijsongeshi.jiajuid;
+                    Gameguanli.Kongzhitai().cuowutishixinxi("饭店火锅区使用家具已替换！");
+                    Gameguanli.Kongzhitai().guanLiui.neiRongZhanShi.chulishujujiajujiegou();
                 }
                 if(jiexijsongeshi.jiajuid >= 3000 && jiexijsongeshi.jiajuid < 4000){
-                Gerenshuxing.usexiaochi = jiexijsongeshi.jiajuid;
-                Gameguanli.Kongzhitai().cuowutishixinxi("饭店小吃区使用家具已替换！");
-                Gameguanli.Kongzhitai().guanLiui.neiRongZhanShi.chulishujujiajujiegou();
+                    Gerenshuxing.usexiaochi = jiexijsongeshi.jiajuid;
+                    Gameguanli.Kongzhitai().cuowutishixinxi("饭店小吃区使用家具已替换！");
+                    Gameguanli.Kongzhitai().guanLiui.neiRongZhanShi.chulishujujiajujiegou();
                 }
                 if(jiexijsongeshi.jiajuid >= 4000 && jiexijsongeshi.jiajuid < 5000){
-                Gerenshuxing.usezaocan = jiexijsongeshi.jiajuid;
-                Gameguanli.Kongzhitai().cuowutishixinxi("饭店早餐区使用家具已替换！");
-                Gameguanli.Kongzhitai().guanLiui.neiRongZhanShi.chulishujujiajujiegou();
+                    Gerenshuxing.usezaocan = jiexijsongeshi.jiajuid;
+                    Gameguanli.Kongzhitai().cuowutishixinxi("饭店早餐区使用家具已替换！");
+                    Gameguanli.Kongzhitai().guanLiui.neiRongZhanShi.chulishujujiajujiegou();
                 }
+                Gerenshuxing.yuangongshuxing();
                 break;
     //收到大厅区域解锁成功时反馈
             case "code:007":
@@ -161,11 +165,14 @@ class Weblianjie extends egret.DisplayObjectContainer {
                         Gameguanli.Kongzhitai().zhujiemian.chushihuaui();
                         break;          
                 }
+                Gerenshuxing.yuangongshuxing();
                 break;
     //聘用员工时反馈
             case "code:011":
                 Gerenshuxing.shiyongyuangong = jiexijsongeshi.genxin;
                 Gerenshuxing.jinbizhi = jiexijsongeshi.youjinbi;
+                Gerenshuxing.yuangongshuxing();
+                Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
                 Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
                 Gameguanli.Kongzhitai().guanLiui.yuanGongJieMian.chulishujujiajujiegou(Guanlijiemian.dangqianyeqianshu,Guanlijiemian.dangqianyeshu);
                 let guanlileixingleibiaoyuangongpy:any = RES.getRes("yuangongbiao_json");
@@ -180,6 +187,8 @@ class Weblianjie extends egret.DisplayObjectContainer {
     //解聘员工时反馈
             case "code:013":
                 Gerenshuxing.shiyongyuangong = jiexijsongeshi.genxin;
+                Gerenshuxing.yuangongshuxing();
+                Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
                 Gameguanli.Kongzhitai().guanLiui.yuanGongJieMian.chulishujujiajujiegou(Guanlijiemian.dangqianyeqianshu,Guanlijiemian.dangqianyeshu);
                 let guanlileixingleibiaoyuangongjp:any = RES.getRes("yuangongbiao_json");
                 let jiesuonameyuangongjp;
@@ -190,30 +199,39 @@ class Weblianjie extends egret.DisplayObjectContainer {
                 }
                 Gameguanli.Kongzhitai().cuowutishixinxi("您已解聘：【" + jiesuonameyuangongjp + "】");
                 break;
+    //进行传单推广成功时反馈
             case "code:018":
                 Gerenshuxing.shengyuchuandan = jiexijsongeshi.tuiguangtime;
                 Gerenshuxing.jinbizhi = jiexijsongeshi.jinbizhi;
+                Gerenshuxing.yuangongshuxing();
                 Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
                 Gameguanli.Kongzhitai().guanLiui.tuiguangchuandan.chulishujuluoji(Guanlijiemian.dangqianyeqianshu,Guanlijiemian.dangqianyeshu);
                 Gameguanli.Kongzhitai().cuowutishixinxi("传单推广成功，剩余时间：" + jiexijsongeshi.tuiguangtime + "天，消耗钱币：" + jiexijsongeshi.koujinbi);
                 break;
+    //进行电视推广成功时反馈
             case "code:019":
                 Gerenshuxing.shengyudianshi = jiexijsongeshi.tuiguangtime;
                 Gerenshuxing.jinbizhi = jiexijsongeshi.jinbizhi;
+                Gerenshuxing.yuangongshuxing();
+                Gerenshuxing.yuangongshuxing();
                 Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
                 Gameguanli.Kongzhitai().guanLiui.tuiguangdianshi.chulishujuluoji(Guanlijiemian.dangqianyeqianshu,Guanlijiemian.dangqianyeshu);
                 Gameguanli.Kongzhitai().cuowutishixinxi("电视推广成功，剩余时间：" + jiexijsongeshi.tuiguangtime + "天，消耗钱币：" + jiexijsongeshi.koujinbi);
                 break;
+    //进行评论推广成功时反馈
             case "code:020":
                 Gerenshuxing.shengyupinglun = jiexijsongeshi.tuiguangtime;
                 Gerenshuxing.jinbizhi = jiexijsongeshi.jinbizhi;
+                Gerenshuxing.yuangongshuxing();
                 Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
                 Gameguanli.Kongzhitai().guanLiui.tuiguangpinglun.chulishujuluoji(Guanlijiemian.dangqianyeqianshu,Guanlijiemian.dangqianyeshu);
                 Gameguanli.Kongzhitai().cuowutishixinxi("评论推广成功，剩余时间：" + jiexijsongeshi.tuiguangtime + "天，消耗钱币：" + jiexijsongeshi.koujinbi);
                 break;
+    //进行代言推广成功时反馈
             case "code:021":
                 Gerenshuxing.shengyudaiyan = jiexijsongeshi.tuiguangtime;
                 Gerenshuxing.jinbizhi = jiexijsongeshi.jinbizhi;
+                Gerenshuxing.yuangongshuxing();
                 Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
                 Gameguanli.Kongzhitai().guanLiui.tuiguangdaiyan.chulishujuluoji(Guanlijiemian.dangqianyeqianshu,Guanlijiemian.dangqianyeshu);
                 Gameguanli.Kongzhitai().cuowutishixinxi("代言推广成功，剩余时间：" + jiexijsongeshi.tuiguangtime + "天，消耗钱币：" + jiexijsongeshi.koujinbi);
@@ -237,9 +255,17 @@ class Weblianjie extends egret.DisplayObjectContainer {
             case "code:027":
                 Gerenshuxing.yongyouyuanliao = jiexijsongeshi.shuaxinjinbi;
                 Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
-                Gameguanli.Kongzhitai().cuowutishixinxi("上菜成功，食材 -：" +jiexijsongeshi.sjhuodejinbi);
                 Gameguanli.Kongzhitai().zhujiemiandingbu.anniuchuli();
-                console.log("当前拥有食材数：" + Gerenshuxing.yongyouyuanliao);
+                let shicaikouchu = new Cailiaoxiaohao();
+                Gameguanli.Kongzhitai().zhujiemian.addChild(shicaikouchu);
+                let zongx = Gameguanli.Kongzhitai().zhujiemiandingbu.zhuangatizu.x;
+                let zongy = Gameguanli.Kongzhitai().zhujiemiandingbu.zhuangatizu.y - Gameguanli.Kongzhitai().zhujiemiandingbu.img_zhuangtaixianshibg.height-shicaikouchu.height /2;
+                shicaikouchu.x = zongx;
+                shicaikouchu.y = zongy;
+                shicaikouchu.wenzineirong.text = "- " + jiexijsongeshi.sjhuodejinbi;
+                egret.Tween.get(shicaikouchu).wait(1000).to({x:zongx,y:zongy - 50},2000).call(()=>{
+                            Gameguanli.Kongzhitai().zhujiemian.removeChild(shicaikouchu);
+                    })
                 break;              
     //非法操作
             case "code:202":
@@ -276,7 +302,8 @@ class Weblianjie extends egret.DisplayObjectContainer {
        Gameguanli.Kongzhitai().cuowutishixinxi("服务器连接异常！");
    }
 
-   static fasongshuju(code,message){
+//向服务器发送数据接口
+   public static fasongshuju(code,message){
         //调用登录接口
         Weblianjie.lianjieserver.writeUTF(code + message);
         Weblianjie.lianjieserver.flush();

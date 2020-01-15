@@ -15,7 +15,7 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static jiesuohuoguo:string;
     public static jiesuoxiaochi:string;
     public static jiesuozaocan:string;
-    public static uid:string = "1044";
+    public static uid:string = "1046";
     public static jiesuojiaju = [];  //已解锁家具
     public static jiesuoyuangong = []; //已解锁员工
     public static shiyongyuangong = []; //已使用员工
@@ -35,10 +35,116 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static jiesuantime:number=30000;//当前饭店结算时间
     public static chushishangcaisudu:number=30000;//初始上菜速度
     public static yuanliaoxiaohao:number = 0;//原材料消耗减少
+    public static weishengjilv:number = 0;//有清洁工时，每个清洁工控制的垃圾的产出几率
+
+    //下面是通过计算后的最终数据
+        //最终的上菜速度
+    public static zzchushishangcaisudu:number; 
+        //最终的卫生值
+    public static zzweishengzhi:number;
+        //最终的安保值
+    public static zzanbaozhi:number;
+        //最终的原材料消耗减少
+    public static zzyuanliaoxiaohao:number;
+        //最终的客容量
+    public static zzkerongliang:number;
+        //最终的客流量
+    public static zzkeliuliang:number;
+        //最终的口碑值
+    public static zzkoubeizhi:number;
 
 
     public constructor (){
         super();
+    }
+
+    public static yuangongshuxing(){
+        //每次进来都要初始化该计算数据
+        let yuangongbiao:any = RES.getRes("yuangongbiao_json");
+        let yuangongjiasu:number = 0;       //员工增加的上菜速度
+        let yuangongjiaweisheng:number = 0; //员工增加的卫生值
+        let yuangongjiaanbao:number = 0;    //员工增加的安宝值
+        let yuangongcailiao:number = 0;     //员工增加的原材料减少
+        let jiajukerong:number = 0;         //家具增加的容客量
+        let tuiguangkeliu:number = 0;       //推广增加的客流量
+        let tuiguangkoubei:number = 0;      //推广增加的口碑值
+        Gerenshuxing.weishengjilv = 0;
+        for (var y = 0;y<yuangongbiao.length;y++){
+            for(var k = 0;k<Gerenshuxing.shiyongyuangong.length;k++){
+                if(yuangongbiao[y].id == Gerenshuxing.shiyongyuangong[k]){
+                    if(yuangongbiao[y].skill == 5){
+                        yuangongjiasu += parseInt(yuangongbiao[y].skillparameter);
+                    }
+                    if(yuangongbiao[y].skill == 6){
+                        yuangongjiaweisheng += parseInt(yuangongbiao[y].skillparameter);
+                        Gerenshuxing.weishengjilv += 4;
+                    }
+                    if(yuangongbiao[y].skill == 8){
+                        yuangongjiaanbao += parseInt(yuangongbiao[y].skillparameter);
+                    }
+                    if(yuangongbiao[y].skill == 7){
+                        yuangongcailiao += parseInt(yuangongbiao[y].skillparameter);
+                    }
+                }
+            }
+        }
+
+//当前客容量计算
+        let jiajubiaobianli:any = RES.getRes("jiajubiao_json");
+        for(var i = 0 ;i<jiajubiaobianli.length;i++){
+            if(jiajubiaobianli[i].id == Gerenshuxing.usexiaochao || jiajubiaobianli[i].id == Gerenshuxing.usehuoguo
+            || jiajubiaobianli[i].id == Gerenshuxing.usexiaochi || jiajubiaobianli[i].id == Gerenshuxing.usezaocan){
+                jiajukerong += parseInt(jiajubiaobianli[i].onkeliushu);
+            }
+            for(var j = 0;j<Gerenshuxing.jiesuojiaju.length;j++){
+                if(jiajubiaobianli[i].id == Gerenshuxing.jiesuojiaju[j]){
+                    jiajukerong += parseInt(jiajubiaobianli[i].keliushu);
+                }
+            }
+        } 
+
+//当前客流量计算
+        let yinxiaobiao:any = RES.getRes("yinxiaobiao_json");
+        if(Gerenshuxing.shengyuchuandan > 0){
+            tuiguangkeliu += parseInt(yinxiaobiao[0].sellachievement);
+        }
+        if(Gerenshuxing.shengyudianshi > 0){
+            tuiguangkeliu += parseInt(yinxiaobiao[1].sellachievement);
+        }
+
+//当前口碑值计算
+        if(Gerenshuxing.shengyupinglun > 0){
+            tuiguangkoubei += parseInt(yinxiaobiao[2].sellachievement);
+        }
+        if(Gerenshuxing.shengyudaiyan > 0){
+            tuiguangkoubei += parseInt(yinxiaobiao[3].sellachievement);
+        }
+
+//最终用于计算的各项数值
+        //最终的上菜速度
+        Gerenshuxing.zzchushishangcaisudu = Gerenshuxing.chushishangcaisudu + yuangongjiasu; 
+        //最终的卫生值
+        Gerenshuxing.zzweishengzhi = Gerenshuxing.weishengzhi + yuangongjiaweisheng  + Gerenshuxing.kesaochuweisheng - Gerenshuxing.dangqiankesaoweisheng;
+        //最终的安保值
+        Gerenshuxing.zzanbaozhi = Gerenshuxing.anbaozhi + yuangongjiaanbao;
+        //最终的原材料消耗减少
+        Gerenshuxing.zzyuanliaoxiaohao = Gerenshuxing.yuanliaoxiaohao + yuangongcailiao;
+        //最终的客容量
+        Gerenshuxing.zzkerongliang = Gerenshuxing.kerongliang + jiajukerong;
+        //最终的客流量
+        Gerenshuxing.zzkeliuliang =  Gerenshuxing.keliuliang + tuiguangkeliu;
+        //最终的口碑值
+        Gerenshuxing.zzkoubeizhi =  Gerenshuxing.koubeizhi + tuiguangkoubei;
+
+
+
+        /*console.log("当前客容量：" +Gerenshuxing.zzkerongliang + "增加的客容量: " +jiajukerong);
+        console.log("当前客流量：" +Gerenshuxing.zzkeliuliang + "增加的客流量: " +tuiguangkeliu);
+        console.log("当前口碑值：" +Gerenshuxing.zzkoubeizhi + "增加的口碑值： " +tuiguangkoubei);
+        console.log("当前卫生值: " +Gerenshuxing.zzweishengzhi + "增加的卫生值: " +yuangongjiasu);
+        console.log("当前上菜速度: " +Gerenshuxing.zzchushishangcaisudu + "增加的上菜速度: " +yuangongjiasu);
+        console.log("当前安宝值: " +Gerenshuxing.zzanbaozhi + "增加的安宝值: " +yuangongjiaanbao);
+        console.log("当前原材料减少: " +Gerenshuxing.zzyuanliaoxiaohao + "增加的原材料减少: " +yuangongcailiao);*/
     }
 
 

@@ -40,7 +40,7 @@ var Zhujiemianshangceng = (function (_super) {
     };
     Zhujiemianshangceng.prototype.chushihua = function () {
         this.shicaiwenzi.text = "" + Gerenshuxing.yongyouyuanliao;
-        this.weishengwenzi.text = "" + (Gerenshuxing.weishengzhi + Gerenshuxing.kesaochuweisheng - Gerenshuxing.dangqiankesaoweisheng);
+        this.weishengwenzi.text = "" + Gerenshuxing.zzweishengzhi;
     };
     return Zhujiemianshangceng;
 }(eui.Component));

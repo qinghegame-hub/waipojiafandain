@@ -173,6 +173,8 @@ var Main = (function (_super) {
         Gerenshuxing.uid = Gerenshuxing.uid + 1;
         webseverlianji.kaishilianjie();
         this.addChild(Gameguanli.Kongzhitai());
+        //默认进行1次垃圾添加
+        Chuangzaolaji.shengchenglaji(21);
     };
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
