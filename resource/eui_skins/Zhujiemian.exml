@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ZhujiemianSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16f1301b890" ></w:Config>
+	<e:Group id="zhuyaozu" top="0" left="0" right="0" bottom="0">
+		<e:Image id="img_fandianyuanhuabg0" scaleX="1" scaleY="1" source="img_fandianyuanhuabg_png" left="0" bottom="0" right="0" top="0"/>
+		<e:Image id="img_jiaju_xiaochao" source="img_jiaju1_1_png" x="366.91" y="1062.25" scaleX="1" scaleY="1" anchorOffsetX="0" width="254.09" anchorOffsetY="0" height="108.45"/>
+		<e:Image id="img_jiaju_huoguo" source="img_jiaju2_1_png" x="357" y="705" anchorOffsetX="0" width="239" anchorOffsetY="0" height="134"/>
+		<e:Image id="img_jiaju_xiaochi" source="img_jiaju3_1_png" x="139" y="419" anchorOffsetX="0" width="211" anchorOffsetY="0" height="86"/>
+		<e:Image id="img_jiaju_dianxin" source="img_jiaju4_1_png" x="557" y="397" anchorOffsetX="0" width="189" anchorOffsetY="0" height="118"/>
+		<e:Button id="but_laji2" label="" x="197.5" y="441" enabled="false" alpha="0">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="350" y="441" enabled="false" id="but_laji0" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="507" y="441" enabled="false" id="but_laji1" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="419.5" y="419" enabled="false" id="but_laji3" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="130.5" y="757" enabled="false" id="but_laji4" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="252.91" y="757" enabled="false" id="but_laji5" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="379.95" y="757.63" enabled="false" id="but_laji6" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="507" y="757.63" enabled="false" id="but_laji7" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="621" y="757" enabled="false" id="but_laji8" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="309.91" y="705" enabled="false" id="but_laji9" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="621" y="400" enabled="false" id="but_laji10" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="291.5" y="380" enabled="false" id="but_laji11" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="140.5" y="380" enabled="false" id="but_laji12" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="236" y="397" enabled="false" id="but_laji13" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="557" y="716" enabled="false" id="but_laji14" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="177.5" y="716.63" enabled="false" id="but_laji15" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="405.5" y="1062.25" enabled="false" id="but_laji16" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="519.5" y="1075.48" enabled="false" id="but_laji17" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="621" y="1062.25" enabled="false" id="but_laji18" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="318" y="1062.25" enabled="false" id="but_laji19" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="362.5" y="1021.25" enabled="false" id="but_laji20" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="464" y="1021.25" enabled="false" id="but_laji21" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="596" y="939.25" enabled="false" id="but_laji22" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="533.5" y="839" enabled="false" id="but_laji23" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="423.91" y="675" enabled="false" id="but_laji24" alpha="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_laji1_png" source.down="but_laji2_png" source.disabled="but_laji2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

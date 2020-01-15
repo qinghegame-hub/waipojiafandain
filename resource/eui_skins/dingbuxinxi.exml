@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="dingbuxinxiSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16f1349d782" ></w:Config>
+	<e:Group id="dingbuzu0" width="750" height="338" anchorOffsetX="0" anchorOffsetY="0" top="0" horizontalCenter="0" touchThrough="true">
+		<e:Image id="img_topbg0" width="750" height="343" x="0" y="0" fillMode="scale" source="img_topbg_png"/>
+		<e:Group id="kaishizhizu0" x="38" y="206">
+		<e:Image id="img_happiness0" width="143" height="51" x="0" y="0" source="img_happiness_png"/>
+		<e:Label id="xingfute0" text="0" x="47" y="9" anchorOffsetX="0" width="77" size="24" textColor="0x000000" strokeColor="0xF7F7F7" textAlign="center" stroke="2" fontFamily="wodeziti"/>
+		</e:Group>
+		<e:Group id="kaixinzu0" x="218" y="42">
+		<e:Image id="img_mood0" source="img_mood_png" x="0" y="0"/>
+		<e:Label id="kaixinte0" text="99999" x="60" y="14" anchorOffsetX="0" width="112" size="24" textColor="0x000000" strokeColor="0xF7F7F7" textAlign="center" stroke="2" fontFamily="wodeziti"/>
+		</e:Group>
+		<e:Group id="jiatingzu0" x="218" y="102">
+		<e:Image id="img_family0" source="img_family_png" x="0" y="0"/>
+		<e:Label id="jiatingte0" text="99999" x="59" y="13.5" anchorOffsetX="0" width="112" size="24" textColor="0x000000" strokeColor="0xF7F7F7" textAlign="center" stroke="2" fontFamily="wodeziti"/>
+		</e:Group>
+		<e:Group id="jiankangzu0" x="438" y="42">
+		<e:Image id="img_fealth0" source="img_fealth_png" x="0" y="0"/>
+		<e:Label id="jiankangte0" text="99999" x="59" y="14" anchorOffsetX="0" width="112" size="24" textColor="0x000000" strokeColor="0xF7F7F7" textAlign="center" stroke="2" fontFamily="wodeziti"/>
+		</e:Group>
+		<e:Group id="jinbizu0" x="438" y="102">
+		<e:Image id="img_money0" source="img_money_png" x="0" y="0"/>
+		<e:Label id="jinbite0" text="99999" x="59" y="13.5" anchorOffsetX="0" width="112" size="24" textColor="0x000000" strokeColor="0xF7F7F7" textAlign="center" stroke="2" fontFamily="wodeziti"/>
+		</e:Group>
+		<e:Group id="riqizu0" x="24" y="24">
+		<e:Image id="img_calendar0" width="178" height="166" x="0" y="0" fillMode="scale" source="img_calendar_png"/>
+		<e:Label id="riqite0" text="Label" x="40" y="91" anchorOffsetX="0" width="94" anchorOffsetY="0" height="38" textColor="0x070707" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="3" strokeColor="0x18dd30"/>
+		</e:Group>
+		<e:Group id="shijianzu0" x="218" y="170">
+		<e:Image id="img_timebg0" source="img_timebg_png" x="41" y="34"/>
+		<e:Image id="img_timezhong0" source="img_timezhong_png" x="0" y="5"/>
+		<e:Group id="daojishizu0" x="103" y="46">
+			<e:Image id="img_timebarbg0" source="img_timebarbg_png" x="0" y="0"/>
+			<e:Image id="img_timebar0" source="img_timebar_png" x="0" y="0"/>
+		</e:Group>
+		<e:Image id="img_timetextbg0" source="img_timetextbg_png" x="156" y="0" scaleX="1" scaleY="1"/>
+		<e:Label id="dqshijiante0" text="Label" x="158" y="3" anchorOffsetX="0" width="125" size="24" textAlign="center" verticalAlign="middle" fontFamily="wodeziti" stroke="3"/>
+		</e:Group>
+		<e:Button id="but_seting0" x="637" y="175" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_seting1_png" source.down="but_seting2_png" source.disabled="but_seting2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

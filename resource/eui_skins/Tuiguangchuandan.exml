@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TuiguangchuandanSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16f7edb7929" ></w:Config>
+	<e:Group id="tuiguangchuandanzu" bottom="0" top="0" touchThrough="true" left="0" right="0">
+		<e:Group id="chuandanliebiaozu" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" left="94" top="174" bottom="400" right="73">
+			<e:Image id="img_chuandantuiguang" x="0" y="0" source="img_chuandantuiguang_png"/>
+			<e:Label id="tuiguangwenzi" text="客流量增加" x="143" y="572.67" anchorOffsetX="0" width="140.66" textAlign="left" verticalAlign="middle" size="24" textColor="0x1c1a1a" fontFamily="wodeziti" stroke="1" strokeColor="0xf7efef"/>
+			<e:Label id="chixushijianwenzi" text="3天" x="143" y="645.35" anchorOffsetX="0" width="117.33" textAlign="left" verticalAlign="middle" size="24" textColor="0x1C1A1A" fontFamily="wodeziti" stroke="1" strokeColor="0xF7EFEF"/>
+			<e:Label id="tuiguangfeiyongwenzi" text="-2000000" x="310.01" y="645.35" anchorOffsetX="0" width="105.33" textAlign="left" verticalAlign="middle" size="24" textColor="0x1C1A1A" fontFamily="wodeziti" stroke="1" strokeColor="0xF7EFEF"/>
+			<e:Label id="tuiguangxiaoguowenzi" text="+ 10%" x="281" y="572.67" anchorOffsetX="0" width="140.66" textAlign="left" verticalAlign="middle" size="24" textColor="0x1C1A1A" fontFamily="wodeziti" stroke="1" strokeColor="0xF7EFEF"/>
+			<e:Label id="tuiguangshengyu" text="剩余" x="421.66" y="613.04" anchorOffsetX="0" width="103.66" textAlign="center" verticalAlign="middle" size="24" textColor="0x1C1A1A" fontFamily="wodeziti" stroke="1" strokeColor="0xF7EFEF"/>
+			<e:Label id="tuiguangshengyuwenzi" text="365天" x="421.66" y="645.35" anchorOffsetX="0" width="103.66" textAlign="center" verticalAlign="middle" size="24" textColor="0x1C1A1A" fontFamily="wodeziti" stroke="1" strokeColor="0xF7EFEF"/>
+			<e:Image id="img_qian" source="img_qian_png" x="254.66" y="637.04"/>
+			<e:Button id="but_tuiguanganniu" label="" x="383" y="551.35" enabled="true">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="but_tuiguanganniu1_png" source.down="but_tuiguanganniu2_png" source.disabled="but_tuiguanganniu2_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+		</e:Group>
+	</e:Group>
+</e:Skin>

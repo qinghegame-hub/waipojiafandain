@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TtoudingqipaojiemianSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16f953f0029" ></w:Config>
+	<e:Group id="toudingqipaozu" width="200" height="200" x="225" y="596" scaleX="1" scaleY="1" touchThrough="true">
+		<e:Button id="but_xuqiucaiqipao0" label="" x="71.5" y="49" enabled="true" width="68" height="84">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_xuqiucaiqipao_png" source.down="but_xuqiucaiqipao2_png" source.disabled="but_xuqiucaiqipao2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Image id="xianshitupian0" source="img_fennulian_png" x="81.5" y="59" touchEnabled="false" width="48" height="48"/>
+	</e:Group>
+</e:Skin>

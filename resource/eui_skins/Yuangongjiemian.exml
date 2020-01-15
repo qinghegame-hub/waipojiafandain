@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="YuangongjiemianSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16f6f708111" ></w:Config>
+	<e:Group id="yuangongzu" bottom="0" top="0" touchThrough="true" left="0" right="0">
+		<e:Group id="yuangongliebiao" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" left="94" top="149" bottom="425" right="73">
+			<e:Image id="img_yuangongbeijing" source="img_yuangongbeijing_png" x="0" y="-0.01"/>
+			<e:Image id="img_xiangkuangbeijing" source="img_xiangkuangbeijing_png" x="373" y="127"/>
+			<e:Image id="ygtouxiang" source="yg1001_png" x="374.5" y="158.5" anchorOffsetX="0" anchorOffsetY="0" width="137" height="140"/>
+			<e:Label id="xingming" text="张三丰" x="205" y="122" anchorOffsetX="0" width="146" fontFamily="wodeziti" verticalAlign="middle" textAlign="left" anchorOffsetY="0" height="42" size="24" textColor="0x232121"/>
+			<e:Label id="nianling" text="30" x="205" y="177.5" anchorOffsetX="0" width="146" fontFamily="wodeziti" verticalAlign="middle" textAlign="left" anchorOffsetY="0" height="42" size="24" textColor="0x232121"/>
+			<e:Label id="jiguan" text="湖南" x="205" y="236.5" anchorOffsetX="0" width="146" fontFamily="wodeziti" verticalAlign="middle" textAlign="left" anchorOffsetY="0" height="42" size="24" textColor="0x232121"/>
+			<e:Label id="xueli" text="高中" x="205" y="292.5" anchorOffsetX="0" width="146" fontFamily="wodeziti" verticalAlign="middle" textAlign="left" anchorOffsetY="0" height="42" size="24" textColor="0x232121"/>
+			<e:Label id="gerenjieshao" text="高中" x="205" y="359" anchorOffsetX="0" width="308" fontFamily="wodeziti" verticalAlign="top" textAlign="left" anchorOffsetY="0" height="146" size="24" textColor="0x232121"/>
+			<e:Label id="jinengming" text="小炒价格：" x="205" y="532" anchorOffsetX="0" width="158" fontFamily="wodeziti" verticalAlign="middle" textAlign="left" anchorOffsetY="0" height="28" size="24" textColor="0x232121"/>
+			<e:Label id="jinengjiacheng" text="+ 5" x="365" y="532" anchorOffsetX="0" width="158" fontFamily="wodeziti" verticalAlign="middle" textAlign="left" anchorOffsetY="0" height="28" size="24" textColor="0x232121"/>
+			<e:Label id="xinzi" text="日薪：" x="205" y="574" anchorOffsetX="0" width="158" fontFamily="wodeziti" verticalAlign="middle" textAlign="left" anchorOffsetY="0" height="28" size="24" textColor="0x232121"/>
+			<e:Label id="xinzizhi" text="100/天" x="365" y="574" anchorOffsetX="0" width="158" fontFamily="wodeziti" verticalAlign="middle" textAlign="left" anchorOffsetY="0" height="28" size="24" textColor="0x232121"/>
+			<e:Button id="but_pinyong" label="" x="349.5" y="621" enabled="true">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="but_pinyong1_png" source.down="but_pinyong2_png" source.disabled="but_pinyong2_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="but_jiepin" label="" x="349.5" y="621" enabled="true">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="but_jiepin1_png" source.down="but_jiepin2_png" source.disabled="but_jiepin2_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Image id="img_pinyongyinzhang" source="img_pinyongyinzhang_png" x="247.5" y="223"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

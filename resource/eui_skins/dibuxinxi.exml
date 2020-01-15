@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="dibuxinxiSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16f134b2a97" ></w:Config>
+	<e:Group id="dibuzu0" bottom="0" horizontalCenter="0">
+		<e:Image id="img_bottombg1" source="img_bottombg_png" y="57" x="0"/>
+		<e:Button id="but_hotel1" x="36" y="0" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_hotel1_png" source.down="but_hotel2_png" source.disabled="but_hotel2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Button id="but_gongyuan1" x="215" y="0" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_gongyuan1_png" source.down="but_gongyuan2_png" source.disabled="but_gongyuan2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Button id="but_licai1" x="394" y="0" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_licai1_png" source.down="but_licai2_png" source.disabled="but_licai2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Button id="but_huijia1" x="573" y="0" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_huijia1_png" source.down="but_huijia2_png" source.disabled="but_huijia2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

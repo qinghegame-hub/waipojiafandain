@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="JinbiwenbenSkin" width="100" height="40" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16fa2b46e84" ></w:Config>
+	<e:Group id="wenzizu" anchorOffsetX="0" anchorOffsetY="0" width="93" x="0" height="34" y="0">
+		<e:Label id="wenzineirong" text="+ 50" x="0" y="0" anchorOffsetX="0" width="88" fontFamily="wodeziti" size="24" stroke="4" strokeColor="0xf7f7ef" textColor="0xed871c" bold="true"/>
+	</e:Group>
+</e:Skin>
