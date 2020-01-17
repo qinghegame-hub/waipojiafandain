@@ -37,8 +37,7 @@ class Weblianjie extends egret.DisplayObjectContainer {
                 Gerenshuxing.kaixinzhi=jiexijsongeshi[0].happinessnum;    //个人属性：开心值
                 Gerenshuxing.jinbizhi=jiexijsongeshi[0].goldnum;  //个人属性：金币值
                 Gerenshuxing.jiatingzhi=jiexijsongeshi[0].familynum;   //个人属性：家庭值
-                Gerenshuxing.shijian="1213"; //个人属性：当前时间
-                Gerenshuxing.yuefen = "630";   //个人属性：当前月份
+                Gerenshuxing.shijian=parseInt(jiexijsongeshi[0].shijian); //个人属性：当前时间
                 Gerenshuxing.jiesuocaipin = jiexijsongeshi[0].jiesuocai;   //已解锁菜品
                 Gerenshuxing.usexiaochao=jiexijsongeshi[0].usexiaochao;
                 Gerenshuxing.usehuoguo=jiexijsongeshi[0].usehuoguo;
@@ -266,7 +265,11 @@ class Weblianjie extends egret.DisplayObjectContainer {
                 egret.Tween.get(shicaikouchu).wait(1000).to({x:zongx,y:zongy - 50},2000).call(()=>{
                             Gameguanli.Kongzhitai().zhujiemian.removeChild(shicaikouchu);
                     })
-                break;              
+                break;  
+            case "code:029":
+                 Gerenshuxing.shijian = parseInt(jiexijsongeshi.xiaoshishu);
+                 Timeguanli.jisuanshijian();
+                 break;         
     //非法操作
             case "code:202":
                 Gameguanli.Kongzhitai().cuowutishixinxi("非法操作！");

@@ -170,6 +170,7 @@ var Main = (function (_super) {
             dragonBones.WorldClock.clock.advanceTime(advancedTime / 3000);
         }, this);
         var webseverlianji = new Weblianjie();
+        var shijianstart = new Timekongzhi();
         Gerenshuxing.uid = Gerenshuxing.uid + 1;
         webseverlianji.kaishilianjie();
         this.addChild(Gameguanli.Kongzhitai());

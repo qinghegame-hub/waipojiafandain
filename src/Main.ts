@@ -102,11 +102,12 @@ class Main extends eui.UILayer {
             dragonBones.WorldClock.clock.advanceTime(advancedTime/3000);
         },this);
         let webseverlianji:Weblianjie =new  Weblianjie();
+        let shijianstart:Timekongzhi = new Timekongzhi();
         Gerenshuxing.uid =Gerenshuxing.uid + 1;
         webseverlianji.kaishilianjie();
         this.addChild(Gameguanli.Kongzhitai());
         //默认进行1次垃圾添加
-		Chuangzaolaji.shengchenglaji(21);	
+		Chuangzaolaji.shengchenglaji(21);
     }
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。

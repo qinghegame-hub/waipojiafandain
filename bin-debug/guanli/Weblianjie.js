@@ -44,8 +44,7 @@ var Weblianjie = (function (_super) {
                 Gerenshuxing.kaixinzhi = jiexijsongeshi[0].happinessnum; //个人属性：开心值
                 Gerenshuxing.jinbizhi = jiexijsongeshi[0].goldnum; //个人属性：金币值
                 Gerenshuxing.jiatingzhi = jiexijsongeshi[0].familynum; //个人属性：家庭值
-                Gerenshuxing.shijian = "1213"; //个人属性：当前时间
-                Gerenshuxing.yuefen = "630"; //个人属性：当前月份
+                Gerenshuxing.shijian = parseInt(jiexijsongeshi[0].shijian); //个人属性：当前时间
                 Gerenshuxing.jiesuocaipin = jiexijsongeshi[0].jiesuocai; //已解锁菜品
                 Gerenshuxing.usexiaochao = jiexijsongeshi[0].usexiaochao;
                 Gerenshuxing.usehuoguo = jiexijsongeshi[0].usehuoguo;
@@ -271,6 +270,10 @@ var Weblianjie = (function (_super) {
                 egret.Tween.get(shicaikouchu_1).wait(1000).to({ x: zongx, y: zongy - 50 }, 2000).call(function () {
                     Gameguanli.Kongzhitai().zhujiemian.removeChild(shicaikouchu_1);
                 });
+                break;
+            case "code:029":
+                Gerenshuxing.shijian = parseInt(jiexijsongeshi.xiaoshishu);
+                Timeguanli.jisuanshijian();
                 break;
             //非法操作
             case "code:202":

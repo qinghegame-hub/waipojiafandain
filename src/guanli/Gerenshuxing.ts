@@ -4,8 +4,8 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static kaixinzhi:number=0;    //个人属性：开心值
     public static jinbizhi:number=0;  //个人属性：金币值
     public static jiatingzhi:number=0;   //个人属性：家庭值
-    public static shijian:string = "1213"; //个人属性：当前时间
-    public static yuefen:string = "630";   //个人属性：当前月份
+    public static shijian:number = 12; //个人属性：当前时间
+    public static yuefen:number = 1;   //个人属性：当前月份
     public static jiesuocaipin = [];   //已解锁菜品
     public static usexiaochao:string;
     public static usehuoguo:string;
@@ -15,7 +15,7 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static jiesuohuoguo:string;
     public static jiesuoxiaochi:string;
     public static jiesuozaocan:string;
-    public static uid:string = "1046";
+    public static uid:string = "1050";
     public static jiesuojiaju = [];  //已解锁家具
     public static jiesuoyuangong = []; //已解锁员工
     public static shiyongyuangong = []; //已使用员工
@@ -37,6 +37,13 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static yuanliaoxiaohao:number = 0;//原材料消耗减少
     public static weishengjilv:number = 0;//有清洁工时，每个清洁工控制的垃圾的产出几率
 
+    public static dangqiantianqi:number = 1;  //1为晴天，2为雨天，3为雪天
+
+    public static xianshishijian:number;  //显示的时间值;
+
+    public static riqi:number;//当前日期
+    public static nian:number;//当前已过年份
+
     //下面是通过计算后的最终数据
         //最终的上菜速度
     public static zzchushishangcaisudu:number; 
@@ -52,6 +59,12 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static zzkeliuliang:number;
         //最终的口碑值
     public static zzkoubeizhi:number;
+
+    //通过时间控制的客流量增加
+    public static sjkeliuliang:number = 100;
+
+    //通过天气控制的客流量增加
+    public static tqkeliuliang:number = 100;
 
 
     public constructor (){
@@ -132,7 +145,8 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
         //最终的客容量
         Gerenshuxing.zzkerongliang = Gerenshuxing.kerongliang + jiajukerong;
         //最终的客流量
-        Gerenshuxing.zzkeliuliang =  Gerenshuxing.keliuliang + tuiguangkeliu;
+        Gerenshuxing.zzkeliuliang =  Math.floor((Gerenshuxing.keliuliang + tuiguangkeliu) * (Gerenshuxing.sjkeliuliang / 100) * (Gerenshuxing.tqkeliuliang / 100));
+        console.log(Gerenshuxing.zzkeliuliang);
         //最终的口碑值
         Gerenshuxing.zzkoubeizhi =  Gerenshuxing.koubeizhi + tuiguangkoubei;
 
