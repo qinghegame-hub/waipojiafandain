@@ -36,6 +36,8 @@ declare class TuiguangpinglunSkin extends eui.Skin{
 }
 declare class WeishengtishiSkin extends eui.Skin{
 }
+declare class XiamiantishiSkin extends eui.Skin{
+}
 declare class YuangongjiemianSkin extends eui.Skin{
 }
 declare class ZhujiemianSkin extends eui.Skin{

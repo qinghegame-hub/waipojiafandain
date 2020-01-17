@@ -84,7 +84,6 @@ var Gerenshuxing = (function (_super) {
         Gerenshuxing.zzkerongliang = Gerenshuxing.kerongliang + jiajukerong;
         //最终的客流量
         Gerenshuxing.zzkeliuliang = Math.floor((Gerenshuxing.keliuliang + tuiguangkeliu) * (Gerenshuxing.sjkeliuliang / 100) * (Gerenshuxing.tqkeliuliang / 100));
-        console.log(Gerenshuxing.zzkeliuliang);
         //最终的口碑值
         Gerenshuxing.zzkoubeizhi = Gerenshuxing.koubeizhi + tuiguangkoubei;
         /*console.log("当前客容量：" +Gerenshuxing.zzkerongliang + "增加的客容量: " +jiajukerong);
@@ -103,7 +102,7 @@ var Gerenshuxing = (function (_super) {
     Gerenshuxing.shijian = 12; //个人属性：当前时间
     Gerenshuxing.yuefen = 1; //个人属性：当前月份
     Gerenshuxing.jiesuocaipin = []; //已解锁菜品
-    Gerenshuxing.uid = "1050";
+    Gerenshuxing.uid = "1002";
     Gerenshuxing.jiesuojiaju = []; //已解锁家具
     Gerenshuxing.jiesuoyuangong = []; //已解锁员工
     Gerenshuxing.shiyongyuangong = []; //已使用员工

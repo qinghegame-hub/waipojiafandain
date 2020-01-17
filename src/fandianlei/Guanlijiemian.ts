@@ -16,9 +16,9 @@ class Guanlijiemian extends eui.Component implements  eui.UIComponent {
 
 	public neiRongZhanShi:Jiajugoumai;
 
-	public static dangqianyeqianshu:number;
-	public static dangqianyeshu:number;
-	public static dangqianleixing:number;
+	public static dangqianyeqianshu:number = 1;
+	public static dangqianyeshu:number = 1;
+	public static dangqianleixing:number = 1;
 
 	public yuanGongJieMian:Yuangongjiemian;
 	public tuiguangchuandan:Tuiguangchuandan;

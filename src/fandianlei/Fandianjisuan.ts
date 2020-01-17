@@ -13,8 +13,8 @@ class Fandianjisuan extends egret.DisplayObjectContainer{
         Gerenshuxing.yuangongshuxing();
 //设定一个循环定时器
         let xunhuankaishi = new egret.Timer(Gerenshuxing.jiesuantime,1);
+		xunhuankaishi.addEventListener(egret.TimerEvent.TIMER,this.jisuanfandianshuju,this);
         xunhuankaishi.start();
-		xunhuankaishi.addEventListener(egret.TimerEvent.TIMER_COMPLETE,this.jisuanfandianshuju,this);
     }
 
 
@@ -41,7 +41,7 @@ class Fandianjisuan extends egret.DisplayObjectContainer{
 
     public static chuangjianrenwu(){
         if(this.jinlairenshu > 0){
-            let yanchisuiji = Math.random() * 10000 + 1;
+            let yanchisuiji = Math.random() * 5000 + 1;
             let dingshichuren = new egret.Timer(yanchisuiji,1);
             dingshichuren.addEventListener(egret.TimerEvent.TIMER,this.kaishishengchengjuese,this);
             dingshichuren.start();
@@ -56,6 +56,7 @@ class Fandianjisuan extends egret.DisplayObjectContainer{
         var xuqiucaiid = Math.floor( Math.random() * Gerenshuxing.jiesuocaipin.length);
         for (var o = 0;o < caipuliebiao.length;o++){
             if(caipuliebiao[o].id == Gerenshuxing.jiesuocaipin[xuqiucaiid]){
+                //这里可以按照天气和日期设置客户需求的用餐类型和几率
                 gukexuqiucai = caipuliebiao[o].id;
                 caipinming = caipuliebiao[o].foodName;
                 break;

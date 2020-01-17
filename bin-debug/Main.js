@@ -171,7 +171,6 @@ var Main = (function (_super) {
         }, this);
         var webseverlianji = new Weblianjie();
         var shijianstart = new Timekongzhi();
-        Gerenshuxing.uid = Gerenshuxing.uid + 1;
         webseverlianji.kaishilianjie();
         this.addChild(Gameguanli.Kongzhitai());
         //默认进行1次垃圾添加

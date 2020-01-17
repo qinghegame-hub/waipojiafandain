@@ -103,7 +103,6 @@ class Main extends eui.UILayer {
         },this);
         let webseverlianji:Weblianjie =new  Weblianjie();
         let shijianstart:Timekongzhi = new Timekongzhi();
-        Gerenshuxing.uid =Gerenshuxing.uid + 1;
         webseverlianji.kaishilianjie();
         this.addChild(Gameguanli.Kongzhitai());
         //默认进行1次垃圾添加

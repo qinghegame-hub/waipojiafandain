@@ -15,6 +15,7 @@ var Gameguanli = (function (_super) {
     function Gameguanli() {
         var _this = _super.call(this) || this;
         _this.jinlaicishu = [1, 1, 1, 1, 1, 1, 1, 1];
+        _this.xiamiancishu = [1, 1, 1, 1, 1];
         _this.gerenshuju = new Gerenshuxing();
         _this.dibuui = new dibuxinxi();
         _this.dingbuui = new dingbuxinxi();
@@ -185,6 +186,75 @@ var Gameguanli = (function (_super) {
                 .call(function () {
                 _this.jinlaicishu[7] = 1;
                 _this.removeChild(_this.cuowutishi8);
+            });
+        }
+    };
+    //下面提示信息界面
+    Gameguanli.prototype.xiamiantishi = function (neirong) {
+        var _this = this;
+        if (this.xiamiancishu[0] == 1) {
+            this.xiamiancishu[0] = 0;
+            this.xiamiantishi1 = new Xiamiantishi();
+            this.addChild(this.xiamiantishi1);
+            this.xiamiantishi1.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width / 2 - this.xiamiantishi1.width / 2;
+            this.xiamiantishi1.y = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height + this.xiamiantishi1.height / 2;
+            this.xiamiantishi1.xiamiantishiwenzi.text = neirong;
+            egret.Tween.get(this.xiamiantishi1).to({ x: this.xiamiantishi1.x, y: Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height - this.xiamiantishi1.height * 1 }, 2000)
+                .wait(3000).call(function () {
+                _this.xiamiancishu[0] = 1;
+                _this.removeChild(_this.xiamiantishi1);
+            });
+        }
+        else if (this.xiamiancishu[1] == 1) {
+            this.xiamiancishu[1] = 0;
+            this.xiamiantishi2 = new Xiamiantishi();
+            this.addChild(this.xiamiantishi2);
+            this.xiamiantishi2.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width / 2 - this.xiamiantishi2.width / 2;
+            this.xiamiantishi2.y = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height + this.xiamiantishi2.height / 2;
+            this.xiamiantishi2.xiamiantishiwenzi.text = neirong;
+            egret.Tween.get(this.xiamiantishi2).to({ x: this.xiamiantishi2.x, y: Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height - this.xiamiantishi2.height * 1 }, 2000)
+                .wait(3000).call(function () {
+                _this.xiamiancishu[1] = 1;
+                _this.removeChild(_this.xiamiantishi2);
+            });
+        }
+        else if (this.xiamiancishu[2] == 1) {
+            this.xiamiancishu[2] = 0;
+            this.xiamiantishi3 = new Xiamiantishi();
+            this.addChild(this.xiamiantishi3);
+            this.xiamiantishi3.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width / 2 - this.xiamiantishi3.width / 2;
+            this.xiamiantishi3.y = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height + this.xiamiantishi3.height / 2;
+            this.xiamiantishi3.xiamiantishiwenzi.text = neirong;
+            egret.Tween.get(this.xiamiantishi3).to({ x: this.xiamiantishi3.x, y: Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height - this.xiamiantishi3.height * 1 }, 2000)
+                .wait(3000).call(function () {
+                _this.xiamiancishu[2] = 1;
+                _this.removeChild(_this.xiamiantishi3);
+            });
+        }
+        else if (this.xiamiancishu[3] == 1) {
+            this.xiamiancishu[3] = 0;
+            this.xiamiantishi4 = new Xiamiantishi();
+            this.addChild(this.xiamiantishi4);
+            this.xiamiantishi4.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width / 2 - this.xiamiantishi4.width / 2;
+            this.xiamiantishi4.y = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height + this.xiamiantishi4.height / 2;
+            this.xiamiantishi4.xiamiantishiwenzi.text = neirong;
+            egret.Tween.get(this.xiamiantishi4).to({ x: this.xiamiantishi4.x, y: Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height - this.xiamiantishi4.height * 1 }, 2000)
+                .wait(3000).call(function () {
+                _this.xiamiancishu[3] = 1;
+                _this.removeChild(_this.xiamiantishi4);
+            });
+        }
+        else if (this.xiamiancishu[4] == 1) {
+            this.xiamiancishu[4] = 0;
+            this.xiamiantishi5 = new Xiamiantishi();
+            this.addChild(this.xiamiantishi5);
+            this.xiamiantishi5.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width / 2 - this.xiamiantishi5.width / 2;
+            this.xiamiantishi5.y = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height + this.xiamiantishi5.height / 2;
+            this.xiamiantishi5.xiamiantishiwenzi.text = neirong;
+            egret.Tween.get(this.xiamiantishi5).to({ x: this.xiamiantishi5.x, y: Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height - this.xiamiantishi5.height * 1 }, 2000)
+                .wait(3000).call(function () {
+                _this.xiamiancishu[4] = 1;
+                _this.removeChild(_this.xiamiantishi5);
             });
         }
     };

@@ -960,10 +960,13 @@ class Donghuabifang extends egret.DisplayObjectContainer{
                     let suiji4 = Math.floor(Math.random() * this.tdWenzi3.length);
                     this.tdWenziduixiang.wenzineirong.text = this.tdWenzi3[suiji4].texuel;
                     break;
-                case 3:
+                case 4:
                     let suiji5 = Math.floor(Math.random() * this.tdWenzi4.length);
                     this.tdWenziduixiang.wenzineirong.text = this.tdWenzi4[suiji5].texuel;
-                break;            
+                    break;
+                default:
+                    this.tdWenziduixiang.wenzineirong.text = this.tdWenzi0[suiji1].texuel + "[" +this.caipinmingcheng + "]";
+                    break;          
             }
     }
 

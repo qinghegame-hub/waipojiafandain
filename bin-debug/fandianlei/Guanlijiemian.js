@@ -363,6 +363,9 @@ var Guanlijiemian = (function (_super) {
             this.removeChild(this.danjuJieMian);
         }
     };
+    Guanlijiemian.dangqianyeqianshu = 1;
+    Guanlijiemian.dangqianyeshu = 1;
+    Guanlijiemian.dangqianleixing = 1;
     return Guanlijiemian;
 }(eui.Component));
 __reflect(Guanlijiemian.prototype, "Guanlijiemian", ["eui.UIComponent", "egret.DisplayObject"]);

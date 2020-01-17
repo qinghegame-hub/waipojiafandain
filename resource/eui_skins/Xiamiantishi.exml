@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="XiamiantishiSkin" width="726" height="45" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16fb216271b" ></w:Config>
+	<e:Group id="xiamiantishizu" x="0" y="0">
+		<e:Image id="img_xiamiantishi" source="img_xiamiantishi_png" x="0" y="0"/>
+		<e:Label id="xiamiantishiwenzi" text="测试可以打多少个字啊测试可以打多少个字啊测试可以打多少个字啊" x="19" y="10" anchorOffsetY="0" height="22" anchorOffsetX="0" width="682" textAlign="center" verticalAlign="middle" size="20" fontFamily="wodeziti" textColor="0x070707" stroke="2" strokeColor="0xf7efef"/>
+	</e:Group>
+</e:Skin>

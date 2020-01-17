@@ -17,7 +17,7 @@ var Timekongzhi = (function (_super) {
         return _this;
     }
     Timekongzhi.prototype.shijianjisuan = function () {
-        var youxishijiandingshi = new egret.Timer(60000, 0);
+        var youxishijiandingshi = new egret.Timer(1000, 0);
         youxishijiandingshi.addEventListener(egret.TimerEvent.TIMER, this.kaishijisuan, this);
         youxishijiandingshi.start();
     };

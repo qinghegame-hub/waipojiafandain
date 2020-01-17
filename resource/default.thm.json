@@ -35,7 +35,8 @@
 		"Saobadonghua": "resource/eui_skins/Saobadonghua.exml",
 		"Dasaodonghua": "resource/eui_skins/Dasaodonghua.exml",
 		"Cailiaoxiaohao": "resource/eui_skins/Cailiaoxiaohao.exml",
-		"Weishengtishi": "resource/eui_skins/Weishengtishi.exml"
+		"Weishengtishi": "resource/eui_skins/Weishengtishi.exml",
+		"Xiamiantishi": "resource/eui_skins/Xiamiantishi.exml"
 	},
 	"autoGenerateExmlsList": true,
 	"exmls": [
@@ -58,6 +59,7 @@
 		"resource/eui_skins/Tuiguangdianshi.exml",
 		"resource/eui_skins/Tuiguangpinglun.exml",
 		"resource/eui_skins/Weishengtishi.exml",
+		"resource/eui_skins/Xiamiantishi.exml",
 		"resource/eui_skins/Yuangongjiemian.exml",
 		"resource/eui_skins/Zhujiemian.exml",
 		"resource/eui_skins/Zhujiemianshangceng.exml"

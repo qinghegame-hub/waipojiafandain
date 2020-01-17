@@ -1,112 +1,117 @@
 {
-  "16f1301b890": {
-    "path": "Zhujiemian.ts",
-    "class": "Zhujiemian",
-    "parentPath": ""
-  },
-  "16f1349d782": {
-    "path": "dingbuxinxi.ts",
-    "class": "dingbuxinxi",
-    "parentPath": "",
-    "guideLines": [
-      {
-        "type": "v",
-        "pos": 370
-      },
-      {
-        "type": "v",
-        "pos": -172
-      }
-    ],
-    "guideLinesEnabled": true
-  },
-  "16f134b2a97": {
-    "path": "dibuxinxi.ts",
-    "class": "dibuxinxi",
-    "parentPath": ""
-  },
-  "16f1709cbd3": {
-    "path": "Caipujiemian.ts",
-    "class": "Caipujiemian",
-    "parentPath": ""
-  },
-  "16f194d4701": {
-    "path": "Caipucaiping.ts",
-    "class": "Caipucaiping",
-    "parentPath": ""
-  },
-  "16f226b8b5a": {
-    "path": "Caipinjieshaojiemian.ts",
-    "class": "Caipinjieshaojiemian",
-    "parentPath": ""
-  },
-  "16f22f1805e": {
-    "path": "..\\resource\\Guanlijiemian.ts",
-    "class": "Guanlijiemian",
-    "parentPath": ""
-  },
-  "16f2336963d": {
-    "path": "Jiajugoumai.ts",
-    "class": "Jiajugoumai",
-    "parentPath": ""
-  },
-  "global": {
-    "globalAdsorbEnable": true,
-    "globalAutoLayerMarkEnable": true
-  },
-  "16f6026395b": {
-    "path": "Cuowutishi.ts",
-    "class": "Cuowutishi",
-    "parentPath": ""
-  },
-  "16f6f708111": {
-    "path": "Yuangongjiemian.ts",
-    "class": "Yuangongjiemian",
-    "parentPath": ""
-  },
-  "16f7edb7929": {
-    "path": "Tuiguangchuandan.ts",
-    "class": "Tuiguangchuandan",
-    "parentPath": ""
-  },
-  "16f953f0029": {
-    "path": "Ttoudingqipaojiemian.ts",
-    "class": "Ttoudingqipaojiemian",
-    "parentPath": ""
-  },
-  "16f9d5b4388": {
-    "path": "Zhujiemianshangceng.ts",
-    "class": "Zhujiemianshangceng",
-    "parentPath": ""
-  },
-  "16f9e0ffacf": {
-    "path": "Toudingwenzi.ts",
-    "class": "Toudingwenzi",
-    "parentPath": ""
-  },
-  "16fa2b46e84": {
-    "path": "Jinbiwenben.ts",
-    "class": "Jinbiwenben",
-    "parentPath": ""
-  },
-  "16fa535a7c8": {
-    "path": "Saobadonghua.ts",
-    "class": "Saobadonghua",
-    "parentPath": ""
-  },
-  "16fa536996f": {
-    "path": "Dasaodonghua.ts",
-    "class": "Dasaodonghua",
-    "parentPath": ""
-  },
-  "16fa9431bea": {
-    "path": "Cailiaoxiaohao.ts",
-    "class": "Cailiaoxiaohao",
-    "parentPath": ""
-  },
-  "16fa992703a": {
-    "path": "Weishengtishi.ts",
-    "class": "Weishengtishi",
-    "parentPath": ""
-  }
+    "16f1301b890": {
+        "path": "Zhujiemian.ts",
+        "class": "Zhujiemian",
+        "parentPath": ""
+    },
+    "16f1349d782": {
+        "path": "dingbuxinxi.ts",
+        "class": "dingbuxinxi",
+        "parentPath": "",
+        "guideLines": [
+            {
+                "type": "v",
+                "pos": 370
+            },
+            {
+                "type": "v",
+                "pos": -172
+            }
+        ],
+        "guideLinesEnabled": true
+    },
+    "16f134b2a97": {
+        "path": "dibuxinxi.ts",
+        "class": "dibuxinxi",
+        "parentPath": ""
+    },
+    "16f1709cbd3": {
+        "path": "Caipujiemian.ts",
+        "class": "Caipujiemian",
+        "parentPath": ""
+    },
+    "16f194d4701": {
+        "path": "Caipucaiping.ts",
+        "class": "Caipucaiping",
+        "parentPath": ""
+    },
+    "16f226b8b5a": {
+        "path": "Caipinjieshaojiemian.ts",
+        "class": "Caipinjieshaojiemian",
+        "parentPath": ""
+    },
+    "16f22f1805e": {
+        "path": "..\\resource\\Guanlijiemian.ts",
+        "class": "Guanlijiemian",
+        "parentPath": ""
+    },
+    "16f2336963d": {
+        "path": "Jiajugoumai.ts",
+        "class": "Jiajugoumai",
+        "parentPath": ""
+    },
+    "global": {
+        "globalAdsorbEnable": true,
+        "globalAutoLayerMarkEnable": true
+    },
+    "16f6026395b": {
+        "path": "Cuowutishi.ts",
+        "class": "Cuowutishi",
+        "parentPath": ""
+    },
+    "16f6f708111": {
+        "path": "Yuangongjiemian.ts",
+        "class": "Yuangongjiemian",
+        "parentPath": ""
+    },
+    "16f7edb7929": {
+        "path": "Tuiguangchuandan.ts",
+        "class": "Tuiguangchuandan",
+        "parentPath": ""
+    },
+    "16f953f0029": {
+        "path": "Ttoudingqipaojiemian.ts",
+        "class": "Ttoudingqipaojiemian",
+        "parentPath": ""
+    },
+    "16f9d5b4388": {
+        "path": "Zhujiemianshangceng.ts",
+        "class": "Zhujiemianshangceng",
+        "parentPath": ""
+    },
+    "16f9e0ffacf": {
+        "path": "Toudingwenzi.ts",
+        "class": "Toudingwenzi",
+        "parentPath": ""
+    },
+    "16fa2b46e84": {
+        "path": "Jinbiwenben.ts",
+        "class": "Jinbiwenben",
+        "parentPath": ""
+    },
+    "16fa535a7c8": {
+        "path": "Saobadonghua.ts",
+        "class": "Saobadonghua",
+        "parentPath": ""
+    },
+    "16fa536996f": {
+        "path": "Dasaodonghua.ts",
+        "class": "Dasaodonghua",
+        "parentPath": ""
+    },
+    "16fa9431bea": {
+        "path": "Cailiaoxiaohao.ts",
+        "class": "Cailiaoxiaohao",
+        "parentPath": ""
+    },
+    "16fa992703a": {
+        "path": "Weishengtishi.ts",
+        "class": "Weishengtishi",
+        "parentPath": ""
+    },
+    "16fb216271b": {
+        "path": "Xiamiantishi.ts",
+        "class": "Xiamiantishi",
+        "parentPath": ""
+    }
 }

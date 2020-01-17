@@ -15,7 +15,7 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static jiesuohuoguo:string;
     public static jiesuoxiaochi:string;
     public static jiesuozaocan:string;
-    public static uid:string = "1050";
+    public static uid:string = "1002";
     public static jiesuojiaju = [];  //已解锁家具
     public static jiesuoyuangong = []; //已解锁员工
     public static shiyongyuangong = []; //已使用员工
@@ -146,7 +146,6 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
         Gerenshuxing.zzkerongliang = Gerenshuxing.kerongliang + jiajukerong;
         //最终的客流量
         Gerenshuxing.zzkeliuliang =  Math.floor((Gerenshuxing.keliuliang + tuiguangkeliu) * (Gerenshuxing.sjkeliuliang / 100) * (Gerenshuxing.tqkeliuliang / 100));
-        console.log(Gerenshuxing.zzkeliuliang);
         //最终的口碑值
         Gerenshuxing.zzkoubeizhi =  Gerenshuxing.koubeizhi + tuiguangkoubei;
 

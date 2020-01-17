@@ -265,11 +265,69 @@ class Weblianjie extends egret.DisplayObjectContainer {
                 egret.Tween.get(shicaikouchu).wait(1000).to({x:zongx,y:zongy - 50},2000).call(()=>{
                             Gameguanli.Kongzhitai().zhujiemian.removeChild(shicaikouchu);
                     })
-                break;  
+                break; 
+    //增加时间成功时反馈 
             case "code:029":
                  Gerenshuxing.shijian = parseInt(jiexijsongeshi.xiaoshishu);
                  Timeguanli.jisuanshijian();
-                 break;         
+                 break; 
+    //每天刷新时反馈
+            case "code:030":
+                 Gerenshuxing.shengyuchuandan = parseInt(jiexijsongeshi.shengyuchuandan);
+                 Gerenshuxing.shengyudianshi = parseInt(jiexijsongeshi.shengyudianshi);
+                 Gerenshuxing.shengyupinglun = parseInt(jiexijsongeshi.shengyupinglun);
+                 Gerenshuxing.shengyudaiyan = parseInt(jiexijsongeshi.shengyudaiyan);
+                 if(Gameguanli.Kongzhitai().guanLiui.tuiguangchuandan.parent){
+                     Gameguanli.Kongzhitai().guanLiui.tuiguangchuandan.chulishujuluoji(Guanlijiemian.dangqianyeqianshu,Guanlijiemian.dangqianyeshu);
+                 }
+                 Gerenshuxing.jinbizhi = parseInt(jiexijsongeshi.goldnum);
+                 if(Gameguanli.Kongzhitai().dingbuui.parent){
+                    Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
+                 }
+                 let laoyuangong = Gerenshuxing.shiyongyuangong;
+                 Gerenshuxing.shiyongyuangong = jiexijsongeshi.shiyongyuangong;
+                 Gerenshuxing.yuangongshuxing();
+                 if(Gameguanli.Kongzhitai().zhujiemiandingbu.parent){
+                     Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
+                 }
+                 if(Gameguanli.Kongzhitai().guanLiui.yuanGongJieMian.parent){
+                     Gameguanli.Kongzhitai().guanLiui.yuanGongJieMian.chulishujujiajujiegou(Guanlijiemian.dangqianyeqianshu,Guanlijiemian.dangqianyeshu);
+                 }
+                 let jixupinyongyuangong = [];
+                 let fangqipinyongyuangong = laoyuangong;
+                 for(var yg = 0;yg<Gerenshuxing.shiyongyuangong.length;yg++){
+                     for(var ygb = 0;ygb<laoyuangong.length;ygb++){
+                         if(Gerenshuxing.shiyongyuangong[yg] == laoyuangong[ygb]){
+                             jixupinyongyuangong[jixupinyongyuangong.length] = Gerenshuxing.shiyongyuangong[yg];
+                             fangqipinyongyuangong.splice(ygb,1);
+                             break;
+                         }
+                     }
+                 }
+                 let yuangongyuanshibiao:any = RES.getRes("yuangongbiao_json");
+                 for(var jx = 0;jx<yuangongyuanshibiao.length;jx++){
+                     for(var jx2 = 0;jx2<jixupinyongyuangong.length;jx2++){
+                         if(jixupinyongyuangong[jx2] == yuangongyuanshibiao[jx].id){
+                             console.log(yuangongyuanshibiao[jx].name + "留下了，并扣除" + yuangongyuanshibiao[jx].pay + "工资");
+                             break;
+                         }
+                    }
+                }
+                for(var fq = 0;fq<yuangongyuanshibiao.length;fq++){
+                    for(var fq2 = 0;fq2<fangqipinyongyuangong.length;fq2++){
+                        if(fangqipinyongyuangong[fq2] == yuangongyuanshibiao[fq].id){
+                            console.log(yuangongyuanshibiao[fq].name + "由于支付不起工资，走了！");
+                            break;
+                        }
+                    }
+
+                }
+/*               console.log("剩余传单："+ Gerenshuxing.shengyuchuandan);
+                 console.log("剩余电视："+ Gerenshuxing.shengyudianshi);
+                 console.log("剩余评论："+ Gerenshuxing.shengyupinglun);
+                 console.log("剩余代言："+ Gerenshuxing.shengyudaiyan);
+                 console.log("剩余金币："+ Gerenshuxing.jinbizhi);*/
+                 break;
     //非法操作
             case "code:202":
                 Gameguanli.Kongzhitai().cuowutishixinxi("非法操作！");
