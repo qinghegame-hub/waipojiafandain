@@ -309,22 +309,9 @@ var Weblianjie = (function (_super) {
                         }
                     }
                 }
-                var yuangongyuanshibiao = RES.getRes("yuangongbiao_json");
-                for (var jx = 0; jx < yuangongyuanshibiao.length; jx++) {
-                    for (var jx2 = 0; jx2 < jixupinyongyuangong.length; jx2++) {
-                        if (jixupinyongyuangong[jx2] == yuangongyuanshibiao[jx].id) {
-                            console.log(yuangongyuanshibiao[jx].name + "留下了，并扣除" + yuangongyuanshibiao[jx].pay + "工资");
-                            break;
-                        }
-                    }
-                }
-                for (var fq = 0; fq < yuangongyuanshibiao.length; fq++) {
-                    for (var fq2 = 0; fq2 < fangqipinyongyuangong.length; fq2++) {
-                        if (fangqipinyongyuangong[fq2] == yuangongyuanshibiao[fq].id) {
-                            console.log(yuangongyuanshibiao[fq].name + "由于支付不起工资，走了！");
-                        }
-                    }
-                }
+                Gerenshuxing.yuangongxupin = jixupinyongyuangong;
+                Gerenshuxing.yuangongjiepin = fangqipinyongyuangong;
+                Gameguanli.Kongzhitai().meirijiesuanjiemian("kai", Gerenshuxing.yuangongxupin, Gerenshuxing.yuangongjiepin);
                 /*               console.log("剩余传单："+ Gerenshuxing.shengyuchuandan);
                                  console.log("剩余电视："+ Gerenshuxing.shengyudianshi);
                                  console.log("剩余评论："+ Gerenshuxing.shengyupinglun);

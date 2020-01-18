@@ -15,7 +15,7 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static jiesuohuoguo:string;
     public static jiesuoxiaochi:string;
     public static jiesuozaocan:string;
-    public static uid:string = "1002";
+    public static uid:string = "1003";
     public static jiesuojiaju = [];  //已解锁家具
     public static jiesuoyuangong = []; //已解锁员工
     public static shiyongyuangong = []; //已使用员工
@@ -43,6 +43,10 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
 
     public static riqi:number;//当前日期
     public static nian:number;//当前已过年份
+
+//每日结算时，员工的解聘和续聘内容
+    public static yuangongxupin = [];
+    public static yuangongjiepin = [];
 
     //下面是通过计算后的最终数据
         //最终的上菜速度

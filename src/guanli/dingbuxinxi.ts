@@ -78,7 +78,14 @@ class dingbuxinxi extends eui.Component implements  eui.UIComponent {
 		//刷新健康值
 		this.shuaxinjiankang();	
 		//刷新天气
-		this.shuaxintianqi();	
+		this.shuaxintianqi();
+		//日期按钮增加点击事件
+		this.riqizu0.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjiriqi,this);	
+	}
+
+
+	public dianjiriqi(){
+		Gameguanli.Kongzhitai().meirijiesuanjiemian("kai",Gerenshuxing.yuangongxupin,Gerenshuxing.yuangongjiepin);
 	}
 	
 

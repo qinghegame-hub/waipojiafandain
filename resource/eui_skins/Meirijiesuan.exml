@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MeirijiesuanSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16fb8571c73" ></w:Config>
+	<e:Group id="meirijiesuanzu" left="0" bottom="0" right="0" top="0">
+		<e:Image id="img_heisezhezao" source="img_heisezhezao_png" bottom="0" top="0" left="0" right="0" alpha="1"/>
+		<e:Image id="img_meiribaogaobg" source="img_meiribaogaobg_png" x="6" y="0"/>
+		<e:Label id="riqitext" text="第1年6月30日" x="504" y="286" anchorOffsetX="0" width="166" size="20" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+		<e:Image id="img_tianqiqing" source="img_tianqiqing_png" x="68.5" y="195"/>
+		<e:Button id="but_guanbi" label="" x="639" y="195" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_guanbi2_png" source.down="but_guanbi1_png" source.disabled="but_guanbi1_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Group id="gerenzhuangtaizu" x="148" y="331">
+			<e:Group id="xinqingzu" x="0" y="0">
+				<e:Image id="img_xinqing" source="img_xinqing_png" x="0" y="0"/>
+				<e:Label id="xinqingtext" text="9999" x="55" y="14" anchorOffsetX="0" width="82" size="20" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true"/>
+				<e:Label id="xinqingzt" text="（开心）" x="145" y="14" anchorOffsetX="0" width="91" size="20" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true"/>
+			</e:Group>
+			<e:Group id="jiatingzu" x="0" y="61">
+				<e:Image id="img_jiating" x="0" y="0" source="img_jiating_png"/>
+				<e:Label id="jiatingtext" text="9999" x="55" y="14" anchorOffsetX="0" width="82" size="20" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true"/>
+				<e:Label id="jiatingzt" text="（开心）" x="145" y="10" anchorOffsetX="0" width="90" size="20" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true" anchorOffsetY="0" height="24"/>
+			</e:Group>
+			<e:Group id="jiankangzu" x="265" y="0">
+				<e:Image id="img_jiankang" x="0" y="0" source="img_jiankang_png"/>
+				<e:Label id="jiankangtext" text="9999" x="55" y="14" anchorOffsetX="0" width="82" size="20" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true"/>
+				<e:Label id="jiankangzt" text="（开心）" x="145" y="14" anchorOffsetX="0" width="100" size="20" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true"/>
+			</e:Group>
+			<e:Group id="jingbizu" x="265" y="61">
+				<e:Image id="img_jinbi" x="0" y="0" source="img_qian_png"/>
+				<e:Label id="jinbitext" text="9999" x="55" y="14" anchorOffsetX="0" width="82" size="20" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true"/>
+				<e:Label id="jinbizt" text="（开心）" x="145" y="14" anchorOffsetX="0" width="94" size="20" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true"/>
+			</e:Group>
+		</e:Group>
+		<e:Label id="meiriyaowentext" text="        第1年6月30日第1年6月30日第1年6月30日第1年6月30日第1年6月30日第1年6月30日第1年6月30日第1年6月30日第1年6" x="111" y="491" anchorOffsetX="0" width="459" size="20" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="88" bold="true"/>
+		<e:Label id="renshibiangengtext" text="当前没有人事变更!!" x="158" y="723" anchorOffsetX="0" width="198" size="20" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="35" bold="true" italic="true"/>
+		<e:Scroller id="renshigundong" width="201" height="104" x="151" y="687" anchorOffsetX="0" anchorOffsetY="0" enabled="true">
+			<e:Group id="renshirongqizu" anchorOffsetX="0" width="197" anchorOffsetY="0" height="675">
+				<e:Group id="di1wenzizu" x="3" y="4">
+					<e:Label id="di1text" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image id="di1jinbitb" x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="35" id="di1wenzizu0">
+					<e:Label id="di1text0" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi0" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb0" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="67" id="di1wenzizu1">
+					<e:Label id="di1text1" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi1" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb1" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="96" id="di1wenzizu2">
+					<e:Label id="di1text2" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi2" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb2" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="128" id="di1wenzizu3">
+					<e:Label id="di1text3" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi3" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb3" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="160" id="di1wenzizu4">
+					<e:Label id="di1text4" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi4" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb4" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="192" id="di1wenzizu5">
+					<e:Label id="di1text5" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi5" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb5" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="224" id="di1wenzizu6">
+					<e:Label id="di1text6" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi6" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb6" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="256" id="di1wenzizu7">
+					<e:Label id="di1text7" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi7" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb7" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="289" id="di1wenzizu8">
+					<e:Label id="di1text8" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi8" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb8" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="321" id="di1wenzizu9">
+					<e:Label id="di1text9" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi9" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb9" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="353" id="di1wenzizu10">
+					<e:Label id="di1text10" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi10" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb10" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="385" id="di1wenzizu11">
+					<e:Label id="di1text11" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi11" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb11" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="417" id="di1wenzizu12">
+					<e:Label id="di1text12" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi12" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb12" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="449" id="di1wenzizu13">
+					<e:Label id="di1text13" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi13" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb13" source="img_qian_png"/>
+				</e:Group>
+				<e:Group id="di1wenzizu14" x="3" y="482">
+					<e:Label id="di1text14" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi14" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image id="di1jinbitb14" x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="513" id="di1wenzizu15">
+					<e:Label id="di1text15" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi15" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb15" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="545" id="di1wenzizu16">
+					<e:Label id="di1text16" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi16" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb16" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="578" id="di1wenzizu17">
+					<e:Label id="di1text17" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi17" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb17" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="606" id="di1wenzizu18">
+					<e:Label id="di1text18" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi18" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb18" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="638" id="di1wenzizu19">
+					<e:Label id="di1text19" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi19" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb19" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="670" id="di1wenzizu20">
+					<e:Label id="di1text20" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi20" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb20" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="702" id="di1wenzizu21">
+					<e:Label id="di1text21" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi21" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb21" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="3" y="734" id="di1wenzizu22">
+					<e:Label id="di1text22" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi22" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb22" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="4" y="767" id="di1wenzizu23">
+					<e:Label id="di1text23" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi23" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb23" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="4" y="799" id="di1wenzizu24">
+					<e:Label id="di1text24" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi24" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb24" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="4" y="831" id="di1wenzizu25">
+					<e:Label id="di1text25" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi25" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb25" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="4" y="863" id="di1wenzizu26">
+					<e:Label id="di1text26" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi26" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb26" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="4" y="895" id="di1wenzizu27">
+					<e:Label id="di1text27" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi27" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb27" source="img_qian_png"/>
+				</e:Group>
+				<e:Group x="4" y="927" id="di1wenzizu28">
+					<e:Label id="di1text28" text="" x="0" y="3" anchorOffsetX="0" width="109" size="16" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true"/>
+					<e:Label id="di1jinbi28" text="" x="107" y="3" anchorOffsetX="0" width="85" size="16" textAlign="right" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="22" bold="true" scaleX="1" scaleY="1"/>
+					<e:Image x="109" y="0" anchorOffsetX="0" width="29" anchorOffsetY="0" height="29" id="di1jinbitb28" source="img_qian_png"/>
+				</e:Group>
+			</e:Group>
+		</e:Scroller>
+		<e:Group id="yinxiaowenzizu" x="88" y="821">
+			<e:Label id="yinxiaotext" text="传单推广：剩余1天" x="0" y="0" anchorOffsetX="0" width="150" size="16" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="32" bold="true"/>
+			<e:Label id="yinxiaotext0" text="传单推广：剩余1天" x="0" y="23" anchorOffsetX="0" width="150" size="16" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="32" bold="true"/>
+			<e:Label id="yinxiaotext1" text="传单推广：剩余1天" x="0" y="46" anchorOffsetX="0" width="150" size="16" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="32" bold="true"/>
+			<e:Label id="yinxiaotext2" text="传单推广：剩余1天" x="0" y="69" anchorOffsetX="0" width="150" size="16" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="32" bold="true"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

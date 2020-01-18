@@ -37,6 +37,11 @@ var dingbuxinxi = (function (_super) {
         this.shuaxinjiankang();
         //刷新天气
         this.shuaxintianqi();
+        //日期按钮增加点击事件
+        this.riqizu0.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjiriqi, this);
+    };
+    dingbuxinxi.prototype.dianjiriqi = function () {
+        Gameguanli.Kongzhitai().meirijiesuanjiemian("kai", Gerenshuxing.yuangongxupin, Gerenshuxing.yuangongjiepin);
     };
     dingbuxinxi.prototype.shuaxinxingfu = function () {
         this.xingfute0.text = "" + Gerenshuxing.xingfuzhi;
