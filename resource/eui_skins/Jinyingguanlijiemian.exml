@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="JinyingguanlijiemianSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16fbd40e734" ></w:Config>
+	<e:Group id="jingyinguanlizu" left="0" bottom="0" right="0" top="0">
+		<e:Image id="img_heisezhezao" source="img_heisezhezao_png" left="0" bottom="0" top="0" right="0"/>
+		<e:Image id="img_baobiaodiban" source="img_baobiaodiban_png" x="52" y="128"/>
+		<e:Button id="but_guanbi" label="" x="614" y="134" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_guanbi2_png" source.down="but_guanbi1_png" source.disabled="but_guanbi1_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Label id="keliuliangtext" text="98999" x="284" y="335" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
+		<e:Label id="kerongliangtext" text="98999" x="284" y="384" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
+		<e:Label id="lixianshouyitext" text="98999" x="518" y="335" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
+		<e:Label id="waimaishouyitext" text="98999" x="518" y="387" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
+		<e:Label id="yuangongxinzitext" text="98999" x="299" y="500" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
+		<e:Label id="zujinshouru" text="98999" x="210" y="586.5" anchorOffsetX="0" width="136" size="20" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2" bold="true" anchorOffsetY="0" height="19"/>
+		<e:Label id="meiqishouru" text="98999" x="425" y="526.5" anchorOffsetX="0" width="136" size="20" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2" bold="true" anchorOffsetY="0" height="19"/>
+		<e:Label id="fadanshouru" text="98999" x="425" y="586.5" anchorOffsetX="0" width="136" size="20" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2" bold="true" anchorOffsetY="0" height="19"/>
+		<e:Label id="fangwuzujintext" text="98999" x="299" y="561.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
+		<e:Label id="shuidianmeiqitext" text="98999" x="515" y="500" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
+		<e:Label id="jingyinfadantext" text="98999" x="515" y="559.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
+		<e:Label id="weishentext" text="98999" x="299" y="680.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
+		<e:Label id="anbaotext" text="98999" x="299" y="741.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
+		<e:Label id="xiaochaotijiatext" text="98999" x="299" y="795.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
+		<e:Label id="xiaochitijiatext" text="98999" x="299" y="855.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
+		<e:Label id="shangcaisudutext" text="98999" x="299" y="911.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
+		<e:Label id="shicaichubeitext" text="98999" x="515" y="680.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
+		<e:Label id="fandiankoubeitext" text="98999" x="515" y="740.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
+		<e:Label id="huoguotijiatext" text="98999" x="516" y="795.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
+		<e:Label id="zaocantijiatext" text="98999" x="515" y="855.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
+		<e:Label id="shihaojiangditext" text="98999" x="515" y="911.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
+	</e:Group>
+</e:Skin>

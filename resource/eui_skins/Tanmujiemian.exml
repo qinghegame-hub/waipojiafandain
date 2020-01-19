@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TanmujiemianSkin" width="414" height="39" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16fbe50eeb3" ></w:Config>
+	<e:Group id="danmuzu" x="0" y="0">
+		<e:Image id="img_cuowutishi" source="img_cuowutishi_png" x="0" y="0" anchorOffsetX="0" width="404" anchorOffsetY="0" height="36"/>
+		<e:Label id="danmutext" text="这是一条弹幕弹幕弹幕弹幕" x="10.5" y="7" anchorOffsetX="0" width="384" size="20" verticalAlign="middle" textAlign="center" stroke="2"/>
+	</e:Group>
+</e:Skin>

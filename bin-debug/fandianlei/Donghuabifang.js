@@ -859,8 +859,30 @@ var Donghuabifang = (function (_super) {
                 Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
             }
         }
+        var jilvshuzi1 = Math.floor(Math.random() * 10);
+        if (jilvshuzi1 <= 9) {
+            var gukebiao1 = RES.getRes("gukehanhuabiao_json");
+            var mingzi1 = void 0;
+            var neirong1 = void 0;
+            var suijixiabiaomingzi1 = Math.floor(Math.random() * gukebiao1.length);
+            mingzi1 = gukebiao1[suijixiabiaomingzi1].name;
+            var suijixiabiaoneirong1 = Math.floor(Math.random() * gukebiao1.length);
+            neirong1 = gukebiao1[suijixiabiaoneirong1].texuelchengong;
+            Gameguanli.Kongzhitai().danmuxinxi(neirong1, mingzi1);
+        }
     };
     Donghuabifang.prototype.kehubumanyi = function () {
+        var jilvshuzi = Math.floor(Math.random() * 10);
+        if (jilvshuzi <= 9) {
+            var gukebiao = RES.getRes("gukehanhuabiao_json");
+            var mingzi = void 0;
+            var neirong = void 0;
+            var suijixiabiaomingzi = Math.floor(Math.random() * gukebiao.length);
+            mingzi = gukebiao[suijixiabiaomingzi].name;
+            var suijixiabiaoneirong = Math.floor(Math.random() * gukebiao.length);
+            neirong = gukebiao[suijixiabiaoneirong].texuelshibai;
+            Gameguanli.Kongzhitai().danmuxinxi(neirong, mingzi);
+        }
     };
     Donghuabifang.prototype.kouchuyuanliao = function () {
         Weblianjie.fasongshuju("code:026", "{" + '"caipin"' + ":" + '"' + this.xuqiucaiid.id + '"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");

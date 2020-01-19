@@ -28,12 +28,17 @@ var Zhujiemianshangceng = (function (_super) {
         this.but_guanli1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.openGuanli, this);
         //点击食材添加按钮时触发
         this.but_tianjia.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjishicai, this);
+        //点击经营报表按钮时，触发
+        this.but_jingyinbaobiao1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjijingying, this);
     };
     Zhujiemianshangceng.prototype.openCaipu = function () {
         Gameguanli.Kongzhitai().caipujiemian("fandian", "kai");
     };
     Zhujiemianshangceng.prototype.openGuanli = function () {
         Gameguanli.Kongzhitai().caipujiemian("guanli", "kai");
+    };
+    Zhujiemianshangceng.prototype.dianjijingying = function () {
+        Gameguanli.Kongzhitai().caipujiemian("jingying", "kai");
     };
     Zhujiemianshangceng.prototype.dianjishicai = function () {
         console.log("点击增加食材");

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="LiuyanjiemianSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16fbed97767" ></w:Config>
+	<e:Group id="liuyanzu" left="0" bottom="0" right="0" top="0">
+		<e:Image id="img_heisezhezao0" source="img_heisezhezao_png" scaleX="1" scaleY="1" left="0" bottom="0" right="0" top="0"/>
+		<e:Group id="liuyanzu0" y="92.27000000000001" horizontalCenter="0" x="9" scaleX="1" scaleY="1">
+		<e:Group id="liuyanjiemianzu" x="0" y="0">
+			<e:Image id="img_caipubg0" x="46" y="23.73" source="img_caipubg_png"/>
+			<e:Image id="img_biaoticaipu0" source="img_biaoticaipu_png" x="257.5" y="0"/>
+			<e:Button id="but_peng0" label="" x="0" y="85.73" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_peng2_png" source.down="but_peng1_png" source.disabled="but_peng1_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Button id="but_zha0" label="" x="0" y="290.97" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_zha2_png" source.down="but_zha1_png" source.disabled="but_zha1_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Button id="but_jian0" label="" x="0" y="490.73" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_jian2_png" source.down="but_jian1_png" source.disabled="but_jian1_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Button id="but_zhu0" label="" x="0" y="693.33" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_zhu2_png" source.down="but_zhu1_png" source.disabled="but_zhu1_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Button id="but_guanbi0" label="" x="625" y="4" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_guanbi2_png" source.down="but_guanbi1_png" source.disabled="but_guanbi1_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Button id="but_up0" label="" x="665" y="392.23" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_up2_png" source.down="but_up1_png" source.disabled="but_up1_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Button id="but_down0" label="" x="665" y="505.73" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_down2_png" source.down="but_down1_png" source.disabled="but_down1_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Label id="yemainwenzi0" text="第 1 / 2 页" x="277" y="802" anchorOffsetX="0" width="181" textAlign="center" verticalAlign="middle" anchorOffsetY="0" height="39" fontFamily="wodeziti" stroke="3" strokeColor="0x35322F" scaleX="1" scaleY="1"/>
+		</e:Group>
+		</e:Group>
+	</e:Group>
+</e:Skin>

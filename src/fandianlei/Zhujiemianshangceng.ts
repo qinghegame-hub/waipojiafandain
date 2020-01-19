@@ -43,6 +43,8 @@ class Zhujiemianshangceng extends eui.Component implements  eui.UIComponent {
 		this.but_guanli1.addEventListener(egret.TouchEvent.TOUCH_TAP,this.openGuanli,this);
 		//点击食材添加按钮时触发
 		this.but_tianjia.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjishicai,this);
+		//点击经营报表按钮时，触发
+		this.but_jingyinbaobiao1.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjijingying,this);
 		
 
 		
@@ -55,6 +57,10 @@ class Zhujiemianshangceng extends eui.Component implements  eui.UIComponent {
 	public openGuanli(){
 		Gameguanli.Kongzhitai().caipujiemian("guanli","kai");
 
+	}
+
+	public dianjijingying(){
+		Gameguanli.Kongzhitai().caipujiemian("jingying","kai");
 	}
 
 	public dianjishicai(){

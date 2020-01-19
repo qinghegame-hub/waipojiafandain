@@ -42,6 +42,8 @@ declare class JiajugoumaiSkin extends eui.Skin{
 }
 declare class JinbiwenbenSkin extends eui.Skin{
 }
+declare class JinyingguanlijiemianSkin extends eui.Skin{
+}
 declare class MeirijiesuanSkin extends eui.Skin{
 }
 declare module skins{
@@ -59,6 +61,8 @@ declare module skins{
 declare module skins{
 	class ScrollerSkin extends eui.Skin{
 	}
+}
+declare class TanmujiemianSkin extends eui.Skin{
 }
 declare module skins{
 	class TextInputSkin extends eui.Skin{

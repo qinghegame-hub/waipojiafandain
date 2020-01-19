@@ -859,10 +859,31 @@ class Donghuabifang extends egret.DisplayObjectContainer{
                 Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();          
             }
         }
+        let jilvshuzi1 = Math.floor(Math.random() * 10);
+        if(jilvshuzi1 <= 9){
+            let gukebiao1 = RES.getRes("gukehanhuabiao_json");
+            let mingzi1:string;
+            let neirong1:string;
+            let suijixiabiaomingzi1 = Math.floor(Math.random() * gukebiao1.length);
+            mingzi1 = gukebiao1[suijixiabiaomingzi1].name;
+            let suijixiabiaoneirong1 = Math.floor(Math.random() * gukebiao1.length);
+            neirong1 = gukebiao1[suijixiabiaoneirong1].texuelchengong;
+            Gameguanli.Kongzhitai().danmuxinxi(neirong1,mingzi1);
+        }
     }
 
     private kehubumanyi(){
-
+        let jilvshuzi = Math.floor(Math.random() * 10);
+        if(jilvshuzi <= 9){
+            let gukebiao = RES.getRes("gukehanhuabiao_json");
+            let mingzi:string;
+            let neirong:string;
+            let suijixiabiaomingzi = Math.floor(Math.random() * gukebiao.length);
+            mingzi = gukebiao[suijixiabiaomingzi].name;
+            let suijixiabiaoneirong = Math.floor(Math.random() * gukebiao.length);
+            neirong = gukebiao[suijixiabiaoneirong].texuelshibai;
+            Gameguanli.Kongzhitai().danmuxinxi(neirong,mingzi);
+        }
     }
 
     private kouchuyuanliao(){

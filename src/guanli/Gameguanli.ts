@@ -29,6 +29,18 @@ class Gameguanli extends egret.DisplayObjectContainer{
 	public cuowutishi8:Cuowutishi;
 	public jinlaicishu:any = [1,1,1,1,1,1,1,1];
 
+	//弹幕提示信息界面实例
+	public danmu1:Tanmujiemian;
+	public danmu2:Tanmujiemian;
+	public danmu3:Tanmujiemian;
+	public danmu4:Tanmujiemian;
+	public danmu5:Tanmujiemian;
+	public danmu6:Tanmujiemian;
+	public danmu7:Tanmujiemian;
+	public danmu8:Tanmujiemian;
+	public danmucishu:any = [1,1,1,1,1,1,1,1];
+
+
 	//下面提示信息界面实例
 	public xiamiantishi1:Xiamiantishi;
 	public xiamiantishi2:Xiamiantishi;
@@ -40,6 +52,9 @@ class Gameguanli extends egret.DisplayObjectContainer{
 	//每日结算界面实例
 	public meirijieusan:Meirijiesuan;
 	public gundongjuli:number;
+
+	//经营管理界面实例
+	public jingyingguanli:Jinyingguanlijiemian;
 
 
 	//实例化一个饭店核心结算
@@ -53,10 +68,11 @@ class Gameguanli extends egret.DisplayObjectContainer{
 		this.dibuui = new dibuxinxi();
 		this.dingbuui = new dingbuxinxi();
 		this.zhujiemian = new Zhujiemian();
-		this.caiPuUi = new Caipujiemian();
-		this.guanLiui = new Guanlijiemian();
 		this.zhujiemiandingbu = new Zhujiemianshangceng();
 		this.meirijieusan = new Meirijiesuan();
+		this.guanLiui = new Guanlijiemian();
+		this.caiPuUi = new Caipujiemian();
+		this.jingyingguanli = new Jinyingguanlijiemian();
 		
 
 		//默认加载主界面相关界面
@@ -100,10 +116,14 @@ class Gameguanli extends egret.DisplayObjectContainer{
 		if(kaiguan == "kai" && leixing =="fandian"){
 			this.addChild(Gameguanli.Kongzhitai().caiPuUi);
 			Gameguanli.Kongzhitai().zhujiemiandingbu.but_caipu1.enabled = false;
+			Gameguanli.Kongzhitai().zhujiemiandingbu.but_guanli1.enabled = true;
+			Gameguanli.Kongzhitai().zhujiemiandingbu.but_jingyinbaobiao1.enabled = true;
 			if(Gameguanli.Kongzhitai().guanLiui.parent){
 				this.removeChild(Gameguanli.Kongzhitai().guanLiui);
 			}
-			Gameguanli.Kongzhitai().zhujiemiandingbu.but_guanli1.enabled = true;
+			if(Gameguanli.Kongzhitai().jingyingguanli.parent){
+				this.removeChild(Gameguanli.Kongzhitai().jingyingguanli);
+			}
 		}
 		if(kaiguan == "guan" && leixing =="fandian"){
 			this.removeChild(Gameguanli.Kongzhitai().caiPuUi);
@@ -112,15 +132,37 @@ class Gameguanli extends egret.DisplayObjectContainer{
 		//管理界面相关
 		if(kaiguan == "kai" && leixing =="guanli"){
 			this.addChild(Gameguanli.Kongzhitai().guanLiui);
+			Gameguanli.Kongzhitai().zhujiemiandingbu.but_guanli1.enabled = false;
 			Gameguanli.Kongzhitai().zhujiemiandingbu.but_caipu1.enabled = true;
+			Gameguanli.Kongzhitai().zhujiemiandingbu.but_jingyinbaobiao1.enabled = true;
 			if(Gameguanli.Kongzhitai().caiPuUi.parent){
 				this.removeChild(Gameguanli.Kongzhitai().caiPuUi);
 			}
-			Gameguanli.Kongzhitai().zhujiemiandingbu.but_guanli1.enabled = false;
+			if(Gameguanli.Kongzhitai().jingyingguanli.parent){
+				this.removeChild(Gameguanli.Kongzhitai().jingyingguanli);
+			}
 		}
 		if(kaiguan == "guan" && leixing =="guanli"){
 			this.removeChild(Gameguanli.Kongzhitai().guanLiui);
 			Gameguanli.Kongzhitai().zhujiemiandingbu.but_guanli1.enabled = true;		
+		}
+		//经营管理界面相关
+		if(kaiguan == "kai" && leixing == "jingying"){
+			this.addChild(Gameguanli.Kongzhitai().jingyingguanli);
+			Gameguanli.Kongzhitai().jingyingguanli.chushihua();
+			Gameguanli.Kongzhitai().zhujiemiandingbu.but_jingyinbaobiao1.enabled =false;
+			Gameguanli.Kongzhitai().zhujiemiandingbu.but_caipu1.enabled = true;
+			Gameguanli.Kongzhitai().zhujiemiandingbu.but_guanli1.enabled = true;
+			if(Gameguanli.Kongzhitai().caiPuUi.parent){
+				this.removeChild(Gameguanli.Kongzhitai().caiPuUi);
+			}
+			if(Gameguanli.Kongzhitai().guanLiui.parent){
+				this.removeChild(Gameguanli.Kongzhitai().guanLiui);
+			}
+		}
+		if(kaiguan == "guan" && leixing == "jingying"){
+			this.removeChild(Gameguanli.Kongzhitai().jingyingguanli);
+			Gameguanli.Kongzhitai().zhujiemiandingbu.but_jingyinbaobiao1.enabled = true;
 		}
 	}
 
@@ -780,6 +822,107 @@ class Gameguanli extends egret.DisplayObjectContainer{
 		if(Gameguanli.Kongzhitai().meirijieusan.renshirongqizu.scrollV + Gameguanli.Kongzhitai().meirijieusan.renshigundong.height >= this.gundongjuli * Gameguanli.Kongzhitai().meirijieusan.renshigundong.height + Gameguanli.Kongzhitai().meirijieusan.di1wenzizu.height){
 			Gameguanli.Kongzhitai().meirijieusan.renshigundong.stopAnimation();
 			Gameguanli.Kongzhitai().meirijieusan.renshirongqizu.scrollV = this.gundongjuli * Gameguanli.Kongzhitai().meirijieusan.renshigundong.height - Gameguanli.Kongzhitai().meirijieusan.renshigundong.height + Gameguanli.Kongzhitai().meirijieusan.di1wenzizu.height;
+		}
+	}
+
+//弹幕信息提示界面
+	public danmuxinxi(neirong,mingzi){
+		if(this.danmucishu[0] == 1){
+				this.danmucishu[0] = 0;
+				this.danmu1 = new Tanmujiemian();
+				this.addChild(this.danmu1);
+				this.danmu1.danmutext.text = "" + mingzi + ": " + neirong;
+				this.danmu1.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width + this.danmu1.width / 2;
+				this.danmu1.y = Math.random() * Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height;
+				egret.Tween.get(this.danmu1).to({x:0 -this.danmu1.width ,y:this.danmu1.y},10000)
+				.call(()=>{
+					this.danmucishu[0] = 1;
+					this.removeChild(this.danmu1);
+				});
+		}else if(this.danmucishu[1] == 1){
+				this.danmucishu[1] = 0;
+				this.danmu2 = new Tanmujiemian();
+				this.addChild(this.danmu2);
+				this.danmu2.danmutext.text = "" + mingzi + ": " + neirong;
+				this.danmu2.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width + this.danmu2.width / 2;
+				this.danmu2.y = Math.random() * Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height;
+				egret.Tween.get(this.danmu2).to({x:0 -this.danmu2.width ,y:this.danmu2.y},10000)
+				.call(()=>{
+					this.danmucishu[1] = 1;
+					this.removeChild(this.danmu2);
+				});
+		}else if(this.danmucishu[2] == 1){
+					this.danmucishu[2] = 0;
+					this.danmu3 = new Tanmujiemian();
+					this.addChild(this.danmu3);
+					this.danmu3.danmutext.text = "" + mingzi + ": " + neirong;
+					this.danmu3.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width + this.danmu3.width / 2;
+					this.danmu3.y = Math.random() * Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height;
+					egret.Tween.get(this.danmu3).to({x:0 -this.danmu3.width ,y:this.danmu3.y},10000)
+					.call(()=>{
+						this.danmucishu[2] = 1;
+						this.removeChild(this.danmu3);
+					});
+		}else if(this.danmucishu[3] == 1){
+					this.danmucishu[3] = 0;
+					this.danmu4 = new Tanmujiemian();
+					this.addChild(this.danmu4);
+					this.danmu4.danmutext.text = "" + mingzi + ": " + neirong;
+					this.danmu4.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width + this.danmu4.width / 2;
+					this.danmu4.y = Math.random() * Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height;
+					egret.Tween.get(this.danmu4).to({x:0 -this.danmu4.width ,y:this.danmu4.y},10000)
+					.call(()=>{
+						this.danmucishu[3] = 1;
+						this.removeChild(this.danmu4);
+					});
+		}else if(this.danmucishu[4] == 1){
+					this.danmucishu[4] = 0;
+					this.danmu5 = new Tanmujiemian();
+					this.addChild(this.danmu5);
+					this.danmu5.danmutext.text = "" + mingzi + ": " + neirong;
+					this.danmu5.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width + this.danmu5.width / 2;
+					this.danmu5.y = Math.random() * Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height;
+					egret.Tween.get(this.danmu5).to({x:0 -this.danmu5.width ,y:this.danmu5.y},10000)
+					.call(()=>{
+						this.danmucishu[4] = 1;
+						this.removeChild(this.danmu5);
+					});
+		}else if(this.danmucishu[5] == 1){
+					this.danmucishu[5] = 0;
+					this.danmu6 = new Tanmujiemian();
+					this.addChild(this.danmu6);
+					this.danmu6.danmutext.text = "" + mingzi + ": " + neirong;
+					this.danmu6.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width + this.danmu6.width / 2;
+					this.danmu6.y = Math.random() * Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height;
+					egret.Tween.get(this.danmu6).to({x:0 -this.danmu6.width ,y:this.danmu6.y},10000)
+					.call(()=>{
+						this.danmucishu[5] = 1;
+						this.removeChild(this.danmu6);
+					});
+		}else if(this.danmucishu[6] == 1){
+					this.danmucishu[6] = 0;
+					this.danmu7 = new Tanmujiemian();
+					this.addChild(this.danmu7);
+					this.danmu7.danmutext.text = "" + mingzi + ": " + neirong;
+					this.danmu7.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width + this.danmu7.width / 2;
+					this.danmu7.y = Math.random() * Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height;
+					egret.Tween.get(this.danmu7).to({x:0 -this.danmu7.width ,y:this.danmu7.y},10000)
+					.call(()=>{
+						this.danmucishu[6] = 1;
+						this.removeChild(this.danmu7);
+					});
+		}else if(this.danmucishu[7] == 1){
+					this.danmucishu[7] = 0;
+					this.danmu8 = new Tanmujiemian();
+					this.addChild(this.danmu8);
+					this.danmu8.danmutext.text = "" + mingzi + ": " + neirong;
+					this.danmu8.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width + this.danmu8.width / 2;
+					this.danmu8.y = Math.random() * Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height;
+					egret.Tween.get(this.danmu8).to({x:0 -this.danmu8.width ,y:this.danmu8.y},10000)
+					.call(()=>{
+						this.danmucishu[7] = 1;
+						this.removeChild(this.danmu8);
+					});
 		}
 	}
 
