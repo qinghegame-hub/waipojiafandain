@@ -30,6 +30,8 @@ var Zhujiemianshangceng = (function (_super) {
         this.but_tianjia.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjishicai, this);
         //点击经营报表按钮时，触发
         this.but_jingyinbaobiao1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjijingying, this);
+        //点击留言按钮时触发
+        this.but_liuyan1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjiliuyan, this);
     };
     Zhujiemianshangceng.prototype.openCaipu = function () {
         Gameguanli.Kongzhitai().caipujiemian("fandian", "kai");
@@ -42,6 +44,9 @@ var Zhujiemianshangceng = (function (_super) {
     };
     Zhujiemianshangceng.prototype.dianjishicai = function () {
         console.log("点击增加食材");
+    };
+    Zhujiemianshangceng.prototype.dianjiliuyan = function () {
+        Gameguanli.Kongzhitai().caipujiemian("liuyan", "kai");
     };
     Zhujiemianshangceng.prototype.chushihua = function () {
         this.shicaiwenzi.text = "" + Gerenshuxing.yongyouyuanliao;

@@ -864,11 +864,19 @@ var Donghuabifang = (function (_super) {
             var gukebiao1 = RES.getRes("gukehanhuabiao_json");
             var mingzi1 = void 0;
             var neirong1 = void 0;
+            var touxiang1 = void 0;
             var suijixiabiaomingzi1 = Math.floor(Math.random() * gukebiao1.length);
             mingzi1 = gukebiao1[suijixiabiaomingzi1].name;
+            touxiang1 = gukebiao1[suijixiabiaomingzi1].gktouxiang;
             var suijixiabiaoneirong1 = Math.floor(Math.random() * gukebiao1.length);
             neirong1 = gukebiao1[suijixiabiaoneirong1].texuelchengong;
-            Gameguanli.Kongzhitai().danmuxinxi(neirong1, mingzi1);
+            var pingfen1 = Math.floor(Math.random() * 3) + 3;
+            Gerenshuxing.gukeliuyan(pingfen1);
+            Gameguanli.Kongzhitai().danmuxinxi(neirong1, mingzi1, pingfen1, touxiang1);
+            Liuyanjiemian.liuyanneirong(neirong1, mingzi1, pingfen1, touxiang1);
+            if (Gameguanli.Kongzhitai().liuyan.parent) {
+                Gameguanli.Kongzhitai().caipujiemian("liuyan", "kai");
+            }
         }
     };
     Donghuabifang.prototype.kehubumanyi = function () {
@@ -877,11 +885,16 @@ var Donghuabifang = (function (_super) {
             var gukebiao = RES.getRes("gukehanhuabiao_json");
             var mingzi = void 0;
             var neirong = void 0;
+            var touxiang = void 0;
             var suijixiabiaomingzi = Math.floor(Math.random() * gukebiao.length);
             mingzi = gukebiao[suijixiabiaomingzi].name;
+            touxiang = gukebiao[suijixiabiaomingzi].gktouxiang;
             var suijixiabiaoneirong = Math.floor(Math.random() * gukebiao.length);
             neirong = gukebiao[suijixiabiaoneirong].texuelshibai;
-            Gameguanli.Kongzhitai().danmuxinxi(neirong, mingzi);
+            var pingfen = Math.floor(Math.random() * 2) + 1;
+            Gerenshuxing.gukeliuyan(pingfen);
+            Gameguanli.Kongzhitai().danmuxinxi(neirong, mingzi, pingfen, touxiang);
+            Liuyanjiemian.liuyanneirong(neirong, mingzi, pingfen, touxiang);
         }
     };
     Donghuabifang.prototype.kouchuyuanliao = function () {

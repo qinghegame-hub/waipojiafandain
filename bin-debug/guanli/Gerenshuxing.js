@@ -13,6 +13,54 @@ var Gerenshuxing = (function (_super) {
     function Gerenshuxing() {
         return _super.call(this) || this;
     }
+    Gerenshuxing.gukeliuyan = function (pingfenshu) {
+        if (Gerenshuxing.dangqiandiji > 10) {
+            Gerenshuxing.dangqiandiji = 0;
+        }
+        Gerenshuxing.dangqiandiji++;
+        switch (Gerenshuxing.dangqiandiji) {
+            case 1:
+                Gerenshuxing.pinglun1 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+            case 2:
+                Gerenshuxing.pinglun2 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+            case 3:
+                Gerenshuxing.pinglun3 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+            case 4:
+                Gerenshuxing.pinglun4 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+            case 5:
+                Gerenshuxing.pinglun5 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+            case 6:
+                Gerenshuxing.pinglun6 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+            case 7:
+                Gerenshuxing.pinglun7 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+            case 8:
+                Gerenshuxing.pinglun8 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+            case 9:
+                Gerenshuxing.pinglun9 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+            case 10:
+                Gerenshuxing.pinglun10 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+        }
+    };
     Gerenshuxing.yuangongshuxing = function () {
         //每次进来都要初始化该计算数据
         var yuangongbiao = RES.getRes("yuangongbiao_json");
@@ -71,6 +119,11 @@ var Gerenshuxing = (function (_super) {
         if (Gerenshuxing.shengyudaiyan > 0) {
             tuiguangkoubei += parseInt(yinxiaobiao[3].sellachievement);
         }
+        //评论增加的口碑值计算
+        Gerenshuxing.pingjunpinlun = (Gerenshuxing.pinglun1 + Gerenshuxing.pinglun2 + Gerenshuxing.pinglun3 +
+            Gerenshuxing.pinglun4 + Gerenshuxing.pinglun5 + Gerenshuxing.pinglun6 + Gerenshuxing.pinglun7 + Gerenshuxing.pinglun8
+            + Gerenshuxing.pinglun9 + Gerenshuxing.pinglun10) / 10;
+        Gerenshuxing.pinglunkoubei = Math.floor(Gerenshuxing.pingjunpinlun * 4);
         //最终用于计算的各项数值
         //最终的上菜速度
         Gerenshuxing.zzchushishangcaisudu = Gerenshuxing.chushishangcaisudu + yuangongjiasu;
@@ -85,7 +138,7 @@ var Gerenshuxing = (function (_super) {
         //最终的客流量
         Gerenshuxing.zzkeliuliang = Math.floor((Gerenshuxing.keliuliang + tuiguangkeliu) * (Gerenshuxing.sjkeliuliang / 100) * (Gerenshuxing.tqkeliuliang / 100));
         //最终的口碑值
-        Gerenshuxing.zzkoubeizhi = Gerenshuxing.koubeizhi + tuiguangkoubei;
+        Gerenshuxing.zzkoubeizhi = Gerenshuxing.koubeizhi + tuiguangkoubei + Gerenshuxing.pinglunkoubei;
         /*console.log("当前客容量：" +Gerenshuxing.zzkerongliang + "增加的客容量: " +jiajukerong);
         console.log("当前客流量：" +Gerenshuxing.zzkeliuliang + "增加的客流量: " +tuiguangkeliu);
         console.log("当前口碑值：" +Gerenshuxing.zzkoubeizhi + "增加的口碑值： " +tuiguangkoubei);
@@ -127,6 +180,19 @@ var Gerenshuxing = (function (_super) {
     //每日结算时，员工的解聘和续聘内容
     Gerenshuxing.yuangongxupin = [];
     Gerenshuxing.yuangongjiepin = [];
+    //顾客留言营销的属性值
+    Gerenshuxing.pingjunpinlun = 0;
+    Gerenshuxing.pinglun1 = 0;
+    Gerenshuxing.pinglun2 = 0;
+    Gerenshuxing.pinglun3 = 0;
+    Gerenshuxing.pinglun4 = 0;
+    Gerenshuxing.pinglun5 = 0;
+    Gerenshuxing.pinglun6 = 0;
+    Gerenshuxing.pinglun7 = 0;
+    Gerenshuxing.pinglun8 = 0;
+    Gerenshuxing.pinglun9 = 0;
+    Gerenshuxing.pinglun10 = 0;
+    Gerenshuxing.dangqiandiji = 0;
     //通过时间控制的客流量增加
     Gerenshuxing.sjkeliuliang = 100;
     //通过天气控制的客流量增加

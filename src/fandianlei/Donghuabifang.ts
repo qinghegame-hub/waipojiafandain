@@ -864,11 +864,19 @@ class Donghuabifang extends egret.DisplayObjectContainer{
             let gukebiao1 = RES.getRes("gukehanhuabiao_json");
             let mingzi1:string;
             let neirong1:string;
+            let touxiang1:string;
             let suijixiabiaomingzi1 = Math.floor(Math.random() * gukebiao1.length);
             mingzi1 = gukebiao1[suijixiabiaomingzi1].name;
+            touxiang1 = gukebiao1[suijixiabiaomingzi1].gktouxiang;
             let suijixiabiaoneirong1 = Math.floor(Math.random() * gukebiao1.length);
             neirong1 = gukebiao1[suijixiabiaoneirong1].texuelchengong;
-            Gameguanli.Kongzhitai().danmuxinxi(neirong1,mingzi1);
+            let pingfen1 = Math.floor(Math.random() * 3) + 3;
+            Gerenshuxing.gukeliuyan(pingfen1);
+            Gameguanli.Kongzhitai().danmuxinxi(neirong1,mingzi1,pingfen1,touxiang1);
+            Liuyanjiemian.liuyanneirong(neirong1,mingzi1,pingfen1,touxiang1);
+            if(Gameguanli.Kongzhitai().liuyan.parent){
+                Gameguanli.Kongzhitai().caipujiemian("liuyan","kai");
+            }
         }
     }
 
@@ -878,11 +886,19 @@ class Donghuabifang extends egret.DisplayObjectContainer{
             let gukebiao = RES.getRes("gukehanhuabiao_json");
             let mingzi:string;
             let neirong:string;
+            let touxiang:string;
             let suijixiabiaomingzi = Math.floor(Math.random() * gukebiao.length);
             mingzi = gukebiao[suijixiabiaomingzi].name;
+            touxiang = gukebiao[suijixiabiaomingzi].gktouxiang;
             let suijixiabiaoneirong = Math.floor(Math.random() * gukebiao.length);
             neirong = gukebiao[suijixiabiaoneirong].texuelshibai;
-            Gameguanli.Kongzhitai().danmuxinxi(neirong,mingzi);
+            let pingfen = Math.floor(Math.random() * 2) + 1;
+            Gerenshuxing.gukeliuyan(pingfen);
+            Gameguanli.Kongzhitai().danmuxinxi(neirong,mingzi,pingfen,touxiang);
+            Liuyanjiemian.liuyanneirong(neirong,mingzi,pingfen,touxiang);
+            if(Gameguanli.Kongzhitai().liuyan.parent){
+                Gameguanli.Kongzhitai().caipujiemian("liuyan","kai");
+            }
         }
     }
 

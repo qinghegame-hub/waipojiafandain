@@ -26,6 +26,7 @@ var Gameguanli = (function (_super) {
         _this.guanLiui = new Guanlijiemian();
         _this.caiPuUi = new Caipujiemian();
         _this.jingyingguanli = new Jinyingguanlijiemian();
+        _this.liuyan = new Liuyanjiemian();
         //默认加载主界面相关界面
         _this.addChild(_this.zhujiemian);
         _this.addChild(_this.zhujiemiandingbu);
@@ -59,10 +60,14 @@ var Gameguanli = (function (_super) {
     Gameguanli.prototype.caipujiemian = function (leixing, kaiguan) {
         //菜谱界面相关
         if (kaiguan == "kai" && leixing == "fandian") {
+            if (Gameguanli.Kongzhitai().caiPuUi.parent) {
+                this.removeChild(Gameguanli.Kongzhitai().caiPuUi);
+            }
             this.addChild(Gameguanli.Kongzhitai().caiPuUi);
             Gameguanli.Kongzhitai().zhujiemiandingbu.but_caipu1.enabled = false;
             Gameguanli.Kongzhitai().zhujiemiandingbu.but_guanli1.enabled = true;
             Gameguanli.Kongzhitai().zhujiemiandingbu.but_jingyinbaobiao1.enabled = true;
+            Gameguanli.Kongzhitai().zhujiemiandingbu.but_liuyan1.enabled = true;
             if (Gameguanli.Kongzhitai().guanLiui.parent) {
                 this.removeChild(Gameguanli.Kongzhitai().guanLiui);
             }
@@ -76,10 +81,14 @@ var Gameguanli = (function (_super) {
         }
         //管理界面相关
         if (kaiguan == "kai" && leixing == "guanli") {
+            if (Gameguanli.Kongzhitai().guanLiui.parent) {
+                this.removeChild(Gameguanli.Kongzhitai().guanLiui);
+            }
             this.addChild(Gameguanli.Kongzhitai().guanLiui);
             Gameguanli.Kongzhitai().zhujiemiandingbu.but_guanli1.enabled = false;
             Gameguanli.Kongzhitai().zhujiemiandingbu.but_caipu1.enabled = true;
             Gameguanli.Kongzhitai().zhujiemiandingbu.but_jingyinbaobiao1.enabled = true;
+            Gameguanli.Kongzhitai().zhujiemiandingbu.but_liuyan1.enabled = true;
             if (Gameguanli.Kongzhitai().caiPuUi.parent) {
                 this.removeChild(Gameguanli.Kongzhitai().caiPuUi);
             }
@@ -93,11 +102,15 @@ var Gameguanli = (function (_super) {
         }
         //经营管理界面相关
         if (kaiguan == "kai" && leixing == "jingying") {
+            if (Gameguanli.Kongzhitai().jingyingguanli.parent) {
+                this.removeChild(Gameguanli.Kongzhitai().jingyingguanli);
+            }
             this.addChild(Gameguanli.Kongzhitai().jingyingguanli);
             Gameguanli.Kongzhitai().jingyingguanli.chushihua();
             Gameguanli.Kongzhitai().zhujiemiandingbu.but_jingyinbaobiao1.enabled = false;
             Gameguanli.Kongzhitai().zhujiemiandingbu.but_caipu1.enabled = true;
             Gameguanli.Kongzhitai().zhujiemiandingbu.but_guanli1.enabled = true;
+            Gameguanli.Kongzhitai().zhujiemiandingbu.but_liuyan1.enabled = true;
             if (Gameguanli.Kongzhitai().caiPuUi.parent) {
                 this.removeChild(Gameguanli.Kongzhitai().caiPuUi);
             }
@@ -108,6 +121,31 @@ var Gameguanli = (function (_super) {
         if (kaiguan == "guan" && leixing == "jingying") {
             this.removeChild(Gameguanli.Kongzhitai().jingyingguanli);
             Gameguanli.Kongzhitai().zhujiemiandingbu.but_jingyinbaobiao1.enabled = true;
+        }
+        //留言界面相关
+        if (kaiguan == "kai" && leixing == "liuyan") {
+            if (Gameguanli.Kongzhitai().liuyan.parent) {
+                this.removeChild(Gameguanli.Kongzhitai().liuyan);
+            }
+            this.addChild(Gameguanli.Kongzhitai().liuyan);
+            Gameguanli.Kongzhitai().liuyan.chushihua();
+            Gameguanli.Kongzhitai().zhujiemiandingbu.but_caipu1.enabled = true;
+            Gameguanli.Kongzhitai().zhujiemiandingbu.but_guanli1.enabled = true;
+            Gameguanli.Kongzhitai().zhujiemiandingbu.but_jingyinbaobiao1.enabled = true;
+            Gameguanli.Kongzhitai().zhujiemiandingbu.but_liuyan1.enabled = false;
+            if (Gameguanli.Kongzhitai().guanLiui.parent) {
+                this.removeChild(Gameguanli.Kongzhitai().guanLiui);
+            }
+            if (Gameguanli.Kongzhitai().jingyingguanli.parent) {
+                this.removeChild(Gameguanli.Kongzhitai().jingyingguanli);
+            }
+            if (Gameguanli.Kongzhitai().caiPuUi.parent) {
+                this.removeChild(Gameguanli.Kongzhitai().caiPuUi);
+            }
+        }
+        if (kaiguan == "guan" && leixing == "liuyan") {
+            this.removeChild(Gameguanli.Kongzhitai().liuyan);
+            Gameguanli.Kongzhitai().zhujiemiandingbu.but_liuyan1.enabled = true;
         }
     };
     //错误提示信息界面
@@ -776,13 +814,32 @@ var Gameguanli = (function (_super) {
         }
     };
     //弹幕信息提示界面
-    Gameguanli.prototype.danmuxinxi = function (neirong, mingzi) {
+    Gameguanli.prototype.danmuxinxi = function (neirong, mingzi, pingfen, touxiang) {
         var _this = this;
         if (this.danmucishu[0] == 1) {
             this.danmucishu[0] = 0;
             this.danmu1 = new Tanmujiemian();
             this.addChild(this.danmu1);
-            this.danmu1.danmutext.text = "" + mingzi + ": " + neirong;
+            this.danmu1.xingming.text = "" + mingzi;
+            this.danmu1.danmutext.text = "" + neirong;
+            this.danmu1.touxiang.source = touxiang + "_png";
+            switch (pingfen) {
+                case 1:
+                    this.danmu1.img_haopin.source = "img_haopin1_png";
+                    break;
+                case 2:
+                    this.danmu1.img_haopin.source = "img_haopin2_png";
+                    break;
+                case 3:
+                    this.danmu1.img_haopin.source = "img_haopin3_png";
+                    break;
+                case 4:
+                    this.danmu1.img_haopin.source = "img_haopin4_png";
+                    break;
+                case 5:
+                    this.danmu1.img_haopin.source = "img_haopin5_png";
+                    break;
+            }
             this.danmu1.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width + this.danmu1.width / 2;
             this.danmu1.y = Math.random() * Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height;
             egret.Tween.get(this.danmu1).to({ x: 0 - this.danmu1.width, y: this.danmu1.y }, 10000)
@@ -795,7 +852,26 @@ var Gameguanli = (function (_super) {
             this.danmucishu[1] = 0;
             this.danmu2 = new Tanmujiemian();
             this.addChild(this.danmu2);
-            this.danmu2.danmutext.text = "" + mingzi + ": " + neirong;
+            this.danmu2.xingming.text = "" + mingzi;
+            this.danmu2.danmutext.text = "" + neirong;
+            this.danmu2.touxiang.source = touxiang + "_png";
+            switch (pingfen) {
+                case 1:
+                    this.danmu2.img_haopin.source = "img_haopin1_png";
+                    break;
+                case 2:
+                    this.danmu2.img_haopin.source = "img_haopin2_png";
+                    break;
+                case 3:
+                    this.danmu2.img_haopin.source = "img_haopin3_png";
+                    break;
+                case 4:
+                    this.danmu2.img_haopin.source = "img_haopin4_png";
+                    break;
+                case 5:
+                    this.danmu2.img_haopin.source = "img_haopin5_png";
+                    break;
+            }
             this.danmu2.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width + this.danmu2.width / 2;
             this.danmu2.y = Math.random() * Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height;
             egret.Tween.get(this.danmu2).to({ x: 0 - this.danmu2.width, y: this.danmu2.y }, 10000)
@@ -808,7 +884,26 @@ var Gameguanli = (function (_super) {
             this.danmucishu[2] = 0;
             this.danmu3 = new Tanmujiemian();
             this.addChild(this.danmu3);
-            this.danmu3.danmutext.text = "" + mingzi + ": " + neirong;
+            this.danmu3.xingming.text = "" + mingzi;
+            this.danmu3.danmutext.text = "" + neirong;
+            this.danmu3.touxiang.source = touxiang + "_png";
+            switch (pingfen) {
+                case 1:
+                    this.danmu3.img_haopin.source = "img_haopin1_png";
+                    break;
+                case 2:
+                    this.danmu3.img_haopin.source = "img_haopin2_png";
+                    break;
+                case 3:
+                    this.danmu3.img_haopin.source = "img_haopin3_png";
+                    break;
+                case 4:
+                    this.danmu3.img_haopin.source = "img_haopin4_png";
+                    break;
+                case 5:
+                    this.danmu3.img_haopin.source = "img_haopin5_png";
+                    break;
+            }
             this.danmu3.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width + this.danmu3.width / 2;
             this.danmu3.y = Math.random() * Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height;
             egret.Tween.get(this.danmu3).to({ x: 0 - this.danmu3.width, y: this.danmu3.y }, 10000)
@@ -821,7 +916,26 @@ var Gameguanli = (function (_super) {
             this.danmucishu[3] = 0;
             this.danmu4 = new Tanmujiemian();
             this.addChild(this.danmu4);
-            this.danmu4.danmutext.text = "" + mingzi + ": " + neirong;
+            this.danmu4.xingming.text = "" + mingzi;
+            this.danmu4.danmutext.text = "" + neirong;
+            this.danmu4.touxiang.source = touxiang + "_png";
+            switch (pingfen) {
+                case 1:
+                    this.danmu4.img_haopin.source = "img_haopin1_png";
+                    break;
+                case 2:
+                    this.danmu4.img_haopin.source = "img_haopin2_png";
+                    break;
+                case 3:
+                    this.danmu4.img_haopin.source = "img_haopin3_png";
+                    break;
+                case 4:
+                    this.danmu4.img_haopin.source = "img_haopin4_png";
+                    break;
+                case 5:
+                    this.danmu4.img_haopin.source = "img_haopin5_png";
+                    break;
+            }
             this.danmu4.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width + this.danmu4.width / 2;
             this.danmu4.y = Math.random() * Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height;
             egret.Tween.get(this.danmu4).to({ x: 0 - this.danmu4.width, y: this.danmu4.y }, 10000)
@@ -834,7 +948,26 @@ var Gameguanli = (function (_super) {
             this.danmucishu[4] = 0;
             this.danmu5 = new Tanmujiemian();
             this.addChild(this.danmu5);
-            this.danmu5.danmutext.text = "" + mingzi + ": " + neirong;
+            this.danmu5.xingming.text = "" + mingzi;
+            this.danmu5.danmutext.text = "" + neirong;
+            this.danmu5.touxiang.source = touxiang + "_png";
+            switch (pingfen) {
+                case 1:
+                    this.danmu5.img_haopin.source = "img_haopin1_png";
+                    break;
+                case 2:
+                    this.danmu5.img_haopin.source = "img_haopin2_png";
+                    break;
+                case 3:
+                    this.danmu5.img_haopin.source = "img_haopin3_png";
+                    break;
+                case 4:
+                    this.danmu5.img_haopin.source = "img_haopin4_png";
+                    break;
+                case 5:
+                    this.danmu5.img_haopin.source = "img_haopin5_png";
+                    break;
+            }
             this.danmu5.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width + this.danmu5.width / 2;
             this.danmu5.y = Math.random() * Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height;
             egret.Tween.get(this.danmu5).to({ x: 0 - this.danmu5.width, y: this.danmu5.y }, 10000)
@@ -847,7 +980,26 @@ var Gameguanli = (function (_super) {
             this.danmucishu[5] = 0;
             this.danmu6 = new Tanmujiemian();
             this.addChild(this.danmu6);
-            this.danmu6.danmutext.text = "" + mingzi + ": " + neirong;
+            this.danmu6.xingming.text = "" + mingzi;
+            this.danmu6.danmutext.text = "" + neirong;
+            this.danmu6.touxiang.source = touxiang + "_png";
+            switch (pingfen) {
+                case 1:
+                    this.danmu6.img_haopin.source = "img_haopin1_png";
+                    break;
+                case 2:
+                    this.danmu6.img_haopin.source = "img_haopin2_png";
+                    break;
+                case 3:
+                    this.danmu6.img_haopin.source = "img_haopin3_png";
+                    break;
+                case 4:
+                    this.danmu6.img_haopin.source = "img_haopin4_png";
+                    break;
+                case 5:
+                    this.danmu6.img_haopin.source = "img_haopin5_png";
+                    break;
+            }
             this.danmu6.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width + this.danmu6.width / 2;
             this.danmu6.y = Math.random() * Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height;
             egret.Tween.get(this.danmu6).to({ x: 0 - this.danmu6.width, y: this.danmu6.y }, 10000)
@@ -860,7 +1012,26 @@ var Gameguanli = (function (_super) {
             this.danmucishu[6] = 0;
             this.danmu7 = new Tanmujiemian();
             this.addChild(this.danmu7);
-            this.danmu7.danmutext.text = "" + mingzi + ": " + neirong;
+            this.danmu7.xingming.text = "" + mingzi;
+            this.danmu7.danmutext.text = "" + neirong;
+            this.danmu7.touxiang.source = touxiang + "_png";
+            switch (pingfen) {
+                case 1:
+                    this.danmu7.img_haopin.source = "img_haopin1_png";
+                    break;
+                case 2:
+                    this.danmu7.img_haopin.source = "img_haopin2_png";
+                    break;
+                case 3:
+                    this.danmu7.img_haopin.source = "img_haopin3_png";
+                    break;
+                case 4:
+                    this.danmu7.img_haopin.source = "img_haopin4_png";
+                    break;
+                case 5:
+                    this.danmu7.img_haopin.source = "img_haopin5_png";
+                    break;
+            }
             this.danmu7.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width + this.danmu7.width / 2;
             this.danmu7.y = Math.random() * Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height;
             egret.Tween.get(this.danmu7).to({ x: 0 - this.danmu7.width, y: this.danmu7.y }, 10000)
@@ -873,7 +1044,26 @@ var Gameguanli = (function (_super) {
             this.danmucishu[7] = 0;
             this.danmu8 = new Tanmujiemian();
             this.addChild(this.danmu8);
-            this.danmu8.danmutext.text = "" + mingzi + ": " + neirong;
+            this.danmu8.xingming.text = "" + mingzi;
+            this.danmu8.danmutext.text = "" + neirong;
+            this.danmu8.touxiang.source = touxiang + "_png";
+            switch (pingfen) {
+                case 1:
+                    this.danmu8.img_haopin.source = "img_haopin1_png";
+                    break;
+                case 2:
+                    this.danmu8.img_haopin.source = "img_haopin2_png";
+                    break;
+                case 3:
+                    this.danmu8.img_haopin.source = "img_haopin3_png";
+                    break;
+                case 4:
+                    this.danmu8.img_haopin.source = "img_haopin4_png";
+                    break;
+                case 5:
+                    this.danmu8.img_haopin.source = "img_haopin5_png";
+                    break;
+            }
             this.danmu8.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width + this.danmu8.width / 2;
             this.danmu8.y = Math.random() * Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height;
             egret.Tween.get(this.danmu8).to({ x: 0 - this.danmu8.width, y: this.danmu8.y }, 10000)

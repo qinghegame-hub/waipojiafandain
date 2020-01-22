@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="TanmujiemianSkin" width="414" height="39" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+<e:Skin class="TanmujiemianSkin" width="500" height="80" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
 	<w:Config id="16fbe50eeb3" ></w:Config>
-	<e:Group id="danmuzu" x="0" y="0">
-		<e:Image id="img_cuowutishi" source="img_cuowutishi_png" x="0" y="0" anchorOffsetX="0" width="404" anchorOffsetY="0" height="36"/>
-		<e:Label id="danmutext" text="这是一条弹幕弹幕弹幕弹幕" x="10.5" y="7" anchorOffsetX="0" width="384" size="20" verticalAlign="middle" textAlign="center" stroke="2"/>
+	<e:Group id="danmuzu" x="0" y="0" anchorOffsetX="0" width="496" anchorOffsetY="0" height="76">
+		<e:Image id="touxiang" source="tx1000_png" x="22" y="22" width="36" height="36"/>
+		<e:Image id="img_cuowutishi" source="img_cuowutishi_png" x="75.5" y="33" anchorOffsetX="0" width="404" anchorOffsetY="0" height="36"/>
+		<e:Label id="danmutext" text="这是一条弹幕弹幕弹幕弹幕" x="85.5" y="41" anchorOffsetX="0" width="384" size="20" verticalAlign="middle" textAlign="center" stroke="2"/>
+		<e:Label id="xingming" text="这是一条弹幕弹幕弹幕弹幕" x="78.5" y="5.25" anchorOffsetX="0" width="261" size="20" verticalAlign="middle" textAlign="left" stroke="2" anchorOffsetY="0" height="24"/>
+		<e:Image id="img_danmuzeizao" source="img_danmuzeizao_png" y="6" x="6.5" anchorOffsetX="0" width="66" anchorOffsetY="0" height="66"/>
+		<e:Image id="img_haopin" source="img_haopin5_png" x="344" y="4" scaleX="0.5" scaleY="0.5"/>
 	</e:Group>
 </e:Skin>

@@ -48,6 +48,21 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static yuangongxupin = [];
     public static yuangongjiepin = [];
 
+//顾客留言营销的属性值
+    public static pingjunpinlun:number = 0;
+    public static pinglunkoubei:number;
+    public static pinglun1:number = 0;
+    public static pinglun2:number = 0;
+    public static pinglun3:number = 0;
+    public static pinglun4:number = 0;
+    public static pinglun5:number = 0;
+    public static pinglun6:number = 0;
+    public static pinglun7:number = 0;
+    public static pinglun8:number = 0;
+    public static pinglun9:number = 0;
+    public static pinglun10:number = 0;
+    public static dangqiandiji:number = 0;
+
     //下面是通过计算后的最终数据
         //最终的上菜速度
     public static zzchushishangcaisudu:number; 
@@ -73,6 +88,55 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
 
     public constructor (){
         super();
+    }
+
+    public static gukeliuyan(pingfenshu){
+        if(Gerenshuxing.dangqiandiji > 10){
+			Gerenshuxing.dangqiandiji = 0;
+		}
+        Gerenshuxing.dangqiandiji ++;
+        switch(Gerenshuxing.dangqiandiji){
+            case 1:
+                Gerenshuxing.pinglun1 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+            case 2:
+                Gerenshuxing.pinglun2 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+            case 3:
+                Gerenshuxing.pinglun3 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+            case 4:
+                Gerenshuxing.pinglun4 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+            case 5:
+                Gerenshuxing.pinglun5 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+            case 6:
+                Gerenshuxing.pinglun6 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+            case 7:
+                Gerenshuxing.pinglun7 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+            case 8:
+                Gerenshuxing.pinglun8 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+            case 9:
+                Gerenshuxing.pinglun9 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+            case 10:
+                Gerenshuxing.pinglun10 = pingfenshu;
+                Gerenshuxing.yuangongshuxing();
+                break;
+        }
     }
 
     public static yuangongshuxing(){
@@ -137,6 +201,12 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
             tuiguangkoubei += parseInt(yinxiaobiao[3].sellachievement);
         }
 
+        //评论增加的口碑值计算
+        Gerenshuxing.pingjunpinlun = (Gerenshuxing.pinglun1 + Gerenshuxing.pinglun2+Gerenshuxing.pinglun3+
+        Gerenshuxing.pinglun4+Gerenshuxing.pinglun5+Gerenshuxing.pinglun6+Gerenshuxing.pinglun7+Gerenshuxing.pinglun8
+        +Gerenshuxing.pinglun9+Gerenshuxing.pinglun10) / 10;
+        Gerenshuxing.pinglunkoubei = Math.floor(Gerenshuxing.pingjunpinlun * 4);
+
 //最终用于计算的各项数值
         //最终的上菜速度
         Gerenshuxing.zzchushishangcaisudu = Gerenshuxing.chushishangcaisudu + yuangongjiasu; 
@@ -151,7 +221,7 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
         //最终的客流量
         Gerenshuxing.zzkeliuliang =  Math.floor((Gerenshuxing.keliuliang + tuiguangkeliu) * (Gerenshuxing.sjkeliuliang / 100) * (Gerenshuxing.tqkeliuliang / 100));
         //最终的口碑值
-        Gerenshuxing.zzkoubeizhi =  Gerenshuxing.koubeizhi + tuiguangkoubei;
+        Gerenshuxing.zzkoubeizhi =  Gerenshuxing.koubeizhi + tuiguangkoubei + Gerenshuxing.pinglunkoubei;
 
 
 
