@@ -43,7 +43,7 @@ var Zhujiemianshangceng = (function (_super) {
         Gameguanli.Kongzhitai().caipujiemian("jingying", "kai");
     };
     Zhujiemianshangceng.prototype.dianjishicai = function () {
-        console.log("点击增加食材");
+        Gameguanli.Kongzhitai().changjingrukou("caishichang", "kai");
     };
     Zhujiemianshangceng.prototype.dianjiliuyan = function () {
         Gameguanli.Kongzhitai().caipujiemian("liuyan", "kai");

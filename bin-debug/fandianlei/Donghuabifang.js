@@ -895,6 +895,9 @@ var Donghuabifang = (function (_super) {
             Gerenshuxing.gukeliuyan(pingfen);
             Gameguanli.Kongzhitai().danmuxinxi(neirong, mingzi, pingfen, touxiang);
             Liuyanjiemian.liuyanneirong(neirong, mingzi, pingfen, touxiang);
+            if (Gameguanli.Kongzhitai().liuyan.parent) {
+                Gameguanli.Kongzhitai().caipujiemian("liuyan", "kai");
+            }
         }
     };
     Donghuabifang.prototype.kouchuyuanliao = function () {

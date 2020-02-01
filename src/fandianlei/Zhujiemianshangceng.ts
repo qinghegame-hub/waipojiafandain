@@ -66,7 +66,7 @@ class Zhujiemianshangceng extends eui.Component implements  eui.UIComponent {
 	}
 
 	public dianjishicai(){
-		console.log("点击增加食材");
+		Gameguanli.Kongzhitai().changjingrukou("caishichang","kai");
 	}
 
 	public dianjiliuyan(){

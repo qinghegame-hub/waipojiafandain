@@ -59,6 +59,15 @@ class Gameguanli extends egret.DisplayObjectContainer{
 	//留言界面实例
 	public liuyan:Liuyanjiemian;
 
+	//买菜界面实例
+	public maicai:Maicaiui;
+
+	//场景入口界面实例
+	public changjinrukou:Changjingrukouui;
+
+	//奖励获得界面实例
+	public huodejiangli:Jianglijiesuanui;
+
 
 	//实例化一个饭店核心结算
 //	public fandianjiesuan:Fandianjisuan;
@@ -204,8 +213,56 @@ class Gameguanli extends egret.DisplayObjectContainer{
 		if(kaiguan == "guan" && leixing =="liuyan"){
 			this.removeChild(Gameguanli.Kongzhitai().liuyan);
 			Gameguanli.Kongzhitai().zhujiemiandingbu.but_liuyan1.enabled = true;
+		}	
+	}
+
+//买菜界面
+	public maicaijiemian(){
+		this.maicai = new Maicaiui();
+		this.addChild(this.maicai);
+	}
+
+	public guanbimaicai(){
+		if(this.maicai.parent){
+			this.removeChild(this.maicai);
 		}
 	}
+
+//场景入口界面
+	public changjingrukou(leixing,zhuangtai){
+		//菜市场入口
+		if(leixing == "caishichang" && zhuangtai == "kai"){
+			this.changjinrukou = new Changjingrukouui();
+			this.addChild(this.changjinrukou);
+			this.changjinrukou.leixing = "caishichang";
+			this.changjinrukou.chushihua();
+		}
+		if(leixing == "caishichang" && zhuangtai == "guan"){
+			if(this.changjinrukou.parent){
+				this.removeChild(this.changjinrukou);
+			}
+		}
+
+	}
+
+
+//奖励获得界面
+	public jianglijiemian(zhuangtai,tupian?,num?){
+		if(zhuangtai == "kai"){
+			this.huodejiangli = new Jianglijiesuanui();
+			this.addChild(this.huodejiangli);
+			this.huodejiangli.chushihua();
+			this.huodejiangli.jiangliicon.source = tupian;
+			this.huodejiangli.jianglishuliang.text = "X" + num;
+		}
+		if(zhuangtai == "guan"){
+			if(this.huodejiangli.parent){
+				this.removeChild(this.huodejiangli);
+			}
+
+		}
+	}
+
 
 //错误提示信息界面
 	public cuowutishixinxi(neirong){

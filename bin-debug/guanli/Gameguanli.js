@@ -148,6 +148,46 @@ var Gameguanli = (function (_super) {
             Gameguanli.Kongzhitai().zhujiemiandingbu.but_liuyan1.enabled = true;
         }
     };
+    //买菜界面
+    Gameguanli.prototype.maicaijiemian = function () {
+        this.maicai = new Maicaiui();
+        this.addChild(this.maicai);
+    };
+    Gameguanli.prototype.guanbimaicai = function () {
+        if (this.maicai.parent) {
+            this.removeChild(this.maicai);
+        }
+    };
+    //场景入口界面
+    Gameguanli.prototype.changjingrukou = function (leixing, zhuangtai) {
+        //菜市场入口
+        if (leixing == "caishichang" && zhuangtai == "kai") {
+            this.changjinrukou = new Changjingrukouui();
+            this.addChild(this.changjinrukou);
+            this.changjinrukou.leixing = "caishichang";
+            this.changjinrukou.chushihua();
+        }
+        if (leixing == "caishichang" && zhuangtai == "guan") {
+            if (this.changjinrukou.parent) {
+                this.removeChild(this.changjinrukou);
+            }
+        }
+    };
+    //奖励获得界面
+    Gameguanli.prototype.jianglijiemian = function (zhuangtai, tupian, num) {
+        if (zhuangtai == "kai") {
+            this.huodejiangli = new Jianglijiesuanui();
+            this.addChild(this.huodejiangli);
+            this.huodejiangli.chushihua();
+            this.huodejiangli.jiangliicon.source = tupian;
+            this.huodejiangli.jianglishuliang.text = "X" + num;
+        }
+        if (zhuangtai == "guan") {
+            if (this.huodejiangli.parent) {
+                this.removeChild(this.huodejiangli);
+            }
+        }
+    };
     //错误提示信息界面
     Gameguanli.prototype.cuowutishixinxi = function (neirong) {
         var _this = this;

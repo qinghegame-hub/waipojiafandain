@@ -23,7 +23,7 @@ var Liuyanjiemian = (function (_super) {
     Liuyanjiemian.prototype.chushihua = function () {
         this.liuyanzhanshizu.scrollV = 0;
         this.but_guanbi0.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjiguanbi, this);
-        this.pingjunpinfen.text = "平均评分： " + Gerenshuxing.pingjunpinlun;
+        this.pingjunpinfen.text = "综合评分： " + Gerenshuxing.pingjunpinlun;
         this.zengjiakoubei.text = "店铺口碑提升： " + Gerenshuxing.pinglunkoubei;
         if (Gerenshuxing.pingjunpinlun >= 0 && Gerenshuxing.pingjunpinlun <= 1) {
             this.img_haopin.source = "img_haopin1_png";

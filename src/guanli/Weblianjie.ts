@@ -313,6 +313,27 @@ class Weblianjie extends egret.DisplayObjectContainer {
                  console.log("剩余代言："+ Gerenshuxing.shengyudaiyan);
                  console.log("剩余金币："+ Gerenshuxing.jinbizhi);*/
                  break;
+    //买菜时增加原材料成功时反馈
+            case "code:032":
+                Gerenshuxing.yongyouyuanliao = jiexijsongeshi.shuaxincailiao;
+                Gameguanli.Kongzhitai().zhujiemiandingbu.anniuchuli();
+                break;
+    //进入菜市场成功
+            case "code:034":
+                Gerenshuxing.jinbizhi = jiexijsongeshi.jinbi;
+                Gerenshuxing.cailanzishu = parseInt(jiexijsongeshi.lanzishu);
+                Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
+                Gameguanli.Kongzhitai().changjingrukou("caishichang","guan");
+                Gameguanli.Kongzhitai().maicaijiemian();
+                let changshubiao = RES.getRes("changshubiao_json");
+			    let xiaohaoqianbi:number = 0;
+			    for(var i = 0;i<changshubiao.length;i++){
+				    if(changshubiao[i].id == 0){
+					    xiaohaoqianbi = changshubiao[i].numshu;
+				    }
+			    }
+                Gameguanli.Kongzhitai().cuowutishixinxi("恭喜您，进入菜市场。金币 - " + xiaohaoqianbi);
+                break;
     //非法操作
             case "code:202":
                 Gameguanli.Kongzhitai().cuowutishixinxi("非法操作！");

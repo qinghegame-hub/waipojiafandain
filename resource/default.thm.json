@@ -40,7 +40,10 @@
 		"Meirijiesuan": "resource/eui_skins/Meirijiesuan.exml",
 		"Jinyingguanlijiemian": "resource/eui_skins/waipojiemian/Jinyingguanlijiemian.exml",
 		"Tanmujiemian": "resource/eui_skins/Tanmujiemian.exml",
-		"Liuyanjiemian": "resource/eui_skins/waipojiemian/Liuyanjiemian.exml"
+		"Liuyanjiemian": "resource/eui_skins/waipojiemian/Liuyanjiemian.exml",
+		"Maicaiui": "resource/eui_skins/waipojiemian/Maicaiui.exml",
+		"Changjingrukouui": "resource/eui_skins/waipojiemianChangjingrukouui.exml",
+		"Jianglijiesuanui": "resource/eui_skins/waipojiemian/Jianglijiesuanui.exml"
 	},
 	"autoGenerateExmlsList": true,
 	"exmls": [
@@ -78,8 +81,11 @@
 		"resource/eui_skins/Tuiguangpinglun.exml",
 		"resource/eui_skins/VScrollBarSkin.exml",
 		"resource/eui_skins/VSliderSkin.exml",
+		"resource/eui_skins/waipojiemian/Jianglijiesuanui.exml",
 		"resource/eui_skins/waipojiemian/Jinyingguanlijiemian.exml",
 		"resource/eui_skins/waipojiemian/Liuyanjiemian.exml",
+		"resource/eui_skins/waipojiemian/Maicaiui.exml",
+		"resource/eui_skins/waipojiemianChangjingrukouui.exml",
 		"resource/eui_skins/Weishengtishi.exml",
 		"resource/eui_skins/Xiamiantishi.exml",
 		"resource/eui_skins/Yuangongjiemian.exml",

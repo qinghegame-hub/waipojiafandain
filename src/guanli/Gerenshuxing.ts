@@ -37,6 +37,8 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static yuanliaoxiaohao:number = 0;//原材料消耗减少
     public static weishengjilv:number = 0;//有清洁工时，每个清洁工控制的垃圾的产出几率
 
+    public static cailanzishu:number = 5;//个人才菜篮子数;
+
     public static dangqiantianqi:number = 1;  //1为晴天，2为雨天，3为雪天
 
     public static xianshishijian:number;  //显示的时间值;
