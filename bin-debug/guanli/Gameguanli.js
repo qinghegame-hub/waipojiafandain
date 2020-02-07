@@ -153,9 +153,18 @@ var Gameguanli = (function (_super) {
         this.maicai = new Maicaiui();
         this.addChild(this.maicai);
     };
-    Gameguanli.prototype.guanbimaicai = function () {
-        if (this.maicai.parent) {
-            this.removeChild(this.maicai);
+    //做饭界面
+    Gameguanli.prototype.zuofanjiemian = function (zhuangtai, id) {
+        if (zhuangtai == "kai") {
+            this.zuofanui = new Zuofanjiemianui();
+            this.addChild(this.zuofanui);
+            this.zuofanui.chushihua(id);
+        }
+        ;
+        if (zhuangtai == "guan") {
+            if (this.zuofanui.parent) {
+                this.removeChild(this.zuofanui);
+            }
         }
     };
     //场景入口界面
@@ -181,11 +190,12 @@ var Gameguanli = (function (_super) {
             this.huodejiangli.chushihua();
             this.huodejiangli.jiangliicon.source = tupian;
             this.huodejiangli.jianglishuliang.text = "X" + num;
+            this.huodejiangli.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbijiangli, this);
         }
-        if (zhuangtai == "guan") {
-            if (this.huodejiangli.parent) {
-                this.removeChild(this.huodejiangli);
-            }
+    };
+    Gameguanli.prototype.guanbijiangli = function () {
+        if (this.huodejiangli.parent) {
+            this.removeChild(this.huodejiangli);
         }
     };
     //错误提示信息界面

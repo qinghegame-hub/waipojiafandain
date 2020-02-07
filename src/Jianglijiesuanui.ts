@@ -23,12 +23,12 @@ class Jianglijiesuanui extends eui.Component implements  eui.UIComponent {
 	}
 
 	public chushihua(){
-		this.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbi,this);
+//		this.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbi,this);
 	}
 
 	public guanbi(){
-		Gameguanli.Kongzhitai().guanbimaicai();
-		Gameguanli.Kongzhitai().jianglijiemian("guan");
+//		Gameguanli.Kongzhitai().guanbimaicai();
+//		Gameguanli.Kongzhitai().jianglijiemian("guan");
 	}
 	
 }

@@ -21,11 +21,11 @@ var Jianglijiesuanui = (function (_super) {
         this.chushihua();
     };
     Jianglijiesuanui.prototype.chushihua = function () {
-        this.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbi, this);
+        //		this.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbi,this);
     };
     Jianglijiesuanui.prototype.guanbi = function () {
-        Gameguanli.Kongzhitai().guanbimaicai();
-        Gameguanli.Kongzhitai().jianglijiemian("guan");
+        //		Gameguanli.Kongzhitai().guanbimaicai();
+        //		Gameguanli.Kongzhitai().jianglijiemian("guan");
     };
     return Jianglijiesuanui;
 }(eui.Component));

@@ -68,6 +68,9 @@ class Gameguanli extends egret.DisplayObjectContainer{
 	//奖励获得界面实例
 	public huodejiangli:Jianglijiesuanui;
 
+	//做饭界面实例
+	public zuofanui:Zuofanjiemianui;
+
 
 	//实例化一个饭店核心结算
 //	public fandianjiesuan:Fandianjisuan;
@@ -222,12 +225,21 @@ class Gameguanli extends egret.DisplayObjectContainer{
 		this.addChild(this.maicai);
 	}
 
-	public guanbimaicai(){
-		if(this.maicai.parent){
-			this.removeChild(this.maicai);
+
+
+//做饭界面
+	public zuofanjiemian(zhuangtai:string,id?:any){
+		if(zhuangtai == "kai"){
+			this.zuofanui = new Zuofanjiemianui();
+			this.addChild(this.zuofanui);
+			this.zuofanui.chushihua(id);
+		};
+		if(zhuangtai == "guan"){
+			if(this.zuofanui.parent){
+				this.removeChild(this.zuofanui);
+			}
 		}
 	}
-
 //场景入口界面
 	public changjingrukou(leixing,zhuangtai){
 		//菜市场入口
@@ -254,13 +266,15 @@ class Gameguanli extends egret.DisplayObjectContainer{
 			this.huodejiangli.chushihua();
 			this.huodejiangli.jiangliicon.source = tupian;
 			this.huodejiangli.jianglishuliang.text = "X" + num;
+			this.huodejiangli.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
 		}
-		if(zhuangtai == "guan"){
+	}
+
+	public guanbijiangli(){
 			if(this.huodejiangli.parent){
 				this.removeChild(this.huodejiangli);
 			}
 
-		}
 	}
 
 

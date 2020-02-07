@@ -21,7 +21,7 @@ var Maicaiui = (function (_super) {
         _this.roushu = 0;
         _this.cailanzi = Gerenshuxing.cailanzishu;
         _this.xiaohaojinbi = 500;
-        _this.shuaxinshu = 2;
+        _this.shuaxinshu = Gerenshuxing.shuaxincishu;
         _this.zengjiayuanliao = 0;
         _this.dangqianshicai = 0;
         return _this;
@@ -35,6 +35,8 @@ var Maicaiui = (function (_super) {
     };
     Maicaiui.prototype.chushihua = function () {
         //		this.shicaizu = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+        this.but_likai.addEventListener(egret.TouchEvent.TOUCH_TAP, this.likai, this);
+        this.but_shuaxin.addEventListener(egret.TouchEvent.TOUCH_TAP, this.shuaxin, this);
         this.dijigekeng = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
         var shuaxinjiange = new egret.Timer(3000, 1);
         shuaxinjiange.addEventListener(egret.TimerEvent.TIMER, this.shuaxinxulie, this);
@@ -1573,6 +1575,26 @@ var Maicaiui = (function (_super) {
     };
     Maicaiui.prototype.maicaijiesu = function () {
         Gameguanli.Kongzhitai().jianglijiemian("kai", "img_shicai_png", this.zengjiayuanliao);
+        if (Gameguanli.Kongzhitai().maicai.parent) {
+            this.removeChild(Gameguanli.Kongzhitai().maicai);
+        }
+    };
+    Maicaiui.prototype.likai = function () {
+        console.log("走到离开");
+        this.cailanzi = 0;
+        this.shuaxinxulie();
+    };
+    Maicaiui.prototype.shuaxin = function () {
+        if (this.shuaxinshu > 0) {
+            console.log("走到刷新");
+            this.shuaxinshu -= 1;
+            this.shicaizu = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            Gameguanli.Kongzhitai().cuowutishixinxi("刷新成功，食材重新摆放位置！");
+            this.chushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("您的刷新次数已不足，无法刷新！");
+        }
     };
     return Maicaiui;
 }(eui.Component));

@@ -177,6 +177,7 @@ var Gerenshuxing = (function (_super) {
     Gerenshuxing.yuanliaoxiaohao = 0; //原材料消耗减少
     Gerenshuxing.weishengjilv = 0; //有清洁工时，每个清洁工控制的垃圾的产出几率
     Gerenshuxing.cailanzishu = 5; //个人才菜篮子数;
+    Gerenshuxing.shuaxincishu = 2; //个人买菜刷新次数;
     Gerenshuxing.dangqiantianqi = 1; //1为晴天，2为雨天，3为雪天
     //每日结算时，员工的解聘和续聘内容
     Gerenshuxing.yuangongxupin = [];

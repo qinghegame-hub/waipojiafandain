@@ -25,6 +25,9 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 	public keng13:eui.Image;
 	public keng14:eui.Image;
 	public keng15:eui.Image;
+	public but_likai:eui.Button;
+	public but_shuaxin:eui.Button;
+
 
 
 	public shicaizu = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
@@ -36,7 +39,7 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 	public roushu:number = 0;
 	public cailanzi:number = Gerenshuxing.cailanzishu;
 	public xiaohaojinbi:number = 500;
-	public shuaxinshu:number = 2;
+	public shuaxinshu:number = Gerenshuxing.shuaxincishu;
 	public zengjiayuanliao:number = 0;
 
 
@@ -60,6 +63,8 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 
 	public chushihua(){
 //		this.shicaizu = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+		this.but_likai.addEventListener(egret.TouchEvent.TOUCH_TAP,this.likai,this);
+		this.but_shuaxin.addEventListener(egret.TouchEvent.TOUCH_TAP,this.shuaxin,this);
 		this.dijigekeng = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 		let shuaxinjiange = new egret.Timer(3000,1);
 		shuaxinjiange.addEventListener(egret.TimerEvent.TIMER,this.shuaxinxulie,this);
@@ -1616,6 +1621,27 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 
 	public maicaijiesu(){
 		Gameguanli.Kongzhitai().jianglijiemian("kai","img_shicai_png",this.zengjiayuanliao);
+		if(Gameguanli.Kongzhitai().maicai.parent){
+			this.removeChild(Gameguanli.Kongzhitai().maicai);
+		}
+	}
+
+	public likai(){
+		console.log("走到离开");
+		this.cailanzi = 0;
+		this.shuaxinxulie();
+	}
+
+	public shuaxin(){
+		if(this.shuaxinshu > 0){
+			console.log("走到刷新");
+			this.shuaxinshu -= 1;
+			this.shicaizu = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+			Gameguanli.Kongzhitai().cuowutishixinxi("刷新成功，食材重新摆放位置！");
+			this.chushihua();
+		}else{
+			Gameguanli.Kongzhitai().cuowutishixinxi("您的刷新次数已不足，无法刷新！");
+		}
 	}
 	
 }

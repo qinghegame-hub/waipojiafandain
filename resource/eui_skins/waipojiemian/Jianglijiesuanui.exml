@@ -13,5 +13,6 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
+		<e:Image id="img_jianglibiaoti" source="img_jianglibiaoti_png" x="225.5" y="212"/>
 	</e:Group>
 </e:Skin>

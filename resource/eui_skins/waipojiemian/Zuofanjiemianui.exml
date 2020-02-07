@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ZuofanjiemianuiSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1700c6f6fe4" ></w:Config>
+	<e:Group id="zaotaizu" left="0" top="0" bottom="0" right="0">
+		<e:Image id="img_xiaceng" source="img_xiaceng_png" x="0" y="0"/>
+		<e:Image id="huoyantupian" source="img_dahuohou_png" x="0" y="0"/>
+		<e:Image id="img_shangcengbudong" source="img_shangcengbudong_png" y="247" x="0"/>
+		<e:Image id="dangqiantishi" source="img_dangqianzhishi_png" x="279" y="290"/>
+		<e:Image id="xiaoshitishi" source="img_huisezhishi_png" x="125" y="344"/>
+		<e:Image id="weilaitishi" source="img_huisezhishi_png" x="493" y="344"/>
+		<e:Image id="xiaoshitishitu" source="img_lajiao_png" x="139" y="352" width="102" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+		<e:Image id="weilaitishitu" source="img_lajiao_png" x="511" y="354" width="102" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+		<e:Image id="dangqiantishitu" source="img_lajiao_png" x="315.5" y="317.5" width="120" height="138" anchorOffsetX="0.5" anchorOffsetY="0.5" scaleX="1" scaleY="1"/>
+		<e:Image id="jindutiao" source="img_jindutiao_png" x="39" y="815"/>
+		<e:Image id="dingbulan" source="img_dingbu_png" verticalCenter="-540" horizontalCenter="-5"/>
+		<e:Label id="shijianwenzi" text="5:30" x="146" y="114" anchorOffsetX="0" width="94" anchorOffsetY="0" height="32" size="24" fontFamily="wodeziti" verticalAlign="middle" textAlign="right" bold="true" stroke="2"/>
+		<e:Label id="caocaijinduwenzi" text="5:30" x="362" y="113" anchorOffsetX="0" width="94" anchorOffsetY="0" height="32" size="24" fontFamily="wodeziti" verticalAlign="middle" textAlign="right" bold="true" stroke="2"/>
+		<e:Label id="shiwucishuwenzi" text="5:30" x="574" y="112" anchorOffsetX="0" width="94" anchorOffsetY="0" height="32" size="24" fontFamily="wodeziti" verticalAlign="middle" textAlign="right" bold="true" stroke="2"/>
+		<e:Button id="but_queding" label="" x="253.5" y="1012" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_queding1_png" source.down="but_queding2_png" source.disabled="but_queding2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Image id="lvsexuanxiang" source="img_xiaohuo_png" x="113.5" y="885" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+		<e:Image id="zisexuanxiang" source="img_baicai1_png" x="322" y="885" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+		<e:Image id="chengsexuanxiang" source="img_rou1_png" x="545" y="885" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+		<e:Image id="youbiao" source="img_youbiao_png" x="134" y="820"/>
+	</e:Group>
+</e:Skin>

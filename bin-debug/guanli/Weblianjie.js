@@ -327,6 +327,7 @@ var Weblianjie = (function (_super) {
             case "code:034":
                 Gerenshuxing.jinbizhi = jiexijsongeshi.jinbi;
                 Gerenshuxing.cailanzishu = parseInt(jiexijsongeshi.lanzishu);
+                Gerenshuxing.shuaxincishu = parseInt(jiexijsongeshi.shuaxinshu);
                 Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
                 Gameguanli.Kongzhitai().changjingrukou("caishichang", "guan");
                 Gameguanli.Kongzhitai().maicaijiemian();

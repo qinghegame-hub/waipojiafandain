@@ -62,6 +62,7 @@ class Donghuabifang extends egret.DisplayObjectContainer{
 
     //手动上菜开关
     public shoudong:Boolean = false;
+    public panduandingshi:any;
 
 
     public constructor(num1,mun2){
@@ -960,13 +961,33 @@ class Donghuabifang extends egret.DisplayObjectContainer{
     private shoudongshangcai(){
         this.chongfudingshi.stop();
         this.shoudong = true;
-        this.di1zuocai = true;
         this.kouchuyuanliao();
-        this.toudinggruop.xianshitupian0.source = "img_xiaolian_png";
-        this.toudinggruop.but_xuqiucaiqipao0.enabled = false;
-        this.tdWenzi = 1;
-        this.dingshiqistop();
+        Gameguanli.Kongzhitai().zuofanjiemian("kai",this.xuqiucaiid.id);
+        Gerenshuxing.zuocaichenggong = "";
+        this.panduandingshi = new egret.Timer(1000,0);
+        this.panduandingshi.addEventListener(egret.TimerEvent.TIMER,this.panduanzuofan,this);
+        this.panduandingshi.start();
     }
+
+    private panduanzuofan(){
+        if(Gerenshuxing.zuocaichenggong == "true"){
+            console.log(Gerenshuxing.zuocaichenggong)
+            this.toudinggruop.xianshitupian0.source = "img_xiaolian_png";
+            this.toudinggruop.but_xuqiucaiqipao0.enabled = false;
+            this.di1zuocai = true;
+            this.tdWenzi = 1;
+            this.dingshiqistop();
+            this.panduandingshi.stop();
+            this.panduandingshi = null;
+        }
+        if(Gerenshuxing.zuocaichenggong == "false"){
+            console.log(Gerenshuxing.zuocaichenggong)
+            this.dingshiqistop();
+            this.panduandingshi.stop();
+            this.panduandingshi = null;
+        }
+    }
+
 
     private wenziweizhi(){
         if(this.donghuaxianshi.scaleX == 1){

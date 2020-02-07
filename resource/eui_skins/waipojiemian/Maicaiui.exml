@@ -28,5 +28,21 @@
 			<e:Image id="keng14" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="-1.5" verticalCenter="423" x="30" y="30"/>
 			<e:Image id="keng15" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="209.5" verticalCenter="423" x="30" y="30"/>
 		</e:Group>
+		<e:Button id="but_likai" label="" x="14" y="1202" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_likai1_png" source.down="but_likai2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="but_shuaxin" label="" x="611" y="1202" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shuaxin1_png" source.down="but_shuaxin2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
 	</e:Group>
 </e:Skin>

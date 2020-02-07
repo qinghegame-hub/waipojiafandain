@@ -952,12 +952,30 @@ var Donghuabifang = (function (_super) {
     Donghuabifang.prototype.shoudongshangcai = function () {
         this.chongfudingshi.stop();
         this.shoudong = true;
-        this.di1zuocai = true;
         this.kouchuyuanliao();
-        this.toudinggruop.xianshitupian0.source = "img_xiaolian_png";
-        this.toudinggruop.but_xuqiucaiqipao0.enabled = false;
-        this.tdWenzi = 1;
-        this.dingshiqistop();
+        Gameguanli.Kongzhitai().zuofanjiemian("kai", this.xuqiucaiid.id);
+        Gerenshuxing.zuocaichenggong = "";
+        this.panduandingshi = new egret.Timer(1000, 0);
+        this.panduandingshi.addEventListener(egret.TimerEvent.TIMER, this.panduanzuofan, this);
+        this.panduandingshi.start();
+    };
+    Donghuabifang.prototype.panduanzuofan = function () {
+        if (Gerenshuxing.zuocaichenggong == "true") {
+            console.log(Gerenshuxing.zuocaichenggong);
+            this.toudinggruop.xianshitupian0.source = "img_xiaolian_png";
+            this.toudinggruop.but_xuqiucaiqipao0.enabled = false;
+            this.di1zuocai = true;
+            this.tdWenzi = 1;
+            this.dingshiqistop();
+            this.panduandingshi.stop();
+            this.panduandingshi = null;
+        }
+        if (Gerenshuxing.zuocaichenggong == "false") {
+            console.log(Gerenshuxing.zuocaichenggong);
+            this.dingshiqistop();
+            this.panduandingshi.stop();
+            this.panduandingshi = null;
+        }
     };
     Donghuabifang.prototype.wenziweizhi = function () {
         if (this.donghuaxianshi.scaleX == 1) {
