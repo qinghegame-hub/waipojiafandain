@@ -1575,12 +1575,9 @@ var Maicaiui = (function (_super) {
     };
     Maicaiui.prototype.maicaijiesu = function () {
         Gameguanli.Kongzhitai().jianglijiemian("kai", "img_shicai_png", this.zengjiayuanliao);
-        if (Gameguanli.Kongzhitai().maicai.parent) {
-            this.removeChild(Gameguanli.Kongzhitai().maicai);
-        }
+        Gameguanli.Kongzhitai().maicaijiemian("guan");
     };
     Maicaiui.prototype.likai = function () {
-        console.log("走到离开");
         this.cailanzi = 0;
         this.shuaxinxulie();
     };

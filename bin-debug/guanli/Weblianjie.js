@@ -78,6 +78,18 @@ var Weblianjie = (function (_super) {
                 Gerenshuxing.yuangongshuxing();
                 Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
                 break;
+            //初始化个人菜谱等级信息
+            case "code:035":
+                Gerencaipudengji.caipulevel = jiexijsongeshi[0].jingyan[0];
+                //                console.log(Gerencaipudengji.caipulevel);
+                /*let data = Gerencaipudengji.caipulevel;
+                for(var h in data){
+                   if(h == "1001"){
+                       console.log(data[h][0]);
+                   }
+                }*/
+                //今天做到了这里，明天继续，把菜谱升级的所有接口和表现做好
+                break;
             //解锁菜品时反馈
             case "code:003":
                 Gerenshuxing.jiesuocaipin = jiexijsongeshi.genxin;
@@ -330,7 +342,7 @@ var Weblianjie = (function (_super) {
                 Gerenshuxing.shuaxincishu = parseInt(jiexijsongeshi.shuaxinshu);
                 Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
                 Gameguanli.Kongzhitai().changjingrukou("caishichang", "guan");
-                Gameguanli.Kongzhitai().maicaijiemian();
+                Gameguanli.Kongzhitai().maicaijiemian("kai");
                 var changshubiao = RES.getRes("changshubiao_json");
                 var xiaohaoqianbi = 0;
                 for (var i = 0; i < changshubiao.length; i++) {

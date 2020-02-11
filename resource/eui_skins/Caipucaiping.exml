@@ -18,6 +18,8 @@
 					</e:skinName>
 				</e:Button>
 				<e:Image id="img_weihuode0" source="" x="6" y="7"/>
+				<e:Image id="img_dengjitubiao0" source="img_dengjitubiao_png" x="114" y="6"/>
+				<e:Label id="levelwenzi0" text="20" x="131" y="17" anchorOffsetX="0" width="31" size="24" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2"/>
 			</e:Group>
 			<e:Group x="42.35" y="242.34" id="caixianshi1">
 			<e:Image id="img_caipandiban1" x="0" y="0" scaleX="1" scaleY="1" source=""/>
@@ -34,6 +36,8 @@
 					</e:skinName>
 				</e:Button>
 				<e:Image id="img_weihuode1" source="" x="6" y="6"/>
+				<e:Image id="img_dengjitubiao1" source="img_dengjitubiao_png" x="114" y="6"/>
+				<e:Label id="levelwenzi1" text="20" x="131" y="15.5" anchorOffsetX="0" width="31" size="24" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2"/>
 			</e:Group>
 			<e:Group x="287.35" y="241.34" id="caixianshi2">
 			<e:Image id="img_caipandiban2" x="0" y="0" scaleX="1" scaleY="1" source=""/>
@@ -50,6 +54,8 @@
 					</e:skinName>
 				</e:Button>
 				<e:Image id="img_weihuode2" source="" x="6" y="5"/>
+				<e:Image id="img_dengjitubiao2" source="img_dengjitubiao_png" x="114" y="6"/>
+				<e:Label id="levelwenzi2" text="20" x="130.5" y="16" anchorOffsetX="0" width="31" size="24" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2"/>
 			</e:Group>
 			<e:Group x="43.35" y="478.34" id="caixianshi3">
 			<e:Image id="img_caipandiban3" x="0" y="0" scaleX="1" scaleY="1" source=""/>
@@ -66,6 +72,8 @@
 					</e:skinName>
 				</e:Button>
 				<e:Image id="img_weihuode3" source="" x="6" y="6"/>
+				<e:Image id="img_dengjitubiao3" source="img_dengjitubiao_png" x="114" y="6"/>
+				<e:Label id="levelwenzi3" text="20" x="131" y="16.5" anchorOffsetX="0" width="31" size="24" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2"/>
 			</e:Group>
 			<e:Group x="287.35" y="477.34" id="caixianshi4">
 			<e:Image id="img_caipandiban4" x="0" y="0" scaleX="1" scaleY="1" source=""/>
@@ -82,6 +90,8 @@
 					</e:skinName>
 				</e:Button>
 				<e:Image id="img_weihuode4" source="" x="6" y="5"/>
+				<e:Image id="img_dengjitubiao4" source="img_dengjitubiao_png" x="114" y="6"/>
+				<e:Label id="levelwenzi4" text="20" x="130.5" y="16.16" anchorOffsetX="0" width="31" size="24" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2"/>
 			</e:Group>
 			<e:Group id="caixianshi5" x="41.35" y="7.34">
 			<e:Image id="img_caipandiban5" x="0" y="0" scaleX="1" scaleY="1" source=""/>
@@ -98,6 +108,8 @@
 					</e:skinName>
 				</e:Button>
 				<e:Image id="img_weihuode5" source="" x="5" y="4"/>
+				<e:Image id="img_dengjitubiao5" source="img_dengjitubiao_png" x="114" y="6"/>
+				<e:Label id="levelwenzi5" text="20" x="130.5" y="16.16" anchorOffsetX="0" width="31" size="24" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2"/>
 			</e:Group>
 			<e:layout>
 				<e:TileLayout horizontalGap="40" verticalGap="24" horizontalAlign="center" verticalAlign="middle"/>

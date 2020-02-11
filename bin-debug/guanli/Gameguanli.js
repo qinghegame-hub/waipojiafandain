@@ -24,9 +24,9 @@ var Gameguanli = (function (_super) {
         _this.zhujiemiandingbu = new Zhujiemianshangceng();
         _this.meirijieusan = new Meirijiesuan();
         _this.guanLiui = new Guanlijiemian();
-        _this.caiPuUi = new Caipujiemian();
         _this.jingyingguanli = new Jinyingguanlijiemian();
         _this.liuyan = new Liuyanjiemian();
+        _this.caiPuUi = new Caipujiemian();
         //默认加载主界面相关界面
         _this.addChild(_this.zhujiemian);
         _this.addChild(_this.zhujiemiandingbu);
@@ -64,6 +64,7 @@ var Gameguanli = (function (_super) {
                 this.removeChild(Gameguanli.Kongzhitai().caiPuUi);
             }
             this.addChild(Gameguanli.Kongzhitai().caiPuUi);
+            Gameguanli.Kongzhitai().caiPuUi.chulishujujiegou();
             Gameguanli.Kongzhitai().zhujiemiandingbu.but_caipu1.enabled = false;
             Gameguanli.Kongzhitai().zhujiemiandingbu.but_guanli1.enabled = true;
             Gameguanli.Kongzhitai().zhujiemiandingbu.but_jingyinbaobiao1.enabled = true;
@@ -149,9 +150,17 @@ var Gameguanli = (function (_super) {
         }
     };
     //买菜界面
-    Gameguanli.prototype.maicaijiemian = function () {
-        this.maicai = new Maicaiui();
-        this.addChild(this.maicai);
+    Gameguanli.prototype.maicaijiemian = function (zhuangtai) {
+        if (zhuangtai == "kai") {
+            this.maicai = new Maicaiui();
+            this.addChild(this.maicai);
+        }
+        ;
+        if (zhuangtai == "guan") {
+            if (this.maicai.parent) {
+                this.removeChild(this.maicai);
+            }
+        }
     };
     //做饭界面
     Gameguanli.prototype.zuofanjiemian = function (zhuangtai, id) {

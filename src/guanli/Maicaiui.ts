@@ -1621,13 +1621,10 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 
 	public maicaijiesu(){
 		Gameguanli.Kongzhitai().jianglijiemian("kai","img_shicai_png",this.zengjiayuanliao);
-		if(Gameguanli.Kongzhitai().maicai.parent){
-			this.removeChild(Gameguanli.Kongzhitai().maicai);
-		}
+		Gameguanli.Kongzhitai().maicaijiemian("guan");
 	}
 
 	public likai(){
-		console.log("走到离开");
 		this.cailanzi = 0;
 		this.shuaxinxulie();
 	}

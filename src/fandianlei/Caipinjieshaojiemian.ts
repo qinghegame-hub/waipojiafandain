@@ -7,10 +7,22 @@ class Caipinjieshaojiemian extends eui.Component implements  eui.UIComponent {
 	public but_zhuanfa:eui.Button;
 	public but_zhizuo:eui.Button;
 	public caipinshuxingzu:eui.Group;
-	public chushoudanjia:eui.Label;
-	public chushoudanjia0:eui.Label;
 	public jianjie:eui.Label;
 	public caipindeicon:eui.Image;
+	public chushoudanjia:eui.Label;
+	public caipugongneng:eui.Label;
+	public dangqianshuxing:eui.Label;
+	public xiaohaoshicai:eui.Label;
+	public chushoudanjia0:eui.Label;
+	public caipugongneng0:eui.Label;
+	public dangqianshuxing0:eui.Label;
+	public xiaohaoshicai0:eui.Label;
+	public img_jindutiaobeijing:eui.Image;
+	public img_jindutiaogundong:eui.Image;
+	public jinduwenzi:eui.Label;
+	public lengjiwenzi:eui.Label;
+
+
 
 
 	public constructor() {

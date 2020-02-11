@@ -24,10 +24,20 @@
 			</e:skinName>
 		</e:Button>
 		<e:Group id="caipinshuxingzu" horizontalCenter="38" verticalCenter="118">
-			<e:Label id="chushoudanjia" text="出售单价：584" anchorOffsetX="0" width="524" anchorOffsetY="0" height="41" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="0" y="0"/>
-			<e:Label text="消耗食材：584" anchorOffsetX="0" width="524" anchorOffsetY="0" height="41" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" id="chushoudanjia0" size="24" x="0" y="63"/>
 		</e:Group>
 		<e:Label id="jianjie" text="农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉" anchorOffsetX="0" width="450" anchorOffsetY="0" height="166" textAlign="left" verticalAlign="top" size="18" horizontalCenter="5" verticalCenter="357"/>
 		<e:Image id="caipindeicon" source="1007_png" x="247" y="338.5" scaleX="1.2" scaleY="1.2"/>
+		<e:Label id="chushoudanjia" text="出售单价：584(+56)" anchorOffsetX="0" width="220" anchorOffsetY="0" height="30" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="137" y="803"/>
+		<e:Label id="caipugongneng" text="消除疲劳：584(+56)" anchorOffsetX="0" width="220" anchorOffsetY="0" height="33" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="137" y="764.5"/>
+		<e:Label id="dangqianshuxing" text="当前品质" anchorOffsetX="0" width="220" anchorOffsetY="0" height="33" textAlign="center" verticalAlign="middle" fontFamily="wodeziti" size="24" x="137" y="728.5" textColor="0x76f20e" stroke="2"/>
+		<e:Label id="xiaohaoshicai" text="消耗食材：584" anchorOffsetX="0" width="213" anchorOffsetY="0" height="32" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="137" y="836"/>
+		<e:Label id="chushoudanjia0" text="出售单价：584(+56)" anchorOffsetX="0" width="220" anchorOffsetY="0" height="30" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="402.2" y="803"/>
+		<e:Label id="caipugongneng0" text="消除疲劳：584(+56)" anchorOffsetX="0" width="220" anchorOffsetY="0" height="33" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="402.2" y="764.5"/>
+		<e:Label id="dangqianshuxing0" text="下一品质" anchorOffsetX="0" width="220" anchorOffsetY="0" height="33" textAlign="center" verticalAlign="middle" fontFamily="wodeziti" size="24" x="402.2" y="728.5" stroke="2" textColor="0xef900e"/>
+		<e:Label text="消耗食材：584" anchorOffsetX="0" width="213" anchorOffsetY="0" height="32" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" id="xiaohaoshicai0" size="24" x="402.2" y="836"/>
+		<e:Image id="img_jindutiaobeijing" source="img_jindutiaobeijing_png" x="277.2" y="659.67" width="250" height="52"/>
+		<e:Image id="img_jindutiaogundong" source="img_jindutiaogundong_png" x="350.33" y="676.02" anchorOffsetY="0.5" anchorOffsetX="0" width="176" height="26"/>
+		<e:Label id="jinduwenzi" text="(200/18888888)" x="280.33" y="643" anchorOffsetX="0" width="310" size="24" verticalAlign="middle" textAlign="center" fontFamily="wodeziti"/>
+		<e:Label id="lengjiwenzi" text="20" x="295" y="670" anchorOffsetX="0" width="31" size="24" verticalAlign="middle" textAlign="center" stroke="2" fontFamily="wodeziti"/>
 	</e:Group>
 </e:Skin>

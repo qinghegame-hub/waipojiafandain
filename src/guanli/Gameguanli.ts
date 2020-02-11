@@ -86,9 +86,9 @@ class Gameguanli extends egret.DisplayObjectContainer{
 		this.zhujiemiandingbu = new Zhujiemianshangceng();
 		this.meirijieusan = new Meirijiesuan();
 		this.guanLiui = new Guanlijiemian();
-		this.caiPuUi = new Caipujiemian();
 		this.jingyingguanli = new Jinyingguanlijiemian();
 		this.liuyan = new Liuyanjiemian();
+		this.caiPuUi = new Caipujiemian();
 		
 
 		//默认加载主界面相关界面
@@ -134,6 +134,7 @@ class Gameguanli extends egret.DisplayObjectContainer{
 				this.removeChild(Gameguanli.Kongzhitai().caiPuUi);
 			}
 			this.addChild(Gameguanli.Kongzhitai().caiPuUi);
+			Gameguanli.Kongzhitai().caiPuUi.chulishujujiegou();
 			Gameguanli.Kongzhitai().zhujiemiandingbu.but_caipu1.enabled = false;
 			Gameguanli.Kongzhitai().zhujiemiandingbu.but_guanli1.enabled = true;
 			Gameguanli.Kongzhitai().zhujiemiandingbu.but_jingyinbaobiao1.enabled = true;
@@ -220,9 +221,16 @@ class Gameguanli extends egret.DisplayObjectContainer{
 	}
 
 //买菜界面
-	public maicaijiemian(){
-		this.maicai = new Maicaiui();
-		this.addChild(this.maicai);
+	public maicaijiemian(zhuangtai){
+		if(zhuangtai == "kai"){
+			this.maicai = new Maicaiui();
+			this.addChild(this.maicai);
+		};
+		if(zhuangtai == "guan"){
+			if(this.maicai.parent){
+				this.removeChild(this.maicai);
+			}
+		}
 	}
 
 

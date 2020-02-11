@@ -5,6 +5,12 @@ class Pengrenfankuiui extends eui.Component implements  eui.UIComponent {
 	public jianglishuliang0:eui.Label;
 	public qudinganniu0:eui.Button;
 	public img_jianglibiaoti0:eui.Image;
+	public img_jindutiaobeijing:eui.Image;
+	public img_jindutiaogundong:eui.Image;
+	public levelwenzi:eui.Label;
+	public huodejingyanwenzi:eui.Label;
+	public dengjitishi:eui.Label;
+
 
 	public constructor() {
 		super();
