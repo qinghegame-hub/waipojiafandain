@@ -959,14 +959,28 @@ class Donghuabifang extends egret.DisplayObjectContainer{
     }
 
     private shoudongshangcai(){
-        this.chongfudingshi.stop();
-        this.shoudong = true;
-        this.kouchuyuanliao();
-        Gameguanli.Kongzhitai().zuofanjiemian("kai",this.xuqiucaiid.id);
-        Gerenshuxing.zuocaichenggong = "";
-        this.panduandingshi = new egret.Timer(1000,0);
-        this.panduandingshi.addEventListener(egret.TimerEvent.TIMER,this.panduanzuofan,this);
-        this.panduandingshi.start();
+        if(Gerenshuxing.jiatingzhi > 0){
+            Weblianjie.fasongshuju("code:037","{" + '"kouchushu"' +":"+ "1" +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
+            let kouchudonghua = new Cailiaoxiaohao();
+			Gameguanli.Kongzhitai().zhujiemian.addChild(kouchudonghua);
+			kouchudonghua.wenzizu.x = Gameguanli.Kongzhitai().zhujiemian.width / 2 - kouchudonghua.wenzizu.width /2;
+			kouchudonghua.wenzizu.y = Gameguanli.Kongzhitai().zhujiemian.height / 2 - kouchudonghua.wenzizu.height;
+			kouchudonghua.wenzineirong.text = " - 1";
+			kouchudonghua.img_shicai.source = "img_jiating_png";
+			egret.Tween.get(kouchudonghua).to({x:kouchudonghua.x,y:kouchudonghua.y - 60},2000).call(()=>{
+				Gameguanli.Kongzhitai().zhujiemian.removeChild(kouchudonghua);
+                this.chongfudingshi.stop();
+                this.shoudong = true;
+                this.kouchuyuanliao();
+                Gameguanli.Kongzhitai().zuofanjiemian("kai",this.xuqiucaiid.id);
+                Gerenshuxing.zuocaichenggong = "";
+                this.panduandingshi = new egret.Timer(1000,0);
+                this.panduandingshi.addEventListener(egret.TimerEvent.TIMER,this.panduanzuofan,this);
+                this.panduandingshi.start();
+            });
+        }else{
+            Gameguanli.Kongzhitai().cuowutishixinxi("当前您的劳动力已不足1点");
+        }
     }
 
     private panduanzuofan(){

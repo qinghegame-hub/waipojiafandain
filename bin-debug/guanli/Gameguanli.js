@@ -27,13 +27,14 @@ var Gameguanli = (function (_super) {
         _this.jingyingguanli = new Jinyingguanlijiemian();
         _this.liuyan = new Liuyanjiemian();
         _this.caiPuUi = new Caipujiemian();
+        _this.waichudajie = new Dajiejiemian();
         //默认加载主界面相关界面
         _this.addChild(_this.zhujiemian);
         _this.addChild(_this.zhujiemiandingbu);
         _this.addChild(_this.dibuui);
         _this.addChild(_this.dingbuui);
         //默认需要开启饭店结算
-        Fandianjisuan.chushihuajisuan();
+        Fandianjisuan.chushihuajisuan(1);
         return _this;
     }
     Gameguanli.Kongzhitai = function () {
@@ -44,16 +45,33 @@ var Gameguanli = (function (_super) {
     };
     //主界面菜单显示逻辑
     Gameguanli.prototype.jiemianxianshi = function (canshu1) {
-        this.removeChild(Gameguanli.Kongzhitai().zhujiemian);
-        this.removeChild(Gameguanli.Kongzhitai().zhujiemiandingbu);
-        this.removeChild(Gameguanli.Kongzhitai().dibuui);
-        this.removeChild(Gameguanli.Kongzhitai().dingbuui);
         if (canshu1 == "zhujiemian") {
+            if (Gameguanli.Kongzhitai().waichudajie.parent) {
+                this.removeChild(Gameguanli.Kongzhitai().waichudajie);
+                this.removeChild(Gameguanli.Kongzhitai().dibuui);
+                this.removeChild(Gameguanli.Kongzhitai().dingbuui);
+            }
             this.addChild(Gameguanli.Kongzhitai().zhujiemian);
             this.addChild(Gameguanli.Kongzhitai().zhujiemiandingbu);
             this.addChild(Gameguanli.Kongzhitai().dibuui);
             this.addChild(Gameguanli.Kongzhitai().dingbuui);
-            Fandianjisuan.chushihuajisuan();
+            Fandianjisuan.chushihuajisuan(1);
+        }
+        ;
+        if (canshu1 == "shangjie") {
+            if (Gameguanli.Kongzhitai().zhujiemian.parent) {
+                this.removeChild(Gameguanli.Kongzhitai().zhujiemian);
+                this.removeChild(Gameguanli.Kongzhitai().dibuui);
+                this.removeChild(Gameguanli.Kongzhitai().dingbuui);
+            }
+            if (Gameguanli.Kongzhitai().zhujiemiandingbu.parent) {
+                this.removeChild(Gameguanli.Kongzhitai().zhujiemiandingbu);
+            }
+            this.addChild(Gameguanli.Kongzhitai().waichudajie);
+            this.addChild(Gameguanli.Kongzhitai().dibuui);
+            this.addChild(Gameguanli.Kongzhitai().dingbuui);
+            Fandianjisuan.chushihuajisuan(0);
+            Gameguanli.Kongzhitai().waichudajie.chushihua();
         }
     };
     //饭店界面显示逻辑

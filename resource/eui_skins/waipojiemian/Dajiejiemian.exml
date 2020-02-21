@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DajiejiemianSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="17057ba29e1" ></w:Config>
+	<e:Group id="dajiezu" left="0" top="0" bottom="0" right="0">
+		<e:Image id="img_chengshibeijing" source="img_chengshibeijing_png" x="0" y="0"/>
+		<e:Image id="taijie0" x="35" y="1121.67" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie1" x="231.12" y="1126.19" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie2" x="163.02" y="1036.47" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie3" x="165.49" y="932.71" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie4" x="188.58" y="848.77" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie5" x="354" y="814.77" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie6" x="159.46" y="752.77" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie7" x="146.46" y="688.77" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie8" x="155.58" y="597" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie9" x="325" y="579" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie10" x="148.46" y="525" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie11" x="166.46" y="433" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie12" x="119.46" y="385" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie13" x="148.46" y="291" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie14" x="330.67" y="261" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie15" x="544.67" y="285" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie16" x="362" y="395" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie17" x="559.67" y="397" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie18" x="614.67" y="475" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie19" x="531.67" y="555" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie20" x="362" y="679" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie21" x="567.67" y="649" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie22" x="579.67" y="788.77" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie23" x="412.67" y="816.77" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie24" x="567.67" y="900.71" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie25" x="637.8" y="963.19" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie26" x="485.67" y="968.71" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Group id="juesezu" x="34.5" y="1067.67" anchorOffsetY="0.5" anchorOffsetX="0.5">
+			<e:Image id="juesetubiao" source="img_xingren_png" x="0" y="0" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+			<e:Image id="touxiang" source="tx1000_png" x="12" y="24.02" anchorOffsetX="0" width="30" anchorOffsetY="0" height="30"/>
+			<e:Image id="touxiangkuang" source="img_xingren2_png" x="6.5" y="17.48" anchorOffsetX="0" anchorOffsetY="-1.07" scaleX="0.5" scaleY="0.5"/>
+		</e:Group>
+		<e:Image id="img_dianpu" source="img_dianpu_png" x="0" y="0"/>
+		<e:Group id="kaishianniuzu" x="250" y="836.17">
+			<e:Button id="but_shaizi" label="" x="0" y="0" enabled="true">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="but_shaizi1_png" source.down="but_shaizi2_png" source.disabled="but_shaizi2_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Image id="img_tilitishibj" source="img_tilitishibj_png" x="29.5" y="267.83"/>
+			<e:Image id="img_jiating" source="img_jiating_png" x="41.5" y="268.83"/>
+			<e:Label id="tilixiaohao" text="1/50" x="95.5" y="275.83" anchorOffsetX="0" width="108" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

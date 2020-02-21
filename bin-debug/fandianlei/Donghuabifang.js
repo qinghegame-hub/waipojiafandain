@@ -950,14 +950,30 @@ var Donghuabifang = (function (_super) {
         }
     };
     Donghuabifang.prototype.shoudongshangcai = function () {
-        this.chongfudingshi.stop();
-        this.shoudong = true;
-        this.kouchuyuanliao();
-        Gameguanli.Kongzhitai().zuofanjiemian("kai", this.xuqiucaiid.id);
-        Gerenshuxing.zuocaichenggong = "";
-        this.panduandingshi = new egret.Timer(1000, 0);
-        this.panduandingshi.addEventListener(egret.TimerEvent.TIMER, this.panduanzuofan, this);
-        this.panduandingshi.start();
+        var _this = this;
+        if (Gerenshuxing.jiatingzhi > 0) {
+            Weblianjie.fasongshuju("code:037", "{" + '"kouchushu"' + ":" + "1" + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+            var kouchudonghua_1 = new Cailiaoxiaohao();
+            Gameguanli.Kongzhitai().zhujiemian.addChild(kouchudonghua_1);
+            kouchudonghua_1.wenzizu.x = Gameguanli.Kongzhitai().zhujiemian.width / 2 - kouchudonghua_1.wenzizu.width / 2;
+            kouchudonghua_1.wenzizu.y = Gameguanli.Kongzhitai().zhujiemian.height / 2 - kouchudonghua_1.wenzizu.height;
+            kouchudonghua_1.wenzineirong.text = " - 1";
+            kouchudonghua_1.img_shicai.source = "img_jiating_png";
+            egret.Tween.get(kouchudonghua_1).to({ x: kouchudonghua_1.x, y: kouchudonghua_1.y - 60 }, 2000).call(function () {
+                Gameguanli.Kongzhitai().zhujiemian.removeChild(kouchudonghua_1);
+                _this.chongfudingshi.stop();
+                _this.shoudong = true;
+                _this.kouchuyuanliao();
+                Gameguanli.Kongzhitai().zuofanjiemian("kai", _this.xuqiucaiid.id);
+                Gerenshuxing.zuocaichenggong = "";
+                _this.panduandingshi = new egret.Timer(1000, 0);
+                _this.panduandingshi.addEventListener(egret.TimerEvent.TIMER, _this.panduanzuofan, _this);
+                _this.panduandingshi.start();
+            });
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("体力不足");
+        }
     };
     Donghuabifang.prototype.panduanzuofan = function () {
         if (Gerenshuxing.zuocaichenggong == "true") {

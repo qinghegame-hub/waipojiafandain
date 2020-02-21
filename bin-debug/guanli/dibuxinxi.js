@@ -22,11 +22,19 @@ var dibuxinxi = (function (_super) {
     };
     dibuxinxi.prototype.dibuchushihua = function () {
         this.but_hotel1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.openfandian, this);
+        this.but_gongyuan1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.opendajie, this);
     };
     dibuxinxi.prototype.openfandian = function () {
         Gameguanli.Kongzhitai().dibuui.but_hotel1.enabled = false;
+        Gameguanli.Kongzhitai().dibuui.but_gongyuan1.enabled = true;
         //		向界面管理中加入打开主界面参数;
         Gameguanli.Kongzhitai().jiemianxianshi("zhujiemian");
+    };
+    dibuxinxi.prototype.opendajie = function () {
+        Gameguanli.Kongzhitai().dibuui.but_hotel1.enabled = true;
+        Gameguanli.Kongzhitai().dibuui.but_gongyuan1.enabled = false;
+        //		向界面管理中加入打开主界面参数;
+        Gameguanli.Kongzhitai().jiemianxianshi("shangjie");
     };
     return dibuxinxi;
 }(eui.Component));

@@ -3,6 +3,9 @@ class Gameguanli extends egret.DisplayObjectContainer{
 	public zhujiemian:Zhujiemian;
 	public zhujiemiandingbu:Zhujiemianshangceng;
 
+	//上街界面实例
+	public waichudajie:Dajiejiemian;
+
 	//顶部菜单实例
 	public dingbuui:dingbuxinxi;
 
@@ -89,6 +92,7 @@ class Gameguanli extends egret.DisplayObjectContainer{
 		this.jingyingguanli = new Jinyingguanlijiemian();
 		this.liuyan = new Liuyanjiemian();
 		this.caiPuUi = new Caipujiemian();
+		this.waichudajie = new Dajiejiemian();
 		
 
 		//默认加载主界面相关界面
@@ -98,7 +102,7 @@ class Gameguanli extends egret.DisplayObjectContainer{
 		this.addChild(this.dingbuui);
 
 		//默认需要开启饭店结算
-		Fandianjisuan.chushihuajisuan();
+		Fandianjisuan.chushihuajisuan(1);
 
 
 	}
@@ -112,16 +116,32 @@ class Gameguanli extends egret.DisplayObjectContainer{
 	}
 //主界面菜单显示逻辑
 	public jiemianxianshi (canshu1:string):void {
-		this.removeChild(Gameguanli.Kongzhitai().zhujiemian);
-		this.removeChild(Gameguanli.Kongzhitai().zhujiemiandingbu);
-		this.removeChild(Gameguanli.Kongzhitai().dibuui);
-		this.removeChild(Gameguanli.Kongzhitai().dingbuui);
 		if (canshu1 == "zhujiemian"){
+			if(Gameguanli.Kongzhitai().waichudajie.parent){
+				this.removeChild(Gameguanli.Kongzhitai().waichudajie);
+				this.removeChild(Gameguanli.Kongzhitai().dibuui);
+				this.removeChild(Gameguanli.Kongzhitai().dingbuui);
+			}
 			this.addChild(Gameguanli.Kongzhitai().zhujiemian);
 			this.addChild(Gameguanli.Kongzhitai().zhujiemiandingbu);
 			this.addChild(Gameguanli.Kongzhitai().dibuui);
 			this.addChild(Gameguanli.Kongzhitai().dingbuui);
-			Fandianjisuan.chushihuajisuan();	
+			Fandianjisuan.chushihuajisuan(1);	
+		};
+		if(canshu1 == "shangjie"){
+			if(Gameguanli.Kongzhitai().zhujiemian.parent){
+				this.removeChild(Gameguanli.Kongzhitai().zhujiemian);
+				this.removeChild(Gameguanli.Kongzhitai().dibuui);
+				this.removeChild(Gameguanli.Kongzhitai().dingbuui);
+			}
+			if(Gameguanli.Kongzhitai().zhujiemiandingbu.parent){
+				this.removeChild(Gameguanli.Kongzhitai().zhujiemiandingbu);
+			}
+			this.addChild(Gameguanli.Kongzhitai().waichudajie);
+			this.addChild(Gameguanli.Kongzhitai().dibuui);
+			this.addChild(Gameguanli.Kongzhitai().dingbuui);
+			Fandianjisuan.chushihuajisuan(0);
+			Gameguanli.Kongzhitai().waichudajie.chushihua();
 		}
 
 	}

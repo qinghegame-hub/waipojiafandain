@@ -92,6 +92,8 @@ declare module skins{
 	class VSliderSkin extends eui.Skin{
 	}
 }
+declare class DajiejiemianSkin extends eui.Skin{
+}
 declare class JianglijiesuanuiSkin extends eui.Skin{
 }
 declare class LiuyanjiemianSkin extends eui.Skin{

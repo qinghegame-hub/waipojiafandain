@@ -1,6 +1,8 @@
 class Fandianjisuan extends egret.DisplayObjectContainer{
     public static jinlairenshu:number;
     public static shangcaisudu:number = 0;
+
+    public static xunhuankaishi:egret.Timer;
 //    public static xunhuankaishi:egret.Timer;
 
     public constructor(){
@@ -10,16 +12,22 @@ class Fandianjisuan extends egret.DisplayObjectContainer{
 
     public static chushihuajisuan(opendingshi?:number){
         //调用员工属性计算
-        Gerenshuxing.yuangongshuxing();
+        if(opendingshi == 1){
+            Gerenshuxing.yuangongshuxing();
 //设定一个循环定时器
-        let xunhuankaishi = new egret.Timer(Gerenshuxing.jiesuantime,1);
-		xunhuankaishi.addEventListener(egret.TimerEvent.TIMER,this.jisuanfandianshuju,this);
-        xunhuankaishi.start();
+            this.xunhuankaishi = new egret.Timer(Gerenshuxing.jiesuantime,1);
+            this.xunhuankaishi.addEventListener(egret.TimerEvent.TIMER,this.jisuanfandianshuju,this);
+            this.xunhuankaishi.start();
+        }else if(opendingshi == 0){
+            this.xunhuankaishi.stop();
+            this.xunhuankaishi.removeEventListener(egret.TimerEvent.TIMER,this.jisuanfandianshuju,this);
+            this.xunhuankaishi = null;
+        }
     }
 
 
     public static jisuanfandianshuju(){
-        Fandianjisuan.chushihuajisuan();
+        Fandianjisuan.chushihuajisuan(1);
         this.jinlairenshu = 0;
         let zuidakeren:number = 0;
         if(Gerenshuxing.zzkeliuliang <= Gerenshuxing.zzkerongliang){

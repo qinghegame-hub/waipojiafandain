@@ -347,6 +347,20 @@ class Weblianjie extends egret.DisplayObjectContainer {
 			    }
                 Gameguanli.Kongzhitai().cuowutishixinxi("恭喜您，进入菜市场。金币 - " + xiaohaoqianbi);
                 break;
+    //扣除体力成功时反馈
+            case "code:038":
+                Gerenshuxing.jiatingzhi = parseInt(jiexijsongeshi.tilizhi);
+                if(Gameguanli.Kongzhitai().dingbuui.parent){
+                    Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
+                };
+                if(Gameguanli.Kongzhitai().waichudajie.parent){
+                    Gameguanli.Kongzhitai().waichudajie.tilixiaohaochushi();
+                }
+                break;
+    //体力不足时反馈
+            case "code:039":
+                Gameguanli.Kongzhitai().cuowutishixinxi("体力不足");
+                break;
     //非法操作
             case "code:202":
                 Gameguanli.Kongzhitai().cuowutishixinxi("非法操作！");

@@ -16,14 +16,21 @@ var Fandianjisuan = (function (_super) {
     }
     Fandianjisuan.chushihuajisuan = function (opendingshi) {
         //调用员工属性计算
-        Gerenshuxing.yuangongshuxing();
-        //设定一个循环定时器
-        var xunhuankaishi = new egret.Timer(Gerenshuxing.jiesuantime, 1);
-        xunhuankaishi.addEventListener(egret.TimerEvent.TIMER, this.jisuanfandianshuju, this);
-        xunhuankaishi.start();
+        if (opendingshi == 1) {
+            Gerenshuxing.yuangongshuxing();
+            //设定一个循环定时器
+            this.xunhuankaishi = new egret.Timer(Gerenshuxing.jiesuantime, 1);
+            this.xunhuankaishi.addEventListener(egret.TimerEvent.TIMER, this.jisuanfandianshuju, this);
+            this.xunhuankaishi.start();
+        }
+        else if (opendingshi == 0) {
+            this.xunhuankaishi.stop();
+            this.xunhuankaishi.removeEventListener(egret.TimerEvent.TIMER, this.jisuanfandianshuju, this);
+            this.xunhuankaishi = null;
+        }
     };
     Fandianjisuan.jisuanfandianshuju = function () {
-        Fandianjisuan.chushihuajisuan();
+        Fandianjisuan.chushihuajisuan(1);
         this.jinlairenshu = 0;
         var zuidakeren = 0;
         if (Gerenshuxing.zzkeliuliang <= Gerenshuxing.zzkerongliang) {
