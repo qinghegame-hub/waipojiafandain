@@ -972,7 +972,7 @@ var Donghuabifang = (function (_super) {
             });
         }
         else {
-            Gameguanli.Kongzhitai().cuowutishixinxi("体力不足");
+            Gameguanli.Kongzhitai().cuowutishixinxi("当前您的劳动力已不足1点");
         }
     };
     Donghuabifang.prototype.panduanzuofan = function () {

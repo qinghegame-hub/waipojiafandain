@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TongyongquerenkuangSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1707b743ce4" ></w:Config>
+	<e:Group id="tongyongtishizu" horizontalCenter="0" verticalCenter="0">
+		<e:Image id="img_tongyongtishikuang" source="img_tongyongtishikuang_png" x="0" y="0"/>
+		<e:Label id="tishiwenzi" text="这是一个通用提示框" x="54.83" y="63.17" anchorOffsetX="0" width="591.34" anchorOffsetY="0" height="239.33" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti" stroke="2"/>
+		<e:Button id="but_queding" label="" y="338.5" enabled="true" x="104.5">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="img_tishiqueding1_png" source.down="img_tishiqueding2_png" source.disabled="img_tishiqueding2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="but_shuangbei" label="" y="338.5" enabled="true" x="424.5">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="img_tishifanbei1_png" source.down="img_tishifanbei2_png" source.disabled="img_tishifanbei2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

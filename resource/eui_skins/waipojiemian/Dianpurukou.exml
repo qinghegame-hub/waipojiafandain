@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DianpurukouSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1707afe0e96" ></w:Config>
+	<e:Group id="zhuanchangrukou" left="0" top="0" bottom="0" right="0">
+		<e:Image id="img_heisezhezao" source="img_heisezhezao_png" left="0" top="0" bottom="0" right="0"/>
+		<e:Label id="jinruwenzi" text="你辗转来到了一家【超市】，思索一番，你决定是否进入看看？" x="35" y="268" anchorOffsetX="0" width="680" anchorOffsetY="0" height="610" size="48" fontFamily="wodeziti" verticalAlign="middle" textAlign="center"/>
+	</e:Group>
+</e:Skin>

@@ -3,39 +3,39 @@
 	<w:Config id="17057ba29e1" ></w:Config>
 	<e:Group id="dajiezu" left="0" top="0" bottom="0" right="0">
 		<e:Image id="img_chengshibeijing" source="img_chengshibeijing_png" x="0" y="0"/>
-		<e:Image id="taijie0" x="35" y="1121.67" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie1" x="231.12" y="1126.19" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie2" x="163.02" y="1036.47" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie3" x="165.49" y="932.71" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie4" x="188.58" y="848.77" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie5" x="354" y="814.77" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie6" x="159.46" y="752.77" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie7" x="146.46" y="688.77" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie8" x="155.58" y="597" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie9" x="325" y="579" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie10" x="148.46" y="525" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie11" x="166.46" y="433" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie12" x="119.46" y="385" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie13" x="148.46" y="291" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie14" x="330.67" y="261" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie15" x="544.67" y="285" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie16" x="362" y="395" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie17" x="559.67" y="397" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie18" x="614.67" y="475" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie19" x="531.67" y="555" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie20" x="362" y="679" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie21" x="567.67" y="649" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie22" x="579.67" y="788.77" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie23" x="412.67" y="816.77" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie24" x="567.67" y="900.71" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie25" x="637.8" y="963.19" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Image id="taijie26" x="485.67" y="968.71" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Group id="juesezu" x="34.5" y="1067.67" anchorOffsetY="0.5" anchorOffsetX="0.5">
+		<e:Image id="taijie0" x="60" y="1163.67" anchorOffsetX="0.5" anchorOffsetY="0.5" source="" rotation="330.28"/>
+		<e:Image id="taijie1" x="262.12" y="1128.19" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie2" x="163.02" y="1081.47" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie3" x="252.49" y="978.71" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie4" x="175.58" y="933.77" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie5" x="375" y="836.77" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie6" x="171.58" y="777.01" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie7" x="210.1" y="731.19" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie8" x="155.58" y="690.94" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie9" x="358.33" y="603.24" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie10" x="151.49" y="555.3" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie11" x="199.79" y="451.18" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie12" x="140.67" y="412.27" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie13" x="327.25" y="275.85" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie14" x="497.34" y="239.79" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie15" x="656.79" y="281.97" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie16" x="395.33" y="422.27" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie17" x="605.12" y="430.33" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie18" x="654.06" y="508.33" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie19" x="546.82" y="585.3" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie20" x="398.36" y="700.21" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie21" x="594.94" y="679.3" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie22" x="625.12" y="806.95" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie23" x="452.06" y="841.01" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie24" x="616.15" y="915.87" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie25" x="592.34" y="1163.2" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="taijie26" x="525.06" y="986.89" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
+		<e:Image id="img_dianpu" source="img_dianpu_png" x="0" y="0"/>
+		<e:Group id="juesezu" x="59.5" y="1163.67" anchorOffsetY="96.5" anchorOffsetX="25.5">
 			<e:Image id="juesetubiao" source="img_xingren_png" x="0" y="0" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
 			<e:Image id="touxiang" source="tx1000_png" x="12" y="24.02" anchorOffsetX="0" width="30" anchorOffsetY="0" height="30"/>
 			<e:Image id="touxiangkuang" source="img_xingren2_png" x="6.5" y="17.48" anchorOffsetX="0" anchorOffsetY="-1.07" scaleX="0.5" scaleY="0.5"/>
 		</e:Group>
-		<e:Image id="img_dianpu" source="img_dianpu_png" x="0" y="0"/>
 		<e:Group id="kaishianniuzu" x="250" y="836.17">
 			<e:Button id="but_shaizi" label="" x="0" y="0" enabled="true">
 				<e:skinName>

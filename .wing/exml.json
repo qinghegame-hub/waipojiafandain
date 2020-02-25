@@ -183,5 +183,15 @@
         "path": "Dajiejiemian.ts",
         "class": "Dajiejiemian",
         "parentPath": ""
+    },
+    "1707afe0e96": {
+        "path": "Dianpurukou.ts",
+        "class": "Dianpurukou",
+        "parentPath": ""
+    },
+    "1707b743ce4": {
+        "path": "Tongyongquerenkuang.ts",
+        "class": "Tongyongquerenkuang",
+        "parentPath": ""
     }
 }

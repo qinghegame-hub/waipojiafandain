@@ -94,6 +94,8 @@ declare module skins{
 }
 declare class DajiejiemianSkin extends eui.Skin{
 }
+declare class DianpurukouSkin extends eui.Skin{
+}
 declare class JianglijiesuanuiSkin extends eui.Skin{
 }
 declare class LiuyanjiemianSkin extends eui.Skin{
@@ -101,6 +103,8 @@ declare class LiuyanjiemianSkin extends eui.Skin{
 declare class MaicaiuiSkin extends eui.Skin{
 }
 declare class PengrenfankuiuiSkin extends eui.Skin{
+}
+declare class TongyongquerenkuangSkin extends eui.Skin{
 }
 declare class ZuocaitanchuuiSkin extends eui.Skin{
 }
