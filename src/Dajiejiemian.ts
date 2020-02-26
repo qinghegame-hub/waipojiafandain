@@ -55,9 +55,11 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 	public kouchushuliang:any//扣除材料数量;
 	public jianglileixing:any//奖励材料类型；
 	public jianglishuliang:any//奖励材料数量;
+	public suijichufaid:any//随机触发的id;
 
 	public zhuanchangjiemian:Dianpurukou;//转场入口界面;
 	public suijijiemian:Tongyongquerenkuang;//弹出界面;
+	public jianglijiemian:Jianglijiesuanui;
 
 
 	public constructor() {
@@ -92,6 +94,7 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public dianjisaizi(){
+		this.but_shaizi.enabled = false;
 		if(Gerenshuxing.jiatingzhi > 0){
 			Weblianjie.fasongshuju("code:037","{" + '"kouchushu"' +":"+ "1" +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 			let kouchudonghua = new Cailiaoxiaohao();
@@ -108,6 +111,7 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 			this.zouluyanshi();
 		}else{
 			Gameguanli.Kongzhitai().cuowutishixinxi("当前您的劳动力已不足1点");
+			this.but_shaizi.enabled = true;
 		}
 	}
 
@@ -781,6 +785,7 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 
 	public chufadianpu1(){
 		if(this.jiedaopeizhi.suijiliebiao == "0"){
+			this.but_shaizi.enabled = true;
 			this.fandianbufen();
 		}else{
 			this.suijichufaliebiao = this.jiedaopeizhi.suijiliebiao.split(",") ;
@@ -795,21 +800,196 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 			Gameguanli.Kongzhitai().dingbuui.addChild(this.suijijiemian);
 			this.suijijiemian.tishiwenzi.text = this.suijipeizhi.neirong;
 			this.kouchuleixing = this.suijipeizhi.kouchuleixing;
+			this.suijichufaid = this.suijipeizhi.id;
 			this.kouchushuliang = this.suijipeizhi.kouchushuliang;
 			this.jianglileixing = this.suijipeizhi.jianglileixing;
 			this.jianglishuliang = this.suijipeizhi.jianglishuliang;
+			this.suijijiemian.jiangli2.text = "- " + this.kouchushuliang;
+			this.suijijiemian.jiangli1.text = "+ " + this.jianglishuliang;
+			this.kouchutubiaopanduan();
+			this.jianglitubiaopanduan();
 			this.suijijiemian.but_queding.addEventListener(egret.TouchEvent.TOUCH_TAP,this.suijiqueding,this);
 			this.suijijiemian.but_shuangbei.addEventListener(egret.TouchEvent.TOUCH_TAP,this.suijishuangbei,this);
 		}
 	}
 
+	public jianglitubiaopanduan(){
+		if(this.jianglileixing == "1"){
+			this.suijijiemian.jiangliicon1.source = "img_qian_png";
+		}else if(this.jianglileixing == "2"){
+			this.suijijiemian.jiangliicon1.source = "img_jiating_png";
+		}else if(this.jianglileixing == "3"){
+			this.suijijiemian.jiangliicon1.source = "img_jiankang_png";
+		}else if(this.jianglileixing == "4"){
+			this.suijijiemian.jiangliicon1.source = "img_xinqing_png";
+		}else if(this.jianglileixing == "5"){
+			this.suijijiemian.jiangliicon1.source = "img_xingfu_png";
+		}
+	}
+
+	public kouchutubiaopanduan(){
+		if(this.kouchuleixing == "1"){
+			this.suijijiemian.jiangliicon2.source = "img_qian_png";
+		}else if(this.kouchuleixing == "2"){
+			this.suijijiemian.jiangliicon2.source = "img_jiating_png";
+		}else if(this.kouchuleixing == "3"){
+			this.suijijiemian.jiangliicon2.source = "img_jiankang_png";
+		}else if(this.kouchuleixing == "4"){
+			this.suijijiemian.jiangliicon2.source = "img_xinqing_png";
+		}else if(this.kouchuleixing == "5"){
+			this.suijijiemian.jiangliicon2.source = "img_xingfu_png";
+		}
+	}
+
+
+
 	public suijiqueding(){
 		Gameguanli.Kongzhitai().dingbuui.removeChild(this.suijijiemian);
+		this.but_shaizi.enabled = true;
+		switch(this.kouchuleixing){
+			case "1":
+				if(Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)){
+					this.jianglijiemian = new Jianglijiesuanui();
+					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
+					this.fasongjiangli(1);
+					this.jianglijiemian.jiangliicon.source = "img_qian_png";
+					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang;
+					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
+				}else{
+					Gameguanli.Kongzhitai().cuowutishixinxi("由于您无法支付费用，只得黯自离去！");
+				}
+				break;
+			case "2":
+				if(Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)){
+					this.jianglijiemian = new Jianglijiesuanui();
+					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
+					this.fasongjiangli(1);
+					this.jianglijiemian.jiangliicon.source = "img_jiating_png";
+					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang;
+					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
+				}else{
+					Gameguanli.Kongzhitai().cuowutishixinxi("由于您的行动力不足，只得黯自离去！");
+				}
+				break;
+			case "3":
+				if(Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)){
+					this.jianglijiemian = new Jianglijiesuanui();
+					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
+					this.fasongjiangli(1);
+					this.jianglijiemian.jiangliicon.source = "img_jiankang_png";
+					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang;
+					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
+				}else{
+					Gameguanli.Kongzhitai().cuowutishixinxi("由于您的身体不太健康，只得黯自离去！");
+				}
+				break;
+			case "4":
+				if(Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)){
+					this.jianglijiemian = new Jianglijiesuanui();
+					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
+					this.fasongjiangli(1);
+					this.jianglijiemian.jiangliicon.source = "img_xinqing_png";
+					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang;
+					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
+				}else{
+					Gameguanli.Kongzhitai().cuowutishixinxi("由于您的心情不太开心，只得黯自离去！");
+				}
+				break;
+			case "5":
+				if(Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)){
+					this.jianglijiemian = new Jianglijiesuanui();
+					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
+					this.fasongjiangli(1);
+					this.jianglijiemian.jiangliicon.source = "img_xingfu_png";
+					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang;
+					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
+				}else{
+					Gameguanli.Kongzhitai().cuowutishixinxi("由于您的幸福值太低，只得黯自离去！");
+				}
+				break;
+		}
 	}
 
 	public suijishuangbei(){
 		Gameguanli.Kongzhitai().dingbuui.removeChild(this.suijijiemian);
+		this.but_shaizi.enabled = true;
+		switch(this.kouchuleixing){
+			case "1":
+				if(Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)){
+					this.jianglijiemian = new Jianglijiesuanui();
+					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
+					this.fasongjiangli(2);
+					this.jianglijiemian.jiangliicon.source = "img_qian_png";
+					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang * 2;
+					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
+				}else{
+					Gameguanli.Kongzhitai().cuowutishixinxi("由于您无法支付费用，只得黯自离去！");
+				}
+				break;
+			case "2":
+				if(Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)){
+					this.jianglijiemian = new Jianglijiesuanui();
+					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
+					this.fasongjiangli(2);
+					this.jianglijiemian.jiangliicon.source = "img_jiating_png";
+					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang  * 2;
+					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
+				}else{
+					Gameguanli.Kongzhitai().cuowutishixinxi("由于您的行动力不足，只得黯自离去！");
+				}
+				break;
+			case "3":
+				if(Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)){
+					this.jianglijiemian = new Jianglijiesuanui();
+					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
+					this.fasongjiangli(2);
+					this.jianglijiemian.jiangliicon.source = "img_jiankang_png";
+					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang  * 2;
+					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
+				}else{
+					Gameguanli.Kongzhitai().cuowutishixinxi("由于您的身体不太健康，只得黯自离去！");
+				}
+				break;
+			case "4":
+				if(Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)){
+					this.jianglijiemian = new Jianglijiesuanui();
+					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
+					this.fasongjiangli(2);
+					this.jianglijiemian.jiangliicon.source = "img_xinqing_png";
+					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang  * 2;
+					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
+				}else{
+					Gameguanli.Kongzhitai().cuowutishixinxi("由于您的心情不太开心，只得黯自离去！");
+				}
+				break;
+			case "5":
+				if(Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)){
+					this.jianglijiemian = new Jianglijiesuanui();
+					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
+					this.fasongjiangli(2);
+					this.jianglijiemian.jiangliicon.source = "img_xingfu_png";
+					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang  * 2;
+					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
+				}else{
+					Gameguanli.Kongzhitai().cuowutishixinxi("由于您的幸福值太低，只得黯自离去！");
+				}
+				break;
+		}
 	}
+
+	public fasongjiangli(beishu){
+		 Weblianjie.fasongshuju("code:040","{" + '"kouchuleixing"' +":"+ '"' + this.kouchuleixing + '"' +","
+		 + '"kouchushuliang"' +":"+ '"' + this.kouchushuliang + '"' +"," 
+		 + '"jianglileixing"' +":"+ '"' + this.jianglileixing + '"' +","
+		 + '"jianglishuliang"' +":"+ '"' + this.jianglishuliang + '"' +","
+		 + '"beishu"' +":"+ '"' + beishu + '"' +","
+		 + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
+	}
+
+	public guanbijiangli(){
+		Gameguanli.Kongzhitai().dingbuui.removeChild(this.jianglijiemian);
+	}
+
 
 	public chufadianpu2(){
 		

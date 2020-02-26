@@ -361,6 +361,75 @@ class Weblianjie extends egret.DisplayObjectContainer {
             case "code:039":
                 Gameguanli.Kongzhitai().cuowutishixinxi("体力不足");
                 break;
+    //街道奖励扣除时反馈
+            case "code:041":
+                switch(jiexijsongeshi.kouchuleixing){
+                    case "1":
+                        Gerenshuxing.jinbizhi = parseInt(jiexijsongeshi.kouchushuliang);
+                        break;
+                    case "2":
+                        Gerenshuxing.jiatingzhi = parseInt(jiexijsongeshi.kouchushuliang);
+                        break;
+                    case "3":
+                        Gerenshuxing.jiankangzhi = parseInt(jiexijsongeshi.kouchushuliang);
+                        break;
+                    case "4":
+                        Gerenshuxing.kaixinzhi = parseInt(jiexijsongeshi.kouchushuliang);
+                        break;
+                    case "5":
+                        Gerenshuxing.xingfuzhi = parseInt(jiexijsongeshi.kouchushuliang);
+                        break;
+                }
+                switch(jiexijsongeshi.jianglileixing){
+                    case "1":
+                        Gerenshuxing.jinbizhi = parseInt(jiexijsongeshi.jianglishuliang);
+                        break;
+                    case "2":
+                        Gerenshuxing.jiatingzhi = parseInt(jiexijsongeshi.jianglishuliang);
+                        break;
+                    case "3":
+                        Gerenshuxing.jiankangzhi = parseInt(jiexijsongeshi.jianglishuliang);
+                        break;
+                    case "4":
+                        Gerenshuxing.kaixinzhi = parseInt(jiexijsongeshi.jianglishuliang);
+                        break;
+                    case "5":
+                        Gerenshuxing.xingfuzhi = parseInt(jiexijsongeshi.jianglishuliang);
+                        break;
+                }
+                if(Gameguanli.Kongzhitai().dingbuui.parent){
+                    Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
+                };
+                if(Gameguanli.Kongzhitai().waichudajie.parent){
+                    Gameguanli.Kongzhitai().waichudajie.tilixiaohaochushi();
+                }
+                break;
+    ////街道奖励增加时反馈
+             case "code:042":
+                switch(jiexijsongeshi.jianglileixing){
+                    case "1":
+                        Gerenshuxing.jinbizhi = parseInt(jiexijsongeshi.jianglishuliang);
+                        break;
+                    case "2":
+                        Gerenshuxing.jiatingzhi = parseInt(jiexijsongeshi.jianglishuliang);
+                        break;
+                    case "3":
+                        Gerenshuxing.jiankangzhi = parseInt(jiexijsongeshi.jianglishuliang);
+                        break;
+                    case "4":
+                        Gerenshuxing.kaixinzhi = parseInt(jiexijsongeshi.jianglishuliang);
+                        break;
+                    case "5":
+                        Gerenshuxing.xingfuzhi = parseInt(jiexijsongeshi.jianglishuliang);
+                        break;
+                }
+                if(Gameguanli.Kongzhitai().dingbuui.parent){
+                    Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
+                };
+                if(Gameguanli.Kongzhitai().waichudajie.parent){
+                    Gameguanli.Kongzhitai().waichudajie.tilixiaohaochushi();
+                }
+                break; 
     //非法操作
             case "code:202":
                 Gameguanli.Kongzhitai().cuowutishixinxi("非法操作！");

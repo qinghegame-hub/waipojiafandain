@@ -4,6 +4,11 @@ class Tongyongquerenkuang extends eui.Component implements  eui.UIComponent {
 	public tishiwenzi:eui.Label;
 	public but_queding:eui.Button;
 	public but_shuangbei:eui.Button;
+	public jiangli1:eui.Label;
+	public jiangli2:eui.Label;
+	public jiangliicon1:eui.Image;
+	public jiangliicon2:eui.Image;
+
 
 
 	public constructor() {

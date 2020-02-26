@@ -3,7 +3,7 @@
 	<w:Config id="1707b743ce4" ></w:Config>
 	<e:Group id="tongyongtishizu" horizontalCenter="0" verticalCenter="0">
 		<e:Image id="img_tongyongtishikuang" source="img_tongyongtishikuang_png" x="0" y="0"/>
-		<e:Label id="tishiwenzi" text="这是一个通用提示框" x="54.83" y="63.17" anchorOffsetX="0" width="591.34" anchorOffsetY="0" height="239.33" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti" stroke="2"/>
+		<e:Label id="tishiwenzi" text="这是一个通用提示框" x="54.83" y="63.17" anchorOffsetX="0" width="588.34" anchorOffsetY="0" height="183.33" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti" stroke="2"/>
 		<e:Button id="but_queding" label="" y="338.5" enabled="true" x="104.5">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
@@ -20,5 +20,9 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
+		<e:Label id="jiangli1" text="x20" x="163.5" y="274" anchorOffsetX="0" width="111" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" textColor="0x05bf10" stroke="2"/>
+		<e:Label id="jiangli2" text="x20" x="349.5" y="274" anchorOffsetX="0" width="111" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" textColor="0xf21809" stroke="2"/>
+		<e:Image id="jiangliicon1" source="img_qian_png" x="104" y="261" width="50" height="50"/>
+		<e:Image id="jiangliicon2" source="img_qian_png" x="287" y="261" width="50" height="50"/>
 	</e:Group>
 </e:Skin>
