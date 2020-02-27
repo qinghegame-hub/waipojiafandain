@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DianpufandianSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="17081f4db9b" ></w:Config>
+	<e:Group id="dianpufandianzu" left="0" bottom="0" top="0" right="0">
+		<e:Image id="img_heisezhezao" source="img_heisezhezao_png" left="0" bottom="0" right="0" top="0"/>
+		<e:Image id="img_fandiandianpubj" source="img_fandiandianpubj_png" x="6.5" y="168.06"/>
+		<e:Image id="dianzhutouxiang" source="tx1001_png" x="137.65" y="334" anchorOffsetX="0" width="129.09" anchorOffsetY="0" height="120"/>
+		<e:Image id="dianzutouxiangkuang" source="img_dianzhuxiangkuang_png" x="124.18" y="285.09"/>
+		<e:Image id="guyuantouxiang1" source="img_kongbaijiahao_png" x="115.83" y="643.03" width="136" height="116"/>
+		<e:Image id="guyuantouxiang2" source="img_kongbaijiahao_png" x="310.14" y="643.03" width="136" height="116"/>
+		<e:Image id="guyuantouxiang3" source="img_kongbaijiahao_png" x="497.23" y="643.94" width="136" height="116"/>
+		<e:Button id="but_xiaofei" label="" x="102.97" y="793.97" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_xiaofei1_png" source.down="but_xiaofei2_png" source.disabled="but_xiaofei2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="but_shougou" label="" x="387.32" y="793.97" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shougou1_png" source.down="but_shougou2_png" source.disabled="but_shougou2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Label id="dianzhuming" text="店主名字" x="102.35" y="496.33" anchorOffsetX="0" width="215.34" anchorOffsetY="0" height="38" size="24" fontFamily="wodeziti" bold="true" verticalAlign="middle" textAlign="center" stroke="2"/>
+		<e:Label id="shoufeishu" text="8888" x="451.87" y="287.75" anchorOffsetX="0" width="134.01" anchorOffsetY="0" height="38" size="24" fontFamily="wodeziti" verticalAlign="middle" textAlign="left" stroke="2"/>
+		<e:Label id="renqishu" text="8888" x="451.87" y="340.08" anchorOffsetX="0" width="134.01" anchorOffsetY="0" height="38" size="24" fontFamily="wodeziti" verticalAlign="middle" textAlign="left" stroke="2"/>
+		<e:Label id="zujinshu" text="8888" x="451.87" y="394" anchorOffsetX="0" width="134.01" anchorOffsetY="0" height="38" size="24" fontFamily="wodeziti" verticalAlign="middle" textAlign="left" stroke="2"/>
+		<e:Label id="zuqishu" text="8888" x="451.87" y="446.75" anchorOffsetX="0" width="134.01" anchorOffsetY="0" height="38" size="24" fontFamily="wodeziti" verticalAlign="middle" textAlign="left" stroke="2"/>
+		<e:Label id="zhuangtaishu" text="可收购" x="451.87" y="501.65" anchorOffsetX="0" width="134.01" anchorOffsetY="0" height="38" size="24" fontFamily="wodeziti" verticalAlign="middle" textAlign="left" stroke="2"/>
+		<e:Label id="dianpuming" text="可收购" x="259.85" y="180.98" anchorOffsetX="0" width="216.67" anchorOffsetY="0" height="46" size="30" fontFamily="wodeziti" verticalAlign="middle" textAlign="center" stroke="4" bold="true" textColor="0xef870e" strokeColor="0xf4ebeb"/>
+		<e:Button id="but_guyuan1" label="" x="107.33" y="585.93" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_guyuanxiangkuang_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="but_guyuan2" label="" x="301.51" y="585.93" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_guyuanxiangkuang_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="but_guyuan3" label="" x="488.73" y="585.93" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_guyuanxiangkuang_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

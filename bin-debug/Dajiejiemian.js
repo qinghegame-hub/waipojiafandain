@@ -723,6 +723,45 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.fandianbufen = function () {
+        this.fandianjiemian = new Dianpufandian();
+        Gameguanli.Kongzhitai().dingbuui.addChild(this.fandianjiemian);
+        this.fandianjiemian.but_xiaofei.addEventListener(egret.TouchEvent.TOUCH_TAP, this.xiaofeidianji, this);
+        for (var p = 0; p < this.jiedaobiao.length; p++) {
+            if (this.dangqianbushu == parseInt(this.jiedaobiao[p].id)) {
+                this.jiedaopeizhi = this.jiedaobiao[p];
+                this.fandianjiemian.dianpuming.text = this.jiedaopeizhi.name;
+                break;
+            }
+        }
+        for (var g in Gerencaipudengji.jiedaoshuju) {
+            if (g == String(this.dangqianbushu)) {
+                this.fandianpeizhi = Gerencaipudengji.jiedaoshuju[g];
+                break;
+            }
+        }
+        this.fandianjiemian.renqishu.text = this.fandianpeizhi[0];
+        this.fandianjiemian.zujinshu.text = this.fandianpeizhi[1];
+        this.fandianjiemian.shoufeishu.text = this.fandianpeizhi[2];
+        this.fandianjiemian.zuqishu.text = this.fandianpeizhi[3] + "天";
+        if (this.fandianpeizhi[3] == "0") {
+            this.fandianjiemian.zhuangtaishu.text = "可收购";
+        }
+        else {
+            this.fandianjiemian.zhuangtaishu.text = "不可收购";
+        }
+        switch (this.fandianpeizhi[4]) {
+            case "0":
+                this.fandianjiemian.dianzhuming.text = "暂无主人";
+                break;
+            case "1":
+                this.fandianjiemian.dianzhuming.text = Gerenshuxing.uid;
+                break;
+            default:
+                this.fandianjiemian.dianzhuming.text = "qitaren";
+        }
+    };
+    Dajiejiemian.prototype.xiaofeidianji = function () {
+        Gameguanli.Kongzhitai().dingbuui.removeChild(this.fandianjiemian);
     };
     Dajiejiemian.prototype.chufadianpu1 = function () {
         if (this.jiedaopeizhi.suijiliebiao == "0") {

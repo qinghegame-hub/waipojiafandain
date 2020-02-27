@@ -78,17 +78,10 @@ var Weblianjie = (function (_super) {
                 Gerenshuxing.yuangongshuxing();
                 Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
                 break;
-            //初始化个人菜谱等级信息
+            //初始化个人菜谱等级、街道信息
             case "code:035":
                 Gerencaipudengji.caipulevel = jiexijsongeshi[0].jingyan[0];
-                //                console.log(Gerencaipudengji.caipulevel);
-                /*let data = Gerencaipudengji.caipulevel;
-                for(var h in data){
-                   if(h == "1001"){
-                       console.log(data[h][0]);
-                   }
-                }*/
-                //今天做到了这里，明天继续，把菜谱升级的所有接口和表现做好
+                Gerencaipudengji.jiedaoshuju = jiexijsongeshi[0].jiedao[0];
                 break;
             //解锁菜品时反馈
             case "code:003":
@@ -272,16 +265,18 @@ var Weblianjie = (function (_super) {
                 Gerenshuxing.yongyouyuanliao = jiexijsongeshi.shuaxinjinbi;
                 Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
                 Gameguanli.Kongzhitai().zhujiemiandingbu.anniuchuli();
-                var shicaikouchu_1 = new Cailiaoxiaohao();
-                Gameguanli.Kongzhitai().zhujiemian.addChild(shicaikouchu_1);
-                var zongx = Gameguanli.Kongzhitai().zhujiemiandingbu.zhuangatizu.x;
-                var zongy = Gameguanli.Kongzhitai().zhujiemiandingbu.zhuangatizu.y - Gameguanli.Kongzhitai().zhujiemiandingbu.img_zhuangtaixianshibg.height - shicaikouchu_1.height / 2;
-                shicaikouchu_1.x = zongx;
-                shicaikouchu_1.y = zongy;
-                shicaikouchu_1.wenzineirong.text = "- " + jiexijsongeshi.sjhuodejinbi;
-                egret.Tween.get(shicaikouchu_1).wait(1000).to({ x: zongx, y: zongy - 50 }, 2000).call(function () {
-                    Gameguanli.Kongzhitai().zhujiemian.removeChild(shicaikouchu_1);
-                });
+                if (Gameguanli.Kongzhitai().zhujiemian.parent) {
+                    var shicaikouchu_1 = new Cailiaoxiaohao();
+                    Gameguanli.Kongzhitai().zhujiemian.addChild(shicaikouchu_1);
+                    var zongx = Gameguanli.Kongzhitai().zhujiemiandingbu.zhuangatizu.x;
+                    var zongy = Gameguanli.Kongzhitai().zhujiemiandingbu.zhuangatizu.y - Gameguanli.Kongzhitai().zhujiemiandingbu.img_zhuangtaixianshibg.height - shicaikouchu_1.height / 2;
+                    shicaikouchu_1.x = zongx;
+                    shicaikouchu_1.y = zongy;
+                    shicaikouchu_1.wenzineirong.text = "- " + jiexijsongeshi.sjhuodejinbi;
+                    egret.Tween.get(shicaikouchu_1).wait(1000).to({ x: zongx, y: zongy - 50 }, 2000).call(function () {
+                        Gameguanli.Kongzhitai().zhujiemian.removeChild(shicaikouchu_1);
+                    });
+                }
                 break;
             //增加时间成功时反馈 
             case "code:029":

@@ -193,5 +193,10 @@
         "path": "Tongyongquerenkuang.ts",
         "class": "Tongyongquerenkuang",
         "parentPath": ""
+    },
+    "17081f4db9b": {
+        "path": "Dianpufandian.ts",
+        "class": "Dianpufandian",
+        "parentPath": ""
     }
 }

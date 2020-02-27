@@ -56,10 +56,12 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 	public jianglileixing:any//奖励材料类型；
 	public jianglishuliang:any//奖励材料数量;
 	public suijichufaid:any//随机触发的id;
+	public fandianpeizhi:any//饭店配置;
 
 	public zhuanchangjiemian:Dianpurukou;//转场入口界面;
 	public suijijiemian:Tongyongquerenkuang;//弹出界面;
 	public jianglijiemian:Jianglijiesuanui;
+	public fandianjiemian:Dianpufandian;//饭店类店铺界面;
 
 
 	public constructor() {
@@ -779,7 +781,46 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 
 
 	public fandianbufen(){
+		this.fandianjiemian = new Dianpufandian();
+		Gameguanli.Kongzhitai().dingbuui.addChild(this.fandianjiemian);
+		this.fandianjiemian.but_xiaofei.addEventListener(egret.TouchEvent.TOUCH_TAP,this.xiaofeidianji,this);
+		for(var p = 0;p<this.jiedaobiao.length;p++){
+			if(this.dangqianbushu == parseInt(this.jiedaobiao[p].id)){
+				this.jiedaopeizhi = this.jiedaobiao[p];
+				this.fandianjiemian.dianpuming.text = this.jiedaopeizhi.name;
+				break;
+			}
+		}
+		for (var g in Gerencaipudengji.jiedaoshuju){
+			if(g == String(this.dangqianbushu)){
+				this.fandianpeizhi = Gerencaipudengji.jiedaoshuju[g];
+				break;
+			}
+		}
+		this.fandianjiemian.renqishu.text = this.fandianpeizhi[0];
+		this.fandianjiemian.zujinshu.text = this.fandianpeizhi[1];
+		this.fandianjiemian.shoufeishu.text = this.fandianpeizhi[2];
+		this.fandianjiemian.zuqishu.text = this.fandianpeizhi[3] + "天";
+		if(this.fandianpeizhi[3] == "0"){
+			this.fandianjiemian.zhuangtaishu.text = "可收购";
+		}else{
+			this.fandianjiemian.zhuangtaishu.text = "不可收购";
+		}
+		switch(this.fandianpeizhi[4]){
+			case "0":
+				this.fandianjiemian.dianzhuming.text = "暂无主人";
+				break;
+			case "1":
+				this.fandianjiemian.dianzhuming.text = Gerenshuxing.uid;
+				break;
+			default:
+				this.fandianjiemian.dianzhuming.text = "qitaren";
+		}
 
+	}
+
+	public xiaofeidianji(){
+		Gameguanli.Kongzhitai().dingbuui.removeChild(this.fandianjiemian);
 	}
 
 

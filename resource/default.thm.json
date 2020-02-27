@@ -49,7 +49,8 @@
 		"Zuocaitanchuui": "resource/eui_skins/waipojiemian/Zuocaitanchuui.exml",
 		"Dajiejiemian": "resource/eui_skins/waipojiemian/Dajiejiemian.exml",
 		"Dianpurukou": "resource/eui_skins/waipojiemian/Dianpurukou.exml",
-		"Tongyongquerenkuang": "resource/eui_skins/waipojiemian/Tongyongquerenkuang.exml"
+		"Tongyongquerenkuang": "resource/eui_skins/waipojiemian/Tongyongquerenkuang.exml",
+		"Dianpufandian": "resource/eui_skins/waipojiemian/Dianpufandian.exml"
 	},
 	"autoGenerateExmlsList": true,
 	"exmls": [
@@ -88,6 +89,7 @@
 		"resource/eui_skins/VScrollBarSkin.exml",
 		"resource/eui_skins/VSliderSkin.exml",
 		"resource/eui_skins/waipojiemian/Dajiejiemian.exml",
+		"resource/eui_skins/waipojiemian/Dianpufandian.exml",
 		"resource/eui_skins/waipojiemian/Dianpurukou.exml",
 		"resource/eui_skins/waipojiemian/Jianglijiesuanui.exml",
 		"resource/eui_skins/waipojiemian/Jinyingguanlijiemian.exml",

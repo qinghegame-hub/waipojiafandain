@@ -934,13 +934,15 @@ class Donghuabifang extends egret.DisplayObjectContainer{
     }
 
     private doudingwenzixianshi(){
-        this.toudingdingshi = new egret.Timer(3000,0);
-        this.tdWenziduixiang = new Toudingwenzi();
-        this.juesexianshi.addChild(this.tdWenziduixiang);
-        this.tdWenziduixiang.img_toudingwenzikuang.alpha = 0;
-        this.tdWenziduixiang.wenzineirong.text = "";
-        this.toudingdingshi.addEventListener(egret.TimerEvent.TIMER,this.toudinghanhua,this);
-        this.toudingdingshi.start();
+        if(Gameguanli.Kongzhitai().zhujiemian.parent){
+            this.toudingdingshi = new egret.Timer(3000,0);
+            this.tdWenziduixiang = new Toudingwenzi();
+            this.juesexianshi.addChild(this.tdWenziduixiang);
+            this.tdWenziduixiang.img_toudingwenzikuang.alpha = 0;
+            this.tdWenziduixiang.wenzineirong.text = "";
+            this.toudingdingshi.addEventListener(egret.TimerEvent.TIMER,this.toudinghanhua,this);
+            this.toudingdingshi.start();
+        }
     }
 
     private toudinghanhua(){
