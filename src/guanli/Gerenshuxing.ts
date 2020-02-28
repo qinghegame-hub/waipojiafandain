@@ -15,7 +15,7 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static jiesuohuoguo:string;
     public static jiesuoxiaochi:string;
     public static jiesuozaocan:string;
-    public static uid:string = "1021";
+    public static uid:string = "1023";
     public static jiesuojiaju = [];  //已解锁家具
     public static jiesuoyuangong = []; //已解锁员工
     public static shiyongyuangong = []; //已使用员工

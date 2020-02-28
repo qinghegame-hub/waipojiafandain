@@ -77,6 +77,7 @@ class Weblianjie extends egret.DisplayObjectContainer {
             case "code:035":
                 Gerencaipudengji.caipulevel = jiexijsongeshi[0].jingyan[0];
                 Gerencaipudengji.jiedaoshuju = jiexijsongeshi[0].jiedao[0];
+                console.log(Gerencaipudengji.jiedaoshuju);
                 break;
     //解锁菜品时反馈
             case "code:003":

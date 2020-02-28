@@ -821,6 +821,9 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 
 	public xiaofeidianji(){
 		Gameguanli.Kongzhitai().dingbuui.removeChild(this.fandianjiemian);
+		if(Gerenshuxing.jinbizhi >= parseInt(this.fandianpeizhi[5])){
+			//今天做到这里，明天开始做相关的服务器交互，消费、收购、收银等功能;
+		}
 	}
 
 
