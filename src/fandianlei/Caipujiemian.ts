@@ -465,7 +465,6 @@ class Caipujiemian extends eui.Component implements  eui.UIComponent {
 		this.caideshuxing1_6 = "消除疲劳:"  + Math.floor(shuxing1 + shuxing1 * xiajiweili) + "(+"+ Math.floor(shuxing1 * xiajiweili) +")";
 		this.caideshuxing1_2 = "消耗食材:"  + shuxing2;
 		this.caideshuxing1_5 = "消耗食材:"  + shuxing2; 
-		console.log(benjijiacheng,xiajijiacheng,benjiweili,xiajiweili);
 
 
 	}

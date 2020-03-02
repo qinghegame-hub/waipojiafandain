@@ -345,7 +345,6 @@ var Caipujiemian = (function (_super) {
         this.caideshuxing1_6 = "消除疲劳:" + Math.floor(shuxing1 + shuxing1 * xiajiweili) + "(+" + Math.floor(shuxing1 * xiajiweili) + ")";
         this.caideshuxing1_2 = "消耗食材:" + shuxing2;
         this.caideshuxing1_5 = "消耗食材:" + shuxing2;
-        console.log(benjijiacheng, xiajijiacheng, benjiweili, xiajiweili);
     };
     Caipujiemian.prototype.dianjicaipin2 = function (biaoti, tupian, shuxing1, shuxing2, jieshao) {
         this.caidebiaoti2 = biaoti;

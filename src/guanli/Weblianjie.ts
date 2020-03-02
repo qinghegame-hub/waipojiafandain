@@ -77,7 +77,6 @@ class Weblianjie extends egret.DisplayObjectContainer {
             case "code:035":
                 Gerencaipudengji.caipulevel = jiexijsongeshi[0].jingyan[0];
                 Gerencaipudengji.jiedaoshuju = jiexijsongeshi[0].jiedao[0];
-                console.log(Gerencaipudengji.jiedaoshuju);
                 break;
     //解锁菜品时反馈
             case "code:003":
@@ -425,7 +424,14 @@ class Weblianjie extends egret.DisplayObjectContainer {
                 if(Gameguanli.Kongzhitai().waichudajie.parent){
                     Gameguanli.Kongzhitai().waichudajie.tilixiaohaochushi();
                 }
-                break; 
+                break;
+    //金币刷新时反馈
+            case "code:044":
+                Gerenshuxing.jinbizhi =  parseInt(jiexijsongeshi.shuaxinjinbi);
+                if(Gameguanli.Kongzhitai().dingbuui.parent){
+                    Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
+                };
+                break;
     //非法操作
             case "code:202":
                 Gameguanli.Kongzhitai().cuowutishixinxi("非法操作！");

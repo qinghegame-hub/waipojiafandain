@@ -8,7 +8,9 @@ class Dianpufandian extends eui.Component implements  eui.UIComponent {
 	public guyuantouxiang2:eui.Image;
 	public guyuantouxiang3:eui.Image;
 	public but_xiaofei:eui.Button;
+	public but_shouyin:eui.Button;
 	public but_shougou:eui.Button;
+	public img_yinye:eui.Image;
 	public dianzhuming:eui.Label;
 	public shoufeishu:eui.Label;
 	public renqishu:eui.Label;
@@ -19,6 +21,7 @@ class Dianpufandian extends eui.Component implements  eui.UIComponent {
 	public but_guyuan1:eui.Button;
 	public but_guyuan2:eui.Button;
 	public but_guyuan3:eui.Button;
+
 
 	public constructor() {
 		super();

@@ -57,6 +57,7 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 	public jianglishuliang:any//奖励材料数量;
 	public suijichufaid:any//随机触发的id;
 	public fandianpeizhi:any//饭店配置;
+	public keyishougou:boolean = false;//是否可以收购;
 
 	public zhuanchangjiemian:Dianpurukou;//转场入口界面;
 	public suijijiemian:Tongyongquerenkuang;//弹出界面;
@@ -783,7 +784,6 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 	public fandianbufen(){
 		this.fandianjiemian = new Dianpufandian();
 		Gameguanli.Kongzhitai().dingbuui.addChild(this.fandianjiemian);
-		this.fandianjiemian.but_xiaofei.addEventListener(egret.TouchEvent.TOUCH_TAP,this.xiaofeidianji,this);
 		for(var p = 0;p<this.jiedaobiao.length;p++){
 			if(this.dangqianbushu == parseInt(this.jiedaobiao[p].id)){
 				this.jiedaopeizhi = this.jiedaobiao[p];
@@ -799,8 +799,8 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 		}
 		this.fandianjiemian.renqishu.text = this.fandianpeizhi[0];
 		this.fandianjiemian.zujinshu.text = this.fandianpeizhi[1];
-		this.fandianjiemian.shoufeishu.text = this.fandianpeizhi[2];
 		this.fandianjiemian.zuqishu.text = this.fandianpeizhi[3] + "天";
+		this.fandianjiemian.but_xiaofei.addEventListener(egret.TouchEvent.TOUCH_TAP,this.xiaofeidianji,this);
 		if(this.fandianpeizhi[3] == "0"){
 			this.fandianjiemian.zhuangtaishu.text = "可收购";
 		}else{
@@ -808,23 +808,173 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 		}
 		switch(this.fandianpeizhi[4]){
 			case "0":
+				this.fandianjiemian.img_yinye.source = "img_shoufei_png";
+				this.fandianjiemian.shoufeishu.text = this.fandianpeizhi[2];
 				this.fandianjiemian.dianzhuming.text = "暂无主人";
+				this.fandianjiemian.but_shougou.enabled = true;
+				this.fandianjiemian.but_shougou.alpha = 1;
+				this.fandianjiemian.but_shouyin.enabled = false;
+				this.fandianjiemian.but_shouyin.alpha = 0;
+				this.fandianjiemian.but_shougou.addEventListener(egret.TouchEvent.TOUCH_TAP,this.shougou,this);
 				break;
 			case "1":
+				this.fandianjiemian.img_yinye.source = "img_shoufei1_png";
+				this.fandianjiemian.shoufeishu.text = this.fandianpeizhi[5];
 				this.fandianjiemian.dianzhuming.text = Gerenshuxing.uid;
+				this.fandianjiemian.but_shougou.enabled = false;
+				this.fandianjiemian.but_shougou.alpha = 0;
+				this.fandianjiemian.but_shouyin.enabled = true;
+				this.fandianjiemian.but_shouyin.alpha = 1;
+				this.fandianjiemian.but_shouyin.addEventListener(egret.TouchEvent.TOUCH_TAP,this.shouyindianji,this);
 				break;
 			default:
+				this.fandianjiemian.img_yinye.source = "img_shoufei_png";
+				this.fandianjiemian.shoufeishu.text = this.fandianpeizhi[2];
 				this.fandianjiemian.dianzhuming.text = "qitaren";
+				this.fandianjiemian.but_shougou.enabled = true;
+				this.fandianjiemian.but_shougou.alpha = 1;
+				this.fandianjiemian.but_shouyin.enabled = false;
+				this.fandianjiemian.but_shouyin.alpha = 0;
+				this.fandianjiemian.but_shougou.addEventListener(egret.TouchEvent.TOUCH_TAP,this.shougou,this);
 		}
 
 	}
 
 	public xiaofeidianji(){
 		Gameguanli.Kongzhitai().dingbuui.removeChild(this.fandianjiemian);
-		if(Gerenshuxing.jinbizhi >= parseInt(this.fandianpeizhi[5])){
-			//今天做到这里，明天开始做相关的服务器交互，消费、收购、收银等功能;
+		this.suijijiemian = new Tongyongquerenkuang();
+		Gameguanli.Kongzhitai().dingbuui.addChild(this.suijijiemian);
+		this.suijijiemian.but_queding0.enabled = false;
+		this.suijijiemian.but_queding0.alpha = 0;
+		this.suijijiemian.but_queding.enabled = true;
+		this.suijijiemian.but_queding.alpha = 1;
+		this.suijijiemian.but_shuangbei.enabled = true;
+		this.suijijiemian.but_shuangbei.alpha = 1;
+		let shengchengcaipin = [];
+		switch(this.jiedaopeizhi.type){
+			case "1":
+				for(var a = 0;a<Gerenshuxing.jiesuocaipin.length;a++){
+					if(parseInt(Gerenshuxing.jiesuocaipin[a]) >= 1000 && parseInt(Gerenshuxing.jiesuocaipin[a]) < 2000){
+						shengchengcaipin.push(Gerenshuxing.jiesuocaipin[a]);
+					}
+				}
+				break;
+			case "2":
+				for(var a = 0;a<Gerenshuxing.jiesuocaipin.length;a++){
+					if(parseInt(Gerenshuxing.jiesuocaipin[a]) >= 2000 && parseInt(Gerenshuxing.jiesuocaipin[a]) < 3000){
+						shengchengcaipin.push(Gerenshuxing.jiesuocaipin[a]);
+					}
+				}
+				break;
+			case "3":
+				for(var a = 0;a<Gerenshuxing.jiesuocaipin.length;a++){
+					if(parseInt(Gerenshuxing.jiesuocaipin[a]) >= 3000 && parseInt(Gerenshuxing.jiesuocaipin[a]) < 4000){
+						shengchengcaipin.push(Gerenshuxing.jiesuocaipin[a]);
+					}
+				}
+				break;
+			case "4":
+				for(var a = 0;a<Gerenshuxing.jiesuocaipin.length;a++){
+					if(parseInt(Gerenshuxing.jiesuocaipin[a]) >= 4000 && parseInt(Gerenshuxing.jiesuocaipin[a]) < 5000){
+						shengchengcaipin.push(Gerenshuxing.jiesuocaipin[a]);
+					}
+				}
+				break;
+		}
+		let suijixiabiao = Math.floor(Math.random() * shengchengcaipin.length);
+		this.jianglileixing = shengchengcaipin[suijixiabiao];
+		this.kouchuleixing = "1";
+//		this.suijichufaid = this.suijipeizhi.id;
+		this.kouchushuliang = this.fandianpeizhi[2];
+		let jianglijignyan = Math.floor(Math.random() * 100) + 50;
+		this.jianglishuliang = jianglijignyan;
+		this.suijijiemian.jiangli2.text = "- " + this.kouchushuliang;
+		this.suijijiemian.jiangli1.text = "+ " + this.jianglishuliang;
+		this.kouchutubiaopanduan();
+		this.jianglitubiaopanduan();
+		this.suijijiemian.but_queding.addEventListener(egret.TouchEvent.TOUCH_TAP,this.suijiqueding,this);
+		this.suijijiemian.but_shuangbei.addEventListener(egret.TouchEvent.TOUCH_TAP,this.suijishuangbei,this);
+	}
+
+	public shouyindianji(){
+		Gameguanli.Kongzhitai().dingbuui.removeChild(this.fandianjiemian);
+		//明天继续做收银结算相关功能版本V1.3.1；
+	}
+
+	public shougou(){
+		Gameguanli.Kongzhitai().dingbuui.removeChild(this.fandianjiemian);
+		this.suijijiemian = new Tongyongquerenkuang();
+		Gameguanli.Kongzhitai().dingbuui.addChild(this.suijijiemian);
+		this.keyishougou = false;
+		let zhangwoleixing:string;
+		let yizhangwo = [];
+		switch(this.jiedaopeizhi.type){
+			case "1":
+				zhangwoleixing = "小炒";
+				for(var b = 0;b<Gerenshuxing.jiesuocaipin.length;b++){
+					if(parseInt(Gerenshuxing.jiesuocaipin[b]) >= 1000 && parseInt(Gerenshuxing.jiesuocaipin[b]) < 2000){
+						yizhangwo.push(Gerenshuxing.jiesuocaipin[b]);
+					}
+				}
+				break;
+			case "2":
+				zhangwoleixing = "火锅";
+				for(var b = 0;b<Gerenshuxing.jiesuocaipin.length;b++){
+					if(parseInt(Gerenshuxing.jiesuocaipin[b]) >= 2000 && parseInt(Gerenshuxing.jiesuocaipin[b]) < 3000){
+						yizhangwo.push(Gerenshuxing.jiesuocaipin[b]);
+					}
+				}
+				break;
+			case "3":
+				zhangwoleixing = "小吃";
+				for(var b = 0;b<Gerenshuxing.jiesuocaipin.length;b++){
+					if(parseInt(Gerenshuxing.jiesuocaipin[b]) >= 3000 && parseInt(Gerenshuxing.jiesuocaipin[b]) < 4000){
+						yizhangwo.push(Gerenshuxing.jiesuocaipin[b]);
+					}
+				}
+				break;
+			case "4":
+				zhangwoleixing = "早餐";
+				for(var b = 0;b<Gerenshuxing.jiesuocaipin.length;b++){
+					if(parseInt(Gerenshuxing.jiesuocaipin[b]) >= 4000 && parseInt(Gerenshuxing.jiesuocaipin[b]) < 5000){
+						yizhangwo.push(Gerenshuxing.jiesuocaipin[b]);
+					}
+				}
+				break;
+		}
+		this.suijijiemian.tishiwenzi.text = "收购[" + this.jiedaopeizhi.name + "]作为自己的经验饭馆，需满足以下条件:" + " \n " + "1.掌握的“" + zhangwoleixing + "”菜品种类达到：" + yizhangwo.length  + "/"
+		+ this.jiedaopeizhi.xuyaoshuliang+ "种。" + "\n"  + "2.拥有的钱币数量大于等于店铺每月租金:" + Gerenshuxing.jinbizhi  + "/" + this.fandianpeizhi[1] +"。";
+		this.suijijiemian.but_queding0.enabled = true;
+		this.suijijiemian.but_queding0.alpha = 1;
+		this.suijijiemian.but_queding.enabled = false;
+		this.suijijiemian.but_queding.alpha = 0;
+		this.suijijiemian.but_shuangbei.enabled = false;
+		this.suijijiemian.but_shuangbei.alpha = 0;
+		this.suijijiemian.jiangli2.text = "";
+		this.suijijiemian.jiangli1.text = "";
+		this.suijijiemian.jiangliicon1.source = "";
+		this.suijijiemian.jiangliicon2.source = "";
+		if(yizhangwo.length >= parseInt(this.jiedaopeizhi.xuyaoshuliang) && Gerenshuxing.jinbizhi >= this.fandianpeizhi[1]){
+			this.keyishougou = true;
+		}
+		this.suijijiemian.but_queding0.addEventListener(egret.TouchEvent.TOUCH_TAP,this.quedingshougou,this);
+	}
+
+	public quedingshougou(){
+		if(this.keyishougou == true){
+			Gameguanli.Kongzhitai().dingbuui.removeChild(this.suijijiemian);
+			Gameguanli.Kongzhitai().cuowutishixinxi("恭喜您，收购成功！本次店铺的拥有权为30天！");
+			 Weblianjie.fasongshuju("code:043","{" + '"dianpuid"' +":"+ '"' + this.dangqianbushu + '"' +","
+				+ '"shougoufeiyong"' +":"+ '"' + this.fandianpeizhi[1] + '"' +"," 
+				+ '"shougouqixian"' +":"+ "30" +","
+				+ '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
+		}else{
+			Gameguanli.Kongzhitai().dingbuui.removeChild(this.suijijiemian);
+			Gameguanli.Kongzhitai().cuowutishixinxi("很遗憾，您目前还不满足该店铺的收购条件！");
 		}
 	}
+
+
 
 
 	public chufadianpu1(){
@@ -850,6 +1000,12 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 			this.jianglishuliang = this.suijipeizhi.jianglishuliang;
 			this.suijijiemian.jiangli2.text = "- " + this.kouchushuliang;
 			this.suijijiemian.jiangli1.text = "+ " + this.jianglishuliang;
+			this.suijijiemian.but_queding0.enabled = false;
+			this.suijijiemian.but_queding0.alpha = 0;
+			this.suijijiemian.but_queding.enabled = true;
+			this.suijijiemian.but_queding.alpha = 1;
+			this.suijijiemian.but_shuangbei.enabled = true;
+			this.suijijiemian.but_shuangbei.alpha = 1;
 			this.kouchutubiaopanduan();
 			this.jianglitubiaopanduan();
 			this.suijijiemian.but_queding.addEventListener(egret.TouchEvent.TOUCH_TAP,this.suijiqueding,this);
@@ -868,6 +1024,71 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 			this.suijijiemian.jiangliicon1.source = "img_xinqing_png";
 		}else if(this.jianglileixing == "5"){
 			this.suijijiemian.jiangliicon1.source = "img_xingfu_png";
+		}else{
+			let shipubiao = RES.getRes("shipubiao_json");
+			for(var h = 0;h<shipubiao.length;h++){
+				if(shipubiao[h].id == this.jianglileixing){
+					this.suijijiemian.tishiwenzi.text = "你在饭店里点了个[" + shipubiao[h].foodName + "],发现此味道与众不同，并对该菜品的制作工艺有所感悟！";
+					this.suijijiemian.jiangliicon1.source = shipubiao[h].id + "_png";
+					break;
+				}
+			}
+		}
+	}
+
+	public jianglijiemianjianglitubiao(){
+		if(this.jianglileixing == "1"){
+			this.jianglijiemian.jiangliicon.source = "img_qian_png";
+			this.jianglijiemian.jianglishuliang.text = "+ " + this.jianglishuliang;
+		}else if(this.jianglileixing == "2"){
+			this.jianglijiemian.jiangliicon.source = "img_jiating_png";
+			this.jianglijiemian.jianglishuliang.text = "+ " + this.jianglishuliang;
+		}else if(this.jianglileixing == "3"){
+			this.jianglijiemian.jiangliicon.source = "img_jiankang_png";
+			this.jianglijiemian.jianglishuliang.text = "+ " + this.jianglishuliang;
+		}else if(this.jianglileixing == "4"){
+			this.jianglijiemian.jiangliicon.source = "img_xinqing_png";
+			this.jianglijiemian.jianglishuliang.text = "+ " + this.jianglishuliang;
+		}else if(this.jianglileixing == "5"){
+			this.jianglijiemian.jiangliicon.source = "img_xingfu_png";
+			this.jianglijiemian.jianglishuliang.text = "+ " + this.jianglishuliang;
+		}else{
+			let shipubiao = RES.getRes("shipubiao_json");
+			for(var h = 0;h<shipubiao.length;h++){
+				if(shipubiao[h].id == this.jianglileixing){
+					this.jianglijiemian.jiangliicon.source = shipubiao[h].id + "_png";
+					this.jianglijiemian.jianglishuliang.text = "熟练度 + " + this.jianglishuliang;
+					break;
+				}
+			}
+		}
+	}
+
+	public jianglijiemianjianglitubiao2(){
+		if(this.jianglileixing == "1"){
+			this.jianglijiemian.jiangliicon.source = "img_qian_png";
+			this.jianglijiemian.jianglishuliang.text = "+ " + this.jianglishuliang * 2;
+		}else if(this.jianglileixing == "2"){
+			this.jianglijiemian.jiangliicon.source = "img_jiating_png";
+			this.jianglijiemian.jianglishuliang.text = "+ " + this.jianglishuliang * 2;
+		}else if(this.jianglileixing == "3"){
+			this.jianglijiemian.jiangliicon.source = "img_jiankang_png";
+			this.jianglijiemian.jianglishuliang.text = "+ " + this.jianglishuliang * 2;
+		}else if(this.jianglileixing == "4"){
+			this.jianglijiemian.jiangliicon.source = "img_xinqing_png";
+			this.jianglijiemian.jianglishuliang.text = "+ " + this.jianglishuliang * 2;
+		}else if(this.jianglileixing == "5"){
+			this.jianglijiemian.jiangliicon.source = "img_xingfu_png";
+			this.jianglijiemian.jianglishuliang.text = "+ " + this.jianglishuliang * 2;
+		}else{
+			let shipubiao = RES.getRes("shipubiao_json");
+			for(var h = 0;h<shipubiao.length;h++){
+				if(shipubiao[h].id == this.jianglileixing){
+					this.jianglijiemian.jiangliicon.source = shipubiao[h].id + "_png";
+					this.jianglijiemian.jianglishuliang.text = "熟练度 + " + this.jianglishuliang * 2;
+					break;
+				}
+			}
 		}
 	}
 
@@ -896,8 +1117,7 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 					this.jianglijiemian = new Jianglijiesuanui();
 					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
 					this.fasongjiangli(1);
-					this.jianglijiemian.jiangliicon.source = "img_qian_png";
-					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang;
+					this.jianglijiemianjianglitubiao();
 					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
 				}else{
 					Gameguanli.Kongzhitai().cuowutishixinxi("由于您无法支付费用，只得黯自离去！");
@@ -908,8 +1128,7 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 					this.jianglijiemian = new Jianglijiesuanui();
 					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
 					this.fasongjiangli(1);
-					this.jianglijiemian.jiangliicon.source = "img_jiating_png";
-					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang;
+					this.jianglijiemianjianglitubiao();
 					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
 				}else{
 					Gameguanli.Kongzhitai().cuowutishixinxi("由于您的行动力不足，只得黯自离去！");
@@ -920,8 +1139,7 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 					this.jianglijiemian = new Jianglijiesuanui();
 					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
 					this.fasongjiangli(1);
-					this.jianglijiemian.jiangliicon.source = "img_jiankang_png";
-					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang;
+					this.jianglijiemianjianglitubiao();
 					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
 				}else{
 					Gameguanli.Kongzhitai().cuowutishixinxi("由于您的身体不太健康，只得黯自离去！");
@@ -932,8 +1150,7 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 					this.jianglijiemian = new Jianglijiesuanui();
 					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
 					this.fasongjiangli(1);
-					this.jianglijiemian.jiangliicon.source = "img_xinqing_png";
-					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang;
+					this.jianglijiemianjianglitubiao();
 					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
 				}else{
 					Gameguanli.Kongzhitai().cuowutishixinxi("由于您的心情不太开心，只得黯自离去！");
@@ -944,8 +1161,7 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 					this.jianglijiemian = new Jianglijiesuanui();
 					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
 					this.fasongjiangli(1);
-					this.jianglijiemian.jiangliicon.source = "img_xingfu_png";
-					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang;
+					this.jianglijiemianjianglitubiao();
 					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
 				}else{
 					Gameguanli.Kongzhitai().cuowutishixinxi("由于您的幸福值太低，只得黯自离去！");
@@ -963,8 +1179,7 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 					this.jianglijiemian = new Jianglijiesuanui();
 					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
 					this.fasongjiangli(2);
-					this.jianglijiemian.jiangliicon.source = "img_qian_png";
-					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang * 2;
+					this.jianglijiemianjianglitubiao2();
 					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
 				}else{
 					Gameguanli.Kongzhitai().cuowutishixinxi("由于您无法支付费用，只得黯自离去！");
@@ -975,8 +1190,7 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 					this.jianglijiemian = new Jianglijiesuanui();
 					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
 					this.fasongjiangli(2);
-					this.jianglijiemian.jiangliicon.source = "img_jiating_png";
-					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang  * 2;
+					this.jianglijiemianjianglitubiao2();
 					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
 				}else{
 					Gameguanli.Kongzhitai().cuowutishixinxi("由于您的行动力不足，只得黯自离去！");
@@ -987,8 +1201,7 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 					this.jianglijiemian = new Jianglijiesuanui();
 					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
 					this.fasongjiangli(2);
-					this.jianglijiemian.jiangliicon.source = "img_jiankang_png";
-					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang  * 2;
+					this.jianglijiemianjianglitubiao2();
 					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
 				}else{
 					Gameguanli.Kongzhitai().cuowutishixinxi("由于您的身体不太健康，只得黯自离去！");
@@ -999,8 +1212,7 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 					this.jianglijiemian = new Jianglijiesuanui();
 					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
 					this.fasongjiangli(2);
-					this.jianglijiemian.jiangliicon.source = "img_xinqing_png";
-					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang  * 2;
+					this.jianglijiemianjianglitubiao2();
 					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
 				}else{
 					Gameguanli.Kongzhitai().cuowutishixinxi("由于您的心情不太开心，只得黯自离去！");
@@ -1011,8 +1223,7 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 					this.jianglijiemian = new Jianglijiesuanui();
 					Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
 					this.fasongjiangli(2);
-					this.jianglijiemian.jiangliicon.source = "img_xingfu_png";
-					this.jianglijiemian.jianglishuliang.text = "+" + this.jianglishuliang  * 2;
+					this.jianglijiemianjianglitubiao2();
 					this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiangli,this);
 				}else{
 					Gameguanli.Kongzhitai().cuowutishixinxi("由于您的幸福值太低，只得黯自离去！");
@@ -1035,105 +1246,7 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 
-	public chufadianpu2(){
-		
-	}
-
-	public chufadianpu3(){
-		
-	}
-
-	public chufadianpu4(){
-		
-	}
-
-	public chufadianpu5(){
-		
-	}
-
-	public chufadianpu6(){
-		
-	}
-
-	public chufadianpu7(){
-		
-	}
-
-	public chufadianpu8(){
-		
-	}
-
-	public chufadianpu9(){
-		
-	}
-
-	public chufadianpu10(){
-		
-	}
-
-	public chufadianpu11(){
-		
-	}
-
-	public chufadianpu12(){
-		
-	}
-
-	public chufadianpu13(){
-		
-	}
-
-	public chufadianpu14(){
-		
-	}
-
-	public chufadianpu15(){
-		
-	}
-
-	public chufadianpu16(){
-		
-	}
-
-	public chufadianpu17(){
-		
-	}
-
-	public chufadianpu18(){
-		
-	}
-
-	public chufadianpu19(){
-		
-	}
-
-	public chufadianpu20(){
-		
-	}
-
-	public chufadianpu21(){
-		
-	}
-
-	public chufadianpu22(){
-		
-	}
-
-	public chufadianpu23(){
-		
-	}
-
-	public chufadianpu24(){
-		
-	}
-
-	public chufadianpu25(){
-		
-	}
-
-	public chufadianpu26(){
-		
-	}
+	
 
 
 	
