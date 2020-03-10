@@ -1,4 +1,5 @@
 class Gerenshuxing extends egret.DisplayObjectContainer{
+    public static gerencode:any;//个人登录code；
     public static jiankangzhi:number = 0;  //个人属性：健康值
     public static xingfuzhi:number =0;    //个人属性：幸福值
     public static kaixinzhi:number=0;    //个人属性：开心值

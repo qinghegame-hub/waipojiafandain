@@ -98,24 +98,26 @@ var Main = (function (_super) {
     };
     Main.prototype.runGame = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var result, userInfo;
+            var denglu, result, userInfo;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.loadResource()];
                     case 1:
                         _a.sent();
+                        return [4 /*yield*/, platform.login()];
+                    case 2:
+                        denglu = _a.sent();
+                        Gerenshuxing.gerencode = denglu.code;
+                        console.log(Gerenshuxing.gerencode);
                         this.createGameScene();
                         return [4 /*yield*/, RES.getResAsync("description_json")];
-                    case 2:
+                    case 3:
                         result = _a.sent();
                         this.startAnimation(result);
-                        return [4 /*yield*/, platform.login()];
-                    case 3:
-                        _a.sent();
                         return [4 /*yield*/, platform.getUserInfo()];
                     case 4:
                         userInfo = _a.sent();
-                        console.log(userInfo);
+                        console.log("个人用户数据=" + userInfo.nickName);
                         return [2 /*return*/];
                 }
             });
@@ -130,7 +132,7 @@ var Main = (function (_super) {
                         _a.trys.push([0, 4, , 5]);
                         loadingView = new LoadingUI();
                         this.stage.addChild(loadingView);
-                        return [4 /*yield*/, RES.loadConfig("resource/default.res.json", "resource/")];
+                        return [4 /*yield*/, RES.loadConfig("default.res.json", "http://192.168.1.2/res/resource/resource/")];
                     case 1:
                         _a.sent();
                         return [4 /*yield*/, this.loadTheme()];
@@ -153,9 +155,11 @@ var Main = (function (_super) {
     Main.prototype.loadTheme = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
+            egret.ImageLoader.crossOrigin = "anonymous"; //设置允许跨域加载
+            //            EXML.prefixURL = "http://192.168.1.2/res/resource/";//更改目录位置,这里要填入服务器的ip地址
             // load skin theme configuration file, you can manually modify the file. And replace the default skin.
             //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
-            var theme = new eui.Theme("resource/default.thm.json", _this.stage);
+            var theme = new eui.Theme("http://192.168.1.2/res/resource/resource/default.thm.json", _this.stage);
             theme.addEventListener(eui.UIEvent.COMPLETE, function () {
                 resolve();
             }, _this);
@@ -166,6 +170,17 @@ var Main = (function (_super) {
      * Create scene interface
      */
     Main.prototype.createGameScene = function () {
+        var textfield = new egret.TextField();
+        this.addChild(textfield);
+        textfield.alpha = 0;
+        textfield.width = 172;
+        textfield.textAlign = egret.HorizontalAlign.CENTER;
+        textfield.size = 24;
+        textfield.textColor = 0xffffff;
+        textfield.x = 172;
+        textfield.y = 135;
+        this.textfield = textfield;
+        //进入场景
         egret.Ticker.getInstance().register(function (advancedTime) {
             dragonBones.WorldClock.clock.advanceTime(advancedTime / 3000);
         }, this);

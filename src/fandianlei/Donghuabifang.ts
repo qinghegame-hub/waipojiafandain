@@ -971,15 +971,15 @@ class Donghuabifang extends egret.DisplayObjectContainer{
 			kouchudonghua.img_shicai.source = "img_jiating_png";
 			egret.Tween.get(kouchudonghua).to({x:kouchudonghua.x,y:kouchudonghua.y - 60},2000).call(()=>{
 				Gameguanli.Kongzhitai().zhujiemian.removeChild(kouchudonghua);
-                this.chongfudingshi.stop();
-                this.shoudong = true;
-                this.kouchuyuanliao();
-                Gameguanli.Kongzhitai().zuofanjiemian("kai",this.xuqiucaiid.id);
-                Gerenshuxing.zuocaichenggong = "";
-                this.panduandingshi = new egret.Timer(1000,0);
-                this.panduandingshi.addEventListener(egret.TimerEvent.TIMER,this.panduanzuofan,this);
-                this.panduandingshi.start();
             });
+            this.chongfudingshi.stop();
+            this.shoudong = true;
+            this.kouchuyuanliao();
+            Gameguanli.Kongzhitai().zuofanjiemian("kai",this.xuqiucaiid.id);
+            Gerenshuxing.zuocaichenggong = "";
+            this.panduandingshi = new egret.Timer(1000,0);
+            this.panduandingshi.addEventListener(egret.TimerEvent.TIMER,this.panduanzuofan,this);
+            this.panduandingshi.start();
         }else{
             Gameguanli.Kongzhitai().cuowutishixinxi("当前您的劳动力已不足1点");
         }
@@ -987,7 +987,6 @@ class Donghuabifang extends egret.DisplayObjectContainer{
 
     private panduanzuofan(){
         if(Gerenshuxing.zuocaichenggong == "true"){
-            console.log(Gerenshuxing.zuocaichenggong)
             this.toudinggruop.xianshitupian0.source = "img_xiaolian_png";
             this.toudinggruop.but_xuqiucaiqipao0.enabled = false;
             this.di1zuocai = true;

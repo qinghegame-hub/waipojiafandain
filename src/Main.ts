@@ -57,12 +57,14 @@ class Main extends eui.UILayer {
 
     private async runGame() {
         await this.loadResource()
+        const denglu = await platform.login();
+        Gerenshuxing.gerencode = denglu.code;
+        console.log(Gerenshuxing.gerencode);
         this.createGameScene();
-        const result = await RES.getResAsync("description_json")
+        const result = await RES.getResAsync("description_json");
         this.startAnimation(result);
-        await platform.login();
         const userInfo = await platform.getUserInfo();
-        console.log(userInfo);
+        console.log("个人用户数据=" + userInfo.nickName);
 
     }
 
@@ -70,7 +72,7 @@ class Main extends eui.UILayer {
         try {
             const loadingView = new LoadingUI();
             this.stage.addChild(loadingView);
-            await RES.loadConfig("resource/default.res.json", "resource/");
+            await RES.loadConfig("default.res.json", "http://192.168.1.2/res/resource/resource/");
             await this.loadTheme();
             await RES.loadGroup("preload", 0, loadingView);
             this.stage.removeChild(loadingView);
@@ -82,9 +84,11 @@ class Main extends eui.UILayer {
 
     private loadTheme() {
         return new Promise((resolve, reject) => {
+            egret.ImageLoader.crossOrigin = "anonymous";//设置允许跨域加载
+//            EXML.prefixURL = "http://192.168.1.2/res/resource/";//更改目录位置,这里要填入服务器的ip地址
             // load skin theme configuration file, you can manually modify the file. And replace the default skin.
             //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
-            let theme = new eui.Theme("resource/default.thm.json", this.stage);
+            let theme = new eui.Theme("http://192.168.1.2/res/resource/resource/default.thm.json", this.stage);
             theme.addEventListener(eui.UIEvent.COMPLETE, () => {
                 resolve();
             }, this);
@@ -92,18 +96,30 @@ class Main extends eui.UILayer {
         })
     }
 
-    private textfield: egret.TextField;
+    private textfield:egret.TextField;
     /**
      * 创建场景界面
      * Create scene interface
      */
     protected createGameScene(): void {
+        let textfield = new egret.TextField();
+        this.addChild(textfield);
+        textfield.alpha = 0;
+        textfield.width = 172;
+        textfield.textAlign = egret.HorizontalAlign.CENTER;
+        textfield.size = 24;
+        textfield.textColor = 0xffffff;
+        textfield.x = 172;
+        textfield.y = 135;
+        this.textfield = textfield;
+
+        //进入场景
         egret.Ticker.getInstance().register((advancedTime)=>{
             dragonBones.WorldClock.clock.advanceTime(advancedTime/3000);
         },this);
         let webseverlianji:Weblianjie =new  Weblianjie();
         let shijianstart:Timekongzhi = new Timekongzhi();
-        webseverlianji.kaishilianjie();
+        webseverlianji.kaishilianjie();       
         this.addChild(Gameguanli.Kongzhitai());
         //默认进行1次垃圾添加
 		Chuangzaolaji.shengchenglaji(21);

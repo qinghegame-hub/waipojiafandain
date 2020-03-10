@@ -30,13 +30,16 @@ var Weblianjie = (function (_super) {
         Weblianjie.lianjieserver.addEventListener(egret.IOErrorEvent.IO_ERROR, this.lianjieyichang, this);
     };
     Weblianjie.prototype.shoudaofushuju = function (msg) {
-        console.log("收到传入数据");
         var bianyi = Weblianjie.lianjieserver.readUTF();
         var jiexishujutou = bianyi.substr(0, 8);
         var jiexishujuneirong = bianyi.replace(jiexishujutou, "");
         var jiexijsongeshi = JSON.parse(jiexishujuneirong);
         switch (jiexishujutou) {
             //初始化个人数据
+            case "code:998":
+                Gerenshuxing.uid = jiexijsongeshi.openid;
+                Weblianjie.fasongshuju("code:001", '"' + Gerenshuxing.uid + '"');
+                break;
             case "code:100":
                 console.log("开始初始化个人数据");
                 Gerenshuxing.jiankangzhi = jiexijsongeshi[0].healthnum; //个人属性：健康值
@@ -441,6 +444,22 @@ var Weblianjie = (function (_super) {
                 }
                 ;
                 break;
+            //店铺自动发送结款信息时反馈
+            case "code:047":
+                Gerenshuxing.jinbizhi = parseInt(jiexijsongeshi.shuaxinjinbi);
+                if (Gameguanli.Kongzhitai().dingbuui.parent) {
+                    Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
+                }
+                ;
+                var dianpubiao = RES.getRes("jiedaobiao_json");
+                var diapuming = void 0;
+                for (var i = 0; i < dianpubiao.length; i++) {
+                    if (dianpubiao[i].id == jiexijsongeshi.id) {
+                        diapuming = dianpubiao[i].name;
+                        Gameguanli.Kongzhitai().cuowutishixinxi("您租用的店铺[" + dianpubiao[i].name + "]已到期，未取出的营业额已自动汇入您的资金账户!");
+                        break;
+                    }
+                }
             //非法操作
             case "code:202":
                 Gameguanli.Kongzhitai().cuowutishixinxi("非法操作！");
@@ -462,7 +481,7 @@ var Weblianjie = (function (_super) {
     };
     Weblianjie.prototype.lianjiechenggong = function () {
         console.log("服务器连接成功");
-        Weblianjie.fasongshuju("code:001", '"' + Gerenshuxing.uid + '"');
+        Weblianjie.fasongshuju("code:999", '"' + Gerenshuxing.gerencode + '"');
     };
     Weblianjie.prototype.lianjieguanbi = function () {
         Gameguanli.Kongzhitai().cuowutishixinxi("服务器连接已关闭！");

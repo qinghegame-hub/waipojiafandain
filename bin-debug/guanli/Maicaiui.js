@@ -117,7 +117,7 @@ var Maicaiui = (function (_super) {
             this.keng13.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.diankeng13, this);
             this.keng14.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.diankeng14, this);
             this.keng15.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.diankeng15, this);
-            this.zengjiayuanliao = this.baicaishu * 1 + this.tudoushu * 2 + this.dongguashu * 3 + this.yushu * 4 + this.roushu * 5;
+            this.zengjiayuanliao = this.baicaishu * 1 + this.tudoushu * 4 + this.dongguashu * 9 + this.yushu * 16 + this.roushu * 25;
             Weblianjie.fasongshuju("code:031", "{" + '"zengjiayuanliao"' + ":" + '"' + this.zengjiayuanliao + '"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
             Gameguanli.Kongzhitai().cuowutishixinxi("菜篮子已全部用完，本次买菜完成!");
             var daojishituichu = new egret.Timer(3000, 1);
@@ -1583,7 +1583,6 @@ var Maicaiui = (function (_super) {
     };
     Maicaiui.prototype.shuaxin = function () {
         if (this.shuaxinshu > 0) {
-            console.log("走到刷新");
             this.shuaxinshu -= 1;
             this.shicaizu = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
             Gameguanli.Kongzhitai().cuowutishixinxi("刷新成功，食材重新摆放位置！");

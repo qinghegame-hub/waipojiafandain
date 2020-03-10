@@ -838,6 +838,33 @@ var Dajiejiemian = (function (_super) {
     };
     Dajiejiemian.prototype.shouyindianji = function () {
         Gameguanli.Kongzhitai().dingbuui.removeChild(this.fandianjiemian);
+        this.suijijiemian = new Tongyongquerenkuang();
+        Gameguanli.Kongzhitai().dingbuui.addChild(this.suijijiemian);
+        this.suijijiemian.but_queding0.enabled = true;
+        this.suijijiemian.but_queding0.alpha = 1;
+        this.suijijiemian.but_queding.enabled = false;
+        this.suijijiemian.but_queding.alpha = 0;
+        this.suijijiemian.but_shuangbei.enabled = false;
+        this.suijijiemian.but_shuangbei.alpha = 0;
+        this.suijijiemian.jiangli2.text = "";
+        this.suijijiemian.jiangli1.text = "+ " + this.fandianpeizhi[5];
+        this.suijijiemian.jiangliicon1.source = "img_qian_png";
+        this.suijijiemian.jiangliicon2.source = "";
+        this.suijijiemian.tishiwenzi.text = "您离开店铺的这段时间，店铺的营业额为：" + this.fandianpeizhi[5] + "。\n现在为您全部取出。";
+        this.suijijiemian.but_queding0.addEventListener(egret.TouchEvent.TOUCH_TAP, this.quedingquqian, this);
+    };
+    Dajiejiemian.prototype.quedingquqian = function () {
+        Gameguanli.Kongzhitai().dingbuui.removeChild(this.suijijiemian);
+        this.jianglijiemian = new Jianglijiesuanui();
+        Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
+        this.fasongjiezhang();
+        this.jianglijiemian.jiangliicon.source = "img_qian_png";
+        this.jianglijiemian.jianglishuliang.text = "+ " + this.fandianpeizhi[5];
+        this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbijiangli, this);
+    };
+    Dajiejiemian.prototype.fasongjiezhang = function () {
+        Weblianjie.fasongshuju("code:046", "{" + '"dianpuid"' + ":" + '"' + this.dangqianbushu + '"' + ","
+            + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
     };
     Dajiejiemian.prototype.shougou = function () {
         Gameguanli.Kongzhitai().dingbuui.removeChild(this.fandianjiemian);
