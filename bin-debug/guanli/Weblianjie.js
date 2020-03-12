@@ -475,13 +475,18 @@ var Weblianjie = (function (_super) {
             case "code:205":
                 Gameguanli.Kongzhitai().cuowutishixinxi(jiexijsongeshi.tishi + "进入了游戏！");
                 break;
+            case "code:997":
+                Gerenshuxing.touxiangbaocunzhuangtai = true;
+                Gerenshuxing.touxiang = "http://192.168.1.2/res/resource/resource/wxtx/" + Gerenshuxing.uid + ".png";
+                break;
             default:
                 console.log("非法服务器参数");
         }
     };
     Weblianjie.prototype.lianjiechenggong = function () {
         console.log("服务器连接成功");
-        Weblianjie.fasongshuju("code:999", '"' + Gerenshuxing.gerencode + '"');
+        Weblianjie.fasongshuju("code:999", "{" + '"id"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"touxaing"' + ":" + '"' + Gerenshuxing.touxiang + '"' + "}");
     };
     Weblianjie.prototype.lianjieguanbi = function () {
         Gameguanli.Kongzhitai().cuowutishixinxi("服务器连接已关闭！");

@@ -33,6 +33,13 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 
 	public dangqianX:number;
 	public dangqianY:number;
+
+	public tishijiemian:Tongyongquerenkuang;
+
+	public jiesuo1:number;
+	public jiesuo2:number;
+	public jiesuo3:number;
+	public jiesuo4:number;
 	
 	public constructor() {
 		super();
@@ -129,21 +136,134 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 
 
 	public jiesuodating1(){
-		console.log("dianji1fasong");
-		Weblianjie.fasongshuju("code:006","{" + '"jiesuoid"' + ":" + '"1"' +"," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+		let jiesuofeiyong = RES.getRes("lobbyzhuozi_json");
+		for(var i = 0;i<jiesuofeiyong.length;i ++){
+			if(jiesuofeiyong[i].id == "1"){
+				this.jiesuo1 = jiesuofeiyong[i].activateprice;
+				break;
+			}
+		}
+		this.tishijiemian = new Tongyongquerenkuang();
+		Gameguanli.Kongzhitai().zhujiemiandingbu.addChild(this.tishijiemian);
+		this.tishijiemian.but_queding0.enabled = true;
+		this.tishijiemian.but_queding0.alpha = 1;
+		this.tishijiemian.but_queding.enabled = false;
+		this.tishijiemian.but_queding.alpha = 0;
+		this.tishijiemian.but_shuangbei.enabled = false;
+		this.tishijiemian.but_shuangbei.alpha = 0;
+		this.tishijiemian.jiangli2.text = "- " + this.jiesuo1;
+		this.tishijiemian.jiangli1.text = "";
+		this.tishijiemian.jiangliicon1.source = "";
+		this.tishijiemian.jiangliicon2.source = "img_qian_png";
+		this.tishijiemian.tishiwenzi.text = "装修饭店的小炒区域，需消耗钱币：" + this.jiesuo1 + "。\n装修后，您的饭店可增加[小炒]菜品。";
+		this.tishijiemian.but_queding0.addEventListener(egret.TouchEvent.TOUCH_TAP,this.jiesuofandian1,this);
 	}
 	public jiesuodating2(){
-		console.log("dianji2fasong");
-		Weblianjie.fasongshuju("code:006","{" + '"jiesuoid"' + ":" + '"2"' +"," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+		let jiesuofeiyong = RES.getRes("lobbyzhuozi_json");
+		for(var i = 0;i<jiesuofeiyong.length;i ++){
+			if(jiesuofeiyong[i].id == "2"){
+				this.jiesuo2 = jiesuofeiyong[i].activateprice;
+				break;
+			}
+		}
+		this.tishijiemian = new Tongyongquerenkuang();
+		Gameguanli.Kongzhitai().zhujiemiandingbu.addChild(this.tishijiemian);
+		this.tishijiemian.but_queding0.enabled = true;
+		this.tishijiemian.but_queding0.alpha = 1;
+		this.tishijiemian.but_queding.enabled = false;
+		this.tishijiemian.but_queding.alpha = 0;
+		this.tishijiemian.but_shuangbei.enabled = false;
+		this.tishijiemian.but_shuangbei.alpha = 0;
+		this.tishijiemian.jiangli2.text = "- " + this.jiesuo2;
+		this.tishijiemian.jiangli1.text = "";
+		this.tishijiemian.jiangliicon1.source = "";
+		this.tishijiemian.jiangliicon2.source = "img_qian_png";
+		this.tishijiemian.tishiwenzi.text = "装修饭店的火锅区域，需消耗钱币：" + this.jiesuo2 + "。\n装修后，您的饭店可增加[火锅]菜品。";
+		this.tishijiemian.but_queding0.addEventListener(egret.TouchEvent.TOUCH_TAP,this.jiesuofandian2,this);
 	}
 	public jiesuodating3(){
-		console.log("dianji3fasong");
-		Weblianjie.fasongshuju("code:006","{" + '"jiesuoid"' + ":" + '"3"' +"," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+		let jiesuofeiyong = RES.getRes("lobbyzhuozi_json");
+		for(var i = 0;i<jiesuofeiyong.length;i ++){
+			if(jiesuofeiyong[i].id == "3"){
+				this.jiesuo3 = jiesuofeiyong[i].activateprice;
+				break;
+			}
+		}
+		this.tishijiemian = new Tongyongquerenkuang();
+		Gameguanli.Kongzhitai().zhujiemiandingbu.addChild(this.tishijiemian);
+		this.tishijiemian.but_queding0.enabled = true;
+		this.tishijiemian.but_queding0.alpha = 1;
+		this.tishijiemian.but_queding.enabled = false;
+		this.tishijiemian.but_queding.alpha = 0;
+		this.tishijiemian.but_shuangbei.enabled = false;
+		this.tishijiemian.but_shuangbei.alpha = 0;
+		this.tishijiemian.jiangli2.text = "- " + this.jiesuo3;
+		this.tishijiemian.jiangli1.text = "";
+		this.tishijiemian.jiangliicon1.source = "";
+		this.tishijiemian.jiangliicon2.source = "img_qian_png";
+		this.tishijiemian.tishiwenzi.text = "装修饭店的小吃区域，需消耗钱币：" + this.jiesuo3 + "。\n装修后，您的饭店可增加[小吃]菜品。";
+		this.tishijiemian.but_queding0.addEventListener(egret.TouchEvent.TOUCH_TAP,this.jiesuofandian3,this);
 	}
 	public jiesuodating4(){
-		console.log("dianji4fasong");
-		Weblianjie.fasongshuju("code:006","{" + '"jiesuoid"' + ":" + '"4"' +"," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+		let jiesuofeiyong = RES.getRes("lobbyzhuozi_json");
+		for(var i = 0;i<jiesuofeiyong.length;i ++){
+			if(jiesuofeiyong[i].id == "4"){
+				this.jiesuo4 = jiesuofeiyong[i].activateprice;
+				break;
+			}
+		}
+		this.tishijiemian = new Tongyongquerenkuang();
+		Gameguanli.Kongzhitai().zhujiemiandingbu.addChild(this.tishijiemian);
+		this.tishijiemian.but_queding0.enabled = true;
+		this.tishijiemian.but_queding0.alpha = 1;
+		this.tishijiemian.but_queding.enabled = false;
+		this.tishijiemian.but_queding.alpha = 0;
+		this.tishijiemian.but_shuangbei.enabled = false;
+		this.tishijiemian.but_shuangbei.alpha = 0;
+		this.tishijiemian.jiangli2.text = "- " + this.jiesuo4;
+		this.tishijiemian.jiangli1.text = "";
+		this.tishijiemian.jiangliicon1.source = "";
+		this.tishijiemian.jiangliicon2.source = "img_qian_png";
+		this.tishijiemian.tishiwenzi.text = "装修饭店的早餐区域，需消耗钱币：" + this.jiesuo4 + "。\n装修后，您的饭店可增加[早餐]菜品。";
+		this.tishijiemian.but_queding0.addEventListener(egret.TouchEvent.TOUCH_TAP,this.jiesuofandian4,this);
 	}
+
+	public jiesuofandian1(){
+		Gameguanli.Kongzhitai().zhujiemiandingbu.removeChild(this.tishijiemian);
+		if(Gerenshuxing.jinbizhi >= this.jiesuo1){
+			Weblianjie.fasongshuju("code:006","{" + '"jiesuoid"' + ":" + '"1"' +"," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+		}else{
+			Gameguanli.Kongzhitai().cuowutishixinxi("很遗憾，您拥有的钱币不足，无法支付装修款");
+		}
+	}
+
+	public jiesuofandian2(){
+		Gameguanli.Kongzhitai().zhujiemiandingbu.removeChild(this.tishijiemian);
+		if(Gerenshuxing.jinbizhi >= this.jiesuo2){
+			Weblianjie.fasongshuju("code:006","{" + '"jiesuoid"' + ":" + '"2"' +"," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+		}else{
+			Gameguanli.Kongzhitai().cuowutishixinxi("很遗憾，您拥有的钱币不足，无法支付装修款");
+		}
+	}
+
+	public jiesuofandian3(){
+		Gameguanli.Kongzhitai().zhujiemiandingbu.removeChild(this.tishijiemian);
+		if(Gerenshuxing.jinbizhi >= this.jiesuo3){
+			Weblianjie.fasongshuju("code:006","{" + '"jiesuoid"' + ":" + '"3"' +"," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+		}else{
+			Gameguanli.Kongzhitai().cuowutishixinxi("很遗憾，您拥有的钱币不足，无法支付装修款");
+		}
+	}
+
+	public jiesuofandian4(){
+		Gameguanli.Kongzhitai().zhujiemiandingbu.removeChild(this.tishijiemian);
+		if(Gerenshuxing.jinbizhi >= this.jiesuo3){
+			Weblianjie.fasongshuju("code:006","{" + '"jiesuoid"' + ":" + '"4"' +"," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+		}else{
+			Gameguanli.Kongzhitai().cuowutishixinxi("很遗憾，您拥有的钱币不足，无法支付装修款");
+		}
+	}
+
 
 	public lajianniuchushi(){
 		this.but_laji0.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.laji0,this);

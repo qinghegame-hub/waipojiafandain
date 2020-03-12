@@ -57,14 +57,19 @@ class Main extends eui.UILayer {
 
     private async runGame() {
         await this.loadResource()
-        const denglu = await platform.login();
-        Gerenshuxing.gerencode = denglu.code;
-        console.log(Gerenshuxing.gerencode);
+        try{
+            const denglu = await platform.login();
+            Gerenshuxing.gerencode = denglu.code;
+            console.log(Gerenshuxing.gerencode);
+        }
+        catch(e){
+            console.error(e);
+        }
         this.createGameScene();
         const result = await RES.getResAsync("description_json");
         this.startAnimation(result);
         const userInfo = await platform.getUserInfo();
-        console.log("个人用户数据=" + userInfo.nickName);
+        this.gerenshuju(userInfo);
 
     }
 
@@ -174,5 +179,21 @@ class Main extends eui.UILayer {
         panel.horizontalCenter = 0;
         panel.verticalCenter = 0;
         this.addChild(panel);
+    }
+
+
+    private gerenshuju(user){
+  //      Gerenshuxing.mingzi = user.nickName;
+ //       Gerenshuxing.touxiang = "https://wx.qlogo.cn/mmopen/vi_32/MF7PLicF44H0djnvbeGDWKKPu60fbrbLKfx8jATpsN9d6paWg0ictyCnY8uAqiaXPcfDLAI1q7IQGHI22ZQZAV4HQ/132";
+ //       Gerenshuxing.touxiang = user.avatarUrl;
+ //       Gerenshuxing.shengfen = user.province;
+ //       console.log("名字：" + Gerenshuxing.mingzi,"头像：" + Gerenshuxing.touxiang,"省份:" + Gerenshuxing.shengfen);
+        if(Gerenshuxing.uid == "weichuangjian"){
+            Weblianjie.fasongshuju("code:996","{" + '"mingzi"' +":"+ '"' + user.nickName + '"' +","
+				+ '"touxiang"' +":"+ '"' + user.avatarUrl + '"' +"," 
+				+ '"xingbie"' +":"+ '"' + user.gender + '"' +","
+                + '"shengfen"' +":"+ '"' + user.province + '"' +","
+				+ '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
+        }
     }
 }

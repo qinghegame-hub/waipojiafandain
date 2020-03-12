@@ -16,7 +16,7 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static jiesuohuoguo:string;
     public static jiesuoxiaochi:string;
     public static jiesuozaocan:string;
-    public static uid:string = "1023";
+    public static uid:string = "weichuangjian";
     public static jiesuojiaju = [];  //已解锁家具
     public static jiesuoyuangong = []; //已解锁员工
     public static shiyongyuangong = []; //已使用员工
@@ -37,6 +37,13 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static chushishangcaisudu:number=30000;//初始上菜速度
     public static yuanliaoxiaohao:number = 0;//原材料消耗减少
     public static weishengjilv:number = 0;//有清洁工时，每个清洁工控制的垃圾的产出几率
+
+    public static mingzi:string;//个人名字;
+    public static touxiang:string = "https://wx.qlogo.cn/mmopen/vi_32/MF7PLicF44H0djnvbeGDWKKPu60fbrbLKfx8jATpsN9d6paWg0ictyCnY8uAqiaXPcfDLAI1q7IQGHI22ZQZAV4HQ/132";//个人头像服务器;
+    public static shengfen:string;//个人省份;
+    public static xingbie:string;//个人性别;
+
+    public static touxiangbaocunzhuangtai:boolean = false;
 
     public static cailanzishu:number = 5;//个人才菜篮子数;
     public static shuaxincishu:number = 2;//个人买菜刷新次数;

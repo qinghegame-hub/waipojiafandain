@@ -3,10 +3,14 @@ class Dianpufandian extends eui.Component implements  eui.UIComponent {
 	public img_heisezhezao:eui.Image;
 	public img_fandiandianpubj:eui.Image;
 	public dianzhutouxiang:eui.Image;
+	public dianzutxgroup:eui.Group;
 	public dianzutouxiangkuang:eui.Image;
 	public guyuantouxiang1:eui.Image;
 	public guyuantouxiang2:eui.Image;
 	public guyuantouxiang3:eui.Image;
+	public guyuantxgroup1:eui.Group;
+	public guyuantxgroup2:eui.Group;
+	public guyuantxgroup3:eui.Group;
 	public but_xiaofei:eui.Button;
 	public but_shouyin:eui.Button;
 	public but_shougou:eui.Button;
@@ -21,6 +25,7 @@ class Dianpufandian extends eui.Component implements  eui.UIComponent {
 	public but_guyuan1:eui.Button;
 	public but_guyuan2:eui.Button;
 	public but_guyuan3:eui.Button;
+
 
 
 	public constructor() {

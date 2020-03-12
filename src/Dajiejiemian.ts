@@ -820,11 +820,12 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 			case "1":
 				this.fandianjiemian.img_yinye.source = "img_shoufei1_png";
 				this.fandianjiemian.shoufeishu.text = this.fandianpeizhi[5];
-				this.fandianjiemian.dianzhuming.text = Gerenshuxing.uid;
+				this.fandianjiemian.dianzhuming.text = Gerenshuxing.mingzi;
 				this.fandianjiemian.but_shougou.enabled = false;
 				this.fandianjiemian.but_shougou.alpha = 0;
 				this.fandianjiemian.but_shouyin.enabled = true;
 				this.fandianjiemian.but_shouyin.alpha = 1;
+				this.huoquzijitouxiang();
 				this.fandianjiemian.but_shouyin.addEventListener(egret.TouchEvent.TOUCH_TAP,this.shouyindianji,this);
 				break;
 			default:
@@ -839,6 +840,33 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 		}
 
 	}
+
+	public huoquzijitouxiang(){
+		var imgLoader: egret.ImageLoader = new egret.ImageLoader;
+		if(Gerenshuxing.touxiangbaocunzhuangtai == true){
+			imgLoader.load(Gerenshuxing.touxiang);
+			imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
+		}else{
+			imgLoader.load("http://192.168.1.2/res/resource/resource/wxtx/undefined.png");
+			imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
+		}
+		
+	}
+
+	public xianshigerentouxiang(evt: egret.Event):void{
+			if (evt.currentTarget.data) {
+//			egret.log("加载头像成功: " + evt.currentTarget.data);
+			let texture = new egret.Texture();
+			texture.bitmapData = evt.currentTarget.data;
+			let head = new egret.Bitmap(texture);
+            head.x = 0;
+            head.y = 0;
+            head.width=this.fandianjiemian.dianzutxgroup.width;
+            head.height=this.fandianjiemian.dianzutxgroup.height;
+            this.fandianjiemian.dianzutxgroup.addChild(head);
+			}
+		}
+
 
 	public xiaofeidianji(){
 		Gameguanli.Kongzhitai().dingbuui.removeChild(this.fandianjiemian);

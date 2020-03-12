@@ -67,6 +67,10 @@ class Weblianjie extends egret.DisplayObjectContainer {
                 Gerenshuxing.jiesuantime=jiexijsongeshi[0].jiesuantime;//当前饭店结算时间
                 Gerenshuxing.chushishangcaisudu=jiexijsongeshi[0].chushishangcaisudu;//初始上菜速度;
                 Gerenshuxing.kesaochuweisheng=jiexijsongeshi[0].kesaochuweisheng;//可扫除卫生值;
+                Gerenshuxing.mingzi = jiexijsongeshi[0].mingzi;
+                Gerenshuxing.touxiang = jiexijsongeshi[0].touxiang;
+                Gerenshuxing.xingbie = jiexijsongeshi[0].xingbie;
+                Gerenshuxing.shengfen = jiexijsongeshi[0].shenfen;
 
 
                 Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
@@ -465,6 +469,15 @@ class Weblianjie extends egret.DisplayObjectContainer {
             case "code:205":
                 Gameguanli.Kongzhitai().cuowutishixinxi(jiexijsongeshi.tishi + "进入了游戏！");
                 break;
+            case "code:997":
+                Gerenshuxing.touxiangbaocunzhuangtai = true;
+                Gerenshuxing.touxiang = `http://192.168.1.2/res/resource/resource/wxtx/${Gerenshuxing.uid}.png`;
+                break;
+            case "code:995":
+                Gerenshuxing.mingzi = jiexijsongeshi.mingzi;
+                Gerenshuxing.touxiang = jiexijsongeshi.touxiang;
+                Gerenshuxing.xingbie = jiexijsongeshi.xingbie;
+                Gerenshuxing.shengfen = jiexijsongeshi.shenfen;
             default:
                 console.log("非法服务器参数")
         }
@@ -473,7 +486,8 @@ class Weblianjie extends egret.DisplayObjectContainer {
 
    public lianjiechenggong(){
        console.log("服务器连接成功")
-       Weblianjie.fasongshuju("code:999",'"' + Gerenshuxing.gerencode + '"');
+       Weblianjie.fasongshuju("code:999","{" + '"id"' +":"+ '"' + Gerenshuxing.uid + '"' +","
+				+ '"touxaing"' + ":"+ '"' + Gerenshuxing.touxiang + '"' + "}");
 
    }
 

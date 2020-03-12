@@ -98,26 +98,35 @@ var Main = (function (_super) {
     };
     Main.prototype.runGame = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var denglu, result, userInfo;
+            var denglu, e_1, result, userInfo;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.loadResource()];
                     case 1:
                         _a.sent();
-                        return [4 /*yield*/, platform.login()];
+                        _a.label = 2;
                     case 2:
+                        _a.trys.push([2, 4, , 5]);
+                        return [4 /*yield*/, platform.login()];
+                    case 3:
                         denglu = _a.sent();
                         Gerenshuxing.gerencode = denglu.code;
                         console.log(Gerenshuxing.gerencode);
+                        return [3 /*break*/, 5];
+                    case 4:
+                        e_1 = _a.sent();
+                        console.error(e_1);
+                        return [3 /*break*/, 5];
+                    case 5:
                         this.createGameScene();
                         return [4 /*yield*/, RES.getResAsync("description_json")];
-                    case 3:
+                    case 6:
                         result = _a.sent();
                         this.startAnimation(result);
                         return [4 /*yield*/, platform.getUserInfo()];
-                    case 4:
+                    case 7:
                         userInfo = _a.sent();
-                        console.log("个人用户数据=" + userInfo.nickName);
+                        this.gerenshuju(userInfo);
                         return [2 /*return*/];
                 }
             });
@@ -125,7 +134,7 @@ var Main = (function (_super) {
     };
     Main.prototype.loadResource = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var loadingView, e_1;
+            var loadingView, e_2;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -144,8 +153,8 @@ var Main = (function (_super) {
                         this.stage.removeChild(loadingView);
                         return [3 /*break*/, 5];
                     case 4:
-                        e_1 = _a.sent();
-                        console.error(e_1);
+                        e_2 = _a.sent();
+                        console.error(e_2);
                         return [3 /*break*/, 5];
                     case 5: return [2 /*return*/];
                 }
@@ -238,6 +247,13 @@ var Main = (function (_super) {
         panel.horizontalCenter = 0;
         panel.verticalCenter = 0;
         this.addChild(panel);
+    };
+    Main.prototype.gerenshuju = function (user) {
+        Gerenshuxing.mingzi = user.nickName;
+        //       Gerenshuxing.touxiang = "https://wx.qlogo.cn/mmopen/vi_32/MF7PLicF44H0djnvbeGDWKKPu60fbrbLKfx8jATpsN9d6paWg0ictyCnY8uAqiaXPcfDLAI1q7IQGHI22ZQZAV4HQ/132";
+        Gerenshuxing.touxiang = user.avatarUrl;
+        Gerenshuxing.shengfen = user.province;
+        console.log("名字：" + Gerenshuxing.mingzi, "头像：" + Gerenshuxing.touxiang, "省份:" + Gerenshuxing.shengfen);
     };
     return Main;
 }(eui.UILayer));

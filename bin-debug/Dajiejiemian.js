@@ -763,11 +763,12 @@ var Dajiejiemian = (function (_super) {
             case "1":
                 this.fandianjiemian.img_yinye.source = "img_shoufei1_png";
                 this.fandianjiemian.shoufeishu.text = this.fandianpeizhi[5];
-                this.fandianjiemian.dianzhuming.text = Gerenshuxing.uid;
+                this.fandianjiemian.dianzhuming.text = Gerenshuxing.mingzi;
                 this.fandianjiemian.but_shougou.enabled = false;
                 this.fandianjiemian.but_shougou.alpha = 0;
                 this.fandianjiemian.but_shouyin.enabled = true;
                 this.fandianjiemian.but_shouyin.alpha = 1;
+                this.huoquzijitouxiang();
                 this.fandianjiemian.but_shouyin.addEventListener(egret.TouchEvent.TOUCH_TAP, this.shouyindianji, this);
                 break;
             default:
@@ -779,6 +780,30 @@ var Dajiejiemian = (function (_super) {
                 this.fandianjiemian.but_shouyin.enabled = false;
                 this.fandianjiemian.but_shouyin.alpha = 0;
                 this.fandianjiemian.but_shougou.addEventListener(egret.TouchEvent.TOUCH_TAP, this.shougou, this);
+        }
+    };
+    Dajiejiemian.prototype.huoquzijitouxiang = function () {
+        var imgLoader = new egret.ImageLoader;
+        if (Gerenshuxing.touxiangbaocunzhuangtai == true) {
+            imgLoader.load(Gerenshuxing.touxiang);
+            imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
+        }
+        else {
+            imgLoader.load("http://192.168.1.2/res/resource/resource/wxtx/undefined.png");
+            imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
+        }
+    };
+    Dajiejiemian.prototype.xianshigerentouxiang = function (evt) {
+        if (evt.currentTarget.data) {
+            //			egret.log("加载头像成功: " + evt.currentTarget.data);
+            var texture = new egret.Texture();
+            texture.bitmapData = evt.currentTarget.data;
+            var head = new egret.Bitmap(texture);
+            head.x = 0;
+            head.y = 0;
+            head.width = this.fandianjiemian.dianzutxgroup.width;
+            head.height = this.fandianjiemian.dianzutxgroup.height;
+            this.fandianjiemian.dianzutxgroup.addChild(head);
         }
     };
     Dajiejiemian.prototype.xiaofeidianji = function () {
