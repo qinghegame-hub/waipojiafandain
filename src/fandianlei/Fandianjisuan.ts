@@ -19,9 +19,11 @@ class Fandianjisuan extends egret.DisplayObjectContainer{
             this.xunhuankaishi.addEventListener(egret.TimerEvent.TIMER,this.jisuanfandianshuju,this);
             this.xunhuankaishi.start();
         }else if(opendingshi == 0){
-            this.xunhuankaishi.stop();
-            this.xunhuankaishi.removeEventListener(egret.TimerEvent.TIMER,this.jisuanfandianshuju,this);
-            this.xunhuankaishi = null;
+            if(this.xunhuankaishi != null){
+                this.xunhuankaishi.stop();
+                this.xunhuankaishi.removeEventListener(egret.TimerEvent.TIMER,this.jisuanfandianshuju,this);
+                this.xunhuankaishi = null;
+            }
         }
     }
 

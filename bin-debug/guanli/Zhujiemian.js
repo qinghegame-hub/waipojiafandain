@@ -216,7 +216,7 @@ var Zhujiemian = (function (_super) {
     };
     Zhujiemian.prototype.jiesuofandian4 = function () {
         Gameguanli.Kongzhitai().zhujiemiandingbu.removeChild(this.tishijiemian);
-        if (Gerenshuxing.jinbizhi >= this.jiesuo3) {
+        if (Gerenshuxing.jinbizhi >= this.jiesuo4) {
             Weblianjie.fasongshuju("code:006", "{" + '"jiesuoid"' + ":" + '"4"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
         }
         else {

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="JiatinguiSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="170f6f52344" ></w:Config>
+	<e:Group id="jiatingzu" left="0" top="0" bottom="0" right="0">
+		<e:Image id="img_jiatingbeijing" source="img_jiatingbeijing_png" x="0" y="0"/>
+		<e:Image id="but_chuang" source="but_chuang_png" x="0" y="374"/>
+		<e:Image id="but_guizi" source="but_guizi_png" x="176.5" y="127"/>
+		<e:Image id="but_shuzhuo" source="but_shuzhuo_png" x="446" y="259.5"/>
+		<e:Image id="but_dianshi" source="but_dianshi_png" x="517" y="553"/>
+		<e:Image id="but_chaji" source="but_chaji_png" x="154" y="771"/>
+		<e:Image id="but_shafa" source="but_shafa_png" x="0" y="840"/>
+		<e:Image id="but_maowo" source="but_maowo_png" x="250" y="660"/>
+		<e:Button id="butun_shafa" label="" x="2.5" y="1072.5" anchorOffsetX="0" width="432" anchorOffsetY="0" height="258" enabled="true" alpha="0"/>
+		<e:Button id="butun_shafa0" label="" x="0" y="878.5" anchorOffsetX="0" width="196" anchorOffsetY="0" height="258" enabled="true" alpha="0"/>
+		<e:Button id="butun_chaji" label="" x="256" y="802.5" anchorOffsetX="0" width="380" anchorOffsetY="0" height="196" enabled="true" alpha="0"/>
+		<e:Button id="butun_dianshi" label="" x="541" y="570" anchorOffsetX="0" width="203" anchorOffsetY="0" height="153" enabled="true" alpha="0"/>
+		<e:Button id="butun_maowo" label="" x="264.5" y="649.5" anchorOffsetX="0" width="111" anchorOffsetY="0" height="101" enabled="true" alpha="0"/>
+		<e:Button id="butun_shuzhuo" label="" x="459" y="292" anchorOffsetX="0" width="237" anchorOffsetY="0" height="162" enabled="true" alpha="0"/>
+		<e:Button id="butun_guizi" label="" x="201.5" y="133" anchorOffsetX="0" width="190" anchorOffsetY="0" height="269" enabled="true" alpha="0"/>
+		<e:Button id="butun_chuang" label="" x="2.5" y="396.5" anchorOffsetX="0" width="189" anchorOffsetY="0" height="151" enabled="true" alpha="0"/>
+		<e:Button id="butun_chuang0" label="" x="218.5" y="433" anchorOffsetX="0" width="85" anchorOffsetY="0" height="69" enabled="true" alpha="0"/>
+		<e:Image id="img_daerzi" source="img_daerzi_png" x="142" y="750.5"/>
+		<e:Image id="img_ererzi" source="img_ererzi_png" x="433" y="608"/>
+		<e:Image id="img_daerxi" source="img_daerxi_png" x="604.5" y="873.5"/>
+		<e:Image id="img_xiaosunnv" source="img_xiaosunnv_png" x="490" y="969"/>
+	</e:Group>
+</e:Skin>

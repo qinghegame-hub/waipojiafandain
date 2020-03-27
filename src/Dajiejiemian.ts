@@ -843,13 +843,15 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 
 	public huoquzijitouxiang(){
 		var imgLoader: egret.ImageLoader = new egret.ImageLoader;
-		if(Gerenshuxing.touxiangbaocunzhuangtai == true){
+		/*if(Gerenshuxing.touxiangbaocunzhuangtai == true){
 			imgLoader.load(Gerenshuxing.touxiang);
 			imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
 		}else{
 			imgLoader.load("http://192.168.1.2/res/resource/resource/wxtx/undefined.png");
 			imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
-		}
+		}*/
+		imgLoader.load(Gerenshuxing.touxiang);
+		imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
 		
 	}
 

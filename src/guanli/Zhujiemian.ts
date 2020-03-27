@@ -158,6 +158,8 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.tishijiemian.tishiwenzi.text = "装修饭店的小炒区域，需消耗钱币：" + this.jiesuo1 + "。\n装修后，您的饭店可增加[小炒]菜品。";
 		this.tishijiemian.but_queding0.addEventListener(egret.TouchEvent.TOUCH_TAP,this.jiesuofandian1,this);
 	}
+
+
 	public jiesuodating2(){
 		let jiesuofeiyong = RES.getRes("lobbyzhuozi_json");
 		for(var i = 0;i<jiesuofeiyong.length;i ++){
@@ -181,6 +183,8 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.tishijiemian.tishiwenzi.text = "装修饭店的火锅区域，需消耗钱币：" + this.jiesuo2 + "。\n装修后，您的饭店可增加[火锅]菜品。";
 		this.tishijiemian.but_queding0.addEventListener(egret.TouchEvent.TOUCH_TAP,this.jiesuofandian2,this);
 	}
+
+
 	public jiesuodating3(){
 		let jiesuofeiyong = RES.getRes("lobbyzhuozi_json");
 		for(var i = 0;i<jiesuofeiyong.length;i ++){
@@ -204,6 +208,8 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 		this.tishijiemian.tishiwenzi.text = "装修饭店的小吃区域，需消耗钱币：" + this.jiesuo3 + "。\n装修后，您的饭店可增加[小吃]菜品。";
 		this.tishijiemian.but_queding0.addEventListener(egret.TouchEvent.TOUCH_TAP,this.jiesuofandian3,this);
 	}
+
+
 	public jiesuodating4(){
 		let jiesuofeiyong = RES.getRes("lobbyzhuozi_json");
 		for(var i = 0;i<jiesuofeiyong.length;i ++){
@@ -257,7 +263,7 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 
 	public jiesuofandian4(){
 		Gameguanli.Kongzhitai().zhujiemiandingbu.removeChild(this.tishijiemian);
-		if(Gerenshuxing.jinbizhi >= this.jiesuo3){
+		if(Gerenshuxing.jinbizhi >= this.jiesuo4){
 			Weblianjie.fasongshuju("code:006","{" + '"jiesuoid"' + ":" + '"4"' +"," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
 		}else{
 			Gameguanli.Kongzhitai().cuowutishixinxi("很遗憾，您拥有的钱币不足，无法支付装修款");

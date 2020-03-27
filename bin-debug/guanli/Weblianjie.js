@@ -74,6 +74,16 @@ var Weblianjie = (function (_super) {
                 Gerenshuxing.jiesuantime = jiexijsongeshi[0].jiesuantime; //当前饭店结算时间
                 Gerenshuxing.chushishangcaisudu = jiexijsongeshi[0].chushishangcaisudu; //初始上菜速度;
                 Gerenshuxing.kesaochuweisheng = jiexijsongeshi[0].kesaochuweisheng; //可扫除卫生值;
+                Gerenshuxing.mingzi = jiexijsongeshi[0].mingzi;
+                Gerenshuxing.touxiang = jiexijsongeshi[0].touxiang;
+                Gerenshuxing.xingbie = jiexijsongeshi[0].xingbie;
+                Gerenshuxing.shengfen = jiexijsongeshi[0].shenfen;
+                Gerenshuxing.daerzixinxi = jiexijsongeshi[0].daerzixinxi;
+                Gerenshuxing.ererzixinxi = jiexijsongeshi[0].ererzixinxi;
+                Gerenshuxing.xifuxinxi = jiexijsongeshi[0].xifuxinxi;
+                Gerenshuxing.sunnvxinxi = jiexijsongeshi[0].sunnvxinxi;
+                //               console.log(Gerenshuxing.daerzixinxi,Gerenshuxing.ererzixinxi,Gerenshuxing.xifuxinxi,Gerenshuxing.sunnvxinxi);
+                //              console.log(Gerenshuxing.daerzixinxi[5],Gerenshuxing.ererzixinxi[5],Gerenshuxing.xifuxinxi[5],Gerenshuxing.sunnvxinxi[5]);
                 Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
                 Gameguanli.Kongzhitai().zhujiemian.chushihuaui();
                 Gameguanli.Kongzhitai().zhujiemiandingbu.anniuchuli();
@@ -460,6 +470,137 @@ var Weblianjie = (function (_super) {
                         break;
                     }
                 }
+                break;
+            //大儿子回家时数据变更
+            case "code:053":
+                Gerenshuxing.daerzixinxi = jiexijsongeshi.chengyuan;
+                if (Gameguanli.Kongzhitai().jiatingjiemian.parent) {
+                    Gameguanli.Kongzhitai().jiatingjiemian.jiatingchengyuanxianshi();
+                }
+                break;
+            //二儿子回家时数据变更
+            case "code:054":
+                Gerenshuxing.ererzixinxi = jiexijsongeshi.chengyuan;
+                if (Gameguanli.Kongzhitai().jiatingjiemian.parent) {
+                    Gameguanli.Kongzhitai().jiatingjiemian.jiatingchengyuanxianshi();
+                }
+                break;
+            //媳妇回家时数据变更
+            case "code:055":
+                Gerenshuxing.xifuxinxi = jiexijsongeshi.chengyuan;
+                if (Gameguanli.Kongzhitai().jiatingjiemian.parent) {
+                    Gameguanli.Kongzhitai().jiatingjiemian.jiatingchengyuanxianshi();
+                }
+                break;
+            //孙女回家时数据变更
+            case "code:056":
+                Gerenshuxing.sunnvxinxi = jiexijsongeshi.chengyuan;
+                if (Gameguanli.Kongzhitai().jiatingjiemian.parent) {
+                    Gameguanli.Kongzhitai().jiatingjiemian.jiatingchengyuanxianshi();
+                }
+                break;
+            //成员离家时数据变更
+            case "code:057":
+                Gerenshuxing.sunnvxinxi = jiexijsongeshi.sunnv;
+                Gerenshuxing.xifuxinxi = jiexijsongeshi.xifu;
+                Gerenshuxing.ererzixinxi = jiexijsongeshi.ererzi;
+                Gerenshuxing.daerzixinxi = jiexijsongeshi.daerzi;
+                if (Gameguanli.Kongzhitai().jiatingjiemian.parent) {
+                    Gameguanli.Kongzhitai().jiatingjiemian.jiatingchengyuanxianshi();
+                }
+                break;
+            //大儿子增加心情数据变更
+            case "code:062":
+                Gerenshuxing.daerzixinxi = jiexijsongeshi.chengyuan;
+                Gerenshuxing.kaixinzhi = jiexijsongeshi.xinqing;
+                if (Gameguanli.Kongzhitai().jiatingjiemian.parent) {
+                    Gameguanli.Kongzhitai().jiatingjiemian.jiatingchengyuanxianshi();
+                    Gameguanli.Kongzhitai().cuowutishixinxi("大儿子回家了，你的心情稍微好了点...");
+                    var cailiaodonghua_1 = new Cailiaoxiaohao();
+                    Gameguanli.Kongzhitai().jiatingjiemian.addChild(cailiaodonghua_1);
+                    cailiaodonghua_1.img_shicai.source = "img_xinqing_png";
+                    cailiaodonghua_1.wenzineirong.text = "+ " + jiexijsongeshi.zengjiazhi;
+                    cailiaodonghua_1.x = Gameguanli.Kongzhitai().jiatingjiemian.img_jiatingbeijing.width / 2 - cailiaodonghua_1.width / 2;
+                    cailiaodonghua_1.y = Gameguanli.Kongzhitai().jiatingjiemian.img_jiatingbeijing.height / 2 - cailiaodonghua_1.height / 2 + 100;
+                    egret.Tween.get(cailiaodonghua_1).to({ y: cailiaodonghua_1.y - 200 }, 3000).call(function () {
+                        Gameguanli.Kongzhitai().jiatingjiemian.removeChild(cailiaodonghua_1);
+                    });
+                }
+                ;
+                if (Gameguanli.Kongzhitai().dingbuui.parent) {
+                    Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
+                }
+                ;
+                break;
+            //二儿子增加心情数据变更
+            case "code:063":
+                Gerenshuxing.ererzixinxi = jiexijsongeshi.chengyuan;
+                Gerenshuxing.kaixinzhi = jiexijsongeshi.xinqing;
+                if (Gameguanli.Kongzhitai().jiatingjiemian.parent) {
+                    Gameguanli.Kongzhitai().jiatingjiemian.jiatingchengyuanxianshi();
+                    Gameguanli.Kongzhitai().cuowutishixinxi("二儿子回家了，你感到喜出望外...");
+                    var cailiaodonghua_2 = new Cailiaoxiaohao();
+                    Gameguanli.Kongzhitai().jiatingjiemian.addChild(cailiaodonghua_2);
+                    cailiaodonghua_2.img_shicai.source = "img_xinqing_png";
+                    cailiaodonghua_2.wenzineirong.text = "+ " + jiexijsongeshi.zengjiazhi;
+                    cailiaodonghua_2.x = Gameguanli.Kongzhitai().jiatingjiemian.img_jiatingbeijing.width / 2 - cailiaodonghua_2.width / 2;
+                    cailiaodonghua_2.y = Gameguanli.Kongzhitai().jiatingjiemian.img_jiatingbeijing.height / 2 - cailiaodonghua_2.height / 2 + 200;
+                    egret.Tween.get(cailiaodonghua_2).to({ y: cailiaodonghua_2.y - 200 }, 3000).call(function () {
+                        Gameguanli.Kongzhitai().jiatingjiemian.removeChild(cailiaodonghua_2);
+                    });
+                }
+                ;
+                if (Gameguanli.Kongzhitai().dingbuui.parent) {
+                    Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
+                }
+                ;
+                break;
+            //大儿媳增加心情数据变更
+            case "code:064":
+                Gerenshuxing.xifuxinxi = jiexijsongeshi.chengyuan;
+                Gerenshuxing.kaixinzhi = jiexijsongeshi.xinqing;
+                if (Gameguanli.Kongzhitai().jiatingjiemian.parent) {
+                    Gameguanli.Kongzhitai().jiatingjiemian.jiatingchengyuanxianshi();
+                    Gameguanli.Kongzhitai().cuowutishixinxi("大儿媳回家了，你的心情稍微好了点...");
+                    var cailiaodonghua_3 = new Cailiaoxiaohao();
+                    Gameguanli.Kongzhitai().jiatingjiemian.addChild(cailiaodonghua_3);
+                    cailiaodonghua_3.img_shicai.source = "img_xinqing_png";
+                    cailiaodonghua_3.wenzineirong.text = "+ " + jiexijsongeshi.zengjiazhi;
+                    cailiaodonghua_3.x = Gameguanli.Kongzhitai().jiatingjiemian.img_jiatingbeijing.width / 2 - cailiaodonghua_3.width / 2;
+                    cailiaodonghua_3.y = Gameguanli.Kongzhitai().jiatingjiemian.img_jiatingbeijing.height / 2 - cailiaodonghua_3.height / 2 + 300;
+                    egret.Tween.get(cailiaodonghua_3).to({ y: cailiaodonghua_3.y - 200 }, 3000).call(function () {
+                        Gameguanli.Kongzhitai().jiatingjiemian.removeChild(cailiaodonghua_3);
+                    });
+                }
+                ;
+                if (Gameguanli.Kongzhitai().dingbuui.parent) {
+                    Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
+                }
+                ;
+                break;
+            //孙女增加心情数据变更
+            case "code:065":
+                Gerenshuxing.sunnvxinxi = jiexijsongeshi.chengyuan;
+                Gerenshuxing.kaixinzhi = jiexijsongeshi.xinqing;
+                if (Gameguanli.Kongzhitai().jiatingjiemian.parent) {
+                    Gameguanli.Kongzhitai().jiatingjiemian.jiatingchengyuanxianshi();
+                    Gameguanli.Kongzhitai().cuowutishixinxi("乖孙女回家了，你的心情稍微好了点...");
+                    var cailiaodonghua_4 = new Cailiaoxiaohao();
+                    Gameguanli.Kongzhitai().jiatingjiemian.addChild(cailiaodonghua_4);
+                    cailiaodonghua_4.img_shicai.source = "img_xinqing_png";
+                    cailiaodonghua_4.wenzineirong.text = "+ " + jiexijsongeshi.zengjiazhi;
+                    cailiaodonghua_4.x = Gameguanli.Kongzhitai().jiatingjiemian.img_jiatingbeijing.width / 2 - cailiaodonghua_4.width / 2;
+                    cailiaodonghua_4.y = Gameguanli.Kongzhitai().jiatingjiemian.img_jiatingbeijing.height / 2 - cailiaodonghua_4.height / 2 + 400;
+                    egret.Tween.get(cailiaodonghua_4).to({ y: cailiaodonghua_4.y - 200 }, 3000).call(function () {
+                        Gameguanli.Kongzhitai().jiatingjiemian.removeChild(cailiaodonghua_4);
+                    });
+                }
+                ;
+                if (Gameguanli.Kongzhitai().dingbuui.parent) {
+                    Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
+                }
+                ;
+                break;
             //非法操作
             case "code:202":
                 Gameguanli.Kongzhitai().cuowutishixinxi("非法操作！");
@@ -476,16 +617,23 @@ var Weblianjie = (function (_super) {
                 Gameguanli.Kongzhitai().cuowutishixinxi(jiexijsongeshi.tishi + "进入了游戏！");
                 break;
             case "code:997":
-                Gerenshuxing.touxiangbaocunzhuangtai = true;
-                Gerenshuxing.touxiang = "http://192.168.1.2/res/resource/resource/wxtx/" + Gerenshuxing.uid + ".png";
+                //                Gerenshuxing.touxiangbaocunzhuangtai = true;
+                //                Gerenshuxing.touxiang = `http://192.168.1.2/res/resource/resource/wxtx/${Gerenshuxing.uid}.png`;
+                break;
+            case "code:995":
+                Gerenshuxing.mingzi = jiexijsongeshi.mingzi;
+                Gerenshuxing.touxiang = jiexijsongeshi.touxiang;
+                Gerenshuxing.xingbie = jiexijsongeshi.xingbie;
+                Gerenshuxing.shengfen = jiexijsongeshi.shenfen;
                 break;
             default:
                 console.log("非法服务器参数");
+                break;
         }
     };
     Weblianjie.prototype.lianjiechenggong = function () {
         console.log("服务器连接成功");
-        Weblianjie.fasongshuju("code:999", "{" + '"id"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+        Weblianjie.fasongshuju("code:999", "{" + '"id"' + ":" + '"' + Gerenshuxing.gerencode + '"' + ","
             + '"touxaing"' + ":" + '"' + Gerenshuxing.touxiang + '"' + "}");
     };
     Weblianjie.prototype.lianjieguanbi = function () {

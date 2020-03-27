@@ -100,6 +100,8 @@ declare class DianpurukouSkin extends eui.Skin{
 }
 declare class JianglijiesuanuiSkin extends eui.Skin{
 }
+declare class JiatinguiSkin extends eui.Skin{
+}
 declare class LiuyanjiemianSkin extends eui.Skin{
 }
 declare class MaicaiuiSkin extends eui.Skin{

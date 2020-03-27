@@ -198,5 +198,15 @@
         "path": "Dianpufandian.ts",
         "class": "Dianpufandian",
         "parentPath": ""
+    },
+    "170f6f52344": {
+        "path": "Jiatingui.ts",
+        "class": "Jiatingui",
+        "parentPath": ""
+    },
+    "1711b9259dc": {
+        "path": "Daerzijiaohuui.ts",
+        "class": "Daerzijiaohuui",
+        "parentPath": ""
     }
 }

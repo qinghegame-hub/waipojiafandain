@@ -90,7 +90,7 @@ class Main extends eui.UILayer {
     private loadTheme() {
         return new Promise((resolve, reject) => {
             egret.ImageLoader.crossOrigin = "anonymous";//设置允许跨域加载
-//            EXML.prefixURL = "http://192.168.1.2/res/resource/";//更改目录位置,这里要填入服务器的ip地址
+//            EXML.prefixURL = "http://192.168.1.2/res/resource/resource/eui_skins/";//更改目录位置,这里要填入服务器的ip地址
             // load skin theme configuration file, you can manually modify the file. And replace the default skin.
             //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
             let theme = new eui.Theme("http://192.168.1.2/res/resource/resource/default.thm.json", this.stage);
@@ -188,7 +188,7 @@ class Main extends eui.UILayer {
  //       Gerenshuxing.touxiang = user.avatarUrl;
  //       Gerenshuxing.shengfen = user.province;
  //       console.log("名字：" + Gerenshuxing.mingzi,"头像：" + Gerenshuxing.touxiang,"省份:" + Gerenshuxing.shengfen);
-        if(Gerenshuxing.uid == "weichuangjian"){
+        if(Gerenshuxing.mingzi == "罗英"){
             Weblianjie.fasongshuju("code:996","{" + '"mingzi"' +":"+ '"' + user.nickName + '"' +","
 				+ '"touxiang"' +":"+ '"' + user.avatarUrl + '"' +"," 
 				+ '"xingbie"' +":"+ '"' + user.gender + '"' +","

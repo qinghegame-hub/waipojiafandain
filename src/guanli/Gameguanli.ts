@@ -6,6 +6,9 @@ class Gameguanli extends egret.DisplayObjectContainer{
 	//上街界面实例
 	public waichudajie:Dajiejiemian;
 
+	//家庭界面实例
+	public jiatingjiemian:Jiatingui;
+
 	//顶部菜单实例
 	public dingbuui:dingbuxinxi;
 
@@ -93,6 +96,7 @@ class Gameguanli extends egret.DisplayObjectContainer{
 		this.liuyan = new Liuyanjiemian();
 		this.caiPuUi = new Caipujiemian();
 		this.waichudajie = new Dajiejiemian();
+		this.jiatingjiemian = new Jiatingui();
 		
 
 		//默认加载主界面相关界面
@@ -119,7 +123,14 @@ class Gameguanli extends egret.DisplayObjectContainer{
 		if (canshu1 == "zhujiemian"){
 			if(Gameguanli.Kongzhitai().waichudajie.parent){
 				this.removeChild(Gameguanli.Kongzhitai().waichudajie);
+			}
+			if(Gameguanli.Kongzhitai().jiatingjiemian.parent){
+				this.removeChild(Gameguanli.Kongzhitai().jiatingjiemian);
+			}
+			if(Gameguanli.Kongzhitai().dibuui.parent){
 				this.removeChild(Gameguanli.Kongzhitai().dibuui);
+			}
+			if(Gameguanli.Kongzhitai().dingbuui.parent){
 				this.removeChild(Gameguanli.Kongzhitai().dingbuui);
 			}
 			this.addChild(Gameguanli.Kongzhitai().zhujiemian);
@@ -131,17 +142,47 @@ class Gameguanli extends egret.DisplayObjectContainer{
 		if(canshu1 == "shangjie"){
 			if(Gameguanli.Kongzhitai().zhujiemian.parent){
 				this.removeChild(Gameguanli.Kongzhitai().zhujiemian);
-				this.removeChild(Gameguanli.Kongzhitai().dibuui);
-				this.removeChild(Gameguanli.Kongzhitai().dingbuui);
 			}
 			if(Gameguanli.Kongzhitai().zhujiemiandingbu.parent){
 				this.removeChild(Gameguanli.Kongzhitai().zhujiemiandingbu);
+			}
+			if(Gameguanli.Kongzhitai().jiatingjiemian.parent){
+				this.removeChild(Gameguanli.Kongzhitai().jiatingjiemian);
+			}
+			if(Gameguanli.Kongzhitai().dibuui.parent){
+				this.removeChild(Gameguanli.Kongzhitai().dibuui);
+			}
+			if(Gameguanli.Kongzhitai().dingbuui.parent){
+				this.removeChild(Gameguanli.Kongzhitai().dingbuui);
 			}
 			this.addChild(Gameguanli.Kongzhitai().waichudajie);
 			this.addChild(Gameguanli.Kongzhitai().dibuui);
 			this.addChild(Gameguanli.Kongzhitai().dingbuui);
 			Fandianjisuan.chushihuajisuan(0);
 			Gameguanli.Kongzhitai().waichudajie.chushihua();
+		}
+		if(canshu1 == "huijia"){
+			if(Gameguanli.Kongzhitai().zhujiemian.parent){
+				this.removeChild(Gameguanli.Kongzhitai().zhujiemian);
+			}
+			if(Gameguanli.Kongzhitai().zhujiemiandingbu.parent){
+				this.removeChild(Gameguanli.Kongzhitai().zhujiemiandingbu);
+			}
+			if(Gameguanli.Kongzhitai().waichudajie.parent){
+				this.removeChild(Gameguanli.Kongzhitai().waichudajie);
+			}
+			if(Gameguanli.Kongzhitai().dibuui.parent){
+				this.removeChild(Gameguanli.Kongzhitai().dibuui);
+			}
+			if(Gameguanli.Kongzhitai().dingbuui.parent){
+				this.removeChild(Gameguanli.Kongzhitai().dingbuui);
+			}
+			this.addChild(Gameguanli.Kongzhitai().jiatingjiemian);
+			this.addChild(Gameguanli.Kongzhitai().dibuui);
+			this.addChild(Gameguanli.Kongzhitai().dingbuui);
+			Fandianjisuan.chushihuajisuan(0);
+			Gameguanli.Kongzhitai().jiatingjiemian.chushihua();
+//			Gameguanli.Kongzhitai().waichudajie.chushihua();
 		}
 
 	}
