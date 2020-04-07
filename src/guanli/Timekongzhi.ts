@@ -4,7 +4,9 @@ class Timekongzhi extends egret.DisplayObjectContainer{
 	public constructor() {
 		super();
 		console.log("进入倒计时");
-		this.shijianjisuan();
+		this.shijianjisuan();//游戏内每小时计算定时
+
+
 	}
 
 	public shijianjisuan(){
@@ -17,4 +19,6 @@ class Timekongzhi extends egret.DisplayObjectContainer{
 		let dangqianshijian = (new Date()).valueOf();
 		Weblianjie.fasongshuju("code:028","{" + '"shijian"' +":"+ '"1"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 	}
+
+	
 }

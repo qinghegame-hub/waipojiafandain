@@ -1,0 +1,14 @@
+[
+    {"id":"10001","nextid":"-1","renwu1tiaozhuan":"10002","renwu2tiaozhuan":"10003","renwuneirong":"妈，有个问题想请教您一下。请问“剁椒鱼头”属于八大菜系中的哪一系？","renwuxuanxiang1":"鲁菜","renwuxuanxiang2":"湘菜","renwujiangli1":"-1","renwujiangli2":"6,2","zhengquerenwu":"0"},
+    {"id":"10002","nextid":"-1","renwu1tiaozhuan":"-1","renwu2tiaozhuan":"-1","renwuneirong":"您回答的不对，下次请仔细想想！","renwuxuanxiang1":"-1","renwuxuanxiang2":"-1","renwujiangli1":"-1","renwujiangli2":"-1","zhengquerenwu":"0"},
+    {"id":"10003","nextid":"-1","renwu1tiaozhuan":"-1","renwu2tiaozhuan":"-1","renwuneirong":"您回答得太正确了！解决我一个大问题！","renwuxuanxiang1":"-1","renwuxuanxiang2":"-1","renwujiangli1":"-1","renwujiangli2":"-1","zhengquerenwu":"0"},
+    {"id":"20001","nextid":"-1","renwu1tiaozhuan":"20002","renwu2tiaozhuan":"20003","renwuneirong":"妈，您知道我还有多少天过生日嘛？","renwuxuanxiang1":"知道","renwuxuanxiang2":"不知道","renwujiangli1":"7,2","renwujiangli2":"7,-1","zhengquerenwu":"0"},
+    {"id":"20002","nextid":"-1","renwu1tiaozhuan":"-1","renwu2tiaozhuan":"-1","renwuneirong":"真开心，母亲还记得我的生日！（你，是否又记得父母的生日？）","renwuxuanxiang1":"-1","renwuxuanxiang2":"-1","renwujiangli1":"-1","renwujiangli2":"-1","zhengquerenwu":"0"},
+    {"id":"20003","nextid":"-1","renwu1tiaozhuan":"-1","renwu2tiaozhuan":"-1","renwuneirong":"看来母亲的记忆恢复还得慢慢来。。。","renwuxuanxiang1":"-1","renwuxuanxiang2":"-1","renwujiangli1":"-1","renwujiangli2":"-1","zhengquerenwu":"0"},
+    {"id":"30001","nextid":"-1","renwu1tiaozhuan":"30002","renwu2tiaozhuan":"30003","renwuneirong":"婆婆，你知道生抽在炒菜时的主要用途是什么嘛？","renwuxuanxiang1":"着色","renwuxuanxiang2":"调味","renwujiangli1":"-1","renwujiangli2":"8,2","zhengquerenwu":"0"},
+    {"id":"30002","nextid":"-1","renwu1tiaozhuan":"-1","renwu2tiaozhuan":"-1","renwuneirong":"好像不太对哦…","renwuxuanxiang1":"-1","renwuxuanxiang2":"-1","renwujiangli1":"-1","renwujiangli2":"-1","zhengquerenwu":"0"},
+    {"id":"30003","nextid":"-1","renwu1tiaozhuan":"-1","renwu2tiaozhuan":"-1","renwuneirong":"您回答得太正确了！解决我一个大问题！","renwuxuanxiang1":"-1","renwuxuanxiang2":"-1","renwujiangli1":"-1","renwujiangli2":"-1","zhengquerenwu":"0"},
+    {"id":"40001","nextid":"-1","renwu1tiaozhuan":"40002","renwu2tiaozhuan":"40003","renwuneirong":"奶奶，小猪佩奇的弟弟叫什么名字呀？","renwuxuanxiang1":"乔治","renwuxuanxiang2":"苏西","renwujiangli1":"9,2","renwujiangli2":"-1","zhengquerenwu":"0"},
+    {"id":"40002","nextid":"-1","renwu1tiaozhuan":"-1","renwu2tiaozhuan":"-1","renwuneirong":"奶奶真棒！","renwuxuanxiang1":"-1","renwuxuanxiang2":"-1","renwujiangli1":"-1","renwujiangli2":"-1","zhengquerenwu":"0"},
+    {"id":"40003","nextid":"-1","renwu1tiaozhuan":"-1","renwu2tiaozhuan":"-1","renwuneirong":"奶奶连这都不知道！","renwuxuanxiang1":"-1","renwuxuanxiang2":"-1","renwujiangli1":"-1","renwujiangli2":"-1","zhengquerenwu":"0"}
+    ]

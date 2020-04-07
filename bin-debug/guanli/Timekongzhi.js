@@ -13,7 +13,7 @@ var Timekongzhi = (function (_super) {
     function Timekongzhi() {
         var _this = _super.call(this) || this;
         console.log("进入倒计时");
-        _this.shijianjisuan();
+        _this.shijianjisuan(); //游戏内每小时计算定时
         return _this;
     }
     Timekongzhi.prototype.shijianjisuan = function () {

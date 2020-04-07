@@ -75,6 +75,10 @@ class Weblianjie extends egret.DisplayObjectContainer {
                 Gerenshuxing.ererzixinxi = jiexijsongeshi[0].ererzixinxi;
                 Gerenshuxing.xifuxinxi = jiexijsongeshi[0].xifuxinxi;
                 Gerenshuxing.sunnvxinxi = jiexijsongeshi[0].sunnvxinxi;
+                Gerenshuxing.daerzixuexi = jiexijsongeshi[0].daerzixuexi;
+                Gerenshuxing.ererzixuexi = jiexijsongeshi[0].ererzixuexi;
+                Gerenshuxing.xifuxuexi = jiexijsongeshi[0].xifuxuexi;
+                Gerenshuxing.sunnvxuexi = jiexijsongeshi[0].sunnvxuexi;
  //               console.log(Gerenshuxing.daerzixinxi,Gerenshuxing.ererzixinxi,Gerenshuxing.xifuxinxi,Gerenshuxing.sunnvxinxi);
   //              console.log(Gerenshuxing.daerzixinxi[5],Gerenshuxing.ererzixinxi[5],Gerenshuxing.xifuxinxi[5],Gerenshuxing.sunnvxinxi[5]);
 
@@ -84,6 +88,11 @@ class Weblianjie extends egret.DisplayObjectContainer {
                 //调用员工等数据计算
                 Gerenshuxing.yuangongshuxing();
                 Gameguanli.Kongzhitai().zhujiemiandingbu.chushihua();
+                //调用家庭成员进修进度倒计时
+                Gerenshuxing.daerzijinxiudingshi();
+                Gerenshuxing.ererzijinxiudingshi();
+                Gerenshuxing.xifujinxiudingshi();
+                Gerenshuxing.sunnvjinxiudingshi();
                 break;
     //初始化个人菜谱等级、街道信息
             case "code:035":
@@ -582,6 +591,112 @@ class Weblianjie extends egret.DisplayObjectContainer {
                     Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
                 };
                 break;
+            //添加家庭成员工作成功
+            case "code:067":
+                switch(jiexijsongeshi.jianglileixing){
+                    case "1":
+                        Gerenshuxing.daerzixinxi = jiexijsongeshi.shijishuliang;
+                        Gerenshuxing.daerzijinxiudingshi();
+                        break;
+                    case "2":
+                        Gerenshuxing.ererzixinxi = jiexijsongeshi.shijishuliang;
+                        Gerenshuxing.ererzijinxiudingshi();
+                        break;
+                    case "3":
+                        Gerenshuxing.xifuxinxi = jiexijsongeshi.shijishuliang;
+                        Gerenshuxing.xifujinxiudingshi();
+                        break;
+                    case "4":
+                        Gerenshuxing.sunnvxinxi = jiexijsongeshi.shijishuliang;
+                        Gerenshuxing.sunnvjinxiudingshi();
+                        break;
+                }
+                console.log(Gerenshuxing.daerzixinxi,Gerenshuxing.ererzixinxi,Gerenshuxing.xifuxinxi,Gerenshuxing.sunnvxinxi);
+                break;
+    //家庭成员进修扣除成功
+            case "code:068":
+                switch(jiexijsongeshi.jianglileixing){
+                    case "1":
+                        Gerenshuxing.jinbizhi = parseInt(jiexijsongeshi.shijishuliang[0]);
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_qian_png",jiexijsongeshi.jianglishuliang,"-");
+                        break;
+                    case "2":
+                        Gerenshuxing.jiatingzhi = parseInt(jiexijsongeshi.shijishuliang[0]);
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_jiating_png",jiexijsongeshi.jianglishuliang,"-");
+                        break;
+                    case "3":
+                        Gerenshuxing.jiankangzhi = parseInt(jiexijsongeshi.shijishuliang[0]);
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_jiankang_png",jiexijsongeshi.jianglishuliang,"-");
+                        break;
+                    case "4":
+                        Gerenshuxing.kaixinzhi = parseInt(jiexijsongeshi.shijishuliang[0]);
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_xinqing_png",jiexijsongeshi.jianglishuliang,"-");
+                        break;
+                    case "5":
+                        Gerenshuxing.xingfuzhi = parseInt(jiexijsongeshi.shijishuliang[0]);
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_xingfu_png",jiexijsongeshi.jianglishuliang,"-");
+                        break;
+                    case "6":
+                        Gerenshuxing.daerzixinxi = jiexijsongeshi.shijishuliang;
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_daerzibiaoshi_png",jiexijsongeshi.jianglishuliang,"-");
+                        break;
+                    case "7":
+                        Gerenshuxing.ererzixinxi = jiexijsongeshi.shijishuliang;
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_xiaoerzibiaoshi_png",jiexijsongeshi.jianglishuliang,"-");
+                        break;
+                    case "8":
+                        Gerenshuxing.xifuxinxi = jiexijsongeshi.shijishuliang;
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_xifubiaoshi_png",jiexijsongeshi.jianglishuliang,"-");
+                        break;
+                    case "9":
+                        Gerenshuxing.sunnvxinxi = jiexijsongeshi.shijishuliang;
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_sunnvbiaoshi_png",jiexijsongeshi.jianglishuliang,"-");
+                        break;
+                    case "10":
+                        Gerenshuxing.daerzixinxi = jiexijsongeshi.shijishuliang;
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_daerzibiaoshi_png",jiexijsongeshi.jianglishuliang,"-");
+                        break;
+                    case "11":
+                        Gerenshuxing.ererzixinxi = jiexijsongeshi.shijishuliang;
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_xiaoerzibiaoshi_png",jiexijsongeshi.jianglishuliang,"-");
+                        break;
+                    case "12":
+                        Gerenshuxing.xifuxinxi = jiexijsongeshi.shijishuliang;
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_xifubiaoshi_png",jiexijsongeshi.jianglishuliang,"-");
+                        break;
+                    case "13":
+                        Gerenshuxing.sunnvxinxi = jiexijsongeshi.shijishuliang;
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_sunnvbiaoshi_png",jiexijsongeshi.jianglishuliang,"-");
+                        break;
+                }
+                if(Gameguanli.Kongzhitai().dingbuui.parent){
+                    Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
+                };
+                break;
+            case "code:073":
+                Gerenshuxing.daerzixinxi = jiexijsongeshi.chengyuan;
+                break;
+            case "code:074":
+                Gerenshuxing.ererzixinxi = jiexijsongeshi.chengyuan;
+                break;
+            case "code:075":
+                Gerenshuxing.xifuxinxi = jiexijsongeshi.chengyuan;
+                break;
+            case "code:076":
+                Gerenshuxing.sunnvxinxi = jiexijsongeshi.chengyuan;
+                break;
+            case "code:081":
+                Gerenshuxing.daerzixinxi = jiexijsongeshi.chengyuan;
+                break;
+            case "code:082":
+                Gerenshuxing.ererzixinxi = jiexijsongeshi.chengyuan;
+                break;
+            case "code:083":
+                Gerenshuxing.xifuxinxi = jiexijsongeshi.chengyuan;
+                break;
+            case "code:084":
+                Gerenshuxing.sunnvxinxi = jiexijsongeshi.chengyuan;
+                break;
     //非法操作
             case "code:202":
                 Gameguanli.Kongzhitai().cuowutishixinxi("非法操作！");
@@ -606,6 +721,65 @@ class Weblianjie extends egret.DisplayObjectContainer {
                 Gerenshuxing.touxiang = jiexijsongeshi.touxiang;
                 Gerenshuxing.xingbie = jiexijsongeshi.xingbie;
                 Gerenshuxing.shengfen = jiexijsongeshi.shenfen;
+                break;
+            case "code:994":
+                switch(jiexijsongeshi.jianglileixing){
+                    case "1":
+                        Gerenshuxing.jinbizhi = parseInt(jiexijsongeshi.shijishuliang[0]);
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_qian_png",jiexijsongeshi.jianglishuliang,"+");
+                        break;
+                    case "2":
+                        Gerenshuxing.jiatingzhi = parseInt(jiexijsongeshi.shijishuliang[0]);
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_jiating_png",jiexijsongeshi.jianglishuliang,"+");
+                        break;
+                    case "3":
+                        Gerenshuxing.jiankangzhi = parseInt(jiexijsongeshi.shijishuliang[0]);
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_jiankang_png",jiexijsongeshi.jianglishuliang,"+");
+                        break;
+                    case "4":
+                        Gerenshuxing.kaixinzhi = parseInt(jiexijsongeshi.shijishuliang[0]);
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_xinqing_png",jiexijsongeshi.jianglishuliang,"+");
+                        break;
+                    case "5":
+                        Gerenshuxing.xingfuzhi = parseInt(jiexijsongeshi.shijishuliang[0]);
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_xingfu_png",jiexijsongeshi.jianglishuliang,"+");
+                        break;
+                    case "6":
+                        Gerenshuxing.daerzixinxi = jiexijsongeshi.shijishuliang;
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_daerzibiaoshi_png",jiexijsongeshi.jianglishuliang,"+");
+                        break;
+                    case "7":
+                        Gerenshuxing.ererzixinxi = jiexijsongeshi.shijishuliang;
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_xiaoerzibiaoshi_png",jiexijsongeshi.jianglishuliang,"+");
+                        break;
+                    case "8":
+                        Gerenshuxing.xifuxinxi = jiexijsongeshi.shijishuliang;
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_xifubiaoshi_png",jiexijsongeshi.jianglishuliang,"+");
+                        break;
+                    case "9":
+                        Gerenshuxing.sunnvxinxi = jiexijsongeshi.shijishuliang;
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_sunnvbiaoshi_png",jiexijsongeshi.jianglishuliang,"+");
+                        break;
+                    case "10":
+                        Gerenshuxing.daerzixinxi = jiexijsongeshi.shijishuliang;
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_daerzibiaoshi_png",jiexijsongeshi.jianglishuliang,"+");
+                        break;
+                    case "11":
+                        Gerenshuxing.ererzixinxi = jiexijsongeshi.shijishuliang;
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_xiaoerzibiaoshi_png",jiexijsongeshi.jianglishuliang,"+");
+                        break;
+                    case "12":
+                        Gerenshuxing.xifuxinxi = jiexijsongeshi.shijishuliang;
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_xifubiaoshi_png",jiexijsongeshi.jianglishuliang,"+");
+                        break;
+                    case "13":
+                        Gerenshuxing.sunnvxinxi = jiexijsongeshi.shijishuliang;
+                        Gameguanli.Kongzhitai().jianglitanchuui("img_sunnvbiaoshi_png",jiexijsongeshi.jianglishuliang,"+");
+                        break;
+                }
+                if(Gameguanli.Kongzhitai().dingbuui.parent){
+                    Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
+                };
                 break;
             default:
                 console.log("非法服务器参数")

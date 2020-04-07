@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ErerzijiaohuuiSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1711bf9f1eb" ></w:Config>
+	<e:Group id="ererzizu" left="0" top="0" bottom="0" right="0">
+		<e:Image id="ererziguanbi" source="img_heisezhezao_png" left="0" top="0" bottom="0" right="0" alpha="0.1"/>
+		<e:Image id="ererzibiaoshi" x="358" y="641" source="img_xiaoerzibiaoshi_png"/>
+		<e:Image id="ererzibeijing" source="img_jiajuchufabeijing_png" x="435.5" y="542.5"/>
+		<e:Button id="ererzichakan" label="查看" x="478.5" y="562" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_chufaanniu_png" source.down="but_chufaanniu2_png" source.disabled="but_chufaanniu2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Button id="ererzijiaotan" label="交谈" x="538" y="646.5" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_chufaanniu_png" source.down="but_chufaanniu2_png" source.disabled="but_chufaanniu2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Button id="ererzijinxiu" label="工作" x="532" y="747" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_chufaanniu_png" source.down="but_chufaanniu2_png" source.disabled="but_chufaanniu2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Button id="ererzizengsong" label="赠送" x="472.5" y="823" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_chufaanniu_png" source.down="but_chufaanniu2_png" source.disabled="but_chufaanniu2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

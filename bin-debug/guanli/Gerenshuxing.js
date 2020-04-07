@@ -147,6 +147,59 @@ var Gerenshuxing = (function (_super) {
         console.log("当前安宝值: " +Gerenshuxing.zzanbaozhi + "增加的安宝值: " +yuangongjiaanbao);
         console.log("当前原材料减少: " +Gerenshuxing.zzyuanliaoxiaohao + "增加的原材料减少: " +yuangongcailiao);*/
     };
+    //开始家庭成员进修倒计时
+    Gerenshuxing.daerzijinxiudingshi = function () {
+        var xianzaishijian = (new Date()).valueOf();
+        if (Gerenshuxing.daerzixinxi[2] != "0" && Gerenshuxing.daerzixinxi[3] != "0") {
+            if (xianzaishijian < parseInt(Gerenshuxing.daerzixinxi[3])) {
+                var daerzidingshi = new egret.Timer(1000, 1);
+                daerzidingshi.addEventListener(egret.TimerEvent.TIMER, this.daerzijinxiudingshi, this);
+                daerzidingshi.start();
+            }
+            else {
+                Weblianjie.fasongshuju("code:069", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+            }
+        }
+    };
+    Gerenshuxing.ererzijinxiudingshi = function () {
+        var xianzaishijian2 = (new Date()).valueOf();
+        if (Gerenshuxing.ererzixinxi[2] != "0" && Gerenshuxing.ererzixinxi[3] != "0") {
+            if (xianzaishijian2 < parseInt(Gerenshuxing.ererzixinxi[3])) {
+                var ererzidingshi = new egret.Timer(1000, 1);
+                ererzidingshi.addEventListener(egret.TimerEvent.TIMER, this.ererzijinxiudingshi, this);
+                ererzidingshi.start();
+            }
+            else {
+                Weblianjie.fasongshuju("code:070", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+            }
+        }
+    };
+    Gerenshuxing.xifujinxiudingshi = function () {
+        var xianzaishijian3 = (new Date()).valueOf();
+        if (Gerenshuxing.xifuxinxi[2] != "0" && Gerenshuxing.xifuxinxi[3] != "0") {
+            if (xianzaishijian3 < parseInt(Gerenshuxing.xifuxinxi[3])) {
+                var xifudingshi = new egret.Timer(1000, 1);
+                xifudingshi.addEventListener(egret.TimerEvent.TIMER, this.xifujinxiudingshi, this);
+                xifudingshi.start();
+            }
+            else {
+                Weblianjie.fasongshuju("code:071", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+            }
+        }
+    };
+    Gerenshuxing.sunnvjinxiudingshi = function () {
+        var xianzaishijian4 = (new Date()).valueOf();
+        if (Gerenshuxing.sunnvxinxi[2] != "0" && Gerenshuxing.sunnvxinxi[3] != "0") {
+            if (xianzaishijian4 < parseInt(Gerenshuxing.sunnvxinxi[3])) {
+                var sunnvdingshi = new egret.Timer(1000, 1);
+                sunnvdingshi.addEventListener(egret.TimerEvent.TIMER, this.sunnvjinxiudingshi, this);
+                sunnvdingshi.start();
+            }
+            else {
+                Weblianjie.fasongshuju("code:072", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+            }
+        }
+    };
     Gerenshuxing.jiankangzhi = 0; //个人属性：健康值
     Gerenshuxing.xingfuzhi = 0; //个人属性：幸福值
     Gerenshuxing.kaixinzhi = 0; //个人属性：开心值
@@ -181,6 +234,14 @@ var Gerenshuxing = (function (_super) {
     Gerenshuxing.ererzixinxi = []; //二儿子信息(亲和值，工作能力，当前进行学习，学习剩余时间，是否已领取回家奖励)
     Gerenshuxing.xifuxinxi = []; //大儿媳信息(亲和值，工作能力，当前进行学习，学习剩余时间，是否已领取回家奖励)
     Gerenshuxing.sunnvxinxi = []; //孙女信息(亲和值，工作能力，当前进行学习，学习剩余时间，是否已领取回家奖励)
+    Gerenshuxing.daerzijiaotan = 0; //大儿子可交谈次数
+    Gerenshuxing.ererzijiaotan = 0; //二儿子可交谈次数
+    Gerenshuxing.xifujiaotan = 0; //媳妇可交谈次数
+    Gerenshuxing.sunnvjiaotan = 0; //孙女可交谈次数
+    Gerenshuxing.daerzixuexi = []; //大儿子学习解锁信息
+    Gerenshuxing.ererzixuexi = []; //二儿子学习解锁信息
+    Gerenshuxing.xifuxuexi = []; //大儿媳学习解锁信息
+    Gerenshuxing.sunnvxuexi = []; //孙女学习解锁信息
     Gerenshuxing.touxiangbaocunzhuangtai = false;
     Gerenshuxing.cailanzishu = 5; //个人才菜篮子数;
     Gerenshuxing.shuaxincishu = 2; //个人买菜刷新次数;

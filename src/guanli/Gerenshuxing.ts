@@ -45,6 +45,14 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static ererzixinxi:any = [];//二儿子信息(亲和值，工作能力，当前进行学习，学习剩余时间，是否已领取回家奖励)
     public static xifuxinxi:any = [];//大儿媳信息(亲和值，工作能力，当前进行学习，学习剩余时间，是否已领取回家奖励)
     public static sunnvxinxi:any = [];//孙女信息(亲和值，工作能力，当前进行学习，学习剩余时间，是否已领取回家奖励)
+    public static daerzijiaotan:number = 0;//大儿子可交谈次数
+    public static ererzijiaotan:number = 0;//二儿子可交谈次数
+    public static xifujiaotan:number = 0;//媳妇可交谈次数
+    public static sunnvjiaotan:number = 0;//孙女可交谈次数
+    public static daerzixuexi:any = [];//大儿子学习解锁信息
+    public static ererzixuexi:any = [];//二儿子学习解锁信息
+    public static xifuxuexi:any = [];//大儿媳学习解锁信息
+    public static sunnvxuexi:any = [];//孙女学习解锁信息
 
     public static touxiangbaocunzhuangtai:boolean = false;
 
@@ -249,6 +257,59 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
         console.log("当前安宝值: " +Gerenshuxing.zzanbaozhi + "增加的安宝值: " +yuangongjiaanbao);
         console.log("当前原材料减少: " +Gerenshuxing.zzyuanliaoxiaohao + "增加的原材料减少: " +yuangongcailiao);*/
     }
+
+    //开始家庭成员进修倒计时
+    public static daerzijinxiudingshi(){
+		let xianzaishijian = (new Date()).valueOf();
+		if(Gerenshuxing.daerzixinxi[2] != "0" && Gerenshuxing.daerzixinxi[3] != "0"){
+			if(xianzaishijian < parseInt(Gerenshuxing.daerzixinxi[3])){
+				let daerzidingshi = new egret.Timer(1000,1);
+				daerzidingshi.addEventListener(egret.TimerEvent.TIMER,this.daerzijinxiudingshi,this)
+				daerzidingshi.start();
+			}else{
+				Weblianjie.fasongshuju("code:069","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
+			}
+		}
+	}
+
+	public static ererzijinxiudingshi(){
+		let xianzaishijian2 = (new Date()).valueOf();
+		if(Gerenshuxing.ererzixinxi[2] != "0" && Gerenshuxing.ererzixinxi[3] != "0"){
+			if(xianzaishijian2 < parseInt(Gerenshuxing.ererzixinxi[3])){
+				let ererzidingshi = new egret.Timer(1000,1);
+				ererzidingshi.addEventListener(egret.TimerEvent.TIMER,this.ererzijinxiudingshi,this)
+				ererzidingshi.start();
+			}else{
+				Weblianjie.fasongshuju("code:070","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
+			}
+		}
+	}
+
+	public static xifujinxiudingshi(){
+		let xianzaishijian3 = (new Date()).valueOf();
+		if(Gerenshuxing.xifuxinxi[2] != "0" && Gerenshuxing.xifuxinxi[3] != "0"){
+			if(xianzaishijian3 < parseInt(Gerenshuxing.xifuxinxi[3])){
+				let xifudingshi = new egret.Timer(1000,1);
+				xifudingshi.addEventListener(egret.TimerEvent.TIMER,this.xifujinxiudingshi,this)
+				xifudingshi.start();
+			}else{
+				Weblianjie.fasongshuju("code:071","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
+			}
+		}
+	}
+
+	public static sunnvjinxiudingshi(){
+		let xianzaishijian4 = (new Date()).valueOf();
+		if(Gerenshuxing.sunnvxinxi[2] != "0" && Gerenshuxing.sunnvxinxi[3] != "0"){
+			if(xianzaishijian4 < parseInt(Gerenshuxing.sunnvxinxi[3])){
+				let sunnvdingshi = new egret.Timer(1000,1);
+				sunnvdingshi.addEventListener(egret.TimerEvent.TIMER,this.sunnvjinxiudingshi,this)
+				sunnvdingshi.start();
+			}else{
+				Weblianjie.fasongshuju("code:072","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
+			}
+		}
+	}
 
 
 }

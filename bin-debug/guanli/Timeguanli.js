@@ -30,6 +30,10 @@ var Timeguanli = (function (_super) {
             this.ererzihuijia();
         }
         if (Gerenshuxing.xianshishijian == 8) {
+            Gerenshuxing.daerzijiaotan = Math.floor(parseInt(Gerenshuxing.daerzixinxi[0]) / 10);
+            Gerenshuxing.ererzijiaotan = Math.floor(parseInt(Gerenshuxing.ererzixinxi[0]) / 10);
+            Gerenshuxing.xifujiaotan = Math.floor(parseInt(Gerenshuxing.xifuxinxi[0]) / 10);
+            Gerenshuxing.sunnvjiaotan = Math.floor(parseInt(Gerenshuxing.sunnvxinxi[0]) / 10);
             this.jiatingchengyuanlijia();
         }
         //当前日期计算
@@ -87,7 +91,7 @@ var Timeguanli = (function (_super) {
                 }
             }
         }
-        if (Gameguanli.Kongzhitai().zhujiemian.parent) {
+        if (Gameguanli.Kongzhitai().dingbuui.parent) {
             this.fandianshijiankongzhi();
         }
         Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();

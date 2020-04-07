@@ -55,6 +55,14 @@ class Gameguanli extends egret.DisplayObjectContainer{
 	public xiamiantishi5:Xiamiantishi;
 	public xiamiancishu:any = [1,1,1,1,1];
 
+	//获得奖励提示信息界面实例
+	public jiangliui1:Cailiaoxiaohao;
+	public jiangliui2:Cailiaoxiaohao;
+	public jiangliui3:Cailiaoxiaohao;
+	public jiangliui4:Cailiaoxiaohao;
+	public jiangliui5:Cailiaoxiaohao;
+	public jianglicishu:any = [1,1,1,1,1];
+
 	//每日结算界面实例
 	public meirijieusan:Meirijiesuan;
 	public gundongjuli:number;
@@ -76,6 +84,8 @@ class Gameguanli extends egret.DisplayObjectContainer{
 
 	//做饭界面实例
 	public zuofanui:Zuofanjiemianui;
+
+	
 
 
 	//实例化一个饭店核心结算
@@ -1257,6 +1267,76 @@ class Gameguanli extends egret.DisplayObjectContainer{
 						this.removeChild(this.danmu8);
 					});
 		}
+	}
+
+	public jianglitanchuui(tupian,shuliang,jiajian){
+		if(this.jianglicishu[0] == 1){
+			this.jianglicishu[0] = 0;
+			this.jiangliui1 = new Cailiaoxiaohao();
+			this.addChild(this.jiangliui1);
+			this.jiangliui1.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width / 2 - this.jiangliui1.width / 2;
+			this.jiangliui1.y = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height / 2 - this.jiangliui1.height / 2;
+			this.jiangliui1.img_shicai.source = tupian;
+			this.jiangliui1.wenzineirong.text = "" + jiajian + shuliang;
+			egret.Tween.get(this.jiangliui1).to({x:this.jiangliui1.x,y:Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height / 10 * 3},3000)
+						.call(()=>{
+							this.jianglicishu[0] = 1;
+							this.removeChild(this.jiangliui1);
+						});
+		}else if(this.jianglicishu[1] == 1){
+			this.jianglicishu[1] = 0;
+			this.jiangliui2 = new Cailiaoxiaohao();
+			this.addChild(this.jiangliui2);
+			this.jiangliui2.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width / 2 - this.jiangliui2.width / 2;
+			this.jiangliui2.y = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height / 2 - this.jiangliui2.height / 2;
+			this.jiangliui2.img_shicai.source = tupian;
+			this.jiangliui2.wenzineirong.text = "" + jiajian + shuliang;
+			egret.Tween.get(this.jiangliui2).to({x:this.jiangliui2.x,y:Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height / 10 * 3},3000)
+						.call(()=>{
+							this.jianglicishu[1] = 1;
+							this.removeChild(this.jiangliui2);
+						});
+		}else if(this.jianglicishu[2] == 1){
+			this.jianglicishu[2] = 0;
+			this.jiangliui3 = new Cailiaoxiaohao();
+			this.addChild(this.jiangliui3);
+			this.jiangliui3.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width / 2 - this.jiangliui3.width / 2;
+			this.jiangliui3.y = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height / 2 - this.jiangliui3.height / 2;
+			this.jiangliui3.img_shicai.source = tupian;
+			this.jiangliui3.wenzineirong.text = "" + jiajian + shuliang;
+			egret.Tween.get(this.jiangliui3).to({x:this.jiangliui3.x,y:Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height / 10 * 3},3000)
+						.call(()=>{
+							this.jianglicishu[2] = 1;
+							this.removeChild(this.jiangliui3);
+						});
+		}else if(this.jianglicishu[3] == 1){
+			this.jianglicishu[3] = 0;
+			this.jiangliui4 = new Cailiaoxiaohao();
+			this.addChild(this.jiangliui4);
+			this.jiangliui4.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width / 2 - this.jiangliui4.width / 2;
+			this.jiangliui4.y = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height / 2 - this.jiangliui4.height / 2;
+			this.jiangliui4.img_shicai.source = tupian;
+			this.jiangliui4.wenzineirong.text = "" + jiajian + shuliang;
+			egret.Tween.get(this.jiangliui4).to({x:this.jiangliui4.x,y:Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height / 10 * 3},3000)
+						.call(()=>{
+							this.jianglicishu[3] = 1;
+							this.removeChild(this.jiangliui4);
+						});
+		}else if(this.jianglicishu[4] == 1){
+			this.jianglicishu[4] = 0;
+			this.jiangliui5 = new Cailiaoxiaohao();
+			this.addChild(this.jiangliui5);
+			this.jiangliui5.x = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.width / 2 - this.jiangliui5.width / 2;
+			this.jiangliui5.y = Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height / 2 - this.jiangliui5.height / 2;
+			this.jiangliui5.img_shicai.source = tupian;
+			this.jiangliui5.wenzineirong.text = "" + jiajian + shuliang;
+			egret.Tween.get(this.jiangliui5).to({x:this.jiangliui5.x,y:Gameguanli.Kongzhitai().zhujiemian.img_fandianyuanhuabg0.height / 10 * 3},3000)
+						.call(()=>{
+							this.jianglicishu[4] = 1;
+							this.removeChild(this.jiangliui5);
+						});
+		}
+		
 	}
 
 

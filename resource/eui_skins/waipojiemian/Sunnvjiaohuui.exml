@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SunnvjiaohuuiSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1711c0a6ea1" ></w:Config>
+	<e:Group id="sunnvzu" left="0" top="0" bottom="0" right="0">
+		<e:Image id="sunnvguanbi" source="img_heisezhezao_png" left="0" top="0" bottom="0" right="0" alpha="0.1"/>
+		<e:Image id="sunnvbeijing" source="img_jiajuchufabeijing_png" x="501" y="1167" rotation="180"/>
+		<e:Image id="sunnvbiaoshi" x="418" y="895.5" source="img_sunnvbiaoshi_png"/>
+		<e:Button id="sunnvchakan" label="查看" x="388" y="801.5" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_chufaanniu_png" source.down="but_chufaanniu2_png" source.disabled="but_chufaanniu2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Button id="sunnvjiaotan" label="交谈" x="326" y="877" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_chufaanniu_png" source.down="but_chufaanniu2_png" source.disabled="but_chufaanniu2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Button id="sunnvjinxiu" label="培养" x="318" y="980" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_chufaanniu_png" source.down="but_chufaanniu2_png" source.disabled="but_chufaanniu2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Button id="sunnvzengsong" label="玩耍" x="374.5" y="1065.5" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_chufaanniu_png" source.down="but_chufaanniu2_png" source.disabled="but_chufaanniu2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

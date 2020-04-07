@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="JiatingchengyuanjieshaouiSkin" width="300" height="370" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1712a7a9da2" ></w:Config>
+	<e:Group id="xinxijiemianzu" x="0" y="0">
+		<e:Image id="img_tanchubeijing" source="img_tanchubeijing_png" x="0" y="0"/>
+		<e:Label id="biaotiwenzi" text="信息" x="77" y="8" anchorOffsetX="0" width="129" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="center" stroke="2" strokeColor="0x494646" textColor="0xffa005"/>
+		<e:Label id="guanxibiaoqian" text="关系" x="27" y="53" anchorOffsetX="0" width="103" verticalAlign="middle" size="20" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xacff05" anchorOffsetY="0" height="21"/>
+		<e:Label id="guanxineirong" text="关系" x="140" y="53" anchorOffsetX="0" width="113" verticalAlign="middle" size="20" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xf2eee8"/>
+		<e:Label id="qinhelibiaoqian" text="关系" x="27" y="87" anchorOffsetX="0" width="107" verticalAlign="middle" size="20" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xc2ff05" anchorOffsetY="0" height="24"/>
+		<e:Label id="qinghelizhi" text="关系" x="140" y="87" anchorOffsetX="0" width="117" verticalAlign="middle" size="20" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xede9e3"/>
+		<e:Label id="gongzuobiaoqian" text="关系" x="27" y="120" anchorOffsetX="0" width="107" verticalAlign="middle" size="20" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xb7ff05" anchorOffsetY="0" height="21"/>
+		<e:Label id="gongzuozhi" text="关系" x="140" y="120" anchorOffsetX="0" width="117" verticalAlign="middle" size="20" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xe8e1d7"/>
+		<e:Label id="jiesaobiaoqian" text="关系" x="27" y="154" anchorOffsetX="0" width="110" verticalAlign="middle" size="20" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xbcff05"/>
+		<e:Label id="jiesaoneirong" text="关系" x="27" y="188" anchorOffsetX="0" width="228" verticalAlign="top" size="20" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" anchorOffsetY="0" height="142" textColor="0xe0dad0"/>
+	</e:Group>
+</e:Skin>

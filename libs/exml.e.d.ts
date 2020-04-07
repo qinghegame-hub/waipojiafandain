@@ -92,13 +92,23 @@ declare module skins{
 	class VSliderSkin extends eui.Skin{
 	}
 }
+declare class DaerzijiaohuuiSkin extends eui.Skin{
+}
 declare class DajiejiemianSkin extends eui.Skin{
 }
 declare class DianpufandianSkin extends eui.Skin{
 }
 declare class DianpurukouSkin extends eui.Skin{
 }
+declare class ErerzijiaohuuiSkin extends eui.Skin{
+}
 declare class JianglijiesuanuiSkin extends eui.Skin{
+}
+declare class JiatingchengyuanjieshaouiSkin extends eui.Skin{
+}
+declare class JiatingchengyuanzengsongSkin extends eui.Skin{
+}
+declare class JiatingjinxiuuiSkin extends eui.Skin{
 }
 declare class JiatinguiSkin extends eui.Skin{
 }
@@ -106,9 +116,15 @@ declare class LiuyanjiemianSkin extends eui.Skin{
 }
 declare class MaicaiuiSkin extends eui.Skin{
 }
+declare class NpcduihuauiSkin extends eui.Skin{
+}
 declare class PengrenfankuiuiSkin extends eui.Skin{
 }
+declare class SunnvjiaohuuiSkin extends eui.Skin{
+}
 declare class TongyongquerenkuangSkin extends eui.Skin{
+}
+declare class XifujiaohuuiSkin extends eui.Skin{
 }
 declare class ZuocaitanchuuiSkin extends eui.Skin{
 }
