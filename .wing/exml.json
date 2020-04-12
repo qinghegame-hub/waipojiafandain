@@ -243,5 +243,10 @@
         "path": "Jiatingjinxiuui.ts",
         "class": "Jiatingjinxiuui",
         "parentPath": ""
+    },
+    "1715a1883e6": {
+        "path": "Jiatingchengyuandaojuui.ts",
+        "class": "Jiatingchengyuandaojuui",
+        "parentPath": ""
     }
 }

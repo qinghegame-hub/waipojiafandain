@@ -59,7 +59,8 @@
 		"Jiatingchengyuanjieshaoui": "resource/eui_skins/waipojiemian/Jiatingchengyuanjieshaoui.exml",
 		"Npcduihuaui": "resource/eui_skins/waipojiemian/Npcduihuaui.exml",
 		"Jiatingchengyuanzengsong": "resource/eui_skins/waipojiemian/Jiatingchengyuanzengsong.exml",
-		"Jiatingjinxiuui": "resource/eui_skins/waipojiemian/Jiatingjinxiuui.exml"
+		"Jiatingjinxiuui": "resource/eui_skins/waipojiemian/Jiatingjinxiuui.exml",
+		"Jiatingchengyuandaojuui": "resource/eui_skins/waipojiemian/Jiatingchengyuandaojuui.exml"
 	},
 	"autoGenerateExmlsList": true,
 	"exmls": [
@@ -103,6 +104,7 @@
 		"resource/eui_skins/waipojiemian/Dianpurukou.exml",
 		"resource/eui_skins/waipojiemian/Ererzijiaohuui.exml",
 		"resource/eui_skins/waipojiemian/Jianglijiesuanui.exml",
+		"resource/eui_skins/waipojiemian/Jiatingchengyuandaojuui.exml",
 		"resource/eui_skins/waipojiemian/Jiatingchengyuanjieshaoui.exml",
 		"resource/eui_skins/waipojiemian/Jiatingchengyuanzengsong.exml",
 		"resource/eui_skins/waipojiemian/Jiatingjinxiuui.exml",

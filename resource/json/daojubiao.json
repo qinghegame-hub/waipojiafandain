@@ -1,0 +1,17 @@
+[
+    {"id":"10001","mingcheng":"剃须刀","jiangli":"10","jianglishuliang":"10","xianshiicon":"img_tixudao_png"},
+    {"id":"10002","mingcheng":"高端皮鞋","jiangli":"10","jianglishuliang":"20","xianshiicon":"img_pixie_png"},
+    {"id":"10003","mingcheng":"男士手表","jiangli":"10","jianglishuliang":"30","xianshiicon":"img_shoubiao_png"},
+    {"id":"10004","mingcheng":"电瓶车","jiangli":"10","jianglishuliang":"40","xianshiicon":"img_motuoche_png"},
+    {"id":"10005","mingcheng":"家用小轿车","jiangli":"10","jianglishuliang":"50","xianshiicon":"img_xiaojiaoche_png"},
+    {"id":"10006","mingcheng":"吸尘器","jiangli":"6","jianglishuliang":"10","xianshiicon":"img_xichenqi_png"},
+    {"id":"10007","mingcheng":"早教机","jiangli":"6","jianglishuliang":"20","xianshiicon":"img_zaojiaoji_png"},
+    {"id":"10008","mingcheng":"电饭煲","jiangli":"6","jianglishuliang":"30","xianshiicon":"img_dianfanbao_png"},
+    {"id":"10009","mingcheng":"洗衣机","jiangli":"6","jianglishuliang":"40","xianshiicon":"img_xiyiji_png"},
+    {"id":"10010","mingcheng":"扫地机器人","jiangli":"6","jianglishuliang":"50","xianshiicon":"img_saodijiqiren_png"},
+    {"id":"10011","mingcheng":"高档耳机","jiangli":"8","jianglishuliang":"10","xianshiicon":"img_gaodangerji_png"},
+    {"id":"10012","mingcheng":"ps4","jiangli":"8","jianglishuliang":"20","xianshiicon":"img_ps4_png"},
+    {"id":"10013","mingcheng":"高配电脑","jiangli":"8","jianglishuliang":"30","xianshiicon":"img_gaodangdiannao_png"},
+    {"id":"10014","mingcheng":"相亲花名册","jiangli":"8","jianglishuliang":"40","xianshiicon":"img_xiangqing_png"},
+    {"id":"10015","mingcheng":"家用小轿车","jiangli":"8","jianglishuliang":"50","xianshiicon":"img_xiaojiaoche_png"}
+    ]

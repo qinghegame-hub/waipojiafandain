@@ -34,6 +34,7 @@
 		<e:Group id="juesezu" x="59.5" y="1163.67" anchorOffsetY="96.5" anchorOffsetX="25.5">
 			<e:Image id="juesetubiao" source="img_xingren_png" x="0" y="0" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
 			<e:Image id="touxiang" source="tx1000_png" x="12" y="24.02" anchorOffsetX="0" width="30" anchorOffsetY="0" height="30"/>
+			<e:Group id="youbiaotouxiangzu" width="30" height="30" x="12" y="24.2" anchorOffsetX="0" anchorOffsetY="0"/>
 			<e:Image id="touxiangkuang" source="img_xingren2_png" x="6.5" y="17.48" anchorOffsetX="0" anchorOffsetY="-1.07" scaleX="0.5" scaleY="0.5"/>
 		</e:Group>
 		<e:Group id="kaishianniuzu" x="250" y="836.17">

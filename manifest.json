@@ -15,7 +15,7 @@
 		"libs/modules/socket/socket.js"
 	],
 	"game": [
-		"bin-debug/fandianlei/Danjujiemian.js",
+		"bin-debug/fandianlei/Chuangzaolaji.js",
 		"bin-debug/AssetAdapter.js",
 		"bin-debug/Cuowutishi.js",
 		"bin-debug/Daerzijiaohuui.js",
@@ -24,6 +24,7 @@
 		"bin-debug/Dianpurukou.js",
 		"bin-debug/Ererzijiaohuui.js",
 		"bin-debug/Jianglijiesuanui.js",
+		"bin-debug/Jiatingchengyuandaojuui.js",
 		"bin-debug/Jiatingchengyuanjieshaoui.js",
 		"bin-debug/Jiatingchengyuanzengsong.js",
 		"bin-debug/Jiatingjinxiuui.js",
@@ -46,8 +47,8 @@
 		"bin-debug/fandianlei/Caipinjieshaojiemian.js",
 		"bin-debug/fandianlei/Caipucaiping.js",
 		"bin-debug/fandianlei/Caipujiemian.js",
-		"bin-debug/fandianlei/Chuangzaolaji.js",
 		"bin-debug/Changjingrukouui.js",
+		"bin-debug/fandianlei/Danjujiemian.js",
 		"bin-debug/fandianlei/Dasaodonghua.js",
 		"bin-debug/fandianlei/Donghuabifang.js",
 		"bin-debug/fandianlei/Fandianjisuan.js",

@@ -6,7 +6,7 @@ class Sunnvjiaohuui extends eui.Component implements  eui.UIComponent {
 	public sunnvchakan:eui.Button;
 	public sunnvjiaotan:eui.Button;
 	public sunnvjinxiu:eui.Button;
-	public sunnvzengsong:eui.Button;
+
 
 
 

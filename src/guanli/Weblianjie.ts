@@ -98,6 +98,7 @@ class Weblianjie extends egret.DisplayObjectContainer {
             case "code:035":
                 Gerencaipudengji.caipulevel = jiexijsongeshi[0].jingyan[0];
                 Gerencaipudengji.jiedaoshuju = jiexijsongeshi[0].jiedao[0];
+                Gerencaipudengji.daoju = jiexijsongeshi[0].daoju[0];
                 break;
     //解锁菜品时反馈
             case "code:003":
@@ -668,10 +669,16 @@ class Weblianjie extends egret.DisplayObjectContainer {
                         Gerenshuxing.sunnvxinxi = jiexijsongeshi.shijishuliang;
                         Gameguanli.Kongzhitai().jianglitanchuui("img_sunnvbiaoshi_png",jiexijsongeshi.jianglishuliang,"-");
                         break;
+                    default:
+                        this.kouchujingyandaopupanduan(jiexijsongeshi);
+                        break;
                 }
                 if(Gameguanli.Kongzhitai().dingbuui.parent){
                     Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
                 };
+                if(Gameguanli.Kongzhitai().waichudajie.parent){
+                    Gameguanli.Kongzhitai().waichudajie.tilixiaohaochushi();
+                }
                 break;
             case "code:073":
                 Gerenshuxing.daerzixinxi = jiexijsongeshi.chengyuan;
@@ -776,10 +783,16 @@ class Weblianjie extends egret.DisplayObjectContainer {
                         Gerenshuxing.sunnvxinxi = jiexijsongeshi.shijishuliang;
                         Gameguanli.Kongzhitai().jianglitanchuui("img_sunnvbiaoshi_png",jiexijsongeshi.jianglishuliang,"+");
                         break;
+                    default:
+                        this.zengjiajingyandaopupanduan(jiexijsongeshi);
+                        break;
                 }
                 if(Gameguanli.Kongzhitai().dingbuui.parent){
                     Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
                 };
+                if(Gameguanli.Kongzhitai().waichudajie.parent){
+                    Gameguanli.Kongzhitai().waichudajie.tilixiaohaochushi();
+                }
                 break;
             default:
                 console.log("非法服务器参数")
@@ -808,6 +821,49 @@ class Weblianjie extends egret.DisplayObjectContainer {
         //调用登录接口
         Weblianjie.lianjieserver.writeUTF(code + message);
         Weblianjie.lianjieserver.flush();
+   }
+
+
+   //统一扣除经验道具回调
+   public kouchujingyandaopupanduan(jiexijsongeshi){
+       if(parseInt(jiexijsongeshi.jianglileixing) >= 1000 && parseInt(jiexijsongeshi.jianglileixing) < 10000){
+        let caipubiao = RES.getRes("shipubiao_json");
+        for(var i = 0;i<caipubiao.length;i++){
+            if(caipubiao[i].id == jiexijsongeshi.jianglileixing){
+               Gameguanli.Kongzhitai().jianglitanchuui(caipubiao[i].id + "_png",jiexijsongeshi.jianglishuliang,"-");
+               break; 
+            }
+        }
+      }else if(parseInt(jiexijsongeshi.jianglileixing) >= 10000){
+          let daojubiao = RES.getRes("daojubiao_json");
+          for(var j =0;j<daojubiao.length;j++){
+            if(daojubiao[j].id == jiexijsongeshi.jianglileixing){
+               Gameguanli.Kongzhitai().jianglitanchuui(daojubiao[j].xianshiicon,jiexijsongeshi.jianglishuliang,"-");
+               break; 
+            }  
+          }
+      }
+   }
+
+   //统一增加经验道具回调
+   public zengjiajingyandaopupanduan(jiexijsongeshi){
+       if(parseInt(jiexijsongeshi.jianglileixing) >= 1000 && parseInt(jiexijsongeshi.jianglileixing) < 10000){
+        let caipubiao = RES.getRes("shipubiao_json");
+        for(var i = 0;i<caipubiao.length;i++){
+            if(caipubiao[i].id == jiexijsongeshi.jianglileixing){
+               Gameguanli.Kongzhitai().jianglitanchuui(caipubiao[i].id + "_png",jiexijsongeshi.jianglishuliang,"+");
+               break; 
+            }
+        }
+      }else if(parseInt(jiexijsongeshi.jianglileixing) >= 10000){
+          let daojubiao = RES.getRes("daojubiao_json");
+          for(var j =0;j<daojubiao.length;j++){0
+            if(daojubiao[j].id == jiexijsongeshi.jianglileixing){
+               Gameguanli.Kongzhitai().jianglitanchuui(daojubiao[j].xianshiicon,jiexijsongeshi.jianglishuliang,"+");
+               break; 
+            }  
+          }
+      }
    }
 
 

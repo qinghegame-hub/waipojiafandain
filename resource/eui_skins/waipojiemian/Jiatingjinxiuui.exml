@@ -4,7 +4,7 @@
 	<e:Group id="jinxiujiemian" x="0" y="0">
 		<e:Image id="jinxiubj" source="img_tanchubeijing_png" x="0" y="0"/>
 		<e:Label id="jinxiubiaoti" text="信息" x="77" y="8" anchorOffsetX="0" width="129" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="center" stroke="2" strokeColor="0x494646" textColor="0xFFA005"/>
-		<e:Image id="jinxiutupian" source="img_anquanguanli_png" x="76" y="97"/>
+		<e:Image id="jinxiutupian" source="img_anquanguanli_png" x="76" y="97" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
 		<e:Label id="shengyushijian" text="剩余时间" x="57.5" y="213" anchorOffsetX="0" width="168" size="18" bold="true" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2" strokeColor="0x000000"/>
 		<e:Label text="0:00" x="57.5" y="236" anchorOffsetX="0" width="168" size="18" bold="true" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2" strokeColor="0x000000" id="shengyushijian0" textColor="0xf2a50e"/>
 		<e:Button id="quedinganniu" label="加速(广告)" y="281" scaleX="0.5" scaleY="0.5" enabled="true" anchorOffsetX="0" anchorOffsetY="0" x="86.25">

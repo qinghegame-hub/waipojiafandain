@@ -104,6 +104,8 @@ declare class ErerzijiaohuuiSkin extends eui.Skin{
 }
 declare class JianglijiesuanuiSkin extends eui.Skin{
 }
+declare class JiatingchengyuandaojuuiSkin extends eui.Skin{
+}
 declare class JiatingchengyuanjieshaouiSkin extends eui.Skin{
 }
 declare class JiatingchengyuanzengsongSkin extends eui.Skin{

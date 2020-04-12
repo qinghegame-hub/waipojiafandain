@@ -6,6 +6,7 @@ var Gerencaipudengji = (function () {
     }
     Gerencaipudengji.caipulevel = {};
     Gerencaipudengji.jiedaoshuju = {};
+    Gerencaipudengji.daoju = {};
     return Gerencaipudengji;
 }());
 __reflect(Gerencaipudengji.prototype, "Gerencaipudengji");

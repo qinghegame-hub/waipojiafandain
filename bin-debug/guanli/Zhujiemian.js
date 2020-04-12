@@ -189,7 +189,7 @@ var Zhujiemian = (function (_super) {
     };
     Zhujiemian.prototype.jiesuofandian1 = function () {
         Gameguanli.Kongzhitai().zhujiemiandingbu.removeChild(this.tishijiemian);
-        if (Gerenshuxing.jinbizhi >= this.jiesuo1) {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.jiesuo1)) {
             Weblianjie.fasongshuju("code:006", "{" + '"jiesuoid"' + ":" + '"1"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
         }
         else {
@@ -198,7 +198,7 @@ var Zhujiemian = (function (_super) {
     };
     Zhujiemian.prototype.jiesuofandian2 = function () {
         Gameguanli.Kongzhitai().zhujiemiandingbu.removeChild(this.tishijiemian);
-        if (Gerenshuxing.jinbizhi >= this.jiesuo2) {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.jiesuo2)) {
             Weblianjie.fasongshuju("code:006", "{" + '"jiesuoid"' + ":" + '"2"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
         }
         else {
@@ -207,7 +207,7 @@ var Zhujiemian = (function (_super) {
     };
     Zhujiemian.prototype.jiesuofandian3 = function () {
         Gameguanli.Kongzhitai().zhujiemiandingbu.removeChild(this.tishijiemian);
-        if (Gerenshuxing.jinbizhi >= this.jiesuo3) {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.jiesuo3)) {
             Weblianjie.fasongshuju("code:006", "{" + '"jiesuoid"' + ":" + '"3"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
         }
         else {
@@ -216,7 +216,7 @@ var Zhujiemian = (function (_super) {
     };
     Zhujiemian.prototype.jiesuofandian4 = function () {
         Gameguanli.Kongzhitai().zhujiemiandingbu.removeChild(this.tishijiemian);
-        if (Gerenshuxing.jinbizhi >= this.jiesuo4) {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.jiesuo4)) {
             Weblianjie.fasongshuju("code:006", "{" + '"jiesuoid"' + ":" + '"4"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
         }
         else {

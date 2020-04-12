@@ -4,39 +4,39 @@
 	<e:Group id="zengsongjiemian" x="0" y="0">
 		<e:Image id="img_tanchubeijing0" source="img_tanchubeijing_png" x="0" y="0"/>
 		<e:Label id="wenzibiaoti" text="信息" x="77" y="8" anchorOffsetX="0" width="129" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="center" stroke="2" strokeColor="0x494646" textColor="0xFFA005"/>
-		<e:Group id="daojuzu" x="42" y="61">
-			<e:Group id="daojuzu0" x="0" y="1">
+		<e:Group id="daojuzu" x="40" y="54" anchorOffsetY="0" height="344">
+			<e:Group id="daojuzu0" x="1" y="1" anchorOffsetY="0" height="85" anchorOffsetX="0" width="96">
 				<e:Image id="anniudibu" source="img_jiaohuanniudibu_png" x="0" y="0"/>
-				<e:Image id="daojutubiao" source="img_anquanguanli_png" x="7" y="9" anchorOffsetX="0" width="65" anchorOffsetY="0" height="55"/>
-				<e:Image id="jieshaowenzidikuang" source="img_wenzidikuang_png" x="8.5" y="52"/>
-				<e:Label id="wenzineirong" text="文字内容" x="13" y="55" anchorOffsetY="0" height="14" anchorOffsetX="0" width="53" size="12" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" textColor="0x6d6565"/>
+				<e:Image id="daojutubiao" source="img_anquanguanli_png" x="8" y="15" anchorOffsetX="0.5" width="65" anchorOffsetY="0.5" height="55"/>
+				<e:Image id="jieshaowenzidikuang" source="img_wenzidikuang_png" x="-1.5" y="58"/>
+				<e:Label id="wenzineirong" text="文字内容" x="14" y="63" anchorOffsetY="0" height="14" anchorOffsetX="0" width="53" size="12" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" textColor="0xf78409" bold="true" stroke="2"/>
 			</e:Group>
-			<e:Group x="113" y="0" id="daojuzu1">
+			<e:Group x="113" y="0" id="daojuzu1" anchorOffsetY="0" height="88">
 				<e:Image source="img_jiaohuanniudibu_png" x="0" y="0" id="anniudibu0"/>
-				<e:Image source="img_anquanguanli_png" x="7" y="9" anchorOffsetX="0" width="65" anchorOffsetY="0" height="55" id="daojutubiao0"/>
-				<e:Image source="img_wenzidikuang_png" x="8.5" y="52" id="jieshaowenzidikuang0"/>
-				<e:Label text="文字内容" x="13" y="55" anchorOffsetY="0" height="14" anchorOffsetX="0" width="53" size="12" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" id="wenzineirong0" textColor="0x6d6565"/>
+				<e:Image source="img_anquanguanli_png" x="8" y="15" anchorOffsetX="0.5" width="65" anchorOffsetY="0.5" height="55" id="daojutubiao0"/>
+				<e:Image source="img_wenzidikuang_png" x="-1.5" y="58" id="jieshaowenzidikuang0"/>
+				<e:Label text="文字内容" x="15" y="63" anchorOffsetY="0" height="14" anchorOffsetX="0" width="53" size="12" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" id="wenzineirong0" textColor="0xf7850c" bold="true" stroke="2"/>
 			</e:Group>
 			<e:Group x="0" y="92" id="daojuzu2">
 				<e:Image source="img_jiaohuanniudibu_png" x="0" y="0" id="anniudibu1"/>
-				<e:Image source="img_anquanguanli_png" x="7" y="9" anchorOffsetX="0" width="65" anchorOffsetY="0" height="55" id="daojutubiao1"/>
-				<e:Image source="img_wenzidikuang_png" x="8.5" y="52" id="jieshaowenzidikuang1"/>
-				<e:Label text="文字内容" x="13" y="55" anchorOffsetY="0" height="14" anchorOffsetX="0" width="53" size="12" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" id="wenzineirong1" textColor="0x6d6565"/>
+				<e:Image source="img_anquanguanli_png" x="9" y="16" anchorOffsetX="0.5" width="65" anchorOffsetY="0.5" height="55" id="daojutubiao1"/>
+				<e:Image source="img_wenzidikuang_png" x="-1.5" y="58" id="jieshaowenzidikuang1"/>
+				<e:Label text="文字内容" x="14" y="63" anchorOffsetY="0" height="14" anchorOffsetX="0" width="53" size="12" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" id="wenzineirong1" textColor="0xf7850c" bold="true" stroke="2"/>
 			</e:Group>
 			<e:Group x="114" y="93" id="daojuzu3">
 				<e:Image source="img_jiaohuanniudibu_png" x="0" y="0" id="anniudibu2"/>
-				<e:Image source="img_anquanguanli_png" x="7" y="9" anchorOffsetX="0" width="65" anchorOffsetY="0" height="55" id="daojutubiao2"/>
-				<e:Image source="img_wenzidikuang_png" x="8.5" y="52" id="jieshaowenzidikuang2"/>
-				<e:Label text="文字内容" x="13" y="55" anchorOffsetY="0" height="14" anchorOffsetX="0" width="53" size="12" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" id="wenzineirong2" textColor="0x6d6565"/>
+				<e:Image source="img_anquanguanli_png" x="11" y="16" anchorOffsetX="0.5" width="65" anchorOffsetY="0.5" height="55" id="daojutubiao2"/>
+				<e:Image source="img_wenzidikuang_png" x="-1.5" y="58" id="jieshaowenzidikuang2"/>
+				<e:Label text="文字内容" x="14" y="63" anchorOffsetY="0" height="14" anchorOffsetX="0" width="53" size="12" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" id="wenzineirong2" textColor="0xf7850c" bold="true" stroke="2"/>
 			</e:Group>
 			<e:Group x="2" y="194" id="daojuzu4">
 				<e:Image source="img_jiaohuanniudibu_png" x="0" y="0" id="anniudibu3"/>
-				<e:Image source="img_anquanguanli_png" x="7" y="9" anchorOffsetX="0" width="65" anchorOffsetY="0" height="55" id="daojutubiao3"/>
-				<e:Image source="img_wenzidikuang_png" x="8.5" y="52" id="jieshaowenzidikuang3"/>
-				<e:Label text="文字内容" x="13" y="55" anchorOffsetY="0" height="14" anchorOffsetX="0" width="53" size="12" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" id="wenzineirong3" textColor="0x6d6565"/>
+				<e:Image source="img_anquanguanli_png" x="7" y="9" anchorOffsetX="0.5" width="65" anchorOffsetY="0.5" height="55" id="daojutubiao3"/>
+				<e:Image source="img_wenzidikuang_png" x="-1.5" y="58" id="jieshaowenzidikuang3"/>
+				<e:Label text="文字内容" x="14" y="63" anchorOffsetY="0" height="14" anchorOffsetX="0" width="53" size="12" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" id="wenzineirong3" textColor="0xf7850c" bold="true" stroke="2"/>
 			</e:Group>
 			<e:layout>
-				<e:TileLayout horizontalGap="40" verticalGap="20"/>
+				<e:TileLayout verticalGap="10" horizontalGap="20"/>
 			</e:layout>
 		</e:Group>
 	</e:Group>

@@ -36,10 +36,10 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 
 	public tishijiemian:Tongyongquerenkuang;
 
-	public jiesuo1:number;
-	public jiesuo2:number;
-	public jiesuo3:number;
-	public jiesuo4:number;
+	public jiesuo1:any;
+	public jiesuo2:any;
+	public jiesuo3:any;
+	public jiesuo4:any;
 	
 	public constructor() {
 		super();
@@ -236,7 +236,7 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 
 	public jiesuofandian1(){
 		Gameguanli.Kongzhitai().zhujiemiandingbu.removeChild(this.tishijiemian);
-		if(Gerenshuxing.jinbizhi >= this.jiesuo1){
+		if(Gerenshuxing.jinbizhi >= parseInt(this.jiesuo1)){
 			Weblianjie.fasongshuju("code:006","{" + '"jiesuoid"' + ":" + '"1"' +"," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
 		}else{
 			Gameguanli.Kongzhitai().cuowutishixinxi("很遗憾，您拥有的钱币不足，无法支付装修款");
@@ -245,7 +245,7 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 
 	public jiesuofandian2(){
 		Gameguanli.Kongzhitai().zhujiemiandingbu.removeChild(this.tishijiemian);
-		if(Gerenshuxing.jinbizhi >= this.jiesuo2){
+		if(Gerenshuxing.jinbizhi >= parseInt(this.jiesuo2)){
 			Weblianjie.fasongshuju("code:006","{" + '"jiesuoid"' + ":" + '"2"' +"," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
 		}else{
 			Gameguanli.Kongzhitai().cuowutishixinxi("很遗憾，您拥有的钱币不足，无法支付装修款");
@@ -254,7 +254,7 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 
 	public jiesuofandian3(){
 		Gameguanli.Kongzhitai().zhujiemiandingbu.removeChild(this.tishijiemian);
-		if(Gerenshuxing.jinbizhi >= this.jiesuo3){
+		if(Gerenshuxing.jinbizhi >= parseInt(this.jiesuo3)){
 			Weblianjie.fasongshuju("code:006","{" + '"jiesuoid"' + ":" + '"3"' +"," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
 		}else{
 			Gameguanli.Kongzhitai().cuowutishixinxi("很遗憾，您拥有的钱币不足，无法支付装修款");
@@ -263,7 +263,7 @@ class Zhujiemian extends eui.Component implements  eui.UIComponent {
 
 	public jiesuofandian4(){
 		Gameguanli.Kongzhitai().zhujiemiandingbu.removeChild(this.tishijiemian);
-		if(Gerenshuxing.jinbizhi >= this.jiesuo4){
+		if(Gerenshuxing.jinbizhi >= parseInt(this.jiesuo4)){
 			Weblianjie.fasongshuju("code:006","{" + '"jiesuoid"' + ":" + '"4"' +"," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
 		}else{
 			Gameguanli.Kongzhitai().cuowutishixinxi("很遗憾，您拥有的钱币不足，无法支付装修款");
