@@ -123,8 +123,8 @@ class Main extends eui.UILayer {
             dragonBones.WorldClock.clock.advanceTime(advancedTime/3000);
         },this);
         let webseverlianji:Weblianjie =new  Weblianjie();
-        let shijianstart:Timekongzhi = new Timekongzhi();
-        webseverlianji.kaishilianjie();       
+        webseverlianji.kaishilianjie();
+        let shijianstart:Timekongzhi = new Timekongzhi();       
         this.addChild(Gameguanli.Kongzhitai());
         //默认进行1次垃圾添加
 		Chuangzaolaji.shengchenglaji(21);

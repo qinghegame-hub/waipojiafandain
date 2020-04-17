@@ -18,6 +18,7 @@ class Timekongzhi extends egret.DisplayObjectContainer{
 	public kaishijisuan(){
 		let dangqianshijian = (new Date()).valueOf();
 		Weblianjie.fasongshuju("code:028","{" + '"shijian"' +":"+ '"1"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
+		Gerenshuxing.lixianjianglidingshi();
 	}
 
 	

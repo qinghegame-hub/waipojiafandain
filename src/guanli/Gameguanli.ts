@@ -85,6 +85,9 @@ class Gameguanli extends egret.DisplayObjectContainer{
 	//做饭界面实例
 	public zuofanui:Zuofanjiemianui;
 
+	//离线奖励界面
+	public lixianjiangliui:Tongyongquerenkuang;
+
 	
 
 
@@ -117,6 +120,7 @@ class Gameguanli extends egret.DisplayObjectContainer{
 
 		//默认需要开启饭店结算
 		Fandianjisuan.chushihuajisuan(1);
+		this.lixianjiangli();
 
 
 	}
@@ -147,7 +151,8 @@ class Gameguanli extends egret.DisplayObjectContainer{
 			this.addChild(Gameguanli.Kongzhitai().zhujiemiandingbu);
 			this.addChild(Gameguanli.Kongzhitai().dibuui);
 			this.addChild(Gameguanli.Kongzhitai().dingbuui);
-			Fandianjisuan.chushihuajisuan(1);	
+			Fandianjisuan.chushihuajisuan(1);
+			this.lixianjiangli();	
 		};
 		if(canshu1 == "shangjie"){
 			if(Gameguanli.Kongzhitai().zhujiemian.parent){
@@ -1338,6 +1343,59 @@ class Gameguanli extends egret.DisplayObjectContainer{
 		}
 		
 	}
+
+//判断一次离线奖励
+	public lixianjiangli(){
+//		if(Gameguanli.Kongzhitai().zhujiemian.parent){
+			if(parseInt(Gerenshuxing.lixianjiangli[0]) >= 10){
+				this.lixianjiangliui = new Tongyongquerenkuang();
+				Gameguanli.Kongzhitai().dingbuui.addChild(this.lixianjiangliui);
+				let shengyushijian = parseInt(Gerenshuxing.lixianjiangli[0]);
+				this.lixianjiangliui.tishiwenzi.text = "您已离开饭店" + shengyushijian  + "分钟,在您离开期间，饭店由您的大儿子经营管理，共赚得利润：" + Gerenshuxing.lixianjiangli[3] + "元。";
+				this.lixianjiangliui.jiangliicon1.source = "img_qian_png";
+				this.lixianjiangliui.jiangli1.text = " + " + Gerenshuxing.lixianjiangli[3];
+				this.lixianjiangliui.jiangliicon2.source = "";
+				this.lixianjiangliui.jiangli2.text = "";
+				this.lixianjiangliui.but_queding.enabled = true;
+				this.lixianjiangliui.but_shuangbei.enabled = true;
+				this.lixianjiangliui.but_queding.alpha = 1;
+				this.lixianjiangliui.but_shuangbei.alpha = 1;
+				this.lixianjiangliui.but_queding0.enabled = false;
+				this.lixianjiangliui.but_queding0.alpha = 0;
+				this.lixianjiangliui.but_queding.addEventListener(egret.TouchEvent.TOUCH_TAP,this.danbeilixian,this);
+				this.lixianjiangliui.but_shuangbei.addEventListener(egret.TouchEvent.TOUCH_TAP,this.shuangbeilixian,this);
+			}
+//		}
+	}
+
+	public danbeilixian(){
+		Gameguanli.Kongzhitai().dingbuui.removeChild(this.lixianjiangliui);
+		let jianglishuliang = Gerenshuxing.lixianjiangli[3];
+		let xianzaishijianlixian = (new Date()).valueOf();
+		xianzaishijianlixian = xianzaishijianlixian + 60000;
+		Weblianjie.fasongshuju("code:094","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
+		+ '"kouchuleixing"' +":"+ '"0"' +","
+		+ '"kouchushuliang"' +":"+ '"0"' +","
+		+ '"leixing"' +":"+ '"1"' +","
+		+ '"shuliang"' +":"+ '"' + jianglishuliang + '"' +","
+		+ '"xiayishijian"' +":"+ '"' + xianzaishijianlixian + '"' +","
+		+ '"beishu"' +":"+ '"1"' +"}");
+	}
+
+	public shuangbeilixian(){
+		Gameguanli.Kongzhitai().dingbuui.removeChild(this.lixianjiangliui);
+		let jianglishuliang = Gerenshuxing.lixianjiangli[3];
+		let xianzaishijianlixian = (new Date()).valueOf();
+		xianzaishijianlixian = xianzaishijianlixian + 60000;
+		Weblianjie.fasongshuju("code:094","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
+		+ '"kouchuleixing"' +":"+ '"0"' +","
+		+ '"kouchushuliang"' +":"+ '"0"' +","
+		+ '"leixing"' +":"+ '"1"' +","
+		+ '"shuliang"' +":"+ '"' + jianglishuliang + '"' +","
+		+ '"xiayishijian"' +":"+ '"' + xianzaishijianlixian + '"' +","
+		+ '"beishu"' +":"+ '"2"' +"}");
+	}
+
 
 
 

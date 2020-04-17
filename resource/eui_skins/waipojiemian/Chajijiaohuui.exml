@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ChajijiaohuuiSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1717c13d097" ></w:Config>
+	<e:Group id="chaji" left="0" top="0" bottom="0" right="0">
+		<e:Image id="chajiguanbi" source="img_heisezhezao_png" left="0" top="0" bottom="0" right="0" alpha="0.1"/>
+		<e:Image id="chajibeijing" source="img_jiajuchufabeijing_png" x="230.08" y="924.83" rotation="270.11"/>
+		<e:Image id="chajibiaoshi" x="343.5" y="833.88" rotation="0.14" source="img_chajibiaoshi_png"/>
+		<e:Button id="chajichakan" label="查看" x="306" y="750.08" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_chufaanniu_png" source.down="but_chufaanniu2_png" source.disabled="but_chufaanniu2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Button id="chajijinxiu" label="服用" x="452.65" y="755.21" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_chufaanniu_png" source.down="but_chufaanniu2_png" source.disabled="but_chufaanniu2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

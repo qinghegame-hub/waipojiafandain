@@ -79,6 +79,10 @@ class Weblianjie extends egret.DisplayObjectContainer {
                 Gerenshuxing.ererzixuexi = jiexijsongeshi[0].ererzixuexi;
                 Gerenshuxing.xifuxuexi = jiexijsongeshi[0].xifuxuexi;
                 Gerenshuxing.sunnvxuexi = jiexijsongeshi[0].sunnvxuexi;
+                Gerenshuxing.dianshixinxi = jiexijsongeshi[0].dianshixinxi;
+                Gerenshuxing.shafaxinxi = jiexijsongeshi[0].shafaxinxi;
+                Gerenshuxing.lixianjiangli = jiexijsongeshi[0].lixianjiangli;
+                Gerenshuxing.jisuanlixian();
  //               console.log(Gerenshuxing.daerzixinxi,Gerenshuxing.ererzixinxi,Gerenshuxing.xifuxinxi,Gerenshuxing.sunnvxinxi);
   //              console.log(Gerenshuxing.daerzixinxi[5],Gerenshuxing.ererzixinxi[5],Gerenshuxing.xifuxinxi[5],Gerenshuxing.sunnvxinxi[5]);
 
@@ -93,6 +97,7 @@ class Weblianjie extends egret.DisplayObjectContainer {
                 Gerenshuxing.ererzijinxiudingshi();
                 Gerenshuxing.xifujinxiudingshi();
                 Gerenshuxing.sunnvjinxiudingshi();
+                Gerenshuxing.shafatilihuifu();
                 break;
     //初始化个人菜谱等级、街道信息
             case "code:035":
@@ -511,19 +516,9 @@ class Weblianjie extends egret.DisplayObjectContainer {
     //大儿子增加心情数据变更
             case "code:062":
                 Gerenshuxing.daerzixinxi = jiexijsongeshi.chengyuan;
-                Gerenshuxing.kaixinzhi = jiexijsongeshi.xinqing;
                 if(Gameguanli.Kongzhitai().jiatingjiemian.parent){
 					Gameguanli.Kongzhitai().jiatingjiemian.jiatingchengyuanxianshi();
                     Gameguanli.Kongzhitai().cuowutishixinxi("大儿子回家了，你的心情稍微好了点...");
-                    let cailiaodonghua = new Cailiaoxiaohao();
-                    Gameguanli.Kongzhitai().jiatingjiemian.addChild(cailiaodonghua);
-                    cailiaodonghua.img_shicai.source = "img_xinqing_png";
-                    cailiaodonghua.wenzineirong.text = "+ " + jiexijsongeshi.zengjiazhi;
-                    cailiaodonghua.x = Gameguanli.Kongzhitai().jiatingjiemian.img_jiatingbeijing.width / 2 - cailiaodonghua.width / 2;
-                    cailiaodonghua.y = Gameguanli.Kongzhitai().jiatingjiemian.img_jiatingbeijing.height / 2 - cailiaodonghua.height / 2 + 100;
-                    egret.Tween.get(cailiaodonghua).to({y:cailiaodonghua.y - 200},3000).call(()=>{
-					Gameguanli.Kongzhitai().jiatingjiemian.removeChild(cailiaodonghua);
-				    })
 				};
                 if(Gameguanli.Kongzhitai().dingbuui.parent){
                     Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
@@ -532,19 +527,9 @@ class Weblianjie extends egret.DisplayObjectContainer {
             //二儿子增加心情数据变更
             case "code:063":
                 Gerenshuxing.ererzixinxi = jiexijsongeshi.chengyuan;
-                Gerenshuxing.kaixinzhi = jiexijsongeshi.xinqing;
                 if(Gameguanli.Kongzhitai().jiatingjiemian.parent){
 					Gameguanli.Kongzhitai().jiatingjiemian.jiatingchengyuanxianshi();
-                    Gameguanli.Kongzhitai().cuowutishixinxi("二儿子回家了，你感到喜出望外...");
-                    let cailiaodonghua = new Cailiaoxiaohao();
-                    Gameguanli.Kongzhitai().jiatingjiemian.addChild(cailiaodonghua);
-                    cailiaodonghua.img_shicai.source = "img_xinqing_png";
-                    cailiaodonghua.wenzineirong.text = "+ " + jiexijsongeshi.zengjiazhi;
-                    cailiaodonghua.x = Gameguanli.Kongzhitai().jiatingjiemian.img_jiatingbeijing.width / 2 - cailiaodonghua.width / 2;
-                    cailiaodonghua.y = Gameguanli.Kongzhitai().jiatingjiemian.img_jiatingbeijing.height / 2 - cailiaodonghua.height / 2  + 200;
-                    egret.Tween.get(cailiaodonghua).to({y:cailiaodonghua.y - 200},3000).call(()=>{
-					Gameguanli.Kongzhitai().jiatingjiemian.removeChild(cailiaodonghua);
-				    })
+                    Gameguanli.Kongzhitai().cuowutishixinxi("二儿子回家了，上交了一天的工资...");
 				};
                 if(Gameguanli.Kongzhitai().dingbuui.parent){
                     Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
@@ -553,19 +538,9 @@ class Weblianjie extends egret.DisplayObjectContainer {
             //大儿媳增加心情数据变更
             case "code:064":
                 Gerenshuxing.xifuxinxi = jiexijsongeshi.chengyuan;
-                Gerenshuxing.kaixinzhi = jiexijsongeshi.xinqing;
                 if(Gameguanli.Kongzhitai().jiatingjiemian.parent){
 					Gameguanli.Kongzhitai().jiatingjiemian.jiatingchengyuanxianshi();
-                    Gameguanli.Kongzhitai().cuowutishixinxi("大儿媳回家了，你的心情稍微好了点...");
-                    let cailiaodonghua = new Cailiaoxiaohao();
-                    Gameguanli.Kongzhitai().jiatingjiemian.addChild(cailiaodonghua);
-                    cailiaodonghua.img_shicai.source = "img_xinqing_png";
-                    cailiaodonghua.wenzineirong.text = "+ " + jiexijsongeshi.zengjiazhi;
-                    cailiaodonghua.x = Gameguanli.Kongzhitai().jiatingjiemian.img_jiatingbeijing.width / 2 - cailiaodonghua.width / 2;
-                    cailiaodonghua.y = Gameguanli.Kongzhitai().jiatingjiemian.img_jiatingbeijing.height / 2 - cailiaodonghua.height / 2  + 300;
-                    egret.Tween.get(cailiaodonghua).to({y:cailiaodonghua.y - 200},3000).call(()=>{
-					Gameguanli.Kongzhitai().jiatingjiemian.removeChild(cailiaodonghua);
-				    })
+                    Gameguanli.Kongzhitai().cuowutishixinxi("大儿媳回家了，为你做了不少家务...");
 				};
                 if(Gameguanli.Kongzhitai().dingbuui.parent){
                     Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
@@ -574,19 +549,9 @@ class Weblianjie extends egret.DisplayObjectContainer {
             //孙女增加心情数据变更
             case "code:065":
                 Gerenshuxing.sunnvxinxi = jiexijsongeshi.chengyuan;
-                Gerenshuxing.kaixinzhi = jiexijsongeshi.xinqing;
                 if(Gameguanli.Kongzhitai().jiatingjiemian.parent){
 					Gameguanli.Kongzhitai().jiatingjiemian.jiatingchengyuanxianshi();
-                    Gameguanli.Kongzhitai().cuowutishixinxi("乖孙女回家了，你的心情稍微好了点...");
-                    let cailiaodonghua = new Cailiaoxiaohao();
-                    Gameguanli.Kongzhitai().jiatingjiemian.addChild(cailiaodonghua);
-                    cailiaodonghua.img_shicai.source = "img_xinqing_png";
-                    cailiaodonghua.wenzineirong.text = "+ " + jiexijsongeshi.zengjiazhi;
-                    cailiaodonghua.x = Gameguanli.Kongzhitai().jiatingjiemian.img_jiatingbeijing.width / 2 - cailiaodonghua.width / 2;
-                    cailiaodonghua.y = Gameguanli.Kongzhitai().jiatingjiemian.img_jiatingbeijing.height / 2 - cailiaodonghua.height / 2  + 400;
-                    egret.Tween.get(cailiaodonghua).to({y:cailiaodonghua.y - 200},3000).call(()=>{
-					Gameguanli.Kongzhitai().jiatingjiemian.removeChild(cailiaodonghua);
-				    })
+                    Gameguanli.Kongzhitai().cuowutishixinxi("乖孙女回家了，你的心情好了不少...");
 				};
                 if(Gameguanli.Kongzhitai().dingbuui.parent){
                     Gameguanli.Kongzhitai().dingbuui.dingbuchushihua();
@@ -703,6 +668,19 @@ class Weblianjie extends egret.DisplayObjectContainer {
                 break;
             case "code:084":
                 Gerenshuxing.sunnvxinxi = jiexijsongeshi.chengyuan;
+                break;
+            case "code:088":
+                Gerenshuxing.dianshixinxi = jiexijsongeshi.zhuangtai;
+                break;
+            case "code:090":
+                Gerenshuxing.shafaxinxi = jiexijsongeshi.shafaxinxi;
+                Gerenshuxing.shafatilihuifu();
+                break;
+            case "code:093":
+                Gerenshuxing.lixianjiangli = jiexijsongeshi.lixianxinxi;
+                if(Gameguanli.Kongzhitai().zhujiemian.parent){
+                    Gameguanli.Kongzhitai().lixianjiangli();
+                }
                 break;
     //非法操作
             case "code:202":

@@ -194,8 +194,8 @@ var Main = (function (_super) {
             dragonBones.WorldClock.clock.advanceTime(advancedTime / 3000);
         }, this);
         var webseverlianji = new Weblianjie();
-        var shijianstart = new Timekongzhi();
         webseverlianji.kaishilianjie();
+        var shijianstart = new Timekongzhi();
         this.addChild(Gameguanli.Kongzhitai());
         //默认进行1次垃圾添加
         Chuangzaolaji.shengchenglaji(21);

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="WaimaiduihuakuangSkin" width="500" height="246" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="17188a1d4e5" ></w:Config>
+	<e:Group id="duihuazu" x="0" y="37.5">
+		<e:Image id="dikuangbj" source="img_zhengqueduihuakuang_png" x="50" y="50.5"/>
+		<e:Image id="shuohuatouxiang" source="ygwaimai_png" x="0" y="0" anchorOffsetX="0" width="183" anchorOffsetY="0" height="196"/>
+		<e:Label id="shuohuawenzi" text="不对不对，再好好看看" x="180" y="64.5" anchorOffsetX="0" width="299" size="24" anchorOffsetY="0" height="72" bold="true" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="2" strokeColor="0x30a5f4"/>
+	</e:Group>
+</e:Skin>

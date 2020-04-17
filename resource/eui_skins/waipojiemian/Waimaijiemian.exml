@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="WaimaijiemianSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1718700ba7b" ></w:Config>
+	<e:Group id="waimaizu" left="0" top="0" bottom="0" right="0">
+		<e:Image id="img_jiemiandabeijing" source="img_jiemiandabeijing1_png" y="0" x="1.5"/>
+		<e:Image id="img_yuanxingtaijie" source="img_yuanxingtaijie_png" x="143" y="698"/>
+		<e:Group id="qipaowenzizu" x="129.5" y="212" alpha="1">
+			<e:Image id="img_duihuaqipao" source="img_duihuaqipao_png" x="0" y="0"/>
+			<e:Label id="shouhuowenzi" text="     顾客订购的“黄焖鸡米饭”麻烦快点！" x="44.5" y="44" anchorOffsetX="0" width="196" anchorOffsetY="0" height="116" textAlign="left" verticalAlign="middle" bold="true" textColor="0x1052ef" stroke="6" strokeColor="0xeadcdc" fontFamily="wodeziti" size="24"/>
+		</e:Group>
+		<e:Group id="dibuzu" x="-1" y="1124">
+			<e:Image id="img_dibutuopan" source="img_dibutuopan_png" y="0" x="2.5"/>
+			<e:Group id="caianniuzu" x="0" y="22">
+				<e:Group id="caizu1" x="202" y="2">
+				<e:Image id="img_caipindikuang1" source="img_caipindikuang1_png" x="0" y="0" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+				<e:Image id="tupianres1" source="1001_png" x="46" y="36.5" anchorOffsetX="0.5" width="90" anchorOffsetY="0.5" height="90"/>
+				</e:Group>
+				<e:Group x="0" y="0" id="caizu0">
+				<e:Image source="img_caipindikuang1_png" x="0" y="0" id="img_caipindikuang0" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+				<e:Image source="1001_png" x="46" y="36.5" anchorOffsetX="0.5" width="90" anchorOffsetY="0.5" height="90" id="tupianres0"/>
+				</e:Group>
+				<e:Group x="452" y="0" id="caizu2">
+				<e:Image source="img_caipindikuang1_png" x="0" y="0" id="img_caipindikuang2" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+				<e:Image id="tupianres2" source="1001_png" x="46" y="36.5" anchorOffsetX="0.5" width="90" anchorOffsetY="0.5" height="90"/>
+				</e:Group>
+				<e:Group x="532" y="2" id="caizu3">
+				<e:Image source="img_caipindikuang1_png" x="0" y="0" id="img_caipindikuang3" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+				<e:Image source="1001_png" x="46" y="36.5" anchorOffsetX="0.5" width="90" anchorOffsetY="0.5" height="90" id="tupianres3"/>
+				</e:Group>
+				<e:layout>
+				<e:HorizontalLayout gap="4"/>
+				</e:layout>
+			</e:Group>
+		</e:Group>
+	</e:Group>
+</e:Skin>

@@ -24,6 +24,7 @@ var Timekongzhi = (function (_super) {
     Timekongzhi.prototype.kaishijisuan = function () {
         var dangqianshijian = (new Date()).valueOf();
         Weblianjie.fasongshuju("code:028", "{" + '"shijian"' + ":" + '"1"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+        Gerenshuxing.lixianjianglidingshi();
     };
     return Timekongzhi;
 }(egret.DisplayObjectContainer));

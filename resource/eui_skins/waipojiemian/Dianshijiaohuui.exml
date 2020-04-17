@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DianshijiaohuuiSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1717c1bfe60" ></w:Config>
+	<e:Group id="dianshi" left="0" top="0" bottom="0" right="0">
+		<e:Image id="dianshiguanbi" source="img_heisezhezao_png" left="0" top="0" bottom="0" right="0" alpha="0.1"/>
+		<e:Image id="dianshibeijing" source="img_jiajuchufabeijing_png" x="614.7" y="811.86" rotation="179.94"/>
+		<e:Image id="dianshibiaoshi" x="544.5" y="541.27" rotation="0.14" source="img_dianshibiaoshi_png"/>
+		<e:Button id="dianshichakan" label="查看" x="469.05" y="469.77" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_chufaanniu_png" source.down="but_chufaanniu2_png" source.disabled="but_chufaanniu2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Button id="dianshijinxiu" label="剧集" x="424.5" y="580.97" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_chufaanniu_png" source.down="but_chufaanniu2_png" source.disabled="but_chufaanniu2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Button id="dianshizengsong" label="小品" x="465.05" y="693" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_chufaanniu_png" source.down="but_chufaanniu2_png" source.disabled="but_chufaanniu2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

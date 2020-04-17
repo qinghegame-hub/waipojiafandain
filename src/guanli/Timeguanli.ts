@@ -16,7 +16,7 @@ class Timeguanli extends egret.DisplayObjectContainer{
 		if(Gerenshuxing.xianshishijian >= 18 && Gerenshuxing.xianshishijian <= 24){
 			this.xifuhuijia();
 		}
-		if(Gerenshuxing.xianshishijian >= 10 && Gerenshuxing.xianshishijian <= 24 && Gerenshuxing.ererzixinxi[3] == 0){
+		if(Gerenshuxing.xianshishijian >= 18 && Gerenshuxing.xianshishijian <= 24){
 			this.ererzihuijia();
 		}
 		if(Gerenshuxing.xianshishijian == 8){
@@ -257,11 +257,7 @@ class Timeguanli extends egret.DisplayObjectContainer{
 		Gerenshuxing.daerzixinxi[5] = 0;
 		Gerenshuxing.sunnvxinxi[5] = 0;
 		Gerenshuxing.xifuxinxi[5] = 0;
-		if(Gerenshuxing.ererzixinxi[3] != 0){
-			Gerenshuxing.ererzixinxi[5] = 0;
-		}else{
-			Gerenshuxing.ererzixinxi[5] = 1;
-		}
+		Gerenshuxing.ererzixinxi[5] = 0;
 		Weblianjie.fasongshuju("code:052","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
 				+ '"ererzi"' +":"+ '"' + Gerenshuxing.ererzixinxi[5] + '"' +"}");
 	}

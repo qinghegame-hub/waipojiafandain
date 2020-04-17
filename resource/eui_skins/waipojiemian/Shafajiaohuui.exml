@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ShafajiaohuuiSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1717b918688" ></w:Config>
+	<e:Group id="shafa" left="0" top="0" bottom="0" right="0">
+		<e:Image id="shafaguanbi" source="img_heisezhezao_png" left="0" top="0" bottom="0" right="0" alpha="0.1"/>
+		<e:Image id="shafabeijing" source="img_jiajuchufabeijing_png" x="65.73" y="941.45" rotation="310"/>
+		<e:Image id="shafabiaoshi" x="88.22" y="1007.92" rotation="334.35" source="img_shafabiaoshi_png"/>
+		<e:Button id="shafachakan" label="查看" x="202.58" y="875.08" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_chufaanniu_png" source.down="but_chufaanniu2_png" source.disabled="but_chufaanniu2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Button id="shafajinxiu" label="休息" x="312.65" y="977.8" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_chufaanniu_png" source.down="but_chufaanniu2_png" source.disabled="but_chufaanniu2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

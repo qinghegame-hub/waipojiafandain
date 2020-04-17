@@ -53,6 +53,10 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static ererzixuexi:any = [];//二儿子学习解锁信息
     public static xifuxuexi:any = [];//大儿媳学习解锁信息
     public static sunnvxuexi:any = [];//孙女学习解锁信息
+    public static dianshixinxi:any = 0;//电视已观看次数
+    public static shafaxinxi:any = [];//沙发信息(当前已积累次数，当前可积累上限次数,下次增加时间戳,当前已累积体力数)
+    public static lixianjiangli:any = [];//离线奖励(当前累积次数，当前可累积上限次数,当前时间戳，当前已累积金币值)
+
 
     public static touxiangbaocunzhuangtai:boolean = false;
 
@@ -102,12 +106,20 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static zzkeliuliang:number;
         //最终的口碑值
     public static zzkoubeizhi:number;
+        //最终外卖效率
+    public static waimaixiaolv:number;
 
     //通过时间控制的客流量增加
     public static sjkeliuliang:number = 100;
 
+    //通过时间控制的外卖订单增加值
+    public static sjwaimai:number = 100;
+
     //通过天气控制的客流量增加
     public static tqkeliuliang:number = 100;
+
+    //通过天气控制的外卖订单增加值
+    public static tqwaimai:number = 100;
 
 
     public constructor (){
@@ -246,6 +258,8 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
         Gerenshuxing.zzkeliuliang =  Math.floor((Gerenshuxing.keliuliang + tuiguangkeliu) * (Gerenshuxing.sjkeliuliang / 100) * (Gerenshuxing.tqkeliuliang / 100));
         //最终的口碑值
         Gerenshuxing.zzkoubeizhi =  Gerenshuxing.koubeizhi + tuiguangkoubei + Gerenshuxing.pinglunkoubei;
+        //最终外卖效率
+        Gerenshuxing.waimaixiaolv = Math.floor(Gerenshuxing.zzkoubeizhi * (Gerenshuxing.sjwaimai / 100) * (Gerenshuxing.tqwaimai / 100));
 
 
 
@@ -310,6 +324,72 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
 			}
 		}
 	}
+
+    //开始沙发体力恢复倒计时
+    public static shafatilihuifu(){
+		let xianzaishijian5 = (new Date()).valueOf();
+		if(parseInt(Gerenshuxing.shafaxinxi[0]) < parseInt(Gerenshuxing.shafaxinxi[1])){
+            if(xianzaishijian5 < parseInt(Gerenshuxing.shafaxinxi[2])){
+				let shafadingshi = new egret.Timer(1000,1);
+				shafadingshi.addEventListener(egret.TimerEvent.TIMER,this.shafatilihuifu,this)
+				shafadingshi.start();
+			}else{
+				let zengjiatili = Math.floor(Gerenshuxing.kaixinzhi / 100) + 1;
+                let xiajieduanshijian = xianzaishijian5 + 120000;
+                let chaochushijian = xianzaishijian5 - parseInt(Gerenshuxing.shafaxinxi[2]);
+                chaochushijian = Math.floor(chaochushijian / 120000) + 1;
+                if(chaochushijian + parseInt(Gerenshuxing.shafaxinxi[0]) >= parseInt(Gerenshuxing.shafaxinxi[1])){
+                    chaochushijian = parseInt(Gerenshuxing.shafaxinxi[1]);
+                }else{
+                    chaochushijian = parseInt(Gerenshuxing.shafaxinxi[0]) + chaochushijian;
+                }
+                zengjiatili = zengjiatili * chaochushijian;
+                Weblianjie.fasongshuju("code:089","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
+                + '"dangqiancishu"' +":"+ '"' + chaochushijian + '"' +","
+                + '"xiacishijian"' +":"+ '"' + xiajieduanshijian + '"' +","
+                + '"leijitili"' +":"+ '"' + zengjiatili + '"' +"}");
+
+			}
+		}
+	}
+
+    //离线奖励计算定时
+    public static lixianjianglidingshi(){
+        if(Gameguanli.Kongzhitai().zhujiemian.parent){
+
+        }else{
+            this.jisuanlixian();
+        }
+	}
+
+    public static jisuanlixian(){
+        let xianzaishijian6 = (new Date()).valueOf();
+            if(parseInt(Gerenshuxing.lixianjiangli[0]) < parseInt(Gerenshuxing.lixianjiangli[1])){
+                if(xianzaishijian6 >= parseInt(Gerenshuxing.lixianjiangli[2])){
+                    let zengjialixian = Math.floor(parseInt(Gerenshuxing.daerzixinxi[1]) / 20);
+                    let xiajieduanshijian1 = xianzaishijian6 + 60000;
+                    let chaochushijian1 = xianzaishijian6 - parseInt(Gerenshuxing.lixianjiangli[2]);
+                    chaochushijian1 = Math.floor(chaochushijian1 / 60000) + 1;
+                    if(chaochushijian1 + parseInt(Gerenshuxing.lixianjiangli[0]) >= parseInt(Gerenshuxing.lixianjiangli[1])){
+                        chaochushijian1 = parseInt(Gerenshuxing.lixianjiangli[1]);
+                    }else{
+                        chaochushijian1 = parseInt(Gerenshuxing.lixianjiangli[0]) + chaochushijian1;
+                    }
+                    console.log(chaochushijian1);
+                    zengjialixian = zengjialixian * chaochushijian1;
+                    console.log(zengjialixian);
+                    console.log(Gerenshuxing.lixianjiangli[2]);
+                    Weblianjie.fasongshuju("code:092","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
+                    + '"dangqiancishu"' +":"+ '"' + chaochushijian1 + '"' +","
+                    + '"xiacishijian"' +":"+ '"' + xiajieduanshijian1 + '"' +","
+                    + '"leijitili"' +":"+ '"' + zengjialixian + '"' +"}");
+                }
+            }else{
+                if(Gameguanli.Kongzhitai().zhujiemian.parent){
+                    Gameguanli.Kongzhitai().lixianjiangli();
+                }
+            }
+    }
 
 
 }

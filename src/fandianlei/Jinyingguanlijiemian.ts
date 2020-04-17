@@ -54,6 +54,8 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 		this.fandiankoubeitext.text =  "" +Gerenshuxing.zzkoubeizhi;
 		this.shangcaisudutext.text =  "" +Gerenshuxing.zzchushishangcaisudu;
 		this.shihaojiangditext.text =  "" +Gerenshuxing.zzyuanliaoxiaohao;
+		this.lixianshouyitext.text = Math.floor(parseInt(Gerenshuxing.daerzixinxi[1]) / 20) + "/分钟";
+		this.waimaishouyitext.text = "24小时";
 		let yuangongbiao = RES.getRes("yuangongbiao_json");
 		let xiaochaozengjia = 0;
 		let huoguozengjia = 0;
