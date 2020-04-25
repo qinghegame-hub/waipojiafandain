@@ -127,6 +127,14 @@ var Main = (function (_super) {
                     case 7:
                         userInfo = _a.sent();
                         this.gerenshuju(userInfo);
+                        return [4 /*yield*/, platform.openDataContext.postMessage({
+                                title: "nihao",
+                                text: "你好",
+                                time: (new Date()).getFullYear() + 1,
+                                command: "loadRes"
+                            })];
+                    case 8:
+                        _a.sent();
                         return [2 /*return*/];
                 }
             });
@@ -196,6 +204,44 @@ var Main = (function (_super) {
         var webseverlianji = new Weblianjie();
         webseverlianji.kaishilianjie();
         var shijianstart = new Timekongzhi();
+        /*         //获取实际窗口（屏幕）尺寸。
+                let w=this.stage.stageWidth;
+                let h=this.stage.stageHeight;
+                
+                //添加背景图。
+                let bg:eui.Image=new eui.Image(RES.getRes('bg_jpg'));
+                this.addChild(bg);
+                //把背景图拉伸到满屏。
+                bg.width=w;
+                bg.height=h;
+                
+                //声明水平和垂直的居中偏移，以及高度或宽度的缩放值。
+                let xoffset=0;
+                let yoffset=0;
+                let scale0=0;
+                //计算居中偏移及缩放值。这里，设计时的宽高为640*1136。
+                if(w/h>750/1334){
+                    //屏幕比640*1136扁（或称为短）：
+                    scale0=h/1334;
+                    xoffset=(w-750*scale0)/2;
+                }else{
+                    //屏幕比640*1136长或相同：
+                    scale0=w/750;
+                    yoffset=(h-1334*scale0)/2;
+                }
+                
+                //console.log([w,h,xoffset,yoffset,scale0].toString());
+         
+                //这里的Mission就是自定义的一个子窗口。这个子窗口缩放到showAll模式。
+                let ss:eui.UILayer=new eui.UILayer();
+                ss.x=xoffset;
+                ss.y=yoffset;
+                ss.scaleX=scale0;
+                ss.scaleY=scale0;
+         //        Gameguanli.Kongzhitai().width = w;
+        //         Gameguanli.Kongzhitai().height = h;
+        
+                this.addChild(ss);    */
         this.addChild(Gameguanli.Kongzhitai());
         //默认进行1次垃圾添加
         Chuangzaolaji.shengchenglaji(21);

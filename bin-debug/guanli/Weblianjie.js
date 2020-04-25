@@ -702,6 +702,12 @@ var Weblianjie = (function (_super) {
                     Gameguanli.Kongzhitai().lixianjiangli();
                 }
                 break;
+            case "code:097":
+                Gerenshuxing.paihangbangshuju = jiexijsongeshi;
+                if (Gameguanli.Kongzhitai().paihangbangdaui.parent) {
+                    Gameguanli.Kongzhitai().paihangbangdaui.paixufenshu();
+                }
+                break;
             //非法操作
             case "code:202":
                 Gameguanli.Kongzhitai().cuowutishixinxi("非法操作！");
@@ -748,6 +754,8 @@ var Weblianjie = (function (_super) {
                     case "5":
                         Gerenshuxing.xingfuzhi = parseInt(jiexijsongeshi.shijishuliang[0]);
                         Gameguanli.Kongzhitai().jianglitanchuui("img_xingfu_png", jiexijsongeshi.jianglishuliang, "+");
+                        var shangchaun = new Wxjiekoulei(Gerenshuxing.xingfuzhi);
+                        Paimingtishi.chushihua();
                         break;
                     case "6":
                         Gerenshuxing.daerzixinxi = jiexijsongeshi.shijishuliang;

@@ -69,7 +69,10 @@
 		"Waimaijiemian": "resource/eui_skins/waipojiemian/Waimaijiemian.exml",
 		"Waimaitishi": "resource/eui_skins/waipojiemian/Waimaitishi.exml",
 		"Motuoche": "resource/eui_skins/waipojiemian/Motuoche.exml",
-		"Waimaiduihuakuang": "resource/eui_skins/waipojiemian/Waimaiduihuakuang.exml"
+		"Waimaiduihuakuang": "resource/eui_skins/waipojiemian/Waimaiduihuakuang.exml",
+		"Paimingbiangengshang": "resource/eui_skins/waipojiemian/Paimingbiangengshang.exml",
+		"Paimingbiangengxia": "resource/eui_skins/waipojiemian/Paimingbiangengxia.exml",
+		"Paihangbangjiemian": "resource/eui_skins/waipojiemian/Paihangbangjiemian.exml"
 	},
 	"autoGenerateExmlsList": true,
 	"exmls": [
@@ -126,6 +129,9 @@
 		"resource/eui_skins/waipojiemian/Maicaiui.exml",
 		"resource/eui_skins/waipojiemian/Motuoche.exml",
 		"resource/eui_skins/waipojiemian/Npcduihuaui.exml",
+		"resource/eui_skins/waipojiemian/Paihangbangjiemian.exml",
+		"resource/eui_skins/waipojiemian/Paimingbiangengshang.exml",
+		"resource/eui_skins/waipojiemian/Paimingbiangengxia.exml",
 		"resource/eui_skins/waipojiemian/Pengrenfankuiui.exml",
 		"resource/eui_skins/waipojiemian/Shafadianshidengjiaohuui.exml",
 		"resource/eui_skins/waipojiemian/Shafajiaohuui.exml",

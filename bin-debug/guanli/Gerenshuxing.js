@@ -252,10 +252,7 @@ var Gerenshuxing = (function (_super) {
                 else {
                     chaochushijian1 = parseInt(Gerenshuxing.lixianjiangli[0]) + chaochushijian1;
                 }
-                console.log(chaochushijian1);
                 zengjialixian = zengjialixian * chaochushijian1;
-                console.log(zengjialixian);
-                console.log(Gerenshuxing.lixianjiangli[2]);
                 Weblianjie.fasongshuju("code:092", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
                     + '"dangqiancishu"' + ":" + '"' + chaochushijian1 + '"' + ","
                     + '"xiacishijian"' + ":" + '"' + xiajieduanshijian1 + '"' + ","
@@ -313,6 +310,8 @@ var Gerenshuxing = (function (_super) {
     Gerenshuxing.dianshixinxi = 0; //电视已观看次数
     Gerenshuxing.shafaxinxi = []; //沙发信息(当前已积累次数，当前可积累上限次数,下次增加时间戳,当前已累积体力数)
     Gerenshuxing.lixianjiangli = []; //离线奖励(当前累积次数，当前可累积上限次数,当前时间戳，当前已累积金币值)
+    Gerenshuxing.paiming = 100001; //当前世界排名
+    Gerenshuxing.paihangbangshuju = []; //排行榜数据
     Gerenshuxing.touxiangbaocunzhuangtai = false;
     Gerenshuxing.cailanzishu = 5; //个人才菜篮子数;
     Gerenshuxing.shuaxincishu = 2; //个人买菜刷新次数;

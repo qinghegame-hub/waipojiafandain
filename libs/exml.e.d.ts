@@ -128,6 +128,12 @@ declare class MotuocheSkin extends eui.Skin{
 }
 declare class NpcduihuauiSkin extends eui.Skin{
 }
+declare class PaihangbangjiemianSkin extends eui.Skin{
+}
+declare class PaimingbiangengshangSkin extends eui.Skin{
+}
+declare class PaimingbiangengxiaSkin extends eui.Skin{
+}
 declare class PengrenfankuiuiSkin extends eui.Skin{
 }
 declare class ShafadianshidengjiaohuuiSkin extends eui.Skin{

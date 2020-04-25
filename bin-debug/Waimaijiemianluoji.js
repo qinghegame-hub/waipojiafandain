@@ -285,14 +285,14 @@ var Waimaijiemianluoji = (function (_super) {
         this.zhuyaojiemian.caizu3.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.dianji4geanniu, this);
         egret.Tween.get(this.zhuyaojiemian.caizu1).to({ scaleX: 1.1, scaleY: 1.1 }, 500).call(function () {
             egret.Tween.get(_this.zhuyaojiemian.caizu1).to({ scaleX: 1, scaleY: 1 }, 500).call(function () {
-                if (_this.zhengquexuanze == 1) {
-                    _this.zhengquedexuanze();
-                }
-                else {
-                    _this.cuowudexuanze();
-                }
             });
         });
+        if (this.zhengquexuanze == 1) {
+            this.zhengquedexuanze();
+        }
+        else {
+            this.cuowudexuanze();
+        }
     };
     Waimaijiemianluoji.prototype.dianji2geanniu = function () {
         var _this = this;
@@ -306,14 +306,14 @@ var Waimaijiemianluoji = (function (_super) {
         this.zhuyaojiemian.caizu3.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.dianji4geanniu, this);
         egret.Tween.get(this.zhuyaojiemian.caizu0).to({ scaleX: 1.1, scaleY: 1.1 }, 500).call(function () {
             egret.Tween.get(_this.zhuyaojiemian.caizu0).to({ scaleX: 1, scaleY: 1 }, 500).call(function () {
-                if (_this.zhengquexuanze == 2) {
-                    _this.zhengquedexuanze();
-                }
-                else {
-                    _this.cuowudexuanze();
-                }
             });
         });
+        if (this.zhengquexuanze == 2) {
+            this.zhengquedexuanze();
+        }
+        else {
+            this.cuowudexuanze();
+        }
     };
     Waimaijiemianluoji.prototype.dianji3geanniu = function () {
         var _this = this;
@@ -327,14 +327,14 @@ var Waimaijiemianluoji = (function (_super) {
         this.zhuyaojiemian.caizu3.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.dianji4geanniu, this);
         egret.Tween.get(this.zhuyaojiemian.caizu2).to({ scaleX: 1.1, scaleY: 1.1 }, 500).call(function () {
             egret.Tween.get(_this.zhuyaojiemian.caizu2).to({ scaleX: 1, scaleY: 1 }, 500).call(function () {
-                if (_this.zhengquexuanze == 3) {
-                    _this.zhengquedexuanze();
-                }
-                else {
-                    _this.cuowudexuanze();
-                }
             });
         });
+        if (this.zhengquexuanze == 3) {
+            this.zhengquedexuanze();
+        }
+        else {
+            this.cuowudexuanze();
+        }
     };
     Waimaijiemianluoji.prototype.dianji4geanniu = function () {
         var _this = this;
@@ -348,14 +348,14 @@ var Waimaijiemianluoji = (function (_super) {
         this.zhuyaojiemian.caizu3.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.dianji4geanniu, this);
         egret.Tween.get(this.zhuyaojiemian.caizu3).to({ scaleX: 1.1, scaleY: 1.1 }, 500).call(function () {
             egret.Tween.get(_this.zhuyaojiemian.caizu3).to({ scaleX: 1, scaleY: 1 }, 500).call(function () {
-                if (_this.zhengquexuanze == 4) {
-                    _this.zhengquedexuanze();
-                }
-                else {
-                    _this.cuowudexuanze();
-                }
             });
         });
+        if (this.zhengquexuanze == 4) {
+            this.zhengquedexuanze();
+        }
+        else {
+            this.cuowudexuanze();
+        }
     };
     Waimaijiemianluoji.prototype.zhengquedexuanze = function () {
         var _this = this;
@@ -363,10 +363,10 @@ var Waimaijiemianluoji = (function (_super) {
         var tishiduihua = new Waimaiduihuakuang();
         Gameguanli.Kongzhitai().dingbuui.addChild(tishiduihua);
         tishiduihua.x = this.zhuyaojiemian.width / 2 - tishiduihua.width / 2;
-        tishiduihua.y = this.zhuyaojiemian.height / 11 * 8;
+        tishiduihua.y = this.zhuyaojiemian.height / 11 * 6;
         tishiduihua.dikuangbj.source = "img_zhengqueduihuakuang_png";
         tishiduihua.shuohuawenzi.text = "对喽，老板手脚挺麻利的嘛！我去送货啦！";
-        egret.Tween.get(tishiduihua).to({ y: this.zhuyaojiemian.height / 11 * 5 }, 2000).call(function () {
+        egret.Tween.get(tishiduihua).to({ y: this.zhuyaojiemian.height / 11 * 4 }, 2000).wait(1000).call(function () {
             Gameguanli.Kongzhitai().dingbuui.removeChild(tishiduihua);
             for (var i = 0; i < _this.shipubiao.length; i++) {
                 if (_this.shipubiao[i].id == _this.xuqiucai) {
@@ -379,7 +379,7 @@ var Waimaijiemianluoji = (function (_super) {
                     break;
                 }
             }
-            _this.zhuyaojiemian.img_jiemiandabeijing.source = "img_jiemiandabeijing1_png";
+            _this.zhuyaojiemian.img_jiemiandabeijing.source = "img_jiemiandabeijing_png";
             _this.zhuyaojiemian.qipaowenzizu.alpha = 0;
             _this.zhuyaojiemian.dibuzu.alpha = 0;
             egret.Tween.get(_this.motuojiemian).to({ x: 0 - _this.zhuyaojiemian.width, scaleX: 0.5, scaleY: 0.5 }, 2000).call(function () {
@@ -392,7 +392,7 @@ var Waimaijiemianluoji = (function (_super) {
         var tishiduihua = new Waimaiduihuakuang();
         Gameguanli.Kongzhitai().dingbuui.addChild(tishiduihua);
         tishiduihua.x = this.zhuyaojiemian.width / 2 - tishiduihua.width / 2;
-        tishiduihua.y = this.zhuyaojiemian.height / 11 * 8;
+        tishiduihua.y = this.zhuyaojiemian.height / 11 * 6;
         tishiduihua.dikuangbj.source = "img_cuowuduihuakuang_png";
         for (var i = 0; i < this.shipubiao.length; i++) {
             if (this.shipubiao[i].id == this.xuqiucai) {
@@ -401,7 +401,7 @@ var Waimaijiemianluoji = (function (_super) {
                 break;
             }
         }
-        egret.Tween.get(tishiduihua).to({ y: this.zhuyaojiemian.height / 11 * 5 }, 2000).call(function () {
+        egret.Tween.get(tishiduihua).to({ y: this.zhuyaojiemian.height / 11 * 4 }, 2000).wait(1000).call(function () {
             Gameguanli.Kongzhitai().dingbuui.removeChild(tishiduihua);
             _this.zhuyaojiemian.caizu0.touchEnabled = true;
             _this.zhuyaojiemian.caizu1.touchEnabled = true;

@@ -8,7 +8,12 @@ declare interface Platform {
 
     getUserInfo(): Promise<any>;
 
-    login(): Promise<any>
+    login(): Promise<any>;
+
+    setxingfuzhi(shuzhi):Promise<any>;
+
+
+    openDataContext:any
 
 }
 
@@ -19,6 +24,11 @@ class DebugPlatform implements Platform {
     async login() {
 
     }
+    async setxingfuzhi(shuzhi){
+
+    }
+
+    openDataContext;
 }
 
 

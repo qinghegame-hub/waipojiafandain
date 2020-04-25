@@ -302,13 +302,13 @@ class Waimaijiemianluoji extends egret.DisplayObjectContainer {
 		this.zhuyaojiemian.caizu3.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.dianji4geanniu,this);
 		egret.Tween.get(this.zhuyaojiemian.caizu1).to({scaleX:1.1,scaleY:1.1},500).call(()=>{
 			egret.Tween.get(this.zhuyaojiemian.caizu1).to({scaleX:1,scaleY:1},500).call(()=>{
-				if(this.zhengquexuanze == 1){
-					this.zhengquedexuanze();
-				}else{
-					this.cuowudexuanze();
-				}
 			})
 		})
+		if(this.zhengquexuanze == 1){
+			this.zhengquedexuanze();
+		}else{
+			this.cuowudexuanze();
+		}
 	}
 
 	public dianji2geanniu(){
@@ -322,13 +322,13 @@ class Waimaijiemianluoji extends egret.DisplayObjectContainer {
 		this.zhuyaojiemian.caizu3.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.dianji4geanniu,this);
 		egret.Tween.get(this.zhuyaojiemian.caizu0).to({scaleX:1.1,scaleY:1.1},500).call(()=>{
 			egret.Tween.get(this.zhuyaojiemian.caizu0).to({scaleX:1,scaleY:1},500).call(()=>{
-				if(this.zhengquexuanze == 2){
-					this.zhengquedexuanze();
-				}else{
-					this.cuowudexuanze();
-				}
 			})
 		})
+		if(this.zhengquexuanze == 2){
+			this.zhengquedexuanze();
+		}else{
+			this.cuowudexuanze();
+		}
 	}
 
 	public dianji3geanniu(){
@@ -342,13 +342,13 @@ class Waimaijiemianluoji extends egret.DisplayObjectContainer {
 		this.zhuyaojiemian.caizu3.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.dianji4geanniu,this);
 		egret.Tween.get(this.zhuyaojiemian.caizu2).to({scaleX:1.1,scaleY:1.1},500).call(()=>{
 			egret.Tween.get(this.zhuyaojiemian.caizu2).to({scaleX:1,scaleY:1},500).call(()=>{
-				if(this.zhengquexuanze == 3){
-					this.zhengquedexuanze();
-				}else{
-					this.cuowudexuanze();
-				}
 			})
 		})
+		if(this.zhengquexuanze == 3){
+			this.zhengquedexuanze();
+		}else{
+			this.cuowudexuanze();
+		}
 	}
 
 	public dianji4geanniu(){
@@ -362,13 +362,13 @@ class Waimaijiemianluoji extends egret.DisplayObjectContainer {
 		this.zhuyaojiemian.caizu3.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.dianji4geanniu,this);
 		egret.Tween.get(this.zhuyaojiemian.caizu3).to({scaleX:1.1,scaleY:1.1},500).call(()=>{
 			egret.Tween.get(this.zhuyaojiemian.caizu3).to({scaleX:1,scaleY:1},500).call(()=>{
-				if(this.zhengquexuanze == 4){
-					this.zhengquedexuanze();
-				}else{
-					this.cuowudexuanze();
-				}
 			})
 		})
+		if(this.zhengquexuanze == 4){
+			this.zhengquedexuanze();
+		}else{
+			this.cuowudexuanze();
+		}
 	}
 
 	public zhengquedexuanze(){
@@ -392,7 +392,7 @@ class Waimaijiemianluoji extends egret.DisplayObjectContainer {
 					break;
 				}
 			}
-			this.zhuyaojiemian.img_jiemiandabeijing.source = "img_jiemiandabeijing1_png";
+			this.zhuyaojiemian.img_jiemiandabeijing.source = "img_jiemiandabeijing_png";
 			this.zhuyaojiemian.qipaowenzizu.alpha = 0;
 			this.zhuyaojiemian.dibuzu.alpha = 0;
 			egret.Tween.get(this.motuojiemian).to({x:0 - this.zhuyaojiemian.width,scaleX:0.5,scaleY:0.5},2000).call(()=>{

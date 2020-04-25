@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PaimingbiangengxiaSkin" width="440" height="226" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1718ba16772" ></w:Config>
+	<e:Group id="paimingshangshengzu" x="0" y="0">
+		<e:Image id="img_xiadikuang" x="80" y="49.5" source="img_xiadikuang_png"/>
+		<e:Group id="xiangpianzu0" width="84" height="84" x="337.5" y="66" anchorOffsetY="0" anchorOffsetX="0">
+		</e:Group>
+		<e:Image id="xiangkuang0" x="317" y="49.5" source="img_xiamianxiangkuang_png"/>
+		<e:Image id="img_shangjiantou0" x="33.5" y="106" source="img_xiajiantou_png"/>
+		<e:Image id="img_paimingshangsheng0" x="101" y="165" source="img_paimingxiajiang_png"/>
+		<e:Label id="paiming0" text="当前排名：8888888" x="95.5" y="76" anchorOffsetX="0" width="213" anchorOffsetY="0" height="28" fontFamily="wodeziti" size="24" verticalAlign="middle" textAlign="center" bold="true" stroke="2" strokeColor="0x4eef07"/>
+		<e:Label id="xingfuzhi0" text="8888" x="134.5" y="119" anchorOffsetX="0" width="175" anchorOffsetY="0" height="28" fontFamily="wodeziti" size="24" verticalAlign="middle" textAlign="left" bold="true" stroke="2" strokeColor="0x8cf909"/>
+		<e:Image id="img_xingfu0" source="img_xingfu_png" x="93.5" y="116" anchorOffsetX="0" width="38" anchorOffsetY="0" height="38"/>
+	</e:Group>
+</e:Skin>

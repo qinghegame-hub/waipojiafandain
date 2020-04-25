@@ -9,6 +9,10 @@ class Gameguanli extends egret.DisplayObjectContainer{
 	//家庭界面实例
 	public jiatingjiemian:Jiatingui;
 
+
+	//排行榜大界面
+	public paihangbangdaui:Paihangbangjiemian;
+
 	//顶部菜单实例
 	public dingbuui:dingbuxinxi;
 
@@ -110,6 +114,7 @@ class Gameguanli extends egret.DisplayObjectContainer{
 		this.caiPuUi = new Caipujiemian();
 		this.waichudajie = new Dajiejiemian();
 		this.jiatingjiemian = new Jiatingui();
+		this.paihangbangdaui = new Paihangbangjiemian();
 		
 
 		//默认加载主界面相关界面
@@ -147,6 +152,9 @@ class Gameguanli extends egret.DisplayObjectContainer{
 			if(Gameguanli.Kongzhitai().dingbuui.parent){
 				this.removeChild(Gameguanli.Kongzhitai().dingbuui);
 			}
+			if(Gameguanli.Kongzhitai().paihangbangdaui.parent){
+				this.removeChild(Gameguanli.Kongzhitai().paihangbangdaui);
+			}
 			this.addChild(Gameguanli.Kongzhitai().zhujiemian);
 			this.addChild(Gameguanli.Kongzhitai().zhujiemiandingbu);
 			this.addChild(Gameguanli.Kongzhitai().dibuui);
@@ -170,6 +178,9 @@ class Gameguanli extends egret.DisplayObjectContainer{
 			if(Gameguanli.Kongzhitai().dingbuui.parent){
 				this.removeChild(Gameguanli.Kongzhitai().dingbuui);
 			}
+			if(Gameguanli.Kongzhitai().paihangbangdaui.parent){
+				this.removeChild(Gameguanli.Kongzhitai().paihangbangdaui);
+			}
 			this.addChild(Gameguanli.Kongzhitai().waichudajie);
 			this.addChild(Gameguanli.Kongzhitai().dibuui);
 			this.addChild(Gameguanli.Kongzhitai().dingbuui);
@@ -192,15 +203,45 @@ class Gameguanli extends egret.DisplayObjectContainer{
 			if(Gameguanli.Kongzhitai().dingbuui.parent){
 				this.removeChild(Gameguanli.Kongzhitai().dingbuui);
 			}
+			if(Gameguanli.Kongzhitai().paihangbangdaui.parent){
+				this.removeChild(Gameguanli.Kongzhitai().paihangbangdaui);
+			}
 			this.addChild(Gameguanli.Kongzhitai().jiatingjiemian);
 			this.addChild(Gameguanli.Kongzhitai().dibuui);
 			this.addChild(Gameguanli.Kongzhitai().dingbuui);
 			Fandianjisuan.chushihuajisuan(0);
 			Gameguanli.Kongzhitai().jiatingjiemian.chushihua();
 //			Gameguanli.Kongzhitai().waichudajie.chushihua();
-		}
+		};
+		if (canshu1 == "paihang"){
+			if(Gameguanli.Kongzhitai().waichudajie.parent){
+				this.removeChild(Gameguanli.Kongzhitai().waichudajie);
+			}
+			if(Gameguanli.Kongzhitai().jiatingjiemian.parent){
+				this.removeChild(Gameguanli.Kongzhitai().jiatingjiemian);
+			}
+			if(Gameguanli.Kongzhitai().dibuui.parent){
+				this.removeChild(Gameguanli.Kongzhitai().dibuui);
+			}
+			if(Gameguanli.Kongzhitai().dingbuui.parent){
+				this.removeChild(Gameguanli.Kongzhitai().dingbuui);
+			}
+			if(Gameguanli.Kongzhitai().zhujiemian.parent){
+				this.removeChild(Gameguanli.Kongzhitai().zhujiemian);
+			}
+			if(Gameguanli.Kongzhitai().zhujiemiandingbu.parent){
+				this.removeChild(Gameguanli.Kongzhitai().zhujiemiandingbu);
+			}
+			this.paihangbangdaui = new Paihangbangjiemian();
+			this.addChild(this.paihangbangdaui);
+			this.addChild(Gameguanli.Kongzhitai().dingbuui);
+			this.addChild(Gameguanli.Kongzhitai().dibuui);
+			Fandianjisuan.chushihuajisuan(0);
+			this.paihangbangdaui.chushihua();	
+		};
 
 	}
+
 
 //饭店界面显示逻辑
 	public caipujiemian (leixing:string,kaiguan:string){

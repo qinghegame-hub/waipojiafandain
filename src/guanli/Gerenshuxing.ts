@@ -56,6 +56,9 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static dianshixinxi:any = 0;//电视已观看次数
     public static shafaxinxi:any = [];//沙发信息(当前已积累次数，当前可积累上限次数,下次增加时间戳,当前已累积体力数)
     public static lixianjiangli:any = [];//离线奖励(当前累积次数，当前可累积上限次数,当前时间戳，当前已累积金币值)
+    public static paiming:number = 100001;//当前世界排名
+    public static paihangbangshuju:any = [];//排行榜数据
+    public static qingqiupaihangfenshu:number;//上次请求的排行榜分数
 
 
     public static touxiangbaocunzhuangtai:boolean = false;
@@ -375,10 +378,7 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
                     }else{
                         chaochushijian1 = parseInt(Gerenshuxing.lixianjiangli[0]) + chaochushijian1;
                     }
-                    console.log(chaochushijian1);
                     zengjialixian = zengjialixian * chaochushijian1;
-                    console.log(zengjialixian);
-                    console.log(Gerenshuxing.lixianjiangli[2]);
                     Weblianjie.fasongshuju("code:092","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
                     + '"dangqiancishu"' +":"+ '"' + chaochushijian1 + '"' +","
                     + '"xiacishijian"' +":"+ '"' + xiajieduanshijian1 + '"' +","

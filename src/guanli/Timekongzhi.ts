@@ -10,7 +10,7 @@ class Timekongzhi extends egret.DisplayObjectContainer{
 	}
 
 	public shijianjisuan(){
-		let youxishijiandingshi = new egret.Timer(60000,0);
+		let youxishijiandingshi = new egret.Timer(6000,0);
 		youxishijiandingshi.addEventListener(egret.TimerEvent.TIMER,this.kaishijisuan,this);
 		youxishijiandingshi.start();
 	}

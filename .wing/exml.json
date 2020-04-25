@@ -293,5 +293,20 @@
         "path": "Waimaiduihuakuang.ts",
         "class": "Waimaiduihuakuang",
         "parentPath": ""
+    },
+    "1718b97472f": {
+        "path": "Paimingbiangengshang.ts",
+        "class": "Paimingbiangengshang",
+        "parentPath": ""
+    },
+    "1718ba16772": {
+        "path": "Paimingbiangengxia.ts",
+        "class": "Paimingbiangengxia",
+        "parentPath": ""
+    },
+    "171a7970bde": {
+        "path": "Paihangbangjiemian.ts",
+        "class": "Paihangbangjiemian",
+        "parentPath": ""
     }
 }
