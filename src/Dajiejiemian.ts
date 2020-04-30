@@ -61,10 +61,27 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 	public fandianpeizhi:any//饭店配置;
 	public keyishougou:boolean = false;//是否可以收购;
 
+	public guyuan1leixing:number;//雇员1的类型;
+	public guyuan2leixing:number;//雇员2的类型;
+	public guyuan3leixing:number;//雇员3的类型;
+
+	public guyuan1mingzi:string;
+	public guyuan2mingzi:string;
+	public guyuan3mingzi:string;
+
+	public guyuan1touxiang:string;
+	public guyuan2touxiang:string;
+	public guyuan3touxiang:string;
+
+	public guyuan1jiacheng:number;
+	public guyuan2jiacheng:number;
+	public guyuan3jiacheng:number;
+
 	public zhuanchangjiemian:Dianpurukou;//转场入口界面;
 	public suijijiemian:Tongyongquerenkuang;//弹出界面;
 	public jianglijiemian:Jianglijiesuanui;
 	public fandianjiemian:Dianpufandian;//饭店类店铺界面;
+	public fandianguyuan:Dianpuzhaopinui;//店铺招聘界面;
 
 
 	public constructor() {
@@ -800,7 +817,9 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 				break;
 			}
 		}
-		this.fandianjiemian.renqishu.text = this.fandianpeizhi[0];
+		let zuizongrenqi = parseInt(this.fandianpeizhi[0]) + parseInt(this.fandianpeizhi[18]) +parseInt( this.fandianpeizhi[19]) + parseInt(this.fandianpeizhi[20]);
+		let tishengrenqi = parseInt(this.fandianpeizhi[18]) +parseInt( this.fandianpeizhi[19]) + parseInt(this.fandianpeizhi[20]);
+		this.fandianjiemian.renqishu.text = "" + zuizongrenqi + "(" + tishengrenqi + ")";
 		this.fandianjiemian.zujinshu.text = this.fandianpeizhi[1];
 		this.fandianjiemian.zuqishu.text = this.fandianpeizhi[3] + "天";
 		this.fandianjiemian.but_xiaofei.addEventListener(egret.TouchEvent.TOUCH_TAP,this.xiaofeidianji,this);
@@ -819,6 +838,12 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 				this.fandianjiemian.but_shouyin.enabled = false;
 				this.fandianjiemian.but_shouyin.alpha = 0;
 				this.fandianjiemian.but_shougou.addEventListener(egret.TouchEvent.TOUCH_TAP,this.shougou,this);
+				this.fandianjiemian.but_guyuan1.enabled = false;
+				this.fandianjiemian.but_guyuan2.enabled = false;
+				this.fandianjiemian.but_guyuan3.enabled = false;
+				this.fandianjiemian.but_guyuan1.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjiguyuan1,this);
+				this.fandianjiemian.but_guyuan2.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjiguyuan2,this);
+				this.fandianjiemian.but_guyuan3.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjiguyuan3,this);
 				break;
 			case "1":
 				this.fandianjiemian.img_yinye.source = "img_shoufei1_png";
@@ -828,23 +853,1198 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 				this.fandianjiemian.but_shougou.alpha = 0;
 				this.fandianjiemian.but_shouyin.enabled = true;
 				this.fandianjiemian.but_shouyin.alpha = 1;
-				this.huoquzijitouxiang();
+				this.huoquzijitouxiang(Gerenshuxing.touxiang);
 				this.fandianjiemian.but_shouyin.addEventListener(egret.TouchEvent.TOUCH_TAP,this.shouyindianji,this);
+				this.fandianjiemian.but_guyuan1.enabled = true;
+				this.fandianjiemian.but_guyuan2.enabled = true;
+				this.fandianjiemian.but_guyuan3.enabled = true;
+				this.fandianjiemian.but_guyuan1.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjiguyuan1,this);
+				this.fandianjiemian.but_guyuan2.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjiguyuan2,this);
+				this.fandianjiemian.but_guyuan3.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjiguyuan3,this);
+				if(this.fandianpeizhi[7] == "0"){
+					this.fandianjiemian.guyuantouxiang1.source = "img_kongbaijiahao_png";
+				}else if(this.fandianpeizhi[7] == "2"){
+					this.jiazaiguyuan1touxiangsj(this.fandianpeizhi[11]);
+				}else if(this.fandianpeizhi[7] == "1"){
+					this.fandianjiemian.guyuantouxiang1.source = this.fandianpeizhi[11];
+				}
+				if(this.fandianpeizhi[8] == "0"){
+					this.fandianjiemian.guyuantouxiang2.source = "img_kongbaijiahao_png";
+				}else if(this.fandianpeizhi[8] == "2"){
+					this.jiazaiguyuan2touxiangsj(this.fandianpeizhi[13]);
+				}else if(this.fandianpeizhi[8] == "1"){
+					this.fandianjiemian.guyuantouxiang2.source = this.fandianpeizhi[13];
+				}
+				if(this.fandianpeizhi[9] == "0"){
+					this.fandianjiemian.guyuantouxiang3.source = "img_kongbaijiahao_png";
+				}else if(this.fandianpeizhi[9] == "2"){
+					this.jiazaiguyuan3touxiangsj(this.fandianpeizhi[15]);
+				}else if(this.fandianpeizhi[9] == "1"){
+					this.fandianjiemian.guyuantouxiang3.source = this.fandianpeizhi[15];
+				}
 				break;
 			default:
 				this.fandianjiemian.img_yinye.source = "img_shoufei_png";
 				this.fandianjiemian.shoufeishu.text = this.fandianpeizhi[2];
-				this.fandianjiemian.dianzhuming.text = "qitaren";
-				this.fandianjiemian.but_shougou.enabled = true;
+				this.fandianjiemian.dianzhuming.text = this.fandianpeizhi[16];
+				this.huoquzijitouxiang(this.fandianpeizhi[17]);
+				this.fandianjiemian.but_shougou.enabled = false;
 				this.fandianjiemian.but_shougou.alpha = 1;
 				this.fandianjiemian.but_shouyin.enabled = false;
 				this.fandianjiemian.but_shouyin.alpha = 0;
-				this.fandianjiemian.but_shougou.addEventListener(egret.TouchEvent.TOUCH_TAP,this.shougou,this);
+				this.fandianjiemian.but_shougou.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.shougou,this);
+				this.fandianjiemian.but_guyuan1.enabled = true;
+				this.fandianjiemian.but_guyuan2.enabled = true;
+				this.fandianjiemian.but_guyuan3.enabled = true;
+				this.fandianjiemian.but_guyuan1.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjiguyuan1,this);
+				this.fandianjiemian.but_guyuan2.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjiguyuan2,this);
+				this.fandianjiemian.but_guyuan3.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjiguyuan3,this);
+				if(this.fandianpeizhi[7] == "0"){
+					this.fandianjiemian.guyuantouxiang1.source = "img_kongbaijiahao_png";
+				}else if(this.fandianpeizhi[7] == "2"){
+					this.jiazaiguyuan1touxiangsj(this.fandianpeizhi[11]);
+				}else if(this.fandianpeizhi[7] == "1"){
+					this.fandianjiemian.guyuantouxiang1.source = this.fandianpeizhi[11];
+				}
+				if(this.fandianpeizhi[8] == "0"){
+					this.fandianjiemian.guyuantouxiang2.source = "img_kongbaijiahao_png";
+				}else if(this.fandianpeizhi[8] == "2"){
+					this.jiazaiguyuan2touxiangsj(this.fandianpeizhi[13]);
+				}else if(this.fandianpeizhi[8] == "1"){
+					this.fandianjiemian.guyuantouxiang2.source = this.fandianpeizhi[13];
+				}
+				if(this.fandianpeizhi[9] == "0"){
+					this.fandianjiemian.guyuantouxiang3.source = "img_kongbaijiahao_png";
+				}else if(this.fandianpeizhi[9] == "2"){
+					this.jiazaiguyuan3touxiangsj(this.fandianpeizhi[15]);
+				}else if(this.fandianpeizhi[9] == "1"){
+					this.fandianjiemian.guyuantouxiang3.source = this.fandianpeizhi[15];
+				}
 		}
+
 
 	}
 
-	public huoquzijitouxiang(){
+	//雇员界面
+	public dianjiguyuan1(){
+		this.fandianguyuan = new Dianpuzhaopinui();
+		this.fandianjiemian.addChild(this.fandianguyuan);
+		this.fandianguyuan.img_heisezhezao1.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbiguyuan,this);
+		if(this.fandianpeizhi[4] == "2"){
+			if(this.fandianpeizhi[7] == "0"){
+				this.fandianguyuan.xitongtouxiang.source = "kongbaitouxiang_png";
+				this.fandianguyuan.mingzi.text = "暂无雇员";
+				this.fandianguyuan.jinengshu.text = "无";
+				this.fandianguyuan.shuoming.text = "招聘可寻觅店员";
+			}else if(this.fandianpeizhi[7] == "1"){
+				this.fandianguyuan.xitongtouxiang.source = this.fandianpeizhi[11];
+				this.fandianguyuan.mingzi.text = this.fandianpeizhi[10];
+				this.fandianguyuan.jinengshu.text = "人气 + " + this.fandianpeizhi[18];
+				this.fandianguyuan.shuoming.text = "招聘可寻觅店员";
+			}else if(this.fandianpeizhi[7] == "2"){
+				this.guyuanjiazaitouxiang1(this.fandianpeizhi[11]);
+				this.fandianguyuan.mingzi.text = this.fandianpeizhi[10];
+				this.fandianguyuan.jinengshu.text = "人气 + " + this.fandianpeizhi[18];
+				this.fandianguyuan.shuoming.text = "招聘可寻觅店员";
+			}
+			this.fandianguyuan.but_zhaopin.enabled = false;
+			this.fandianguyuan.but_zhaopin.alpha = 0;
+			this.fandianguyuan.but_jiepin.enabled = false;
+			this.fandianguyuan.but_jiepin.alpha = 0;
+		}else if(this.fandianpeizhi[4] == "1"){
+			if(this.fandianpeizhi[7] == "0"){
+				this.fandianguyuan.xitongtouxiang.source = "kongbaitouxiang_png";
+				this.fandianguyuan.mingzi.text = "暂无雇员";
+				this.fandianguyuan.jinengshu.text = "无";
+				this.fandianguyuan.but_zhaopin.enabled = true;
+				this.fandianguyuan.but_zhaopin.alpha = 1;
+				this.fandianguyuan.but_zhaopin.addEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+				this.fandianguyuan.but_jiepin.enabled = false;
+				this.fandianguyuan.but_jiepin.alpha = 0;
+				this.fandianguyuan.shuoming.text = "招聘可寻觅店员";
+			}else if(this.fandianpeizhi[7] == "1"){
+				this.fandianguyuan.xitongtouxiang.source = this.fandianpeizhi[11];
+				this.fandianguyuan.mingzi.text = this.fandianpeizhi[10];
+				this.fandianguyuan.jinengshu.text = "人气 + " + this.fandianpeizhi[18];
+				this.fandianguyuan.but_zhaopin.enabled = false;
+				this.fandianguyuan.but_zhaopin.alpha = 0;
+				this.fandianguyuan.but_jiepin.enabled = true;
+				this.fandianguyuan.but_jiepin.alpha = 1;
+				this.fandianguyuan.but_jiepin.addEventListener(egret.TouchEvent.TOUCH_TAP,this.jiepinguyuan1,this);
+				this.fandianguyuan.shuoming.text = "解聘后可重新招募";
+			}else if(this.fandianpeizhi[7] == "2"){
+				this.guyuanjiazaitouxiang1(this.fandianpeizhi[11]);
+				this.fandianguyuan.mingzi.text = this.fandianpeizhi[10];
+				this.fandianguyuan.jinengshu.text = "人气 + " + this.fandianpeizhi[18];
+				this.fandianguyuan.but_zhaopin.enabled = false;
+				this.fandianguyuan.but_zhaopin.alpha = 0;
+				this.fandianguyuan.but_jiepin.enabled = true;
+				this.fandianguyuan.but_jiepin.alpha = 1;
+				this.fandianguyuan.but_jiepin.addEventListener(egret.TouchEvent.TOUCH_TAP,this.jiepinguyuan1,this);
+				this.fandianguyuan.shuoming.text = "解聘后可重新招募";
+			}
+		}
+	}
+
+	public dianjiguyuan2(){
+		this.fandianguyuan = new Dianpuzhaopinui();
+		this.fandianjiemian.addChild(this.fandianguyuan);
+		this.fandianguyuan.img_heisezhezao1.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbiguyuan,this);
+		if(this.fandianpeizhi[4] == "2"){
+			if(this.fandianpeizhi[8] == "0"){
+				this.fandianguyuan.xitongtouxiang.source = "kongbaitouxiang_png";
+				this.fandianguyuan.mingzi.text = "暂无雇员";
+				this.fandianguyuan.jinengshu.text = "无";
+				this.fandianguyuan.shuoming.text = "招聘可寻觅店员";
+			}else if(this.fandianpeizhi[8] == "1"){
+				this.fandianguyuan.xitongtouxiang.source = this.fandianpeizhi[13];
+				this.fandianguyuan.mingzi.text = this.fandianpeizhi[12];
+				this.fandianguyuan.jinengshu.text = "人气 + " + this.fandianpeizhi[19];
+				this.fandianguyuan.shuoming.text = "招聘可寻觅店员";
+			}else if(this.fandianpeizhi[8] == "2"){
+				this.guyuanjiazaitouxiang1(this.fandianpeizhi[13]);
+				this.fandianguyuan.mingzi.text = this.fandianpeizhi[12];
+				this.fandianguyuan.jinengshu.text = "人气 + " + this.fandianpeizhi[19];
+				this.fandianguyuan.shuoming.text = "招聘可寻觅店员";
+			}
+			this.fandianguyuan.but_zhaopin.enabled = false;
+			this.fandianguyuan.but_zhaopin.alpha = 0;
+			this.fandianguyuan.but_jiepin.enabled = false;
+			this.fandianguyuan.but_jiepin.alpha = 0;
+		}else if(this.fandianpeizhi[4] == "1"){
+			if(this.fandianpeizhi[8] == "0"){
+				this.fandianguyuan.xitongtouxiang.source = "kongbaitouxiang_png";
+				this.fandianguyuan.mingzi.text = "暂无雇员";
+				this.fandianguyuan.jinengshu.text = "无";
+				this.fandianguyuan.but_zhaopin.enabled = true;
+				this.fandianguyuan.but_zhaopin.alpha = 1;
+				this.fandianguyuan.but_zhaopin.addEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan2,this);
+				this.fandianguyuan.but_jiepin.enabled = false;
+				this.fandianguyuan.but_jiepin.alpha = 0;
+				this.fandianguyuan.shuoming.text = "招聘可寻觅店员";
+			}else if(this.fandianpeizhi[8] == "1"){
+				this.fandianguyuan.xitongtouxiang.source = this.fandianpeizhi[13];
+				this.fandianguyuan.mingzi.text = this.fandianpeizhi[12];
+				this.fandianguyuan.jinengshu.text = "人气 + " + this.fandianpeizhi[19];
+				this.fandianguyuan.but_zhaopin.enabled = false;
+				this.fandianguyuan.but_zhaopin.alpha = 0;
+				this.fandianguyuan.but_jiepin.enabled = true;
+				this.fandianguyuan.but_jiepin.alpha = 1;
+				this.fandianguyuan.but_jiepin.addEventListener(egret.TouchEvent.TOUCH_TAP,this.jiepinguyuan2,this);
+				this.fandianguyuan.shuoming.text = "解聘后可重新招募";
+			}else if(this.fandianpeizhi[8] == "2"){
+				this.guyuanjiazaitouxiang1(this.fandianpeizhi[13]);
+				this.fandianguyuan.mingzi.text = this.fandianpeizhi[12];
+				this.fandianguyuan.jinengshu.text = "人气 + " + this.fandianpeizhi[19];
+				this.fandianguyuan.but_zhaopin.enabled = false;
+				this.fandianguyuan.but_zhaopin.alpha = 0;
+				this.fandianguyuan.but_jiepin.enabled = true;
+				this.fandianguyuan.but_jiepin.alpha = 1;
+				this.fandianguyuan.but_jiepin.addEventListener(egret.TouchEvent.TOUCH_TAP,this.jiepinguyuan2,this);
+				this.fandianguyuan.shuoming.text = "解聘后可重新招募";
+			}
+		}
+		
+	}
+
+	public dianjiguyuan3(){
+		this.fandianguyuan = new Dianpuzhaopinui();
+		this.fandianjiemian.addChild(this.fandianguyuan);
+		this.fandianguyuan.img_heisezhezao1.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbiguyuan,this);
+		if(this.fandianpeizhi[4] == "2"){
+			if(this.fandianpeizhi[9] == "0"){
+				this.fandianguyuan.xitongtouxiang.source = "kongbaitouxiang_png";
+				this.fandianguyuan.mingzi.text = "暂无雇员";
+				this.fandianguyuan.jinengshu.text = "无";
+				this.fandianguyuan.shuoming.text = "招聘可寻觅店员";
+			}else if(this.fandianpeizhi[9] == "1"){
+				this.fandianguyuan.xitongtouxiang.source = this.fandianpeizhi[15];
+				this.fandianguyuan.mingzi.text = this.fandianpeizhi[14];
+				this.fandianguyuan.jinengshu.text = "人气 + " + this.fandianpeizhi[20];
+				this.fandianguyuan.shuoming.text = "招聘可寻觅店员";
+			}else if(this.fandianpeizhi[9] == "2"){
+				this.guyuanjiazaitouxiang1(this.fandianpeizhi[15]);
+				this.fandianguyuan.mingzi.text = this.fandianpeizhi[14];
+				this.fandianguyuan.jinengshu.text = "人气 + " + this.fandianpeizhi[20];
+				this.fandianguyuan.shuoming.text = "招聘可寻觅店员";
+			}
+			this.fandianguyuan.but_zhaopin.enabled = false;
+			this.fandianguyuan.but_zhaopin.alpha = 0;
+			this.fandianguyuan.but_jiepin.enabled = false;
+			this.fandianguyuan.but_jiepin.alpha = 0;
+		}else if(this.fandianpeizhi[4] == "1"){
+			if(this.fandianpeizhi[9] == "0"){
+				this.fandianguyuan.xitongtouxiang.source = "kongbaitouxiang_png";
+				this.fandianguyuan.mingzi.text = "暂无雇员";
+				this.fandianguyuan.jinengshu.text = "无";
+				this.fandianguyuan.but_zhaopin.enabled = true;
+				this.fandianguyuan.but_zhaopin.alpha = 1;
+				this.fandianguyuan.but_zhaopin.addEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan3,this);
+				this.fandianguyuan.but_jiepin.enabled = false;
+				this.fandianguyuan.but_jiepin.alpha = 0;
+				this.fandianguyuan.shuoming.text = "招聘可寻觅店员";
+			}else if(this.fandianpeizhi[9] == "1"){
+				this.fandianguyuan.xitongtouxiang.source = this.fandianpeizhi[15];
+				this.fandianguyuan.mingzi.text = this.fandianpeizhi[14];
+				this.fandianguyuan.jinengshu.text = "人气 + " + this.fandianpeizhi[20];
+				this.fandianguyuan.but_zhaopin.enabled = false;
+				this.fandianguyuan.but_zhaopin.alpha = 0;
+				this.fandianguyuan.but_jiepin.enabled = true;
+				this.fandianguyuan.but_jiepin.alpha = 1;
+				this.fandianguyuan.but_jiepin.addEventListener(egret.TouchEvent.TOUCH_TAP,this.jiepinguyuan3,this);
+				this.fandianguyuan.shuoming.text = "解聘后可重新招募";
+			}else if(this.fandianpeizhi[9] == "2"){
+				this.guyuanjiazaitouxiang1(this.fandianpeizhi[15]);
+				this.fandianguyuan.mingzi.text = this.fandianpeizhi[14];
+				this.fandianguyuan.jinengshu.text = "人气 + " + this.fandianpeizhi[20];
+				this.fandianguyuan.but_zhaopin.enabled = false;
+				this.fandianguyuan.but_zhaopin.alpha = 0;
+				this.fandianguyuan.but_jiepin.enabled = true;
+				this.fandianguyuan.but_jiepin.alpha = 1;
+				this.fandianguyuan.but_jiepin.addEventListener(egret.TouchEvent.TOUCH_TAP,this.jiepinguyuan3,this);
+				this.fandianguyuan.shuoming.text = "解聘后可重新招募";
+			}
+		}		
+	}
+
+
+
+	public zhaopinguyuan2(){
+		this.guyuan2leixing = 0;
+		this.guyuan2mingzi = "0";
+	 	this.guyuan2touxiang = "0";
+	 	this.guyuan2jiacheng = 0;
+		let npcbiao = RES.getRes("gukehanhuabiao_json");
+		let suijinpc = Math.floor(Math.random() * npcbiao.length);
+		let mingzi = npcbiao[suijinpc].name;
+		let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+		let jiacheng = Math.floor(Math.random() * 15) + 1;
+		let suijishijie = Math.floor(Math.random() * 100);
+		if(suijishijie > 80){
+			if(Gerenshuxing.paihangbangshuju.length >= 60){
+				let suijishu = Math.floor(Math.random() * 50);
+				jiacheng = 50 - suijishu + 20;
+				mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+				touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+				this.guyuanjiazaitouxiang1(touxiang);			
+			}
+		}
+		this.fandianguyuan.xitongtouxiang.source = touxiang;
+		this.fandianguyuan.mingzi.text = mingzi;
+		this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+		this.fandianguyuan.shuoming.text = "正在寻觅店员";
+		this.fandianguyuan.but_zhaopin.enabled = false;
+		this.fandianguyuan.but_zhaopin.alpha = 0;
+		this.fandianguyuan.but_jiepin.enabled = false;
+		this.fandianguyuan.but_jiepin.alpha = 0;
+		this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+		egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(500).call(()=>{
+			let npcbiao = RES.getRes("gukehanhuabiao_json");
+			let suijinpc = Math.floor(Math.random() * npcbiao.length);
+			let mingzi = npcbiao[suijinpc].name;
+			let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+			let jiacheng = Math.floor(Math.random() * 15) + 1;
+			let suijishijie = Math.floor(Math.random() * 100);
+			if(suijishijie > 80){
+				if(Gerenshuxing.paihangbangshuju.length >= 60){
+					let suijishu = Math.floor(Math.random() * 50);
+					jiacheng = 50 - suijishu + 20;
+					mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+					touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+					this.guyuanjiazaitouxiang1(touxiang);			
+				}
+			}
+			this.fandianguyuan.xitongtouxiang.source = touxiang;
+			this.fandianguyuan.mingzi.text = mingzi;
+			this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+			this.fandianguyuan.shuoming.text = "正在寻觅店员";
+			this.fandianguyuan.but_zhaopin.enabled = false;
+			this.fandianguyuan.but_zhaopin.alpha = 0;
+			this.fandianguyuan.but_jiepin.enabled = false;
+			this.fandianguyuan.but_jiepin.alpha = 0;
+			this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+			egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(800).call(()=>{
+				let npcbiao = RES.getRes("gukehanhuabiao_json");
+				let suijinpc = Math.floor(Math.random() * npcbiao.length);
+				let mingzi = npcbiao[suijinpc].name;
+				let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+				let jiacheng = Math.floor(Math.random() * 15) + 1;
+				let suijishijie = Math.floor(Math.random() * 100);
+				if(suijishijie > 80){
+					if(Gerenshuxing.paihangbangshuju.length >= 60){
+						let suijishu = Math.floor(Math.random() * 50);
+						jiacheng = 50 - suijishu + 20;
+						mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+						touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+						this.guyuanjiazaitouxiang1(touxiang);			
+					}
+				}
+				this.fandianguyuan.xitongtouxiang.source = touxiang;
+				this.fandianguyuan.mingzi.text = mingzi;
+				this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+				this.fandianguyuan.shuoming.text = "正在寻觅店员";
+				this.fandianguyuan.but_zhaopin.enabled = false;
+				this.fandianguyuan.but_zhaopin.alpha = 0;
+				this.fandianguyuan.but_jiepin.enabled = false;
+				this.fandianguyuan.but_jiepin.alpha = 0;
+				this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+				egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1100).call(()=>{
+					let npcbiao = RES.getRes("gukehanhuabiao_json");
+					let suijinpc = Math.floor(Math.random() * npcbiao.length);
+					let mingzi = npcbiao[suijinpc].name;
+					let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+					let jiacheng = Math.floor(Math.random() * 15) + 1;
+					let suijishijie = Math.floor(Math.random() * 100);
+					if(suijishijie > 80){
+						if(Gerenshuxing.paihangbangshuju.length >= 60){
+							let suijishu = Math.floor(Math.random() * 50);
+							jiacheng = 50 - suijishu + 20;
+							mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+							touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+							this.guyuanjiazaitouxiang1(touxiang);			
+						}
+					}
+					this.fandianguyuan.xitongtouxiang.source = touxiang;
+					this.fandianguyuan.mingzi.text = mingzi;
+					this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+					this.fandianguyuan.shuoming.text = "正在寻觅店员";
+					this.fandianguyuan.but_zhaopin.enabled = false;
+					this.fandianguyuan.but_zhaopin.alpha = 0;
+					this.fandianguyuan.but_jiepin.enabled = false;
+					this.fandianguyuan.but_jiepin.alpha = 0;
+					this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+					egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1200).call(()=>{
+						let npcbiao = RES.getRes("gukehanhuabiao_json");
+						let suijinpc = Math.floor(Math.random() * npcbiao.length);
+						let mingzi = npcbiao[suijinpc].name;
+						let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+						let jiacheng = Math.floor(Math.random() * 15) + 1;
+						let suijishijie = Math.floor(Math.random() * 100);
+						if(suijishijie > 80){
+							if(Gerenshuxing.paihangbangshuju.length >= 60){
+								let suijishu = Math.floor(Math.random() * 50);
+								jiacheng = 50 - suijishu + 20;
+								mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+								touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+								this.guyuanjiazaitouxiang1(touxiang);			
+							}
+						}
+						this.fandianguyuan.xitongtouxiang.source = touxiang;
+						this.fandianguyuan.mingzi.text = mingzi;
+						this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+						this.fandianguyuan.shuoming.text = "正在寻觅店员";
+						this.fandianguyuan.but_zhaopin.enabled = false;
+						this.fandianguyuan.but_zhaopin.alpha = 0;
+						this.fandianguyuan.but_jiepin.enabled = false;
+						this.fandianguyuan.but_jiepin.alpha = 0;
+						this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+						egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1300).call(()=>{
+							let npcbiao = RES.getRes("gukehanhuabiao_json");
+							let suijinpc = Math.floor(Math.random() * npcbiao.length);
+							let mingzi = npcbiao[suijinpc].name;
+							let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+							let jiacheng = Math.floor(Math.random() * 15) + 1;
+							let suijishijie = Math.floor(Math.random() * 100);
+							if(suijishijie > 80){
+								if(Gerenshuxing.paihangbangshuju.length >= 60){
+									let suijishu = Math.floor(Math.random() * 50);
+									jiacheng = 50 - suijishu + 20;
+									mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+									touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+									this.guyuanjiazaitouxiang1(touxiang);			
+								}
+							}
+							this.fandianguyuan.xitongtouxiang.source = touxiang;
+							this.fandianguyuan.mingzi.text = mingzi;
+							this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+							this.fandianguyuan.shuoming.text = "正在寻觅店员";
+							this.fandianguyuan.but_zhaopin.enabled = false;
+							this.fandianguyuan.but_zhaopin.alpha = 0;
+							this.fandianguyuan.but_jiepin.enabled = false;
+							this.fandianguyuan.but_jiepin.alpha = 0;
+							this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+							egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1400).call(()=>{
+								let npcbiao = RES.getRes("gukehanhuabiao_json");
+								let suijinpc = Math.floor(Math.random() * npcbiao.length);
+								let mingzi = npcbiao[suijinpc].name;
+								let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+								let jiacheng = Math.floor(Math.random() * 15) + 1;
+								let suijishijie = Math.floor(Math.random() * 100);
+								if(suijishijie > 80){
+									if(Gerenshuxing.paihangbangshuju.length >= 60){
+										let suijishu = Math.floor(Math.random() * 50);
+										jiacheng = 50 - suijishu + 20;
+										mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+										touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+										this.guyuanjiazaitouxiang1(touxiang);			
+									}
+								}
+								this.fandianguyuan.xitongtouxiang.source = touxiang;
+								this.fandianguyuan.mingzi.text = mingzi;
+								this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+								this.fandianguyuan.shuoming.text = "正在寻觅店员";
+								this.fandianguyuan.but_zhaopin.enabled = false;
+								this.fandianguyuan.but_zhaopin.alpha = 0;
+								this.fandianguyuan.but_jiepin.enabled = false;
+								this.fandianguyuan.but_jiepin.alpha = 0;
+								this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+								egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1500).call(()=>{
+									let npcbiao = RES.getRes("gukehanhuabiao_json");
+									let suijinpc = Math.floor(Math.random() * npcbiao.length);
+									let mingzi = npcbiao[suijinpc].name;
+									let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+									let jiacheng = Math.floor(Math.random() * 15) + 1;
+									let suijishijie = Math.floor(Math.random() * 100);
+									if(suijishijie > 80){
+										if(Gerenshuxing.paihangbangshuju.length >= 60){
+											let suijishu = Math.floor(Math.random() * 50);
+											jiacheng = 50 - suijishu + 20;
+											mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+											touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+											this.guyuanjiazaitouxiang1(touxiang);			
+										}
+									}
+									this.fandianguyuan.xitongtouxiang.source = touxiang;
+									this.fandianguyuan.mingzi.text = mingzi;
+									this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+									this.fandianguyuan.shuoming.text = "正在寻觅店员";
+									this.fandianguyuan.but_zhaopin.enabled = false;
+									this.fandianguyuan.but_zhaopin.alpha = 0;
+									this.fandianguyuan.but_jiepin.enabled = false;
+									this.fandianguyuan.but_jiepin.alpha = 0;
+									this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+									egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1600).call(()=>{
+										let npcbiao = RES.getRes("gukehanhuabiao_json");
+										let suijinpc = Math.floor(Math.random() * npcbiao.length);
+										let mingzi = npcbiao[suijinpc].name;
+										let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+										let jiacheng = Math.floor(Math.random() * 15) + 1;
+										let suijishijie = Math.floor(Math.random() * 100);
+										if(suijishijie > 80){
+											if(Gerenshuxing.paihangbangshuju.length >= 60){
+												let suijishu = Math.floor(Math.random() * 50);
+												jiacheng = 50 - suijishu + 20;
+												mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+												touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+												this.guyuanjiazaitouxiang1(touxiang);			
+											}
+										}
+										this.fandianguyuan.xitongtouxiang.source = touxiang;
+										this.fandianguyuan.mingzi.text = mingzi;
+										this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+										this.fandianguyuan.shuoming.text = "正在寻觅店员";
+										this.fandianguyuan.but_zhaopin.enabled = false;
+										this.fandianguyuan.but_zhaopin.alpha = 0;
+										this.fandianguyuan.but_jiepin.enabled = false;
+										this.fandianguyuan.but_jiepin.alpha = 0;
+										this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+										egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1700).call(()=>{
+											let npcbiao = RES.getRes("gukehanhuabiao_json");
+											let suijinpc = Math.floor(Math.random() * npcbiao.length);
+											let mingzi = npcbiao[suijinpc].name;
+											let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+											let jiacheng = Math.floor(Math.random() * 15) + 1;
+											let suijishijie = Math.floor(Math.random() * 100);
+											this.guyuan2leixing = 1;
+											if(suijishijie > 80){
+												if(Gerenshuxing.paihangbangshuju.length >= 60){
+													let suijishu = Math.floor(Math.random() * 50);
+													jiacheng = 50 - suijishu + 20;
+													mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+													touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+													this.guyuan2leixing = 2;
+													this.guyuanjiazaitouxiang1(touxiang);			
+												}
+											}
+											this.guyuan2mingzi = mingzi;
+											this.guyuan2touxiang = touxiang;
+											this.guyuan2jiacheng = jiacheng;
+											this.fandianguyuan.xitongtouxiang.source = touxiang;
+											this.fandianguyuan.mingzi.text = mingzi;
+											this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+											this.fandianguyuan.shuoming.text = "正在寻觅店员";
+											this.fandianguyuan.but_zhaopin.enabled = false;
+											this.fandianguyuan.but_zhaopin.alpha = 0;
+											this.fandianguyuan.but_jiepin.enabled = false;
+											this.fandianguyuan.but_jiepin.alpha = 0;
+											this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+											egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1800).call(()=>{
+												Gerencaipudengji.jiedaoshuju[this.dangqianbushu][8] = this.guyuan2leixing;
+												Gerencaipudengji.jiedaoshuju[this.dangqianbushu][12] = this.guyuan2mingzi;
+												Gerencaipudengji.jiedaoshuju[this.dangqianbushu][13] = this.guyuan2touxiang;
+												Gerencaipudengji.jiedaoshuju[this.dangqianbushu][19] = this.guyuan2jiacheng;
+												Weblianjie.fasongshuju("code:101","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
+													+ '"guyuanhao"' +":"+ '"2"' +","
+													+ '"guyuanleixing"' +":"+ '"' + this.guyuan2leixing + '"' +","
+													+ '"guyuanmingzi"' +":"+ '"' + this.guyuan2mingzi + '"' +","
+													+ '"guyuantouxiang"' +":"+ '"' + this.guyuan2touxiang + '"' +","
+													+ '"dianpuid"' +":"+ '"' + this.dangqianbushu + '"' +","
+													+ '"guyuanjiacheng"' +":"+ '"' + this.guyuan2jiacheng + '"' +"}");
+												this.fandianjiemian.removeChild(this.fandianguyuan);
+												Gameguanli.Kongzhitai().dingbuui.removeChild(this.fandianjiemian);
+												this.fandianbufen();
+												this.dianjiguyuan2();
+											})
+										})
+									})
+								})
+							})
+						})
+					})
+				})
+			})
+		})
+	}
+
+	public zhaopinguyuan3(){
+		this.guyuan3leixing = 0;
+		this.guyuan3mingzi = "0";
+	 	this.guyuan3touxiang = "0";
+	 	this.guyuan3jiacheng = 0;
+		let npcbiao = RES.getRes("gukehanhuabiao_json");
+		let suijinpc = Math.floor(Math.random() * npcbiao.length);
+		let mingzi = npcbiao[suijinpc].name;
+		let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+		let jiacheng = Math.floor(Math.random() * 15) + 1;
+		let suijishijie = Math.floor(Math.random() * 100);
+		if(suijishijie > 80){
+			if(Gerenshuxing.paihangbangshuju.length >= 60){
+				let suijishu = Math.floor(Math.random() * 50);
+				jiacheng = 50 - suijishu + 20;
+				mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+				touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+				this.guyuanjiazaitouxiang1(touxiang);			
+			}
+		}
+		this.fandianguyuan.xitongtouxiang.source = touxiang;
+		this.fandianguyuan.mingzi.text = mingzi;
+		this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+		this.fandianguyuan.shuoming.text = "正在寻觅店员";
+		this.fandianguyuan.but_zhaopin.enabled = false;
+		this.fandianguyuan.but_zhaopin.alpha = 0;
+		this.fandianguyuan.but_jiepin.enabled = false;
+		this.fandianguyuan.but_jiepin.alpha = 0;
+		this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+		egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(500).call(()=>{
+			let npcbiao = RES.getRes("gukehanhuabiao_json");
+			let suijinpc = Math.floor(Math.random() * npcbiao.length);
+			let mingzi = npcbiao[suijinpc].name;
+			let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+			let jiacheng = Math.floor(Math.random() * 15) + 1;
+			let suijishijie = Math.floor(Math.random() * 100);
+			if(suijishijie > 80){
+				if(Gerenshuxing.paihangbangshuju.length >= 60){
+					let suijishu = Math.floor(Math.random() * 50);
+					jiacheng = 50 - suijishu + 20;
+					mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+					touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+					this.guyuanjiazaitouxiang1(touxiang);			
+				}
+			}
+			this.fandianguyuan.xitongtouxiang.source = touxiang;
+			this.fandianguyuan.mingzi.text = mingzi;
+			this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+			this.fandianguyuan.shuoming.text = "正在寻觅店员";
+			this.fandianguyuan.but_zhaopin.enabled = false;
+			this.fandianguyuan.but_zhaopin.alpha = 0;
+			this.fandianguyuan.but_jiepin.enabled = false;
+			this.fandianguyuan.but_jiepin.alpha = 0;
+			this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+			egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(800).call(()=>{
+				let npcbiao = RES.getRes("gukehanhuabiao_json");
+				let suijinpc = Math.floor(Math.random() * npcbiao.length);
+				let mingzi = npcbiao[suijinpc].name;
+				let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+				let jiacheng = Math.floor(Math.random() * 15) + 1;
+				let suijishijie = Math.floor(Math.random() * 100);
+				if(suijishijie > 80){
+					if(Gerenshuxing.paihangbangshuju.length >= 60){
+						let suijishu = Math.floor(Math.random() * 50);
+						jiacheng = 50 - suijishu + 20;
+						mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+						touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+						this.guyuanjiazaitouxiang1(touxiang);			
+					}
+				}
+				this.fandianguyuan.xitongtouxiang.source = touxiang;
+				this.fandianguyuan.mingzi.text = mingzi;
+				this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+				this.fandianguyuan.shuoming.text = "正在寻觅店员";
+				this.fandianguyuan.but_zhaopin.enabled = false;
+				this.fandianguyuan.but_zhaopin.alpha = 0;
+				this.fandianguyuan.but_jiepin.enabled = false;
+				this.fandianguyuan.but_jiepin.alpha = 0;
+				this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+				egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1100).call(()=>{
+					let npcbiao = RES.getRes("gukehanhuabiao_json");
+					let suijinpc = Math.floor(Math.random() * npcbiao.length);
+					let mingzi = npcbiao[suijinpc].name;
+					let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+					let jiacheng = Math.floor(Math.random() * 15) + 1;
+					let suijishijie = Math.floor(Math.random() * 100);
+					if(suijishijie > 80){
+						if(Gerenshuxing.paihangbangshuju.length >= 60){
+							let suijishu = Math.floor(Math.random() * 50);
+							jiacheng = 50 - suijishu + 20;
+							mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+							touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+							this.guyuanjiazaitouxiang1(touxiang);			
+						}
+					}
+					this.fandianguyuan.xitongtouxiang.source = touxiang;
+					this.fandianguyuan.mingzi.text = mingzi;
+					this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+					this.fandianguyuan.shuoming.text = "正在寻觅店员";
+					this.fandianguyuan.but_zhaopin.enabled = false;
+					this.fandianguyuan.but_zhaopin.alpha = 0;
+					this.fandianguyuan.but_jiepin.enabled = false;
+					this.fandianguyuan.but_jiepin.alpha = 0;
+					this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+					egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1200).call(()=>{
+						let npcbiao = RES.getRes("gukehanhuabiao_json");
+						let suijinpc = Math.floor(Math.random() * npcbiao.length);
+						let mingzi = npcbiao[suijinpc].name;
+						let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+						let jiacheng = Math.floor(Math.random() * 15) + 1;
+						let suijishijie = Math.floor(Math.random() * 100);
+						if(suijishijie > 80){
+							if(Gerenshuxing.paihangbangshuju.length >= 60){
+								let suijishu = Math.floor(Math.random() * 50);
+								jiacheng = 50 - suijishu + 20;
+								mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+								touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+								this.guyuanjiazaitouxiang1(touxiang);			
+							}
+						}
+						this.fandianguyuan.xitongtouxiang.source = touxiang;
+						this.fandianguyuan.mingzi.text = mingzi;
+						this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+						this.fandianguyuan.shuoming.text = "正在寻觅店员";
+						this.fandianguyuan.but_zhaopin.enabled = false;
+						this.fandianguyuan.but_zhaopin.alpha = 0;
+						this.fandianguyuan.but_jiepin.enabled = false;
+						this.fandianguyuan.but_jiepin.alpha = 0;
+						this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+						egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1300).call(()=>{
+							let npcbiao = RES.getRes("gukehanhuabiao_json");
+							let suijinpc = Math.floor(Math.random() * npcbiao.length);
+							let mingzi = npcbiao[suijinpc].name;
+							let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+							let jiacheng = Math.floor(Math.random() * 15) + 1;
+							let suijishijie = Math.floor(Math.random() * 100);
+							if(suijishijie > 80){
+								if(Gerenshuxing.paihangbangshuju.length >= 60){
+									let suijishu = Math.floor(Math.random() * 50);
+									jiacheng = 50 - suijishu + 20;
+									mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+									touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+									this.guyuanjiazaitouxiang1(touxiang);			
+								}
+							}
+							this.fandianguyuan.xitongtouxiang.source = touxiang;
+							this.fandianguyuan.mingzi.text = mingzi;
+							this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+							this.fandianguyuan.shuoming.text = "正在寻觅店员";
+							this.fandianguyuan.but_zhaopin.enabled = false;
+							this.fandianguyuan.but_zhaopin.alpha = 0;
+							this.fandianguyuan.but_jiepin.enabled = false;
+							this.fandianguyuan.but_jiepin.alpha = 0;
+							this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+							egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1400).call(()=>{
+								let npcbiao = RES.getRes("gukehanhuabiao_json");
+								let suijinpc = Math.floor(Math.random() * npcbiao.length);
+								let mingzi = npcbiao[suijinpc].name;
+								let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+								let jiacheng = Math.floor(Math.random() * 15) + 1;
+								let suijishijie = Math.floor(Math.random() * 100);
+								if(suijishijie > 80){
+									if(Gerenshuxing.paihangbangshuju.length >= 60){
+										let suijishu = Math.floor(Math.random() * 50);
+										jiacheng = 50 - suijishu + 20;
+										mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+										touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+										this.guyuanjiazaitouxiang1(touxiang);			
+									}
+								}
+								this.fandianguyuan.xitongtouxiang.source = touxiang;
+								this.fandianguyuan.mingzi.text = mingzi;
+								this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+								this.fandianguyuan.shuoming.text = "正在寻觅店员";
+								this.fandianguyuan.but_zhaopin.enabled = false;
+								this.fandianguyuan.but_zhaopin.alpha = 0;
+								this.fandianguyuan.but_jiepin.enabled = false;
+								this.fandianguyuan.but_jiepin.alpha = 0;
+								this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+								egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1500).call(()=>{
+									let npcbiao = RES.getRes("gukehanhuabiao_json");
+									let suijinpc = Math.floor(Math.random() * npcbiao.length);
+									let mingzi = npcbiao[suijinpc].name;
+									let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+									let jiacheng = Math.floor(Math.random() * 15) + 1;
+									let suijishijie = Math.floor(Math.random() * 100);
+									if(suijishijie > 80){
+										if(Gerenshuxing.paihangbangshuju.length >= 60){
+											let suijishu = Math.floor(Math.random() * 50);
+											jiacheng = 50 - suijishu + 20;
+											mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+											touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+											this.guyuanjiazaitouxiang1(touxiang);			
+										}
+									}
+									this.fandianguyuan.xitongtouxiang.source = touxiang;
+									this.fandianguyuan.mingzi.text = mingzi;
+									this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+									this.fandianguyuan.shuoming.text = "正在寻觅店员";
+									this.fandianguyuan.but_zhaopin.enabled = false;
+									this.fandianguyuan.but_zhaopin.alpha = 0;
+									this.fandianguyuan.but_jiepin.enabled = false;
+									this.fandianguyuan.but_jiepin.alpha = 0;
+									this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+									egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1600).call(()=>{
+										let npcbiao = RES.getRes("gukehanhuabiao_json");
+										let suijinpc = Math.floor(Math.random() * npcbiao.length);
+										let mingzi = npcbiao[suijinpc].name;
+										let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+										let jiacheng = Math.floor(Math.random() * 15) + 1;
+										let suijishijie = Math.floor(Math.random() * 100);
+										if(suijishijie > 80){
+											if(Gerenshuxing.paihangbangshuju.length >= 60){
+												let suijishu = Math.floor(Math.random() * 50);
+												jiacheng = 50 - suijishu + 20;
+												mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+												touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+												this.guyuanjiazaitouxiang1(touxiang);			
+											}
+										}
+										this.fandianguyuan.xitongtouxiang.source = touxiang;
+										this.fandianguyuan.mingzi.text = mingzi;
+										this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+										this.fandianguyuan.shuoming.text = "正在寻觅店员";
+										this.fandianguyuan.but_zhaopin.enabled = false;
+										this.fandianguyuan.but_zhaopin.alpha = 0;
+										this.fandianguyuan.but_jiepin.enabled = false;
+										this.fandianguyuan.but_jiepin.alpha = 0;
+										this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+										egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1700).call(()=>{
+											let npcbiao = RES.getRes("gukehanhuabiao_json");
+											let suijinpc = Math.floor(Math.random() * npcbiao.length);
+											let mingzi = npcbiao[suijinpc].name;
+											let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+											let jiacheng = Math.floor(Math.random() * 15) + 1;
+											let suijishijie = Math.floor(Math.random() * 100);
+											this.guyuan3leixing = 1;
+											if(suijishijie > 80){
+												if(Gerenshuxing.paihangbangshuju.length >= 60){
+													let suijishu = Math.floor(Math.random() * 50);
+													jiacheng = 50 - suijishu + 20;
+													mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+													touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+													this.guyuan3leixing = 2;
+													this.guyuanjiazaitouxiang1(touxiang);			
+												}
+											}
+											this.guyuan3mingzi = mingzi;
+											this.guyuan3touxiang = touxiang;
+											this.guyuan3jiacheng = jiacheng;
+											this.fandianguyuan.xitongtouxiang.source = touxiang;
+											this.fandianguyuan.mingzi.text = mingzi;
+											this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+											this.fandianguyuan.shuoming.text = "正在寻觅店员";
+											this.fandianguyuan.but_zhaopin.enabled = false;
+											this.fandianguyuan.but_zhaopin.alpha = 0;
+											this.fandianguyuan.but_jiepin.enabled = false;
+											this.fandianguyuan.but_jiepin.alpha = 0;
+											this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+											egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1800).call(()=>{
+												Gerencaipudengji.jiedaoshuju[this.dangqianbushu][9] = this.guyuan3leixing;
+												Gerencaipudengji.jiedaoshuju[this.dangqianbushu][14] = this.guyuan3mingzi;
+												Gerencaipudengji.jiedaoshuju[this.dangqianbushu][15] = this.guyuan3touxiang;
+												Gerencaipudengji.jiedaoshuju[this.dangqianbushu][20] = this.guyuan3jiacheng;
+												Weblianjie.fasongshuju("code:101","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
+													+ '"guyuanhao"' +":"+ '"3"' +","
+													+ '"guyuanleixing"' +":"+ '"' + this.guyuan3leixing + '"' +","
+													+ '"guyuanmingzi"' +":"+ '"' + this.guyuan3mingzi + '"' +","
+													+ '"guyuantouxiang"' +":"+ '"' + this.guyuan3touxiang + '"' +","
+													+ '"dianpuid"' +":"+ '"' + this.dangqianbushu + '"' +","
+													+ '"guyuanjiacheng"' +":"+ '"' + this.guyuan3jiacheng + '"' +"}");
+												this.fandianjiemian.removeChild(this.fandianguyuan);
+												Gameguanli.Kongzhitai().dingbuui.removeChild(this.fandianjiemian);
+												this.fandianbufen();
+												this.dianjiguyuan3();
+											})
+										})
+									})
+								})
+							})
+						})
+					})
+				})
+			})
+		})
+	}
+
+	public zhaopinguyuan1(){
+		this.guyuan1leixing = 0;
+		this.guyuan1mingzi = "0";
+	 	this.guyuan1touxiang = "0";
+	 	this.guyuan1jiacheng = 0;
+		let npcbiao = RES.getRes("gukehanhuabiao_json");
+		let suijinpc = Math.floor(Math.random() * npcbiao.length);
+		let mingzi = npcbiao[suijinpc].name;
+		let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+		let jiacheng = Math.floor(Math.random() * 15) + 1;
+		let suijishijie = Math.floor(Math.random() * 100);
+		if(suijishijie > 80){
+			if(Gerenshuxing.paihangbangshuju.length >= 60){
+				let suijishu = Math.floor(Math.random() * 50);
+				jiacheng = 50 - suijishu + 20;
+				mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+				touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+				this.guyuanjiazaitouxiang1(touxiang);			
+			}
+		}
+		this.fandianguyuan.xitongtouxiang.source = touxiang;
+		this.fandianguyuan.mingzi.text = mingzi;
+		this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+		this.fandianguyuan.shuoming.text = "正在寻觅店员";
+		this.fandianguyuan.but_zhaopin.enabled = false;
+		this.fandianguyuan.but_zhaopin.alpha = 0;
+		this.fandianguyuan.but_jiepin.enabled = false;
+		this.fandianguyuan.but_jiepin.alpha = 0;
+		this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+		egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(500).call(()=>{
+			let npcbiao = RES.getRes("gukehanhuabiao_json");
+			let suijinpc = Math.floor(Math.random() * npcbiao.length);
+			let mingzi = npcbiao[suijinpc].name;
+			let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+			let jiacheng = Math.floor(Math.random() * 15) + 1;
+			let suijishijie = Math.floor(Math.random() * 100);
+			if(suijishijie > 80){
+				if(Gerenshuxing.paihangbangshuju.length >= 60){
+					let suijishu = Math.floor(Math.random() * 50);
+					jiacheng = 50 - suijishu + 20;
+					mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+					touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+					this.guyuanjiazaitouxiang1(touxiang);			
+				}
+			}
+			this.fandianguyuan.xitongtouxiang.source = touxiang;
+			this.fandianguyuan.mingzi.text = mingzi;
+			this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+			this.fandianguyuan.shuoming.text = "正在寻觅店员";
+			this.fandianguyuan.but_zhaopin.enabled = false;
+			this.fandianguyuan.but_zhaopin.alpha = 0;
+			this.fandianguyuan.but_jiepin.enabled = false;
+			this.fandianguyuan.but_jiepin.alpha = 0;
+			this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+			egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(800).call(()=>{
+				let npcbiao = RES.getRes("gukehanhuabiao_json");
+				let suijinpc = Math.floor(Math.random() * npcbiao.length);
+				let mingzi = npcbiao[suijinpc].name;
+				let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+				let jiacheng = Math.floor(Math.random() * 15) + 1;
+				let suijishijie = Math.floor(Math.random() * 100);
+				if(suijishijie > 80){
+					if(Gerenshuxing.paihangbangshuju.length >= 60){
+						let suijishu = Math.floor(Math.random() * 50);
+						jiacheng = 50 - suijishu + 20;
+						mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+						touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+						this.guyuanjiazaitouxiang1(touxiang);			
+					}
+				}
+				this.fandianguyuan.xitongtouxiang.source = touxiang;
+				this.fandianguyuan.mingzi.text = mingzi;
+				this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+				this.fandianguyuan.shuoming.text = "正在寻觅店员";
+				this.fandianguyuan.but_zhaopin.enabled = false;
+				this.fandianguyuan.but_zhaopin.alpha = 0;
+				this.fandianguyuan.but_jiepin.enabled = false;
+				this.fandianguyuan.but_jiepin.alpha = 0;
+				this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+				egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1100).call(()=>{
+					let npcbiao = RES.getRes("gukehanhuabiao_json");
+					let suijinpc = Math.floor(Math.random() * npcbiao.length);
+					let mingzi = npcbiao[suijinpc].name;
+					let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+					let jiacheng = Math.floor(Math.random() * 15) + 1;
+					let suijishijie = Math.floor(Math.random() * 100);
+					if(suijishijie > 80){
+						if(Gerenshuxing.paihangbangshuju.length >= 60){
+							let suijishu = Math.floor(Math.random() * 50);
+							jiacheng = 50 - suijishu + 20;
+							mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+							touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+							this.guyuanjiazaitouxiang1(touxiang);			
+						}
+					}
+					this.fandianguyuan.xitongtouxiang.source = touxiang;
+					this.fandianguyuan.mingzi.text = mingzi;
+					this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+					this.fandianguyuan.shuoming.text = "正在寻觅店员";
+					this.fandianguyuan.but_zhaopin.enabled = false;
+					this.fandianguyuan.but_zhaopin.alpha = 0;
+					this.fandianguyuan.but_jiepin.enabled = false;
+					this.fandianguyuan.but_jiepin.alpha = 0;
+					this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+					egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1200).call(()=>{
+						let npcbiao = RES.getRes("gukehanhuabiao_json");
+						let suijinpc = Math.floor(Math.random() * npcbiao.length);
+						let mingzi = npcbiao[suijinpc].name;
+						let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+						let jiacheng = Math.floor(Math.random() * 15) + 1;
+						let suijishijie = Math.floor(Math.random() * 100);
+						if(suijishijie > 80){
+							if(Gerenshuxing.paihangbangshuju.length >= 60){
+								let suijishu = Math.floor(Math.random() * 50);
+								jiacheng = 50 - suijishu + 20;
+								mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+								touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+								this.guyuanjiazaitouxiang1(touxiang);			
+							}
+						}
+						this.fandianguyuan.xitongtouxiang.source = touxiang;
+						this.fandianguyuan.mingzi.text = mingzi;
+						this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+						this.fandianguyuan.shuoming.text = "正在寻觅店员";
+						this.fandianguyuan.but_zhaopin.enabled = false;
+						this.fandianguyuan.but_zhaopin.alpha = 0;
+						this.fandianguyuan.but_jiepin.enabled = false;
+						this.fandianguyuan.but_jiepin.alpha = 0;
+						this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+						egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1300).call(()=>{
+							let npcbiao = RES.getRes("gukehanhuabiao_json");
+							let suijinpc = Math.floor(Math.random() * npcbiao.length);
+							let mingzi = npcbiao[suijinpc].name;
+							let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+							let jiacheng = Math.floor(Math.random() * 15) + 1;
+							let suijishijie = Math.floor(Math.random() * 100);
+							if(suijishijie > 80){
+								if(Gerenshuxing.paihangbangshuju.length >= 60){
+									let suijishu = Math.floor(Math.random() * 50);
+									jiacheng = 50 - suijishu + 20;
+									mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+									touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+									this.guyuanjiazaitouxiang1(touxiang);			
+								}
+							}
+							this.fandianguyuan.xitongtouxiang.source = touxiang;
+							this.fandianguyuan.mingzi.text = mingzi;
+							this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+							this.fandianguyuan.shuoming.text = "正在寻觅店员";
+							this.fandianguyuan.but_zhaopin.enabled = false;
+							this.fandianguyuan.but_zhaopin.alpha = 0;
+							this.fandianguyuan.but_jiepin.enabled = false;
+							this.fandianguyuan.but_jiepin.alpha = 0;
+							this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+							egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1400).call(()=>{
+								let npcbiao = RES.getRes("gukehanhuabiao_json");
+								let suijinpc = Math.floor(Math.random() * npcbiao.length);
+								let mingzi = npcbiao[suijinpc].name;
+								let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+								let jiacheng = Math.floor(Math.random() * 15) + 1;
+								let suijishijie = Math.floor(Math.random() * 100);
+								if(suijishijie > 80){
+									if(Gerenshuxing.paihangbangshuju.length >= 60){
+										let suijishu = Math.floor(Math.random() * 50);
+										jiacheng = 50 - suijishu + 20;
+										mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+										touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+										this.guyuanjiazaitouxiang1(touxiang);			
+									}
+								}
+								this.fandianguyuan.xitongtouxiang.source = touxiang;
+								this.fandianguyuan.mingzi.text = mingzi;
+								this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+								this.fandianguyuan.shuoming.text = "正在寻觅店员";
+								this.fandianguyuan.but_zhaopin.enabled = false;
+								this.fandianguyuan.but_zhaopin.alpha = 0;
+								this.fandianguyuan.but_jiepin.enabled = false;
+								this.fandianguyuan.but_jiepin.alpha = 0;
+								this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+								egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1500).call(()=>{
+									let npcbiao = RES.getRes("gukehanhuabiao_json");
+									let suijinpc = Math.floor(Math.random() * npcbiao.length);
+									let mingzi = npcbiao[suijinpc].name;
+									let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+									let jiacheng = Math.floor(Math.random() * 15) + 1;
+									let suijishijie = Math.floor(Math.random() * 100);
+									if(suijishijie > 80){
+										if(Gerenshuxing.paihangbangshuju.length >= 60){
+											let suijishu = Math.floor(Math.random() * 50);
+											jiacheng = 50 - suijishu + 20;
+											mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+											touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+											this.guyuanjiazaitouxiang1(touxiang);			
+										}
+									}
+									this.fandianguyuan.xitongtouxiang.source = touxiang;
+									this.fandianguyuan.mingzi.text = mingzi;
+									this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+									this.fandianguyuan.shuoming.text = "正在寻觅店员";
+									this.fandianguyuan.but_zhaopin.enabled = false;
+									this.fandianguyuan.but_zhaopin.alpha = 0;
+									this.fandianguyuan.but_jiepin.enabled = false;
+									this.fandianguyuan.but_jiepin.alpha = 0;
+									this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+									egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1600).call(()=>{
+										let npcbiao = RES.getRes("gukehanhuabiao_json");
+										let suijinpc = Math.floor(Math.random() * npcbiao.length);
+										let mingzi = npcbiao[suijinpc].name;
+										let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+										let jiacheng = Math.floor(Math.random() * 15) + 1;
+										let suijishijie = Math.floor(Math.random() * 100);
+										if(suijishijie > 80){
+											if(Gerenshuxing.paihangbangshuju.length >= 60){
+												let suijishu = Math.floor(Math.random() * 50);
+												jiacheng = 50 - suijishu + 20;
+												mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+												touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+												this.guyuanjiazaitouxiang1(touxiang);			
+											}
+										}
+										this.fandianguyuan.xitongtouxiang.source = touxiang;
+										this.fandianguyuan.mingzi.text = mingzi;
+										this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+										this.fandianguyuan.shuoming.text = "正在寻觅店员";
+										this.fandianguyuan.but_zhaopin.enabled = false;
+										this.fandianguyuan.but_zhaopin.alpha = 0;
+										this.fandianguyuan.but_jiepin.enabled = false;
+										this.fandianguyuan.but_jiepin.alpha = 0;
+										this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+										egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1700).call(()=>{
+											let npcbiao = RES.getRes("gukehanhuabiao_json");
+											let suijinpc = Math.floor(Math.random() * npcbiao.length);
+											let mingzi = npcbiao[suijinpc].name;
+											let touxiang = npcbiao[suijinpc].gktouxiang + "_png";
+											let jiacheng = Math.floor(Math.random() * 15) + 1;
+											let suijishijie = Math.floor(Math.random() * 100);
+											this.guyuan1leixing = 1;
+											if(suijishijie > 80){
+												if(Gerenshuxing.paihangbangshuju.length >= 60){
+													let suijishu = Math.floor(Math.random() * 50);
+													jiacheng = 50 - suijishu + 20;
+													mingzi = Gerenshuxing.paihangbangshuju[suijishu].nickname;
+													touxiang = Gerenshuxing.paihangbangshuju[suijishu].url;
+													this.guyuan1leixing = 2;
+													this.guyuanjiazaitouxiang1(touxiang);			
+												}
+											}
+											this.guyuan1mingzi = mingzi;
+											this.guyuan1touxiang = touxiang;
+											this.guyuan1jiacheng = jiacheng;
+											this.fandianguyuan.xitongtouxiang.source = touxiang;
+											this.fandianguyuan.mingzi.text = mingzi;
+											this.fandianguyuan.jinengshu.text = "人气 + " + jiacheng;
+											this.fandianguyuan.shuoming.text = "正在寻觅店员";
+											this.fandianguyuan.but_zhaopin.enabled = false;
+											this.fandianguyuan.but_zhaopin.alpha = 0;
+											this.fandianguyuan.but_jiepin.enabled = false;
+											this.fandianguyuan.but_jiepin.alpha = 0;
+											this.fandianguyuan.but_zhaopin.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.zhaopinguyuan1,this);
+											egret.Tween.get(this.fandianguyuan.xitongtouxiang).wait(1800).call(()=>{
+												Gerencaipudengji.jiedaoshuju[this.dangqianbushu][7] = this.guyuan1leixing;
+												Gerencaipudengji.jiedaoshuju[this.dangqianbushu][10] = this.guyuan1mingzi;
+												Gerencaipudengji.jiedaoshuju[this.dangqianbushu][11] = this.guyuan1touxiang;
+												Gerencaipudengji.jiedaoshuju[this.dangqianbushu][18] = this.guyuan1jiacheng;
+												Weblianjie.fasongshuju("code:101","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
+													+ '"guyuanhao"' +":"+ '"1"' +","
+													+ '"guyuanleixing"' +":"+ '"' + this.guyuan1leixing + '"' +","
+													+ '"guyuanmingzi"' +":"+ '"' + this.guyuan1mingzi + '"' +","
+													+ '"guyuantouxiang"' +":"+ '"' + this.guyuan1touxiang + '"' +","
+													+ '"dianpuid"' +":"+ '"' + this.dangqianbushu + '"' +","
+													+ '"guyuanjiacheng"' +":"+ '"' + this.guyuan1jiacheng + '"' +"}");
+												this.fandianjiemian.removeChild(this.fandianguyuan);
+												Gameguanli.Kongzhitai().dingbuui.removeChild(this.fandianjiemian);
+												this.fandianbufen();
+												this.dianjiguyuan1();
+											})
+										})
+									})
+								})
+							})
+						})
+					})
+				})
+			})
+		})
+	}
+
+
+
+	public jiepinguyuan1(){
+		this.guyuan1leixing = 0;
+		this.guyuan1mingzi = "0";
+	 	this.guyuan1touxiang = "0";
+	 	this.guyuan1jiacheng = 0;
+		Gerencaipudengji.jiedaoshuju[this.dangqianbushu][7] = this.guyuan1leixing;
+		Gerencaipudengji.jiedaoshuju[this.dangqianbushu][10] = this.guyuan1mingzi;
+		Gerencaipudengji.jiedaoshuju[this.dangqianbushu][11] = this.guyuan1touxiang;
+		Gerencaipudengji.jiedaoshuju[this.dangqianbushu][18] = this.guyuan1jiacheng;
+		Weblianjie.fasongshuju("code:101","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
+			+ '"guyuanhao"' +":"+ '"1"' +","
+			+ '"guyuanleixing"' +":"+ '"' + this.guyuan1leixing + '"' +","
+			+ '"guyuanmingzi"' +":"+ '"' + this.guyuan1mingzi + '"' +","
+			+ '"guyuantouxiang"' +":"+ '"' + this.guyuan1touxiang + '"' +","
+			+ '"dianpuid"' +":"+ '"' + this.dangqianbushu + '"' +","
+			+ '"guyuanjiacheng"' +":"+ '"' + this.guyuan1jiacheng + '"' +"}");
+		this.fandianjiemian.removeChild(this.fandianguyuan);
+		Gameguanli.Kongzhitai().dingbuui.removeChild(this.fandianjiemian);
+		this.fandianbufen();
+		this.dianjiguyuan1();
+	}
+
+	public jiepinguyuan2(){
+		this.guyuan2leixing = 0;
+		this.guyuan2mingzi = "0";
+	 	this.guyuan2touxiang = "0";
+	 	this.guyuan2jiacheng = 0;
+		Gerencaipudengji.jiedaoshuju[this.dangqianbushu][8] = this.guyuan2leixing;
+		Gerencaipudengji.jiedaoshuju[this.dangqianbushu][12] = this.guyuan2mingzi;
+		Gerencaipudengji.jiedaoshuju[this.dangqianbushu][13] = this.guyuan2touxiang;
+		Gerencaipudengji.jiedaoshuju[this.dangqianbushu][19] = this.guyuan2jiacheng;
+		Weblianjie.fasongshuju("code:101","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
+			+ '"guyuanhao"' +":"+ '"2"' +","
+			+ '"guyuanleixing"' +":"+ '"' + this.guyuan2leixing + '"' +","
+			+ '"guyuanmingzi"' +":"+ '"' + this.guyuan2mingzi + '"' +","
+			+ '"guyuantouxiang"' +":"+ '"' + this.guyuan2touxiang + '"' +","
+			+ '"dianpuid"' +":"+ '"' + this.dangqianbushu + '"' +","
+			+ '"guyuanjiacheng"' +":"+ '"' + this.guyuan2jiacheng + '"' +"}");
+		this.fandianjiemian.removeChild(this.fandianguyuan);
+		Gameguanli.Kongzhitai().dingbuui.removeChild(this.fandianjiemian);
+		this.fandianbufen();
+		this.dianjiguyuan2();
+	}
+
+	public jiepinguyuan3(){
+		this.guyuan3leixing = 0;
+		this.guyuan3mingzi = "0";
+	 	this.guyuan3touxiang = "0";
+	 	this.guyuan3jiacheng = 0;
+		Gerencaipudengji.jiedaoshuju[this.dangqianbushu][9] = this.guyuan3leixing;
+		Gerencaipudengji.jiedaoshuju[this.dangqianbushu][14] = this.guyuan3mingzi;
+		Gerencaipudengji.jiedaoshuju[this.dangqianbushu][15] = this.guyuan3touxiang;
+		Gerencaipudengji.jiedaoshuju[this.dangqianbushu][20] = this.guyuan3jiacheng;
+		Weblianjie.fasongshuju("code:101","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
+			+ '"guyuanhao"' +":"+ '"3"' +","
+			+ '"guyuanleixing"' +":"+ '"' + this.guyuan3leixing + '"' +","
+			+ '"guyuanmingzi"' +":"+ '"' + this.guyuan3mingzi + '"' +","
+			+ '"guyuantouxiang"' +":"+ '"' + this.guyuan3touxiang + '"' +","
+			+ '"dianpuid"' +":"+ '"' + this.dangqianbushu + '"' +","
+			+ '"guyuanjiacheng"' +":"+ '"' + this.guyuan3jiacheng + '"' +"}");
+		this.fandianjiemian.removeChild(this.fandianguyuan);
+		Gameguanli.Kongzhitai().dingbuui.removeChild(this.fandianjiemian);
+		this.fandianbufen();
+		this.dianjiguyuan3();
+	}
+
+
+
+	public guanbiguyuan(){
+		this.fandianjiemian.removeChild(this.fandianguyuan);
+	}
+
+	public jiazaiguyuan1touxiangsj(youxiangurl){
 		var imgLoader: egret.ImageLoader = new egret.ImageLoader;
 		/*if(Gerenshuxing.touxiangbaocunzhuangtai == true){
 			imgLoader.load(Gerenshuxing.touxiang);
@@ -853,7 +2053,119 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 			imgLoader.load("http://192.168.1.2/res/resource/resource/wxtx/undefined.png");
 			imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
 		}*/
-		imgLoader.load(Gerenshuxing.touxiang);
+		imgLoader.load(youxiangurl);
+		imgLoader.once(egret.Event.COMPLETE, this.xianshiguyuan1touxiangsj, this);
+		
+	}
+
+	public xianshiguyuan1touxiangsj(evt: egret.Event):void{
+			if (evt.currentTarget.data) {
+//			egret.log("加载头像成功: " + evt.currentTarget.data);
+			let texture = new egret.Texture();
+			texture.bitmapData = evt.currentTarget.data;
+			let head = new egret.Bitmap(texture);
+            head.x = 0;
+            head.y = 0;
+            head.width=this.fandianjiemian.guyuantxgroup1.width;
+            head.height=this.fandianjiemian.guyuantxgroup1.height;
+            this.fandianjiemian.guyuantxgroup1.addChild(head);
+			}
+		}
+
+	public guyuanjiazaitouxiang1(youxiangurl){
+		var imgLoader: egret.ImageLoader = new egret.ImageLoader;
+		/*if(Gerenshuxing.touxiangbaocunzhuangtai == true){
+			imgLoader.load(Gerenshuxing.touxiang);
+			imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
+		}else{
+			imgLoader.load("http://192.168.1.2/res/resource/resource/wxtx/undefined.png");
+			imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
+		}*/
+		imgLoader.load(youxiangurl);
+		imgLoader.once(egret.Event.COMPLETE, this.xianshiguyuanzutouxiang1, this);
+		
+	}
+
+	public xianshiguyuanzutouxiang1(evt: egret.Event):void{
+			if (evt.currentTarget.data) {
+//			egret.log("加载头像成功: " + evt.currentTarget.data);
+			let texture = new egret.Texture();
+			texture.bitmapData = evt.currentTarget.data;
+			let head = new egret.Bitmap(texture);
+            head.x = 0;
+            head.y = 0;
+            head.width=this.fandianguyuan.touxiangzu.width;
+            head.height=this.fandianguyuan.touxiangzu.height;
+            this.fandianguyuan.touxiangzu.addChild(head);
+			}
+		}
+	
+	public jiazaiguyuan2touxiangsj(youxiangurl){
+		var imgLoader: egret.ImageLoader = new egret.ImageLoader;
+		/*if(Gerenshuxing.touxiangbaocunzhuangtai == true){
+			imgLoader.load(Gerenshuxing.touxiang);
+			imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
+		}else{
+			imgLoader.load("http://192.168.1.2/res/resource/resource/wxtx/undefined.png");
+			imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
+		}*/
+		imgLoader.load(youxiangurl);
+		imgLoader.once(egret.Event.COMPLETE, this.xianshiguyuan2touxiangsj, this);
+		
+	}
+
+	public xianshiguyuan2touxiangsj(evt: egret.Event):void{
+			if (evt.currentTarget.data) {
+//			egret.log("加载头像成功: " + evt.currentTarget.data);
+			let texture = new egret.Texture();
+			texture.bitmapData = evt.currentTarget.data;
+			let head = new egret.Bitmap(texture);
+            head.x = 0;
+            head.y = 0;
+            head.width=this.fandianjiemian.guyuantxgroup2.width;
+            head.height=this.fandianjiemian.guyuantxgroup2.height;
+            this.fandianjiemian.guyuantxgroup2.addChild(head);
+			}
+		}
+
+	public jiazaiguyuan3touxiangsj(youxiangurl){
+		var imgLoader: egret.ImageLoader = new egret.ImageLoader;
+		/*if(Gerenshuxing.touxiangbaocunzhuangtai == true){
+			imgLoader.load(Gerenshuxing.touxiang);
+			imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
+		}else{
+			imgLoader.load("http://192.168.1.2/res/resource/resource/wxtx/undefined.png");
+			imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
+		}*/
+		imgLoader.load(youxiangurl);
+		imgLoader.once(egret.Event.COMPLETE, this.xianshiguyuan3touxiangsj, this);
+		
+	}
+
+	public xianshiguyuan3touxiangsj(evt: egret.Event):void{
+			if (evt.currentTarget.data) {
+//			egret.log("加载头像成功: " + evt.currentTarget.data);
+			let texture = new egret.Texture();
+			texture.bitmapData = evt.currentTarget.data;
+			let head = new egret.Bitmap(texture);
+            head.x = 0;
+            head.y = 0;
+            head.width=this.fandianjiemian.guyuantxgroup3.width;
+            head.height=this.fandianjiemian.guyuantxgroup3.height;
+            this.fandianjiemian.guyuantxgroup3.addChild(head);
+			}
+		}
+
+	public huoquzijitouxiang(youxiangurl){
+		var imgLoader: egret.ImageLoader = new egret.ImageLoader;
+		/*if(Gerenshuxing.touxiangbaocunzhuangtai == true){
+			imgLoader.load(Gerenshuxing.touxiang);
+			imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
+		}else{
+			imgLoader.load("http://192.168.1.2/res/resource/resource/wxtx/undefined.png");
+			imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
+		}*/
+		imgLoader.load(youxiangurl);
 		imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
 		
 	}
@@ -1050,14 +2362,15 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 	public quedingshougou(){
 		if(this.keyishougou == true){
 			Gameguanli.Kongzhitai().dingbuui.removeChild(this.suijijiemian);
-			Gameguanli.Kongzhitai().cuowutishixinxi("恭喜您，收购成功！本次店铺的拥有权为30天！");
+			Gameguanli.Kongzhitai().cuowutishixinxi("恭喜您，成功收购["+ this.jiedaopeizhi.name +"]！饭店经营为30天！");
+			Gameguanli.Kongzhitai().paomadengui("恭喜“"+ Gerenshuxing.mingzi +"”成功收购["+ this.jiedaopeizhi.name +"]！期待饭店生意红红火火！");
 			 Weblianjie.fasongshuju("code:043","{" + '"dianpuid"' +":"+ '"' + this.dangqianbushu + '"' +","
 				+ '"shougoufeiyong"' +":"+ '"' + this.fandianpeizhi[1] + '"' +"," 
 				+ '"shougouqixian"' +":"+ "30" +","
 				+ '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 		}else{
 			Gameguanli.Kongzhitai().dingbuui.removeChild(this.suijijiemian);
-			Gameguanli.Kongzhitai().cuowutishixinxi("很遗憾，您目前还不满足该店铺的收购条件！");
+			Gameguanli.Kongzhitai().cuowutishixinxi("很遗憾，您目前还不满足["+ this.jiedaopeizhi.name +"]的收购条件！");
 		}
 	}
 
@@ -1070,7 +2383,7 @@ class Dajiejiemian extends eui.Component implements  eui.UIComponent {
 			this.fandianbufen();
 		}else{
 			this.suijichufaliebiao = this.jiedaopeizhi.suijiliebiao.split(",") ;
-			let suijishu = Math.floor(Math.random() * (this.suijichufaliebiao.length + 1));
+			let suijishu = Math.floor(Math.random() * this.suijichufaliebiao.length);
 			for(var j = 0;j<this.jiedaosuijibiao.length;j++){
 				if(this.suijichufaliebiao[suijishu] == this.jiedaosuijibiao[j].id){
 					this.suijipeizhi = this.jiedaosuijibiao[j];

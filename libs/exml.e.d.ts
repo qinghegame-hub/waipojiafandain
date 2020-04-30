@@ -104,6 +104,8 @@ declare class DianpufandianSkin extends eui.Skin{
 }
 declare class DianpurukouSkin extends eui.Skin{
 }
+declare class DianpuzhaopinuiSkin extends eui.Skin{
+}
 declare class DianshijiaohuuiSkin extends eui.Skin{
 }
 declare class ErerzijiaohuuiSkin extends eui.Skin{
@@ -133,6 +135,8 @@ declare class PaihangbangjiemianSkin extends eui.Skin{
 declare class PaimingbiangengshangSkin extends eui.Skin{
 }
 declare class PaimingbiangengxiaSkin extends eui.Skin{
+}
+declare class PaomadenggonggaoSkin extends eui.Skin{
 }
 declare class PengrenfankuiuiSkin extends eui.Skin{
 }

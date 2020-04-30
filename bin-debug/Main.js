@@ -135,6 +135,12 @@ var Main = (function (_super) {
                             })];
                     case 8:
                         _a.sent();
+                        return [4 /*yield*/, platform.openDataContext.postMessage({
+                                time: (new Date()).getFullYear() + 2,
+                                uid: Gerenshuxing.uid
+                            })];
+                    case 9:
+                        _a.sent();
                         return [2 /*return*/];
                 }
             });

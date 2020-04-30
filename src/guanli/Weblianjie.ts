@@ -688,6 +688,17 @@ class Weblianjie extends egret.DisplayObjectContainer {
                     Gameguanli.Kongzhitai().paihangbangdaui.paixufenshu();
                 }
                 break;
+            case "code:099":
+                let jiedao = RES.getRes("jiedaobiao_json");
+                console.log(jiexijsongeshi.dianid);
+                let dianpuming:string = "";
+                for(var i = 0;i < jiedao.length;i++){
+                    if(jiedao[i].id == jiexijsongeshi.dianid){
+                        dianpuming = jiedao[i].name;
+                    }
+                }
+                Gameguanli.Kongzhitai().paomadengui( "恭喜“"+ jiexijsongeshi.dianzhuren +"”成功收购["+ dianpuming +"]！期待饭店生意红红火火！");
+                break;
     //非法操作
             case "code:202":
                 Gameguanli.Kongzhitai().cuowutishixinxi("非法操作！");
@@ -735,7 +746,8 @@ class Weblianjie extends egret.DisplayObjectContainer {
                         Gerenshuxing.xingfuzhi = parseInt(jiexijsongeshi.shijishuliang[0]);
                         Gameguanli.Kongzhitai().jianglitanchuui("img_xingfu_png",jiexijsongeshi.jianglishuliang,"+");
                         let shangchaun = new Wxjiekoulei(Gerenshuxing.xingfuzhi);
-                        Paimingtishi.chushihua();
+                        let paimingtishi = new Paimingtishi();
+
                         break;
                     case "6":
                         Gerenshuxing.daerzixinxi = jiexijsongeshi.shijishuliang;

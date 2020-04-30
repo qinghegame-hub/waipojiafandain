@@ -308,5 +308,15 @@
         "path": "Paihangbangjiemian.ts",
         "class": "Paihangbangjiemian",
         "parentPath": ""
+    },
+    "171b6d1fcbc": {
+        "path": "Dianpuzhaopinui.ts",
+        "class": "Dianpuzhaopinui",
+        "parentPath": ""
+    },
+    "171ca6fa9fe": {
+        "path": "Paomadenggonggao.ts",
+        "class": "Paomadenggonggao",
+        "parentPath": ""
     }
 }

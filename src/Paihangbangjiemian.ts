@@ -118,7 +118,6 @@ class Paihangbangjiemian extends eui.Component implements  eui.UIComponent {
 	public dianjishijiejiemian(){
 		this.dakaijiemian = 1;
 		if(Gerenshuxing.paihangbangshuju.length > 0){
-			console.log(Gerenshuxing.xingfuzhi,Gerenshuxing.paihangbangshuju[Gerenshuxing.paihangbangshuju.length - 1].fenshu);
 			if(Gerenshuxing.xingfuzhi >= parseInt(Gerenshuxing.paihangbangshuju[Gerenshuxing.paihangbangshuju.length - 1].fenshu) && 
 			Gerenshuxing.xingfuzhi != Gerenshuxing.qingqiupaihangfenshu){
 				Gerenshuxing.qingqiupaihangfenshu = Gerenshuxing.xingfuzhi;

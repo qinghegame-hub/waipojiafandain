@@ -3,6 +3,6 @@
 	<w:Config id="16f6026395b" ></w:Config>
 	<e:Group id="cuowutishi" width="550.67" height="69" anchorOffsetX="0" anchorOffsetY="0" x="0" y="0">
 		<e:Image id="img_cuowutishi" source="img_cuowutishi_png" x="5" y="9.5"/>
-		<e:Label id="tishiwenzi" text="zh这是一个错误" x="21" y="22.5" anchorOffsetX="0" width="508.67" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti"/>
+		<e:Label id="tishiwenzi" text="zh这是一个错误" x="21" y="25.5" anchorOffsetX="0" width="508.67" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti"/>
 	</e:Group>
 </e:Skin>

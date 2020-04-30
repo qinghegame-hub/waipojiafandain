@@ -67,6 +67,14 @@ class Gameguanli extends egret.DisplayObjectContainer{
 	public jiangliui5:Cailiaoxiaohao;
 	public jianglicishu:any = [1,1,1,1,1];
 
+	//跑马灯提示界面实例
+	public paomadeng1:Paomadenggonggao;
+	public paomadeng2:Paomadenggonggao;
+	public paomadeng3:Paomadenggonggao;
+	public paomadeng4:Paomadenggonggao;
+	public paomadeng5:Paomadenggonggao;
+	public paomadengcishu:any = [1,1,1,1,1];
+
 	//每日结算界面实例
 	public meirijieusan:Meirijiesuan;
 	public gundongjuli:number;
@@ -1435,6 +1443,26 @@ class Gameguanli extends egret.DisplayObjectContainer{
 		+ '"shuliang"' +":"+ '"' + jianglishuliang + '"' +","
 		+ '"xiayishijian"' +":"+ '"' + xianzaishijianlixian + '"' +","
 		+ '"beishu"' +":"+ '"2"' +"}");
+	}
+
+
+	//跑马灯信息提示
+	public paomadengui(neirong){
+		if(this.paomadengcishu[0] == 1){
+			this.paomadengcishu[0] = 0;
+			this.paomadeng1 = new Paomadenggonggao();
+			this.addChild(this.paomadeng1);
+			this.paomadeng1.x = 0
+			this.paomadeng1.y = this.stage.stageHeight / 10 * 3;
+			this.paomadeng1.wenzineirong.x = this.stage.stageWidth;
+			this.paomadeng1.wenzineirong.text ="" + neirong;
+			egret.Tween.get(this.paomadeng1.wenzineirong).to({x:0 - this.paomadeng1.wenzineirong.width},15000)
+						.call(()=>{
+							this.paomadengcishu[0] = 1;
+							this.removeChild(this.paomadeng1);
+						});
+		}
+
 	}
 
 

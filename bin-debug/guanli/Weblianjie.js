@@ -708,6 +708,17 @@ var Weblianjie = (function (_super) {
                     Gameguanli.Kongzhitai().paihangbangdaui.paixufenshu();
                 }
                 break;
+            case "code:099":
+                var jiedao = RES.getRes("jiedaobiao_json");
+                console.log(jiexijsongeshi.dianid);
+                var dianpuming = "";
+                for (var i = 0; i < jiedao.length; i++) {
+                    if (jiedao[i].id == jiexijsongeshi.dianid) {
+                        dianpuming = jiedao[i].name;
+                    }
+                }
+                Gameguanli.Kongzhitai().paomadengui("恭喜“" + jiexijsongeshi.dianzhuren + "”成功收购[" + dianpuming + "]！期待饭店生意红红火火！");
+                break;
             //非法操作
             case "code:202":
                 Gameguanli.Kongzhitai().cuowutishixinxi("非法操作！");
@@ -755,7 +766,7 @@ var Weblianjie = (function (_super) {
                         Gerenshuxing.xingfuzhi = parseInt(jiexijsongeshi.shijishuliang[0]);
                         Gameguanli.Kongzhitai().jianglitanchuui("img_xingfu_png", jiexijsongeshi.jianglishuliang, "+");
                         var shangchaun = new Wxjiekoulei(Gerenshuxing.xingfuzhi);
-                        Paimingtishi.chushihua();
+                        var paimingtishi = new Paimingtishi();
                         break;
                     case "6":
                         Gerenshuxing.daerzixinxi = jiexijsongeshi.shijishuliang;

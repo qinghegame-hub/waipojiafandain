@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DianpuzhaopinuiSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="171b6d1fcbc" ></w:Config>
+	<e:Group id="zhaopinzu" left="0" top="0" bottom="0" right="0">
+		<e:Image id="img_heisezhezao1" source="img_heisezhezao_png" alpha="0.2" left="0" bottom="0" top="0" right="0"/>
+		<e:Image id="jiemianbeijing" source="img_zhaopinbeijing_png" x="216.67" y="279"/>
+		<e:Image id="xitongtouxiang" source="kongbaitouxiang_png" x="303" y="359" width="120" height="120"/>
+		<e:Group id="touxiangzu" width="117" height="115" x="305" y="362" anchorOffsetY="0" anchorOffsetX="0"/>
+		<e:Image id="xiangkuang" source="img_zhaopinxiangkuang_png" x="298.17" y="355"/>
+		<e:Label id="xingming" text="姓名" x="279" y="498" anchorOffsetX="0" width="53" size="22" fontFamily="wodeziti" stroke="2" strokeColor="0x898484"/>
+		<e:Label id="mingzi" text="名字可以放八个字" x="348.5" y="503" anchorOffsetX="0" width="104" size="12" fontFamily="wodeziti" stroke="2" strokeColor="0x898484"/>
+		<e:Label id="jineng" text="技能" x="279" y="527" anchorOffsetX="0" width="53" size="22" fontFamily="wodeziti" stroke="2" strokeColor="0x898484"/>
+		<e:Label id="jinengshu" text="收益 + 80" x="348.5" y="533" anchorOffsetX="0" width="110" size="12" fontFamily="wodeziti" stroke="2" strokeColor="0x898484"/>
+		<e:Label id="shuoming" text="招聘可寻觅店员" x="279" y="555" anchorOffsetX="0" width="172.01" size="22" fontFamily="wodeziti" strokeColor="0xfcf2f2" rotation="359.46" textColor="0xf73333" stroke="2"/>
+		<e:Button id="but_zhaopin" label="" x="278.17" y="590" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_zhaopinanniu1_png" source.down="but_zhaopinanniu2_png" source.disabled="but_zhaopinanniu2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="but_jiepin" label="" x="278.1" y="591" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_jiepinanniu1_png" source.down="but_jiepinanniu2_png" source.disabled="but_jiepinanniu2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

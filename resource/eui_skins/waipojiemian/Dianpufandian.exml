@@ -4,7 +4,7 @@
 	<e:Group id="dianpufandianzu" left="0" bottom="0" top="0" right="0">
 		<e:Image id="img_heisezhezao" source="img_heisezhezao_png" left="0" bottom="0" right="0" top="0"/>
 		<e:Image id="img_fandiandianpubj" source="img_fandiandianpubj_png" x="6.5" y="168.06"/>
-		<e:Image id="dianzhutouxiang" source="tx1001_png" x="137.65" y="334" anchorOffsetX="0" width="129.09" anchorOffsetY="0" height="120"/>
+		<e:Image id="dianzhutouxiang" x="137.65" y="334" anchorOffsetX="0" width="129.09" anchorOffsetY="0" height="120" source="kongbaitouxiang_png"/>
 		<e:Group id="dianzutxgroup" width="129" height="113" x="136" y="342" anchorOffsetY="0" anchorOffsetX="0"/>
 		<e:Image id="dianzutouxiangkuang" source="img_dianzhuxiangkuang_png" x="124.18" y="285.09"/>
 		<e:Image id="guyuantouxiang1" source="img_kongbaijiahao_png" x="115.83" y="643.03" width="136" height="116"/>

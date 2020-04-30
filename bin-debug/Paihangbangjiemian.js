@@ -73,10 +73,6 @@ var Paihangbangjiemian = (function (_super) {
         if (this.paihangbangui.parent) {
             this.removeChild(this.paihangbangui);
         }
-        platform.openDataContext.postMessage({
-            time: (new Date()).getFullYear() + 2,
-            uid: Gerenshuxing.uid
-        });
         this.but_haoyou.enabled = false;
         this.but_shijie.enabled = true;
         this.biaotitupian.source = "img_biaotihaoyou_png";
@@ -118,7 +114,6 @@ var Paihangbangjiemian = (function (_super) {
     Paihangbangjiemian.prototype.dianjishijiejiemian = function () {
         this.dakaijiemian = 1;
         if (Gerenshuxing.paihangbangshuju.length > 0) {
-            console.log(Gerenshuxing.xingfuzhi, Gerenshuxing.paihangbangshuju[Gerenshuxing.paihangbangshuju.length - 1].fenshu);
             if (Gerenshuxing.xingfuzhi >= parseInt(Gerenshuxing.paihangbangshuju[Gerenshuxing.paihangbangshuju.length - 1].fenshu) &&
                 Gerenshuxing.xingfuzhi != Gerenshuxing.qingqiupaihangfenshu) {
                 Gerenshuxing.qingqiupaihangfenshu = Gerenshuxing.xingfuzhi;
@@ -187,7 +182,7 @@ var Paihangbangjiemian = (function (_super) {
             }
             this.nicheng.text = this.totalGroup[yeshu * 3 + 0].name;
             this.fenshu.text = this.totalGroup[yeshu * 3 + 0].scroes;
-            this.paiming.text = "" + yeshu * 3 + 1;
+            this.paiming.text = "" + (yeshu * 3 + 1);
             this.jiazaidiyigetuoxiang(this.totalGroup[yeshu * 3 + 0].url);
         }
         else {
@@ -206,7 +201,7 @@ var Paihangbangjiemian = (function (_super) {
             }
             this.nicheng0.text = this.totalGroup[yeshu * 3 + 1].name;
             this.fenshu0.text = this.totalGroup[yeshu * 3 + 1].scroes;
-            this.paiming0.text = "" + yeshu * 3 + 2;
+            this.paiming0.text = "" + (yeshu * 3 + 2);
             this.jiazaidiergetuoxiang(this.totalGroup[yeshu * 3 + 1].url);
         }
         else {
@@ -225,7 +220,7 @@ var Paihangbangjiemian = (function (_super) {
             }
             this.nicheng1.text = this.totalGroup[yeshu * 3 + 2].name;
             this.fenshu1.text = this.totalGroup[yeshu * 3 + 2].scroes;
-            this.paiming1.text = "" + yeshu * 3 + 3;
+            this.paiming1.text = "" + (yeshu * 3 + 3);
             this.jiazaidisangetuoxiang(this.totalGroup[yeshu * 3 + 2].url);
         }
         else {

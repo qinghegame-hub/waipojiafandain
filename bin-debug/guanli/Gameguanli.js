@@ -18,6 +18,7 @@ var Gameguanli = (function (_super) {
         _this.danmucishu = [1, 1, 1, 1, 1, 1, 1, 1];
         _this.xiamiancishu = [1, 1, 1, 1, 1];
         _this.jianglicishu = [1, 1, 1, 1, 1];
+        _this.paomadengcishu = [1, 1, 1, 1, 1];
         _this.gerenshuju = new Gerenshuxing();
         _this.dibuui = new dibuxinxi();
         _this.dingbuui = new dingbuxinxi();
@@ -1350,6 +1351,24 @@ var Gameguanli = (function (_super) {
             + '"shuliang"' + ":" + '"' + jianglishuliang + '"' + ","
             + '"xiayishijian"' + ":" + '"' + xianzaishijianlixian + '"' + ","
             + '"beishu"' + ":" + '"2"' + "}");
+    };
+    //跑马灯信息提示
+    Gameguanli.prototype.paomadengui = function (neirong) {
+        var _this = this;
+        if (this.paomadengcishu[0] == 1) {
+            this.paomadengcishu[0] = 0;
+            this.paomadeng1 = new Paomadenggonggao();
+            this.addChild(this.paomadeng1);
+            this.paomadeng1.x = 0;
+            this.paomadeng1.y = this.stage.stageHeight / 10 * 3;
+            this.paomadeng1.wenzineirong.x = this.stage.stageWidth;
+            this.paomadeng1.wenzineirong.text = "" + neirong;
+            egret.Tween.get(this.paomadeng1.wenzineirong).to({ x: 0 - this.paomadeng1.wenzineirong.width }, 15000)
+                .call(function () {
+                _this.paomadengcishu[0] = 1;
+                _this.removeChild(_this.paomadeng1);
+            });
+        }
     };
     return Gameguanli;
 }(egret.DisplayObjectContainer));

@@ -72,7 +72,9 @@
 		"Waimaiduihuakuang": "resource/eui_skins/waipojiemian/Waimaiduihuakuang.exml",
 		"Paimingbiangengshang": "resource/eui_skins/waipojiemian/Paimingbiangengshang.exml",
 		"Paimingbiangengxia": "resource/eui_skins/waipojiemian/Paimingbiangengxia.exml",
-		"Paihangbangjiemian": "resource/eui_skins/waipojiemian/Paihangbangjiemian.exml"
+		"Paihangbangjiemian": "resource/eui_skins/waipojiemian/Paihangbangjiemian.exml",
+		"Dianpuzhaopinui": "resource/eui_skins/waipojiemian/Dianpuzhaopinui.exml",
+		"Paomadenggonggao": "resource/eui_skins/waipojiemian/Paomadenggonggao.exml"
 	},
 	"autoGenerateExmlsList": true,
 	"exmls": [
@@ -116,6 +118,7 @@
 		"resource/eui_skins/waipojiemian/Dajiejiemian.exml",
 		"resource/eui_skins/waipojiemian/Dianpufandian.exml",
 		"resource/eui_skins/waipojiemian/Dianpurukou.exml",
+		"resource/eui_skins/waipojiemian/Dianpuzhaopinui.exml",
 		"resource/eui_skins/waipojiemian/Dianshijiaohuui.exml",
 		"resource/eui_skins/waipojiemian/Ererzijiaohuui.exml",
 		"resource/eui_skins/waipojiemian/Jianglijiesuanui.exml",
@@ -132,6 +135,7 @@
 		"resource/eui_skins/waipojiemian/Paihangbangjiemian.exml",
 		"resource/eui_skins/waipojiemian/Paimingbiangengshang.exml",
 		"resource/eui_skins/waipojiemian/Paimingbiangengxia.exml",
+		"resource/eui_skins/waipojiemian/Paomadenggonggao.exml",
 		"resource/eui_skins/waipojiemian/Pengrenfankuiui.exml",
 		"resource/eui_skins/waipojiemian/Shafadianshidengjiaohuui.exml",
 		"resource/eui_skins/waipojiemian/Shafajiaohuui.exml",

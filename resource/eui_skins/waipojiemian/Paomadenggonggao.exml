@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PaomadenggonggaoSkin" width="750" height="71" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="171ca6fa9fe" ></w:Config>
+	<e:Group id="paomadengzu" verticalCenter="-1" x="105.5">
+		<e:Image id="img_paomadeng" source="img_paomadeng_png" x="0" y="5"/>
+		<e:Scroller id="paomakongjian" width="470" height="62" x="63.5" y="0" anchorOffsetY="0" anchorOffsetX="0" enabled="false">
+			<e:Group id="paomazu" x="0" y="1" anchorOffsetX="0" width="580" anchorOffsetY="0" height="61">
+			<e:Label id="wenzineirong" text="这是提条跑马灯公告这是提条跑马灯公告这是提条这是提条跑马灯公告这是提条跑马灯公告这是提条跑马灯公告这是提条跑马灯公告这是提条跑马灯公告这是提条跑马灯公告跑马灯公告这是提条跑马灯公告这是提条跑马灯公告这是提条跑马灯公告" x="-241" y="20" anchorOffsetX="0" size="24" fontFamily="wodeziti" verticalAlign="middle" textAlign="left" anchorOffsetY="0"/>
+			</e:Group>
+		</e:Scroller>
+	</e:Group>
+</e:Skin>
