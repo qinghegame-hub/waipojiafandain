@@ -94,11 +94,17 @@ declare module skins{
 }
 declare class ChajijiaohuuiSkin extends eui.Skin{
 }
+declare class ChaoshishangdianuiSkin extends eui.Skin{
+}
 declare class ChuangjiaohuuiSkin extends eui.Skin{
 }
 declare class DaerzijiaohuuiSkin extends eui.Skin{
 }
+declare class DaitutanchukuanguiSkin extends eui.Skin{
+}
 declare class DajiejiemianSkin extends eui.Skin{
+}
+declare class DaojutipsuiSkin extends eui.Skin{
 }
 declare class DianpufandianSkin extends eui.Skin{
 }
@@ -109,6 +115,12 @@ declare class DianpuzhaopinuiSkin extends eui.Skin{
 declare class DianshijiaohuuiSkin extends eui.Skin{
 }
 declare class ErerzijiaohuuiSkin extends eui.Skin{
+}
+declare class FandiandonghuarongqiSkin extends eui.Skin{
+}
+declare class GerendaojujiemianSkin extends eui.Skin{
+}
+declare class GerenshuxingjiemianSkin extends eui.Skin{
 }
 declare class JianglijiesuanuiSkin extends eui.Skin{
 }
@@ -123,6 +135,8 @@ declare class JiatingjinxiuuiSkin extends eui.Skin{
 declare class JiatinguiSkin extends eui.Skin{
 }
 declare class LiuyanjiemianSkin extends eui.Skin{
+}
+declare class LoadingjiemianSkin extends eui.Skin{
 }
 declare class MaicaiuiSkin extends eui.Skin{
 }
@@ -140,11 +154,17 @@ declare class PaomadenggonggaoSkin extends eui.Skin{
 }
 declare class PengrenfankuiuiSkin extends eui.Skin{
 }
+declare class PvebiaozhiuiSkin extends eui.Skin{
+}
+declare class QuedingptSkinSkin extends eui.Skin{
+}
 declare class ShafadianshidengjiaohuuiSkin extends eui.Skin{
 }
 declare class ShafajiaohuuiSkin extends eui.Skin{
 }
 declare class SunnvjiaohuuiSkin extends eui.Skin{
+}
+declare class TeshushijianjiemianSkin extends eui.Skin{
 }
 declare class TongyongquerenkuangSkin extends eui.Skin{
 }
@@ -155,6 +175,16 @@ declare class WaimaijiemianSkin extends eui.Skin{
 declare class WaimaitishiSkin extends eui.Skin{
 }
 declare class XifujiaohuuiSkin extends eui.Skin{
+}
+declare class YouxitishiuiSkin extends eui.Skin{
+}
+declare class ZhandoubuffuiSkin extends eui.Skin{
+}
+declare class ZhandoucaipinshuxinguiSkin extends eui.Skin{
+}
+declare class ZhandoujiemianSkin extends eui.Skin{
+}
+declare class ZhandoupiaoziSkin extends eui.Skin{
 }
 declare class ZuocaitanchuuiSkin extends eui.Skin{
 }

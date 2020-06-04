@@ -35,15 +35,38 @@ var Changjingrukouui = (function (_super) {
             }
             this.xiaohaoqian.text = "-" + xiaohaoqianbi;
         }
+        else if (this.leixing == "shangjie") {
+            this.img_biaotitu.source = "img_biaoticaishichang_png";
+            this.rukoushuoming.text = "经常出门转转，多上街走走肯定是极好的，如果运气好，或许还能得到意想不到的收获。";
+            this.img_qian.source = "img_jiating_png";
+            this.xiaohaoqian.text = "- 30";
+        }
     };
     Changjingrukouui.prototype.guanbijiemian = function () {
         if (this.leixing == "caishichang") {
             Gameguanli.Kongzhitai().changjingrukou("caishichang", "guan");
         }
+        else if (this.leixing == "shangjie") {
+            Gameguanli.Kongzhitai().changjingrukou("shangjie", "guan");
+        }
     };
     Changjingrukouui.prototype.jinrujiemian = function () {
         if (this.leixing == "caishichang") {
-            Weblianjie.fasongshuju("code:033", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+            if (Gerenshuxing.jinbizhi >= 500) {
+                Weblianjie.fasongshuju("code:033", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+            }
+            else {
+                Gameguanli.Kongzhitai().cuowutishixinxi("您的钱币不足，无法进行原料的采购！");
+            }
+        }
+        else if (this.leixing == "shangjie") {
+            if (Gerenshuxing.jiatingzhi >= 30) {
+                Weblianjie.fasongshuju("code:109", "{" + '"kouchuxingdongli"' + ":" + '"30"' + ","
+                    + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+            }
+            else {
+                Gameguanli.Kongzhitai().cuowutishixinxi("您当前的行动力不足，无法上街！");
+            }
         }
     };
     return Changjingrukouui;

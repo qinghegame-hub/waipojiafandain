@@ -3,10 +3,10 @@
 	<w:Config id="16f1301b890" ></w:Config>
 	<e:Group id="zhuyaozu" top="0" left="0" right="0" bottom="0">
 		<e:Image id="img_fandianyuanhuabg0" scaleX="1" scaleY="1" source="img_fandianyuanhuabg_png" left="0" bottom="0" right="0" top="0"/>
-		<e:Image id="img_jiaju_xiaochao" source="img_jiaju1_1_png" x="366.91" y="1062.25" scaleX="1" scaleY="1" anchorOffsetX="0" width="254.09" anchorOffsetY="0" height="108.45"/>
-		<e:Image id="img_jiaju_huoguo" source="img_jiaju2_1_png" x="357" y="705" anchorOffsetX="0" width="239" anchorOffsetY="0" height="134"/>
-		<e:Image id="img_jiaju_xiaochi" source="img_jiaju3_1_png" x="139" y="419" anchorOffsetX="0" width="211" anchorOffsetY="0" height="86"/>
-		<e:Image id="img_jiaju_dianxin" source="img_jiaju4_1_png" x="557" y="397" anchorOffsetX="0" width="189" anchorOffsetY="0" height="118"/>
+		<e:Image id="img_jiaju_xiaochao" source="img_jiaju1_1_png" x="363" y="1047.25" scaleX="1" scaleY="1" anchorOffsetX="0" width="250" anchorOffsetY="0" height="108"/>
+		<e:Image id="img_jiaju_huoguo" source="img_jiaju2_1_png" x="357" y="699" anchorOffsetX="0" width="240" anchorOffsetY="0" height="134"/>
+		<e:Image id="img_jiaju_xiaochi" source="img_jiaju3_1_png" x="139" y="415" anchorOffsetX="0" width="210" anchorOffsetY="0" height="86"/>
+		<e:Image id="img_jiaju_dianxin" source="img_jiaju4_1_png" x="557" y="393" anchorOffsetX="0" width="190" anchorOffsetY="0" height="118"/>
 		<e:Button id="but_laji2" label="" x="197.5" y="441" enabled="false" alpha="0">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">

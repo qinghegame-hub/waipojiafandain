@@ -27,6 +27,8 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 	public keng15:eui.Image;
 	public but_likai:eui.Button;
 	public but_shuaxin:eui.Button;
+	public yuanliaoicon:eui.Image;
+
 
 
 
@@ -70,7 +72,7 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 		shuaxinjiange.addEventListener(egret.TimerEvent.TIMER,this.shuaxinxulie,this);
 		shuaxinjiange.start();
 //		this.shuaxinxulie();
-		this.jianjinbi.text = "-" + this.xiaohaojinbi;
+		this.shuaxinjiangliyuanliao();
 		this.baicaitext.text =  "" + this.baicaishu;
 		this.tudoutext.text = "" + this.tudoushu;
 		this.dongguatext.text = "" + this.dongguashu;
@@ -146,7 +148,7 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 			this.keng13.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.diankeng13,this);
 			this.keng14.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.diankeng14,this);
 			this.keng15.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.diankeng15,this);
-			this.zengjiayuanliao = this.baicaishu * 1 + this.tudoushu * 4 +this.dongguashu * 9 + this.yushu * 16 + this.roushu * 25;
+			this.zengjiayuanliao = this.baicaishu * 5 + this.tudoushu * 20 +this.dongguashu * 45 + this.yushu * 80 + this.roushu * 125;
 			Weblianjie.fasongshuju("code:031","{" + '"zengjiayuanliao"' +":"+ '"' + this.zengjiayuanliao + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 			Gameguanli.Kongzhitai().cuowutishixinxi("菜篮子已全部用完，本次买菜完成!");
 			let daojishituichu = new egret.Timer(3000,1);
@@ -259,7 +261,15 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 			this.keng13.touchEnabled = false;
 			this.keng14.touchEnabled = false;
 			this.keng15.touchEnabled = false;
-		Gameguanli.Kongzhitai().cuowutishixinxi("挑选成功，菜篮子剩余：" + this.cailanzi + "个");
+			let cailanzitishi = new Cailiaoxiaohao();
+			this.addChild(cailanzitishi);
+			cailanzitishi.img_shicai.source = "img_cailanzi_png";
+			cailanzitishi.wenzineirong.text = "剩:" + this.cailanzi;
+			cailanzitishi.x = this.img_maicaibj.width / 2 - cailanzitishi.width / 2;
+			cailanzitishi.y = this.img_maicaibj.height / 2 - cailanzitishi.height / 2;
+			egret.Tween.get(cailanzitishi).to({x:cailanzitishi.x,y:cailanzitishi.y - 80},2000).call(()=>{
+				this.removeChild(cailanzitishi);
+			})
 		switch(this.shicaizu[0]){
 			case 1:
 				this.dangqianshicai = 1;
@@ -300,7 +310,15 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 			this.keng13.touchEnabled = false;
 			this.keng14.touchEnabled = false;
 			this.keng15.touchEnabled = false;
-		Gameguanli.Kongzhitai().cuowutishixinxi("挑选成功，菜篮子剩余：" + this.cailanzi + "个");
+			let cailanzitishi = new Cailiaoxiaohao();
+				this.addChild(cailanzitishi);
+				cailanzitishi.img_shicai.source = "img_cailanzi_png";
+				cailanzitishi.wenzineirong.text = "剩:" + this.cailanzi;
+				cailanzitishi.x = this.img_maicaibj.width / 2 - cailanzitishi.width / 2;
+				cailanzitishi.y = this.img_maicaibj.height / 2 - cailanzitishi.height / 2;
+				egret.Tween.get(cailanzitishi).to({x:cailanzitishi.x,y:cailanzitishi.y - 80},2000).call(()=>{
+					this.removeChild(cailanzitishi);
+				})
 		switch(this.shicaizu[1]){
 			case 1:
 				this.dangqianshicai = 1;
@@ -341,7 +359,15 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 			this.keng13.touchEnabled = false;
 			this.keng14.touchEnabled = false;
 			this.keng15.touchEnabled = false;
-		Gameguanli.Kongzhitai().cuowutishixinxi("挑选成功，菜篮子剩余：" + this.cailanzi + "个");
+		let cailanzitishi = new Cailiaoxiaohao();
+			this.addChild(cailanzitishi);
+			cailanzitishi.img_shicai.source = "img_cailanzi_png";
+			cailanzitishi.wenzineirong.text = "剩:" + this.cailanzi;
+			cailanzitishi.x = this.img_maicaibj.width / 2 - cailanzitishi.width / 2;
+			cailanzitishi.y = this.img_maicaibj.height / 2 - cailanzitishi.height / 2;
+			egret.Tween.get(cailanzitishi).to({x:cailanzitishi.x,y:cailanzitishi.y - 80},2000).call(()=>{
+				this.removeChild(cailanzitishi);
+			})
 		switch(this.shicaizu[2]){
 			case 1:
 				this.dangqianshicai = 1;
@@ -383,7 +409,15 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 			this.keng13.touchEnabled = false;
 			this.keng14.touchEnabled = false;
 			this.keng15.touchEnabled = false;
-		Gameguanli.Kongzhitai().cuowutishixinxi("挑选成功，菜篮子剩余：" + this.cailanzi + "个");
+		let cailanzitishi = new Cailiaoxiaohao();
+			this.addChild(cailanzitishi);
+			cailanzitishi.img_shicai.source = "img_cailanzi_png";
+			cailanzitishi.wenzineirong.text = "剩:" + this.cailanzi;
+			cailanzitishi.x = this.img_maicaibj.width / 2 - cailanzitishi.width / 2;
+			cailanzitishi.y = this.img_maicaibj.height / 2 - cailanzitishi.height / 2;
+			egret.Tween.get(cailanzitishi).to({x:cailanzitishi.x,y:cailanzitishi.y - 80},2000).call(()=>{
+				this.removeChild(cailanzitishi);
+			})
 		switch(this.shicaizu[3]){
 			case 1:
 				this.dangqianshicai = 1;
@@ -425,7 +459,15 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 			this.keng13.touchEnabled = false;
 			this.keng14.touchEnabled = false;
 			this.keng15.touchEnabled = false;
-		Gameguanli.Kongzhitai().cuowutishixinxi("挑选成功，菜篮子剩余：" + this.cailanzi + "个");
+		let cailanzitishi = new Cailiaoxiaohao();
+			this.addChild(cailanzitishi);
+			cailanzitishi.img_shicai.source = "img_cailanzi_png";
+			cailanzitishi.wenzineirong.text = "剩:" + this.cailanzi;
+			cailanzitishi.x = this.img_maicaibj.width / 2 - cailanzitishi.width / 2;
+			cailanzitishi.y = this.img_maicaibj.height / 2 - cailanzitishi.height / 2;
+			egret.Tween.get(cailanzitishi).to({x:cailanzitishi.x,y:cailanzitishi.y - 80},2000).call(()=>{
+				this.removeChild(cailanzitishi);
+			})
 		switch(this.shicaizu[4]){
 			case 1:
 				this.dangqianshicai = 1;
@@ -467,7 +509,15 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 			this.keng13.touchEnabled = false;
 			this.keng14.touchEnabled = false;
 			this.keng15.touchEnabled = false;
-		Gameguanli.Kongzhitai().cuowutishixinxi("挑选成功，菜篮子剩余：" + this.cailanzi + "个");
+		let cailanzitishi = new Cailiaoxiaohao();
+			this.addChild(cailanzitishi);
+			cailanzitishi.img_shicai.source = "img_cailanzi_png";
+			cailanzitishi.wenzineirong.text = "剩:" + this.cailanzi;
+			cailanzitishi.x = this.img_maicaibj.width / 2 - cailanzitishi.width / 2;
+			cailanzitishi.y = this.img_maicaibj.height / 2 - cailanzitishi.height / 2;
+			egret.Tween.get(cailanzitishi).to({x:cailanzitishi.x,y:cailanzitishi.y - 80},2000).call(()=>{
+				this.removeChild(cailanzitishi);
+			})
 		switch(this.shicaizu[5]){
 			case 1:
 				this.dangqianshicai = 1;
@@ -509,7 +559,15 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 			this.keng13.touchEnabled = false;
 			this.keng14.touchEnabled = false;
 			this.keng15.touchEnabled = false;
-		Gameguanli.Kongzhitai().cuowutishixinxi("挑选成功，菜篮子剩余：" + this.cailanzi + "个");
+		let cailanzitishi = new Cailiaoxiaohao();
+			this.addChild(cailanzitishi);
+			cailanzitishi.img_shicai.source = "img_cailanzi_png";
+			cailanzitishi.wenzineirong.text = "剩:" + this.cailanzi;
+			cailanzitishi.x = this.img_maicaibj.width / 2 - cailanzitishi.width / 2;
+			cailanzitishi.y = this.img_maicaibj.height / 2 - cailanzitishi.height / 2;
+			egret.Tween.get(cailanzitishi).to({x:cailanzitishi.x,y:cailanzitishi.y - 80},2000).call(()=>{
+				this.removeChild(cailanzitishi);
+			})
 		switch(this.shicaizu[6]){
 			case 1:
 				this.dangqianshicai = 1;
@@ -551,7 +609,15 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 			this.keng13.touchEnabled = false;
 			this.keng14.touchEnabled = false;
 			this.keng15.touchEnabled = false;
-		Gameguanli.Kongzhitai().cuowutishixinxi("挑选成功，菜篮子剩余：" + this.cailanzi + "个");
+		let cailanzitishi = new Cailiaoxiaohao();
+			this.addChild(cailanzitishi);
+			cailanzitishi.img_shicai.source = "img_cailanzi_png";
+			cailanzitishi.wenzineirong.text = "剩:" + this.cailanzi;
+			cailanzitishi.x = this.img_maicaibj.width / 2 - cailanzitishi.width / 2;
+			cailanzitishi.y = this.img_maicaibj.height / 2 - cailanzitishi.height / 2;
+			egret.Tween.get(cailanzitishi).to({x:cailanzitishi.x,y:cailanzitishi.y - 80},2000).call(()=>{
+				this.removeChild(cailanzitishi);
+			})
 		switch(this.shicaizu[7]){
 			case 1:
 				this.dangqianshicai = 1;
@@ -593,7 +659,15 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 			this.keng13.touchEnabled = false;
 			this.keng14.touchEnabled = false;
 			this.keng15.touchEnabled = false;
-		Gameguanli.Kongzhitai().cuowutishixinxi("挑选成功，菜篮子剩余：" + this.cailanzi + "个");
+		let cailanzitishi = new Cailiaoxiaohao();
+			this.addChild(cailanzitishi);
+			cailanzitishi.img_shicai.source = "img_cailanzi_png";
+			cailanzitishi.wenzineirong.text = "剩:" + this.cailanzi;
+			cailanzitishi.x = this.img_maicaibj.width / 2 - cailanzitishi.width / 2;
+			cailanzitishi.y = this.img_maicaibj.height / 2 - cailanzitishi.height / 2;
+			egret.Tween.get(cailanzitishi).to({x:cailanzitishi.x,y:cailanzitishi.y - 80},2000).call(()=>{
+				this.removeChild(cailanzitishi);
+			})
 		switch(this.shicaizu[8]){
 			case 1:
 				this.dangqianshicai = 1;
@@ -635,7 +709,15 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 			this.keng13.touchEnabled = false;
 			this.keng14.touchEnabled = false;
 			this.keng15.touchEnabled = false;
-		Gameguanli.Kongzhitai().cuowutishixinxi("挑选成功，菜篮子剩余：" + this.cailanzi + "个");
+		let cailanzitishi = new Cailiaoxiaohao();
+			this.addChild(cailanzitishi);
+			cailanzitishi.img_shicai.source = "img_cailanzi_png";
+			cailanzitishi.wenzineirong.text = "剩:" + this.cailanzi;
+			cailanzitishi.x = this.img_maicaibj.width / 2 - cailanzitishi.width / 2;
+			cailanzitishi.y = this.img_maicaibj.height / 2 - cailanzitishi.height / 2;
+			egret.Tween.get(cailanzitishi).to({x:cailanzitishi.x,y:cailanzitishi.y - 80},2000).call(()=>{
+				this.removeChild(cailanzitishi);
+			})
 		switch(this.shicaizu[9]){
 			case 1:
 				this.dangqianshicai = 1;
@@ -677,7 +759,15 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 			this.keng13.touchEnabled = false;
 			this.keng14.touchEnabled = false;
 			this.keng15.touchEnabled = false;
-		Gameguanli.Kongzhitai().cuowutishixinxi("挑选成功，菜篮子剩余：" + this.cailanzi + "个");
+		let cailanzitishi = new Cailiaoxiaohao();
+			this.addChild(cailanzitishi);
+			cailanzitishi.img_shicai.source = "img_cailanzi_png";
+			cailanzitishi.wenzineirong.text = "剩:" + this.cailanzi;
+			cailanzitishi.x = this.img_maicaibj.width / 2 - cailanzitishi.width / 2;
+			cailanzitishi.y = this.img_maicaibj.height / 2 - cailanzitishi.height / 2;
+			egret.Tween.get(cailanzitishi).to({x:cailanzitishi.x,y:cailanzitishi.y - 80},2000).call(()=>{
+				this.removeChild(cailanzitishi);
+			})
 		switch(this.shicaizu[10]){
 			case 1:
 				this.dangqianshicai = 1;
@@ -719,7 +809,15 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 			this.keng13.touchEnabled = false;
 			this.keng14.touchEnabled = false;
 			this.keng15.touchEnabled = false;
-		Gameguanli.Kongzhitai().cuowutishixinxi("挑选成功，菜篮子剩余：" + this.cailanzi + "个");
+		let cailanzitishi = new Cailiaoxiaohao();
+			this.addChild(cailanzitishi);
+			cailanzitishi.img_shicai.source = "img_cailanzi_png";
+			cailanzitishi.wenzineirong.text = "剩:" + this.cailanzi;
+			cailanzitishi.x = this.img_maicaibj.width / 2 - cailanzitishi.width / 2;
+			cailanzitishi.y = this.img_maicaibj.height / 2 - cailanzitishi.height / 2;
+			egret.Tween.get(cailanzitishi).to({x:cailanzitishi.x,y:cailanzitishi.y - 80},2000).call(()=>{
+				this.removeChild(cailanzitishi);
+			})
 		switch(this.shicaizu[11]){
 			case 1:
 				this.dangqianshicai = 1;
@@ -761,7 +859,15 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 			this.keng13.touchEnabled = false;
 			this.keng14.touchEnabled = false;
 			this.keng15.touchEnabled = false;
-		Gameguanli.Kongzhitai().cuowutishixinxi("挑选成功，菜篮子剩余：" + this.cailanzi + "个");
+		let cailanzitishi = new Cailiaoxiaohao();
+			this.addChild(cailanzitishi);
+			cailanzitishi.img_shicai.source = "img_cailanzi_png";
+			cailanzitishi.wenzineirong.text = "剩:" + this.cailanzi;
+			cailanzitishi.x = this.img_maicaibj.width / 2 - cailanzitishi.width / 2;
+			cailanzitishi.y = this.img_maicaibj.height / 2 - cailanzitishi.height / 2;
+			egret.Tween.get(cailanzitishi).to({x:cailanzitishi.x,y:cailanzitishi.y - 80},2000).call(()=>{
+				this.removeChild(cailanzitishi);
+			})
 		switch(this.shicaizu[12]){
 			case 1:
 				this.dangqianshicai = 1;
@@ -803,7 +909,15 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 			this.keng13.touchEnabled = false;
 			this.keng14.touchEnabled = false;
 			this.keng15.touchEnabled = false;
-		Gameguanli.Kongzhitai().cuowutishixinxi("挑选成功，菜篮子剩余：" + this.cailanzi + "个");
+		let cailanzitishi = new Cailiaoxiaohao();
+			this.addChild(cailanzitishi);
+			cailanzitishi.img_shicai.source = "img_cailanzi_png";
+			cailanzitishi.wenzineirong.text = "剩:" + this.cailanzi;
+			cailanzitishi.x = this.img_maicaibj.width / 2 - cailanzitishi.width / 2;
+			cailanzitishi.y = this.img_maicaibj.height / 2 - cailanzitishi.height / 2;
+			egret.Tween.get(cailanzitishi).to({x:cailanzitishi.x,y:cailanzitishi.y - 80},2000).call(()=>{
+				this.removeChild(cailanzitishi);
+			})
 		switch(this.shicaizu[13]){
 			case 1:
 				this.dangqianshicai = 1;
@@ -845,7 +959,15 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 			this.keng13.touchEnabled = false;
 			this.keng14.touchEnabled = false;
 			this.keng15.touchEnabled = false;
-		Gameguanli.Kongzhitai().cuowutishixinxi("挑选成功，菜篮子剩余：" + this.cailanzi + "个");
+		let cailanzitishi = new Cailiaoxiaohao();
+			this.addChild(cailanzitishi);
+			cailanzitishi.img_shicai.source = "img_cailanzi_png";
+			cailanzitishi.wenzineirong.text = "剩:" + this.cailanzi;
+			cailanzitishi.x = this.img_maicaibj.width / 2 - cailanzitishi.width / 2;
+			cailanzitishi.y = this.img_maicaibj.height / 2 - cailanzitishi.height / 2;
+			egret.Tween.get(cailanzitishi).to({x:cailanzitishi.x,y:cailanzitishi.y - 80},2000).call(()=>{
+				this.removeChild(cailanzitishi);
+			})
 		switch(this.shicaizu[14]){
 			case 1:
 				this.dangqianshicai = 1;
@@ -1638,6 +1760,11 @@ class Maicaiui extends eui.Component implements  eui.UIComponent {
 		}else{
 			Gameguanli.Kongzhitai().cuowutishixinxi("您的刷新次数已不足，无法刷新！");
 		}
+	}
+
+	public shuaxinjiangliyuanliao(){
+		this.zengjiayuanliao = this.baicaishu * 5 + this.tudoushu * 20 +this.dongguashu * 45 + this.yushu * 80 + this.roushu * 125;
+		this.jianjinbi.text = "+" + this.zengjiayuanliao;
 	}
 	
 }

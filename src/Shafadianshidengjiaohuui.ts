@@ -9,6 +9,11 @@ class Shafadianshidengjiaohuui extends eui.Component implements  eui.UIComponent
 	public jiesaobiaoqian0:eui.Label;
 	public jiesaoneirong0:eui.Label;
 	public qurenanniu:eui.Button;
+	public qurenanniu0:eui.Button;
+	public qurenanniu1:eui.Button;
+	public guanbianniu:eui.Button;
+
+
 
 	public constructor() {
 		super();
@@ -23,6 +28,11 @@ class Shafadianshidengjiaohuui extends eui.Component implements  eui.UIComponent
 	protected childrenCreated():void
 	{
 		super.childrenCreated();
+//		this.guanbianniujiaohu();
 	}
 	
+
+	public guanbianniujiaohu(){
+		
+	}
 }

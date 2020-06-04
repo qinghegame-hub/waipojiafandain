@@ -6,7 +6,7 @@
 		<e:Group id="jiemainzu" x="41.5" y="415">
 			<e:Image id="img_jinrubeijing" source="img_jinrubeijing_png" x="0" y="0"/>
 			<e:Image id="img_biaotitu" x="15.5" y="27" source="img_biaoticaishichang_png"/>
-			<e:Label id="rukoushuoming" text="" x="39.5" y="229" anchorOffsetX="0" width="587" anchorOffsetY="0" height="143" size="24" bold="true" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2"/>
+			<e:Label id="rukoushuoming" text="" x="39.5" y="229" anchorOffsetX="0" width="587" anchorOffsetY="0" height="143" size="24" bold="true" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2" strokeColor="0x706969" lineSpacing="10"/>
 			<e:Button id="but_quxiao" label="" x="58.5" y="402">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
@@ -23,7 +23,7 @@
 				</e:Skin>
 			</e:skinName>
 			</e:Button>
-			<e:Image id="img_qian" source="img_qian_png" x="256.5" y="415.5"/>
+			<e:Image id="img_qian" source="img_qian_png" x="256.5" y="415.5" width="40" height="40"/>
 			<e:Label id="xiaohaoqian" text="" x="309.5" y="422" anchorOffsetX="0" width="117" bold="true" textAlign="left" verticalAlign="middle" size="24" textColor="0xea1e1e" fontFamily="wodeziti" stroke="2" strokeColor="0xf7efef" anchorOffsetY="0" height="33"/>
 		</e:Group>
 	</e:Group>

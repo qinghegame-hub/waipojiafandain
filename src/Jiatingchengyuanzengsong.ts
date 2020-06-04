@@ -28,6 +28,9 @@ class Jiatingchengyuanzengsong extends eui.Component implements  eui.UIComponent
 	public daojutubiao3:eui.Image;
 	public jieshaowenzidikuang3:eui.Image;
 	public wenzineirong3:eui.Label;
+	public guanbianniu:eui.Button;
+
+
 
 	public constructor() {
 		super();
@@ -42,6 +45,13 @@ class Jiatingchengyuanzengsong extends eui.Component implements  eui.UIComponent
 	protected childrenCreated():void
 	{
 		super.childrenCreated();
+//		this.guanbianniujiaohu();
+	}
+
+	public guanbianniujiaohu(){
+		this.guanbianniu.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>{
+			this.parent.removeChild(this);
+		},this)
 	}
 	
 }

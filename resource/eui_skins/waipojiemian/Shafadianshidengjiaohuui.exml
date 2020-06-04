@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="ShafadianshidengjiaohuuiSkin" width="300" height="370" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+<e:Skin class="ShafadianshidengjiaohuuiSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
 	<w:Config id="1717e0633ca" ></w:Config>
-	<e:Group id="zhaxiangxinxi" x="0" y="0">
+	<e:Group id="zhaxiangxinxi" horizontalCenter="0" verticalCenter="0">
 		<e:Image id="img_tanchubeijing0" source="img_tanchubeijing_png" x="0" y="0"/>
-		<e:Label id="biaotiwenzi0" text="信息" x="77" y="8" anchorOffsetX="0" width="129" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="center" stroke="2" strokeColor="0x494646" textColor="0xFFA005"/>
-		<e:Label id="guanxibiaoqian0" text="关系" x="27" y="53" anchorOffsetX="0" width="103" verticalAlign="middle" size="20" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xACFF05" anchorOffsetY="0" height="21"/>
-		<e:Label id="guanxineirong0" text="关系" x="140" y="53" anchorOffsetX="0" width="113" verticalAlign="middle" size="20" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xF2EEE8"/>
-		<e:Label id="qinhelibiaoqian0" text="关系" x="27" y="87" anchorOffsetX="0" width="107" verticalAlign="middle" size="20" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xC2FF05" anchorOffsetY="0" height="24"/>
-		<e:Label id="qinghelizhi0" text="关系" x="140" y="87" anchorOffsetX="0" width="117" verticalAlign="middle" size="20" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xEDE9E3"/>
-		<e:Label id="jiesaobiaoqian0" text="关系" x="27" y="121" anchorOffsetX="0" width="110" verticalAlign="middle" size="20" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xBCFF05"/>
-		<e:Label id="jiesaoneirong0" text="关系" x="27" y="150" anchorOffsetX="0" width="228" verticalAlign="top" size="20" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" anchorOffsetY="0" height="138" textColor="0xE0DAD0"/>
-		<e:Button id="qurenanniu" label="" x="85.25" y="292" enabled="true" scaleX="0.5" scaleY="0.5">
+		<e:Label id="biaotiwenzi0" text="信息" x="24.5" y="10" anchorOffsetX="0" width="520" verticalAlign="middle" size="30" fontFamily="wodeziti" textAlign="center" stroke="2" strokeColor="0x494646" textColor="0xFFA005" anchorOffsetY="0" height="62" bold="true"/>
+		<e:Label id="guanxibiaoqian0" text="关系" x="69" y="105" anchorOffsetX="0" width="100" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xACFF05" anchorOffsetY="0" height="30"/>
+		<e:Label id="guanxineirong0" text="关系" x="209" y="105" anchorOffsetX="0" width="297" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xF2EEE8" height="30"/>
+		<e:Label id="qinhelibiaoqian0" text="关系" x="69" y="173" anchorOffsetX="0" width="100" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xC2FF05" anchorOffsetY="0" height="30"/>
+		<e:Label id="qinghelizhi0" text="关系" x="205.5" y="173" anchorOffsetX="0" width="307" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xEDE9E3" height="30"/>
+		<e:Label id="jiesaobiaoqian0" text="关系" x="69" y="242" anchorOffsetX="0" width="100" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xBCFF05" height="30"/>
+		<e:Label id="jiesaoneirong0" text="关系" x="69" y="300" anchorOffsetX="0" width="427" verticalAlign="top" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" anchorOffsetY="0" height="267" textColor="0xE0DAD0" lineSpacing="10"/>
+		<e:Button id="qurenanniu" label="" x="200" y="606" enabled="true" anchorOffsetX="0.5" anchorOffsetY="0.5">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" source="but_xuanxiang1_png" source.down="but_xuanxiang2_png" source.disabled="but_xuanxiang2_png"/>
+				<e:Image width="100%" height="100%" source="img_tishiqueding1_png" source.down="img_tishiqueding2_png" source.disabled="img_tishiqueding2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="qurenanniu0" label="" x="200" y="606" enabled="true" anchorOffsetX="0.5" anchorOffsetY="0.5">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="img_quedingzhuanfa1_png" source.down="img_quedingzhuanfa2_png" source.disabled="img_quedingzhuanfa2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="qurenanniu1" label="" x="200" y="606" enabled="true" anchorOffsetX="0.5" anchorOffsetY="0.5">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="img_quedingguanggao1_png" source.down="img_quedingguanggao2_png" source.disabled="img_quedingguanggao2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="guanbianniu" label="" x="470.5" y="4" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_guanbi2_png" source.down="but_guanbi1_png" source.disabled="but_guanbi1_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>

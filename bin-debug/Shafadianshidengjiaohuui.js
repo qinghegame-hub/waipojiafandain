@@ -18,6 +18,9 @@ var Shafadianshidengjiaohuui = (function (_super) {
     };
     Shafadianshidengjiaohuui.prototype.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
+        //		this.guanbianniujiaohu();
+    };
+    Shafadianshidengjiaohuui.prototype.guanbianniujiaohu = function () {
     };
     return Shafadianshidengjiaohuui;
 }(eui.Component));

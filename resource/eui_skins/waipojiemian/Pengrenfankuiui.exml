@@ -4,20 +4,20 @@
 	<e:Group id="fankuizu" x="0" y="0">
 		<e:Image id="img_huodebeijing0" source="img_huodebeijing_png" x="0" y="0"/>
 		<e:Image id="jiangliicon0" source="1001_png" x="264" y="482.5" anchorOffsetX="0.5" anchorOffsetY="0.5" width="221" height="171"/>
-		<e:Label id="jianglishuliang0" text="X1" x="138" y="707" anchorOffsetX="0" width="456" fontFamily="wodeziti" verticalAlign="middle" textAlign="center" bold="true" stroke="2" size="24" anchorOffsetY="0" height="60"/>
+		<e:Label id="jianglishuliang0" text="X1" x="36" y="707" anchorOffsetX="0" width="679" fontFamily="wodeziti" verticalAlign="middle" textAlign="center" bold="true" stroke="2" size="24" anchorOffsetY="0" height="60"/>
 		<e:Button id="qudinganniu0" label="" x="247" y="968" enabled="true">
-		<e:skinName>
-			<e:Skin states="up,down,disabled">
-			<e:Image width="100%" height="100%" source="but_zhizuo2_png" source.down="but_zhizuo1_png" source.disabled="but_zhizuo1_png"/>
-			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-			</e:Skin>
-		</e:skinName>
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_caipuqueding1_png" source.down="but_caipuqueding2_png" source.disabled="but_caipuqueding2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
 		</e:Button>
 		<e:Image x="225.5" y="212" id="img_jianglibiaoti0" source="img_pengrenchenggong_png"/>
 		<e:Image id="img_jindutiaobeijing" source="img_jindutiaobeijing_png" x="238" y="833" width="250" height="52"/>
 		<e:Image id="img_jindutiaogundong" source="img_jindutiaogundong_png" x="311" y="849.41" width="176" height="26" anchorOffsetY="0.5"/>
 		<e:Label id="levelwenzi" text="20" x="253" y="844" size="24" fontFamily="wodeziti" stroke="2" bold="true" anchorOffsetX="0" width="35" textAlign="center"/>
 		<e:Label id="huodejingyanwenzi" text="+50" x="509" y="851" anchorOffsetX="0" width="177" size="24" fontFamily="wodeziti" verticalAlign="middle" textAlign="left" italic="true"/>
-		<e:Label id="dengjitishi" text="品质提升！！" x="293" y="803" anchorOffsetX="0" width="186" size="30" fontFamily="wodeziti" verticalAlign="middle" textAlign="center" italic="true" bold="true" stroke="4" textColor="0xbf8609" strokeColor="0xf9eded"/>
+		<e:Label id="dengjitishi" text="品质提升！！" x="28" y="792" anchorOffsetX="0" width="693" size="30" fontFamily="wodeziti" verticalAlign="middle" textAlign="center" italic="true" bold="true" stroke="4" textColor="0xbf8609" strokeColor="0xf9eded" anchorOffsetY="0" height="41"/>
 	</e:Group>
 </e:Skin>

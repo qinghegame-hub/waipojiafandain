@@ -31,6 +31,9 @@ class Danjujiemian extends eui.Component implements  eui.UIComponent {
 	public di1geid:string;
 	public di2geid:string;
 
+	public di1gejinbi:number;
+	public di2gejinbi:number;
+
 
 	public constructor() {
 		super();
@@ -56,21 +59,32 @@ class Danjujiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjidi1gejiesuo(){
-		Weblianjie.fasongshuju("code:022","{" + '"danjuid"' +":"+ '"' + this.di1geid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
+		if(Gerenshuxing.jinbizhi >= this.di1gejinbi){
+			Weblianjie.fasongshuju("code:022","{" + '"danjuid"' +":"+ '"' + this.di1geid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
+		}else{
+			Gameguanli.Kongzhitai().cuowutishixinxi("您的金币不足！");
+		}
+		
 	}
 
 	protected dianjidi2gejiesuo(){
-		Weblianjie.fasongshuju("code:022","{" + '"danjuid"' +":"+ '"' + this.di2geid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
+		if(Gerenshuxing.jinbizhi >= this.di2gejinbi){
+			Weblianjie.fasongshuju("code:022","{" + '"danjuid"' +":"+ '"' + this.di2geid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
+		}else{
+			Gameguanli.Kongzhitai().cuowutishixinxi("您的金币不足！");
+		}
 	}
 
 
 	//修改饭店界面的家具的小吃区域显示内容和判断使用是否成功
-	public  tongzhizhujiemain1(id:string){
+	public  tongzhizhujiemain1(id:string,jinbi){
 		this.di1geid = id;
+		this.di1gejinbi = parseInt(jinbi);
 	}
 
-	public  tongzhizhujiemain2(id:string){
+	public  tongzhizhujiemain2(id:string,jinbi){
 		this.di2geid = id;
+		this.di2gejinbi = parseInt(jinbi);
 	}
 
 	//判断每个显示格子的具体显示内容
@@ -85,10 +99,11 @@ class Danjujiemian extends eui.Component implements  eui.UIComponent {
 						this.fumianzhuangtai0.text = "总收入：-" + leixingdizhi[leixingxiabiao].debuff + "%";
 						this.jiaonajine0.text = "- " + leixingdizhi[leixingxiabiao].pay;
 						this.jiaonayuanyin0.text = leixingdizhi[leixingxiabiao].reason;
+						let jinbi1 = leixingdizhi[leixingxiabiao].pay;
 						this.jinbi0.alpha = 1;
 						this.but_jiaona0.alpha = 1;
 						this.but_jiaona0.enabled = true;
-						this.tongzhizhujiemain1(leixingdizhi[leixingxiabiao].id);
+						this.tongzhizhujiemain1(leixingdizhi[leixingxiabiao].id,jinbi1);
 					}else{
 						this.img_danjuneirong0.source = "";
 						this.danjubiaoti0.text = "";
@@ -111,11 +126,12 @@ class Danjujiemian extends eui.Component implements  eui.UIComponent {
 						this.jiaoferen1.text = Gerenshuxing.uid;
 						this.fumianzhuangtai1.text = "总收入：-" + leixingdizhi[leixingxiabiao].debuff + "%";
 						this.jiaonajine1.text = "- " + leixingdizhi[leixingxiabiao].pay;
+						let jinbi2 = leixingdizhi[leixingxiabiao].pay;
 						this.jiaonayuanyin1.text = leixingdizhi[leixingxiabiao].reason;
 						this.jinbi1.alpha = 1;
 						this.but_jiaona1.alpha = 1;
 						this.but_jiaona1.enabled = true;
-						this.tongzhizhujiemain2(leixingdizhi[leixingxiabiao].id);
+						this.tongzhizhujiemain2(leixingdizhi[leixingxiabiao].id,jinbi2);
 					}else{
 						this.img_danjuneirong1.source = "";
 						this.danjubiaoti1.text = "";

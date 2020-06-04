@@ -162,7 +162,6 @@ var Paihangbangjiemian = (function (_super) {
                 url: xinpaimingzu[h].url,
                 scroes: xinpaimingzu[h].fenshu
             };
-            console.log(this.totalGroup);
         }
         this.zuidayeshu = Math.ceil(this.totalGroup.length / 3);
         this.xianshizishen();

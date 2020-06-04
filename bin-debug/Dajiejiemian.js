@@ -8,13 +8,71 @@ var __extends = this && this.__extends || function __extends(t, e) {
 for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
 r.prototype = e.prototype, t.prototype = new r();
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 var Dajiejiemian = (function (_super) {
     __extends(Dajiejiemian, _super);
     function Dajiejiemian() {
         var _this = _super.call(this) || this;
         _this.dangqianbushu = 1; //当前所处的台阶步数;
         _this.dangqiansaizi = 1; //当前筛子抛出的点数;
+        _this.dangqianshengyucishu = 0; //当前剩余的筛子次数;
+        _this.jiedaoteshushijianzu = []; //街道特殊事件组;
         _this.keyishougou = false; //是否可以收购;
+        _this.chaoshishuliang = [0, 0, 0, 0, 0, 0, 1, 1, 1]; //超市道具数量[0,0,0,0,0,0]
+        _this.chaoshijiage = [0, 0, 0, 0, 0, 0, 0, 0, 0]; //超市道具价格[0,0,0,0,0,0]
+        _this.chaoshiid = [0, 0, 0, 0, 0, 0, "1_1", "1_2", "1_3"]; //超市道具ID[0,0,0,0,0,0]
+        _this.chaoshitupian = [0, 0, 0, 0, 0, 0, "img_chaoshifudai1_png", "img_chaoshifudai2_png", "img_chaoshifudai3_png"]; //超市图片[0,0,0,0,0,0]
+        _this.chaoshimingcheng = [0, 0, 0, 0, 0, 0, "日用福袋", "男士福袋", "数码福袋"]; //超市道具名称[0,0,0,0,0,0]
+        _this.yaodianshuliang = [0, 0, 0, 0, 0, 0, 1, 1, 1]; //超市道具数量[0,0,0,0,0,0]
+        _this.yaodianjiage = [0, 0, 0, 0, 0, 0, 0, 0, 0]; //超市道具价格[0,0,0,0,0,0]
+        _this.yaodianid = [0, 0, 0, 0, 0, 0, 0, 0, 0]; //超市道具ID[0,0,0,0,0,0]
+        _this.yaodiantupian = [0, 0, 0, 0, 0, 0, 0, 0, 0]; //超市图片[0,0,0,0,0,0]
+        _this.yaodianmingcheng = [0, 0, 0, 0, 0, 0, 0, 0, 0]; //超市道具名称[0,0,0,0,0,0]
+        _this.caishichangshuliang = [0, 0, 0, 0, 0, 0, 1, 1, 1]; //超市道具数量[0,0,0,0,0,0]
+        _this.caishichangjiage = [0, 0, 0, 0, 0, 0, 0, 0, 0]; //超市道具价格[0,0,0,0,0,0]
+        _this.caishichangid = [0, 0, 0, 0, 0, 0, 0, 0, 0]; //超市道具ID[0,0,0,0,0,0]
+        _this.caishichangtupian = [0, 0, 0, 0, 0, 0, 0, 0, 0]; //超市图片[0,0,0,0,0,0]
+        _this.caishichangmingcheng = [0, 0, 0, 0, 0, 0, 0, 0, 0]; //超市道具名称[0,0,0,0,0,0]
+        _this.peixunshuliang = [0, 0, 0, 0, 0, 0, 1, 1, 1]; //超市道具数量[0,0,0,0,0,0]
+        _this.peixunjiage = [0, 0, 0, 0, 0, 0, 0, 0, 0]; //超市道具价格[0,0,0,0,0,0]
+        _this.peixunid = [0, 0, 0, 0, 0, 0, 0, 0, 0]; //超市道具ID[0,0,0,0,0,0]
+        _this.peixuntupian = [0, 0, 0, 0, 0, 0, 0, 0, 0]; //超市图片[0,0,0,0,0,0]
+        _this.peixunmingcheng = [0, 0, 0, 0, 0, 0, 0, 0, 0]; //超市道具名称[0,0,0,0,0,0]
+        _this.chaoshigoumaiui = new Chaoshishangdianui();
         return _this;
     }
     Dajiejiemian.prototype.partAdded = function (partName, instance) {
@@ -27,38 +85,278 @@ var Dajiejiemian = (function (_super) {
     Dajiejiemian.prototype.chushihua = function () {
         this.jiedaobiao = RES.getRes("jiedaobiao_json");
         this.jiedaosuijibiao = RES.getRes("jiedaosuijibiao_json");
+        this.kaishianniuzu.alpha = 1;
+        this.but_shaizi.enabled = true;
         this.but_shaizi.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjisaizi, this);
         this.juesezu.x = this.taijie0.x;
         this.juesezu.y = this.taijie0.y;
         this.dangqianbushu = 1;
         this.dangqiansaizi = 1;
+        this.dangqianshengyucishu = 0;
         this.youbiaotouxiang();
         this.tilixiaohaochushi();
+        /*
+        初始化街道特殊事件
+        */
+        this.jiedaoteshushijian();
+    };
+    Dajiejiemian.prototype.jiedaoteshushijian = function () {
+        this.jiedaoteshushijianzu = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        /*
+        循环随机一下，将那些有战斗的地方计算出来
+        */
+        for (var j = 2; j < this.jiedaoteshushijianzu.length; j++) {
+            var suijishu = Math.floor(Math.random() * 100);
+            if (suijishu >= 60) {
+                this.jiedaoteshushijianzu[j] = "101";
+            }
+        }
+        /*
+        循环随机一下，将那些有雨水的地方计算出来,减少健康
+        */
+        for (var y = 2; y < this.jiedaoteshushijianzu.length; y++) {
+            var suijishuy = Math.floor(Math.random() * 100);
+            if (suijishuy >= 90) {
+                this.jiedaoteshushijianzu[y] = "102";
+            }
+        }
+        /*
+        循环随机一下，将那些有乞丐的地方计算出来,减少金钱
+        */
+        for (var q = 2; q < this.jiedaoteshushijianzu.length; q++) {
+            var suijishuq = Math.floor(Math.random() * 100);
+            if (suijishuq >= 90) {
+                this.jiedaoteshushijianzu[q] = "103";
+            }
+        }
+        /*
+        根据今天的特殊事件，计算那些地方有特殊内容
+        */
+        switch (Gerenshuxing.teshushijian) {
+            case "1":
+                this.jiedaoteshushijianzu[3] = "1";
+                break;
+            case "2":
+                this.jiedaoteshushijianzu[3] = "2";
+                break;
+            case "3":
+                this.jiedaoteshushijianzu[3] = "3";
+                break;
+            case "4":
+                this.jiedaoteshushijianzu[3] = "4";
+                break;
+            case "5":
+                this.jiedaoteshushijianzu[3] = "5";
+                break;
+            case "6":
+                this.jiedaoteshushijianzu[3] = "6";
+                break;
+            case "7":
+                this.jiedaoteshushijianzu[3] = "7";
+                break;
+            case "8":
+                this.jiedaoteshushijianzu[3] = "8";
+                break;
+            case "9":
+                this.jiedaoteshushijianzu[3] = "9";
+                break;
+            case "10":
+                this.jiedaoteshushijianzu[3] = "10";
+                break;
+            case "11":
+                this.jiedaoteshushijianzu[3] = "11";
+                break;
+            case "12":
+                this.jiedaoteshushijianzu[3] = "12";
+                break;
+            case "13":
+                this.jiedaoteshushijianzu[3] = "13";
+                break;
+            case "14":
+                this.jiedaoteshushijianzu[3] = "14";
+                break;
+            case "15":
+                this.jiedaoteshushijianzu[3] = "15";
+                break;
+            case "16":
+                this.jiedaoteshushijianzu[9] = "16";
+                break;
+            case "17":
+                this.jiedaoteshushijianzu[16] = "17";
+                break;
+            case "18":
+                this.jiedaoteshushijianzu[10] = "18";
+                break;
+            case "19":
+                this.jiedaoteshushijianzu[24] = "19";
+                break;
+            case "20":
+                this.jiedaoteshushijianzu[19] = "20";
+                break;
+            case "21":
+                this.jiedaoteshushijianzu[21] = "21";
+                //	this.jiedaoteshushijianzu[2] = "21";
+                break;
+            case "24":
+                this.jiedaoteshushijianzu[21] = "12";
+                break;
+            case "22":
+                var fushang = Math.floor(Math.random() * 22) + 2;
+                this.jiedaoteshushijianzu[fushang] = "22";
+                break;
+            case "23":
+                var chuyi = Math.floor(Math.random() * 22) + 2;
+                this.jiedaoteshushijianzu[chuyi] = "23";
+                break;
+        }
+        console.log("特殊事件组：" + this.jiedaoteshushijianzu);
+        /*
+        初始化街道特殊事件之后，需要刷新一下显示内容
+        */
+        this.teshuxianshishuaxin();
+    };
+    Dajiejiemian.prototype.teshuxianshishuaxin = function () {
+        this.teshuxianshi.source = "";
+        this.teshuxianshi0.source = this.taijiexianshi(this.jiedaoteshushijianzu[2]);
+        this.teshuxianshi1.source = this.taijiexianshi(this.jiedaoteshushijianzu[3]);
+        this.teshuxianshi2.source = this.taijiexianshi(this.jiedaoteshushijianzu[4]);
+        this.teshuxianshi3.source = this.taijiexianshi(this.jiedaoteshushijianzu[5]);
+        this.teshuxianshi4.source = this.taijiexianshi(this.jiedaoteshushijianzu[6]);
+        this.teshuxianshi5.source = this.taijiexianshi(this.jiedaoteshushijianzu[7]);
+        this.teshuxianshi6.source = this.taijiexianshi(this.jiedaoteshushijianzu[8]);
+        this.teshuxianshi7.source = this.taijiexianshi(this.jiedaoteshushijianzu[9]);
+        this.teshuxianshi8.source = this.taijiexianshi(this.jiedaoteshushijianzu[10]);
+        this.teshuxianshi9.source = this.taijiexianshi(this.jiedaoteshushijianzu[11]);
+        this.teshuxianshi10.source = this.taijiexianshi(this.jiedaoteshushijianzu[12]);
+        this.teshuxianshi11.source = this.taijiexianshi(this.jiedaoteshushijianzu[13]);
+        this.teshuxianshi12.source = this.taijiexianshi(this.jiedaoteshushijianzu[14]);
+        this.teshuxianshi13.source = this.taijiexianshi(this.jiedaoteshushijianzu[15]);
+        this.teshuxianshi14.source = this.taijiexianshi(this.jiedaoteshushijianzu[16]);
+        this.teshuxianshi15.source = this.taijiexianshi(this.jiedaoteshushijianzu[17]);
+        this.teshuxianshi16.source = this.taijiexianshi(this.jiedaoteshushijianzu[18]);
+        this.teshuxianshi17.source = this.taijiexianshi(this.jiedaoteshushijianzu[19]);
+        this.teshuxianshi18.source = this.taijiexianshi(this.jiedaoteshushijianzu[20]);
+        this.teshuxianshi19.source = this.taijiexianshi(this.jiedaoteshushijianzu[21]);
+        this.teshuxianshi20.source = this.taijiexianshi(this.jiedaoteshushijianzu[22]);
+        this.teshuxianshi21.source = this.taijiexianshi(this.jiedaoteshushijianzu[23]);
+        this.teshuxianshi22.source = this.taijiexianshi(this.jiedaoteshushijianzu[24]);
+        this.teshuxianshi23.source = this.taijiexianshi(this.jiedaoteshushijianzu[25]);
+        this.teshuxianshi24.source = this.taijiexianshi(this.jiedaoteshushijianzu[26]);
+        this.teshuxianshi25.source = this.taijiexianshi(this.jiedaoteshushijianzu[27]);
+    };
+    Dajiejiemian.prototype.taijiexianshi = function (taijieshu) {
+        var xianshitupian = "";
+        switch (taijieshu) {
+            case "1":
+                xianshitupian = "img_dazhe_png";
+                break;
+            case "2":
+                xianshitupian = "img_dazhe_png";
+                break;
+            case "3":
+                xianshitupian = "img_dazhe_png";
+                break;
+            case "4":
+                xianshitupian = "img_dazhe_png";
+                break;
+            case "5":
+                xianshitupian = "img_dazhe_png";
+                break;
+            case "6":
+                xianshitupian = "img_dazhe_png";
+                break;
+            case "7":
+                xianshitupian = "img_dazhe_png";
+                break;
+            case "8":
+                xianshitupian = "img_dazhe_png";
+                break;
+            case "9":
+                xianshitupian = "img_dazhe_png";
+                break;
+            case "10":
+                xianshitupian = "img_dazhe_png";
+                break;
+            case "11":
+                xianshitupian = "img_dazhe_png";
+                break;
+            case "12":
+                xianshitupian = "img_dazhe_png";
+                break;
+            case "13":
+                xianshitupian = "img_dazhe_png";
+                break;
+            case "14":
+                xianshitupian = "img_dazhe_png";
+                break;
+            case "15":
+                xianshitupian = "img_dazhe_png";
+                break;
+            case "16":
+                xianshitupian = "img_jiaju_png";
+                break;
+            case "17":
+                xianshitupian = "img_youleyuan_png";
+                break;
+            case "18":
+                xianshitupian = "img_shudian_png";
+                break;
+            case "19":
+                xianshitupian = "img_bangong_png";
+                break;
+            case "20":
+                xianshitupian = "img_shucai_png";
+                break;
+            case "21":
+                xianshitupian = "img_rencai_png";
+                break;
+            case "22":
+                xianshitupian = "img_fushang_png";
+                break;
+            case "23":
+                xianshitupian = "img_zhangxiaoke_png";
+                break;
+            case "24":
+                xianshitupian = "img_tijian_png";
+                break;
+            case "101":
+                xianshitupian = "img_zhandou_png";
+                break;
+            case "102":
+                xianshitupian = "img_yushui_png";
+                break;
+            case "103":
+                xianshitupian = "img_qigai_png";
+                break;
+        }
+        return xianshitupian;
     };
     Dajiejiemian.prototype.tilixiaohaochushi = function () {
-        this.tilixiaohao.text = "1 / " + Gerenshuxing.jiatingzhi;
+        this.tilixiaohao.text = this.dangqianshengyucishu + "/10 ";
     };
     Dajiejiemian.prototype.dianjisaizi = function () {
-        var _this = this;
         this.but_shaizi.enabled = false;
-        if (Gerenshuxing.jiatingzhi > 0) {
-            Weblianjie.fasongshuju("code:037", "{" + '"kouchushu"' + ":" + "1" + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
-            var kouchudonghua_1 = new Cailiaoxiaohao();
-            this.addChild(kouchudonghua_1);
-            kouchudonghua_1.wenzizu.x = this.kaishianniuzu.x + this.kaishianniuzu.width / 2 - kouchudonghua_1.wenzizu.width / 2;
-            kouchudonghua_1.wenzizu.y = this.kaishianniuzu.y - kouchudonghua_1.wenzizu.height;
-            kouchudonghua_1.wenzineirong.text = " - 1";
-            kouchudonghua_1.img_shicai.source = "img_jiating_png";
-            egret.Tween.get(kouchudonghua_1).to({ x: kouchudonghua_1.x, y: kouchudonghua_1.y - 60 }, 2000).call(function () {
-                _this.removeChild(kouchudonghua_1);
-            });
+        this.kaishianniuzu.alpha = 0;
+        if (this.dangqianshengyucishu < 10) {
+            /*let kouchudonghua = new Cailiaoxiaohao();
+            this.addChild(kouchudonghua);
+            kouchudonghua.wenzizu.x = this.kaishianniuzu.x + this.kaishianniuzu.width / 2 - kouchudonghua.wenzizu.width /2;
+            kouchudonghua.wenzizu.y = this.kaishianniuzu.y - kouchudonghua.wenzizu.height;
+            kouchudonghua.wenzineirong.text = " - 1";
+            kouchudonghua.img_shicai.source = "img_jiating_png";
+            egret.Tween.get(kouchudonghua).to({x:kouchudonghua.x,y:kouchudonghua.y - 60},2000).call(()=>{
+                this.removeChild(kouchudonghua);
+            });*/
+            this.dangqianshengyucishu += 1;
+            this.tilixiaohaochushi();
             this.dangqiansaizi = Math.floor(Math.random() * 6) + 1;
+            //	this.dangqiansaizi = 1;
             Gameguanli.Kongzhitai().cuowutishixinxi("当前掷出：" + this.dangqiansaizi + "点");
             this.zouluyanshi();
         }
         else {
-            Gameguanli.Kongzhitai().cuowutishixinxi("当前您的劳动力已不足1点");
-            this.but_shaizi.enabled = true;
+            Gameguanli.Kongzhitai().cuowutishixinxi("您本次的上街行动数已用完！请返回其他场景");
+            this.but_shaizi.enabled = false;
         }
     };
     Dajiejiemian.prototype.zouluyanshi = function () {
@@ -1052,6 +1350,23 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.zhaopinguyuan2 = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.zhaopinguyuan2chenggong, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Dajiejiemian.prototype.zhaopinguyuan2chenggong = function () {
         var _this = this;
         this.guyuan2leixing = 0;
         this.guyuan2mingzi = "0";
@@ -1339,6 +1654,23 @@ var Dajiejiemian = (function (_super) {
         });
     };
     Dajiejiemian.prototype.zhaopinguyuan3 = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.zhaopinguyuan3chenggong, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Dajiejiemian.prototype.zhaopinguyuan3chenggong = function () {
         var _this = this;
         this.guyuan3leixing = 0;
         this.guyuan3mingzi = "0";
@@ -1626,6 +1958,23 @@ var Dajiejiemian = (function (_super) {
         });
     };
     Dajiejiemian.prototype.zhaopinguyuan1 = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.zhaopinguyuan1chenggong, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Dajiejiemian.prototype.zhaopinguyuan1chenggong = function () {
         var _this = this;
         this.guyuan1leixing = 0;
         this.guyuan1mingzi = "0";
@@ -1984,7 +2333,7 @@ var Dajiejiemian = (function (_super) {
             imgLoader.load(Gerenshuxing.touxiang);
             imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
         }else{
-            imgLoader.load("http://192.168.1.2/res/resource/resource/wxtx/undefined.png");
+            imgLoader.load("http://47.114.145.229//resource/wxtx/undefined.png");
             imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
         }*/
         imgLoader.load(youxiangurl);
@@ -2009,7 +2358,7 @@ var Dajiejiemian = (function (_super) {
             imgLoader.load(Gerenshuxing.touxiang);
             imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
         }else{
-            imgLoader.load("http://192.168.1.2/res/resource/resource/wxtx/undefined.png");
+            imgLoader.load("http://47.114.145.229//resource/wxtx/undefined.png");
             imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
         }*/
         imgLoader.load(youxiangurl);
@@ -2034,7 +2383,7 @@ var Dajiejiemian = (function (_super) {
             imgLoader.load(Gerenshuxing.touxiang);
             imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
         }else{
-            imgLoader.load("http://192.168.1.2/res/resource/resource/wxtx/undefined.png");
+            imgLoader.load("http://47.114.145.229//resource/wxtx/undefined.png");
             imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
         }*/
         imgLoader.load(youxiangurl);
@@ -2059,7 +2408,7 @@ var Dajiejiemian = (function (_super) {
             imgLoader.load(Gerenshuxing.touxiang);
             imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
         }else{
-            imgLoader.load("http://192.168.1.2/res/resource/resource/wxtx/undefined.png");
+            imgLoader.load("http://47.114.145.229//resource/wxtx/undefined.png");
             imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
         }*/
         imgLoader.load(youxiangurl);
@@ -2084,7 +2433,7 @@ var Dajiejiemian = (function (_super) {
             imgLoader.load(Gerenshuxing.touxiang);
             imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
         }else{
-            imgLoader.load("http://192.168.1.2/res/resource/resource/wxtx/undefined.png");
+            imgLoader.load("http://47.114.145.229//resource/wxtx/undefined.png");
             imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
         }*/
         imgLoader.load(youxiangurl);
@@ -2109,7 +2458,7 @@ var Dajiejiemian = (function (_super) {
             imgLoader.load(Gerenshuxing.touxiang);
             imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
         }else{
-            imgLoader.load("http://192.168.1.2/res/resource/resource/wxtx/undefined.png");
+            imgLoader.load("http://47.114.145.229//resource/wxtx/undefined.png");
             imgLoader.once(egret.Event.COMPLETE, this.xianshigerentouxiang, this);
         }*/
         youbiaoLoader.load(Gerenshuxing.touxiang);
@@ -2287,33 +2636,811 @@ var Dajiejiemian = (function (_super) {
     Dajiejiemian.prototype.chufadianpu1 = function () {
         if (this.jiedaopeizhi.suijiliebiao == "0") {
             this.but_shaizi.enabled = true;
-            this.fandianbufen();
+            this.kaishianniuzu.alpha = 1;
+            var dangqianshuzi = parseInt(this.jiedaopeizhi.id);
+            if (this.jiedaoteshushijianzu[dangqianshuzi] == "0") {
+                this.fandianbufen();
+            }
+            else {
+                this.chufateshushijian(this.jiedaoteshushijianzu[dangqianshuzi]);
+                this.jiedaoteshushijianzu[dangqianshuzi] = "0";
+                this.teshuxianshishuaxin();
+            }
         }
         else {
-            this.suijichufaliebiao = this.jiedaopeizhi.suijiliebiao.split(",");
-            var suijishu = Math.floor(Math.random() * this.suijichufaliebiao.length);
-            for (var j = 0; j < this.jiedaosuijibiao.length; j++) {
-                if (this.suijichufaliebiao[suijishu] == this.jiedaosuijibiao[j].id) {
-                    this.suijipeizhi = this.jiedaosuijibiao[j];
+            this.but_shaizi.enabled = true;
+            this.kaishianniuzu.alpha = 1;
+            switch (this.jiedaopeizhi.id) {
+                case "3":
+                    if (this.jiedaoteshushijianzu[3] == "0") {
+                        var chaoshisuiji = Math.floor(Math.random() * 10);
+                        if (chaoshisuiji > 5) {
+                            this.chaoshimaimai();
+                        }
+                        else {
+                            this.jiedaosuijichufa();
+                        }
+                    }
+                    else {
+                        if (parseInt(this.jiedaoteshushijianzu[3]) <= 15) {
+                            this.chaoshimaimai();
+                        }
+                        else {
+                            this.chufateshushijian(this.jiedaoteshushijianzu[3]);
+                            this.jiedaoteshushijianzu[3] = "0";
+                            this.teshuxianshishuaxin();
+                        }
+                    }
                     break;
+                case "9":
+                    if (this.jiedaoteshushijianzu[9] == "0") {
+                        /*let jiajusuiji = Math.floor(Math.random() * 10);
+                        if(jiajusuiji > 5){
+                            this.jiajuyouxi();
+                        }else{
+                            this.jiedaosuijichufa();
+                        }*/
+                        this.jiedaosuijichufa();
+                    }
+                    else {
+                        this.chufateshushijian(this.jiedaoteshushijianzu[9]);
+                        this.jiedaoteshushijianzu[9] = "0";
+                        this.teshuxianshishuaxin();
+                    }
+                    break;
+                case "10":
+                    if (this.jiedaoteshushijianzu[10] == "0") {
+                        /*let jiajusuiji = Math.floor(Math.random() * 10);
+                        if(jiajusuiji > 5){
+                            this.jiajuyouxi();
+                        }else{
+                            this.jiedaosuijichufa();
+                        }*/
+                        this.jiedaosuijichufa();
+                    }
+                    else {
+                        this.chufateshushijian(this.jiedaoteshushijianzu[10]);
+                        this.jiedaoteshushijianzu[10] = "0";
+                        this.teshuxianshishuaxin();
+                    }
+                    break;
+                case "12":
+                    if (this.jiedaoteshushijianzu[12] == "0") {
+                        /*let jiajusuiji = Math.floor(Math.random() * 10);
+                        if(jiajusuiji > 5){
+                            this.jiajuyouxi();
+                        }else{
+                            this.jiedaosuijichufa();
+                        }*/
+                        this.jiedaosuijichufa();
+                    }
+                    else {
+                        this.chufateshushijian(this.jiedaoteshushijianzu[12]);
+                        this.jiedaoteshushijianzu[12] = "0";
+                        this.teshuxianshishuaxin();
+                    }
+                    break;
+                case "13":
+                    if (this.jiedaoteshushijianzu[13] == "0") {
+                        var yaodiansuiji = Math.floor(Math.random() * 10);
+                        if (yaodiansuiji > 5) {
+                            this.yaodianmaimai();
+                        }
+                        else {
+                            this.jiedaosuijichufa();
+                        }
+                    }
+                    else {
+                        this.chufateshushijian(this.jiedaoteshushijianzu[13]);
+                        this.jiedaoteshushijianzu[13] = "0";
+                        this.teshuxianshishuaxin();
+                    }
+                    break;
+                case "14":
+                    if (this.jiedaoteshushijianzu[14] == "0") {
+                        /*let jiajusuiji = Math.floor(Math.random() * 10);
+                        if(jiajusuiji > 5){
+                            this.jiajuyouxi();
+                        }else{
+                            this.jiedaosuijichufa();
+                        }*/
+                        this.jiedaosuijichufa();
+                    }
+                    else {
+                        this.chufateshushijian(this.jiedaoteshushijianzu[14]);
+                        this.jiedaoteshushijianzu[14] = "0";
+                        this.teshuxianshishuaxin();
+                    }
+                    break;
+                case "16":
+                    if (this.jiedaoteshushijianzu[16] == "0") {
+                        /*let jiajusuiji = Math.floor(Math.random() * 10);
+                        if(jiajusuiji > 5){
+                            this.jiajuyouxi();
+                        }else{
+                            this.jiedaosuijichufa();
+                        }*/
+                        this.jiedaosuijichufa();
+                    }
+                    else {
+                        this.chufateshushijian(this.jiedaoteshushijianzu[16]);
+                        this.jiedaoteshushijianzu[16] = "0";
+                        this.teshuxianshishuaxin();
+                    }
+                    break;
+                case "19":
+                    if (this.jiedaoteshushijianzu[19] == "0") {
+                        var caishichangsuiji = Math.floor(Math.random() * 10);
+                        if (caishichangsuiji <= 4) {
+                            this.caishichangmaimai();
+                        }
+                        else if (caishichangsuiji > 4 && caishichangsuiji < 7) {
+                            this.caishichangjinru();
+                        }
+                        else {
+                            this.jiedaosuijichufa();
+                        }
+                    }
+                    else {
+                        this.chufateshushijian(this.jiedaoteshushijianzu[19]);
+                        this.jiedaoteshushijianzu[19] = "0";
+                        this.teshuxianshishuaxin();
+                    }
+                    break;
+                case "20":
+                    if (this.jiedaoteshushijianzu[20] == "0") {
+                        /*let jiajusuiji = Math.floor(Math.random() * 10);
+                        if(jiajusuiji > 5){
+                            this.jiajuyouxi();
+                        }else{
+                            this.jiedaosuijichufa();
+                        }*/
+                        this.jiedaosuijichufa();
+                    }
+                    else {
+                        this.chufateshushijian(this.jiedaoteshushijianzu[20]);
+                        this.jiedaoteshushijianzu[20] = "0";
+                        this.teshuxianshishuaxin();
+                    }
+                    break;
+                case "21":
+                    if (this.jiedaoteshushijianzu[21] == "0") {
+                        /*let jiajusuiji = Math.floor(Math.random() * 10);
+                        if(jiajusuiji > 5){
+                            this.jiajuyouxi();
+                        }else{
+                            this.jiedaosuijichufa();
+                        }*/
+                        this.jiedaosuijichufa();
+                    }
+                    else {
+                        this.chufateshushijian(this.jiedaoteshushijianzu[21]);
+                        this.jiedaoteshushijianzu[21] = "0";
+                        this.teshuxianshishuaxin();
+                    }
+                    break;
+                case "23":
+                    if (this.jiedaoteshushijianzu[23] == "0") {
+                        var yaodiansuiji = Math.floor(Math.random() * 10);
+                        if (yaodiansuiji > 5) {
+                            this.peixunmaimai();
+                        }
+                        else {
+                            this.jiedaosuijichufa();
+                        }
+                    }
+                    else {
+                        this.chufateshushijian(this.jiedaoteshushijianzu[23]);
+                        this.jiedaoteshushijianzu[23] = "0";
+                        this.teshuxianshishuaxin();
+                    }
+                    break;
+                case "24":
+                    if (this.jiedaoteshushijianzu[24] == "0") {
+                        /*let jiajusuiji = Math.floor(Math.random() * 10);
+                        if(jiajusuiji > 5){
+                            this.jiajuyouxi();
+                        }else{
+                            this.jiedaosuijichufa();
+                        }*/
+                        this.jiedaosuijichufa();
+                    }
+                    else {
+                        this.chufateshushijian(this.jiedaoteshushijianzu[24]);
+                        this.jiedaoteshushijianzu[24] = "0";
+                        this.teshuxianshishuaxin();
+                    }
+                    break;
+            }
+        }
+    };
+    Dajiejiemian.prototype.chufateshushijian = function (shijianid) {
+        var _this = this;
+        if (shijianid == "101") {
+            /*
+            101属于战斗模块，这时候应该刷新怪物，进入战斗模式
+            */
+            var suijizuidazhi = Gerenshuxing.xingfudengji * 10;
+            var zhuguaishuiji = Math.floor(Math.random() * suijizuidazhi);
+            if (zhuguaishuiji == 0) {
+                zhuguaishuiji = 1;
+            }
+            var xiaoguai1shuiji = Math.floor(Math.random() * suijizuidazhi);
+            if (xiaoguai1shuiji == 0) {
+                xiaoguai1shuiji = 1;
+            }
+            var xiaoguai2shuiji = Math.floor(Math.random() * suijizuidazhi);
+            if (xiaoguai2shuiji == 0) {
+                xiaoguai2shuiji = 1;
+            }
+            Gameguanli.Kongzhitai().zhandoujiemianui("kai", zhuguaishuiji + "", xiaoguai1shuiji + "", xiaoguai2shuiji + "");
+        }
+        else if (shijianid == "102") {
+            /*
+            102属于雨水模块，这时候应该扣除健康值
+            */
+            var kouchushu = Math.floor(Math.random() * 100);
+            if (Gerenshuxing.jiankangzhi >= kouchushu) {
+                kouchushu = kouchushu;
+            }
+            else {
+                kouchushu = Gerenshuxing.jiankangzhi;
+            }
+            this.suijijiemian = new Daitutanchukuangui();
+            Gameguanli.Kongzhitai().dingbuui.addChild(this.suijijiemian);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"3"' + ","
+                + '"kouchushuliang"' + ":" + '"' + kouchushu + '"' + ","
+                + '"leixing"' + ":" + '"0"' + ","
+                + '"shuliang"' + ":" + '"0"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.suijijiemian.biaotiwenzidt.text = "霉运连连";
+            this.suijijiemian.tishineirongdt.text = "昨日下雨，路上积了一小滩水洼，你踩了上去不慎跌了一跤。";
+            this.suijijiemian.tishitupiandt.source = "img_yushui_png";
+            this.suijijiemian.quedinganniudt.enabled = true;
+            this.suijijiemian.quedinganniudt.alpha = 1;
+            this.suijijiemian.quedinganniu0dt.enabled = false;
+            this.suijijiemian.quedinganniu0dt.alpha = 0;
+            this.suijijiemian.quedinganniu1dt.enabled = false;
+            this.suijijiemian.quedinganniu1dt.alpha = 0;
+            this.suijijiemian.quedinganniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(_this.suijijiemian);
+            }, this);
+        }
+        else if (shijianid == "103") {
+            /*
+            102属于乞丐模块，这时候应该扣除金币
+            */
+            var kouchushu = Math.floor(Math.random() * 1000);
+            if (Gerenshuxing.jinbizhi >= kouchushu) {
+                kouchushu = kouchushu;
+            }
+            else {
+                kouchushu = Gerenshuxing.jinbizhi;
+            }
+            this.suijijiemian = new Daitutanchukuangui();
+            Gameguanli.Kongzhitai().dingbuui.addChild(this.suijijiemian);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + kouchushu + '"' + ","
+                + '"leixing"' + ":" + '"0"' + ","
+                + '"shuliang"' + ":" + '"0"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.suijijiemian.biaotiwenzidt.text = "霉运连连";
+            this.suijijiemian.tishineirongdt.text = "路遇一乞丐对你百般乞讨，不依不饶，无奈之下，只得乖乖给钱。";
+            this.suijijiemian.tishitupiandt.source = "img_qigai_png";
+            this.suijijiemian.quedinganniudt.enabled = true;
+            this.suijijiemian.quedinganniudt.alpha = 1;
+            this.suijijiemian.quedinganniu0dt.enabled = false;
+            this.suijijiemian.quedinganniu0dt.alpha = 0;
+            this.suijijiemian.quedinganniu1dt.enabled = false;
+            this.suijijiemian.quedinganniu1dt.alpha = 0;
+            this.suijijiemian.quedinganniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(_this.suijijiemian);
+            }, this);
+        }
+        else {
+            var teshuchufajiemain = new Teshushijianjiemian();
+            this.addChild(teshuchufajiemain);
+            teshuchufajiemain.chushihua(shijianid);
+        }
+    };
+    Dajiejiemian.prototype.chaoshimaimai = function () {
+        this.chaoshiteshu = false;
+        var chaoshiyongpinid = [];
+        var chaoshiyongpinjiage = [];
+        for (var i = 0; i < Gerenshuxing.chaoshishangdianbiao.length; i++) {
+            if (Gerenshuxing.chaoshishangdianbiao[i].shangdianleixing == "1") {
+                chaoshiyongpinid.push(Gerenshuxing.chaoshishangdianbiao[i].id);
+                chaoshiyongpinjiage.push(Gerenshuxing.chaoshishangdianbiao[i].shoujia);
+            }
+        }
+        for (var k = 0; k < 6; k++) {
+            var suijichushou = Math.floor(Math.random() * chaoshiyongpinid.length);
+            this.chaoshiid[k] = chaoshiyongpinid[suijichushou];
+            this.chaoshijiage[k] = chaoshiyongpinjiage[suijichushou];
+            this.chaoshishuliang[k] = 1;
+        }
+        for (var i = 0; i < Gerenshuxing.chaoshishangdianbiao.length; i++) {
+            if (Gerenshuxing.chaoshishangdianbiao[i].teshuid == Gerenshuxing.teshushijian) {
+                this.chaoshiid[0] = Gerenshuxing.chaoshishangdianbiao[i].id;
+                this.chaoshijiage[0] = Math.floor(parseInt(Gerenshuxing.chaoshishangdianbiao[i].shoujia) * (parseInt(Gerenshuxing.chaoshishangdianbiao[i].zhekou) / 10));
+                this.chaoshishuliang[0] = 1;
+                this.chaoshiteshu = true;
+                break;
+            }
+        }
+        this.xianshichaoshishangdianjiemian();
+    };
+    Dajiejiemian.prototype.xianshichaoshishangdianjiemian = function () {
+        this.chaoshigoumaiui = new Chaoshishangdianui();
+        Gameguanli.Kongzhitai().dingbuui.addChild(this.chaoshigoumaiui);
+        this.chaoshigoumaiui.heisezhezao.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbichaoshiui, this);
+        this.chaoshijiemianchushihua();
+    };
+    Dajiejiemian.prototype.chaoshijiemianchushihua = function () {
+        this.chaoshigoumaiui.biaotilan.text = "超级商店";
+        for (var h = 0; h < Gerenshuxing.daojubiao.length; h++) {
+            if (Gerenshuxing.daojubiao[h].id == this.chaoshiid[0]) {
+                this.chaoshitupian[0] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.chaoshimingcheng[0] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.chaoshiid[1]) {
+                this.chaoshitupian[1] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.chaoshimingcheng[1] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.chaoshiid[2]) {
+                this.chaoshitupian[2] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.chaoshimingcheng[2] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.chaoshiid[3]) {
+                this.chaoshitupian[3] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.chaoshimingcheng[3] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.chaoshiid[4]) {
+                this.chaoshitupian[4] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.chaoshimingcheng[4] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.chaoshiid[5]) {
+                this.chaoshitupian[5] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.chaoshimingcheng[5] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+        }
+        this.chaoshigoumaiui.daojutubiao.source = this.chaoshitupian[0];
+        this.chaoshigoumaiui.daojutubiao.addEventListener(egret.TouchEvent.TOUCH_TAP, this.daojutips1, this);
+        this.chaoshigoumaiui.daojutubiao0.source = this.chaoshitupian[1];
+        this.chaoshigoumaiui.daojutubiao0.addEventListener(egret.TouchEvent.TOUCH_TAP, this.daojutips2, this);
+        this.chaoshigoumaiui.daojutubiao1.source = this.chaoshitupian[2];
+        this.chaoshigoumaiui.daojutubiao1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.daojutips3, this);
+        this.chaoshigoumaiui.daojutubiao2.source = this.chaoshitupian[3];
+        this.chaoshigoumaiui.daojutubiao2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.daojutips4, this);
+        this.chaoshigoumaiui.daojutubiao3.source = this.chaoshitupian[4];
+        this.chaoshigoumaiui.daojutubiao3.addEventListener(egret.TouchEvent.TOUCH_TAP, this.daojutips5, this);
+        this.chaoshigoumaiui.daojutubiao4.source = this.chaoshitupian[5];
+        this.chaoshigoumaiui.daojutubiao4.addEventListener(egret.TouchEvent.TOUCH_TAP, this.daojutips6, this);
+        /*
+        超市的三个福袋特殊制作
+        */
+        this.chaoshigoumaiui.daojutubiao5.source = this.chaoshitupian[6];
+        this.chaoshigoumaiui.daojutubiao5.addEventListener(egret.TouchEvent.TOUCH_TAP, this.daojutips7, this);
+        this.chaoshigoumaiui.daojutubiao6.source = this.chaoshitupian[7];
+        this.chaoshigoumaiui.daojutubiao6.addEventListener(egret.TouchEvent.TOUCH_TAP, this.daojutips8, this);
+        this.chaoshigoumaiui.daojutubiao7.source = this.chaoshitupian[8];
+        this.chaoshigoumaiui.daojutubiao7.addEventListener(egret.TouchEvent.TOUCH_TAP, this.daojutips9, this);
+        if (this.chaoshiteshu == true) {
+            this.chaoshigoumaiui.zhekoutubiao.alpha = 1;
+        }
+        else {
+            this.chaoshigoumaiui.zhekoutubiao.alpha = 0;
+        }
+        if (parseInt(this.chaoshishuliang[0]) <= 0) {
+            this.chaoshigoumaiui.goumaijine.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai.enabled = false;
+            this.chaoshigoumaiui.but_goumai.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.chaoshi1keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine.text = "- " + this.chaoshijiage[0];
+            this.chaoshigoumaiui.but_goumai.enabled = true;
+            this.chaoshigoumaiui.but_goumai.addEventListener(egret.TouchEvent.TOUCH_TAP, this.chaoshi1keng, this);
+        }
+        if (parseInt(this.chaoshishuliang[1]) <= 0) {
+            this.chaoshigoumaiui.goumaijine0.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai0.enabled = false;
+            this.chaoshigoumaiui.but_goumai0.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.chaoshi2keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine0.text = "- " + this.chaoshijiage[1];
+            this.chaoshigoumaiui.but_goumai0.enabled = true;
+            this.chaoshigoumaiui.but_goumai0.addEventListener(egret.TouchEvent.TOUCH_TAP, this.chaoshi2keng, this);
+        }
+        if (parseInt(this.chaoshishuliang[2]) <= 0) {
+            this.chaoshigoumaiui.goumaijine1.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai1.enabled = false;
+            this.chaoshigoumaiui.but_goumai1.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.chaoshi3keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine1.text = "- " + this.chaoshijiage[2];
+            this.chaoshigoumaiui.but_goumai1.enabled = true;
+            this.chaoshigoumaiui.but_goumai1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.chaoshi3keng, this);
+        }
+        if (parseInt(this.chaoshishuliang[3]) <= 0) {
+            this.chaoshigoumaiui.goumaijine2.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai2.enabled = false;
+            this.chaoshigoumaiui.but_goumai2.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.chaoshi4keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine2.text = "- " + this.chaoshijiage[3];
+            this.chaoshigoumaiui.but_goumai2.enabled = true;
+            this.chaoshigoumaiui.but_goumai2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.chaoshi4keng, this);
+        }
+        if (parseInt(this.chaoshishuliang[4]) <= 0) {
+            this.chaoshigoumaiui.goumaijine3.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai3.enabled = false;
+            this.chaoshigoumaiui.but_goumai3.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.chaoshi5keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine3.text = "- " + this.chaoshijiage[4];
+            this.chaoshigoumaiui.but_goumai3.enabled = true;
+            this.chaoshigoumaiui.but_goumai3.addEventListener(egret.TouchEvent.TOUCH_TAP, this.chaoshi5keng, this);
+        }
+        if (parseInt(this.chaoshishuliang[5]) <= 0) {
+            this.chaoshigoumaiui.goumaijine4.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai4.enabled = false;
+            this.chaoshigoumaiui.but_goumai4.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.chaoshi6keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine4.text = "- " + this.chaoshijiage[5];
+            this.chaoshigoumaiui.but_goumai4.enabled = true;
+            this.chaoshigoumaiui.but_goumai4.addEventListener(egret.TouchEvent.TOUCH_TAP, this.chaoshi6keng, this);
+        }
+        if (parseInt(this.chaoshishuliang[6]) <= 0) {
+            this.chaoshigoumaiui.goumaijine5.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai5.enabled = false;
+            this.chaoshigoumaiui.but_goumai5.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.chaoshi7keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine5.text = "抽奖";
+            this.chaoshigoumaiui.but_goumai5.enabled = true;
+            this.chaoshigoumaiui.but_goumai5.addEventListener(egret.TouchEvent.TOUCH_TAP, this.chaoshi7keng, this);
+        }
+        if (parseInt(this.chaoshishuliang[7]) <= 0) {
+            this.chaoshigoumaiui.goumaijine6.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai6.enabled = false;
+            this.chaoshigoumaiui.but_goumai6.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.chaoshi8keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine6.text = "抽奖";
+            this.chaoshigoumaiui.but_goumai6.enabled = true;
+            this.chaoshigoumaiui.but_goumai6.addEventListener(egret.TouchEvent.TOUCH_TAP, this.chaoshi8keng, this);
+        }
+        if (parseInt(this.chaoshishuliang[8]) <= 0) {
+            this.chaoshigoumaiui.goumaijine7.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai7.enabled = false;
+            this.chaoshigoumaiui.but_goumai7.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.chaoshi9keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine7.text = "抽奖";
+            this.chaoshigoumaiui.but_goumai7.enabled = true;
+            this.chaoshigoumaiui.but_goumai7.addEventListener(egret.TouchEvent.TOUCH_TAP, this.chaoshi9keng, this);
+        }
+    };
+    Dajiejiemian.prototype.guanbichaoshiui = function () {
+        Gameguanli.Kongzhitai().dingbuui.removeChild(this.chaoshigoumaiui);
+    };
+    Dajiejiemian.prototype.daojutips1 = function () {
+        this.daojutipsjiemian(this.chaoshiid[0]);
+    };
+    Dajiejiemian.prototype.daojutips2 = function () {
+        this.daojutipsjiemian(this.chaoshiid[1]);
+    };
+    Dajiejiemian.prototype.daojutips3 = function () {
+        this.daojutipsjiemian(this.chaoshiid[2]);
+    };
+    Dajiejiemian.prototype.daojutips4 = function () {
+        this.daojutipsjiemian(this.chaoshiid[3]);
+    };
+    Dajiejiemian.prototype.daojutips5 = function () {
+        this.daojutipsjiemian(this.chaoshiid[4]);
+    };
+    Dajiejiemian.prototype.daojutips6 = function () {
+        this.daojutipsjiemian(this.chaoshiid[5]);
+    };
+    Dajiejiemian.prototype.daojutips7 = function () {
+        this.daojutipsjiemian(this.chaoshiid[6]);
+    };
+    Dajiejiemian.prototype.daojutips8 = function () {
+        this.daojutipsjiemian(this.chaoshiid[7]);
+    };
+    Dajiejiemian.prototype.daojutips9 = function () {
+        this.daojutipsjiemian(this.chaoshiid[8]);
+    };
+    Dajiejiemian.prototype.daojutipsjiemian = function (daojuid) {
+        this.daojutipsui = new Daojutipsui();
+        Gameguanli.Kongzhitai().dingbuui.addChild(this.daojutipsui);
+        if (daojuid == "1_1") {
+            this.daojutipsui.daojuicon.source = this.chaoshitupian[6];
+            this.daojutipsui.daojumingzi.text = this.chaoshimingcheng[6];
+            this.daojutipsui.leixingming.text = "福袋";
+            this.daojutipsui.shuomingneirong.text = "可随机获得一件日常家务用品.";
+        }
+        else if (daojuid == "1_2") {
+            this.daojutipsui.daojuicon.source = this.chaoshitupian[7];
+            this.daojutipsui.daojumingzi.text = this.chaoshimingcheng[7];
+            this.daojutipsui.leixingming.text = "福袋";
+            this.daojutipsui.shuomingneirong.text = "可随机获得一件男士用品.";
+        }
+        else if (daojuid == "1_3") {
+            this.daojutipsui.daojuicon.source = this.chaoshitupian[8];
+            this.daojutipsui.daojumingzi.text = this.chaoshimingcheng[8];
+            this.daojutipsui.leixingming.text = "福袋";
+            this.daojutipsui.shuomingneirong.text = "可随机获得一件数码产品.";
+        }
+        else {
+            for (var n = 0; n < Gerenshuxing.daojubiao.length; n++) {
+                if (Gerenshuxing.daojubiao[n].id == daojuid) {
+                    this.daojutipsui.daojuicon.source = Gerenshuxing.daojubiao[n].xianshiicon;
+                    this.daojutipsui.daojumingzi.text = Gerenshuxing.daojubiao[n].mingcheng;
+                    this.daojutipsui.leixingming.text = Gerenshuxing.daojubiao[n].daojuleixing;
+                    this.daojutipsui.shuomingneirong.text = Gerenshuxing.daojubiao[n].tips;
                 }
             }
-            this.suijijiemian = new Tongyongquerenkuang();
-            Gameguanli.Kongzhitai().dingbuui.addChild(this.suijijiemian);
-            this.suijijiemian.tishiwenzi.text = this.suijipeizhi.neirong;
-            this.kouchuleixing = this.suijipeizhi.kouchuleixing;
-            this.suijichufaid = this.suijipeizhi.id;
-            this.kouchushuliang = this.suijipeizhi.kouchushuliang;
-            this.jianglileixing = this.suijipeizhi.jianglileixing;
-            this.jianglishuliang = this.suijipeizhi.jianglishuliang;
+        }
+        this.daojutipsui.heiseguanbi.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbitips, this);
+    };
+    Dajiejiemian.prototype.guanbitips = function () {
+        Gameguanli.Kongzhitai().dingbuui.removeChild(this.daojutipsui);
+    };
+    Dajiejiemian.prototype.chaoshi1keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.chaoshijiage[0])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.chaoshijiage[0]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.chaoshijiage[0] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.chaoshiid[0] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.chaoshishuliang[0] = 0;
+            this.chaoshijiemianchushihua();
+            if (this.chaoshiteshu == true) {
+                Gameguanli.Kongzhitai().paomadengui("天降鸿运！“" + Gerenshuxing.mingzi + "”以超低的价格购买到超市出售的特价商品[" + this.chaoshimingcheng[0] + "]！");
+            }
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.chaoshi2keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.chaoshijiage[1])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.chaoshijiage[1]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.chaoshijiage[1] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.chaoshiid[1] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.chaoshishuliang[1] = 0;
+            this.chaoshijiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.chaoshi3keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.chaoshijiage[2])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.chaoshijiage[2]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.chaoshijiage[2] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.chaoshiid[2] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.chaoshishuliang[2] = 0;
+            this.chaoshijiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.chaoshi4keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.chaoshijiage[3])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.chaoshijiage[3]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.chaoshijiage[3] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.chaoshiid[3] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.chaoshishuliang[3] = 0;
+            this.chaoshijiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.chaoshi5keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.chaoshijiage[4])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.chaoshijiage[4]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.chaoshijiage[4] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.chaoshiid[4] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.chaoshishuliang[4] = 0;
+            this.chaoshijiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.chaoshi6keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.chaoshijiage[5])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.chaoshijiage[5]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.chaoshijiage[5] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.chaoshiid[5] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.chaoshishuliang[5] = 0;
+            this.chaoshijiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.chaoshi7keng = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.chaoshigoumaiui.but_goumai5.enabled = false;
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.chaoshifudaizhuanfa1, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Dajiejiemian.prototype.chaoshifudaizhuanfa1 = function () {
+        var kejiangliliebiao = [];
+        for (var i = 0; i < Gerenshuxing.daojubiao.length; i++) {
+            if (Gerenshuxing.daojubiao[i].shiyongleixing == "2") {
+                kejiangliliebiao.push(Gerenshuxing.daojubiao[i].id);
+            }
+        }
+        var suijigeiyu = Math.floor(Math.random() * kejiangliliebiao.length);
+        var geiyudaoju = kejiangliliebiao[suijigeiyu];
+        Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"kouchuleixing"' + ":" + '"0"' + ","
+            + '"kouchushuliang"' + ":" + '"0"' + ","
+            + '"leixing"' + ":" + '"' + geiyudaoju + '"' + ","
+            + '"shuliang"' + ":" + '"1"' + ","
+            + '"beishu"' + ":" + '"1"' + "}");
+        this.chaoshishuliang[6] = 0;
+        this.chaoshijiemianchushihua();
+    };
+    Dajiejiemian.prototype.chaoshi8keng = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.chaoshigoumaiui.but_goumai6.enabled = false;
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.chaoshifudaizhuanfa2, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Dajiejiemian.prototype.chaoshifudaizhuanfa2 = function () {
+        var kejiangliliebiao = [];
+        for (var i = 0; i < Gerenshuxing.daojubiao.length; i++) {
+            if (Gerenshuxing.daojubiao[i].shiyongleixing == "1") {
+                kejiangliliebiao.push(Gerenshuxing.daojubiao[i].id);
+            }
+        }
+        var suijigeiyu = Math.floor(Math.random() * kejiangliliebiao.length);
+        var geiyudaoju = kejiangliliebiao[suijigeiyu];
+        Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"kouchuleixing"' + ":" + '"0"' + ","
+            + '"kouchushuliang"' + ":" + '"0"' + ","
+            + '"leixing"' + ":" + '"' + geiyudaoju + '"' + ","
+            + '"shuliang"' + ":" + '"1"' + ","
+            + '"beishu"' + ":" + '"1"' + "}");
+        this.chaoshishuliang[7] = 0;
+        this.chaoshijiemianchushihua();
+    };
+    Dajiejiemian.prototype.chaoshi9keng = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.chaoshigoumaiui.but_goumai7.enabled = false;
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.chaoshifudaizhuanfa3, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Dajiejiemian.prototype.chaoshifudaizhuanfa3 = function () {
+        var kejiangliliebiao = [];
+        for (var i = 0; i < Gerenshuxing.daojubiao.length; i++) {
+            if (Gerenshuxing.daojubiao[i].shiyongleixing == "3") {
+                kejiangliliebiao.push(Gerenshuxing.daojubiao[i].id);
+            }
+        }
+        var suijigeiyu = Math.floor(Math.random() * kejiangliliebiao.length);
+        var geiyudaoju = kejiangliliebiao[suijigeiyu];
+        Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"kouchuleixing"' + ":" + '"0"' + ","
+            + '"kouchushuliang"' + ":" + '"0"' + ","
+            + '"leixing"' + ":" + '"' + geiyudaoju + '"' + ","
+            + '"shuliang"' + ":" + '"1"' + ","
+            + '"beishu"' + ":" + '"1"' + "}");
+        this.chaoshishuliang[8] = 0;
+        this.chaoshijiemianchushihua();
+    };
+    Dajiejiemian.prototype.jiedaosuijichufa = function () {
+        this.suijichufaliebiao = this.jiedaopeizhi.suijiliebiao.split(",");
+        console.log(this.suijichufaliebiao);
+        var suijishu = Math.floor(Math.random() * this.suijichufaliebiao.length);
+        for (var j = 0; j < this.jiedaosuijibiao.length; j++) {
+            if (this.suijichufaliebiao[suijishu] == this.jiedaosuijibiao[j].id) {
+                this.suijipeizhi = this.jiedaosuijibiao[j];
+                break;
+            }
+        }
+        this.suijijiemian = new Tongyongquerenkuang();
+        Gameguanli.Kongzhitai().dingbuui.addChild(this.suijijiemian);
+        this.suijijiemian.tishiwenzi.text = this.suijipeizhi.neirong;
+        this.kouchuleixing = this.suijipeizhi.kouchuleixing;
+        this.suijichufaid = this.suijipeizhi.id;
+        this.kouchushuliang = this.suijipeizhi.kouchushuliang;
+        this.jianglileixing = this.suijipeizhi.jianglileixing;
+        this.jianglishuliang = this.suijipeizhi.jianglishuliang;
+        this.kouchutubiaopanduan(this.kouchuleixing, this.kouchushuliang);
+        this.jianglitubiaopanduan(this.jianglileixing, this.jianglishuliang);
+        if (this.jianglileixing == "0") {
+            this.suijijiemian.but_queding0.enabled = true;
+            this.suijijiemian.but_queding0.alpha = 1;
+            this.suijijiemian.but_queding.enabled = false;
+            this.suijijiemian.but_queding.alpha = 0;
+            this.suijijiemian.but_shuangbei.enabled = false;
+            this.suijijiemian.but_shuangbei.alpha = 0;
+            this.suijijiemian.heisediban.touchEnabled = false;
+            this.suijijiemian.but_queding0.addEventListener(egret.TouchEvent.TOUCH_TAP, this.suijiqueding, this);
+        }
+        else {
             this.suijijiemian.but_queding0.enabled = false;
             this.suijijiemian.but_queding0.alpha = 0;
             this.suijijiemian.but_queding.enabled = true;
             this.suijijiemian.but_queding.alpha = 1;
             this.suijijiemian.but_shuangbei.enabled = true;
             this.suijijiemian.but_shuangbei.alpha = 1;
-            this.kouchutubiaopanduan(this.kouchuleixing, this.kouchushuliang);
-            this.jianglitubiaopanduan(this.jianglileixing, this.jianglishuliang);
+            this.suijijiemian.heisediban.touchEnabled = false;
             this.suijijiemian.but_queding.addEventListener(egret.TouchEvent.TOUCH_TAP, this.suijiqueding, this);
             this.suijijiemian.but_shuangbei.addEventListener(egret.TouchEvent.TOUCH_TAP, this.suijishuangbei, this);
         }
@@ -2467,10 +3594,9 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.dajianglidaojuxianshi = function (leixing, shuliang) {
-        var daojubiao = RES.getRes("daojubiao_json");
-        for (var i = 0; i < daojubiao.length; i++) {
-            if (daojubiao[i].id == leixing) {
-                this.jianglijiemian.jiangliicon.source = daojubiao[i].xianshiicon;
+        for (var i = 0; i < Gerenshuxing.daojubiao.length; i++) {
+            if (Gerenshuxing.daojubiao[i].id == leixing) {
+                this.jianglijiemian.jiangliicon.source = Gerenshuxing.daojubiao[i].xianshiicon;
                 this.jianglijiemian.jianglishuliang.text = "X " + shuliang;
                 break;
             }
@@ -2548,6 +3674,7 @@ var Dajiejiemian = (function (_super) {
     Dajiejiemian.prototype.suijiqueding = function () {
         Gameguanli.Kongzhitai().dingbuui.removeChild(this.suijijiemian);
         this.but_shaizi.enabled = true;
+        this.kaishianniuzu.alpha = 1;
         switch (this.kouchuleixing) {
             case "1":
                 if (Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)) {
@@ -2612,15 +3739,34 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.suijishuangbei = function () {
-        Gameguanli.Kongzhitai().dingbuui.removeChild(this.suijijiemian);
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        Gameguanli.Kongzhitai().dingbuui.removeChild(this.suijijiemian);
+                        this.but_shaizi.enabled = false;
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.zhuanfahuidiaoshijian, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Dajiejiemian.prototype.zhuanfahuidiaoshijian = function () {
         this.but_shaizi.enabled = true;
+        this.kaishianniuzu.alpha = 1;
         switch (this.kouchuleixing) {
             case "1":
                 if (Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)) {
                     this.jianglijiemian = new Jianglijiesuanui();
                     Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
-                    this.fasongjiangli(2);
-                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 2);
+                    this.fasongjiangli(10);
+                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 10);
                     this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbijiangli, this);
                 }
                 else {
@@ -2631,8 +3777,8 @@ var Dajiejiemian = (function (_super) {
                 if (Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)) {
                     this.jianglijiemian = new Jianglijiesuanui();
                     Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
-                    this.fasongjiangli(2);
-                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 2);
+                    this.fasongjiangli(10);
+                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 10);
                     this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbijiangli, this);
                 }
                 else {
@@ -2643,8 +3789,8 @@ var Dajiejiemian = (function (_super) {
                 if (Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)) {
                     this.jianglijiemian = new Jianglijiesuanui();
                     Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
-                    this.fasongjiangli(2);
-                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 2);
+                    this.fasongjiangli(10);
+                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 10);
                     this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbijiangli, this);
                 }
                 else {
@@ -2655,8 +3801,8 @@ var Dajiejiemian = (function (_super) {
                 if (Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)) {
                     this.jianglijiemian = new Jianglijiesuanui();
                     Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
-                    this.fasongjiangli(2);
-                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 2);
+                    this.fasongjiangli(10);
+                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 10);
                     this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbijiangli, this);
                 }
                 else {
@@ -2667,8 +3813,8 @@ var Dajiejiemian = (function (_super) {
                 if (Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)) {
                     this.jianglijiemian = new Jianglijiesuanui();
                     Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
-                    this.fasongjiangli(2);
-                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 2);
+                    this.fasongjiangli(10);
+                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 10);
                     this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbijiangli, this);
                 }
                 else {
@@ -2709,24 +3855,1261 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.jianglidaojuxianshi = function (leixing, shuliang) {
-        var daojubiao = RES.getRes("daojubiao_json");
-        for (var i = 0; i < daojubiao.length; i++) {
-            if (daojubiao[i].id == leixing) {
-                this.suijijiemian.jiangliicon1.source = daojubiao[i].xianshiicon;
+        for (var i = 0; i < Gerenshuxing.daojubiao.length; i++) {
+            if (Gerenshuxing.daojubiao[i].id == leixing) {
+                this.suijijiemian.jiangliicon1.source = Gerenshuxing.daojubiao[i].xianshiicon;
                 this.suijijiemian.jiangli1.text = "+ " + shuliang;
                 break;
             }
         }
     };
     Dajiejiemian.prototype.kouchudaojuxianshi = function (leixing, shuliang) {
-        var daojubiao = RES.getRes("daojubiao_json");
-        for (var i = 0; i < daojubiao.length; i++) {
-            if (daojubiao[i].id == leixing) {
-                this.suijijiemian.jiangliicon2.source = daojubiao[i].xianshiicon;
+        for (var i = 0; i < Gerenshuxing.daojubiao.length; i++) {
+            if (Gerenshuxing.daojubiao[i].id == leixing) {
+                this.suijijiemian.jiangliicon2.source = Gerenshuxing.daojubiao[i].xianshiicon;
                 this.suijijiemian.jiangli2.text = "- " + shuliang;
                 break;
             }
         }
+    };
+    /*
+    药店商店相关内容
+    */
+    Dajiejiemian.prototype.yaodianmaimai = function () {
+        this.yaodianteshu = false;
+        var yaodianyongpinid = [];
+        var yaodianyongpinjiage = [];
+        for (var i = 0; i < Gerenshuxing.chaoshishangdianbiao.length; i++) {
+            if (Gerenshuxing.chaoshishangdianbiao[i].shangdianleixing == "2") {
+                yaodianyongpinid.push(Gerenshuxing.chaoshishangdianbiao[i].id);
+                yaodianyongpinjiage.push(Gerenshuxing.chaoshishangdianbiao[i].shoujia);
+            }
+        }
+        for (var k = 0; k < 9; k++) {
+            var suijichushou = Math.floor(Math.random() * yaodianyongpinid.length);
+            this.yaodianid[k] = yaodianyongpinid[suijichushou];
+            this.yaodianjiage[k] = yaodianyongpinjiage[suijichushou];
+            this.yaodianshuliang[k] = 1;
+        }
+        /*for(var i = 0;i<Gerenshuxing.yaodianshangdianbiao.length;i++){
+            if(Gerenshuxing.yaodianshangdianbiao[i].teshuid == Gerenshuxing.teshushijian){
+                this.yaodianid[0] = Gerenshuxing.yaodianshangdianbiao[i].id;
+                this.yaodianjiage[0] = Math.floor(parseInt(Gerenshuxing.yaodianshangdianbiao[i].shoujia) * (parseInt(Gerenshuxing.yaodianshangdianbiao[i].zhekou) / 10));
+                this.yaodianshuliang[0] = 1;
+                this.yaodianteshu = true;
+                break;
+            }
+        }
+        */
+        this.xianshiyaodianshangdianjiemian();
+    };
+    Dajiejiemian.prototype.xianshiyaodianshangdianjiemian = function () {
+        this.chaoshigoumaiui = new Chaoshishangdianui();
+        Gameguanli.Kongzhitai().dingbuui.addChild(this.chaoshigoumaiui);
+        this.chaoshigoumaiui.heisezhezao.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbichaoshiui, this);
+        this.yaodianjiemianchushihua();
+    };
+    Dajiejiemian.prototype.yaodianjiemianchushihua = function () {
+        this.chaoshigoumaiui.biaotilan.text = "药房商店";
+        for (var h = 0; h < Gerenshuxing.daojubiao.length; h++) {
+            if (Gerenshuxing.daojubiao[h].id == this.yaodianid[0]) {
+                this.yaodiantupian[0] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.yaodianmingcheng[0] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.yaodianid[1]) {
+                this.yaodiantupian[1] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.yaodianmingcheng[1] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.yaodianid[2]) {
+                this.yaodiantupian[2] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.yaodianmingcheng[2] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.yaodianid[3]) {
+                this.yaodiantupian[3] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.yaodianmingcheng[3] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.yaodianid[4]) {
+                this.yaodiantupian[4] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.yaodianmingcheng[4] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.yaodianid[5]) {
+                this.yaodiantupian[5] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.yaodianmingcheng[5] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.yaodianid[6]) {
+                this.yaodiantupian[6] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.yaodianmingcheng[6] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.yaodianid[7]) {
+                this.yaodiantupian[7] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.yaodianmingcheng[7] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.yaodianid[8]) {
+                this.yaodiantupian[8] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.yaodianmingcheng[8] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+        }
+        this.chaoshigoumaiui.daojutubiao.source = this.yaodiantupian[0];
+        this.chaoshigoumaiui.daojutubiao.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodiantips1, this);
+        this.chaoshigoumaiui.daojutubiao0.source = this.yaodiantupian[1];
+        this.chaoshigoumaiui.daojutubiao0.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodiantips2, this);
+        this.chaoshigoumaiui.daojutubiao1.source = this.yaodiantupian[2];
+        this.chaoshigoumaiui.daojutubiao1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodiantips3, this);
+        this.chaoshigoumaiui.daojutubiao2.source = this.yaodiantupian[3];
+        this.chaoshigoumaiui.daojutubiao2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodiantips4, this);
+        this.chaoshigoumaiui.daojutubiao3.source = this.yaodiantupian[4];
+        this.chaoshigoumaiui.daojutubiao3.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodiantips5, this);
+        this.chaoshigoumaiui.daojutubiao4.source = this.yaodiantupian[5];
+        this.chaoshigoumaiui.daojutubiao4.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodiantips6, this);
+        this.chaoshigoumaiui.daojutubiao5.source = this.yaodiantupian[6];
+        this.chaoshigoumaiui.daojutubiao5.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodiantips7, this);
+        this.chaoshigoumaiui.daojutubiao6.source = this.yaodiantupian[7];
+        this.chaoshigoumaiui.daojutubiao6.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodiantips8, this);
+        this.chaoshigoumaiui.daojutubiao7.source = this.yaodiantupian[8];
+        this.chaoshigoumaiui.daojutubiao7.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodiantips9, this);
+        if (this.yaodianteshu == true) {
+            this.chaoshigoumaiui.zhekoutubiao.alpha = 1;
+        }
+        else {
+            this.chaoshigoumaiui.zhekoutubiao.alpha = 0;
+        }
+        if (parseInt(this.yaodianshuliang[0]) <= 0) {
+            this.chaoshigoumaiui.goumaijine.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai.enabled = false;
+            this.chaoshigoumaiui.but_goumai.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodian1keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine.text = "- " + this.yaodianjiage[0];
+            this.chaoshigoumaiui.but_goumai.enabled = true;
+            this.chaoshigoumaiui.but_goumai.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodian1keng, this);
+        }
+        if (parseInt(this.yaodianshuliang[1]) <= 0) {
+            this.chaoshigoumaiui.goumaijine0.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai0.enabled = false;
+            this.chaoshigoumaiui.but_goumai0.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodian2keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine0.text = "- " + this.yaodianjiage[1];
+            this.chaoshigoumaiui.but_goumai0.enabled = true;
+            this.chaoshigoumaiui.but_goumai0.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodian2keng, this);
+        }
+        if (parseInt(this.yaodianshuliang[2]) <= 0) {
+            this.chaoshigoumaiui.goumaijine1.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai1.enabled = false;
+            this.chaoshigoumaiui.but_goumai1.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodian3keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine1.text = "- " + this.yaodianjiage[2];
+            this.chaoshigoumaiui.but_goumai1.enabled = true;
+            this.chaoshigoumaiui.but_goumai1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodian3keng, this);
+        }
+        if (parseInt(this.yaodianshuliang[3]) <= 0) {
+            this.chaoshigoumaiui.goumaijine2.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai2.enabled = false;
+            this.chaoshigoumaiui.but_goumai2.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodian4keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine2.text = "- " + this.yaodianjiage[3];
+            this.chaoshigoumaiui.but_goumai2.enabled = true;
+            this.chaoshigoumaiui.but_goumai2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodian4keng, this);
+        }
+        if (parseInt(this.yaodianshuliang[4]) <= 0) {
+            this.chaoshigoumaiui.goumaijine3.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai3.enabled = false;
+            this.chaoshigoumaiui.but_goumai3.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodian5keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine3.text = "- " + this.yaodianjiage[4];
+            this.chaoshigoumaiui.but_goumai3.enabled = true;
+            this.chaoshigoumaiui.but_goumai3.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodian5keng, this);
+        }
+        if (parseInt(this.yaodianshuliang[5]) <= 0) {
+            this.chaoshigoumaiui.goumaijine4.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai4.enabled = false;
+            this.chaoshigoumaiui.but_goumai4.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodian6keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine4.text = "- " + this.yaodianjiage[5];
+            this.chaoshigoumaiui.but_goumai4.enabled = true;
+            this.chaoshigoumaiui.but_goumai4.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodian6keng, this);
+        }
+        if (parseInt(this.yaodianshuliang[6]) <= 0) {
+            this.chaoshigoumaiui.goumaijine5.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai5.enabled = false;
+            this.chaoshigoumaiui.but_goumai5.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodian7keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine5.text = "免费";
+            this.chaoshigoumaiui.but_goumai5.enabled = true;
+            this.chaoshigoumaiui.but_goumai5.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodian7keng, this);
+        }
+        if (parseInt(this.yaodianshuliang[7]) <= 0) {
+            this.chaoshigoumaiui.goumaijine6.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai6.enabled = false;
+            this.chaoshigoumaiui.but_goumai6.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodian8keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine6.text = "免费";
+            this.chaoshigoumaiui.but_goumai6.enabled = true;
+            this.chaoshigoumaiui.but_goumai6.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodian8keng, this);
+        }
+        if (parseInt(this.yaodianshuliang[8]) <= 0) {
+            this.chaoshigoumaiui.goumaijine7.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai7.enabled = false;
+            this.chaoshigoumaiui.but_goumai7.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodian9keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine7.text = "免费";
+            this.chaoshigoumaiui.but_goumai7.enabled = true;
+            this.chaoshigoumaiui.but_goumai7.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yaodian9keng, this);
+        }
+    };
+    Dajiejiemian.prototype.yaodiantips1 = function () {
+        this.daojutipsjiemian(this.yaodianid[0]);
+    };
+    Dajiejiemian.prototype.yaodiantips2 = function () {
+        this.daojutipsjiemian(this.yaodianid[1]);
+    };
+    Dajiejiemian.prototype.yaodiantips3 = function () {
+        this.daojutipsjiemian(this.yaodianid[2]);
+    };
+    Dajiejiemian.prototype.yaodiantips4 = function () {
+        this.daojutipsjiemian(this.yaodianid[3]);
+    };
+    Dajiejiemian.prototype.yaodiantips5 = function () {
+        this.daojutipsjiemian(this.yaodianid[4]);
+    };
+    Dajiejiemian.prototype.yaodiantips6 = function () {
+        this.daojutipsjiemian(this.yaodianid[5]);
+    };
+    Dajiejiemian.prototype.yaodiantips7 = function () {
+        this.daojutipsjiemian(this.yaodianid[6]);
+    };
+    Dajiejiemian.prototype.yaodiantips8 = function () {
+        this.daojutipsjiemian(this.yaodianid[7]);
+    };
+    Dajiejiemian.prototype.yaodiantips9 = function () {
+        this.daojutipsjiemian(this.yaodianid[8]);
+    };
+    Dajiejiemian.prototype.yaodian1keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.yaodianjiage[0])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.yaodianjiage[0]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.yaodianjiage[0] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.yaodianid[0] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.yaodianshuliang[0] = 0;
+            this.yaodianjiemianchushihua();
+            if (this.yaodianteshu == true) {
+                Gameguanli.Kongzhitai().paomadengui("天降鸿运！“" + Gerenshuxing.mingzi + "”以超低的价格购买到超市出售的特价商品[" + this.yaodianmingcheng[0] + "]！");
+            }
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.yaodian2keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.yaodianjiage[1])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.yaodianjiage[1]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.yaodianjiage[1] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.yaodianid[1] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.yaodianshuliang[1] = 0;
+            this.yaodianjiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.yaodian3keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.yaodianjiage[2])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.yaodianjiage[2]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.yaodianjiage[2] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.yaodianid[2] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.yaodianshuliang[2] = 0;
+            this.yaodianjiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.yaodian4keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.yaodianjiage[3])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.yaodianjiage[3]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.yaodianjiage[3] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.yaodianid[3] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.yaodianshuliang[3] = 0;
+            this.yaodianjiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.yaodian5keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.yaodianjiage[4])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.yaodianjiage[4]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.yaodianjiage[4] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.yaodianid[4] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.yaodianshuliang[4] = 0;
+            this.yaodianjiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.yaodian6keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.yaodianjiage[5])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.yaodianjiage[5]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.yaodianjiage[5] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.yaodianid[5] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.yaodianshuliang[5] = 0;
+            this.yaodianjiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.yaodian7keng = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.chaoshigoumaiui.but_goumai5.enabled = false;
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.yaodianfudaizhuanfa1, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Dajiejiemian.prototype.yaodianfudaizhuanfa1 = function () {
+        Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"kouchuleixing"' + ":" + '"0"' + ","
+            + '"kouchushuliang"' + ":" + '"0"' + ","
+            + '"leixing"' + ":" + '"' + this.yaodianid[6] + '"' + ","
+            + '"shuliang"' + ":" + '"1"' + ","
+            + '"beishu"' + ":" + '"1"' + "}");
+        this.yaodianshuliang[6] = 0;
+        this.yaodianjiemianchushihua();
+    };
+    Dajiejiemian.prototype.yaodian8keng = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.chaoshigoumaiui.but_goumai6.enabled = false;
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.yaodianfudaizhuanfa2, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Dajiejiemian.prototype.yaodianfudaizhuanfa2 = function () {
+        Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"kouchuleixing"' + ":" + '"0"' + ","
+            + '"kouchushuliang"' + ":" + '"0"' + ","
+            + '"leixing"' + ":" + '"' + this.yaodianid[7] + '"' + ","
+            + '"shuliang"' + ":" + '"1"' + ","
+            + '"beishu"' + ":" + '"1"' + "}");
+        this.yaodianshuliang[7] = 0;
+        this.yaodianjiemianchushihua();
+    };
+    Dajiejiemian.prototype.yaodian9keng = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.chaoshigoumaiui.but_goumai7.enabled = false;
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.yaodianfudaizhuanfa3, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Dajiejiemian.prototype.yaodianfudaizhuanfa3 = function () {
+        Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"kouchuleixing"' + ":" + '"0"' + ","
+            + '"kouchushuliang"' + ":" + '"0"' + ","
+            + '"leixing"' + ":" + '"' + this.yaodianid[8] + '"' + ","
+            + '"shuliang"' + ":" + '"1"' + ","
+            + '"beishu"' + ":" + '"1"' + "}");
+        this.yaodianshuliang[8] = 0;
+        this.yaodianjiemianchushihua();
+    };
+    /*
+菜市场商店相关内容
+*/
+    Dajiejiemian.prototype.caishichangmaimai = function () {
+        this.caishichangteshu = false;
+        var caishichangyongpinid = [];
+        var caishichangyongpinjiage = [];
+        for (var i = 0; i < Gerenshuxing.chaoshishangdianbiao.length; i++) {
+            if (Gerenshuxing.chaoshishangdianbiao[i].shangdianleixing == "3") {
+                caishichangyongpinid.push(Gerenshuxing.chaoshishangdianbiao[i].id);
+                caishichangyongpinjiage.push(Gerenshuxing.chaoshishangdianbiao[i].shoujia);
+            }
+        }
+        for (var k = 0; k < 9; k++) {
+            var suijichushou = Math.floor(Math.random() * caishichangyongpinid.length);
+            this.caishichangid[k] = caishichangyongpinid[suijichushou];
+            this.caishichangjiage[k] = caishichangyongpinjiage[suijichushou];
+            this.caishichangshuliang[k] = 1;
+        }
+        /*for(var i = 0;i<Gerenshuxing.caishichangshangdianbiao.length;i++){
+            if(Gerenshuxing.caishichangshangdianbiao[i].teshuid == Gerenshuxing.teshushijian){
+                this.caishichangid[0] = Gerenshuxing.caishichangshangdianbiao[i].id;
+                this.caishichangjiage[0] = Math.floor(parseInt(Gerenshuxing.caishichangshangdianbiao[i].shoujia) * (parseInt(Gerenshuxing.caishichangshangdianbiao[i].zhekou) / 10));
+                this.caishichangshuliang[0] = 1;
+                this.caishichangteshu = true;
+                break;
+            }
+        }
+        */
+        this.xianshicaishichangshangdianjiemian();
+    };
+    Dajiejiemian.prototype.xianshicaishichangshangdianjiemian = function () {
+        this.chaoshigoumaiui = new Chaoshishangdianui();
+        Gameguanli.Kongzhitai().dingbuui.addChild(this.chaoshigoumaiui);
+        this.chaoshigoumaiui.heisezhezao.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbichaoshiui, this);
+        this.caishichangjiemianchushihua();
+    };
+    Dajiejiemian.prototype.caishichangjiemianchushihua = function () {
+        this.chaoshigoumaiui.biaotilan.text = "调料商店";
+        for (var h = 0; h < Gerenshuxing.daojubiao.length; h++) {
+            if (Gerenshuxing.daojubiao[h].id == this.caishichangid[0]) {
+                this.caishichangtupian[0] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.caishichangmingcheng[0] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.caishichangid[1]) {
+                this.caishichangtupian[1] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.caishichangmingcheng[1] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.caishichangid[2]) {
+                this.caishichangtupian[2] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.caishichangmingcheng[2] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.caishichangid[3]) {
+                this.caishichangtupian[3] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.caishichangmingcheng[3] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.caishichangid[4]) {
+                this.caishichangtupian[4] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.caishichangmingcheng[4] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.caishichangid[5]) {
+                this.caishichangtupian[5] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.caishichangmingcheng[5] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.caishichangid[6]) {
+                this.caishichangtupian[6] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.caishichangmingcheng[6] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.caishichangid[7]) {
+                this.caishichangtupian[7] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.caishichangmingcheng[7] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.caishichangid[8]) {
+                this.caishichangtupian[8] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.caishichangmingcheng[8] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+        }
+        this.chaoshigoumaiui.daojutubiao.source = this.caishichangtupian[0];
+        this.chaoshigoumaiui.daojutubiao.addEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichangtips1, this);
+        this.chaoshigoumaiui.daojutubiao0.source = this.caishichangtupian[1];
+        this.chaoshigoumaiui.daojutubiao0.addEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichangtips2, this);
+        this.chaoshigoumaiui.daojutubiao1.source = this.caishichangtupian[2];
+        this.chaoshigoumaiui.daojutubiao1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichangtips3, this);
+        this.chaoshigoumaiui.daojutubiao2.source = this.caishichangtupian[3];
+        this.chaoshigoumaiui.daojutubiao2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichangtips4, this);
+        this.chaoshigoumaiui.daojutubiao3.source = this.caishichangtupian[4];
+        this.chaoshigoumaiui.daojutubiao3.addEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichangtips5, this);
+        this.chaoshigoumaiui.daojutubiao4.source = this.caishichangtupian[5];
+        this.chaoshigoumaiui.daojutubiao4.addEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichangtips6, this);
+        this.chaoshigoumaiui.daojutubiao5.source = this.caishichangtupian[6];
+        this.chaoshigoumaiui.daojutubiao5.addEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichangtips7, this);
+        this.chaoshigoumaiui.daojutubiao6.source = this.caishichangtupian[7];
+        this.chaoshigoumaiui.daojutubiao6.addEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichangtips8, this);
+        this.chaoshigoumaiui.daojutubiao7.source = this.caishichangtupian[8];
+        this.chaoshigoumaiui.daojutubiao7.addEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichangtips9, this);
+        if (this.caishichangteshu == true) {
+            this.chaoshigoumaiui.zhekoutubiao.alpha = 1;
+        }
+        else {
+            this.chaoshigoumaiui.zhekoutubiao.alpha = 0;
+        }
+        if (parseInt(this.caishichangshuliang[0]) <= 0) {
+            this.chaoshigoumaiui.goumaijine.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai.enabled = false;
+            this.chaoshigoumaiui.but_goumai.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichang1keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine.text = "- " + this.caishichangjiage[0];
+            this.chaoshigoumaiui.but_goumai.enabled = true;
+            this.chaoshigoumaiui.but_goumai.addEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichang1keng, this);
+        }
+        if (parseInt(this.caishichangshuliang[1]) <= 0) {
+            this.chaoshigoumaiui.goumaijine0.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai0.enabled = false;
+            this.chaoshigoumaiui.but_goumai0.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichang2keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine0.text = "- " + this.caishichangjiage[1];
+            this.chaoshigoumaiui.but_goumai0.enabled = true;
+            this.chaoshigoumaiui.but_goumai0.addEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichang2keng, this);
+        }
+        if (parseInt(this.caishichangshuliang[2]) <= 0) {
+            this.chaoshigoumaiui.goumaijine1.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai1.enabled = false;
+            this.chaoshigoumaiui.but_goumai1.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichang3keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine1.text = "- " + this.caishichangjiage[2];
+            this.chaoshigoumaiui.but_goumai1.enabled = true;
+            this.chaoshigoumaiui.but_goumai1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichang3keng, this);
+        }
+        if (parseInt(this.caishichangshuliang[3]) <= 0) {
+            this.chaoshigoumaiui.goumaijine2.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai2.enabled = false;
+            this.chaoshigoumaiui.but_goumai2.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichang4keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine2.text = "- " + this.caishichangjiage[3];
+            this.chaoshigoumaiui.but_goumai2.enabled = true;
+            this.chaoshigoumaiui.but_goumai2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichang4keng, this);
+        }
+        if (parseInt(this.caishichangshuliang[4]) <= 0) {
+            this.chaoshigoumaiui.goumaijine3.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai3.enabled = false;
+            this.chaoshigoumaiui.but_goumai3.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichang5keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine3.text = "- " + this.caishichangjiage[4];
+            this.chaoshigoumaiui.but_goumai3.enabled = true;
+            this.chaoshigoumaiui.but_goumai3.addEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichang5keng, this);
+        }
+        if (parseInt(this.caishichangshuliang[5]) <= 0) {
+            this.chaoshigoumaiui.goumaijine4.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai4.enabled = false;
+            this.chaoshigoumaiui.but_goumai4.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichang6keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine4.text = "- " + this.caishichangjiage[5];
+            this.chaoshigoumaiui.but_goumai4.enabled = true;
+            this.chaoshigoumaiui.but_goumai4.addEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichang6keng, this);
+        }
+        if (parseInt(this.caishichangshuliang[6]) <= 0) {
+            this.chaoshigoumaiui.goumaijine5.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai5.enabled = false;
+            this.chaoshigoumaiui.but_goumai5.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichang7keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine5.text = "免费";
+            this.chaoshigoumaiui.but_goumai5.enabled = true;
+            this.chaoshigoumaiui.but_goumai5.addEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichang7keng, this);
+        }
+        if (parseInt(this.caishichangshuliang[7]) <= 0) {
+            this.chaoshigoumaiui.goumaijine6.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai6.enabled = false;
+            this.chaoshigoumaiui.but_goumai6.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichang8keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine6.text = "免费";
+            this.chaoshigoumaiui.but_goumai6.enabled = true;
+            this.chaoshigoumaiui.but_goumai6.addEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichang8keng, this);
+        }
+        if (parseInt(this.caishichangshuliang[8]) <= 0) {
+            this.chaoshigoumaiui.goumaijine7.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai7.enabled = false;
+            this.chaoshigoumaiui.but_goumai7.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichang9keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine7.text = "免费";
+            this.chaoshigoumaiui.but_goumai7.enabled = true;
+            this.chaoshigoumaiui.but_goumai7.addEventListener(egret.TouchEvent.TOUCH_TAP, this.caishichang9keng, this);
+        }
+    };
+    Dajiejiemian.prototype.caishichangtips1 = function () {
+        this.daojutipsjiemian(this.caishichangid[0]);
+    };
+    Dajiejiemian.prototype.caishichangtips2 = function () {
+        this.daojutipsjiemian(this.caishichangid[1]);
+    };
+    Dajiejiemian.prototype.caishichangtips3 = function () {
+        this.daojutipsjiemian(this.caishichangid[2]);
+    };
+    Dajiejiemian.prototype.caishichangtips4 = function () {
+        this.daojutipsjiemian(this.caishichangid[3]);
+    };
+    Dajiejiemian.prototype.caishichangtips5 = function () {
+        this.daojutipsjiemian(this.caishichangid[4]);
+    };
+    Dajiejiemian.prototype.caishichangtips6 = function () {
+        this.daojutipsjiemian(this.caishichangid[5]);
+    };
+    Dajiejiemian.prototype.caishichangtips7 = function () {
+        this.daojutipsjiemian(this.caishichangid[6]);
+    };
+    Dajiejiemian.prototype.caishichangtips8 = function () {
+        this.daojutipsjiemian(this.caishichangid[7]);
+    };
+    Dajiejiemian.prototype.caishichangtips9 = function () {
+        this.daojutipsjiemian(this.caishichangid[8]);
+    };
+    Dajiejiemian.prototype.caishichang1keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.caishichangjiage[0])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.caishichangjiage[0]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.caishichangjiage[0] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.caishichangid[0] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.caishichangshuliang[0] = 0;
+            this.caishichangjiemianchushihua();
+            if (this.caishichangteshu == true) {
+                Gameguanli.Kongzhitai().paomadengui("天降鸿运！“" + Gerenshuxing.mingzi + "”以超低的价格购买到超市出售的特价商品[" + this.caishichangmingcheng[0] + "]！");
+            }
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.caishichang2keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.caishichangjiage[1])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.caishichangjiage[1]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.caishichangjiage[1] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.caishichangid[1] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.caishichangshuliang[1] = 0;
+            this.caishichangjiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.caishichang3keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.caishichangjiage[2])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.caishichangjiage[2]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.caishichangjiage[2] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.caishichangid[2] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.caishichangshuliang[2] = 0;
+            this.caishichangjiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.caishichang4keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.caishichangjiage[3])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.caishichangjiage[3]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.caishichangjiage[3] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.caishichangid[3] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.caishichangshuliang[3] = 0;
+            this.caishichangjiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.caishichang5keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.caishichangjiage[4])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.caishichangjiage[4]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.caishichangjiage[4] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.caishichangid[4] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.caishichangshuliang[4] = 0;
+            this.caishichangjiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.caishichang6keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.caishichangjiage[5])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.caishichangjiage[5]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.caishichangjiage[5] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.caishichangid[5] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.caishichangshuliang[5] = 0;
+            this.caishichangjiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.caishichang7keng = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.chaoshigoumaiui.but_goumai5.enabled = false;
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.caishichangfudaizhuanfa1, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Dajiejiemian.prototype.caishichangfudaizhuanfa1 = function () {
+        Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"kouchuleixing"' + ":" + '"0"' + ","
+            + '"kouchushuliang"' + ":" + '"0"' + ","
+            + '"leixing"' + ":" + '"' + this.caishichangid[6] + '"' + ","
+            + '"shuliang"' + ":" + '"1"' + ","
+            + '"beishu"' + ":" + '"1"' + "}");
+        this.caishichangshuliang[6] = 0;
+        this.caishichangjiemianchushihua();
+    };
+    Dajiejiemian.prototype.caishichang8keng = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.chaoshigoumaiui.but_goumai6.enabled = false;
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.caishichangfudaizhuanfa2, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Dajiejiemian.prototype.caishichangfudaizhuanfa2 = function () {
+        Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"kouchuleixing"' + ":" + '"0"' + ","
+            + '"kouchushuliang"' + ":" + '"0"' + ","
+            + '"leixing"' + ":" + '"' + this.caishichangid[7] + '"' + ","
+            + '"shuliang"' + ":" + '"1"' + ","
+            + '"beishu"' + ":" + '"1"' + "}");
+        this.caishichangshuliang[7] = 0;
+        this.caishichangjiemianchushihua();
+    };
+    Dajiejiemian.prototype.caishichang9keng = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.chaoshigoumaiui.but_goumai7.enabled = false;
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.caishichangfudaizhuanfa3, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Dajiejiemian.prototype.caishichangfudaizhuanfa3 = function () {
+        Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"kouchuleixing"' + ":" + '"0"' + ","
+            + '"kouchushuliang"' + ":" + '"0"' + ","
+            + '"leixing"' + ":" + '"' + this.caishichangid[8] + '"' + ","
+            + '"shuliang"' + ":" + '"1"' + ","
+            + '"beishu"' + ":" + '"1"' + "}");
+        this.caishichangshuliang[8] = 0;
+        this.caishichangjiemianchushihua();
+    };
+    /*
+    菜市场买菜入口
+    */
+    Dajiejiemian.prototype.caishichangjinru = function () {
+        Gameguanli.Kongzhitai().maicaijiemian("kai");
+    };
+    /*
+培训中心商店相关内容
+*/
+    Dajiejiemian.prototype.peixunmaimai = function () {
+        this.peixunteshu = false;
+        var peixunyongpinid = [];
+        var peixunyongpinjiage = [];
+        for (var i = 0; i < Gerenshuxing.chaoshishangdianbiao.length; i++) {
+            if (Gerenshuxing.chaoshishangdianbiao[i].shangdianleixing == "4") {
+                peixunyongpinid.push(Gerenshuxing.chaoshishangdianbiao[i].id);
+                peixunyongpinjiage.push(Gerenshuxing.chaoshishangdianbiao[i].shoujia);
+            }
+        }
+        for (var k = 0; k < 9; k++) {
+            var suijichushou = Math.floor(Math.random() * peixunyongpinid.length);
+            this.peixunid[k] = peixunyongpinid[suijichushou];
+            this.peixunjiage[k] = peixunyongpinjiage[suijichushou];
+            this.peixunshuliang[k] = 1;
+        }
+        /*for(var i = 0;i<Gerenshuxing.peixunshangdianbiao.length;i++){
+            if(Gerenshuxing.peixunshangdianbiao[i].teshuid == Gerenshuxing.teshushijian){
+                this.peixunid[0] = Gerenshuxing.peixunshangdianbiao[i].id;
+                this.peixunjiage[0] = Math.floor(parseInt(Gerenshuxing.peixunshangdianbiao[i].shoujia) * (parseInt(Gerenshuxing.peixunshangdianbiao[i].zhekou) / 10));
+                this.peixunshuliang[0] = 1;
+                this.peixunteshu = true;
+                break;
+            }
+        }
+        */
+        this.xianshipeixunshangdianjiemian();
+    };
+    Dajiejiemian.prototype.xianshipeixunshangdianjiemian = function () {
+        this.chaoshigoumaiui = new Chaoshishangdianui();
+        Gameguanli.Kongzhitai().dingbuui.addChild(this.chaoshigoumaiui);
+        this.chaoshigoumaiui.heisezhezao.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbichaoshiui, this);
+        this.peixunjiemianchushihua();
+    };
+    Dajiejiemian.prototype.peixunjiemianchushihua = function () {
+        this.chaoshigoumaiui.biaotilan.text = "培训商店";
+        for (var h = 0; h < Gerenshuxing.daojubiao.length; h++) {
+            if (Gerenshuxing.daojubiao[h].id == this.peixunid[0]) {
+                this.peixuntupian[0] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.peixunmingcheng[0] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.peixunid[1]) {
+                this.peixuntupian[1] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.peixunmingcheng[1] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.peixunid[2]) {
+                this.peixuntupian[2] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.peixunmingcheng[2] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.peixunid[3]) {
+                this.peixuntupian[3] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.peixunmingcheng[3] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.peixunid[4]) {
+                this.peixuntupian[4] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.peixunmingcheng[4] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.peixunid[5]) {
+                this.peixuntupian[5] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.peixunmingcheng[5] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.peixunid[6]) {
+                this.peixuntupian[6] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.peixunmingcheng[6] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.peixunid[7]) {
+                this.peixuntupian[7] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.peixunmingcheng[7] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+            if (Gerenshuxing.daojubiao[h].id == this.peixunid[8]) {
+                this.peixuntupian[8] = Gerenshuxing.daojubiao[h].xianshiicon;
+                this.peixunmingcheng[8] = Gerenshuxing.daojubiao[h].mingcheng;
+            }
+            ;
+        }
+        this.chaoshigoumaiui.daojutubiao.source = this.peixuntupian[0];
+        this.chaoshigoumaiui.daojutubiao.addEventListener(egret.TouchEvent.TOUCH_TAP, this.peixuntips1, this);
+        this.chaoshigoumaiui.daojutubiao0.source = this.peixuntupian[1];
+        this.chaoshigoumaiui.daojutubiao0.addEventListener(egret.TouchEvent.TOUCH_TAP, this.peixuntips2, this);
+        this.chaoshigoumaiui.daojutubiao1.source = this.peixuntupian[2];
+        this.chaoshigoumaiui.daojutubiao1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.peixuntips3, this);
+        this.chaoshigoumaiui.daojutubiao2.source = this.peixuntupian[3];
+        this.chaoshigoumaiui.daojutubiao2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.peixuntips4, this);
+        this.chaoshigoumaiui.daojutubiao3.source = this.peixuntupian[4];
+        this.chaoshigoumaiui.daojutubiao3.addEventListener(egret.TouchEvent.TOUCH_TAP, this.peixuntips5, this);
+        this.chaoshigoumaiui.daojutubiao4.source = this.peixuntupian[5];
+        this.chaoshigoumaiui.daojutubiao4.addEventListener(egret.TouchEvent.TOUCH_TAP, this.peixuntips6, this);
+        this.chaoshigoumaiui.daojutubiao5.source = this.peixuntupian[6];
+        this.chaoshigoumaiui.daojutubiao5.addEventListener(egret.TouchEvent.TOUCH_TAP, this.peixuntips7, this);
+        this.chaoshigoumaiui.daojutubiao6.source = this.peixuntupian[7];
+        this.chaoshigoumaiui.daojutubiao6.addEventListener(egret.TouchEvent.TOUCH_TAP, this.peixuntips8, this);
+        this.chaoshigoumaiui.daojutubiao7.source = this.peixuntupian[8];
+        this.chaoshigoumaiui.daojutubiao7.addEventListener(egret.TouchEvent.TOUCH_TAP, this.peixuntips9, this);
+        if (this.peixunteshu == true) {
+            this.chaoshigoumaiui.zhekoutubiao.alpha = 1;
+        }
+        else {
+            this.chaoshigoumaiui.zhekoutubiao.alpha = 0;
+        }
+        if (parseInt(this.peixunshuliang[0]) <= 0) {
+            this.chaoshigoumaiui.goumaijine.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai.enabled = false;
+            this.chaoshigoumaiui.but_goumai.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.peixun1keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine.text = "- " + this.peixunjiage[0];
+            this.chaoshigoumaiui.but_goumai.enabled = true;
+            this.chaoshigoumaiui.but_goumai.addEventListener(egret.TouchEvent.TOUCH_TAP, this.peixun1keng, this);
+        }
+        if (parseInt(this.peixunshuliang[1]) <= 0) {
+            this.chaoshigoumaiui.goumaijine0.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai0.enabled = false;
+            this.chaoshigoumaiui.but_goumai0.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.peixun2keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine0.text = "- " + this.peixunjiage[1];
+            this.chaoshigoumaiui.but_goumai0.enabled = true;
+            this.chaoshigoumaiui.but_goumai0.addEventListener(egret.TouchEvent.TOUCH_TAP, this.peixun2keng, this);
+        }
+        if (parseInt(this.peixunshuliang[2]) <= 0) {
+            this.chaoshigoumaiui.goumaijine1.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai1.enabled = false;
+            this.chaoshigoumaiui.but_goumai1.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.peixun3keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine1.text = "- " + this.peixunjiage[2];
+            this.chaoshigoumaiui.but_goumai1.enabled = true;
+            this.chaoshigoumaiui.but_goumai1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.peixun3keng, this);
+        }
+        if (parseInt(this.peixunshuliang[3]) <= 0) {
+            this.chaoshigoumaiui.goumaijine2.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai2.enabled = false;
+            this.chaoshigoumaiui.but_goumai2.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.peixun4keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine2.text = "- " + this.peixunjiage[3];
+            this.chaoshigoumaiui.but_goumai2.enabled = true;
+            this.chaoshigoumaiui.but_goumai2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.peixun4keng, this);
+        }
+        if (parseInt(this.peixunshuliang[4]) <= 0) {
+            this.chaoshigoumaiui.goumaijine3.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai3.enabled = false;
+            this.chaoshigoumaiui.but_goumai3.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.peixun5keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine3.text = "- " + this.peixunjiage[4];
+            this.chaoshigoumaiui.but_goumai3.enabled = true;
+            this.chaoshigoumaiui.but_goumai3.addEventListener(egret.TouchEvent.TOUCH_TAP, this.peixun5keng, this);
+        }
+        if (parseInt(this.peixunshuliang[5]) <= 0) {
+            this.chaoshigoumaiui.goumaijine4.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai4.enabled = false;
+            this.chaoshigoumaiui.but_goumai4.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.peixun6keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine4.text = "- " + this.peixunjiage[5];
+            this.chaoshigoumaiui.but_goumai4.enabled = true;
+            this.chaoshigoumaiui.but_goumai4.addEventListener(egret.TouchEvent.TOUCH_TAP, this.peixun6keng, this);
+        }
+        if (parseInt(this.peixunshuliang[6]) <= 0) {
+            this.chaoshigoumaiui.goumaijine5.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai5.enabled = false;
+            this.chaoshigoumaiui.but_goumai5.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.peixun7keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine5.text = "免费";
+            this.chaoshigoumaiui.but_goumai5.enabled = true;
+            this.chaoshigoumaiui.but_goumai5.addEventListener(egret.TouchEvent.TOUCH_TAP, this.peixun7keng, this);
+        }
+        if (parseInt(this.peixunshuliang[7]) <= 0) {
+            this.chaoshigoumaiui.goumaijine6.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai6.enabled = false;
+            this.chaoshigoumaiui.but_goumai6.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.peixun8keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine6.text = "免费";
+            this.chaoshigoumaiui.but_goumai6.enabled = true;
+            this.chaoshigoumaiui.but_goumai6.addEventListener(egret.TouchEvent.TOUCH_TAP, this.peixun8keng, this);
+        }
+        if (parseInt(this.peixunshuliang[8]) <= 0) {
+            this.chaoshigoumaiui.goumaijine7.text = "已售罄";
+            this.chaoshigoumaiui.but_goumai7.enabled = false;
+            this.chaoshigoumaiui.but_goumai7.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.peixun9keng, this);
+        }
+        else {
+            this.chaoshigoumaiui.goumaijine7.text = "免费";
+            this.chaoshigoumaiui.but_goumai7.enabled = true;
+            this.chaoshigoumaiui.but_goumai7.addEventListener(egret.TouchEvent.TOUCH_TAP, this.peixun9keng, this);
+        }
+    };
+    Dajiejiemian.prototype.peixuntips1 = function () {
+        this.daojutipsjiemian(this.peixunid[0]);
+    };
+    Dajiejiemian.prototype.peixuntips2 = function () {
+        this.daojutipsjiemian(this.peixunid[1]);
+    };
+    Dajiejiemian.prototype.peixuntips3 = function () {
+        this.daojutipsjiemian(this.peixunid[2]);
+    };
+    Dajiejiemian.prototype.peixuntips4 = function () {
+        this.daojutipsjiemian(this.peixunid[3]);
+    };
+    Dajiejiemian.prototype.peixuntips5 = function () {
+        this.daojutipsjiemian(this.peixunid[4]);
+    };
+    Dajiejiemian.prototype.peixuntips6 = function () {
+        this.daojutipsjiemian(this.peixunid[5]);
+    };
+    Dajiejiemian.prototype.peixuntips7 = function () {
+        this.daojutipsjiemian(this.peixunid[6]);
+    };
+    Dajiejiemian.prototype.peixuntips8 = function () {
+        this.daojutipsjiemian(this.peixunid[7]);
+    };
+    Dajiejiemian.prototype.peixuntips9 = function () {
+        this.daojutipsjiemian(this.peixunid[8]);
+    };
+    Dajiejiemian.prototype.peixun1keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.peixunjiage[0])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.peixunjiage[0]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.peixunjiage[0] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.peixunid[0] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.peixunshuliang[0] = 0;
+            this.peixunjiemianchushihua();
+            if (this.peixunteshu == true) {
+                Gameguanli.Kongzhitai().paomadengui("天降鸿运！“" + Gerenshuxing.mingzi + "”以超低的价格购买到超市出售的特价商品[" + this.peixunmingcheng[0] + "]！");
+            }
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.peixun2keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.peixunjiage[1])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.peixunjiage[1]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.peixunjiage[1] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.peixunid[1] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.peixunshuliang[1] = 0;
+            this.peixunjiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.peixun3keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.peixunjiage[2])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.peixunjiage[2]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.peixunjiage[2] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.peixunid[2] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.peixunshuliang[2] = 0;
+            this.peixunjiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.peixun4keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.peixunjiage[3])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.peixunjiage[3]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.peixunjiage[3] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.peixunid[3] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.peixunshuliang[3] = 0;
+            this.peixunjiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.peixun5keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.peixunjiage[4])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.peixunjiage[4]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.peixunjiage[4] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.peixunid[4] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.peixunshuliang[4] = 0;
+            this.peixunjiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.peixun6keng = function () {
+        if (Gerenshuxing.jinbizhi >= parseInt(this.peixunjiage[5])) {
+            Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.peixunjiage[5]);
+            Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                + '"kouchuleixing"' + ":" + '"1"' + ","
+                + '"kouchushuliang"' + ":" + '"' + this.peixunjiage[5] + '"' + ","
+                + '"leixing"' + ":" + '"' + this.peixunid[5] + '"' + ","
+                + '"shuliang"' + ":" + '"1"' + ","
+                + '"beishu"' + ":" + '"1"' + "}");
+            this.peixunshuliang[5] = 0;
+            this.peixunjiemianchushihua();
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("对不起，您的金钱不足，无法购买！");
+        }
+    };
+    Dajiejiemian.prototype.peixun7keng = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.chaoshigoumaiui.but_goumai5.enabled = false;
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.peixunfudaizhuanfa1, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Dajiejiemian.prototype.peixunfudaizhuanfa1 = function () {
+        Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"kouchuleixing"' + ":" + '"0"' + ","
+            + '"kouchushuliang"' + ":" + '"0"' + ","
+            + '"leixing"' + ":" + '"' + this.peixunid[6] + '"' + ","
+            + '"shuliang"' + ":" + '"1"' + ","
+            + '"beishu"' + ":" + '"1"' + "}");
+        this.peixunshuliang[6] = 0;
+        this.peixunjiemianchushihua();
+    };
+    Dajiejiemian.prototype.peixun8keng = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.chaoshigoumaiui.but_goumai6.enabled = false;
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.peixunfudaizhuanfa2, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Dajiejiemian.prototype.peixunfudaizhuanfa2 = function () {
+        Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"kouchuleixing"' + ":" + '"0"' + ","
+            + '"kouchushuliang"' + ":" + '"0"' + ","
+            + '"leixing"' + ":" + '"' + this.peixunid[7] + '"' + ","
+            + '"shuliang"' + ":" + '"1"' + ","
+            + '"beishu"' + ":" + '"1"' + "}");
+        this.peixunshuliang[7] = 0;
+        this.peixunjiemianchushihua();
+    };
+    Dajiejiemian.prototype.peixun9keng = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.chaoshigoumaiui.but_goumai7.enabled = false;
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.peixunfudaizhuanfa3, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Dajiejiemian.prototype.peixunfudaizhuanfa3 = function () {
+        Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"kouchuleixing"' + ":" + '"0"' + ","
+            + '"kouchushuliang"' + ":" + '"0"' + ","
+            + '"leixing"' + ":" + '"' + this.peixunid[8] + '"' + ","
+            + '"shuliang"' + ":" + '"1"' + ","
+            + '"beishu"' + ":" + '"1"' + "}");
+        this.peixunshuliang[8] = 0;
+        this.peixunjiemianchushihua();
     };
     return Dajiejiemian;
 }(eui.Component));

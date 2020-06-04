@@ -3,14 +3,14 @@
 	<w:Config id="17000b8adde" ></w:Config>
 	<e:Group id="jianglizu" x="0" y="0">
 		<e:Image id="img_huodebeijing" source="img_huodebeijing_png" x="0" y="0"/>
-		<e:Image id="jiangliicon" source="1001_png" x="264" y="482.5" anchorOffsetX="0.5" anchorOffsetY="0.5" width="221" height="171"/>
-		<e:Label id="jianglishuliang" text="X1" x="269" y="707" anchorOffsetX="0" width="214" fontFamily="wodeziti" verticalAlign="middle" textAlign="center" bold="true" stroke="2" size="24"/>
+		<e:Image id="jiangliicon" x="306" y="482.5" anchorOffsetX="0" anchorOffsetY="0" source="1001_png" width="140" height="140"/>
+		<e:Label id="jianglishuliang" text="X1" x="89" y="707" anchorOffsetX="0" width="576" fontFamily="wodeziti" verticalAlign="middle" textAlign="center" bold="true" stroke="2" size="24" anchorOffsetY="0" height="78"/>
 		<e:Button id="qudinganniu" label="" x="246.5" y="903" enabled="true">
 			<e:skinName>
-			<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" source="but_zhizuo2_png" source.down="but_zhizuo1_png" source.disabled="but_zhizuo1_png"/>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_caipuqueding1_png" source.down="but_caipuqueding2_png" source.disabled="but_caipuqueding2_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-			</e:Skin>
+				</e:Skin>
 			</e:skinName>
 		</e:Button>
 		<e:Image id="img_jianglibiaoti" source="img_jianglibiaoti_png" x="225.5" y="212"/>

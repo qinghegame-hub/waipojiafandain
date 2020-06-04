@@ -4,6 +4,6 @@
 	<e:Group id="tanchucaizu" left="0" bottom="0" top="0" right="0">
 		<e:Image id="tupiandibu" source="img_waimaitanchu_png" x="0" y="0"/>
 		<e:Image id="caiicon" x="13.5" y="39" width="40" height="40" anchorOffsetX="0.5" anchorOffsetY="0.5" source=""/>
-		<e:Label id="caiming" text="菜的名字" x="76.5" y="40.5" size="14" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" textColor="0x0b42e8" stroke="2" strokeColor="0xefe8e8" bold="true" anchorOffsetX="0" width="73" anchorOffsetY="0" height="22"/>
+		<e:Label id="caiming" text="菜的名字" x="76.5" y="40.5" size="14" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" textColor="0x0b42e8" stroke="2" strokeColor="0xefe8e8" bold="true" anchorOffsetX="0" width="74" anchorOffsetY="0" height="22"/>
 	</e:Group>
 </e:Skin>

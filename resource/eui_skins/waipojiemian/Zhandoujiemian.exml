@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ZhandoujiemianSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="17207dc8f54" ></w:Config>
+	<e:Group id="zhandoujiemianzu" x="0" y="0">
+		<e:Image id="img_zhandoubeijing" source="img_zhandoubeijing_png" left="0" top="0" bottom="0" right="0"/>
+		<e:Group id="bosszu" x="200" y="30">
+			<e:Group id="touxiangzu" width="76" height="73" x="28" y="17" anchorOffsetY="0" anchorOffsetX="0">
+			<e:Image id="npctouxiang" source="tx1000_png" y="0" anchorOffsetY="0" height="72" anchorOffsetX="0" width="76" x="0"/>
+			</e:Group>
+			<e:Image id="img_npcbeijing" source="img_npcbeijing_png" x="0" y="0"/>
+			<e:Label id="mingzi" text="怪物名字" x="136" y="14" anchorOffsetY="0" height="14" anchorOffsetX="0" width="105" size="16" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xf45a09" stroke="1" strokeColor="0xf2eded" bold="true"/>
+			<e:Image id="qixuetiao" source="img_jindutiaogundong_png" x="129.01" y="36.67" anchorOffsetX="0" width="153.33" anchorOffsetY="0" height="16"/>
+			<e:Label id="guaiwudengji" text="88" x="11.68" y="12.32" anchorOffsetX="0" width="26" size="16" textAlign="center" verticalAlign="middle" anchorOffsetY="0" height="24" fontFamily="wodeziti" textColor="0xe8190b" bold="true" stroke="1" strokeColor="0xf2e6e6"/>
+			<e:Image id="img_laicon" source="img_laicon_png" x="131.06" y="55.97" anchorOffsetX="-0.05" anchorOffsetY="0.03" width="24" height="24"/>
+			<e:Label id="lashuxing" text="8888" x="155" y="60" anchorOffsetY="0" height="14" anchorOffsetX="0" width="27.5" size="12" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xF45A09" stroke="1" strokeColor="0xF2EDED" bold="true"/>
+			<e:Image id="img_maicon" x="182.61" y="55.97" anchorOffsetX="-0.05" anchorOffsetY="0.03" width="24" height="24" source="img_maicon_png"/>
+			<e:Label id="mashuxing" text="8888" x="207" y="60" anchorOffsetY="0" height="14" anchorOffsetX="0" width="27.5" size="12" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xF45A09" stroke="1" strokeColor="0xF2EDED" bold="true"/>
+			<e:Image id="img_suanicon" x="129.56" y="79.97" anchorOffsetX="-0.05" anchorOffsetY="0.03" width="24" height="24" source="img_suanicon_png"/>
+			<e:Label id="suanshuxing" text="8888" x="155" y="84" anchorOffsetY="0" height="14" anchorOffsetX="0" width="27.5" size="12" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xF45A09" stroke="1" strokeColor="0xF2EDED" bold="true"/>
+			<e:Image id="img_tianicon" x="181.11" y="79.97" anchorOffsetX="-0.05" anchorOffsetY="0.03" width="24" height="24" source="img_tianicon_png"/>
+			<e:Label id="tianshuxing" text="8888" x="207" y="84" anchorOffsetY="0" height="14" anchorOffsetX="0" width="27.5" size="12" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xF45A09" stroke="1" strokeColor="0xF2EDED" bold="true"/>
+			<e:Group id="buffxianshizu" x="91" y="116">
+			<e:Image id="buff_1_" source="img_chuzhiluandunjineng_png" x="0" y="0" width="24" height="24"/>
+			<e:Label id="buff_1_wenzi" text="1" x="29.61" y="1" anchorOffsetY="0" height="20" size="16" textAlign="left" verticalAlign="middle" textColor="0xf70909" stroke="1" strokeColor="0xf2e8e8" fontFamily="wodeziti" anchorOffsetX="0" width="24"/>
+			<e:Image id="buff_2_" source="img_chuzhiluandunjineng_png" x="53.75" y="0" width="24" height="24"/>
+			<e:Label id="buff_2_wenzi" text="1" x="85.5" y="1" anchorOffsetY="0" height="20" size="16" textAlign="left" verticalAlign="middle" textColor="0xF70909" stroke="1" strokeColor="0xF2E8E8" fontFamily="wodeziti" anchorOffsetX="0" width="24"/>
+			<e:Image id="buff_3_" source="img_chuzhiluandunjineng_png" x="112.59" y="0" width="24" height="24"/>
+			<e:Label id="buff_3_wenzi" text="1" x="142.2" y="1" anchorOffsetY="0" height="20" size="16" textAlign="left" verticalAlign="middle" textColor="0xF70909" stroke="1" strokeColor="0xF2E8E8" fontFamily="wodeziti" anchorOffsetX="0" width="24"/>
+			<e:Image id="buff_4_" source="img_chuzhiluandunjineng_png" x="166.34" y="0" width="24" height="24"/>
+			<e:Label id="buff_4_wenzi" text="1" x="198.09" y="1" anchorOffsetY="0" height="20" size="16" textAlign="left" verticalAlign="middle" textColor="0xF70909" stroke="1" strokeColor="0xF2E8E8" fontFamily="wodeziti" anchorOffsetX="0" width="24"/>
+			</e:Group>
+			<e:Image id="yimanzu" source="img_yimanzu_png" x="29.110000000000014" y="-22" scaleX="1" scaleY="1"/>
+		</e:Group>
+		<e:Group x="13.61" y="200" id="bosszu0">
+			<e:Group id="touxiangzu0" width="76" height="73" x="28" y="17" anchorOffsetY="0" anchorOffsetX="0">
+			<e:Image id="npctouxiang0" source="tx1000_png" y="0" anchorOffsetY="0" height="72" anchorOffsetX="0" width="76" x="0"/>
+			</e:Group>
+			<e:Image id="img_npcbeijing0" source="img_npcbeijing_png" x="0" y="0"/>
+			<e:Label id="mingzi0" text="怪物名字" x="136" y="14" anchorOffsetY="0" height="14" anchorOffsetX="0" width="105" size="16" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xF45A09" stroke="1" strokeColor="0xF2EDED" bold="true"/>
+			<e:Image id="qixuetiao0" source="img_jindutiaogundong_png" x="129.01" y="36.67" anchorOffsetX="0" width="153.33" anchorOffsetY="0" height="16"/>
+			<e:Label id="guaiwudengji0" text="88" x="11.68" y="12.32" anchorOffsetX="0" width="26" size="16" textAlign="center" verticalAlign="middle" anchorOffsetY="0" height="24" fontFamily="wodeziti" textColor="0xE8190B" bold="true" stroke="1" strokeColor="0xF2E6E6"/>
+			<e:Image id="img_laicon0" source="img_laicon_png" x="131.06" y="55.97" anchorOffsetX="-0.05" anchorOffsetY="0.03" width="24" height="24"/>
+			<e:Label id="lashuxing0" text="8888" x="155" y="60" anchorOffsetY="0" height="14" anchorOffsetX="0" width="27.5" size="12" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xF45A09" stroke="1" strokeColor="0xF2EDED" bold="true"/>
+			<e:Image id="img_maicon0" x="182.61" y="55.97" anchorOffsetX="-0.05" anchorOffsetY="0.03" width="24" height="24" source="img_maicon_png"/>
+			<e:Label id="mashuxing0" text="8888" x="207" y="60" anchorOffsetY="0" height="14" anchorOffsetX="0" width="27.5" size="12" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xF45A09" stroke="1" strokeColor="0xF2EDED" bold="true"/>
+			<e:Image id="img_suanicon0" x="129.56" y="79.97" anchorOffsetX="-0.05" anchorOffsetY="0.03" width="24" height="24" source="img_suanicon_png"/>
+			<e:Label id="suanshuxing0" text="8888" x="155" y="84" anchorOffsetY="0" height="14" anchorOffsetX="0" width="27.5" size="12" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xF45A09" stroke="1" strokeColor="0xF2EDED" bold="true"/>
+			<e:Image id="img_tianicon0" x="181.11" y="79.97" anchorOffsetX="-0.05" anchorOffsetY="0.03" width="24" height="24" source="img_tianicon_png"/>
+			<e:Label id="tianshuxing0" text="8888" x="207" y="84" anchorOffsetY="0" height="14" anchorOffsetX="0" width="27.5" size="12" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xF45A09" stroke="1" strokeColor="0xF2EDED" bold="true"/>
+			<e:Group x="91" y="116" id="buffxianshizu0">
+			<e:Image id="buff_1_0" source="img_chuzhiluandunjineng_png" x="0" y="0" width="24" height="24"/>
+			<e:Label id="buff_1_wenzi0" text="1" x="29.61" y="1" anchorOffsetY="0" height="20" size="16" textAlign="left" verticalAlign="middle" textColor="0xF70909" stroke="1" strokeColor="0xF2E8E8" fontFamily="wodeziti" anchorOffsetX="0" width="24"/>
+			<e:Image id="buff_2_0" source="img_chuzhiluandunjineng_png" x="53.75" y="0" width="24" height="24"/>
+			<e:Label text="1" x="85.5" y="1" anchorOffsetY="0" height="20" size="16" textAlign="left" verticalAlign="middle" textColor="0xF70909" stroke="1" strokeColor="0xF2E8E8" fontFamily="wodeziti" anchorOffsetX="0" width="24" id="buff_2_wenzi0"/>
+			<e:Image id="buff_3_0" source="img_chuzhiluandunjineng_png" x="112.59" y="0" width="24" height="24"/>
+			<e:Label id="buff_3_wenzi0" text="1" x="142.2" y="1" anchorOffsetY="0" height="20" size="16" textAlign="left" verticalAlign="middle" textColor="0xF70909" stroke="1" strokeColor="0xF2E8E8" fontFamily="wodeziti" anchorOffsetX="0" width="24"/>
+			<e:Image id="buff_4_0" source="img_chuzhiluandunjineng_png" x="166.34" y="0" width="24" height="24"/>
+			<e:Label text="1" x="198.09" y="1" anchorOffsetY="0" height="20" size="16" textAlign="left" verticalAlign="middle" textColor="0xF70909" stroke="1" strokeColor="0xF2E8E8" fontFamily="wodeziti" anchorOffsetX="0" width="24" id="buff_4_wenzi0"/>
+			</e:Group>
+			<e:Image source="img_yimanzu_png" x="36.39" y="-35.5" id="yimanzu0" scaleX="1" scaleY="1"/>
+		</e:Group>
+		<e:Group x="381.16" y="200" id="bosszu1">
+			<e:Group id="touxiangzu1" width="76" height="73" x="28" y="17" anchorOffsetY="0" anchorOffsetX="0">
+			<e:Image id="npctouxiang1" source="tx1000_png" y="0" anchorOffsetY="0" height="72" anchorOffsetX="0" width="76" x="0"/>
+			</e:Group>
+			<e:Image id="img_npcbeijing1" source="img_npcbeijing_png" x="0" y="0"/>
+			<e:Label id="mingzi1" text="怪物名字" x="136" y="14" anchorOffsetY="0" height="14" anchorOffsetX="0" width="105" size="16" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xF45A09" stroke="1" strokeColor="0xF2EDED" bold="true"/>
+			<e:Image id="qixuetiao1" source="img_jindutiaogundong_png" x="129.01" y="36.67" anchorOffsetX="0" width="153.33" anchorOffsetY="0" height="16"/>
+			<e:Label id="guaiwudengji1" text="88" x="11.68" y="12.32" anchorOffsetX="0" width="26" size="16" textAlign="center" verticalAlign="middle" anchorOffsetY="0" height="24" fontFamily="wodeziti" textColor="0xE8190B" bold="true" stroke="1" strokeColor="0xF2E6E6"/>
+			<e:Image id="img_laicon1" source="img_laicon_png" x="131.06" y="55.97" anchorOffsetX="-0.05" anchorOffsetY="0.03" width="24" height="24"/>
+			<e:Label id="lashuxing1" text="8888" x="155" y="60" anchorOffsetY="0" height="14" anchorOffsetX="0" width="27.5" size="12" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xF45A09" stroke="1" strokeColor="0xF2EDED" bold="true"/>
+			<e:Image id="img_maicon1" x="182.61" y="55.97" anchorOffsetX="-0.05" anchorOffsetY="0.03" width="24" height="24" source="img_maicon_png"/>
+			<e:Label id="mashuxing1" text="8888" x="207" y="60" anchorOffsetY="0" height="14" anchorOffsetX="0" width="27.5" size="12" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xF45A09" stroke="1" strokeColor="0xF2EDED" bold="true"/>
+			<e:Image id="img_suanicon1" x="129.56" y="79.97" anchorOffsetX="-0.05" anchorOffsetY="0.03" width="24" height="24" source="img_suanicon_png"/>
+			<e:Label id="suanshuxing1" text="8888" x="155" y="84" anchorOffsetY="0" height="14" anchorOffsetX="0" width="27.5" size="12" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xF45A09" stroke="1" strokeColor="0xF2EDED" bold="true"/>
+			<e:Image id="img_tianicon1" x="181.11" y="79.97" anchorOffsetX="-0.05" anchorOffsetY="0.03" width="24" height="24" source="img_tianicon_png"/>
+			<e:Label id="tianshuxing1" text="8888" x="207" y="84" anchorOffsetY="0" height="14" anchorOffsetX="0" width="27.5" size="12" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xF45A09" stroke="1" strokeColor="0xF2EDED" bold="true"/>
+			<e:Group x="91" y="116" id="buffxianshizu1">
+			<e:Image id="buff_1_1" source="img_chuzhiluandunjineng_png" x="0" y="0" width="24" height="24"/>
+			<e:Label id="buff_1_wenzi1" text="1" x="29.61" y="1" anchorOffsetY="0" height="20" size="16" textAlign="left" verticalAlign="middle" textColor="0xF70909" stroke="1" strokeColor="0xF2E8E8" fontFamily="wodeziti" anchorOffsetX="0" width="24"/>
+			<e:Image id="buff_2_1" source="img_chuzhiluandunjineng_png" x="53.75" y="0" width="24" height="24"/>
+			<e:Label text="1" x="85.5" y="1" anchorOffsetY="0" height="20" size="16" textAlign="left" verticalAlign="middle" textColor="0xF70909" stroke="1" strokeColor="0xF2E8E8" fontFamily="wodeziti" anchorOffsetX="0" width="24" id="buff_2_wenzi1"/>
+			<e:Image id="buff_3_1" source="img_chuzhiluandunjineng_png" x="112.59" y="0" width="24" height="24"/>
+			<e:Label id="buff_3_wenzi1" text="1" x="142.2" y="1" anchorOffsetY="0" height="20" size="16" textAlign="left" verticalAlign="middle" textColor="0xF70909" stroke="1" strokeColor="0xF2E8E8" fontFamily="wodeziti" anchorOffsetX="0" width="24"/>
+			<e:Image id="buff_4_1" source="img_chuzhiluandunjineng_png" x="166.34" y="0" width="24" height="24"/>
+			<e:Label text="1" x="198.09" y="1" anchorOffsetY="0" height="20" size="16" textAlign="left" verticalAlign="middle" textColor="0xF70909" stroke="1" strokeColor="0xF2E8E8" fontFamily="wodeziti" anchorOffsetX="0" width="24" id="buff_4_wenzi1"/>
+			</e:Group>
+			<e:Image source="img_yimanzu_png" x="55.089999999999975" y="-35.5" id="yimanzu1" scaleX="1" scaleY="1"/>
+		</e:Group>
+		<e:Group id="zijizu" x="31.11" y="790">
+			<e:Group id="touxiangzu2" width="110" height="101" x="28" y="17" anchorOffsetY="0" anchorOffsetX="0">
+			<e:Image id="npctouxiang2" source="tx1000_png" y="0" anchorOffsetY="0" height="98" anchorOffsetX="0" width="106" x="0"/>
+			</e:Group>
+			<e:Image id="img_npcbeijing2" x="0" y="0" source="img_zijibeijing_png"/>
+			<e:Label id="mingzi2" text="怪物名字" x="176.16" y="17" anchorOffsetY="0" height="19" anchorOffsetX="0" width="141" size="18" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xF45A09" stroke="1" strokeColor="0xF2EDED" bold="true"/>
+			<e:Image id="qixuetiao2" source="img_jindutiaogundong_png" x="169.93" y="48" anchorOffsetX="0" width="203.33" anchorOffsetY="0" height="21"/>
+			<e:Label id="guaiwudengji2" text="88" x="11.68" y="12.32" anchorOffsetX="0" width="40" size="18" textAlign="center" verticalAlign="middle" anchorOffsetY="0" height="39" fontFamily="wodeziti" textColor="0xE8190B" bold="true" stroke="1" strokeColor="0xF2E6E6"/>
+			<e:Image id="img_laicon2" source="img_laicon_png" x="167" y="74" anchorOffsetX="-0.05" anchorOffsetY="0.03" width="30" height="30"/>
+			<e:Label id="lashuxing2" text="8888" x="198" y="82" anchorOffsetY="0" height="18" anchorOffsetX="0" width="50" size="14" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xF45A09" stroke="1" strokeColor="0xF2EDED" bold="true"/>
+			<e:Image id="img_maicon2" x="250" y="74" anchorOffsetX="-0.05" anchorOffsetY="0.03" width="30" height="30" source="img_maicon_png"/>
+			<e:Label id="mashuxing2" text="8888" x="288" y="82" anchorOffsetY="0" height="18" anchorOffsetX="0" width="50" size="14" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xF45A09" stroke="1" strokeColor="0xF2EDED" bold="true"/>
+			<e:Image id="img_suanicon2" x="167" y="105" anchorOffsetX="-0.05" anchorOffsetY="0.03" width="30" height="30" source="img_suanicon_png"/>
+			<e:Label id="suanshuxing2" text="8888" x="198" y="112" anchorOffsetY="0" height="18" anchorOffsetX="0" width="50" size="14" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xF45A09" stroke="1" strokeColor="0xF2EDED" bold="true"/>
+			<e:Image id="img_tianicon2" x="250" y="105" anchorOffsetX="-0.05" anchorOffsetY="0.03" width="30" height="30" source="img_tianicon_png"/>
+			<e:Label id="tianshuxing2" text="8888" x="288" y="112" anchorOffsetY="0" height="18" anchorOffsetX="0" width="50" size="14" fontFamily="wodeziti" textAlign="left" verticalAlign="middle" textColor="0xF45A09" stroke="1" strokeColor="0xF2EDED" bold="true"/>
+			<e:Image id="yizhili" source="img_yizhili_png" x="370.09" y="74.97" width="30" height="30"/>
+			<e:Label id="yizhixing2" text="8888" x="351.55" y="112" anchorOffsetY="0" height="19" anchorOffsetX="0" width="67" size="14" fontFamily="wodeziti" textAlign="center" verticalAlign="middle" stroke="1" strokeColor="0xF2EDED" bold="true" textColor="0x0e90f2"/>
+			<e:Group x="113" y="152" id="buffxianshizu2" anchorOffsetX="0" width="338" anchorOffsetY="0" height="38">
+			<e:Image id="buff_1_2" source="img_chuzhiluandunjineng_png" x="0" y="0" width="30" height="30"/>
+			<e:Label id="buff_1_wenzi2" text="1" x="38.9" y="1" anchorOffsetY="0" height="30" size="18" textAlign="left" verticalAlign="middle" textColor="0xF70909" stroke="1" strokeColor="0xF2E8E8" fontFamily="wodeziti" anchorOffsetX="0" width="30"/>
+			<e:Image id="buff_2_2" source="img_chuzhiluandunjineng_png" x="62.32" y="0" width="30" height="30"/>
+			<e:Label text="1" x="102.36" y="1" anchorOffsetY="0" height="30" size="18" textAlign="left" verticalAlign="middle" textColor="0xF70909" stroke="1" strokeColor="0xF2E8E8" fontFamily="wodeziti" anchorOffsetX="0" width="30" id="buff_2_wenzi2"/>
+			<e:Image id="buff_3_2" source="img_chuzhiluandunjineng_png" x="128.73" y="0" width="30" height="30"/>
+			<e:Label id="buff_3_wenzi2" text="1" x="166.63" y="1" anchorOffsetY="0" height="30" size="18" textAlign="left" verticalAlign="middle" textColor="0xF70909" stroke="1" strokeColor="0xF2E8E8" fontFamily="wodeziti" anchorOffsetX="0" width="30"/>
+			<e:Image id="buff_4_2" source="img_chuzhiluandunjineng_png" x="189.05" y="0" width="30" height="30"/>
+			<e:Label text="1" x="227.09" y="1" anchorOffsetY="0" height="30" size="18" textAlign="left" verticalAlign="middle" textColor="0xF70909" stroke="1" strokeColor="0xF2E8E8" fontFamily="wodeziti" anchorOffsetX="0" width="30" id="buff_4_wenzi2"/>
+			</e:Group>
+		</e:Group>
+		<e:Group id="shangmiantishizu" x="181" y="364" locked="true">
+			<e:Image id="img_shangmianwenzibj" source="img_shangmianwenzibj_png" x="0" y="0"/>
+			<e:Label id="shangmiantishiwenzi" text="提示文字内容" x="9" y="10" anchorOffsetX="0" width="370" anchorOffsetY="0" height="44" size="24" fontFamily="wodeziti" verticalAlign="middle" textAlign="center" bold="true"/>
+		</e:Group>
+		<e:Group id="huihezu" x="38.29" y="431">
+			<e:Image id="img_huihelan" source="img_huihelan_png" x="0" y="0"/>
+			<e:Label id="di" text="第" x="13.71" y="7" anchorOffsetX="0" width="40" anchorOffsetY="0" height="46" textAlign="center" verticalAlign="middle" size="30" fontFamily="wodeziti" bold="true" textColor="0x3bf407" stroke="2" strokeColor="0x605c5c"/>
+			<e:Label id="huiheshu" text="7" x="13.71" y="47" anchorOffsetX="0" width="40" anchorOffsetY="0" height="46" textAlign="center" verticalAlign="middle" size="30" fontFamily="wodeziti" bold="true" stroke="2" strokeColor="0x605C5C" textColor="0xf23a0e"/>
+			<e:Label id="hui" text="回" x="13.71" y="91" anchorOffsetX="0" width="40" anchorOffsetY="0" height="46" textAlign="center" verticalAlign="middle" size="30" fontFamily="wodeziti" bold="true" textColor="0x3BF407" stroke="2" strokeColor="0x605C5C"/>
+			<e:Label id="he" text="合" x="13.71" y="133" anchorOffsetX="0" width="40" anchorOffsetY="0" height="46" textAlign="center" verticalAlign="middle" size="30" fontFamily="wodeziti" bold="true" textColor="0x3BF407" stroke="2" strokeColor="0x605C5C"/>
+		</e:Group>
+		<e:Image id="img_sudujindu" source="img_sudujindu_png" x="682.25" y="431"/>
+		<e:Group id="jinduzu" x="597" y="813">
+			<e:Group id="jindutouxiang" width="52" height="47.5" x="12" y="13.25" anchorOffsetY="0" anchorOffsetX="0">
+			<e:Image id="touxiangtu" source="tx1003_png" anchorOffsetY="0" height="46" anchorOffsetX="0" width="46" x="2.5" y="0"/>
+			</e:Group>
+			<e:Image id="img_youbiaotouxiang" source="img_youbiaotouxiang_png" x="0" y="0"/>
+		</e:Group>
+		<e:Group x="597" y="737" id="jinduzu0" locked="true">
+			<e:Group width="52" height="47.5" x="12" y="13.25" anchorOffsetY="0" anchorOffsetX="0" id="jindutouxiang0">
+			<e:Image source="tx1003_png" anchorOffsetY="0" height="46" anchorOffsetX="0" width="46" x="2.5" y="0" id="touxiangtu0"/>
+			</e:Group>
+			<e:Image source="img_youbiaotouxiang_png" x="0" y="0" id="img_youbiaotouxiang0"/>
+		</e:Group>
+		<e:Group x="597" y="660" id="jinduzu1" locked="true">
+			<e:Group width="52" height="47.5" x="12" y="13.25" anchorOffsetY="0" anchorOffsetX="0" id="jindutouxiang1">
+			<e:Image source="tx1003_png" anchorOffsetY="0" height="46" anchorOffsetX="0" width="46" x="2.5" y="0" id="touxiangtu1"/>
+			</e:Group>
+			<e:Image source="img_youbiaotouxiang_png" x="0" y="0" id="img_youbiaotouxiang1"/>
+		</e:Group>
+		<e:Group x="597" y="580" id="jinduzu2" locked="true">
+			<e:Group width="52" height="47.5" x="12" y="13.25" anchorOffsetY="0" anchorOffsetX="0" id="jindutouxiang2">
+			<e:Image source="tx1003_png" anchorOffsetY="0" height="46" anchorOffsetX="0" width="46" x="2.5" y="0" id="touxiangtu2"/>
+			</e:Group>
+			<e:Image source="img_youbiaotouxiang_png" x="0" y="0" id="img_youbiaotouxiang2"/>
+		</e:Group>
+		<e:Group id="tiaoliaozu" x="28" y="986" locked="true">
+			<e:Image id="tiaoliao" source="img_tiaoliaoicon_png" x="0" y="0" width="92" height="88"/>
+			<e:Image source="img_tiaoliaoicon_png" x="66.11" y="0" id="tiaoliao0" width="92" height="88"/>
+			<e:Image source="img_tiaoliaoicon_png" x="132.22" y="0" id="tiaoliao1" width="92" height="88"/>
+			<e:Image source="img_tiaoliaoicon_png" x="198.44" y="0" id="tiaoliao2" width="92" height="88"/>
+			<e:Image source="img_tiaoliaoicon_png" x="264.18" y="0" id="tiaoliao3" width="92" height="88"/>
+			<e:Image source="img_tiaoliaoicon_png" x="330.17" y="0" id="tiaoliao4" width="92" height="88"/>
+			<e:Image source="img_tiaoliaoicon_png" x="396.67" y="0" id="tiaoliao5" width="92" height="88"/>
+			<e:Image source="img_tiaoliaoicon_png" x="462.55" y="0" id="tiaoliao6" width="92" height="88"/>
+			<e:Image source="img_tiaoliaoicon_png" x="528.39" y="0" id="tiaoliao7" width="92" height="88"/>
+			<e:Image source="img_tiaoliaoicon_png" x="594.5" y="0" id="tiaoliao8" width="92" height="88"/>
+		</e:Group>
+		<e:Group id="caixuanxiang" x="37.61" y="1078">
+			<e:Image id="img_caikuang" source="img_caikuang_png" x="0.39" y="0"/>
+			<e:Image id="caiicon" source="2016_png" x="18.5" y="21" width="100" height="100"/>
+			<e:Image id="xiaohao_1_" source="img_tiaoliaoicon_png" x="0" y="100" width="42" height="38"/>
+			<e:Image id="xiaohao_2_" source="img_tiaoliaoicon_png" x="32" y="102" width="42" height="38"/>
+			<e:Image id="xiaohao_3_" source="img_tiaoliaoicon_png" x="64" y="102" width="42" height="38"/>
+			<e:Image id="xiaohao_4_" source="img_tiaoliaoicon_png" x="96" y="102" width="42" height="38"/>
+		</e:Group>
+		<e:Group x="213.94" y="1077" id="caixuanxiang0" locked="true">
+			<e:Image source="img_caikuang_png" x="0.39" y="0" id="img_caikuang0"/>
+			<e:Image source="2016_png" x="18.5" y="21" width="100" height="100" id="caiicon0"/>
+			<e:Image source="img_tiaoliaoicon_png" x="0" y="100" id="xiaohao_1_0" width="42" height="38"/>
+			<e:Image source="img_tiaoliaoicon_png" x="32" y="102" id="xiaohao_2_0" width="42" height="38"/>
+			<e:Image source="img_tiaoliaoicon_png" x="64" y="102" id="xiaohao_3_0" width="42" height="38"/>
+			<e:Image source="img_tiaoliaoicon_png" x="96" y="102" id="xiaohao_4_0" width="42" height="38"/>
+		</e:Group>
+		<e:Group x="389.61" y="1075" id="caixuanxiang1" locked="true">
+			<e:Image source="img_caikuang_png" x="0.39" y="0" id="img_caikuang1"/>
+			<e:Image source="2016_png" x="18.5" y="21" width="100" height="100" id="caiicon1"/>
+			<e:Image source="img_tiaoliaoicon_png" x="0" y="100" id="xiaohao_1_1" width="42" height="38"/>
+			<e:Image source="img_tiaoliaoicon_png" x="32" y="102" id="xiaohao_2_1" width="42" height="38"/>
+			<e:Image source="img_tiaoliaoicon_png" x="64" y="102" id="xiaohao_3_1" width="42" height="38"/>
+			<e:Image source="img_tiaoliaoicon_png" x="96" y="102" id="xiaohao_4_1" width="42" height="38"/>
+		</e:Group>
+		<e:Group x="565.66" y="1075" id="caixuanxiang2" locked="true">
+			<e:Image source="img_caikuang_png" x="0.39" y="0" id="img_caikuang2"/>
+			<e:Image source="2016_png" x="18.5" y="21" width="100" height="100" id="caiicon2"/>
+			<e:Image source="img_tiaoliaoicon_png" x="0" y="100" id="xiaohao_1_2" width="42" height="38"/>
+			<e:Image source="img_tiaoliaoicon_png" x="32" y="102" id="xiaohao_2_2" width="42" height="38"/>
+			<e:Image source="img_tiaoliaoicon_png" x="64" y="102" id="xiaohao_3_2" width="42" height="38"/>
+			<e:Image source="img_tiaoliaoicon_png" x="96" y="102" id="xiaohao_4_2" width="42" height="38"/>
+		</e:Group>
+		<e:Button id="shangcai1anniu" label="" x="42" y="1242" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shangcaianniu1_png" source.down="but_shangcaianniu2_png" source.disabled="but_shangcaianniu2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="shangcai2anniu" label="" x="217.76" y="1242" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shangcaianniu1_png" source.down="but_shangcaianniu2_png" source.disabled="but_shangcaianniu2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="shangcai3anniu" label="" x="392.67" y="1242" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shangcaianniu1_png" source.down="but_shangcaianniu2_png" source.disabled="but_shangcaianniu2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="shangcai4anniu" label="" x="568" y="1242" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shangcaianniu1_png" source.down="but_shangcaianniu2_png" source.disabled="but_shangcaianniu2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="zidongzhandouanniu" label="" x="574.32" y="917" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_fangqi1_png" source.down="but_fangqi2_png" source.disabled="but_fangqi2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="quxiaozidonganniu" label="" x="574.32" y="917" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_quxiaozidonganniu1_png" source.down="but_quxiaozidonganniu2_png" source.disabled="but_quxiaozidonganniu2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="renshuanniu" label="" x="48.36" y="631.5" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_renshianniu1_png" source.down="but_renshianniu2_png" source.disabled="but_renshianniu2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Group id="zhandouhanhuazu" x="143.61" y="450">
+			<e:Image id="zhandouqipaokuang" source="img_zhandouduihuaqipao_png" x="0" y="0" anchorOffsetX="0" width="465" anchorOffsetY="0" height="136" alpha="0.8"/>
+			<e:Label id="zhandouhanhua" text="成年人的崩溃往往是从借钱开始的成年人的崩溃往往是从借钱开始的成年人的崩溃往往是从借钱开始的成年人的崩溃往往是从借钱开始的" x="9.39" y="8" anchorOffsetX="0" width="444" anchorOffsetY="0" height="96" size="24" fontFamily="wodeziti" textColor="0x333030" textAlign="left" verticalAlign="top" strokeColor="0xf2e6e6"/>
+		</e:Group>
+		<e:Group id="zhandouxianshizu" x="289.67" y="586" anchorOffsetX="0" width="170" anchorOffsetY="0" height="170">
+			<e:Image id="zhandounierong" source="img_gudujineneg_png" x="0" y="0" width="160" height="160"/>
+		</e:Group>
+		<e:Group id="daojishitishizu" x="262" y="548" locked="true">
+			<e:Image id="img_naozhongdaojishi" source="img_naozhongdaojishi_png" x="58.52" y="0"/>
+			<e:Label id="naozhongdaojishi" text="28" x="83.57" y="58" anchorOffsetX="0" width="66" anchorOffsetY="0" height="76" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" size="40" bold="true"/>
+		</e:Group>
+		<e:Group id="xiamiantishizu" x="255" y="723.25">
+			<e:Image id="img_xiamianwenzibj" source="img_xiamianwenzibj_png" x="0" y="0"/>
+			<e:Label id="chupaitishiwenzi" text="请选择呈现的菜品" x="11.57" y="4.75" anchorOffsetX="0" width="218" anchorOffsetY="0" height="44" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" size="24" bold="true"/>
+		</e:Group>
+		<e:Group id="shihezu" x="19.11" y="921" locked="true">
+			<e:Image id="img_shihe" source="img_shihe_png" x="15.5" y="14" anchorOffsetX="0" width="56" anchorOffsetY="0" height="61"/>
+			<e:Image id="img_shihejiaobiao" source="img_shihejiaobiao_png" x="0" y="0"/>
+			<e:Label id="shihewenzishu" text="8+" x="6.89" y="7" anchorOffsetX="0" width="24" size="18" fontFamily="wodeziti" anchorOffsetY="0" height="24" verticalAlign="middle" textAlign="center" stroke="1"/>
+		</e:Group>
+		<e:Image id="bisaizhuangtaitu" source="img_bipingkaishi_png" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="0" verticalCenter="-237"/>
+	</e:Group>
+</e:Skin>

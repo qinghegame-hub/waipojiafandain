@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="LoadingjiemianSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1725a474dfb" ></w:Config>
+	<e:Group id="loadingzu" x="0" y="0">
+		<e:Image id="beijingtu" source="img_beijingloading_png" x="0" y="0"/>
+		<e:Image id="img_jindutiaoxia" source="img_jindutiaoxia_png" x="76" y="1098" width="598" height="23"/>
+		<e:Image id="img_jindutiaoshang" source="img_jindutiaoshang_png" x="76" y="1098" width="598" height="23"/>
+		<e:Image id="but_kaishiyouxi" source="but_kaishiyouxi_png" x="243" y="1068.5"/>
+	</e:Group>
+</e:Skin>

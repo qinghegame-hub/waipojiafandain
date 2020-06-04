@@ -74,7 +74,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var Main = (function (_super) {
     __extends(Main, _super);
     function Main() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.banben = "weixin"; //游戏上线渠道入口标志;
+        return _this;
     }
     Main.prototype.createChildren = function () {
         _super.prototype.createChildren.call(this);
@@ -98,12 +100,13 @@ var Main = (function (_super) {
     };
     Main.prototype.runGame = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var denglu, e_1, result, userInfo;
+            var denglu, e_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.loadResource()];
                     case 1:
                         _a.sent();
+                        if (!(this.banben == "weixin")) return [3 /*break*/, 6];
                         _a.label = 2;
                     case 2:
                         _a.trys.push([2, 4, , 5]);
@@ -118,29 +121,87 @@ var Main = (function (_super) {
                         console.error(e_1);
                         return [3 /*break*/, 5];
                     case 5:
+                        this.dengluyouxi();
+                        return [3 /*break*/, 7];
+                    case 6:
+                        this.dengluyouxi();
+                        _a.label = 7;
+                    case 7: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Main.prototype.dengluyouxi = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var userInfo, result, beidongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!(this.banben == "weixin")) return [3 /*break*/, 6];
+                        this.kaishiyouxianniu = new egret.Bitmap();
+                        this.kaishiyouxianniu.texture = RES.getRes('but_kaishiyouxi_png');
+                        this.stage.addChild(this.kaishiyouxianniu);
+                        this.kaishiyouxianniu.x = this.stage.width / 2 - this.kaishiyouxianniu.width / 2;
+                        this.kaishiyouxianniu.y = this.stage.height / 10 * 8;
+                        return [4 /*yield*/, platform.getUserInfo(this.kaishiyouxianniu.x, this.kaishiyouxianniu.y, this.kaishiyouxianniu.width, this.kaishiyouxianniu.height)];
+                    case 1:
+                        userInfo = _a.sent();
+                        Gerenshuxing.gerenshuju = userInfo;
+                        this.stage.removeChild(this.kaishiyouxianniu);
+                        this.stage.removeChild(this.loadingView);
                         this.createGameScene();
                         return [4 /*yield*/, RES.getResAsync("description_json")];
-                    case 6:
+                    case 2:
                         result = _a.sent();
                         this.startAnimation(result);
-                        return [4 /*yield*/, platform.getUserInfo()];
-                    case 7:
-                        userInfo = _a.sent();
-                        this.gerenshuju(userInfo);
+                        return [4 /*yield*/, platform.showShareMenu("第六十四年", Gerenshuxing.fenxianglianjiedizhi)];
+                    case 3:
+                        beidongzhuanfa = _a.sent();
+                        console.log(beidongzhuanfa);
                         return [4 /*yield*/, platform.openDataContext.postMessage({
                                 title: "nihao",
                                 text: "你好",
                                 time: (new Date()).getFullYear() + 1,
                                 command: "loadRes"
                             })];
-                    case 8:
+                    case 4:
                         _a.sent();
                         return [4 /*yield*/, platform.openDataContext.postMessage({
                                 time: (new Date()).getFullYear() + 2,
                                 uid: Gerenshuxing.uid
                             })];
-                    case 9:
+                    case 5:
                         _a.sent();
+                        return [3 /*break*/, 7];
+                    case 6:
+                        this.kaishiyouxianniu = new egret.Bitmap();
+                        this.kaishiyouxianniu.texture = RES.getRes('but_kaishiyouxi_png');
+                        this.stage.addChild(this.kaishiyouxianniu);
+                        //           this.kaishiyouxianniu.anchorOffsetX = this.kaishiyouxianniu.width / 2
+                        //           this.kaishiyouxianniu.anchorOffsetY = this.kaishiyouxianniu.height / 2
+                        this.kaishiyouxianniu.x = this.stage.width / 2 - this.kaishiyouxianniu.width / 2;
+                        this.kaishiyouxianniu.y = this.stage.height / 10 * 8;
+                        this.kaishiyouxianniu.touchEnabled = true;
+                        this.kaishiyouxianniu.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjikaishiyouxi, this);
+                        _a.label = 7;
+                    case 7: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Main.prototype.dianjikaishiyouxi = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var result;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.stage.removeChild(this.kaishiyouxianniu);
+                        this.stage.removeChild(this.loadingView);
+                        this.createGameScene();
+                        return [4 /*yield*/, RES.getResAsync("description_json")];
+                    case 1:
+                        result = _a.sent();
+                        this.startAnimation(result);
                         return [2 /*return*/];
                 }
             });
@@ -148,29 +209,36 @@ var Main = (function (_super) {
     };
     Main.prototype.loadResource = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var loadingView, e_2;
+            var e_2;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        _a.trys.push([0, 4, , 5]);
-                        loadingView = new LoadingUI();
-                        this.stage.addChild(loadingView);
-                        return [4 /*yield*/, RES.loadConfig("default.res.json", "http://192.168.1.2/res/resource/resource/")];
+                        _a.trys.push([0, 5, , 6]);
+                        return [4 /*yield*/, RES.loadConfig("default.res.json", "http://47.114.145.229/resource/")];
                     case 1:
                         _a.sent();
                         return [4 /*yield*/, this.loadTheme()];
                     case 2:
                         _a.sent();
-                        return [4 /*yield*/, RES.loadGroup("preload", 0, loadingView)];
+                        return [4 /*yield*/, RES.loadGroup("loading")];
                     case 3:
                         _a.sent();
-                        this.stage.removeChild(loadingView);
-                        return [3 /*break*/, 5];
+                        /*const loadingjie = new Loadingjiemian()
+                        this.stage.addChild(loadingjie);*/
+                        this.loadingView = new LoadingUI();
+                        this.stage.addChild(this.loadingView);
+                        return [4 /*yield*/, RES.loadGroup("preload", 0, this.loadingView)];
                     case 4:
+                        _a.sent();
+                        this.loadingView.jindutiaodi.alpha = 0;
+                        this.loadingView.jindutiaoshang.alpha = 0;
+                        this.loadingView.textField.text = "";
+                        return [3 /*break*/, 6];
+                    case 5:
                         e_2 = _a.sent();
                         console.error(e_2);
-                        return [3 /*break*/, 5];
-                    case 5: return [2 /*return*/];
+                        return [3 /*break*/, 6];
+                    case 6: return [2 /*return*/];
                 }
             });
         });
@@ -179,10 +247,10 @@ var Main = (function (_super) {
         var _this = this;
         return new Promise(function (resolve, reject) {
             egret.ImageLoader.crossOrigin = "anonymous"; //设置允许跨域加载
-            //            EXML.prefixURL = "http://192.168.1.2/res/resource/resource/eui_skins/";//更改目录位置,这里要填入服务器的ip地址
+            //            EXML.prefixURL = "http://192.168.1.1/res/resource/resource/eui_skins/";//更改目录位置,这里要填入服务器的ip地址
             // load skin theme configuration file, you can manually modify the file. And replace the default skin.
             //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
-            var theme = new eui.Theme("http://192.168.1.2/res/resource/resource/default.thm.json", _this.stage);
+            var theme = new eui.Theme("http://47.114.145.229/resource/default.thm.json", _this.stage);
             theme.addEventListener(eui.UIEvent.COMPLETE, function () {
                 resolve();
             }, _this);
@@ -203,51 +271,17 @@ var Main = (function (_super) {
         textfield.x = 172;
         textfield.y = 135;
         this.textfield = textfield;
+        /*
+        连接服务器
+        */
+        var webseverlianji = new Weblianjie();
+        webseverlianji.kaishilianjie();
         //进入场景
         egret.Ticker.getInstance().register(function (advancedTime) {
             dragonBones.WorldClock.clock.advanceTime(advancedTime / 3000);
         }, this);
-        var webseverlianji = new Weblianjie();
-        webseverlianji.kaishilianjie();
         var shijianstart = new Timekongzhi();
-        /*         //获取实际窗口（屏幕）尺寸。
-                let w=this.stage.stageWidth;
-                let h=this.stage.stageHeight;
-                
-                //添加背景图。
-                let bg:eui.Image=new eui.Image(RES.getRes('bg_jpg'));
-                this.addChild(bg);
-                //把背景图拉伸到满屏。
-                bg.width=w;
-                bg.height=h;
-                
-                //声明水平和垂直的居中偏移，以及高度或宽度的缩放值。
-                let xoffset=0;
-                let yoffset=0;
-                let scale0=0;
-                //计算居中偏移及缩放值。这里，设计时的宽高为640*1136。
-                if(w/h>750/1334){
-                    //屏幕比640*1136扁（或称为短）：
-                    scale0=h/1334;
-                    xoffset=(w-750*scale0)/2;
-                }else{
-                    //屏幕比640*1136长或相同：
-                    scale0=w/750;
-                    yoffset=(h-1334*scale0)/2;
-                }
-                
-                //console.log([w,h,xoffset,yoffset,scale0].toString());
-         
-                //这里的Mission就是自定义的一个子窗口。这个子窗口缩放到showAll模式。
-                let ss:eui.UILayer=new eui.UILayer();
-                ss.x=xoffset;
-                ss.y=yoffset;
-                ss.scaleX=scale0;
-                ss.scaleY=scale0;
-         //        Gameguanli.Kongzhitai().width = w;
-        //         Gameguanli.Kongzhitai().height = h;
-        
-                this.addChild(ss);    */
+        //进入游戏主界面
         this.addChild(Gameguanli.Kongzhitai());
         //默认进行1次垃圾添加
         Chuangzaolaji.shengchenglaji(21);
@@ -299,20 +333,6 @@ var Main = (function (_super) {
         panel.horizontalCenter = 0;
         panel.verticalCenter = 0;
         this.addChild(panel);
-    };
-    Main.prototype.gerenshuju = function (user) {
-        //      Gerenshuxing.mingzi = user.nickName;
-        //       Gerenshuxing.touxiang = "https://wx.qlogo.cn/mmopen/vi_32/MF7PLicF44H0djnvbeGDWKKPu60fbrbLKfx8jATpsN9d6paWg0ictyCnY8uAqiaXPcfDLAI1q7IQGHI22ZQZAV4HQ/132";
-        //       Gerenshuxing.touxiang = user.avatarUrl;
-        //       Gerenshuxing.shengfen = user.province;
-        //       console.log("名字：" + Gerenshuxing.mingzi,"头像：" + Gerenshuxing.touxiang,"省份:" + Gerenshuxing.shengfen);
-        if (Gerenshuxing.mingzi == "罗英") {
-            Weblianjie.fasongshuju("code:996", "{" + '"mingzi"' + ":" + '"' + user.nickName + '"' + ","
-                + '"touxiang"' + ":" + '"' + user.avatarUrl + '"' + ","
-                + '"xingbie"' + ":" + '"' + user.gender + '"' + ","
-                + '"shengfen"' + ":" + '"' + user.province + '"' + ","
-                + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
-        }
     };
     return Main;
 }(eui.UILayer));

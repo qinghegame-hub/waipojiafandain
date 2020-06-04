@@ -148,7 +148,7 @@ class Zuofanjiemianui extends eui.Component implements  eui.UIComponent {
 
 	public guanbi(){
 		 Gameguanli.Kongzhitai().zuofanjiemian("guan");
-		 this.jishiqi.stop();
+//		 this.jishiqi.stop();
 		 this.jishiqi = null;
 		 this.dingshikaiguan = false;
 	}
@@ -236,12 +236,12 @@ class Zuofanjiemianui extends eui.Component implements  eui.UIComponent {
 					this.dangqianjindu += 1;
 					this.dangqianbuzou += 1;
 					this.gongxupailie();
-					Gameguanli.Kongzhitai().cuowutishixinxi("正确的操作方式，烹饪进度+1");
+				//	Gameguanli.Kongzhitai().cuowutishixinxi("正确的操作方式，烹饪进度+1");
 					this.tanchuwenzi("dui");
 					this.panduanwancheng();
 				}else{
 					this.keshibaicishu -= 1;
-					Gameguanli.Kongzhitai().cuowutishixinxi("错误的操作方式，失败次数+1");
+				//	Gameguanli.Kongzhitai().cuowutishixinxi("错误的操作方式，失败次数+1");
 					this.tanchuwenzi("cuo");
 					this.panduanwancheng();
 				}
@@ -253,12 +253,12 @@ class Zuofanjiemianui extends eui.Component implements  eui.UIComponent {
 					this.dangqianjindu += 1;
 					this.dangqianbuzou += 1;
 					this.gongxupailie();
-					Gameguanli.Kongzhitai().cuowutishixinxi("正确的操作方式，烹饪进度+1");
+			//		Gameguanli.Kongzhitai().cuowutishixinxi("正确的操作方式，烹饪进度+1");
 					this.tanchuwenzi("dui");
 					this.panduanwancheng();
 				}else{
 					this.keshibaicishu -= 1;
-					Gameguanli.Kongzhitai().cuowutishixinxi("错误的操作方式，失败次数+1");
+			//		Gameguanli.Kongzhitai().cuowutishixinxi("错误的操作方式，失败次数+1");
 					this.tanchuwenzi("cuo");
 					this.panduanwancheng();
 				}
@@ -270,12 +270,12 @@ class Zuofanjiemianui extends eui.Component implements  eui.UIComponent {
 					this.dangqianjindu += 1;
 					this.dangqianbuzou += 1;
 					this.gongxupailie();
-					Gameguanli.Kongzhitai().cuowutishixinxi("正确的操作方式，烹饪进度+1");
+			//		Gameguanli.Kongzhitai().cuowutishixinxi("正确的操作方式，烹饪进度+1");
 					this.tanchuwenzi("dui");
 					this.panduanwancheng();
 				}else{
 					this.keshibaicishu -= 1;
-					Gameguanli.Kongzhitai().cuowutishixinxi("错误的操作方式，失败次数+1");
+			//		Gameguanli.Kongzhitai().cuowutishixinxi("错误的操作方式，失败次数+1");
 					this.tanchuwenzi("cuo");
 					this.panduanwancheng();
 				}

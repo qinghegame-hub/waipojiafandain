@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TeshushijianjiemianSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1724fa99c95" ></w:Config>
+	<e:Group id="querenkuangzu" left="0" top="0" bottom="0" right="0">
+		<e:Image id="heisediban0" source="img_heisezhezao_png" left="0" top="0" bottom="0" right="0" touchEnabled="true"/>
+		<e:Group id="tongyongtishizu0" x="63.5" y="304">
+		<e:Image id="img_tongyongtishikuang0" x="39" y="12" source="img_daitutanchukuang_png"/>
+		<e:Label id="tishiwenzi0" text="这是一个通用提示框" x="152.83" y="369" anchorOffsetX="0" width="311.34" anchorOffsetY="0" height="172.33" verticalAlign="top" textAlign="left" size="24" fontFamily="wodeziti" stroke="2" strokeColor="0x7a7171" lineSpacing="10"/>
+		<e:Button id="but_queding1" label="" y="33.17" enabled="true" x="498" anchorOffsetX="0">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_guanbi2_png" source.down="but_guanbi1_png" source.disabled="but_guanbi1_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="but_shuangbei0" label="" y="618.5" enabled="true" x="212.5">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="img_quedingzhuanfa1_png" source.down="img_quedingzhuanfa2_png" source.disabled="img_quedingzhuanfa2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+			<e:Label id="biaotiwenzi" text="特殊事件" x="155" y="16" anchorOffsetX="0" width="301" anchorOffsetY="0" height="61" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" textColor="0xf26913" bold="true" stroke="2" strokeColor="0xe8dede"/>
+			<e:Image id="tupiantishi" source="img_bangong_png" x="197.5" y="133" width="200" height="200"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

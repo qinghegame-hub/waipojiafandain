@@ -87,14 +87,6 @@ class Jiajugoumai extends eui.Component implements  eui.UIComponent {
 	}
 
 	public chushihuaxianshiliebiao(){
-		//点击界面的小炒页签按钮时触发
-		this.but_kuaican.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjixiaocai,this);
-		//点击界面的火锅页签按钮时触发
-		this.but_huoguo.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjihuoguo,this);
-		//点击界面的小吃页签按钮时触发
-		this.but_xiaochi.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjixiaochi,this);
-		//点击界面的点心页签按钮时触发
-		this.but_tiandian.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjidianxin,this);
 		//点击装修界面的第一个坑的使用时触发
 		this.but_jiajushiyong0.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjidi1geshiyong,this);
 		//点击装修界面的第2个坑的使用时触发
@@ -266,65 +258,7 @@ class Jiajugoumai extends eui.Component implements  eui.UIComponent {
 		Weblianjie.fasongshuju("code:008","{" + '"jiajuid"' +":"+ '"' + this.di4geid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 	}
 
-	protected dianjixiaocai(){
-		//调用移除当前已显示界面内容；
-		if(Gerenshuxing.jiesuoxiaochao == "1"){
-			this.but_kuaican.enabled = false;
-			this.but_huoguo.enabled = true;
-			this.but_xiaochi.enabled = true;
-			this.but_tiandian.enabled =true;
-			this.chulishujujiajujiegou(1,1);
-			Guanlijiemian.dangqianyeqianshu = 1;
-			Guanlijiemian.dangqianyeshu = 1;
-		}else{
-			Gameguanli.Kongzhitai().cuowutishixinxi("小炒区域未解锁，无法查看装修内容！");
-		}
-	}
-
-	protected dianjihuoguo(){
-		//调用移除当前已显示界面内容；
-		if(Gerenshuxing.jiesuohuoguo == "1"){
-			this.but_kuaican.enabled = true;
-			this.but_huoguo.enabled = false;
-			this.but_xiaochi.enabled = true;
-			this.but_tiandian.enabled =true;
-			this.chulishujujiajujiegou(2,1);
-			Guanlijiemian.dangqianyeqianshu = 2;
-			Guanlijiemian.dangqianyeshu = 1;
-		}else{
-			Gameguanli.Kongzhitai().cuowutishixinxi("火锅区域未解锁，无法查看装修内容！");
-		}
-	}
-
-	protected dianjixiaochi(){
-		//调用移除当前已显示界面内容；
-		if(Gerenshuxing.jiesuoxiaochi == "1"){
-			this.but_kuaican.enabled = true;
-			this.but_huoguo.enabled = true;
-			this.but_xiaochi.enabled = false;
-			this.but_tiandian.enabled =true;
-			this.chulishujujiajujiegou(3,1);
-			Guanlijiemian.dangqianyeqianshu = 3;
-			Guanlijiemian.dangqianyeshu = 1;
-		}else{
-			Gameguanli.Kongzhitai().cuowutishixinxi("小吃区域未解锁，无法查看装修内容！");
-		}
-	}
-
-	protected dianjidianxin(){
-		//调用移除当前已显示界面内容；
-		if(Gerenshuxing.jiesuozaocan == "1"){
-			this.but_kuaican.enabled = true;
-			this.but_huoguo.enabled = true;
-			this.but_xiaochi.enabled = true;
-			this.but_tiandian.enabled =false;
-			this.chulishujujiajujiegou(4,1);
-			Guanlijiemian.dangqianyeqianshu = 4;
-			Guanlijiemian.dangqianyeshu = 1;
-		}else{
-			Gameguanli.Kongzhitai().cuowutishixinxi("早餐区域未解锁，无法查看装修内容！");
-		}
-	}
+	
 
 	//修改饭店界面的家具的小吃区域显示内容和判断使用是否成功
 	public  tongzhizhujiemain1(xiugaitubiao:string,id:string){
@@ -397,6 +331,7 @@ class Jiajugoumai extends eui.Component implements  eui.UIComponent {
 						this.but_jiajushiyong0.alpha = 0;
 						this.but_jiajushiyong0.enabled = false;
 						this.but_jiajugoumai0.alpha = 1;
+						this.but_jiajugoumai0.enabled = false;
 						this.but_jiajushiyong0.enabled = false;
 						this.img_jiajuweihuode0.source = "img_weihuode_png";
 						this.di1caiid = leixingdizhi[leixingxiabiao].imgname;
@@ -466,6 +401,7 @@ class Jiajugoumai extends eui.Component implements  eui.UIComponent {
 						this.but_jiajushiyong1.alpha = 0;
 						this.but_jiajushiyong1.enabled = false;
 						this.but_jiajugoumai1.alpha = 1;
+						this.but_jiajugoumai1.enabled = false;
 						this.but_jiajushiyong1.enabled = false;
 						this.img_jiajuweihuode1.source = "img_weihuode_png";
 						this.di2caiid = leixingdizhi[leixingxiabiao].imgname;
@@ -535,6 +471,7 @@ class Jiajugoumai extends eui.Component implements  eui.UIComponent {
 						this.but_jiajushiyong2.alpha = 0;
 						this.but_jiajushiyong2.enabled = false;
 						this.but_jiajugoumai2.alpha = 1;
+						this.but_jiajugoumai2.enabled = false;
 						this.but_jiajushiyong2.enabled = false;
 						this.img_jiajuweihuode2.source = "img_weihuode_png";
 						this.di3caiid = leixingdizhi[leixingxiabiao].imgname;
@@ -604,6 +541,7 @@ class Jiajugoumai extends eui.Component implements  eui.UIComponent {
 						this.but_jiajushiyong3.alpha = 0;
 						this.but_jiajushiyong3.enabled = false;
 						this.but_jiajugoumai3.alpha = 1;
+						this.but_jiajugoumai3.enabled = false;
 						this.but_jiajushiyong3.enabled = false;
 						this.img_jiajuweihuode3.source = "img_weihuode_png";
 						this.di4caiid = leixingdizhi[leixingxiabiao].imgname;

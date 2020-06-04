@@ -256,14 +256,15 @@ var Guanlijiemian = (function (_super) {
         this.but_yinxiao.enabled = true;
         this.but_danju.enabled = true;
         this.but_zhuangxiu.enabled = false;
-        this.addChild(this.neiRongZhanShi);
+        /*this.addChild(this.neiRongZhanShi);
         this.neiRongZhanShi.but_kuaican.enabled = false;
-        //		console.log(this.neiRongZhanShi.jiajuicon0.source);
-        this.neiRongZhanShi.chulishujujiajujiegou(1, 1);
+//		console.log(this.neiRongZhanShi.jiajuicon0.source);
+        this.neiRongZhanShi.chulishujujiajujiegou(1,1);
         Guanlijiemian.dangqianyeqianshu = 1;
         Guanlijiemian.dangqianyeshu = 1;
         Guanlijiemian.dangqianleixing = 1;
-        this.but_guanlidown.enabled = true;
+        this.but_guanlidown.enabled = true;	*/
+        this.dianjizhuangxiu();
         this.fanyeyehaoshuaxin();
     };
     //点击装修按钮时触发
@@ -279,6 +280,7 @@ var Guanlijiemian = (function (_super) {
         this.neiRongZhanShi.but_xiaochi.enabled = true;
         this.neiRongZhanShi.but_tiandian.enabled = true;
         //		console.log(this.neiRongZhanShi.jiajuicon0.source);
+        this.zhuangxiuxiaoyeqianguanli();
         this.neiRongZhanShi.chulishujujiajujiegou(1, 1);
         Guanlijiemian.dangqianyeqianshu = 1;
         Guanlijiemian.dangqianyeshu = 1;
@@ -288,6 +290,89 @@ var Guanlijiemian = (function (_super) {
         this.fanyeyehaoshuaxin();
     };
     ;
+    //装修界面的翻页处理逻辑
+    Guanlijiemian.prototype.zhuangxiuxiaoyeqianguanli = function () {
+        //点击界面的小炒页签按钮时触发
+        this.neiRongZhanShi.but_kuaican.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjixiaocai, this);
+        //点击界面的火锅页签按钮时触发
+        this.neiRongZhanShi.but_huoguo.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjihuoguo, this);
+        //点击界面的小吃页签按钮时触发
+        this.neiRongZhanShi.but_xiaochi.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjixiaochi, this);
+        //点击界面的点心页签按钮时触发
+        this.neiRongZhanShi.but_tiandian.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjidianxin, this);
+    };
+    Guanlijiemian.prototype.dianjixiaocai = function () {
+        //调用移除当前已显示界面内容；
+        if (Gerenshuxing.jiesuoxiaochao == "1") {
+            this.neiRongZhanShi.but_kuaican.enabled = false;
+            this.neiRongZhanShi.but_huoguo.enabled = true;
+            this.neiRongZhanShi.but_xiaochi.enabled = true;
+            this.neiRongZhanShi.but_tiandian.enabled = true;
+            this.neiRongZhanShi.chulishujujiajujiegou(1, 1);
+            Guanlijiemian.dangqianyeqianshu = 1;
+            Guanlijiemian.dangqianyeshu = 1;
+            Guanlijiemian.dangqianleixing = 1;
+            this.but_gaunliup.enabled = false;
+            this.but_guanlidown.enabled = true;
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("小炒区域未解锁，无法查看装修内容！");
+        }
+    };
+    Guanlijiemian.prototype.dianjihuoguo = function () {
+        //调用移除当前已显示界面内容；
+        if (Gerenshuxing.jiesuohuoguo == "1") {
+            this.neiRongZhanShi.but_kuaican.enabled = true;
+            this.neiRongZhanShi.but_huoguo.enabled = false;
+            this.neiRongZhanShi.but_xiaochi.enabled = true;
+            this.neiRongZhanShi.but_tiandian.enabled = true;
+            this.neiRongZhanShi.chulishujujiajujiegou(2, 1);
+            Guanlijiemian.dangqianyeqianshu = 2;
+            Guanlijiemian.dangqianyeshu = 1;
+            Guanlijiemian.dangqianleixing = 1;
+            this.but_gaunliup.enabled = false;
+            this.but_guanlidown.enabled = true;
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("火锅区域未解锁，无法查看装修内容！");
+        }
+    };
+    Guanlijiemian.prototype.dianjixiaochi = function () {
+        //调用移除当前已显示界面内容；
+        if (Gerenshuxing.jiesuoxiaochi == "1") {
+            this.neiRongZhanShi.but_kuaican.enabled = true;
+            this.neiRongZhanShi.but_huoguo.enabled = true;
+            this.neiRongZhanShi.but_xiaochi.enabled = false;
+            this.neiRongZhanShi.but_tiandian.enabled = true;
+            this.neiRongZhanShi.chulishujujiajujiegou(3, 1);
+            Guanlijiemian.dangqianyeqianshu = 3;
+            Guanlijiemian.dangqianyeshu = 1;
+            Guanlijiemian.dangqianleixing = 1;
+            this.but_gaunliup.enabled = false;
+            this.but_guanlidown.enabled = true;
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("小吃区域未解锁，无法查看装修内容！");
+        }
+    };
+    Guanlijiemian.prototype.dianjidianxin = function () {
+        //调用移除当前已显示界面内容；
+        if (Gerenshuxing.jiesuozaocan == "1") {
+            this.neiRongZhanShi.but_kuaican.enabled = true;
+            this.neiRongZhanShi.but_huoguo.enabled = true;
+            this.neiRongZhanShi.but_xiaochi.enabled = true;
+            this.neiRongZhanShi.but_tiandian.enabled = false;
+            this.neiRongZhanShi.chulishujujiajujiegou(4, 1);
+            Guanlijiemian.dangqianyeqianshu = 4;
+            Guanlijiemian.dangqianyeshu = 1;
+            Guanlijiemian.dangqianleixing = 1;
+            this.but_gaunliup.enabled = false;
+            this.but_guanlidown.enabled = true;
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("早餐区域未解锁，无法查看装修内容！");
+        }
+    };
     //点击员工按钮时触发
     Guanlijiemian.prototype.dianjiyuangong = function () {
         this.but_yuangong.enabled = false;

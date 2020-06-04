@@ -51,6 +51,15 @@ var Zhujiemianshangceng = (function (_super) {
     Zhujiemianshangceng.prototype.chushihua = function () {
         this.shicaiwenzi.text = "" + Gerenshuxing.yongyouyuanliao;
         this.weishengwenzi.text = "" + Gerenshuxing.zzweishengzhi;
+        this.shicaiwenzitixing();
+    };
+    Zhujiemianshangceng.prototype.shicaiwenzitixing = function () {
+        if (Gerenshuxing.yongyouyuanliao >= 100) {
+            this.img_shicaibuzu.alpha = 0;
+        }
+        else {
+            this.img_shicaibuzu.alpha = 1;
+        }
     };
     return Zhujiemianshangceng;
 }(eui.Component));

@@ -61,40 +61,46 @@ var Fandianjisuan = (function (_super) {
     };
     Fandianjisuan.kaishishengchengjuese = function () {
         this.jinlairenshu = this.jinlairenshu - 1;
-        var caipuliebiao = RES.getRes("shipubiao_json");
-        var gukexuqiucai;
-        var caipinming;
-        var xuqiucaiid = Math.floor(Math.random() * Gerenshuxing.jiesuocaipin.length);
-        for (var o = 0; o < caipuliebiao.length; o++) {
-            if (caipuliebiao[o].id == Gerenshuxing.jiesuocaipin[xuqiucaiid]) {
-                //这里可以按照天气和日期设置客户需求的用餐类型和几率
-                gukexuqiucai = caipuliebiao[o].id;
-                caipinming = caipuliebiao[o].foodName;
-                break;
-            }
+        var suijichupve = Math.floor(Math.random() * 10);
+        if (suijichupve >= 9) {
+            var kaishichuren = new Donghuabifang("pve", "0");
         }
-        if (gukexuqiucai >= 1000 && gukexuqiucai < 2000 && Gerenshuxing.jiesuoxiaochao == "1") {
-            Fandianjisuan.chuangjianrenwu();
-            if (Gameguanli.Kongzhitai().zhujiemian.parent) {
-                var kaishichuren = new Donghuabifang(gukexuqiucai, caipinming);
+        else {
+            var caipuliebiao = RES.getRes("shipubiao_json");
+            var gukexuqiucai = void 0;
+            var caipinming = void 0;
+            var xuqiucaiid = Math.floor(Math.random() * Gerenshuxing.jiesuocaipin.length);
+            for (var o = 0; o < caipuliebiao.length; o++) {
+                if (caipuliebiao[o].id == Gerenshuxing.jiesuocaipin[xuqiucaiid]) {
+                    //这里可以按照天气和日期设置客户需求的用餐类型和几率
+                    gukexuqiucai = caipuliebiao[o].id;
+                    caipinming = caipuliebiao[o].foodName;
+                    break;
+                }
             }
-        }
-        else if (gukexuqiucai >= 2000 && gukexuqiucai < 3000 && Gerenshuxing.jiesuohuoguo == "1") {
-            Fandianjisuan.chuangjianrenwu();
-            if (Gameguanli.Kongzhitai().zhujiemian.parent) {
-                var kaishichuren = new Donghuabifang(gukexuqiucai, caipinming);
+            if (gukexuqiucai >= 1000 && gukexuqiucai < 2000 && Gerenshuxing.jiesuoxiaochao == "1") {
+                Fandianjisuan.chuangjianrenwu();
+                if (Gameguanli.Kongzhitai().zhujiemian.parent) {
+                    var kaishichuren = new Donghuabifang(gukexuqiucai, caipinming);
+                }
             }
-        }
-        else if (gukexuqiucai >= 3000 && gukexuqiucai < 4000 && Gerenshuxing.jiesuoxiaochi == "1") {
-            Fandianjisuan.chuangjianrenwu();
-            if (Gameguanli.Kongzhitai().zhujiemian.parent) {
-                var kaishichuren = new Donghuabifang(gukexuqiucai, caipinming);
+            else if (gukexuqiucai >= 2000 && gukexuqiucai < 3000 && Gerenshuxing.jiesuohuoguo == "1") {
+                Fandianjisuan.chuangjianrenwu();
+                if (Gameguanli.Kongzhitai().zhujiemian.parent) {
+                    var kaishichuren = new Donghuabifang(gukexuqiucai, caipinming);
+                }
             }
-        }
-        else if (gukexuqiucai >= 4000 && gukexuqiucai < 5000 && Gerenshuxing.jiesuozaocan == "1") {
-            Fandianjisuan.chuangjianrenwu();
-            if (Gameguanli.Kongzhitai().zhujiemian.parent) {
-                var kaishichuren = new Donghuabifang(gukexuqiucai, caipinming);
+            else if (gukexuqiucai >= 3000 && gukexuqiucai < 4000 && Gerenshuxing.jiesuoxiaochi == "1") {
+                Fandianjisuan.chuangjianrenwu();
+                if (Gameguanli.Kongzhitai().zhujiemian.parent) {
+                    var kaishichuren = new Donghuabifang(gukexuqiucai, caipinming);
+                }
+            }
+            else if (gukexuqiucai >= 4000 && gukexuqiucai < 5000 && Gerenshuxing.jiesuozaocan == "1") {
+                Fandianjisuan.chuangjianrenwu();
+                if (Gameguanli.Kongzhitai().zhujiemian.parent) {
+                    var kaishichuren = new Donghuabifang(gukexuqiucai, caipinming);
+                }
             }
         }
     };

@@ -38,6 +38,10 @@ class Jiatingchengyuandaojuui extends eui.Component implements  eui.UIComponent 
 	public wznr5:eui.Label;
 	public geshudikuang5:eui.Image;
 	public geshuwenzi5:eui.Label;
+	public guanbianniu:eui.Button;
+
+
+
 
 
 	public constructor() {
@@ -53,6 +57,15 @@ class Jiatingchengyuandaojuui extends eui.Component implements  eui.UIComponent 
 	protected childrenCreated():void
 	{
 		super.childrenCreated();
+//		this.guanbianniuguanbi();
 	}
+
+	public guanbianniuguanbi(){
+		this.guanbianniu.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>{
+			this.parent.removeChild(this);
+		},this)
+	}
+
+	
 	
 }

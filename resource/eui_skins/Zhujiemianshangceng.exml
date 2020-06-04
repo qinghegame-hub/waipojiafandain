@@ -2,7 +2,7 @@
 <e:Skin class="ZhujiemianshangcengSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
 	<w:Config id="16f9d5b4388" ></w:Config>
 	<e:Group id="zhuyaozu" top="0" left="0" right="0" bottom="0" touchThrough="true">
-		<e:Image id="img_tiziqianduan" source="img_tiziqianduan_png" top="0" bottom="0" right="-18" left="18" x="0" y="0" scaleX="1" scaleY="1" touchEnabled="false" pixelHitTest="true"/>
+		<e:Image id="img_tiziqianduan" source="img_tiziqianduan_png" top="0" bottom="0" right="0" left="0" x="0" y="0" scaleX="1" scaleY="1" touchEnabled="false" pixelHitTest="true" anchorOffsetX="0" anchorOffsetY="0"/>
 		<e:Group id="zhongbuzu1" touchThrough="true" height="339" width="712" x="9" y="748">
 			<e:Button id="but_caipu1" x="615.5" y="243" width="96" height="96" enabled="true">
 			<e:skinName>
@@ -52,6 +52,7 @@
 			<e:Image id="img_zhuangtaixianshibg0" source="img_zhuangtaixianshibg_png" x="42" y="75"/>
 			<e:Label id="weishengwenzi" text="999999" x="47" y="79" anchorOffsetY="0" height="27" anchorOffsetX="0" width="82" verticalAlign="middle" textAlign="right" size="18" textColor="0x0C0B0B" fontFamily="wodeziti" bold="true" stroke="2" strokeColor="0xEFE6E6"/>
 			<e:Image id="img_saoba" x="0" y="52" source="img_saoba_png"/>
+			<e:Image id="img_shicaibuzu" source="img_shicaibuzu_png" x="9" y="-56" scaleX="1" scaleY="1"/>
 		</e:Group>
 	</e:Group>
 </e:Skin>

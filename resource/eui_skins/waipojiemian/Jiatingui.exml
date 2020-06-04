@@ -23,5 +23,14 @@
 		<e:Image id="img_ererzi" source="img_ererzi_png" x="433" y="608"/>
 		<e:Image id="img_daerxi" source="img_daerxi_png" x="604.5" y="873.5"/>
 		<e:Image id="img_xiaosunnv" source="img_xiaosunnv_png" x="490" y="969"/>
+		<e:Image id="duihuatishi" source="img_duihuatishi_png" x="129.5" y="677.5"/>
+		<e:Image id="laodongtishi" source="img_laodongtishi_png" x="217.5" y="680.5"/>
+		<e:Image source="img_duihuatishi_png" x="387" y="537.5" id="duihuatishi0"/>
+		<e:Image source="img_laodongtishi_png" x="475" y="540.5" id="laodongtishi0"/>
+		<e:Image source="img_duihuatishi_png" x="556.5" y="799.5" id="duihuatishi1"/>
+		<e:Image source="img_laodongtishi_png" x="644.5" y="802.5" id="laodongtishi1"/>
+		<e:Image source="img_duihuatishi_png" x="439.5" y="897.5" id="duihuatishi2"/>
+		<e:Image source="img_laodongtishi_png" x="527.5" y="900.5" id="laodongtishi2"/>
+		<e:Image id="shafatishi" source="img_xiuxitishi_png" x="59.5" y="930"/>
 	</e:Group>
 </e:Skin>

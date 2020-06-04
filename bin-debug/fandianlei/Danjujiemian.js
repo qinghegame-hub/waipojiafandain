@@ -27,17 +27,29 @@ var Danjujiemian = (function (_super) {
         this.but_jiaona1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjidi2gejiesuo, this);
     };
     Danjujiemian.prototype.dianjidi1gejiesuo = function () {
-        Weblianjie.fasongshuju("code:022", "{" + '"danjuid"' + ":" + '"' + this.di1geid + '"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+        if (Gerenshuxing.jinbizhi >= this.di1gejinbi) {
+            Weblianjie.fasongshuju("code:022", "{" + '"danjuid"' + ":" + '"' + this.di1geid + '"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("您的金币不足！");
+        }
     };
     Danjujiemian.prototype.dianjidi2gejiesuo = function () {
-        Weblianjie.fasongshuju("code:022", "{" + '"danjuid"' + ":" + '"' + this.di2geid + '"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+        if (Gerenshuxing.jinbizhi >= this.di2gejinbi) {
+            Weblianjie.fasongshuju("code:022", "{" + '"danjuid"' + ":" + '"' + this.di2geid + '"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+        }
+        else {
+            Gameguanli.Kongzhitai().cuowutishixinxi("您的金币不足！");
+        }
     };
     //修改饭店界面的家具的小吃区域显示内容和判断使用是否成功
-    Danjujiemian.prototype.tongzhizhujiemain1 = function (id) {
+    Danjujiemian.prototype.tongzhizhujiemain1 = function (id, jinbi) {
         this.di1geid = id;
+        this.di1gejinbi = parseInt(jinbi);
     };
-    Danjujiemian.prototype.tongzhizhujiemain2 = function (id) {
+    Danjujiemian.prototype.tongzhizhujiemain2 = function (id, jinbi) {
         this.di2geid = id;
+        this.di2gejinbi = parseInt(jinbi);
     };
     //判断每个显示格子的具体显示内容
     Danjujiemian.prototype.panduanxianshineirong = function (leixingxuhao, leixingdizhi, leixingxiabiao) {
@@ -51,10 +63,11 @@ var Danjujiemian = (function (_super) {
                 this.fumianzhuangtai0.text = "总收入：-" + leixingdizhi[leixingxiabiao].debuff + "%";
                 this.jiaonajine0.text = "- " + leixingdizhi[leixingxiabiao].pay;
                 this.jiaonayuanyin0.text = leixingdizhi[leixingxiabiao].reason;
+                var jinbi1 = leixingdizhi[leixingxiabiao].pay;
                 this.jinbi0.alpha = 1;
                 this.but_jiaona0.alpha = 1;
                 this.but_jiaona0.enabled = true;
-                this.tongzhizhujiemain1(leixingdizhi[leixingxiabiao].id);
+                this.tongzhizhujiemain1(leixingdizhi[leixingxiabiao].id, jinbi1);
             }
             else {
                 this.img_danjuneirong0.source = "";
@@ -77,11 +90,12 @@ var Danjujiemian = (function (_super) {
                 this.jiaoferen1.text = Gerenshuxing.uid;
                 this.fumianzhuangtai1.text = "总收入：-" + leixingdizhi[leixingxiabiao].debuff + "%";
                 this.jiaonajine1.text = "- " + leixingdizhi[leixingxiabiao].pay;
+                var jinbi2 = leixingdizhi[leixingxiabiao].pay;
                 this.jiaonayuanyin1.text = leixingdizhi[leixingxiabiao].reason;
                 this.jinbi1.alpha = 1;
                 this.but_jiaona1.alpha = 1;
                 this.but_jiaona1.enabled = true;
-                this.tongzhizhujiemain2(leixingdizhi[leixingxiabiao].id);
+                this.tongzhizhujiemain2(leixingdizhi[leixingxiabiao].id, jinbi2);
             }
             else {
                 this.img_danjuneirong1.source = "";

@@ -55,42 +55,92 @@ class Main extends eui.UILayer {
         })
     }
 
+    public banben:string = "weixin";//游戏上线渠道入口标志;
+    public loadingView:LoadingUI;//loading界面实例化;
+
     private async runGame() {
         await this.loadResource()
-        try{
-            const denglu = await platform.login();
-            Gerenshuxing.gerencode = denglu.code;
-            console.log(Gerenshuxing.gerencode);
+        if(this.banben == "weixin"){
+            try{
+                const denglu = await platform.login();
+                Gerenshuxing.gerencode = denglu.code;
+                console.log(Gerenshuxing.gerencode);
+            }
+            catch(e){
+                console.error(e);
+            }
+            this.dengluyouxi();
+        }else{
+            this.dengluyouxi();
         }
-        catch(e){
-            console.error(e);
+
+    }
+
+    public kaishiyouxianniu:egret.Bitmap;
+
+    private async dengluyouxi(){
+        if(this.banben == "weixin"){
+            this.kaishiyouxianniu = new egret.Bitmap()
+            this.kaishiyouxianniu.texture = RES.getRes('but_kaishiyouxi_png');
+            this.stage.addChild(this.kaishiyouxianniu);
+            this.kaishiyouxianniu.x = this.stage.width / 2 -  this.kaishiyouxianniu.width / 2;
+            this.kaishiyouxianniu.y = this.stage.height / 10 * 8
+            const userInfo = await platform.getUserInfo(this.kaishiyouxianniu.x,this.kaishiyouxianniu.y,this.kaishiyouxianniu.width,this.kaishiyouxianniu.height);
+            Gerenshuxing.gerenshuju = userInfo;
+            this.stage.removeChild(this.kaishiyouxianniu);
+            this.stage.removeChild(this.loadingView);
+            this.createGameScene();
+            const result = await RES.getResAsync("description_json");
+            this.startAnimation(result);
+            /*
+            主动转发接口
+            */
+           const beidongzhuanfa = await platform.showShareMenu("第六十四年",Gerenshuxing.fenxianglianjiedizhi);
+           console.log(beidongzhuanfa);
+            await platform.openDataContext.postMessage({
+                    title:"nihao",
+                    text:"你好",
+                    time:(new Date()).getFullYear() + 1,
+                    command:"loadRes"
+            })
+            await platform.openDataContext.postMessage({
+                time:(new Date()).getFullYear() + 2,
+                uid:Gerenshuxing.uid
+            })
+        }else{
+            this.kaishiyouxianniu = new egret.Bitmap()
+            this.kaishiyouxianniu.texture = RES.getRes('but_kaishiyouxi_png');
+            this.stage.addChild(this.kaishiyouxianniu);
+ //           this.kaishiyouxianniu.anchorOffsetX = this.kaishiyouxianniu.width / 2
+ //           this.kaishiyouxianniu.anchorOffsetY = this.kaishiyouxianniu.height / 2
+            this.kaishiyouxianniu.x = this.stage.width / 2 -  this.kaishiyouxianniu.width / 2;
+            this.kaishiyouxianniu.y = this.stage.height / 10 * 8
+            this.kaishiyouxianniu.touchEnabled = true;
+            this.kaishiyouxianniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjikaishiyouxi,this);
         }
+    }
+
+    private async dianjikaishiyouxi() {
+        this.stage.removeChild(this.kaishiyouxianniu);
+        this.stage.removeChild(this.loadingView);
         this.createGameScene();
         const result = await RES.getResAsync("description_json");
         this.startAnimation(result);
-        const userInfo = await platform.getUserInfo();
-        this.gerenshuju(userInfo);
-        await platform.openDataContext.postMessage({
-				title:"nihao",
-				text:"你好",
-				time:(new Date()).getFullYear() + 1,
-				command:"loadRes"
-			})
-        await platform.openDataContext.postMessage({
-			time:(new Date()).getFullYear() + 2,
-			uid:Gerenshuxing.uid
-		})
-
     }
 
     private async loadResource() {
         try {
-            const loadingView = new LoadingUI();
-            this.stage.addChild(loadingView);
-            await RES.loadConfig("default.res.json", "http://192.168.1.2/res/resource/resource/");
+            await RES.loadConfig("default.res.json", "http://47.114.145.229/resource/");
             await this.loadTheme();
-            await RES.loadGroup("preload", 0, loadingView);
-            this.stage.removeChild(loadingView);
+            await RES.loadGroup("loading");
+            /*const loadingjie = new Loadingjiemian()
+            this.stage.addChild(loadingjie);*/
+            this.loadingView = new LoadingUI();
+            this.stage.addChild(this.loadingView);
+            await RES.loadGroup("preload", 0, this.loadingView);
+            this.loadingView.jindutiaodi.alpha = 0;
+            this.loadingView.jindutiaoshang.alpha = 0;
+            this.loadingView.textField.text = "";
         }
         catch (e) {
             console.error(e);
@@ -100,10 +150,10 @@ class Main extends eui.UILayer {
     private loadTheme() {
         return new Promise((resolve, reject) => {
             egret.ImageLoader.crossOrigin = "anonymous";//设置允许跨域加载
-//            EXML.prefixURL = "http://192.168.1.2/res/resource/resource/eui_skins/";//更改目录位置,这里要填入服务器的ip地址
+//            EXML.prefixURL = "http://192.168.1.1/res/resource/resource/eui_skins/";//更改目录位置,这里要填入服务器的ip地址
             // load skin theme configuration file, you can manually modify the file. And replace the default skin.
             //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
-            let theme = new eui.Theme("http://192.168.1.2/res/resource/resource/default.thm.json", this.stage);
+            let theme = new eui.Theme("http://47.114.145.229/resource/default.thm.json", this.stage);
             theme.addEventListener(eui.UIEvent.COMPLETE, () => {
                 resolve();
             }, this);
@@ -128,51 +178,17 @@ class Main extends eui.UILayer {
         textfield.y = 135;
         this.textfield = textfield;
 
+        /*
+        连接服务器
+        */
+        let webseverlianji:Weblianjie =new  Weblianjie();
+        webseverlianji.kaishilianjie();
         //进入场景
         egret.Ticker.getInstance().register((advancedTime)=>{
             dragonBones.WorldClock.clock.advanceTime(advancedTime/3000);
         },this);
-        let webseverlianji:Weblianjie =new  Weblianjie();
-        webseverlianji.kaishilianjie();
         let shijianstart:Timekongzhi = new Timekongzhi(); 
-/*         //获取实际窗口（屏幕）尺寸。
-        let w=this.stage.stageWidth;
-        let h=this.stage.stageHeight;
-        
-        //添加背景图。
-        let bg:eui.Image=new eui.Image(RES.getRes('bg_jpg'));
-        this.addChild(bg);
-        //把背景图拉伸到满屏。
-        bg.width=w;
-        bg.height=h;
-        
-        //声明水平和垂直的居中偏移，以及高度或宽度的缩放值。
-        let xoffset=0;
-        let yoffset=0;
-        let scale0=0;
-        //计算居中偏移及缩放值。这里，设计时的宽高为640*1136。
-        if(w/h>750/1334){
-            //屏幕比640*1136扁（或称为短）：
-            scale0=h/1334;
-            xoffset=(w-750*scale0)/2;
-        }else{
-            //屏幕比640*1136长或相同：
-            scale0=w/750;
-            yoffset=(h-1334*scale0)/2;
-        }
-        
-        //console.log([w,h,xoffset,yoffset,scale0].toString());
- 
-        //这里的Mission就是自定义的一个子窗口。这个子窗口缩放到showAll模式。
-        let ss:eui.UILayer=new eui.UILayer();
-        ss.x=xoffset;
-        ss.y=yoffset;
-        ss.scaleX=scale0;
-        ss.scaleY=scale0;
- //        Gameguanli.Kongzhitai().width = w;
-//         Gameguanli.Kongzhitai().height = h;
-
-        this.addChild(ss);    */ 
+        //进入游戏主界面
         this.addChild(Gameguanli.Kongzhitai());
         //默认进行1次垃圾添加
 		Chuangzaolaji.shengchenglaji(21);
@@ -230,18 +246,4 @@ class Main extends eui.UILayer {
     }
 
 
-    private gerenshuju(user){
-  //      Gerenshuxing.mingzi = user.nickName;
- //       Gerenshuxing.touxiang = "https://wx.qlogo.cn/mmopen/vi_32/MF7PLicF44H0djnvbeGDWKKPu60fbrbLKfx8jATpsN9d6paWg0ictyCnY8uAqiaXPcfDLAI1q7IQGHI22ZQZAV4HQ/132";
- //       Gerenshuxing.touxiang = user.avatarUrl;
- //       Gerenshuxing.shengfen = user.province;
- //       console.log("名字：" + Gerenshuxing.mingzi,"头像：" + Gerenshuxing.touxiang,"省份:" + Gerenshuxing.shengfen);
-        if(Gerenshuxing.mingzi == "罗英"){
-            Weblianjie.fasongshuju("code:996","{" + '"mingzi"' +":"+ '"' + user.nickName + '"' +","
-				+ '"touxiang"' +":"+ '"' + user.avatarUrl + '"' +"," 
-				+ '"xingbie"' +":"+ '"' + user.gender + '"' +","
-                + '"shengfen"' +":"+ '"' + user.province + '"' +","
-				+ '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
-        }
-    }
 }

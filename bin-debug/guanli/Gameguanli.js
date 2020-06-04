@@ -8,8 +8,45 @@ var __extends = this && this.__extends || function __extends(t, e) {
 for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
 r.prototype = e.prototype, t.prototype = new r();
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 var Gameguanli = (function (_super) {
     __extends(Gameguanli, _super);
+    //带图通用弹出框
+    //	public daitutongyongtanchu:Daitutanchukuangui;
     //实例化一个饭店核心结算
     //	public fandianjiesuan:Fandianjisuan;
     function Gameguanli() {
@@ -75,29 +112,21 @@ var Gameguanli = (function (_super) {
         }
         ;
         if (canshu1 == "shangjie") {
-            if (Gameguanli.Kongzhitai().zhujiemian.parent) {
-                this.removeChild(Gameguanli.Kongzhitai().zhujiemian);
-            }
-            if (Gameguanli.Kongzhitai().zhujiemiandingbu.parent) {
-                this.removeChild(Gameguanli.Kongzhitai().zhujiemiandingbu);
-            }
-            if (Gameguanli.Kongzhitai().jiatingjiemian.parent) {
-                this.removeChild(Gameguanli.Kongzhitai().jiatingjiemian);
-            }
-            if (Gameguanli.Kongzhitai().dibuui.parent) {
-                this.removeChild(Gameguanli.Kongzhitai().dibuui);
-            }
-            if (Gameguanli.Kongzhitai().dingbuui.parent) {
-                this.removeChild(Gameguanli.Kongzhitai().dingbuui);
-            }
-            if (Gameguanli.Kongzhitai().paihangbangdaui.parent) {
-                this.removeChild(Gameguanli.Kongzhitai().paihangbangdaui);
-            }
-            this.addChild(Gameguanli.Kongzhitai().waichudajie);
-            this.addChild(Gameguanli.Kongzhitai().dibuui);
-            this.addChild(Gameguanli.Kongzhitai().dingbuui);
-            Fandianjisuan.chushihuajisuan(0);
-            Gameguanli.Kongzhitai().waichudajie.chushihua();
+            this.changjingrukou("shangjie", "kai");
+            /*this.shangjiequerenkuang = new Tongyongquerenkuang();
+            this.addChild(this.shangjiequerenkuang);
+            this.shangjiequerenkuang.tishiwenzi.text = "此次外出上街需要行动力30点，是否确认上街？";
+            this.shangjiequerenkuang.but_queding.enabled = false;
+            this.shangjiequerenkuang.but_queding.alpha = 0;
+            this.shangjiequerenkuang.but_shuangbei.enabled = false;
+            this.shangjiequerenkuang.but_shuangbei.alpha = 0;
+            this.shangjiequerenkuang.but_queding0.enabled = true;
+            this.shangjiequerenkuang.but_queding0.alpha = 1;
+            this.shangjiequerenkuang.but_queding0.addEventListener(egret.TouchEvent.TOUCH_TAP,this.quedingshangjie,this);
+            this.shangjiequerenkuang.jiangli2.text = "- 30";
+            this.shangjiequerenkuang.jiangliicon2.source = "img_jiating_png";
+            this.shangjiequerenkuang.jiangli1.text = "";
+            this.shangjiequerenkuang.jiangliicon1.source = "";*/
         }
         if (canshu1 == "huijia") {
             if (Gameguanli.Kongzhitai().zhujiemian.parent) {
@@ -153,6 +182,36 @@ var Gameguanli = (function (_super) {
             this.paihangbangdaui.chushihua();
         }
         ;
+    };
+    //上街请求成功
+    Gameguanli.prototype.shangjiechenggong = function () {
+        if (Gameguanli.Kongzhitai().zhujiemian.parent) {
+            this.removeChild(Gameguanli.Kongzhitai().zhujiemian);
+        }
+        if (Gameguanli.Kongzhitai().zhujiemiandingbu.parent) {
+            this.removeChild(Gameguanli.Kongzhitai().zhujiemiandingbu);
+        }
+        if (Gameguanli.Kongzhitai().jiatingjiemian.parent) {
+            this.removeChild(Gameguanli.Kongzhitai().jiatingjiemian);
+        }
+        if (Gameguanli.Kongzhitai().dibuui.parent) {
+            this.removeChild(Gameguanli.Kongzhitai().dibuui);
+        }
+        if (Gameguanli.Kongzhitai().dingbuui.parent) {
+            this.removeChild(Gameguanli.Kongzhitai().dingbuui);
+        }
+        if (Gameguanli.Kongzhitai().paihangbangdaui.parent) {
+            this.removeChild(Gameguanli.Kongzhitai().paihangbangdaui);
+        }
+        Gameguanli.Kongzhitai().dibuui.but_hotel1.enabled = true;
+        Gameguanli.Kongzhitai().dibuui.but_gongyuan1.enabled = false;
+        Gameguanli.Kongzhitai().dibuui.but_huijia1.enabled = true;
+        Gameguanli.Kongzhitai().dibuui.but_licai1.enabled = true;
+        this.addChild(Gameguanli.Kongzhitai().waichudajie);
+        this.addChild(Gameguanli.Kongzhitai().dibuui);
+        this.addChild(Gameguanli.Kongzhitai().dingbuui);
+        Fandianjisuan.chushihuajisuan(0);
+        Gameguanli.Kongzhitai().waichudajie.chushihua();
     };
     //饭店界面显示逻辑
     Gameguanli.prototype.caipujiemian = function (leixing, kaiguan) {
@@ -274,6 +333,20 @@ var Gameguanli = (function (_super) {
             }
         }
     };
+    //上菜界面
+    Gameguanli.prototype.zhandoujiemianui = function (zhuangtai, idone, idtwo, idthe) {
+        if (zhuangtai == "kai") {
+            this.zhandoujiemian = new Zhandoujiemian();
+            this.addChild(this.zhandoujiemian);
+            this.zhandoujiemian.chushihua(idone, idtwo, idthe);
+        }
+        ;
+        if (zhuangtai == "guan") {
+            if (this.zhandoujiemian.parent) {
+                this.removeChild(this.zhandoujiemian);
+            }
+        }
+    };
     //场景入口界面
     Gameguanli.prototype.changjingrukou = function (leixing, zhuangtai) {
         //菜市场入口
@@ -284,6 +357,18 @@ var Gameguanli = (function (_super) {
             this.changjinrukou.chushihua();
         }
         if (leixing == "caishichang" && zhuangtai == "guan") {
+            if (this.changjinrukou.parent) {
+                this.removeChild(this.changjinrukou);
+            }
+        }
+        //上街入口
+        if (leixing == "shangjie" && zhuangtai == "kai") {
+            this.changjinrukou = new Changjingrukouui();
+            this.addChild(this.changjinrukou);
+            this.changjinrukou.leixing = "shangjie";
+            this.changjinrukou.chushihua();
+        }
+        if (leixing == "shangjie" && zhuangtai == "guan") {
             if (this.changjinrukou.parent) {
                 this.removeChild(this.changjinrukou);
             }
@@ -494,6 +579,20 @@ var Gameguanli = (function (_super) {
             var dijige = 0;
             var zhuangtai = 0;
             this.gundongjuli = 0;
+            //显示每日特殊事件
+            console.log(Gerenshuxing.teshushijian);
+            if (Gerenshuxing.teshushijian == "0") {
+                this.meirijieusan.meiriyaowentext.text = "今天看起来一切都那么平常。似乎无事发生。但是你要相信，每一天都是崭新的一天，每一天都是最值得珍惜的一天。";
+            }
+            else {
+                var teshuchufabiao = RES.getRes("teshushijianbiao_json");
+                for (var i = 0; i < teshuchufabiao.length; i++) {
+                    if (teshuchufabiao[i].id == Gerenshuxing.teshushijian) {
+                        this.meirijieusan.meiriyaowentext.text = teshuchufabiao[i].shijianmiaoshu;
+                        break;
+                    }
+                }
+            }
             this.xianshirenshi(dijige, zhuangtai, "", "");
             if (jixupinyongyuangong != undefined) {
                 for (var jx = 0; jx < yuangongyuanshibiao.length; jx++) {
@@ -1340,7 +1439,24 @@ var Gameguanli = (function (_super) {
             + '"beishu"' + ":" + '"1"' + "}");
     };
     Gameguanli.prototype.shuangbeilixian = function () {
-        Gameguanli.Kongzhitai().dingbuui.removeChild(this.lixianjiangliui);
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        Gameguanli.Kongzhitai().dingbuui.removeChild(this.lixianjiangliui);
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.zhuanfahuidiaoshijian, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Gameguanli.prototype.zhuanfahuidiaoshijian = function () {
         var jianglishuliang = Gerenshuxing.lixianjiangli[3];
         var xianzaishijianlixian = (new Date()).valueOf();
         xianzaishijianlixian = xianzaishijianlixian + 60000;
@@ -1350,7 +1466,7 @@ var Gameguanli = (function (_super) {
             + '"leixing"' + ":" + '"1"' + ","
             + '"shuliang"' + ":" + '"' + jianglishuliang + '"' + ","
             + '"xiayishijian"' + ":" + '"' + xianzaishijianlixian + '"' + ","
-            + '"beishu"' + ":" + '"2"' + "}");
+            + '"beishu"' + ":" + '"10"' + "}");
     };
     //跑马灯信息提示
     Gameguanli.prototype.paomadengui = function (neirong) {
@@ -1369,6 +1485,444 @@ var Gameguanli = (function (_super) {
                 _this.removeChild(_this.paomadeng1);
             });
         }
+    };
+    Gameguanli.prototype.daitutanchukuang = function (fangshi, canshu) {
+        var _this = this;
+        if (fangshi == "fangzu") {
+            var daitutongyongtanchu_1 = new Daitutanchukuangui();
+            Gameguanli.Kongzhitai().dingbuui.addChild(daitutongyongtanchu_1);
+            daitutongyongtanchu_1.biaotiwenzidt.text = "房租催缴";
+            daitutongyongtanchu_1.tishitupiandt.source = "img_danjuneirong_png";
+            daitutongyongtanchu_1.tishineirongdt.text = "很抱歉的通知您，您饭店的房租已经到期，请及时缴纳房租，否则将对饭店的收益产生巨大影响！！！";
+            daitutongyongtanchu_1.quedinganniudt.alpha = 1;
+            daitutongyongtanchu_1.quedinganniu0dt.alpha = 0;
+            daitutongyongtanchu_1.quedinganniu1dt.alpha = 0;
+            daitutongyongtanchu_1.guanbianniudt.alpha = 1;
+            daitutongyongtanchu_1.quedinganniudt.enabled = true;
+            daitutongyongtanchu_1.quedinganniu0dt.enabled = false;
+            daitutongyongtanchu_1.quedinganniu1dt.enabled = false;
+            daitutongyongtanchu_1.guanbianniudt.enabled = true;
+            daitutongyongtanchu_1.quedinganniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_1);
+            }, this);
+            daitutongyongtanchu_1.guanbianniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_1);
+            }, this);
+        }
+        else if (fangshi == "shuidian") {
+            var daitutongyongtanchu_2 = new Daitutanchukuangui();
+            Gameguanli.Kongzhitai().dingbuui.addChild(daitutongyongtanchu_2);
+            daitutongyongtanchu_2.biaotiwenzidt.text = "水电催缴";
+            daitutongyongtanchu_2.tishitupiandt.source = "img_danjuneirong_png";
+            daitutongyongtanchu_2.tishineirongdt.text = "很抱歉的通知您，您饭店应该缴纳本月的水电煤气费了，请及时缴纳，否则将对饭店的收益产生巨大影响！！！";
+            daitutongyongtanchu_2.quedinganniudt.alpha = 1;
+            daitutongyongtanchu_2.quedinganniu0dt.alpha = 0;
+            daitutongyongtanchu_2.quedinganniu1dt.alpha = 0;
+            daitutongyongtanchu_2.guanbianniudt.alpha = 1;
+            daitutongyongtanchu_2.quedinganniudt.enabled = true;
+            daitutongyongtanchu_2.quedinganniu0dt.enabled = false;
+            daitutongyongtanchu_2.quedinganniu1dt.enabled = false;
+            daitutongyongtanchu_2.guanbianniudt.enabled = true;
+            daitutongyongtanchu_2.quedinganniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_2);
+            }, this);
+            daitutongyongtanchu_2.guanbianniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_2);
+            }, this);
+        }
+        else if (fangshi == "chengyuanweigui") {
+            var daitutongyongtanchu_3 = new Daitutanchukuangui();
+            Gameguanli.Kongzhitai().dingbuui.addChild(daitutongyongtanchu_3);
+            daitutongyongtanchu_3.biaotiwenzidt.text = "家庭琐事";
+            daitutongyongtanchu_3.tishitupiandt.source = "img_gudujineneg_png";
+            daitutongyongtanchu_3.tishineirongdt.text = canshu;
+            daitutongyongtanchu_3.quedinganniudt.alpha = 1;
+            daitutongyongtanchu_3.quedinganniu0dt.alpha = 0;
+            daitutongyongtanchu_3.quedinganniu1dt.alpha = 0;
+            daitutongyongtanchu_3.guanbianniudt.alpha = 1;
+            daitutongyongtanchu_3.quedinganniudt.enabled = true;
+            daitutongyongtanchu_3.quedinganniu0dt.enabled = false;
+            daitutongyongtanchu_3.quedinganniu1dt.enabled = false;
+            daitutongyongtanchu_3.guanbianniudt.enabled = true;
+            daitutongyongtanchu_3.quedinganniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_3);
+            }, this);
+            daitutongyongtanchu_3.guanbianniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_3);
+            }, this);
+        }
+        else if (fangshi == "tilidibao") {
+            var daitutongyongtanchu_4 = new Daitutanchukuangui();
+            Gameguanli.Kongzhitai().dingbuui.addChild(daitutongyongtanchu_4);
+            daitutongyongtanchu_4.biaotiwenzidt.text = "社区福利";
+            daitutongyongtanchu_4.tishitupiandt.source = "img_jiating_png";
+            daitutongyongtanchu_4.tishineirongdt.text = "社区发放中老年人福利，是一些常见的营养品，对行动力提升有很大的帮助。";
+            daitutongyongtanchu_4.quedinganniudt.alpha = 0;
+            daitutongyongtanchu_4.quedinganniu0dt.alpha = 1;
+            daitutongyongtanchu_4.quedinganniu1dt.alpha = 0;
+            daitutongyongtanchu_4.guanbianniudt.alpha = 1;
+            daitutongyongtanchu_4.quedinganniudt.enabled = false;
+            daitutongyongtanchu_4.quedinganniu0dt.enabled = true;
+            daitutongyongtanchu_4.quedinganniu1dt.enabled = false;
+            daitutongyongtanchu_4.guanbianniudt.enabled = true;
+            daitutongyongtanchu_4.quedinganniu0dt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_4);
+                _this.tilidibaofasong();
+            }, this);
+            daitutongyongtanchu_4.guanbianniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_4);
+            }, this);
+        }
+        else if (fangshi == "jinbidibao") {
+            var daitutongyongtanchu_5 = new Daitutanchukuangui();
+            Gameguanli.Kongzhitai().dingbuui.addChild(daitutongyongtanchu_5);
+            daitutongyongtanchu_5.biaotiwenzidt.text = "社会低保";
+            daitutongyongtanchu_5.tishitupiandt.source = "img_qian_png";
+            daitutongyongtanchu_5.tishineirongdt.text = "您当前拥有的财富值已处于可领取社会低保的范围之内，福利中心为您免费发放一笔救济资金。";
+            daitutongyongtanchu_5.quedinganniudt.alpha = 0;
+            daitutongyongtanchu_5.quedinganniu0dt.alpha = 1;
+            daitutongyongtanchu_5.quedinganniu1dt.alpha = 0;
+            daitutongyongtanchu_5.guanbianniudt.alpha = 1;
+            daitutongyongtanchu_5.quedinganniudt.enabled = false;
+            daitutongyongtanchu_5.quedinganniu0dt.enabled = true;
+            daitutongyongtanchu_5.quedinganniu1dt.enabled = false;
+            daitutongyongtanchu_5.guanbianniudt.enabled = true;
+            daitutongyongtanchu_5.quedinganniu0dt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_5);
+                _this.jinbibaofasong();
+            }, this);
+            daitutongyongtanchu_5.guanbianniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_5);
+            }, this);
+        }
+        else if (fangshi == "xinqindibao") {
+            var daitutongyongtanchu_6 = new Daitutanchukuangui();
+            Gameguanli.Kongzhitai().dingbuui.addChild(daitutongyongtanchu_6);
+            daitutongyongtanchu_6.biaotiwenzidt.text = "家庭琐事";
+            daitutongyongtanchu_6.tishitupiandt.source = "img_xinqing_png";
+            daitutongyongtanchu_6.tishineirongdt.text = "小孙女见您情绪低落，想逗你开心，为你表演了一段在幼儿园刚学会的舞蹈，惹得你捧腹大笑，心情得到提升。";
+            daitutongyongtanchu_6.quedinganniudt.alpha = 0;
+            daitutongyongtanchu_6.quedinganniu0dt.alpha = 1;
+            daitutongyongtanchu_6.quedinganniu1dt.alpha = 0;
+            daitutongyongtanchu_6.guanbianniudt.alpha = 1;
+            daitutongyongtanchu_6.quedinganniudt.enabled = false;
+            daitutongyongtanchu_6.quedinganniu0dt.enabled = true;
+            daitutongyongtanchu_6.quedinganniu1dt.enabled = false;
+            daitutongyongtanchu_6.guanbianniudt.enabled = true;
+            daitutongyongtanchu_6.quedinganniu0dt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_6);
+                _this.xinqingbaofasong();
+            }, this);
+            daitutongyongtanchu_6.guanbianniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_6);
+            }, this);
+        }
+        else if (fangshi == "daerziqinhe") {
+            var daitutongyongtanchu_7 = new Daitutanchukuangui();
+            Gameguanli.Kongzhitai().dingbuui.addChild(daitutongyongtanchu_7);
+            daitutongyongtanchu_7.biaotiwenzidt.text = "家庭琐事";
+            daitutongyongtanchu_7.tishitupiandt.source = "img_daerzibiaoshi_png";
+            daitutongyongtanchu_7.tishineirongdt.text = "大儿子一位许久不见的朋友今天登门拜访，您忙碌一下午，为他们准备了丰盛了晚餐。大儿子亲和值提升不少。";
+            daitutongyongtanchu_7.quedinganniudt.alpha = 0;
+            daitutongyongtanchu_7.quedinganniu0dt.alpha = 1;
+            daitutongyongtanchu_7.quedinganniu1dt.alpha = 0;
+            daitutongyongtanchu_7.guanbianniudt.alpha = 1;
+            daitutongyongtanchu_7.quedinganniudt.enabled = false;
+            daitutongyongtanchu_7.quedinganniu0dt.enabled = true;
+            daitutongyongtanchu_7.quedinganniu1dt.enabled = false;
+            daitutongyongtanchu_7.guanbianniudt.enabled = true;
+            daitutongyongtanchu_7.quedinganniu0dt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_7);
+                _this.daerzibaofasong();
+            }, this);
+            daitutongyongtanchu_7.guanbianniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_7);
+            }, this);
+        }
+        else if (fangshi == "ererziqinhe") {
+            var daitutongyongtanchu_8 = new Daitutanchukuangui();
+            Gameguanli.Kongzhitai().dingbuui.addChild(daitutongyongtanchu_8);
+            daitutongyongtanchu_8.biaotiwenzidt.text = "家庭琐事";
+            daitutongyongtanchu_8.tishitupiandt.source = "img_xiaoerzibiaoshi_png";
+            daitutongyongtanchu_8.tishineirongdt.text = "二儿子今天与公会成员一起开荒新副本，你为了不影响他的网速，决定今天不看电视了。二儿子亲和值提升不少。";
+            daitutongyongtanchu_8.quedinganniudt.alpha = 0;
+            daitutongyongtanchu_8.quedinganniu0dt.alpha = 1;
+            daitutongyongtanchu_8.quedinganniu1dt.alpha = 0;
+            daitutongyongtanchu_8.guanbianniudt.alpha = 1;
+            daitutongyongtanchu_8.quedinganniudt.enabled = false;
+            daitutongyongtanchu_8.quedinganniu0dt.enabled = true;
+            daitutongyongtanchu_8.quedinganniu1dt.enabled = false;
+            daitutongyongtanchu_8.guanbianniudt.enabled = true;
+            daitutongyongtanchu_8.quedinganniu0dt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_8);
+                _this.ererzibaofasong();
+            }, this);
+            daitutongyongtanchu_8.guanbianniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_8);
+            }, this);
+        }
+        else if (fangshi == "xifuqinhe") {
+            var daitutongyongtanchu_9 = new Daitutanchukuangui();
+            Gameguanli.Kongzhitai().dingbuui.addChild(daitutongyongtanchu_9);
+            daitutongyongtanchu_9.biaotiwenzidt.text = "家庭琐事";
+            daitutongyongtanchu_9.tishitupiandt.source = "img_xifubiaoshi_png";
+            daitutongyongtanchu_9.tishineirongdt.text = "大儿媳加班工作很晚才回家，您为了让她多休息休息，决定今天晚上带着小孙女睡。大儿媳亲和值提升不少。";
+            daitutongyongtanchu_9.quedinganniudt.alpha = 0;
+            daitutongyongtanchu_9.quedinganniu0dt.alpha = 1;
+            daitutongyongtanchu_9.quedinganniu1dt.alpha = 0;
+            daitutongyongtanchu_9.guanbianniudt.alpha = 1;
+            daitutongyongtanchu_9.quedinganniudt.enabled = false;
+            daitutongyongtanchu_9.quedinganniu0dt.enabled = true;
+            daitutongyongtanchu_9.quedinganniu1dt.enabled = false;
+            daitutongyongtanchu_9.guanbianniudt.enabled = true;
+            daitutongyongtanchu_9.quedinganniu0dt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_9);
+                _this.xifubaofasong();
+            }, this);
+            daitutongyongtanchu_9.guanbianniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_9);
+            }, this);
+        }
+        else if (fangshi == "sunnvqinhe") {
+            var daitutongyongtanchu_10 = new Daitutanchukuangui();
+            Gameguanli.Kongzhitai().dingbuui.addChild(daitutongyongtanchu_10);
+            daitutongyongtanchu_10.biaotiwenzidt.text = "家庭琐事";
+            daitutongyongtanchu_10.tishitupiandt.source = "img_sunnvbiaoshi_png";
+            daitutongyongtanchu_10.tishineirongdt.text = "小孙女在幼儿园得了小红花，你为了奖励她，给她买了她最喜欢吃的零食。小孙女亲和值提升不少。";
+            daitutongyongtanchu_10.quedinganniudt.alpha = 0;
+            daitutongyongtanchu_10.quedinganniu0dt.alpha = 1;
+            daitutongyongtanchu_10.quedinganniu1dt.alpha = 0;
+            daitutongyongtanchu_10.guanbianniudt.alpha = 1;
+            daitutongyongtanchu_10.quedinganniudt.enabled = false;
+            daitutongyongtanchu_10.quedinganniu0dt.enabled = true;
+            daitutongyongtanchu_10.quedinganniu1dt.enabled = false;
+            daitutongyongtanchu_10.guanbianniudt.enabled = true;
+            daitutongyongtanchu_10.quedinganniu0dt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_10);
+                _this.sunnvbaofasong();
+            }, this);
+            daitutongyongtanchu_10.guanbianniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_10);
+            }, this);
+        }
+        else if (fangshi == "keliudibao") {
+            var daitutongyongtanchu_11 = new Daitutanchukuangui();
+            Gameguanli.Kongzhitai().dingbuui.addChild(daitutongyongtanchu_11);
+            daitutongyongtanchu_11.biaotiwenzidt.text = "饭店推广";
+            daitutongyongtanchu_11.tishitupiandt.source = "img_chuandantuiguang_png";
+            daitutongyongtanchu_11.tishineirongdt.text = "最近街道正在举办为期2天的美食节，诚邀各美食商户入驻。入驻将给饭店带来巨大的人流量。";
+            daitutongyongtanchu_11.quedinganniudt.alpha = 0;
+            daitutongyongtanchu_11.quedinganniu0dt.alpha = 1;
+            daitutongyongtanchu_11.quedinganniu1dt.alpha = 0;
+            daitutongyongtanchu_11.guanbianniudt.alpha = 1;
+            daitutongyongtanchu_11.quedinganniudt.enabled = false;
+            daitutongyongtanchu_11.quedinganniu0dt.enabled = true;
+            daitutongyongtanchu_11.quedinganniu1dt.enabled = false;
+            daitutongyongtanchu_11.guanbianniudt.enabled = true;
+            daitutongyongtanchu_11.quedinganniu0dt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_11);
+                _this.tuiguangbaofasong();
+            }, this);
+            daitutongyongtanchu_11.guanbianniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gameguanli.Kongzhitai().dingbuui.removeChild(daitutongyongtanchu_11);
+            }, this);
+        }
+    };
+    Gameguanli.prototype.tilidibaofasong = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.fasongtilijiangli, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Gameguanli.prototype.fasongtilijiangli = function () {
+        Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"kouchuleixing"' + ":" + '"0"' + ","
+            + '"kouchushuliang"' + ":" + '"0"' + ","
+            + '"leixing"' + ":" + '"2"' + ","
+            + '"shuliang"' + ":" + '"10"' + ","
+            + '"beishu"' + ":" + '"1"' + "}");
+    };
+    Gameguanli.prototype.jinbibaofasong = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.fasongjinbijiangli, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Gameguanli.prototype.fasongjinbijiangli = function () {
+        Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"kouchuleixing"' + ":" + '"0"' + ","
+            + '"kouchushuliang"' + ":" + '"0"' + ","
+            + '"leixing"' + ":" + '"1"' + ","
+            + '"shuliang"' + ":" + '"1000"' + ","
+            + '"beishu"' + ":" + '"1"' + "}");
+    };
+    Gameguanli.prototype.xinqingbaofasong = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.fasongxinqingjiangli, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Gameguanli.prototype.fasongxinqingjiangli = function () {
+        Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"kouchuleixing"' + ":" + '"0"' + ","
+            + '"kouchushuliang"' + ":" + '"0"' + ","
+            + '"leixing"' + ":" + '"4"' + ","
+            + '"shuliang"' + ":" + '"20"' + ","
+            + '"beishu"' + ":" + '"1"' + "}");
+    };
+    Gameguanli.prototype.daerzibaofasong = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.fasongdaerzijiangli, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Gameguanli.prototype.fasongdaerzijiangli = function () {
+        Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"kouchuleixing"' + ":" + '"0"' + ","
+            + '"kouchushuliang"' + ":" + '"0"' + ","
+            + '"leixing"' + ":" + '"6"' + ","
+            + '"shuliang"' + ":" + '"20"' + ","
+            + '"beishu"' + ":" + '"1"' + "}");
+    };
+    Gameguanli.prototype.ererzibaofasong = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.fasongererzijiangli, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Gameguanli.prototype.fasongererzijiangli = function () {
+        Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"kouchuleixing"' + ":" + '"0"' + ","
+            + '"kouchushuliang"' + ":" + '"0"' + ","
+            + '"leixing"' + ":" + '"7"' + ","
+            + '"shuliang"' + ":" + '"20"' + ","
+            + '"beishu"' + ":" + '"1"' + "}");
+    };
+    Gameguanli.prototype.xifubaofasong = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.fasongxifujiangli, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Gameguanli.prototype.fasongxifujiangli = function () {
+        Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"kouchuleixing"' + ":" + '"0"' + ","
+            + '"kouchushuliang"' + ":" + '"0"' + ","
+            + '"leixing"' + ":" + '"8"' + ","
+            + '"shuliang"' + ":" + '"20"' + ","
+            + '"beishu"' + ":" + '"1"' + "}");
+    };
+    Gameguanli.prototype.sunnvbaofasong = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.fasongsunnvjiangli, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Gameguanli.prototype.fasongsunnvjiangli = function () {
+        Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"kouchuleixing"' + ":" + '"0"' + ","
+            + '"kouchushuliang"' + ":" + '"0"' + ","
+            + '"leixing"' + ":" + '"9"' + ","
+            + '"shuliang"' + ":" + '"20"' + ","
+            + '"beishu"' + ":" + '"1"' + "}");
+    };
+    Gameguanli.prototype.tuiguangbaofasong = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var huidiaodengdai, zhudongzhuanfa;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        huidiaodengdai = new egret.Timer(3000, 1);
+                        huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.fasongtuiguangjiangli, this);
+                        huidiaodengdai.start();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 1:
+                        zhudongzhuanfa = _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Gameguanli.prototype.fasongtuiguangjiangli = function () {
+        Weblianjie.fasongshuju("code:156", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+            + '"jianglitianshu"' + ":" + '"2"' + "}");
     };
     return Gameguanli;
 }(egret.DisplayObjectContainer));

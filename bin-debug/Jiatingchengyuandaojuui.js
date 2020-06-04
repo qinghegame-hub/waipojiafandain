@@ -18,6 +18,13 @@ var Jiatingchengyuandaojuui = (function (_super) {
     };
     Jiatingchengyuandaojuui.prototype.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
+        //		this.guanbianniuguanbi();
+    };
+    Jiatingchengyuandaojuui.prototype.guanbianniuguanbi = function () {
+        var _this = this;
+        this.guanbianniu.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+            _this.parent.removeChild(_this);
+        }, this);
     };
     return Jiatingchengyuandaojuui;
 }(eui.Component));

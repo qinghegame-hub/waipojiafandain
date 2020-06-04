@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="FandiandonghuarongqiSkin" width="30" height="108" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1726c146884" ></w:Config>
+	<e:Group id="donghuarongqi" width="30" height="108" x="0" y="0"/>
+</e:Skin>

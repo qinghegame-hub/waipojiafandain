@@ -16,7 +16,7 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static jiesuohuoguo:string;
     public static jiesuoxiaochi:string;
     public static jiesuozaocan:string;
-    public static uid:string = "weichuangjian";
+    public static uid:string = "undefined";
     public static jiesuojiaju = [];  //已解锁家具
     public static jiesuoyuangong = []; //已解锁员工
     public static shiyongyuangong = []; //已使用员工
@@ -59,6 +59,42 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static paiming:number = 100001;//当前世界排名
     public static paihangbangshuju:any = [];//排行榜数据
     public static qingqiupaihangfenshu:number;//上次请求的排行榜分数
+    public static teshushijian:string = "0";//当前特殊事件
+    public static chaoshishangdianbiao:any = [];//从服务器获取超市商店表
+    public static caipushuxingbiao:any = [];//从服务器获取菜谱属性表
+    public static jinengbiao:any = [];//从服务器获取技能表
+    public static gerendengjibiao:any = [];//从服务器获取个人等级表
+    public static guaiwubiao:any = [];//从服务器获取怪物表
+    public static xingfudengji:number = 1;//个人等级;
+    public static xingfunaixin:number = 0;//个人耐心值;
+    public static xingfuyizhi:number = 0;//个人意志值;
+    public static xingfuxingzhi:number = 0;//个人兴致值;
+    public static xingfula:number = 0;//个人辣值;
+    public static xingfuma:number = 0;//个人麻值;
+    public static xingfusuan:number = 0;//个人酸值;
+    public static xingfutian:number = 0;//个人甜值;
+    public static tishengxingfunaixin:number = 0;//进修个人耐心值;
+    public static tishengxingfuyizhi:number = 0;//进修个人意志值;
+    public static tishengxingfuxingzhi:number = 0;//进修个人兴致值;
+    public static tishengxingfula:number = 0;//进修个人辣值;
+    public static tishengxingfuma:number = 0;//进修个人麻值;
+    public static tishengxingfusuan:number = 0;//进修个人酸值;
+    public static tishengxingfutian:number = 0;//进修个人甜值;
+    public static gerenaixin:number = 0;//最终个人耐心值;
+    public static gerenyizhi:number = 0;//最终个人意志值;
+    public static gerenxingzhi:number = 0;//最终个人兴致值;
+    public static gerenla:number = 0;//最终个人辣值;
+    public static gerenma:number = 0;//最终个人麻值;
+    public static gerensuan:number = 0;//最终个人酸值;
+    public static gerentian:number = 0;//最终个人甜值;
+    public static putongjiangchi:any = [];//从服务器获取普通奖池表
+    public static daojubiao:any = [];//从服务器获取道具表
+    public static daojushiyongbiao:any = [];//从服务器获取道具使用表
+    public static jiajushangdianbiao:any = [];//从服务器获取家具商店表
+    public static wangluolianjie:boolean;//服务器连接状态;
+    public static gerenshuju:any = null;//从平台处取得的个人数据;
+    public static dibaokeliushijian:number;//通过低保获得的客流量增加;
+    public static fenxianglianjiedizhi:string = "https://www.123fp.cn/loading/img_beijingloading.png"
 
 
     public static touxiangbaocunzhuangtai:boolean = false;
@@ -240,6 +276,11 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
             tuiguangkoubei += parseInt(yinxiaobiao[3].sellachievement);
         }
 
+        //低保客流量
+        let dibaokeliu:number = 0;
+        if(Gerenshuxing.dibaokeliushijian > 0){
+            dibaokeliu = 50; 
+        }
         //评论增加的口碑值计算
         Gerenshuxing.pingjunpinlun = (Gerenshuxing.pinglun1 + Gerenshuxing.pinglun2+Gerenshuxing.pinglun3+
         Gerenshuxing.pinglun4+Gerenshuxing.pinglun5+Gerenshuxing.pinglun6+Gerenshuxing.pinglun7+Gerenshuxing.pinglun8
@@ -258,7 +299,7 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
         //最终的客容量
         Gerenshuxing.zzkerongliang = Gerenshuxing.kerongliang + jiajukerong;
         //最终的客流量
-        Gerenshuxing.zzkeliuliang =  Math.floor((Gerenshuxing.keliuliang + tuiguangkeliu) * (Gerenshuxing.sjkeliuliang / 100) * (Gerenshuxing.tqkeliuliang / 100));
+        Gerenshuxing.zzkeliuliang =  Math.floor((Gerenshuxing.keliuliang + tuiguangkeliu + dibaokeliu ) * (Gerenshuxing.sjkeliuliang / 100) * (Gerenshuxing.tqkeliuliang / 100));
         //最终的口碑值
         Gerenshuxing.zzkoubeizhi =  Gerenshuxing.koubeizhi + tuiguangkoubei + Gerenshuxing.pinglunkoubei;
         //最终外卖效率
@@ -369,7 +410,7 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
         let xianzaishijian6 = (new Date()).valueOf();
             if(parseInt(Gerenshuxing.lixianjiangli[0]) < parseInt(Gerenshuxing.lixianjiangli[1])){
                 if(xianzaishijian6 >= parseInt(Gerenshuxing.lixianjiangli[2])){
-                    let zengjialixian = Math.floor(parseInt(Gerenshuxing.daerzixinxi[1]) / 20);
+                    let zengjialixian = Math.floor(parseInt(Gerenshuxing.daerzixinxi[1]));
                     let xiajieduanshijian1 = xianzaishijian6 + 60000;
                     let chaochushijian1 = xianzaishijian6 - parseInt(Gerenshuxing.lixianjiangli[2]);
                     chaochushijian1 = Math.floor(chaochushijian1 / 60000) + 1;
@@ -389,6 +430,45 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
                     Gameguanli.Kongzhitai().lixianjiangli();
                 }
             }
+    }
+
+
+    //个人对应的等级数据计算
+    public static xingfudengjishujujisuan(){
+        for(var i = 0;i<Gerenshuxing.gerendengjibiao.length;i++){
+            if(Gerenshuxing.xingfuzhi >= parseInt(Gerenshuxing.gerendengjibiao[Gerenshuxing.gerendengjibiao.length -1].levelexp)){
+                Gerenshuxing.xingfudengji = parseInt(Gerenshuxing.gerendengjibiao[Gerenshuxing.gerendengjibiao.length -1].id);
+                Gerenshuxing.xingfunaixin = parseInt(Gerenshuxing.gerendengjibiao[Gerenshuxing.gerendengjibiao.length -1].naixinadd);
+                Gerenshuxing.xingfuyizhi = parseInt(Gerenshuxing.gerendengjibiao[Gerenshuxing.gerendengjibiao.length -1].yizhiadd);
+                Gerenshuxing.xingfuxingzhi = parseInt(Gerenshuxing.gerendengjibiao[Gerenshuxing.gerendengjibiao.length -1].xingzhiadd);
+                Gerenshuxing.xingfula = parseInt(Gerenshuxing.gerendengjibiao[Gerenshuxing.gerendengjibiao.length -1].laxiadd);
+                Gerenshuxing.xingfuma = parseInt(Gerenshuxing.gerendengjibiao[Gerenshuxing.gerendengjibiao.length -1].maxiadd);
+                Gerenshuxing.xingfusuan = parseInt(Gerenshuxing.gerendengjibiao[Gerenshuxing.gerendengjibiao.length -1].suanxiadd);
+                Gerenshuxing.xingfutian = parseInt(Gerenshuxing.gerendengjibiao[Gerenshuxing.gerendengjibiao.length -1].tianxiadd);
+                break;
+            }else{
+                if(Gerenshuxing.xingfuzhi >= parseInt(Gerenshuxing.gerendengjibiao[i].levelexp) && Gerenshuxing.xingfuzhi < parseInt(Gerenshuxing.gerendengjibiao[i + 1].levelexp)){
+                    Gerenshuxing.xingfudengji = parseInt(Gerenshuxing.gerendengjibiao[i].id);
+                    Gerenshuxing.xingfunaixin = parseInt(Gerenshuxing.gerendengjibiao[i].naixinadd);
+                    Gerenshuxing.xingfuyizhi = parseInt(Gerenshuxing.gerendengjibiao[i].yizhiadd);
+                    Gerenshuxing.xingfuxingzhi = parseInt(Gerenshuxing.gerendengjibiao[i].xingzhiadd);
+                    Gerenshuxing.xingfula = parseInt(Gerenshuxing.gerendengjibiao[i].laxiadd);
+                    Gerenshuxing.xingfuma = parseInt(Gerenshuxing.gerendengjibiao[i].maxiadd);
+                    Gerenshuxing.xingfusuan = parseInt(Gerenshuxing.gerendengjibiao[i].suanxiadd);
+                    Gerenshuxing.xingfutian = parseInt(Gerenshuxing.gerendengjibiao[i].tianxiadd);
+                    break; 
+                }
+            }
+        }
+        Gerenshuxing.gerenaixin = Gerenshuxing.xingfunaixin + Math.floor(Gerenshuxing.xingfunaixin * Gerenshuxing.jiankangzhi / 1000);
+        Gerenshuxing.gerenyizhi = Gerenshuxing.xingfuyizhi + Math.floor(Gerenshuxing.xingfuyizhi * Gerenshuxing.kaixinzhi / 1000);
+        Gerenshuxing.gerenxingzhi = Gerenshuxing.xingfuxingzhi;
+        Gerenshuxing.gerenla = Gerenshuxing.xingfula + Gerenshuxing.tishengxingfula;
+        Gerenshuxing.gerenma = Gerenshuxing.xingfuma + Gerenshuxing.tishengxingfuma;
+        Gerenshuxing.gerensuan = Gerenshuxing.xingfusuan + Gerenshuxing.tishengxingfusuan;
+        Gerenshuxing.gerentian = Gerenshuxing.xingfutian + Gerenshuxing.tishengxingfutian;
+        console.log( Gerenshuxing.gerenaixin,Gerenshuxing.xingfunaixin,Gerenshuxing.tishengxingfunaixin);
+        //这里每次变更，应该告诉主界面刷新一次个人等级
     }
 
 

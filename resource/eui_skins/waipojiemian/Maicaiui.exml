@@ -44,5 +44,6 @@
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
+		<e:Image id="yuanliaoicon" source="img_shicai_png" x="100" y="49.5" anchorOffsetX="0" width="60" anchorOffsetY="0" height="56"/>
 	</e:Group>
 </e:Skin>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="CailiaoxiaohaoSkin" width="129" height="58" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+<e:Skin class="CailiaoxiaohaoSkin" width="203" height="58" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
 	<w:Config id="16fa9431bea" ></w:Config>
-	<e:Group id="wenzizu" anchorOffsetX="0" anchorOffsetY="0" width="125" x="0" height="53" y="0">
-		<e:Label id="wenzineirong" text="+ 50" x="21.5" y="14.5" anchorOffsetX="0" width="98" fontFamily="wodeziti" size="24" stroke="4" strokeColor="0xF7F7EF" textColor="0xED871C" bold="true" textAlign="right" verticalAlign="middle"/>
+	<e:Group id="wenzizu" anchorOffsetX="0" anchorOffsetY="0" width="201" x="0" height="53" y="0">
+		<e:Label id="wenzineirong" text="+ 50" x="56.5" y="14.5" anchorOffsetX="0" width="137" fontFamily="wodeziti" size="24" stroke="4" strokeColor="0xF7F7EF" textColor="0xED871C" bold="true" textAlign="left" verticalAlign="middle"/>
 		<e:Image id="img_shicai" source="img_shicai_png" y="7.5" x="4" anchorOffsetX="0" width="52" anchorOffsetY="0" height="42"/>
 	</e:Group>
 </e:Skin>

@@ -33,5 +33,149 @@
 		<e:Label id="huoguotijiatext" text="98999" x="516" y="795.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
 		<e:Label id="zaocantijiatext" text="98999" x="515" y="855.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
 		<e:Label id="shihaojiangditext" text="98999" x="515" y="911.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
+		<e:Button id="shuomingbut" label="" x="347" y="334" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="579" y="334" enabled="true" id="shuomingbut0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="347" y="383" enabled="true" id="shuomingbut1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="579" y="384" enabled="true" id="shuomingbut2">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="354" y="499" enabled="true" id="shuomingbut3">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="581" y="499" enabled="true" id="shuomingbut4">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="357.5" y="559" enabled="true" id="shuomingbut5">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="579" y="558.5" enabled="true" id="shuomingbut6">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="354" y="680.5" enabled="true" id="shuomingbut7">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="578" y="679.5" enabled="true" id="shuomingbut8">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="357.5" y="741.5" enabled="true" id="shuomingbut9">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="578" y="739.5" enabled="true" id="shuomingbut10">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="357.5" y="795.5" enabled="true" id="shuomingbut11">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="578" y="795" enabled="true" id="shuomingbut12">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="357.5" y="855.5" enabled="true" id="shuomingbut13">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="578" y="855.5" enabled="true" id="shuomingbut14">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="357.5" y="911.5" enabled="true" id="shuomingbut15">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="581" y="910.5" enabled="true" id="shuomingbut16">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
 	</e:Group>
 </e:Skin>

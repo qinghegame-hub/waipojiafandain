@@ -6,6 +6,13 @@ class Jiatingjinxiuui extends eui.Component implements  eui.UIComponent {
 	public shengyushijian:eui.Label;
 	public shengyushijian0:eui.Label;
 	public quedinganniu:eui.Button;
+	public quedinganniu0:eui.Button;
+	public quedinganniu1:eui.Button;
+	public guanbianniu:eui.Button;
+	public jiasuwenzi:eui.Label;
+
+
+
 
 
 	public constructor() {
@@ -21,6 +28,13 @@ class Jiatingjinxiuui extends eui.Component implements  eui.UIComponent {
 	protected childrenCreated():void
 	{
 		super.childrenCreated();
+//		this.guanbianniujiaohu();
+	}
+
+	public guanbianniujiaohu(){
+		this.guanbianniu.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>{
+			this.parent.removeChild(this);
+		},this)
 	}
 	
 }

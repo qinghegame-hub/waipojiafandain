@@ -39,7 +39,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var DebugPlatform = (function () {
     function DebugPlatform() {
     }
-    DebugPlatform.prototype.getUserInfo = function () {
+    DebugPlatform.prototype.getUserInfo = function (dex, dey, dew, deh) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 return [2 /*return*/, { nickName: "username" }];
@@ -54,6 +54,22 @@ var DebugPlatform = (function () {
         });
     };
     DebugPlatform.prototype.setxingfuzhi = function (shuzhi) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/];
+            });
+        });
+    };
+    //被动分享
+    DebugPlatform.prototype.showShareMenu = function (biaoti, tupian) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/];
+            });
+        });
+    };
+    //主动分享
+    DebugPlatform.prototype.shareAppMessage = function (biaoti, tupian, canshu) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 return [2 /*return*/];

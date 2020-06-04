@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DaitutanchukuanguiSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="17266183b1b" ></w:Config>
+	<e:Group id="daitutanchuzu" x="105.5" y="310">
+		<e:Image id="beijingtudt" source="img_daitutanchukuang_png" x="0" y="0"/>
+		<e:Label id="biaotiwenzidt" text="带图标题" x="120.5" y="6" anchorOffsetX="0" width="295" anchorOffsetY="0" height="55" size="30" fontFamily="wodeziti" textAlign="center" verticalAlign="middle" bold="true" stroke="2" strokeColor="0x968e8e"/>
+		<e:Image id="tishitupiandt" source="img_danjuneirong_png" x="149.5" y="117" anchorOffsetX="0" width="240" anchorOffsetY="0" height="240"/>
+		<e:Label id="tishineirongdt" text="很抱歉的通知您很抱歉的通知您很抱歉的通知您很抱歉的通知您很抱歉的通知您很抱歉的通知您很抱歉的通知您" x="112.5" y="376" anchorOffsetX="0" width="313" anchorOffsetY="0" height="167" size="24" fontFamily="wodeziti" stroke="2" strokeColor="0x706a6a" lineSpacing="10"/>
+		<e:Button id="quedinganniudt" label="" x="183" y="607" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="img_tishiqueding1_png" source.down="img_tishiqueding2_png" source.disabled="img_tishiqueding2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="quedinganniu0dt" label="" x="184.5" y="607" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="img_quedingzhuanfa1_png" source.down="img_quedingzhuanfa2_png" source.disabled="img_quedingzhuanfa2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="quedinganniu1dt" label="" x="184.5" y="607" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="img_quedingguanggao1_png" source.down="img_quedingguanggao2_png" source.disabled="img_quedingguanggao2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="guanbianniudt" label="" x="455" y="19" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_guanbi2_png" source.down="but_guanbi1_png" source.disabled="but_guanbi1_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

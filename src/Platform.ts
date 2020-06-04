@@ -6,11 +6,17 @@
  */
 declare interface Platform {
 
-    getUserInfo(): Promise<any>;
+    getUserInfo(dex,dey,dew,deh): Promise<any>;
 
     login(): Promise<any>;
 
     setxingfuzhi(shuzhi):Promise<any>;
+
+       //被动转发菜单
+    showShareMenu(biaoti,tupian): Promise<any>;
+
+    //主动转发菜单
+    shareAppMessage(biaoti,tupian,canshu):Promise<any>;
 
 
     openDataContext:any
@@ -18,7 +24,7 @@ declare interface Platform {
 }
 
 class DebugPlatform implements Platform {
-    async getUserInfo() {
+    async getUserInfo(dex,dey,dew,deh) {
         return { nickName: "username" }
     }
     async login() {
@@ -27,6 +33,17 @@ class DebugPlatform implements Platform {
     async setxingfuzhi(shuzhi){
 
     }
+
+    //被动分享
+    async showShareMenu(biaoti,tupian) {
+
+    }
+
+    //主动分享
+    async shareAppMessage(biaoti,tupian,canshu){
+        
+    }
+
 
     openDataContext;
 }

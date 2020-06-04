@@ -1,19 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="JiatingjinxiuuiSkin" width="300" height="370" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+<e:Skin class="JiatingjinxiuuiSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
 	<w:Config id="1714e539d4f" ></w:Config>
-	<e:Group id="jinxiujiemian" x="0" y="0">
-		<e:Image id="jinxiubj" source="img_tanchubeijing_png" x="0" y="0"/>
-		<e:Label id="jinxiubiaoti" text="信息" x="77" y="8" anchorOffsetX="0" width="129" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="center" stroke="2" strokeColor="0x494646" textColor="0xFFA005"/>
-		<e:Image id="jinxiutupian" source="img_anquanguanli_png" x="76" y="97" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
-		<e:Label id="shengyushijian" text="剩余时间" x="57.5" y="213" anchorOffsetX="0" width="168" size="18" bold="true" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2" strokeColor="0x000000"/>
-		<e:Label text="0:00" x="57.5" y="236" anchorOffsetX="0" width="168" size="18" bold="true" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2" strokeColor="0x000000" id="shengyushijian0" textColor="0xf2a50e"/>
-		<e:Button id="quedinganniu" label="加速(广告)" y="281" scaleX="0.5" scaleY="0.5" enabled="true" anchorOffsetX="0" anchorOffsetY="0" x="86.25">
+	<e:Group id="jinxiujiemian" horizontalCenter="0" verticalCenter="0">
+		<e:Image id="jinxiubj" source="img_tanchubeijing_png" x="17" y="8"/>
+		<e:Label id="jinxiubiaoti" text="信息" x="44" y="19" anchorOffsetX="0" width="510" verticalAlign="middle" size="30" fontFamily="wodeziti" textAlign="center" stroke="2" strokeColor="0x494646" textColor="0xFFA005" anchorOffsetY="0" height="59"/>
+		<e:Image id="jinxiutupian" source="img_anquanguanli_png" x="230.5" y="211.5" anchorOffsetX="0.5" anchorOffsetY="0.5" width="140" height="140"/>
+		<e:Label id="shengyushijian" text="剩余时间" x="63" y="384" anchorOffsetX="0" width="476" size="24" bold="true" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2" strokeColor="0x000000" anchorOffsetY="0" height="36"/>
+		<e:Label text="0:00" x="62" y="446" anchorOffsetX="0" width="477" size="24" bold="true" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2" strokeColor="0x000000" id="shengyushijian0" textColor="0xf2a50e" height="36"/>
+		<e:Button id="quedinganniu" label="" y="606" enabled="true" anchorOffsetX="0" anchorOffsetY="0" x="214">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" source="but_xuanxiang1_png" source.down="but_xuanxiang2_png" source.disabled="but_xuanxiang2_png"/>
+				<e:Image width="100%" height="100%" source="img_tishiqueding1_png" source.down="img_tishiqueding2_png" source.disabled="img_tishiqueding2_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
+		<e:Button id="quedinganniu0" label="" y="606" enabled="true" anchorOffsetX="0" anchorOffsetY="0" x="216.5">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="img_quedingzhuanfa1_png" source.down="img_quedingzhuanfa2_png" source.disabled="img_quedingzhuanfa2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="quedinganniu1" label="" y="606" enabled="true" anchorOffsetX="0" anchorOffsetY="0" x="215.5">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="img_quedingguanggao1_png" source.down="img_quedingguanggao2_png" source.disabled="img_quedingguanggao2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="guanbianniu" label="" x="487" y="12" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_guanbi2_png" source.down="but_guanbi1_png" source.disabled="but_guanbi1_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Label id="jiasuwenzi" text="（进行加速每次可减少10分钟时间）" x="55" y="566" anchorOffsetX="0" width="493" textAlign="center" verticalAlign="middle" size="24" textColor="0xf70909" stroke="2" strokeColor="0x7c7575" fontFamily="wodeziti"/>
 	</e:Group>
 </e:Skin>

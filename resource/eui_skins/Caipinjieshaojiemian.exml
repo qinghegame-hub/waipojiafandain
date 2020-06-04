@@ -3,11 +3,11 @@
 	<w:Config id="16f226b8b5a" ></w:Config>
 	<e:Group id="caipinjiemainzu" left="0" bottom="0" right="0" top="0">
 		<e:Image id="img_caipujieshaobg" source="img_caipujieshaobg_png" horizontalCenter="0" verticalCenter="0"/>
-		<e:Group id="biaotizu" horizontalCenter="0" verticalCenter="-481">
+		<e:Group id="biaotizu" horizontalCenter="0.5" verticalCenter="-594.5">
 			<e:Image id="img_biaoticaipujieshao" source="img_biaoticaipujieshao_png" horizontalCenter="0" verticalCenter="0.5" scaleX="1.4" scaleY="1.4"/>
 			<e:Label id="caipinmingcheng" text="香辣回锅肉啊哈哈" x="-1" y="-1.5" anchorOffsetX="0" width="327" anchorOffsetY="0" height="82" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" size="32" textColor="0xf7f4f4" stroke="3" strokeColor="0x6d6868" bold="true" locked="true"/>
 		</e:Group>
-		<e:Button id="but_zhuanfa" label="" horizontalCenter="262.5" verticalCenter="-317.5" enabled="true">
+		<e:Button id="but_zhuanfa" label="" horizontalCenter="275.5" verticalCenter="-420.5" enabled="true">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_zhuanfa2_png" source.down="but_zhuanfa1_png" source.disabled="but_zhuanfa1_png"/>
@@ -15,7 +15,7 @@
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button id="but_zhizuo" label="" horizontalCenter="0" verticalCenter="517" enabled="true">
+		<e:Button id="but_zhizuo" label="" horizontalCenter="1" verticalCenter="587" enabled="true">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_zhizuo2_png" source.down="but_zhizuo1_png" source.disabled="but_zhizuo1_png"/>
@@ -25,19 +25,38 @@
 		</e:Button>
 		<e:Group id="caipinshuxingzu" horizontalCenter="38" verticalCenter="118">
 		</e:Group>
-		<e:Label id="jianjie" text="农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉" anchorOffsetX="0" width="450" anchorOffsetY="0" height="166" textAlign="left" verticalAlign="top" size="18" horizontalCenter="5" verticalCenter="357"/>
-		<e:Image id="caipindeicon" source="1007_png" x="247" y="338.5" scaleX="1.2" scaleY="1.2"/>
-		<e:Label id="chushoudanjia" text="出售单价：584(+56)" anchorOffsetX="0" width="220" anchorOffsetY="0" height="30" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="137" y="803"/>
-		<e:Label id="caipugongneng" text="消除疲劳：584(+56)" anchorOffsetX="0" width="220" anchorOffsetY="0" height="33" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="137" y="764.5"/>
-		<e:Label id="dangqianshuxing" text="当前品质" anchorOffsetX="0" width="220" anchorOffsetY="0" height="33" textAlign="center" verticalAlign="middle" fontFamily="wodeziti" size="24" x="137" y="728.5" textColor="0x76f20e" stroke="2"/>
-		<e:Label id="xiaohaoshicai" text="消耗食材：584" anchorOffsetX="0" width="213" anchorOffsetY="0" height="32" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="137" y="836"/>
-		<e:Label id="chushoudanjia0" text="出售单价：584(+56)" anchorOffsetX="0" width="220" anchorOffsetY="0" height="30" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="402.2" y="803"/>
-		<e:Label id="caipugongneng0" text="消除疲劳：584(+56)" anchorOffsetX="0" width="220" anchorOffsetY="0" height="33" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="402.2" y="764.5"/>
-		<e:Label id="dangqianshuxing0" text="下一品质" anchorOffsetX="0" width="220" anchorOffsetY="0" height="33" textAlign="center" verticalAlign="middle" fontFamily="wodeziti" size="24" x="402.2" y="728.5" stroke="2" textColor="0xef900e"/>
-		<e:Label text="消耗食材：584" anchorOffsetX="0" width="213" anchorOffsetY="0" height="32" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" id="xiaohaoshicai0" size="24" x="402.2" y="836"/>
-		<e:Image id="img_jindutiaobeijing" source="img_jindutiaobeijing_png" x="277.2" y="659.67" width="250" height="52"/>
-		<e:Image id="img_jindutiaogundong" source="img_jindutiaogundong_png" x="350.33" y="676.02" anchorOffsetY="0.5" anchorOffsetX="0" width="176" height="26"/>
-		<e:Label id="jinduwenzi" text="(200/18888888)" x="280.33" y="643" anchorOffsetX="0" width="310" size="24" verticalAlign="middle" textAlign="center" fontFamily="wodeziti"/>
-		<e:Label id="lengjiwenzi" text="20" x="295" y="670" anchorOffsetX="0" width="31" size="24" verticalAlign="middle" textAlign="center" stroke="2" fontFamily="wodeziti"/>
+		<e:Label id="jianjie" text="农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉" anchorOffsetX="0" width="496" anchorOffsetY="0" height="94" textAlign="left" verticalAlign="top" size="18" horizontalCenter="13" verticalCenter="435" fontFamily="wodeziti" bold="true"/>
+		<e:Label id="jinengshuoming" text="农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉" anchorOffsetX="0" width="504" anchorOffsetY="0" height="66" textAlign="left" verticalAlign="top" size="18" horizontalCenter="9" verticalCenter="257" fontFamily="wodeziti" bold="true"/>
+		<e:Label id="jinengmingzi" text="基恩闹革命你" anchorOffsetX="0" width="279" anchorOffsetY="0" height="29" textAlign="left" verticalAlign="middle" size="18" horizontalCenter="-103.5" verticalCenter="202.5" fontFamily="wodeziti" bold="true" textColor="0x5ef20e"/>
+		<e:Image id="caipindeicon" source="1007_png" x="247.4" y="144.3" scaleX="1.2" scaleY="1.2"/>
+		<e:Label id="chushoudanjia" text="出售单价：584(+56)" anchorOffsetX="0" width="179" anchorOffsetY="0" height="30" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="197" y="540" bold="true"/>
+		<e:Label id="lashuxing" text="出售单价：584(+56)" anchorOffsetX="0" width="190" anchorOffsetY="0" height="32" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="194" y="586" bold="true"/>
+		<e:Label id="mashuxing" text="出售单价：584(+56)" anchorOffsetX="0" width="190" anchorOffsetY="0" height="32" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="194" y="632" bold="true"/>
+		<e:Label id="suanshuxing" text="出售单价：584(+56)" anchorOffsetX="0" width="190" anchorOffsetY="0" height="32" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="450" y="586" bold="true"/>
+		<e:Label id="tianshuxing" text="出售单价：584(+56)" anchorOffsetX="0" width="190" anchorOffsetY="0" height="32" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="450" y="632" bold="true"/>
+		<e:Label id="xiaohaoshicai" text="消耗食材：584" anchorOffsetX="0" width="179" anchorOffsetY="0" height="32" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="452" y="540" bold="true"/>
+		<e:Image id="img_jindutiaobeijing" source="img_jindutiaobeijing_png" x="240.37" y="395.67" width="250" height="52"/>
+		<e:Image id="img_jindutiaogundong" source="img_jindutiaogundong_png" x="313.5" y="412.02" anchorOffsetY="0.5" anchorOffsetX="0" width="176" height="26"/>
+		<e:Label id="jinduwenzi" text="(200/18888888)" x="243.5" y="379" anchorOffsetX="0" width="310" size="24" verticalAlign="middle" textAlign="center" fontFamily="wodeziti"/>
+		<e:Label id="lengjiwenzi" text="20" x="258.17" y="406" anchorOffsetX="0" width="31" size="24" verticalAlign="middle" textAlign="center" stroke="2" fontFamily="wodeziti"/>
+		<e:Image id="img_laicon" source="img_laicon_png" x="138" y="576" anchorOffsetX="0" width="50" anchorOffsetY="0" height="50"/>
+		<e:Image id="img_maicon" source="img_maicon_png" x="140" y="626" width="50" height="50"/>
+		<e:Image id="img_suanicon" source="img_suanicon_png" x="400" y="576" width="50" height="50"/>
+		<e:Image id="img_tianicon" source="img_tianicon_png" x="400" y="626" width="50" height="50"/>
+		<e:Image id="jineng1" source="img_bazhenyushijineeng_png" x="118" y="750" width="80" height="80" touchEnabled="true"/>
+		<e:Image id="jineng2" source="img_bazhenyushijineeng_png" x="233.12" y="750" width="80" height="80" touchEnabled="true"/>
+		<e:Image id="jineng3" source="img_bazhenyushijineeng_png" x="347.5" y="750" width="80" height="80" touchEnabled="true"/>
+		<e:Image id="jineng4" source="img_bazhenyushijineeng_png" x="461.75" y="750" width="80" height="80" touchEnabled="true"/>
+		<e:Image id="jineng5" source="img_bazhenyushijineeng_png" x="577" y="750" width="80" height="80" touchEnabled="true"/>
+		<e:Button id="guanbianniu" label="" x="24" y="25.5" anchorOffsetX="0" anchorOffsetY="0" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_guanbi2_png" source.down="but_guanbi1_png" source.disabled="but_guanbi1_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Image id="img_qian" source="img_qian_png" x="138" y="530" width="50" height="50"/>
+		<e:Image id="img_shicai" source="img_shicai_png" x="400" y="530" width="50" height="50"/>
 	</e:Group>
 </e:Skin>

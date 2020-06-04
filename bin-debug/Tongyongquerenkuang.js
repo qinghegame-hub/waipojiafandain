@@ -18,6 +18,13 @@ var Tongyongquerenkuang = (function (_super) {
     };
     Tongyongquerenkuang.prototype.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
+        this.chushihua();
+    };
+    Tongyongquerenkuang.prototype.chushihua = function () {
+        this.heisediban.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbijiemian, this);
+    };
+    Tongyongquerenkuang.prototype.guanbijiemian = function () {
+        this.parent.removeChild(this);
     };
     return Tongyongquerenkuang;
 }(eui.Component));

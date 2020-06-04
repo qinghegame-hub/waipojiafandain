@@ -16,27 +16,27 @@
 		</e:Button>
 		<e:Group id="gerenzhuangtaizu" x="148" y="331">
 			<e:Group id="xinqingzu" x="0" y="0">
-				<e:Image id="img_xinqing" source="img_xinqing_png" x="0" y="0"/>
-				<e:Label id="xinqingtext" text="9999" x="55" y="14" anchorOffsetX="0" width="82" size="20" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true"/>
-				<e:Label id="xinqingzt" text="（开心）" x="145" y="14" anchorOffsetX="0" width="91" size="20" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true"/>
+				<e:Image id="img_xinqing" source="img_xinqing_png" x="0" y="0" width="40" height="40"/>
+				<e:Label id="xinqingtext" text="9999" x="55" y="10" anchorOffsetX="0" width="82" size="18" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true" height="20"/>
+				<e:Label id="xinqingzt" text="（开心）" x="144" y="10" anchorOffsetX="0" width="91" size="18" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true" height="20" textColor="0xf26021"/>
 			</e:Group>
 			<e:Group id="jiatingzu" x="0" y="61">
-				<e:Image id="img_jiating" x="0" y="0" source="img_jiating_png"/>
-				<e:Label id="jiatingtext" text="9999" x="55" y="14" anchorOffsetX="0" width="82" size="20" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true"/>
-				<e:Label id="jiatingzt" text="（开心）" x="145" y="10" anchorOffsetX="0" width="90" size="20" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true" anchorOffsetY="0" height="24"/>
+				<e:Image id="img_jiating" x="0" y="0" source="img_jiating_png" width="40" height="40"/>
+				<e:Label id="jiatingtext" text="9999" x="55" y="10" anchorOffsetX="0" width="82" size="18" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true" height="20"/>
+				<e:Label id="jiatingzt" text="（开心）" x="145" y="10" anchorOffsetX="0" width="90" size="18" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true" anchorOffsetY="0" height="20" textColor="0xf26021"/>
 			</e:Group>
 			<e:Group id="jiankangzu" x="265" y="0">
-				<e:Image id="img_jiankang" x="0" y="0" source="img_jiankang_png"/>
-				<e:Label id="jiankangtext" text="9999" x="55" y="14" anchorOffsetX="0" width="82" size="20" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true"/>
-				<e:Label id="jiankangzt" text="（开心）" x="145" y="14" anchorOffsetX="0" width="100" size="20" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true"/>
+				<e:Image id="img_jiankang" x="0" y="0" source="img_jiankang_png" width="40" height="40"/>
+				<e:Label id="jiankangtext" text="9999" x="55" y="10" anchorOffsetX="0" width="82" size="18" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true" height="20"/>
+				<e:Label id="jiankangzt" text="（开心）" x="145" y="10" anchorOffsetX="0" width="100" size="18" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true" height="20" textColor="0xf26021"/>
 			</e:Group>
 			<e:Group id="jingbizu" x="265" y="61">
-				<e:Image id="img_jinbi" x="0" y="0" source="img_qian_png"/>
-				<e:Label id="jinbitext" text="9999" x="55" y="14" anchorOffsetX="0" width="82" size="20" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true"/>
-				<e:Label id="jinbizt" text="（开心）" x="145" y="14" anchorOffsetX="0" width="94" size="20" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true"/>
+				<e:Image id="img_jinbi" x="0" y="0" source="img_qian_png" width="40" height="40"/>
+				<e:Label id="jinbitext" text="9999" x="55" y="10" anchorOffsetX="0" width="82" size="18" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true" height="20"/>
+				<e:Label id="jinbizt" text="（开心）" x="145" y="10" anchorOffsetX="0" width="94" size="18" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" bold="true" height="20" textColor="0xf26021"/>
 			</e:Group>
 		</e:Group>
-		<e:Label id="meiriyaowentext" text="        第1年6月30日第1年6月30日第1年6月30日第1年6月30日第1年6月30日第1年6月30日第1年6月30日第1年6月30日第1年6" x="111" y="491" anchorOffsetX="0" width="459" size="20" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="88" bold="true"/>
+		<e:Label id="meiriyaowentext" text="        第1年6月30日第1年6月30日第1年6月30日第1年6月30日第1年6月30日第1年6月30日第1年6月30日第1年6月30日第1年6" x="129" y="491" anchorOffsetX="0" width="464" size="18" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="88" bold="true" lineSpacing="10"/>
 		<e:Label id="renshibiangengtext" text="当前没有人事变更!!" x="158" y="723" anchorOffsetX="0" width="198" size="20" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="35" bold="true" italic="true"/>
 		<e:Scroller id="renshigundong" width="201" height="104" x="151" y="687" anchorOffsetX="0" anchorOffsetY="0" enabled="true">
 			<e:Group id="renshirongqizu" anchorOffsetX="0" width="197" anchorOffsetY="0" height="675">
@@ -197,6 +197,22 @@
 			<e:Label id="yinxiaotext0" text="传单推广：剩余1天" x="0" y="23" anchorOffsetX="0" width="150" size="16" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="32" bold="true"/>
 			<e:Label id="yinxiaotext1" text="传单推广：剩余1天" x="0" y="46" anchorOffsetX="0" width="150" size="16" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="32" bold="true"/>
 			<e:Label id="yinxiaotext2" text="传单推广：剩余1天" x="0" y="69" anchorOffsetX="0" width="150" size="16" verticalAlign="middle" fontFamily="wodeziti" stroke="3" strokeColor="0x000000" anchorOffsetY="0" height="32" bold="true"/>
+		</e:Group>
+		<e:Group id="yitiaochengyuan" x="416" y="694">
+			<e:Image id="juesetouxiang" source="img_daerzibiaoshi_png" x="0" y="0" anchorOffsetX="0" width="74" anchorOffsetY="0" height="78"/>
+			<e:Label id="zhuangtai" text="进修中" x="0" y="84" size="18" fontFamily="wodeziti" anchorOffsetX="0" width="73" verticalAlign="middle" textAlign="center" stroke="2" height="24"/>
+		</e:Group>
+		<e:Group x="550" y="694" id="yitiaochengyuan0">
+			<e:Image id="juesetouxiang0" x="0" y="0" anchorOffsetX="0" width="74" anchorOffsetY="0" height="78" source="img_xiaoerzibiaoshi_png"/>
+			<e:Label text="进修中" x="0" y="84" size="18" fontFamily="wodeziti" anchorOffsetX="0" width="73" verticalAlign="middle" textAlign="center" stroke="2" height="24" id="zhuangtai0"/>
+		</e:Group>
+		<e:Group x="416" y="818" id="yitiaochengyuan1">
+			<e:Image id="juesetouxiang1" x="0" y="0" anchorOffsetX="0" width="74" anchorOffsetY="0" height="78" source="img_xifubiaoshi_png"/>
+			<e:Label text="进修中" x="0" y="84" size="18" fontFamily="wodeziti" anchorOffsetX="0" width="73" verticalAlign="middle" textAlign="center" stroke="2" height="24" id="zhuangtai1"/>
+		</e:Group>
+		<e:Group x="549" y="818" id="yitiaochengyuan2">
+			<e:Image id="juesetouxiang2" x="0" y="0" anchorOffsetX="0" width="74" anchorOffsetY="0" height="78" source="img_sunnvbiaoshi_png"/>
+			<e:Label text="进修中" x="0" y="84" size="18" fontFamily="wodeziti" anchorOffsetX="0" width="73" verticalAlign="middle" textAlign="center" stroke="2" height="24" id="zhuangtai2"/>
 		</e:Group>
 	</e:Group>
 </e:Skin>

@@ -1,4 +1,6 @@
 class Tongyongquerenkuang extends eui.Component implements  eui.UIComponent {
+	public querenkuangzu:eui.Group;
+	public heisediban:eui.Image;
 	public tongyongtishizu:eui.Group;
 	public img_tongyongtishikuang:eui.Image;
 	public tishiwenzi:eui.Label;
@@ -9,6 +11,8 @@ class Tongyongquerenkuang extends eui.Component implements  eui.UIComponent {
 	public jiangli2:eui.Label;
 	public jiangliicon1:eui.Image;
 	public jiangliicon2:eui.Image;
+
+
 
 
 
@@ -28,6 +32,15 @@ class Tongyongquerenkuang extends eui.Component implements  eui.UIComponent {
 	protected childrenCreated():void
 	{
 		super.childrenCreated();
+		this.chushihua();
+	}
+
+	public chushihua(){
+		this.heisediban.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbijiemian,this);
+	}
+
+	public guanbijiemian(){
+		this.parent.removeChild(this);
 	}
 	
 }

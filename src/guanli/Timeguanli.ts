@@ -6,24 +6,33 @@ class Timeguanli extends egret.DisplayObjectContainer{
 	public static jisuanshijian(){
 		//当前小时数计算
 		Gerenshuxing.xianshishijian =  Gerenshuxing.shijian % 24;
-		//计算每天家庭成员是否回家
-		if(Gerenshuxing.xianshishijian >= 18 && Gerenshuxing.xianshishijian <= 24){
+		//计算每天家庭成员是否应该回家
+		if(Gerenshuxing.xianshishijian >= 18 && Gerenshuxing.xianshishijian <= 23){
 			this.daerzihuijia();
 		}
-		if(Gerenshuxing.xianshishijian >= 16 && Gerenshuxing.xianshishijian <= 24){
+		if(Gerenshuxing.xianshishijian >= 16 && Gerenshuxing.xianshishijian <= 23){
 			this.sunnvhuijia();
 		}
-		if(Gerenshuxing.xianshishijian >= 18 && Gerenshuxing.xianshishijian <= 24){
+		if(Gerenshuxing.xianshishijian >= 18 && Gerenshuxing.xianshishijian <= 23){
 			this.xifuhuijia();
 		}
-		if(Gerenshuxing.xianshishijian >= 18 && Gerenshuxing.xianshishijian <= 24){
+		if(Gerenshuxing.xianshishijian >= 18 && Gerenshuxing.xianshishijian <= 23){
 			this.ererzihuijia();
 		}
+		//计算家庭成员是否未归家，扣除心情
+		if(Gerenshuxing.xianshishijian == 6){
+			this.meirichengyuanguijia();
+		}
+		//每小时几率计算各项低保
+		if(Gerenshuxing.xianshishijian >= 10 && Gerenshuxing.xianshishijian <= 20){
+			this.jisuandibao();
+		}
+		//根据成员的亲和值，计算成员每天可谈话的次数
 		if(Gerenshuxing.xianshishijian == 8){
-			Gerenshuxing.daerzijiaotan = Math.floor(parseInt(Gerenshuxing.daerzixinxi[0]) / 10);
-			Gerenshuxing.ererzijiaotan = Math.floor(parseInt(Gerenshuxing.ererzixinxi[0]) / 10);
-			Gerenshuxing.xifujiaotan = Math.floor(parseInt(Gerenshuxing.xifuxinxi[0]) / 10);
-			Gerenshuxing.sunnvjiaotan = Math.floor(parseInt(Gerenshuxing.sunnvxinxi[0]) / 10);
+			Gerenshuxing.daerzijiaotan = Math.floor(parseInt(Gerenshuxing.daerzixinxi[0]) / 100 + 5);
+			Gerenshuxing.ererzijiaotan = Math.floor(parseInt(Gerenshuxing.ererzixinxi[0]) / 100 + 5);
+			Gerenshuxing.xifujiaotan = Math.floor(parseInt(Gerenshuxing.xifuxinxi[0]) / 100 + 5);
+			Gerenshuxing.sunnvjiaotan = Math.floor(parseInt(Gerenshuxing.sunnvxinxi[0]) / 100 + 5);
 			this.jiatingchengyuanlijia();
 		}
 		
@@ -236,11 +245,9 @@ class Timeguanli extends egret.DisplayObjectContainer{
 
 	public static daerzihuijia(){
 		if(Gerenshuxing.daerzixinxi[5] == 0){
-			let huijiajilv = parseInt(Gerenshuxing.daerzixinxi[0]);
-			let suijizhi = Math.floor(Math.random() * 100);
+			let huijiajilv = parseInt(Gerenshuxing.daerzixinxi[0]) + 100;
+			let suijizhi = Math.floor(Math.random() * 1000);
 			if(suijizhi <= huijiajilv){
-				Gerenshuxing.daerzixinxi[4] = 0;
-				Gerenshuxing.daerzixinxi[5] = 1;
 				Weblianjie.fasongshuju("code:048","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 			}
 		}
@@ -248,11 +255,9 @@ class Timeguanli extends egret.DisplayObjectContainer{
 
 	public static sunnvhuijia(){
 		if(Gerenshuxing.sunnvxinxi[5] == 0){
-			let huijiajilv1 = parseInt(Gerenshuxing.sunnvxinxi[0]);
-			let suijizhi1 = Math.floor(Math.random() * 100);
+			let huijiajilv1 = parseInt(Gerenshuxing.sunnvxinxi[0]) + 100;
+			let suijizhi1 = Math.floor(Math.random() * 1000);
 			if(suijizhi1 <= huijiajilv1){
-				Gerenshuxing.sunnvxinxi[4] = 0;
-				Gerenshuxing.sunnvxinxi[5] = 1;
 				Weblianjie.fasongshuju("code:051","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 			}
 		}
@@ -260,11 +265,9 @@ class Timeguanli extends egret.DisplayObjectContainer{
 
 	public static xifuhuijia(){
 		if(Gerenshuxing.xifuxinxi[5] == 0){
-			let huijiajilv2 = parseInt(Gerenshuxing.xifuxinxi[0]);
-			let suijizhi2 = Math.floor(Math.random() * 100);
+			let huijiajilv2 = parseInt(Gerenshuxing.xifuxinxi[0]) + 100;
+			let suijizhi2 = Math.floor(Math.random() * 1000);
 			if(suijizhi2 <= huijiajilv2){
-				Gerenshuxing.xifuxinxi[4] = 0;
-				Gerenshuxing.xifuxinxi[5] = 1;
 				Weblianjie.fasongshuju("code:050","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 			}
 		}
@@ -272,22 +275,115 @@ class Timeguanli extends egret.DisplayObjectContainer{
 
 	public static ererzihuijia(){
 		if(Gerenshuxing.ererzixinxi[5] == 0){
-			let huijiajilv3 = parseInt(Gerenshuxing.ererzixinxi[0]);
-			let suijizhi3 = Math.floor(Math.random() * 100);
+			let huijiajilv3 = parseInt(Gerenshuxing.ererzixinxi[0]) + 100;
+			let suijizhi3 = Math.floor(Math.random() * 1000);
 			if(suijizhi3 <= huijiajilv3){
-				Gerenshuxing.ererzixinxi[4] = 0;
-				Gerenshuxing.ererzixinxi[5] = 1;
 				Weblianjie.fasongshuju("code:049","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 			}
 		}
 	}
 
 	public static jiatingchengyuanlijia(){
-		Gerenshuxing.daerzixinxi[5] = 0;
-		Gerenshuxing.sunnvxinxi[5] = 0;
-		Gerenshuxing.xifuxinxi[5] = 0;
-		Gerenshuxing.ererzixinxi[5] = 0;
 		Weblianjie.fasongshuju("code:052","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
-				+ '"ererzi"' +":"+ '"' + Gerenshuxing.ererzixinxi[5] + '"' +"}");
+				+ '"ererzi"' +":"+ '"0"' +"}");
+	}
+
+	public static meirichengyuanguijia(){
+		let daerziming = "";
+		let ererziming = "";
+		let daerximing = "";
+		let sunnvming = "";
+		let xingqingjiansha:number = 0;
+		if(Gerenshuxing.daerzixinxi[5] == 0){
+			daerziming = "[大儿子]";
+			xingqingjiansha += 10;
+		}
+		if(Gerenshuxing.ererzixinxi[5] == 0){
+			ererziming = "[二儿子]";
+			xingqingjiansha += 10;
+		}
+		if(Gerenshuxing.xifuxinxi[5] == 0){
+			daerximing = "[大儿媳]";
+			xingqingjiansha += 10;
+		}
+		if(Gerenshuxing.sunnvxinxi[5] == 0){
+			sunnvming = "[小孙女]";
+			xingqingjiansha += 20;
+		}
+		if(xingqingjiansha > 0){
+			Weblianjie.fasongshuju("code:085","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
+			+ '"kouchuleixing"' +":"+ '"4"' +","
+			+ '"kouchushuliang"' +":"+ '"' + xingqingjiansha + '"' +","
+			+ '"leixing"' +":"+ '"0"' +","
+			+ '"shuliang"' +":"+ '"0"' +","
+			+ '"beishu"' +":"+ '"0"' +"}");
+			let wenzineirong:string = "昨天一天，您的" + daerziming + ererziming + daerximing + sunnvming +"彻夜未归，失落之下，您不免开始胡思乱想，心情-[" + xingqingjiansha + "]，头上白发似乎又多了几根。"
+			Gameguanli.Kongzhitai().daitutanchukuang("chengyuanweigui",wenzineirong);
+		}
+	}
+
+	public static jisuandibao(){
+		//通用的体力不足10点时，概率出现低保
+		if(Gerenshuxing.jiatingzhi <= 10){
+			let tilibuchong = Math.floor(Math.random() * 100);
+			if(tilibuchong > 90){
+				//触发体力低保
+				Gameguanli.Kongzhitai().daitutanchukuang("tilidibao");
+			}
+		}else if(Gameguanli.Kongzhitai().zhujiemian.parent){
+			//当前位于饭店内，确定是否给予饭店低保
+			if(Gerenshuxing.jinbizhi < 2000){
+				//金币低保
+				let jinbidibao = Math.floor(Math.random() * 100);
+				if(jinbidibao > 90){
+					//触发金币低保
+					Gameguanli.Kongzhitai().daitutanchukuang("jinbidibao");
+				};
+			}else if(Gerenshuxing.dibaokeliushijian <= 0){
+				//店铺客流量低保
+				let dianpukeliudibao = Math.floor(Math.random() * 100);
+				if(dianpukeliudibao > 90){
+					//触发店铺客流低保
+					Gameguanli.Kongzhitai().daitutanchukuang("keliudibao");
+				}
+			}
+		}else if(Gameguanli.Kongzhitai().jiatingjiemian.parent){
+			if(Gerenshuxing.sunnvxinxi[5] == "1" && Gerenshuxing.kaixinzhi < 100){
+				//触发心情低保
+				let xinqindibao = Math.floor(Math.random() * 100);
+				if(xinqindibao > 90){
+					//触发心情低保
+					Gameguanli.Kongzhitai().daitutanchukuang("xinqindibao");
+				}
+			}else if(parseInt(Gerenshuxing.daerzixinxi[0]) < 100){
+				//触发大儿子亲和低保
+				let daerziqinhe = Math.floor(Math.random() * 100);
+				if(daerziqinhe > 90){
+					//触发大儿子亲和低保
+					Gameguanli.Kongzhitai().daitutanchukuang("daerziqinhe");
+				}
+			}else if(parseInt(Gerenshuxing.ererzixinxi[0]) < 100){
+				//触发二儿子亲和低保
+				let ererziqinhe = Math.floor(Math.random() * 100);
+				if(ererziqinhe > 90){
+					//触发二儿子亲和低保
+					Gameguanli.Kongzhitai().daitutanchukuang("ererziqinhe");
+				}
+			}else if(parseInt(Gerenshuxing.xifuxinxi[0]) < 100){
+				//触发媳妇亲和低保
+				let xifuqinhe = Math.floor(Math.random() * 100);
+				if(xifuqinhe > 90){
+					//触发媳妇亲和低保
+					Gameguanli.Kongzhitai().daitutanchukuang("xifuqinhe");
+				}
+			}else if(parseInt(Gerenshuxing.sunnvxinxi[0]) < 100){
+				//触发孙女亲和低保
+				let sunnvqinhe = Math.floor(Math.random() * 100);
+				if(sunnvqinhe > 90){
+					//触发孙女亲和低保
+					Gameguanli.Kongzhitai().daitutanchukuang("sunnvqinhe");
+				}
+			}
+		}
 	}
 }

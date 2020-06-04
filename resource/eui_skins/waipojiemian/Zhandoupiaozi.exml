@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ZhandoupiaoziSkin" width="241" height="33" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="17231813483" ></w:Config>
+	<e:Group id="xianshizu" x="0" y="0">
+		<e:Label id="qianmianwenzi" text="海错江瑶" x="0" y="0" anchorOffsetX="0" width="106" size="24" height="30" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" textColor="0xf7850c" stroke="2"/>
+		<e:Label text="-888888" x="125" y="0" anchorOffsetX="0" width="106" size="24" height="30" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" id="qianmianwenzi0" textColor="0x42f409"/>
+	</e:Group>
+</e:Skin>

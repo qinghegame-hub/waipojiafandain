@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DaojutipsuiSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="171d6292a22" ></w:Config>
+	<e:Group id="daojuzu" left="0" top="0" bottom="0" right="0" alpha="1">
+		<e:Image id="heiseguanbi" source="img_heisezhezao_png" left="0" top="0" bottom="0" right="0" alpha="0.4"/>
+		<e:Group id="tipszu" x="232" y="393">
+			<e:Image id="img_daojutipsbj" source="img_daojutipsbj_png" x="0" y="0"/>
+			<e:Image id="daojuicon" source="img_anquanguanli_png" x="39" y="43" anchorOffsetX="0.5" width="80" anchorOffsetY="0.5" height="80"/>
+			<e:Label id="mingcheng" text="名称" x="140" y="35" verticalAlign="middle" textAlign="left" size="20" fontFamily="wodeziti" bold="true" textColor="0xf48709" width="50" height="20" stroke="2" strokeColor="0x726f6f"/>
+			<e:Label id="daojumingzi" text="这是道具名称" x="140" y="62.5" verticalAlign="middle" textAlign="left" size="16" fontFamily="wodeziti" bold="true" width="102" height="20" stroke="2" strokeColor="0x726F6F" anchorOffsetX="0" textColor="0x93f409"/>
+			<e:Label id="leixing" text="类型" x="140" y="87.5" verticalAlign="middle" textAlign="left" size="20" fontFamily="wodeziti" bold="true" textColor="0xF48709" width="50" height="20" stroke="2" strokeColor="0x726F6F"/>
+			<e:Label id="leixingming" text="家用电器" x="140" y="115" verticalAlign="middle" textAlign="left" size="16" fontFamily="wodeziti" bold="true" textColor="0x93F409" width="102" height="20" stroke="2" strokeColor="0x726F6F" anchorOffsetX="0"/>
+			<e:Label id="shuoming" text="说明" x="28.5" y="144.5" verticalAlign="middle" textAlign="left" size="20" fontFamily="wodeziti" bold="true" textColor="0xF48709" width="50" height="20" stroke="2" strokeColor="0x726F6F"/>
+			<e:Label id="shuomingneirong" text="家用电器" x="28.5" y="173" verticalAlign="top" textAlign="left" size="16" fontFamily="wodeziti" bold="true" textColor="0x93F409" width="198" height="83" stroke="2" strokeColor="0x726F6F" anchorOffsetX="0" anchorOffsetY="0" lineSpacing="10"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

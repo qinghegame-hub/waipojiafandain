@@ -1,4 +1,5 @@
 class Zhujiemianshangceng extends eui.Component implements  eui.UIComponent {
+	public img_shicaibuzu:eui.Image;
 	public zhuyaozu:eui.Group;
 	public img_tiziqianduan:eui.Image;
 	public zhongbuzu1:eui.Group;
@@ -14,6 +15,7 @@ class Zhujiemianshangceng extends eui.Component implements  eui.UIComponent {
 	public img_zhuangtaixianshibg0:eui.Image;
 	public weishengwenzi:eui.Label;
 	public img_saoba:eui.Image;
+
 
 
 
@@ -76,6 +78,15 @@ class Zhujiemianshangceng extends eui.Component implements  eui.UIComponent {
 	public chushihua(){
 		this.shicaiwenzi.text = "" + Gerenshuxing.yongyouyuanliao;
 		this.weishengwenzi.text = "" + Gerenshuxing.zzweishengzhi;
+		this.shicaiwenzitixing();
+	}
+
+	public shicaiwenzitixing(){
+		if(Gerenshuxing.yongyouyuanliao >= 100){
+			this.img_shicaibuzu.alpha = 0;
+		}else{
+			this.img_shicaibuzu.alpha = 1;
+		}
 	}
 	
 }

@@ -28,6 +28,10 @@ class dibuxinxi extends eui.Component implements  eui.UIComponent {
 		this.but_gongyuan1.addEventListener(egret.TouchEvent.TOUCH_TAP,this.opendajie,this);
 		this.but_huijia1.addEventListener(egret.TouchEvent.TOUCH_TAP,this.openhuijia,this);
 		this.but_licai1.addEventListener(egret.TouchEvent.TOUCH_TAP,this.openpaihang,this);
+		Gameguanli.Kongzhitai().dibuui.but_hotel1.enabled = false;
+		Gameguanli.Kongzhitai().dibuui.but_gongyuan1.enabled = true;
+		Gameguanli.Kongzhitai().dibuui.but_huijia1.enabled = true;
+		Gameguanli.Kongzhitai().dibuui.but_licai1.enabled = true;
 	}
 
 	private openfandian(){
@@ -42,10 +46,6 @@ class dibuxinxi extends eui.Component implements  eui.UIComponent {
 	}
 
 	private opendajie(){
-		Gameguanli.Kongzhitai().dibuui.but_hotel1.enabled = true;
-		Gameguanli.Kongzhitai().dibuui.but_gongyuan1.enabled = false;
-		Gameguanli.Kongzhitai().dibuui.but_huijia1.enabled = true;
-		Gameguanli.Kongzhitai().dibuui.but_licai1.enabled = true;
 //		向界面管理中加入打开主界面参数;
 		Gameguanli.Kongzhitai().jiemianxianshi("shangjie");
 	}
