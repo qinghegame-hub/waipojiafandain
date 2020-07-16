@@ -4,6 +4,7 @@
 import * as path from 'path';
 import { UglifyPlugin, CompilePlugin, ManifestPlugin, ExmlPlugin, EmitResConfigFilePlugin, TextureMergerPlugin, CleanPlugin,ResSplitPlugin } from 'built-in';
 import { WxgamePlugin } from './wxgame/wxgame';
+import { SubPackagePlugin } from './wxgame/subpackage';
 import { CustomPlugin } from './myplugin';
 import * as defaultConfig from './config';
 
@@ -19,11 +20,19 @@ const config: ResourceManagerConfig = {
             return {
                 outputDir,
                 commands: [
-                    new CleanPlugin({ matchers: ["js", "resource", "egret-library"] }),
+                    new CleanPlugin({ matchers: ["js", "resource", "egret-library","stage1"] }),
                     new CompilePlugin({ libraryType: "debug", defines: { DEBUG: true, RELEASE: false } }),
                     new ExmlPlugin('commonjs'), // 非 EUI 项目关闭此设置
                     new WxgamePlugin(useWxPlugin),
-                    new ManifestPlugin({ output: 'manifest.js' })
+                    new SubPackagePlugin ({ 
+                        output: 'manifest.js',
+                        subPackages:[{
+                            root:"stage1",
+                            "includes":[
+                                "main.js"
+                            ]
+                        }]
+                    })
                 ]
             }
         }
@@ -31,7 +40,7 @@ const config: ResourceManagerConfig = {
             return {
                 outputDir,
                 commands: [
-                    new CleanPlugin({ matchers: ["js", "resource", "egret-library"] }),
+                    new CleanPlugin({ matchers: ["js", "resource", "egret-library","stage1"] }),
                     new CompilePlugin({ libraryType: "release", defines: { DEBUG: false, RELEASE: true } }),
                     new ExmlPlugin('commonjs'), // 非 EUI 项目关闭此设置
                     new WxgamePlugin(useWxPlugin),
@@ -48,7 +57,16 @@ const config: ResourceManagerConfig = {
                           {from:"resource/**",to:`../${projectName}_wxgame_remote`}
                       ]
                   }),
-                    new ManifestPlugin({ output: 'manifest.js', useWxPlugin: useWxPlugin })
+                    new SubPackagePlugin ({ 
+                        output: 'manifest.js',
+                        subPackages:[{
+                            root:"stage1",
+                            "includes":[
+                                "default.thm.min.js",
+                                "main.min.js"
+                            ]
+                        }]
+                    })
                 ]
             }
         }

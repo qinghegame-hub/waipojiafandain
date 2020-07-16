@@ -4,11 +4,11 @@
 	<e:Group id="chaoshishangdianzu" left="0" bottom="0" top="0" right="0">
 		<e:Image id="heisezhezao" source="img_heisezhezao_png" left="0" bottom="0" right="0" top="0"/>
 		<e:Image id="img_chaoshijiemianbj" x="6.5" y="168.06" source="img_chaoshijiemianbj_png"/>
-		<e:Label id="biaotilan" text="超级商店" x="259.85" y="180.98" anchorOffsetX="0" width="216.67" anchorOffsetY="0" height="46" size="30" fontFamily="wodeziti" verticalAlign="middle" textAlign="center" stroke="4" bold="true" textColor="0xEF870E" strokeColor="0xF4EBEB"/>
-		<e:Group id="daojuzu" x="102.5" y="285.5">
-			<e:Image id="daojutubiao" source="img_anquanguanli_png" x="3" y="0" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
-			<e:Group id="goumaianniuzu" x="0" y="108.5">
-				<e:Button id="but_goumai" label="" x="0" y="0" anchorOffsetX="0" width="126" enabled="true">
+		<e:Label id="biaotilan" text="超级商店" x="259.85" y="180.98" anchorOffsetX="0" width="216.67" anchorOffsetY="0" height="46" size="30" fontFamily="wodeziti" verticalAlign="middle" textAlign="center" stroke="4" bold="true" strokeColor="0x2c2a26" textColor="0xf97306"/>
+		<e:Group id="daojuzu" x="68.97" y="284.17" anchorOffsetX="0" width="181" anchorOffsetY="0" height="192">
+			<e:Image id="daojutubiao" source="img_anquanguanli_png" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="0" verticalCenter="0"/>
+			<e:Group id="goumaianniuzu" anchorOffsetY="0" height="42" horizontalCenter="0" bottom="0">
+				<e:Button id="but_goumai" label="" anchorOffsetX="0" enabled="true" horizontalCenter="0" bottom="0">
 				<e:skinName>
 					<e:Skin states="up,down,disabled">
 					<e:Image width="100%" height="100%" source="but_chaoshigoumai1_png" source.down="but_chaoshigoumai2_png" source.disabled="but_chaoshigoumai2_png"/>
@@ -16,15 +16,15 @@
 					</e:Skin>
 				</e:skinName>
 				</e:Button>
-				<e:Label id="goumaijine" text="-888888" x="44" y="14.5" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="left" height="30" size="14" fontFamily="wodeziti" bold="true" textColor="0xf4790c" stroke="2" strokeColor="0x565151" touchEnabled="false"/>
-				<e:Image id="qianicon" source="img_qian_png" x="14" y="17.5" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" touchEnabled="false"/>
+				<e:Label id="goumaijine" text="-888888" anchorOffsetX="0" width="93.67" verticalAlign="middle" textAlign="center" height="30" size="20" fontFamily="wodeziti" stroke="2" strokeColor="0x2c2a26" touchEnabled="false" textColor="0xf97306" verticalCenter="0" right="0"/>
+				<e:Image id="qianicon" source="img_qian_png" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" touchEnabled="false" verticalCenter="0" left="10"/>
 			</e:Group>
-			<e:Image id="zhekoutubiao" source="img_chaoshizhekou_png" x="2.5" y="-1" anchorOffsetX="0" width="75" anchorOffsetY="0" height="70"/>
+			<e:Image id="zhekoutubiao" source="img_chaoshizhekou_png" x="0" y="0" anchorOffsetX="0" width="75" anchorOffsetY="0" height="70"/>
 		</e:Group>
-		<e:Group x="305.19" y="285" id="daojuzu0">
-			<e:Image id="daojutubiao0" source="img_anquanguanli_png" x="3" y="0" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
-			<e:Group x="0" y="108.5" id="goumaianniuzu0">
-			<e:Button id="but_goumai0" label="" x="0" y="0" anchorOffsetX="0" width="126" enabled="true">
+		<e:Group x="285" y="285" id="daojuzu0" anchorOffsetX="0" width="181" height="192">
+			<e:Image id="daojutubiao0" source="img_anquanguanli_png" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5" verticalCenter="0" horizontalCenter="0"/>
+			<e:Group id="goumaianniuzu0" bottom="0" horizontalCenter="0">
+			<e:Button id="but_goumai0" label="" anchorOffsetX="0" width="126" enabled="true" horizontalCenter="0" bottom="0">
 				<e:skinName>
 				<e:Skin states="up,down,disabled">
 					<e:Image width="100%" height="100%" source="but_chaoshigoumai1_png" source.down="but_chaoshigoumai2_png" source.disabled="but_chaoshigoumai2_png"/>
@@ -32,14 +32,14 @@
 				</e:Skin>
 				</e:skinName>
 			</e:Button>
-			<e:Label text="-888888" x="44" y="14.5" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="left" height="30" size="14" fontFamily="wodeziti" bold="true" textColor="0xF4790C" stroke="2" strokeColor="0x565151" id="goumaijine0" touchEnabled="false"/>
-			<e:Image source="img_qian_png" x="14" y="17.5" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" id="qianicon0" touchEnabled="false"/>
+			<e:Label text="-888888" anchorOffsetX="0" width="88" verticalAlign="middle" textAlign="center" height="30" size="20" fontFamily="wodeziti" stroke="2" strokeColor="0x2c2a26" id="goumaijine0" touchEnabled="false" textColor="0xf97306" right="0" verticalCenter="0"/>
+			<e:Image source="img_qian_png" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" id="qianicon0" touchEnabled="false" verticalCenter="0" left="10"/>
 			</e:Group>
 		</e:Group>
-		<e:Group x="514.19" y="284.5" id="daojuzu1">
-			<e:Image id="daojutubiao1" source="img_anquanguanli_png" x="3" y="0" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
-			<e:Group x="0" y="108.5" id="goumaianniuzu1">
-			<e:Button id="but_goumai1" label="" x="0" y="0" anchorOffsetX="0" width="126" enabled="true">
+		<e:Group x="502.17" y="284.5" id="daojuzu1" width="181" height="192">
+			<e:Image id="daojutubiao1" source="img_anquanguanli_png" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="0" verticalCenter="0"/>
+			<e:Group id="goumaianniuzu1" horizontalCenter="0" bottom="0">
+			<e:Button id="but_goumai1" label="" anchorOffsetX="0" width="126" enabled="true" horizontalCenter="0" bottom="0">
 				<e:skinName>
 				<e:Skin states="up,down,disabled">
 					<e:Image width="100%" height="100%" source="but_chaoshigoumai1_png" source.down="but_chaoshigoumai2_png" source.disabled="but_chaoshigoumai2_png"/>
@@ -47,14 +47,14 @@
 				</e:Skin>
 				</e:skinName>
 			</e:Button>
-			<e:Label text="-888888" x="44" y="14.5" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="left" height="30" size="14" fontFamily="wodeziti" bold="true" textColor="0xF4790C" stroke="2" strokeColor="0x565151" id="goumaijine1" touchEnabled="false"/>
-			<e:Image source="img_qian_png" x="14" y="17.5" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" id="qianicon1" touchEnabled="false"/>
+			<e:Label text="-888888" anchorOffsetX="0" width="89" verticalAlign="middle" textAlign="center" height="30" size="20" fontFamily="wodeziti" stroke="2" strokeColor="0x2c2a26" id="goumaijine1" touchEnabled="false" textColor="0xf97306" right="0" verticalCenter="0"/>
+			<e:Image source="img_qian_png" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" id="qianicon1" touchEnabled="false" left="10" verticalCenter="0"/>
 			</e:Group>
 		</e:Group>
-		<e:Group id="daojuzu2" x="102.5" y="486.5">
-			<e:Image id="daojutubiao2" source="img_anquanguanli_png" x="3" y="0" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
-			<e:Group id="goumaianniuzu2" x="0" y="108.5">
-			<e:Button id="but_goumai2" label="" x="0" y="0" anchorOffsetX="0" width="126" enabled="true">
+		<e:Group id="daojuzu2" x="68.97" y="509" width="181" height="192">
+			<e:Image id="daojutubiao2" source="img_anquanguanli_png" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="0" verticalCenter="0"/>
+			<e:Group id="goumaianniuzu2" horizontalCenter="0" bottom="0">
+			<e:Button id="but_goumai2" label="" anchorOffsetX="0" width="126" enabled="true" horizontalCenter="0" bottom="0">
 				<e:skinName>
 				<e:Skin states="up,down,disabled">
 					<e:Image width="100%" height="100%" source="but_chaoshigoumai1_png" source.down="but_chaoshigoumai2_png" source.disabled="but_chaoshigoumai2_png"/>
@@ -62,14 +62,14 @@
 				</e:Skin>
 				</e:skinName>
 			</e:Button>
-			<e:Label id="goumaijine2" text="-888888" x="44" y="14.5" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="left" height="30" size="14" fontFamily="wodeziti" bold="true" textColor="0xF4790C" stroke="2" strokeColor="0x565151" touchEnabled="false"/>
-			<e:Image id="qianicon2" source="img_qian_png" x="14" y="17.5" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" touchEnabled="false"/>
+			<e:Label id="goumaijine2" text="-888888" anchorOffsetX="0" width="91" verticalAlign="middle" textAlign="center" height="30" size="20" fontFamily="wodeziti" stroke="2" strokeColor="0x2c2a26" touchEnabled="false" textColor="0xf97306" right="0" verticalCenter="0"/>
+			<e:Image id="qianicon2" source="img_qian_png" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" touchEnabled="false" left="10" verticalCenter="0"/>
 			</e:Group>
 		</e:Group>
-		<e:Group x="305.19" y="486" id="daojuzu3">
-			<e:Image id="daojutubiao3" source="img_anquanguanli_png" x="3" y="0" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
-			<e:Group x="0" y="108.5" id="goumaianniuzu3">
-			<e:Button id="but_goumai3" label="" x="0" y="0" anchorOffsetX="0" width="126" enabled="true">
+		<e:Group x="285.5" y="509" id="daojuzu3" width="181" height="192">
+			<e:Image id="daojutubiao3" source="img_anquanguanli_png" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="0" verticalCenter="0"/>
+			<e:Group id="goumaianniuzu3" horizontalCenter="0" bottom="0">
+			<e:Button id="but_goumai3" label="" anchorOffsetX="0" width="126" enabled="true" horizontalCenter="0" bottom="0">
 				<e:skinName>
 				<e:Skin states="up,down,disabled">
 					<e:Image width="100%" height="100%" source="but_chaoshigoumai1_png" source.down="but_chaoshigoumai2_png" source.disabled="but_chaoshigoumai2_png"/>
@@ -77,14 +77,14 @@
 				</e:Skin>
 				</e:skinName>
 			</e:Button>
-			<e:Label text="-888888" x="44" y="14.5" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="left" height="30" size="14" fontFamily="wodeziti" bold="true" textColor="0xF4790C" stroke="2" strokeColor="0x565151" id="goumaijine3" touchEnabled="false"/>
-			<e:Image source="img_qian_png" x="14" y="17.5" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" id="qianicon3" touchEnabled="false"/>
+			<e:Label text="-888888" anchorOffsetX="0" width="89" verticalAlign="middle" textAlign="center" height="30" size="20" fontFamily="wodeziti" stroke="2" strokeColor="0x2c2a26" id="goumaijine3" touchEnabled="false" textColor="0xf97306" right="0" verticalCenter="0"/>
+			<e:Image source="img_qian_png" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" id="qianicon3" touchEnabled="false" left="10" verticalCenter="0"/>
 			</e:Group>
 		</e:Group>
-		<e:Group x="514.18" y="485.5" id="daojuzu4">
-			<e:Image id="daojutubiao4" source="img_anquanguanli_png" x="3" y="0" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
-			<e:Group x="0" y="108.5" id="goumaianniuzu4">
-			<e:Button id="but_goumai4" label="" x="0" y="0" anchorOffsetX="0" width="126" enabled="true">
+		<e:Group x="502.17" y="509" id="daojuzu4" width="181" height="192">
+			<e:Image id="daojutubiao4" source="img_anquanguanli_png" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="0" verticalCenter="0"/>
+			<e:Group id="goumaianniuzu4" horizontalCenter="0" bottom="0">
+			<e:Button id="but_goumai4" label="" anchorOffsetX="0" width="126" enabled="true" bottom="0" horizontalCenter="0">
 				<e:skinName>
 				<e:Skin states="up,down,disabled">
 					<e:Image width="100%" height="100%" source="but_chaoshigoumai1_png" source.down="but_chaoshigoumai2_png" source.disabled="but_chaoshigoumai2_png"/>
@@ -92,14 +92,14 @@
 				</e:Skin>
 				</e:skinName>
 			</e:Button>
-			<e:Label text="-888888" x="44" y="14.5" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="left" height="30" size="14" fontFamily="wodeziti" bold="true" textColor="0xF4790C" stroke="2" strokeColor="0x565151" id="goumaijine4" touchEnabled="false"/>
-			<e:Image source="img_qian_png" x="14" y="17.5" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" id="qianicon4" touchEnabled="false"/>
+			<e:Label text="-888888" anchorOffsetX="0" width="89" verticalAlign="middle" textAlign="center" height="30" size="20" fontFamily="wodeziti" stroke="2" strokeColor="0x2c2a26" id="goumaijine4" touchEnabled="false" textColor="0xf97306" right="0" verticalCenter="0"/>
+			<e:Image source="img_qian_png" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" id="qianicon4" touchEnabled="false" left="10" verticalCenter="0"/>
 			</e:Group>
 		</e:Group>
-		<e:Group id="daojuzu5" x="102.5" y="686.5">
-			<e:Image id="daojutubiao5" source="img_anquanguanli_png" x="3" y="0" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
-			<e:Group id="goumaianniuzu5" x="0" y="108.5">
-			<e:Button id="but_goumai5" label="" x="0" y="0" anchorOffsetX="0" width="126" enabled="true">
+		<e:Group id="daojuzu5" x="68.97" y="733" width="181" height="192">
+			<e:Image id="daojutubiao5" source="img_anquanguanli_png" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="0" verticalCenter="0"/>
+			<e:Group id="goumaianniuzu5" bottom="0" horizontalCenter="0">
+			<e:Button id="but_goumai5" label="" anchorOffsetX="0" width="126" enabled="true" horizontalCenter="0" bottom="0">
 				<e:skinName>
 					<e:Skin states="up,down,disabled">
 					<e:Image width="100%" height="100%" source="but_chaoshifenxiang1_png" source.down="but_chaoshifenxiang2_png" source.disabled="but_chaoshifenxiang2_png"/>
@@ -107,36 +107,44 @@
 					</e:Skin>
 				</e:skinName>
 			</e:Button>
-			<e:Label id="goumaijine5" text="抽奖" x="49" y="14.5" anchorOffsetX="0" width="54" verticalAlign="middle" textAlign="center" height="30" size="14" fontFamily="wodeziti" bold="true" textColor="0xF4790C" stroke="2" strokeColor="0x565151" touchEnabled="false"/>
+			<e:Label id="goumaijine5" text="抽奖" x="49" anchorOffsetX="0" width="69" verticalAlign="middle" textAlign="center" height="30" size="20" fontFamily="wodeziti" stroke="2" strokeColor="0x2c2a26" touchEnabled="false" textColor="0xf97306" verticalCenter="0"/>
 			</e:Group>
 		</e:Group>
-		<e:Group x="305.19" y="686" id="daojuzu6">
-			<e:Image id="daojutubiao6" source="img_anquanguanli_png" x="3" y="0" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
-			<e:Group x="0" y="108.5" id="goumaianniuzu6">
+		<e:Group x="286" y="733" id="daojuzu6" width="181" height="192">
+			<e:Image id="daojutubiao6" source="img_anquanguanli_png" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="0" verticalCenter="0"/>
+			<e:Group id="goumaianniuzu6" bottom="0" horizontalCenter="0">
 			<e:Button id="but_goumai6" label="" x="0" y="0" anchorOffsetX="0" width="126" enabled="true">
 				<e:skinName>
 					<e:Skin states="up,down,disabled">
-					<e:Image width="100%" height="100%" source="but_chaoshishipin1_png" source.down="but_chaoshishipin2_png" source.disabled="but_chaoshishipin2_png"/>
+					<e:Image width="100%" height="100%" source="but_chaoshifenxiang1_png" source.down="but_chaoshifenxiang2_png" source.disabled="but_chaoshifenxiang2_png"/>
 					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 					</e:Skin>
 				</e:skinName>
 			</e:Button>
-			<e:Label text="抽奖" x="44" y="14.5" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="center" height="30" size="14" fontFamily="wodeziti" bold="true" textColor="0xF4790C" stroke="2" strokeColor="0x565151" id="goumaijine6" touchEnabled="false"/>
+			<e:Label text="抽奖" x="44" anchorOffsetX="0" width="73" verticalAlign="middle" textAlign="center" height="30" size="20" fontFamily="wodeziti" stroke="2" strokeColor="0x2c2a26" id="goumaijine6" touchEnabled="false" textColor="0xf97306" verticalCenter="0"/>
 			</e:Group>
 		</e:Group>
-		<e:Group x="514.19" y="685.5" id="daojuzu7">
-			<e:Image id="daojutubiao7" source="img_anquanguanli_png" x="3" y="0" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
-			<e:Group x="0" y="108.5" id="goumaianniuzu7">
+		<e:Group x="502.17" y="733" id="daojuzu7" width="181" height="192">
+			<e:Image id="daojutubiao7" source="img_anquanguanli_png" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="0" verticalCenter="0"/>
+			<e:Group id="goumaianniuzu7" bottom="0" horizontalCenter="0">
 			<e:Button id="but_goumai7" label="" x="0" y="0" anchorOffsetX="0" width="126" enabled="true">
 				<e:skinName>
 					<e:Skin states="up,down,disabled">
-					<e:Image width="100%" height="100%" source="but_chaoshishipin1_png" source.down="but_chaoshishipin2_png" source.disabled="but_chaoshishipin2_png"/>
+					<e:Image width="100%" height="100%" source="but_chaoshifenxiang1_png" source.down="but_chaoshifenxiang2_png" source.disabled="but_chaoshifenxiang2_png"/>
 					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 					</e:Skin>
 				</e:skinName>
 			</e:Button>
-			<e:Label text="抽奖" x="44" y="14.5" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="center" height="30" size="14" fontFamily="wodeziti" bold="true" textColor="0xF4790C" stroke="2" strokeColor="0x565151" id="goumaijine7" touchEnabled="false"/>
+			<e:Label text="抽奖" x="44" anchorOffsetX="0" width="75" verticalAlign="middle" textAlign="center" height="30" size="20" fontFamily="wodeziti" stroke="2" strokeColor="0x2c2a26" id="goumaijine7" touchEnabled="false" textColor="0xf97306" verticalCenter="0"/>
 			</e:Group>
 		</e:Group>
+		<e:Button id="guanbijiemain" label="" x="654.36" y="195.87" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_guanbi2_png" source.down="but_guanbi1_png" source.disabled="but_guanbi1_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
 	</e:Group>
 </e:Skin>

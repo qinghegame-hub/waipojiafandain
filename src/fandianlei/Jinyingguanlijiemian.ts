@@ -1,5 +1,5 @@
 class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
-	public shuomingbut16:eui.Button;
+	public biaotitupian:eui.Image;
 	public jingyinguanlizu:eui.Group;
 	public img_heisezhezao:eui.Image;
 	public img_baobiaodiban:eui.Image;
@@ -42,6 +42,8 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 	public shuomingbut13:eui.Button;
 	public shuomingbut14:eui.Button;
 	public shuomingbut15:eui.Button;
+	public shuomingbut16:eui.Button;
+
 
 
 
@@ -78,9 +80,9 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 		this.fandiankoubeitext.text =  "" +Gerenshuxing.zzkoubeizhi;
 		this.shangcaisudutext.text =  "" +Gerenshuxing.zzchushishangcaisudu;
 		this.shihaojiangditext.text =  "" +Gerenshuxing.zzyuanliaoxiaohao;
-		this.lixianshouyitext.text = Math.floor(parseInt(Gerenshuxing.daerzixinxi[1]) / 20) + "/分钟";
-		this.waimaishouyitext.text = "24小时";
-		let yuangongbiao = RES.getRes("yuangongbiao_json");
+		this.lixianshouyitext.text = Math.floor(parseInt(Gerenshuxing.daerzixinxi[1]) / 100 + 1) * 60 + "/h";
+		this.waimaishouyitext.text = "24h";
+		let yuangongbiao = Gerenshuxing.yuangongbiao;
 		let xiaochaozengjia = 0;
 		let huoguozengjia = 0;
 		let xiaochizengjia = 0;
@@ -118,7 +120,7 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 		let meiqifei = 0;
 		let fadan = 0;
 		let fadanfei = 0;
-		let danjubiao = RES.getRes("danjubiao_json");
+		let danjubiao = Gerenshuxing.danjubiao;
 		for(var k = 0;k<Gerenshuxing.yongyoudanju.length;k ++){
 			for(var n = 0;n<danjubiao.length;n++){
 				if(Gerenshuxing.yongyoudanju[k] == danjubiao[n].id){
@@ -190,10 +192,12 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public dianjiguanbi(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Gameguanli.Kongzhitai().caipujiemian("jingying","guan");
 	}
 
 	public shuoming1(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "1"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -203,6 +207,7 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming2(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "2"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -212,6 +217,7 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming3(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "3"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -221,6 +227,7 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming4(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "4"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -230,6 +237,7 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming5(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "5"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -239,6 +247,7 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming6(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "6"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -248,6 +257,7 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming7(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "7"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -257,6 +267,7 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming8(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "8"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -266,6 +277,7 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming9(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "9"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -275,6 +287,7 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming10(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "10"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -284,6 +297,7 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming11(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "11"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -293,6 +307,7 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming12(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "12"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -302,6 +317,7 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming13(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "13"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -311,6 +327,7 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming14(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "14"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -320,6 +337,7 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming15(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "15"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -329,6 +347,7 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming16(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "16"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -338,6 +357,7 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming17(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "17"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -347,6 +367,7 @@ class Jinyingguanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming18(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "18"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);

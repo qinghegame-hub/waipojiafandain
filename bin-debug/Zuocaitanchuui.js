@@ -22,4 +22,3 @@ var Zuocaitanchuui = (function (_super) {
     return Zuocaitanchuui;
 }(eui.Component));
 __reflect(Zuocaitanchuui.prototype, "Zuocaitanchuui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Zuocaitanchuui.js.map

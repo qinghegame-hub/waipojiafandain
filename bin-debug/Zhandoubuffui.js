@@ -106,4 +106,3 @@ var Zhandoubuffui = (function (_super) {
     return Zhandoubuffui;
 }(eui.Component));
 __reflect(Zhandoubuffui.prototype, "Zhandoubuffui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Zhandoubuffui.js.map

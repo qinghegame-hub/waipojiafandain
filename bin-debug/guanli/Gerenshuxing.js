@@ -63,7 +63,7 @@ var Gerenshuxing = (function (_super) {
     };
     Gerenshuxing.yuangongshuxing = function () {
         //每次进来都要初始化该计算数据
-        var yuangongbiao = RES.getRes("yuangongbiao_json");
+        var yuangongbiao = Gerenshuxing.yuangongbiao;
         var yuangongjiasu = 0; //员工增加的上菜速度
         var yuangongjiaweisheng = 0; //员工增加的卫生值
         var yuangongjiaanbao = 0; //员工增加的安宝值
@@ -92,7 +92,7 @@ var Gerenshuxing = (function (_super) {
             }
         }
         //当前客容量计算
-        var jiajubiaobianli = RES.getRes("jiajubiao_json");
+        var jiajubiaobianli = Gerenshuxing.jiajubiao;
         for (var i = 0; i < jiajubiaobianli.length; i++) {
             if (jiajubiaobianli[i].id == Gerenshuxing.usexiaochao || jiajubiaobianli[i].id == Gerenshuxing.usehuoguo
                 || jiajubiaobianli[i].id == Gerenshuxing.usexiaochi || jiajubiaobianli[i].id == Gerenshuxing.usezaocan) {
@@ -105,7 +105,7 @@ var Gerenshuxing = (function (_super) {
             }
         }
         //当前客流量计算
-        var yinxiaobiao = RES.getRes("yinxiaobiao_json");
+        var yinxiaobiao = Gerenshuxing.yinxiaobiao;
         if (Gerenshuxing.shengyuchuandan > 0) {
             tuiguangkeliu += parseInt(yinxiaobiao[0].sellachievement);
         }
@@ -247,7 +247,7 @@ var Gerenshuxing = (function (_super) {
         var xianzaishijian6 = (new Date()).valueOf();
         if (parseInt(Gerenshuxing.lixianjiangli[0]) < parseInt(Gerenshuxing.lixianjiangli[1])) {
             if (xianzaishijian6 >= parseInt(Gerenshuxing.lixianjiangli[2])) {
-                var zengjialixian = Math.floor(parseInt(Gerenshuxing.daerzixinxi[1]));
+                var zengjialixian = Math.floor(parseInt(Gerenshuxing.daerzixinxi[1]) / 100) + 1;
                 var xiajieduanshijian1 = xianzaishijian6 + 60000;
                 var chaochushijian1 = xianzaishijian6 - parseInt(Gerenshuxing.lixianjiangli[2]);
                 chaochushijian1 = Math.floor(chaochushijian1 / 60000) + 1;
@@ -298,8 +298,12 @@ var Gerenshuxing = (function (_super) {
                 }
             }
         }
+        var xingzhishangxian = Gerenshuxing.kaixinzhi;
+        if (xingzhishangxian > 1000) {
+            xingzhishangxian = 1000;
+        }
         Gerenshuxing.gerenaixin = Gerenshuxing.xingfunaixin + Math.floor(Gerenshuxing.xingfunaixin * Gerenshuxing.jiankangzhi / 1000);
-        Gerenshuxing.gerenyizhi = Gerenshuxing.xingfuyizhi + Math.floor(Gerenshuxing.xingfuyizhi * Gerenshuxing.kaixinzhi / 1000);
+        Gerenshuxing.gerenyizhi = Gerenshuxing.xingfuyizhi + Math.floor(Gerenshuxing.xingfuyizhi * xingzhishangxian / 1000);
         Gerenshuxing.gerenxingzhi = Gerenshuxing.xingfuxingzhi;
         Gerenshuxing.gerenla = Gerenshuxing.xingfula + Gerenshuxing.tishengxingfula;
         Gerenshuxing.gerenma = Gerenshuxing.xingfuma + Gerenshuxing.tishengxingfuma;
@@ -308,6 +312,8 @@ var Gerenshuxing = (function (_super) {
         console.log(Gerenshuxing.gerenaixin, Gerenshuxing.xingfunaixin, Gerenshuxing.tishengxingfunaixin);
         //这里每次变更，应该告诉主界面刷新一次个人等级
     };
+    Gerenshuxing.gerencode = "undefined"; //个人登录code；
+    Gerenshuxing.shouci = "true"; //主要用于微信用户，记录是否首次登记;
     Gerenshuxing.jiankangzhi = 0; //个人属性：健康值
     Gerenshuxing.xingfuzhi = 0; //个人属性：幸福值
     Gerenshuxing.kaixinzhi = 0; //个人属性：开心值
@@ -337,6 +343,7 @@ var Gerenshuxing = (function (_super) {
     Gerenshuxing.chushishangcaisudu = 30000; //初始上菜速度
     Gerenshuxing.yuanliaoxiaohao = 0; //原材料消耗减少
     Gerenshuxing.weishengjilv = 0; //有清洁工时，每个清洁工控制的垃圾的产出几率
+    Gerenshuxing.mingzi = "罗英"; //个人名字;
     Gerenshuxing.touxiang = "https://wx.qlogo.cn/mmopen/vi_32/MF7PLicF44H0djnvbeGDWKKPu60fbrbLKfx8jATpsN9d6paWg0ictyCnY8uAqiaXPcfDLAI1q7IQGHI22ZQZAV4HQ/132"; //个人头像服务器;
     Gerenshuxing.daerzixinxi = []; //大儿子信息(亲和值，工作能力，当前进行学习，学习剩余时间，是否已领取回家奖励)
     Gerenshuxing.ererzixinxi = []; //二儿子信息(亲和值，工作能力，当前进行学习，学习剩余时间，是否已领取回家奖励)
@@ -361,6 +368,33 @@ var Gerenshuxing = (function (_super) {
     Gerenshuxing.jinengbiao = []; //从服务器获取技能表
     Gerenshuxing.gerendengjibiao = []; //从服务器获取个人等级表
     Gerenshuxing.guaiwubiao = []; //从服务器获取怪物表
+    Gerenshuxing.changshubiao = []; //从服务器获取常数表
+    //RES.getRes("changshubiao_json")
+    Gerenshuxing.jiedaobiao = []; //从服务器获取街道表
+    //RES.getRes("jiedaobiao_json");
+    Gerenshuxing.jiedaosuijibiao = []; //从服务器获取街道随机表
+    //RES.getRes("jiedaosuijibiao_json");
+    Gerenshuxing.jiatingchengyuanhudongbiao = []; //从服务器获取家庭成员互动表
+    //RES.getRes("chengyuanhudongbiao_json");
+    Gerenshuxing.danjubiao = []; //从服务器获取单据表
+    //RES.getRes("danjubiao_json")
+    Gerenshuxing.jiajubiao = []; //从服务器获取家具表
+    //RES.getRes("jiajubiao_json")
+    Gerenshuxing.jiatingchengyuan = []; //从服务器获取家庭成员表
+    //RES.getRes("jiatingchengyuanbiao_json")
+    Gerenshuxing.zhuozijiesuobiao = []; //从服务器获取桌子解锁表
+    //RES.getRes("lobbyzhuozi_json")
+    Gerenshuxing.meirirenwubiao = []; //从服务器获取每日任务表
+    //RES.getRes("meirirenwubiao_json")
+    Gerenshuxing.shipudengjibiao = []; //从服务器获取食谱等级表
+    //RES.getRes("shipulevel_json")
+    Gerenshuxing.shipubiao = []; //从服务器获取食谱表
+    //RES.getRes("shipubiao_json")
+    Gerenshuxing.teshushijianbiao = []; //从服务器获取特殊事件表
+    //RES.getRes("teshushijianbiao_json")
+    Gerenshuxing.yinxiaobiao = []; //从服务器获取营销表
+    //RES.getRes("yinxiaobiao_json")
+    Gerenshuxing.yuangongbiao = []; //从服务器获取员工表
     Gerenshuxing.xingfudengji = 1; //个人等级;
     Gerenshuxing.xingfunaixin = 0; //个人耐心值;
     Gerenshuxing.xingfuyizhi = 0; //个人意志值;
@@ -388,7 +422,15 @@ var Gerenshuxing = (function (_super) {
     Gerenshuxing.daojushiyongbiao = []; //从服务器获取道具使用表
     Gerenshuxing.jiajushangdianbiao = []; //从服务器获取家具商店表
     Gerenshuxing.gerenshuju = null; //从平台处取得的个人数据;
-    Gerenshuxing.fenxianglianjiedizhi = "https://www.123fp.cn/loading/img_beijingloading.png";
+    Gerenshuxing.fenxianglianjiedizhi = "https://www.qinghegame.com/loading/fenxiangtutu.png";
+    Gerenshuxing.weishengyidasao = true; //初始卫生是否已加载;
+    Gerenshuxing.guideuiyindao = -1; //当前新手引导步骤
+    Gerenshuxing.kaiqiguanggao = true; //是否开启视频广告
+    Gerenshuxing.meirirenwuone = [1, 1, 0, 0]; //每日任务1（任务id,需要完成个数，已完成个数，是否已领取）
+    Gerenshuxing.meirirenwutwo = [2, 1, 0, 0]; //每日任务2（任务id,需要完成个数，已完成个数，是否已领取）
+    Gerenshuxing.meirirenwutre = [3, 1, 0, 0]; //每日任务3（任务id,需要完成个数，已完成个数，是否已领取）
+    Gerenshuxing.meirirenwufor = [4, 1, 0, 0]; //每日任务4（任务id,需要完成个数，已完成个数，是否已领取）
+    Gerenshuxing.tiaozhanbeishu = [0, 1, 0]; //每日匹配奖励状态（剩余翻倍次数，当前翻倍倍数,排行榜奖励是否已领取）;
     Gerenshuxing.touxiangbaocunzhuangtai = false;
     Gerenshuxing.cailanzishu = 5; //个人才菜篮子数;
     Gerenshuxing.shuaxincishu = 2; //个人买菜刷新次数;
@@ -420,4 +462,3 @@ var Gerenshuxing = (function (_super) {
     return Gerenshuxing;
 }(egret.DisplayObjectContainer));
 __reflect(Gerenshuxing.prototype, "Gerenshuxing");
-//# sourceMappingURL=Gerenshuxing.js.map

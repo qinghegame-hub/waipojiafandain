@@ -3,24 +3,29 @@
 	<w:Config id="172274accee" ></w:Config>
 	<e:Group id="caipinshuxingzu" left="0" top="0" bottom="0" right="0">
 		<e:Image id="img_heisezhezao0" source="img_heisezhezao_png" alpha="0.5" left="0" top="0" bottom="0" right="0"/>
-		<e:Image id="img_tongyongpinghejiemianpng0" source="img_tongyongpinghejiemianpng_png" x="97" y="219" anchorOffsetX="0" width="556" anchorOffsetY="0" height="761"/>
-		<e:Label id="biaotiwenzi0" text="菜品属性" x="270" y="241" anchorOffsetX="0" width="210" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" textColor="0xF2780C" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED"/>
-		<e:Label id="nicheng0" text="菜名" x="351" y="353" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0xF2780C" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="24"/>
-		<e:Label id="nichengwenzi0" text="" x="421" y="353" anchorOffsetX="0" width="184" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="24" textColor="0x0BA1EF"/>
-		<e:Label id="cunhuo0" text="品质" x="351" y="399" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0xF2780C" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="24"/>
-		<e:Label id="cunhuoshijian0" text="" x="421" y="399" anchorOffsetX="0" width="184" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="24"/>
-		<e:Label id="xingfudengji0" text="消耗" x="351" y="449" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0xF2780C" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="24"/>
-		<e:Label id="xingfuzhi0" text="属性" x="144.5" y="517" anchorOffsetX="0" width="89" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0xF2780C" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="24"/>
-		<e:Label id="shuxingzhi0" text="精修效果" x="144.5" y="665.01" anchorOffsetX="0" width="113" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0xF2780C" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="24"/>
+		<e:Image id="img_tongyongpinghejiemianpng0" x="97" y="219" anchorOffsetX="0" width="556" anchorOffsetY="0" height="761" source="img_tanchubeijing_png"/>
+		<e:Image id="zhezaodikuang" source="img_tongyongzhezaodikuang_png" x="139" y="822" anchorOffsetY="0" height="105" anchorOffsetX="0" width="452"/>
+		<e:Image source="img_tongyongzhezaodikuang_png" x="140" y="554.01" anchorOffsetY="0" height="111" anchorOffsetX="0" width="452" id="zhezaodikuang0"/>
+		<e:Image source="img_tongyongzhezaodikuang_png" x="421" y="408" anchorOffsetY="0" height="29" anchorOffsetX="0" width="177" id="zhezaodikuang2"/>
+		<e:Image source="img_tongyongzhezaodikuang_png" x="419" y="455.5" anchorOffsetY="0" height="29" anchorOffsetX="0" width="177" id="zhezaodikuang3"/>
+		<e:Image source="img_tongyongzhezaodikuang_png" x="421" y="357" anchorOffsetY="0" height="29" anchorOffsetX="0" width="177" id="zhezaodikuang1"/>
+		<e:Label id="biaotiwenzi0" text="菜品属性" x="243" y="246" anchorOffsetX="0" width="239" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" bold="true" anchorOffsetY="0" height="52" stroke="4" strokeColor="0x2c2a26" textColor="0xf97306" size="30"/>
+		<e:Label id="nicheng0" text="菜名" x="351" y="353" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="24" textColor="0xf97306"/>
+		<e:Label id="nichengwenzi0" text="" x="421" y="353" anchorOffsetX="0" width="171" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="24" textColor="0x0BA1EF"/>
+		<e:Label id="cunhuo0" text="品质" x="351" y="399" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="24" textColor="0xf97306"/>
+		<e:Label id="cunhuoshijian0" text="" x="421" y="399" anchorOffsetX="0" width="173" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="24"/>
+		<e:Label id="xingfudengji0" text="消耗" x="351" y="449" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="24" textColor="0xf97306"/>
+		<e:Label id="xingfuzhi0" text="属性" x="144.5" y="517" anchorOffsetX="0" width="89" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="24" textColor="0xf97306"/>
+		<e:Label id="shuxingzhi0" text="精修效果" x="144.5" y="665.01" anchorOffsetX="0" width="113" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="24" textColor="0xf97306"/>
 		<e:Image id="laxijingtong0" source="img_laicon_png" x="176.5" y="562" anchorOffsetX="0" width="40" anchorOffsetY="0" height="40"/>
-		<e:Label id="laxizhi0" text="80(进修+10%)" x="238.5" y="559" anchorOffsetX="0" width="142" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="20"/>
+		<e:Label id="laxizhi0" text="80(进修+10%)" x="238.5" y="559" anchorOffsetX="0" width="142" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="20"/>
 		<e:Image id="maxijingtong0" x="387.5" y="562" anchorOffsetX="0" width="40" anchorOffsetY="0" height="40" source="img_maicon_png"/>
-		<e:Label id="maxizhi0" text="80(进修+10%)" x="450.5" y="561" anchorOffsetX="0" width="142" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="20"/>
+		<e:Label id="maxizhi0" text="80(进修+10%)" x="450.5" y="561" anchorOffsetX="0" width="142" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="20"/>
 		<e:Image id="suanxijingtong0" x="176.5" y="612" anchorOffsetX="0" width="40" anchorOffsetY="0" height="40" source="img_suanicon_png"/>
-		<e:Label id="suanxizhi0" text="80(进修+10%)" x="237.5" y="612" anchorOffsetX="0" width="142" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="20"/>
+		<e:Label id="suanxizhi0" text="80(进修+10%)" x="237.5" y="612" anchorOffsetX="0" width="142" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="20"/>
 		<e:Image id="tianxijingtong0" x="387.5" y="612" anchorOffsetX="0" width="40" anchorOffsetY="0" height="40" source="img_tianicon_png"/>
-		<e:Label id="tianxizhi0" text="80(进修+10%)" x="450.5" y="612" anchorOffsetX="0" width="142" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="20"/>
-		<e:Button id="guanbianniu0" label="" x="558.5" y="219" enabled="true">
+		<e:Label id="tianxizhi0" text="80(进修+10%)" x="450.5" y="612" anchorOffsetX="0" width="142" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="20"/>
+		<e:Button id="guanbianniu0" label="" x="563" y="241" enabled="true">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
 			<e:Image width="100%" height="100%" source="but_guanbi2_png" source.down="but_guanbi1_png" source.disabled="but_guanbi1_png"/>
@@ -34,11 +39,11 @@
 		<e:Image source="img_anquanguanli_png" x="338.5" y="714.99" width="70" height="70" id="jinengtu1"/>
 		<e:Image source="img_anquanguanli_png" x="431.5" y="714.99" width="70" height="70" id="jinengtu2"/>
 		<e:Image source="img_anquanguanli_png" x="523.5" y="714.99" width="70" height="70" id="jinengtu3"/>
-		<e:Label id="jinengtips" text="80(进修+10%)" x="154" y="830" anchorOffsetX="0" width="440.67" verticalAlign="top" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="84.67" stroke="2" strokeColor="0xF4EDED" size="20"/>
-		<e:Label id="jinengmingzi" text="80(进修+10%)" x="154" y="787.67" anchorOffsetX="0" width="435.34" verticalAlign="top" textAlign="left" fontFamily="wodeziti" bold="true" anchorOffsetY="0" height="30" stroke="2" strokeColor="0xF4EDED" size="20" textColor="0xf22e0c"/>
-		<e:Image id="cailiaotu" source="img_tiaoliaoicon_png" x="407.7" y="450" width="40" height="40"/>
-		<e:Image source="img_tiaoliaoicon_png" x="448.5" y="450" width="40" height="40" id="cailiaotu0"/>
-		<e:Image source="img_tiaoliaoicon_png" x="489.5" y="450" width="40" height="40" id="cailiaotu1"/>
-		<e:Image source="img_tiaoliaoicon_png" x="530.5" y="450" width="40" height="40" id="cailiaotu2"/>
+		<e:Label id="jinengtips" text="80(进修+10%)" x="154" y="830" anchorOffsetX="0" width="440.67" verticalAlign="top" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" anchorOffsetY="0" height="84.67" stroke="2" strokeColor="0x2c2a26" size="20"/>
+		<e:Label id="jinengmingzi" text="80(进修+10%)" x="154" y="788.67" anchorOffsetX="0" width="435.34" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" anchorOffsetY="0" height="30" stroke="2" strokeColor="0x2c2a26" size="20" textColor="0xf97306"/>
+		<e:Image id="cailiaotu" source="img_tiaoliaoicon_png" x="426.7" y="450" width="40" height="40"/>
+		<e:Image source="img_tiaoliaoicon_png" x="467.5" y="450" width="40" height="40" id="cailiaotu0"/>
+		<e:Image source="img_tiaoliaoicon_png" x="508.5" y="450" width="40" height="40" id="cailiaotu1"/>
+		<e:Image source="img_tiaoliaoicon_png" x="549.5" y="450" width="40" height="40" id="cailiaotu2"/>
 	</e:Group>
 </e:Skin>

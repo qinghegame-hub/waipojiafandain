@@ -23,10 +23,10 @@ var Jiatingchengyuandaojuui = (function (_super) {
     Jiatingchengyuandaojuui.prototype.guanbianniuguanbi = function () {
         var _this = this;
         this.guanbianniu.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+            Gamesound.Soundkongzhi().anniuyinxiao();
             _this.parent.removeChild(_this);
         }, this);
     };
     return Jiatingchengyuandaojuui;
 }(eui.Component));
 __reflect(Jiatingchengyuandaojuui.prototype, "Jiatingchengyuandaojuui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Jiatingchengyuandaojuui.js.map

@@ -35,6 +35,7 @@ var Gerenshuxingjiemian = (function (_super) {
         this.shuominganniu6.addEventListener(egret.TouchEvent.TOUCH_TAP, this.shuoming8, this);
     };
     Gerenshuxingjiemian.prototype.shuoming1 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         for (var i = 0; i < this.youxitishibiao.length; i++) {
             if (this.youxitishibiao[i].id == "19") {
                 this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -43,6 +44,7 @@ var Gerenshuxingjiemian = (function (_super) {
         }
     };
     Gerenshuxingjiemian.prototype.shuoming2 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         for (var i = 0; i < this.youxitishibiao.length; i++) {
             if (this.youxitishibiao[i].id == "20") {
                 this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -51,6 +53,7 @@ var Gerenshuxingjiemian = (function (_super) {
         }
     };
     Gerenshuxingjiemian.prototype.shuoming3 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         for (var i = 0; i < this.youxitishibiao.length; i++) {
             if (this.youxitishibiao[i].id == "21") {
                 this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -59,6 +62,7 @@ var Gerenshuxingjiemian = (function (_super) {
         }
     };
     Gerenshuxingjiemian.prototype.shuoming4 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         for (var i = 0; i < this.youxitishibiao.length; i++) {
             if (this.youxitishibiao[i].id == "22") {
                 this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -67,6 +71,7 @@ var Gerenshuxingjiemian = (function (_super) {
         }
     };
     Gerenshuxingjiemian.prototype.shuoming5 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         for (var i = 0; i < this.youxitishibiao.length; i++) {
             if (this.youxitishibiao[i].id == "23") {
                 this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -75,6 +80,7 @@ var Gerenshuxingjiemian = (function (_super) {
         }
     };
     Gerenshuxingjiemian.prototype.shuoming6 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         for (var i = 0; i < this.youxitishibiao.length; i++) {
             if (this.youxitishibiao[i].id == "24") {
                 this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -83,6 +89,7 @@ var Gerenshuxingjiemian = (function (_super) {
         }
     };
     Gerenshuxingjiemian.prototype.shuoming7 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         for (var i = 0; i < this.youxitishibiao.length; i++) {
             if (this.youxitishibiao[i].id == "25") {
                 this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -91,6 +98,7 @@ var Gerenshuxingjiemian = (function (_super) {
         }
     };
     Gerenshuxingjiemian.prototype.shuoming8 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         for (var i = 0; i < this.youxitishibiao.length; i++) {
             if (this.youxitishibiao[i].id == "26") {
                 this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -106,4 +114,3 @@ var Gerenshuxingjiemian = (function (_super) {
     return Gerenshuxingjiemian;
 }(eui.Component));
 __reflect(Gerenshuxingjiemian.prototype, "Gerenshuxingjiemian", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Gerenshuxingjiemian.js.map

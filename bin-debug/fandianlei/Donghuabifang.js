@@ -98,7 +98,12 @@ var Donghuabifang = (function (_super) {
         dragonBones.WorldClock.clock.timeScale = 1.3;
         this.chongfudingshi = new egret.Timer(1000, 0);
         //初始化怪物寻路AI
-        this.pvexunluai = Math.floor(Math.random() * 4);
+        if (Gerenshuxing.guideuiyindao == 16) {
+            this.pvexunluai = 0;
+        }
+        else {
+            this.pvexunluai = Math.floor(Math.random() * 4);
+        }
         //给显示对象添加缓动动画
         this.chongfudingshi.addEventListener(egret.TimerEvent.TIMER, this.bofangdonghuapve, this);
         this.chongfudingshi.start();
@@ -106,6 +111,7 @@ var Donghuabifang = (function (_super) {
         this.toudinggruop.but_pveqipaoanniu.addEventListener(egret.TouchEvent.TOUCH_TAP, this.pvezhandoumokuai, this);
     };
     Donghuabifang.prototype.pvezhandoumokuai = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         //角色消失时，移除相应的显示内容；
         this.yichujuesepve();
         /*
@@ -124,6 +130,11 @@ var Donghuabifang = (function (_super) {
         if (xiaoguai2shuiji == 0) {
             xiaoguai2shuiji = 1;
         }
+        if (Gerenshuxing.guideuiyindao == 16) {
+            zhuguaishuiji = 1;
+            xiaoguai1shuiji = 2;
+            xiaoguai2shuiji = 3;
+        }
         Gameguanli.Kongzhitai().zhandoujiemianui("kai", zhuguaishuiji + "", xiaoguai1shuiji + "", xiaoguai2shuiji + "");
     };
     Donghuabifang.prototype.bofangdonghuapve = function () {
@@ -131,9 +142,30 @@ var Donghuabifang = (function (_super) {
             switch (this.xingzoustep) {
                 case 0:
                     this.xingzoupindi(1);
-                    if (this.juesexianshi.x >= this.zongX * 0.96) {
-                        this.xingzoupindi(-1);
-                        this.xingzoustep = 1;
+                    if (Gerenshuxing.guideuiyindao == 16) {
+                        if (this.juesexianshi.x >= this.zongX * 0.56) {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(Xinshouyindao.yindaojiemian);
+                            this.chongfudingshi.stop();
+                            this.putongxinshouyindao = new Xinshouyindaodakuang();
+                            Gameguanli.Kongzhitai().zhujiemiandingbu.addChild(this.putongxinshouyindao);
+                            this.putongxinshouyindao.dakuangzu.x = Gameguanli.Kongzhitai().width / 2 - this.putongxinshouyindao.dakuangzu.width / 2;
+                            this.putongxinshouyindao.dakuangzu.y = Gameguanli.Kongzhitai().height / 2 - this.putongxinshouyindao.dakuangzu.height / 2;
+                            this.putongxinshouyindao.xiaokuangzu.alpha = 0;
+                            this.putongxinshouyindao.dakuangzu.alpha = 1;
+                            this.putongxinshouyindao.yindaoshouzhi.alpha = 0;
+                            this.putongxinshouyindao.xiaokuangzu.touchEnabled = false;
+                            this.putongxinshouyindao.dakuangzu.touchEnabled = false;
+                            this.putongxinshouyindao.yindaoshouzhi.touchEnabled = false;
+                            this.putongxinshouyindao.dakuangwenzi.text = "食客到达就餐区域，可以开始上菜了！！";
+                            this.putongxinshouyindao.heisezhezhaodianji.touchEnabled = true;
+                            this.putongxinshouyindao.heisezhezhaodianji.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yindao_1_1, this);
+                        }
+                    }
+                    else {
+                        if (this.juesexianshi.x >= this.zongX * 0.96) {
+                            this.xingzoupindi(-1);
+                            this.xingzoustep = 1;
+                        }
                     }
                     break;
                 case 1:
@@ -521,7 +553,7 @@ var Donghuabifang = (function (_super) {
         //创建头顶容器和显示内容
         this.toudinggruop = new Ttoudingqipaojiemian();
         //创建头顶容器显示内容
-        var xuqiucai = RES.getRes("shipubiao_json");
+        var xuqiucai = Gerenshuxing.shipubiao;
         for (var i = 0; i < xuqiucai.length; i++) {
             if (xuqiucai[i].id == num1) {
                 this.xuqiucaiid = xuqiucai[i];
@@ -541,9 +573,14 @@ var Donghuabifang = (function (_super) {
         //调用头顶文字显示
         this.doudingwenzixianshi();
         //查询卫生值，判断会不会需求菜品
-        var jianceweisheng = Math.floor(Math.random() * 120);
-        if (jianceweisheng <= Gerenshuxing.zzweishengzhi) {
+        if (Gerenshuxing.guideuiyindao == 15) {
             this.weishengtongguo = true;
+        }
+        else {
+            var jianceweisheng = Math.floor(Math.random() * 120);
+            if (jianceweisheng <= Gerenshuxing.zzweishengzhi) {
+                this.weishengtongguo = true;
+            }
         }
         //查询当前原料值，判断够不够
         if (Gerenshuxing.yongyouyuanliao >= parseInt(this.xuqiucaiid.foodMaterials) - Gerenshuxing.yuanliaoxiaohao) {
@@ -551,6 +588,44 @@ var Donghuabifang = (function (_super) {
         }
         //给头顶气泡增加点击效果
         this.toudinggruop.but_xuqiucaiqipao0.addEventListener(egret.TouchEvent.TOUCH_TAP, this.shoudongshangcai, this);
+    };
+    Donghuabifang.prototype.yindao_0_1 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
+        this.putongxinshouyindao.dakuangzu.alpha = 0;
+        this.putongxinshouyindao.xiaokuangzu.alpha = 1;
+        this.putongxinshouyindao.yindaoshouzhi.alpha = 1;
+        this.putongxinshouyindao.yindaoshouzhi.source = "img_yindaoxiashouzhi_png";
+        this.putongxinshouyindao.yindaoshouzhi.x = this.zongX * 0.56;
+        this.putongxinshouyindao.yindaoshouzhi.y = Gameguanli.Kongzhitai().height * 0.743 - this.putongxinshouyindao.yindaoshouzhi.height;
+        this.putongxinshouyindao.xiaokuangzu.x = this.putongxinshouyindao.yindaoshouzhi.x + this.putongxinshouyindao.yindaoshouzhi.width / 2 - this.putongxinshouyindao.xiaokuangzu.width / 2;
+        this.putongxinshouyindao.xiaokuangzu.y = this.putongxinshouyindao.yindaoshouzhi.y - this.putongxinshouyindao.yindaoshouzhi.height;
+        this.putongxinshouyindao.xiaokuanwenzi.text = "点击顾客头顶的绿色气泡，则可对其上菜。";
+        this.putongxinshouyindao.heisezhezhaodianji.touchEnabled = true;
+        this.putongxinshouyindao.heisezhezhaodianji.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yindao_0_2, this);
+    };
+    Donghuabifang.prototype.yindao_0_2 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
+        Gameguanli.Kongzhitai().zhujiemiandingbu.removeChild(this.putongxinshouyindao);
+        this.shoudongshangcai();
+    };
+    Donghuabifang.prototype.yindao_1_1 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
+        this.putongxinshouyindao.dakuangzu.alpha = 0;
+        this.putongxinshouyindao.xiaokuangzu.alpha = 1;
+        this.putongxinshouyindao.yindaoshouzhi.alpha = 1;
+        this.putongxinshouyindao.yindaoshouzhi.source = "img_yindaoxiashouzhi_png";
+        this.putongxinshouyindao.yindaoshouzhi.x = this.zongX * 0.56;
+        this.putongxinshouyindao.yindaoshouzhi.y = Gameguanli.Kongzhitai().height * 0.743 - this.putongxinshouyindao.yindaoshouzhi.height;
+        this.putongxinshouyindao.xiaokuangzu.x = this.putongxinshouyindao.yindaoshouzhi.x + this.putongxinshouyindao.yindaoshouzhi.width / 2 - this.putongxinshouyindao.xiaokuangzu.width / 2;
+        this.putongxinshouyindao.xiaokuangzu.y = this.putongxinshouyindao.yindaoshouzhi.y - this.putongxinshouyindao.yindaoshouzhi.height;
+        this.putongxinshouyindao.xiaokuanwenzi.text = "点击顾客头顶的金色气泡，则可对其上菜。";
+        this.putongxinshouyindao.heisezhezhaodianji.touchEnabled = true;
+        this.putongxinshouyindao.heisezhezhaodianji.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yindao_1_2, this);
+    };
+    Donghuabifang.prototype.yindao_1_2 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
+        Gameguanli.Kongzhitai().zhujiemiandingbu.removeChild(this.putongxinshouyindao);
+        this.pvezhandoumokuai();
     };
     Donghuabifang.prototype.bofangdonghua = function () {
         if (this.di1zuocai == false) {
@@ -563,32 +638,52 @@ var Donghuabifang = (function (_super) {
                 case 0:
                     this.xingzoupindi(1);
                     if (this.juesexianshi.x >= this.zongX * 0.56 && this.di1zuocai == false) {
-                        if (this.weishengtongguo == true) {
-                            if (this.yuanliaozugou == true) {
-                                this.toudinggruop.but_xuqiucaiqipao0.enabled = true;
-                                var jilvpeizhi1 = Math.floor(Math.random() * 10000);
-                                if (jilvpeizhi1 <= Gerenshuxing.zzchushishangcaisudu && this.shoudong == false) {
-                                    this.di1zuocai = true;
-                                    this.tdWenzi = 1;
-                                    this.xingzoustep = 1;
-                                    this.toudinggruop.xianshitupian0.source = "img_xiaolian_png";
+                        if (Gerenshuxing.guideuiyindao == 15) {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(Xinshouyindao.yindaojiemian);
+                            this.toudinggruop.but_xuqiucaiqipao0.enabled = true;
+                            this.chongfudingshi.stop();
+                            this.putongxinshouyindao = new Xinshouyindaodakuang();
+                            Gameguanli.Kongzhitai().zhujiemiandingbu.addChild(this.putongxinshouyindao);
+                            this.putongxinshouyindao.dakuangzu.x = Gameguanli.Kongzhitai().width / 2 - this.putongxinshouyindao.dakuangzu.width / 2;
+                            this.putongxinshouyindao.dakuangzu.y = Gameguanli.Kongzhitai().height / 2 - this.putongxinshouyindao.dakuangzu.height / 2;
+                            this.putongxinshouyindao.xiaokuangzu.alpha = 0;
+                            this.putongxinshouyindao.dakuangzu.alpha = 1;
+                            this.putongxinshouyindao.yindaoshouzhi.alpha = 0;
+                            this.putongxinshouyindao.xiaokuangzu.touchEnabled = false;
+                            this.putongxinshouyindao.dakuangzu.touchEnabled = false;
+                            this.putongxinshouyindao.yindaoshouzhi.touchEnabled = false;
+                            this.putongxinshouyindao.dakuangwenzi.text = "食客到达就餐区域，可以开始上菜了！！";
+                            this.putongxinshouyindao.heisezhezhaodianji.touchEnabled = true;
+                            this.putongxinshouyindao.heisezhezhaodianji.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yindao_0_1, this);
+                        }
+                        else {
+                            if (this.weishengtongguo == true) {
+                                if (this.yuanliaozugou == true) {
+                                    this.toudinggruop.but_xuqiucaiqipao0.enabled = true;
+                                    var jilvpeizhi1 = Math.floor(Math.random() * 10000);
+                                    if (jilvpeizhi1 <= Gerenshuxing.zzchushishangcaisudu && this.shoudong == false) {
+                                        this.di1zuocai = true;
+                                        this.tdWenzi = 1;
+                                        this.xingzoustep = 1;
+                                        this.toudinggruop.xianshitupian0.source = "img_xiaolian_png";
+                                        this.toudinggruop.but_xuqiucaiqipao0.enabled = false;
+                                        this.dingshiqistop();
+                                        this.kouchuyuanliao();
+                                    }
+                                }
+                                else {
+                                    this.tdWenzi = 4;
+                                    this.toudinggruop.xianshitupian0.source = "img_fennulian_png";
                                     this.toudinggruop.but_xuqiucaiqipao0.enabled = false;
-                                    this.dingshiqistop();
-                                    this.kouchuyuanliao();
                                 }
                             }
                             else {
-                                this.tdWenzi = 4;
-                                this.toudinggruop.xianshitupian0.source = "img_fennulian_png";
+                                this.tdWenzi = 3;
+                                this.xingzoustep = 1;
                                 this.toudinggruop.but_xuqiucaiqipao0.enabled = false;
+                                this.toudinggruop.xianshitupian0.source = "img_fennulian_png";
+                                this.dingshiqistop();
                             }
-                        }
-                        else {
-                            this.tdWenzi = 3;
-                            this.xingzoustep = 1;
-                            this.toudinggruop.but_xuqiucaiqipao0.enabled = false;
-                            this.toudinggruop.xianshitupian0.source = "img_fennulian_png";
-                            this.dingshiqistop();
                         }
                     }
                     if (this.juesexianshi.x >= this.zongX * 0.96) {
@@ -1282,7 +1377,7 @@ var Donghuabifang = (function (_super) {
             }
         }
         var jilvshuzi1 = Math.floor(Math.random() * 10);
-        if (jilvshuzi1 <= 9) {
+        if (jilvshuzi1 <= 5) {
             var gukebiao1 = RES.getRes("gukehanhuabiao_json");
             var mingzi1 = void 0;
             var neirong1 = void 0;
@@ -1303,7 +1398,7 @@ var Donghuabifang = (function (_super) {
     };
     Donghuabifang.prototype.kehubumanyi = function () {
         var jilvshuzi = Math.floor(Math.random() * 10);
-        if (jilvshuzi <= 9) {
+        if (jilvshuzi <= 5) {
             var gukebiao = RES.getRes("gukehanhuabiao_json");
             var mingzi = void 0;
             var neirong = void 0;
@@ -1391,6 +1486,7 @@ var Donghuabifang = (function (_super) {
         }
     };
     Donghuabifang.prototype.shoudongshangcai = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jiatingzhi > 0) {
             Weblianjie.fasongshuju("code:037", "{" + '"kouchushu"' + ":" + "1" + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
             var kouchudonghua_1 = new Cailiaoxiaohao();
@@ -1474,4 +1570,3 @@ var Donghuabifang = (function (_super) {
     return Donghuabifang;
 }(egret.DisplayObjectContainer));
 __reflect(Donghuabifang.prototype, "Donghuabifang");
-//# sourceMappingURL=Donghuabifang.js.map

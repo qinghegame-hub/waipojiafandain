@@ -47,6 +47,19 @@ var Dajiejiemian = (function (_super) {
     __extends(Dajiejiemian, _super);
     function Dajiejiemian() {
         var _this = _super.call(this) || this;
+        _this.sanrenjinzuzu = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; //散人逛街入驻组
+        _this.sanrenweizhi = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; //散人当前位置
+        _this.sanrendianshu = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; //散人当前掷出点数
+        _this.sanren1xinxi = undefined;
+        _this.sanren2xinxi = undefined;
+        _this.sanren3xinxi = undefined;
+        _this.sanren4xinxi = undefined;
+        _this.sanren5xinxi = undefined;
+        _this.sanren6xinxi = undefined;
+        _this.sanren7xinxi = undefined;
+        _this.sanren8xinxi = undefined;
+        _this.sanren9xinxi = undefined;
+        _this.sanren10xinxi = undefined;
         _this.dangqianbushu = 1; //当前所处的台阶步数;
         _this.dangqiansaizi = 1; //当前筛子抛出的点数;
         _this.dangqianshengyucishu = 0; //当前剩余的筛子次数;
@@ -80,11 +93,45 @@ var Dajiejiemian = (function (_super) {
     };
     Dajiejiemian.prototype.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
-        this.chushihua();
+        //		this.chushihua();
+    };
+    Dajiejiemian.prototype.yindao_0_1 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
+        this.dajiexinshouyindao.dakuangzu.alpha = 0;
+        this.dajiexinshouyindao.xiaokuangzu.alpha = 1;
+        this.dajiexinshouyindao.yindaoshouzhi.alpha = 1;
+        this.dajiexinshouyindao.yindaoshouzhi.source = "img_yindaoxiashouzhi_png";
+        this.dajiexinshouyindao.yindaoshouzhi.x = Gameguanli.Kongzhitai().width * 0.512 - this.dajiexinshouyindao.yindaoshouzhi.width / 2;
+        this.dajiexinshouyindao.yindaoshouzhi.y = Gameguanli.Kongzhitai().height * 0.663 - this.dajiexinshouyindao.yindaoshouzhi.height;
+        this.dajiexinshouyindao.xiaokuangzu.x = this.dajiexinshouyindao.yindaoshouzhi.x - this.dajiexinshouyindao.xiaokuangzu.width / 2;
+        this.dajiexinshouyindao.xiaokuangzu.y = this.dajiexinshouyindao.yindaoshouzhi.y - this.dajiexinshouyindao.yindaoshouzhi.height;
+        this.dajiexinshouyindao.xiaokuanwenzi.text = "点击“骰子”，随机前往街道某处。";
+        this.dajiexinshouyindao.heisezhezhaodianji.touchEnabled = true;
+        this.dajiexinshouyindao.heisezhezhaodianji.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yindao_0_2, this);
+    };
+    Dajiejiemian.prototype.yindao_0_2 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
+        this.removeChild(this.dajiexinshouyindao);
     };
     Dajiejiemian.prototype.chushihua = function () {
-        this.jiedaobiao = RES.getRes("jiedaobiao_json");
-        this.jiedaosuijibiao = RES.getRes("jiedaosuijibiao_json");
+        if (Gerenshuxing.guideuiyindao == 21) {
+            Weblianjie.fasongshuju("code:158", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "," + '"buzou"' + ":" + '"22"' + "}");
+            this.dajiexinshouyindao = new Xinshouyindaodakuang();
+            this.addChild(this.dajiexinshouyindao);
+            this.dajiexinshouyindao.dakuangzu.x = Gameguanli.Kongzhitai().width / 2 - this.dajiexinshouyindao.dakuangzu.width / 2;
+            this.dajiexinshouyindao.dakuangzu.y = Gameguanli.Kongzhitai().height / 2 - this.dajiexinshouyindao.dakuangzu.height / 2;
+            this.dajiexinshouyindao.xiaokuangzu.alpha = 0;
+            this.dajiexinshouyindao.dakuangzu.alpha = 1;
+            this.dajiexinshouyindao.yindaoshouzhi.alpha = 0;
+            this.dajiexinshouyindao.xiaokuangzu.touchEnabled = false;
+            this.dajiexinshouyindao.dakuangzu.touchEnabled = false;
+            this.dajiexinshouyindao.yindaoshouzhi.touchEnabled = false;
+            this.dajiexinshouyindao.dakuangwenzi.text = "这里是我们街道，每天都会发生各式各样的事情，没事常来街道转转总是好的！";
+            this.dajiexinshouyindao.heisezhezhaodianji.touchEnabled = true;
+            this.dajiexinshouyindao.heisezhezhaodianji.addEventListener(egret.TouchEvent.TOUCH_TAP, this.yindao_0_1, this);
+        }
+        this.jiedaobiao = Gerenshuxing.jiedaobiao;
+        this.jiedaosuijibiao = Gerenshuxing.jiedaosuijibiao;
         this.kaishianniuzu.alpha = 1;
         this.but_shaizi.enabled = true;
         this.but_shaizi.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjisaizi, this);
@@ -99,6 +146,2709 @@ var Dajiejiemian = (function (_super) {
         初始化街道特殊事件
         */
         this.jiedaoteshushijian();
+        /*
+        散人行动和补充初始化
+        */
+        this.sanrenjinzuzu = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; //散人逛街入驻组
+        this.sanrenweizhi = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; //散人当前位置
+        this.sanrendianshu = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; //散人当前掷出点数
+        this.sanren1xinxi = undefined;
+        this.sanren2xinxi = undefined;
+        this.sanren3xinxi = undefined;
+        this.sanren4xinxi = undefined;
+        this.sanren5xinxi = undefined;
+        this.sanren6xinxi = undefined;
+        this.sanren7xinxi = undefined;
+        this.sanren8xinxi = undefined;
+        this.sanren9xinxi = undefined;
+        this.sanren10xinxi = undefined;
+        /*
+        散人的显示初始化
+        */
+        if (this.sanrenjinzuzu[0] == 0) {
+            this.sanrenzu.alpha = 0;
+        }
+        if (this.sanrenjinzuzu[1] == 0) {
+            this.sanrenzu0.alpha = 0;
+        }
+        if (this.sanrenjinzuzu[2] == 0) {
+            this.sanrenzu1.alpha = 0;
+        }
+        if (this.sanrenjinzuzu[3] == 0) {
+            this.sanrenzu2.alpha = 0;
+        }
+        if (this.sanrenjinzuzu[4] == 0) {
+            this.sanrenzu3.alpha = 0;
+        }
+        if (this.sanrenjinzuzu[5] == 0) {
+            this.sanrenzu4.alpha = 0;
+        }
+        if (this.sanrenjinzuzu[6] == 0) {
+            this.sanrenzu5.alpha = 0;
+        }
+        if (this.sanrenjinzuzu[7] == 0) {
+            this.sanrenzu6.alpha = 0;
+        }
+        if (this.sanrenjinzuzu[8] == 0) {
+            this.sanrenzu7.alpha = 0;
+        }
+        if (this.sanrenjinzuzu[9] == 0) {
+            this.sanrenzu8.alpha = 0;
+        }
+        /*
+        开启定时器，补充逛街散人
+        */
+        this.sanrenbuchongdingshi();
+        /*
+        开启定时器，进行散人行走
+        */
+        this.sanrenxingzoudingshi();
+    };
+    Dajiejiemian.prototype.sanrenbuchongdingshi = function () {
+        if (this.parent) {
+            var suijishijian = Math.floor(Math.random() * 10000) + 5000;
+            this.sanrenbuchongdingshiqi = new egret.Timer(suijishijian, 1);
+            this.sanrenbuchongdingshiqi.addEventListener(egret.TimerEvent.TIMER, this.kaishibuchongsanren, this);
+            this.sanrenbuchongdingshiqi.start();
+        }
+        else {
+            this.sanrenbuchongdingshiqi = null;
+        }
+    };
+    Dajiejiemian.prototype.kaishibuchongsanren = function () {
+        if (this.parent) {
+            if (this.sanrenjinzuzu[0] == 0 || this.sanrenjinzuzu[1] == 0 || this.sanrenjinzuzu[2] == 0
+                || this.sanrenjinzuzu[3] == 0 || this.sanrenjinzuzu[4] == 0 || this.sanrenjinzuzu[5] == 0
+                || this.sanrenjinzuzu[6] == 0 || this.sanrenjinzuzu[7] == 0 || this.sanrenjinzuzu[8] == 0
+                || this.sanrenjinzuzu[9] == 0) {
+                Weblianjie.fasongshuju("code:170", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
+            }
+            /*
+            继续开始定时补充人
+            */
+            this.sanrenbuchongdingshi();
+        }
+    };
+    Dajiejiemian.prototype.buchongsanrenzhanwei = function (sanrenxinxi) {
+        if (this.parent) {
+            if (this.sanrenjinzuzu[0] == 0) {
+                this.sanren1xinxi = sanrenxinxi;
+                this.sanrenjinzuzu[0] = 1;
+                this.sanrenzu.alpha = 1;
+                this.sanren1touxiang(this.sanren1xinxi.touxiang);
+                var suijiweizhi = Math.floor(Math.random() * 6) + 1;
+                this.sanrenweizhi[0] = suijiweizhi;
+                this.sanrenweizhichushihua(0);
+            }
+            else if (this.sanrenjinzuzu[1] == 0) {
+                this.sanren2xinxi = sanrenxinxi;
+                this.sanrenjinzuzu[1] = 1;
+                this.sanrenzu0.alpha = 1;
+                this.sanren2touxiang(this.sanren2xinxi.touxiang);
+                var suijiweizhi = Math.floor(Math.random() * 6) + 1;
+                this.sanrenweizhi[1] = suijiweizhi;
+                this.sanrenweizhichushihua(1);
+            }
+            else if (this.sanrenjinzuzu[2] == 0) {
+                this.sanren3xinxi = sanrenxinxi;
+                this.sanrenjinzuzu[2] = 1;
+                this.sanrenzu1.alpha = 1;
+                this.sanren3touxiang(this.sanren3xinxi.touxiang);
+                var suijiweizhi = Math.floor(Math.random() * 6) + 1;
+                this.sanrenweizhi[2] = suijiweizhi;
+                this.sanrenweizhichushihua(2);
+            }
+            else if (this.sanrenjinzuzu[3] == 0) {
+                this.sanren4xinxi = sanrenxinxi;
+                this.sanrenjinzuzu[3] = 1;
+                this.sanrenzu2.alpha = 1;
+                this.sanren4touxiang(this.sanren4xinxi.touxiang);
+                var suijiweizhi = Math.floor(Math.random() * 6) + 1;
+                this.sanrenweizhi[3] = suijiweizhi;
+                this.sanrenweizhichushihua(3);
+            }
+            else if (this.sanrenjinzuzu[4] == 0) {
+                this.sanren5xinxi = sanrenxinxi;
+                this.sanrenjinzuzu[4] = 1;
+                this.sanrenzu3.alpha = 1;
+                this.sanren5touxiang(this.sanren5xinxi.touxiang);
+                var suijiweizhi = Math.floor(Math.random() * 6) + 1;
+                this.sanrenweizhi[4] = suijiweizhi;
+                this.sanrenweizhichushihua(4);
+            }
+            else if (this.sanrenjinzuzu[5] == 0) {
+                this.sanren6xinxi = sanrenxinxi;
+                this.sanrenjinzuzu[5] = 1;
+                this.sanrenzu4.alpha = 1;
+                this.sanren6touxiang(this.sanren6xinxi.touxiang);
+                var suijiweizhi = Math.floor(Math.random() * 6) + 1;
+                this.sanrenweizhi[5] = suijiweizhi;
+                this.sanrenweizhichushihua(5);
+            }
+            else if (this.sanrenjinzuzu[6] == 0) {
+                this.sanren7xinxi = sanrenxinxi;
+                this.sanrenjinzuzu[6] = 1;
+                this.sanrenzu5.alpha = 1;
+                this.sanren7touxiang(this.sanren7xinxi.touxiang);
+                var suijiweizhi = Math.floor(Math.random() * 6) + 1;
+                this.sanrenweizhi[6] = suijiweizhi;
+                this.sanrenweizhichushihua(6);
+            }
+            else if (this.sanrenjinzuzu[7] == 0) {
+                this.sanren8xinxi = sanrenxinxi;
+                this.sanrenjinzuzu[7] = 1;
+                this.sanrenzu6.alpha = 1;
+                this.sanren8touxiang(this.sanren8xinxi.touxiang);
+                var suijiweizhi = Math.floor(Math.random() * 6) + 1;
+                this.sanrenweizhi[7] = suijiweizhi;
+                this.sanrenweizhichushihua(7);
+            }
+            else if (this.sanrenjinzuzu[8] == 0) {
+                this.sanren9xinxi = sanrenxinxi;
+                this.sanrenjinzuzu[8] = 1;
+                this.sanrenzu7.alpha = 1;
+                this.sanren9touxiang(this.sanren9xinxi.touxiang);
+                var suijiweizhi = Math.floor(Math.random() * 6) + 1;
+                this.sanrenweizhi[8] = suijiweizhi;
+                this.sanrenweizhichushihua(8);
+            }
+            else if (this.sanrenjinzuzu[9] == 0) {
+                this.sanren10xinxi = sanrenxinxi;
+                this.sanrenjinzuzu[9] = 1;
+                this.sanrenzu8.alpha = 1;
+                this.sanren10touxiang(this.sanren10xinxi.touxiang);
+                var suijiweizhi = Math.floor(Math.random() * 6) + 1;
+                this.sanrenweizhi[9] = suijiweizhi;
+                this.sanrenweizhichushihua(9);
+            }
+        }
+    };
+    Dajiejiemian.prototype.sanrenweizhichushihua = function (duixiang) {
+        if (duixiang == 0) {
+            var sanrenX = this.sanrenX(this.sanrenweizhi[0]);
+            var sanrenY = this.sanrenY(this.sanrenweizhi[0]);
+            this.sanrenzu.x = sanrenX;
+            this.sanrenzu.y = sanrenY;
+        }
+        else if (duixiang == 1) {
+            var sanrenX = this.sanrenX(this.sanrenweizhi[1]);
+            var sanrenY = this.sanrenY(this.sanrenweizhi[1]);
+            this.sanrenzu0.x = sanrenX;
+            this.sanrenzu0.y = sanrenY;
+        }
+        else if (duixiang == 2) {
+            var sanrenX = this.sanrenX(this.sanrenweizhi[2]);
+            var sanrenY = this.sanrenY(this.sanrenweizhi[2]);
+            this.sanrenzu1.x = sanrenX;
+            this.sanrenzu1.y = sanrenY;
+        }
+        else if (duixiang == 3) {
+            var sanrenX = this.sanrenX(this.sanrenweizhi[3]);
+            var sanrenY = this.sanrenY(this.sanrenweizhi[3]);
+            this.sanrenzu2.x = sanrenX;
+            this.sanrenzu2.y = sanrenY;
+        }
+        else if (duixiang == 4) {
+            var sanrenX = this.sanrenX(this.sanrenweizhi[4]);
+            var sanrenY = this.sanrenY(this.sanrenweizhi[4]);
+            this.sanrenzu3.x = sanrenX;
+            this.sanrenzu3.y = sanrenY;
+        }
+        else if (duixiang == 5) {
+            var sanrenX = this.sanrenX(this.sanrenweizhi[5]);
+            var sanrenY = this.sanrenY(this.sanrenweizhi[5]);
+            this.sanrenzu4.x = sanrenX;
+            this.sanrenzu4.y = sanrenY;
+        }
+        else if (duixiang == 6) {
+            var sanrenX = this.sanrenX(this.sanrenweizhi[6]);
+            var sanrenY = this.sanrenY(this.sanrenweizhi[6]);
+            this.sanrenzu5.x = sanrenX;
+            this.sanrenzu5.y = sanrenY;
+        }
+        else if (duixiang == 7) {
+            var sanrenX = this.sanrenX(this.sanrenweizhi[7]);
+            var sanrenY = this.sanrenY(this.sanrenweizhi[7]);
+            this.sanrenzu6.x = sanrenX;
+            this.sanrenzu6.y = sanrenY;
+        }
+        else if (duixiang == 8) {
+            var sanrenX = this.sanrenX(this.sanrenweizhi[8]);
+            var sanrenY = this.sanrenY(this.sanrenweizhi[8]);
+            this.sanrenzu7.x = sanrenX;
+            this.sanrenzu7.y = sanrenY;
+        }
+        else if (duixiang == 9) {
+            var sanrenX = this.sanrenX(this.sanrenweizhi[9]);
+            var sanrenY = this.sanrenY(this.sanrenweizhi[9]);
+            this.sanrenzu8.x = sanrenX;
+            this.sanrenzu8.y = sanrenY;
+        }
+    };
+    Dajiejiemian.prototype.sanrenX = function (weizhi) {
+        var zuizhongX = this.taijie0.x;
+        switch (weizhi) {
+            case 0:
+                zuizhongX = this.taijie0.x;
+                return zuizhongX;
+            case 1:
+                zuizhongX = this.taijie1.x;
+                return zuizhongX;
+            case 2:
+                zuizhongX = this.taijie2.x;
+                return zuizhongX;
+            case 3:
+                zuizhongX = this.taijie3.x;
+                return zuizhongX;
+            case 4:
+                zuizhongX = this.taijie4.x;
+                return zuizhongX;
+            case 5:
+                zuizhongX = this.taijie5.x;
+                return zuizhongX;
+        }
+    };
+    Dajiejiemian.prototype.sanrenY = function (weizhi) {
+        var zuizhongY = this.taijie0.y;
+        switch (weizhi) {
+            case 0:
+                zuizhongY = this.taijie0.y;
+                return zuizhongY;
+            case 1:
+                zuizhongY = this.taijie1.y;
+                return zuizhongY;
+            case 2:
+                zuizhongY = this.taijie2.y;
+                return zuizhongY;
+            case 3:
+                zuizhongY = this.taijie3.y;
+                return zuizhongY;
+            case 4:
+                zuizhongY = this.taijie4.y;
+                return zuizhongY;
+            case 5:
+                zuizhongY = this.taijie5.y;
+                return zuizhongY;
+        }
+    };
+    /*
+    散人行走定时
+    */
+    Dajiejiemian.prototype.sanrenxingzoudingshi = function () {
+        if (this.parent) {
+            var suijishijian = Math.floor(Math.random() * 1000) + 7000;
+            this.sanrenxingzoudingshiqi = new egret.Timer(suijishijian, 1);
+            this.sanrenxingzoudingshiqi.addEventListener(egret.TimerEvent.TIMER, this.kaishisanrenxingzou, this);
+            this.sanrenxingzoudingshiqi.start();
+        }
+        else {
+            this.sanrenxingzoudingshiqi = null;
+        }
+    };
+    Dajiejiemian.prototype.kaishisanrenxingzou = function () {
+        if (this.parent) {
+            if (this.sanrenjinzuzu[0] == 1) {
+                /*
+                一定几率删除散人
+                */
+                var shanchushanren = Math.floor(Math.random() * 100);
+                if (shanchushanren > 90) {
+                    this.sanrenjinzuzu[0] = 0;
+                    this.sanrenweizhi[0] = 0;
+                    this.sanrendianshu[0] = 0;
+                    this.sanrenzu.alpha = 0;
+                }
+                else {
+                    /*
+                    散人投掷塞子
+                    */
+                    var xingzoujilv = Math.floor(Math.random() * 100);
+                    if (xingzoujilv > 50) {
+                        var sanrensaizi = Math.floor(Math.random() * 6) + 1;
+                        this.sanrendianshu[0] = sanrensaizi;
+                        this.sanrenxingzou_1();
+                    }
+                }
+            }
+            if (this.sanrenjinzuzu[1] == 1) {
+                /*
+                一定几率删除散人
+                */
+                var shanchushanren = Math.floor(Math.random() * 100);
+                if (shanchushanren > 90) {
+                    this.sanrenjinzuzu[1] = 0;
+                    this.sanrenweizhi[1] = 0;
+                    this.sanrendianshu[1] = 0;
+                    this.sanrenzu0.alpha = 0;
+                }
+                else {
+                    /*
+                    散人投掷塞子
+                    */
+                    var xingzoujilv = Math.floor(Math.random() * 100);
+                    if (xingzoujilv > 50) {
+                        var sanrensaizi = Math.floor(Math.random() * 6) + 1;
+                        this.sanrendianshu[1] = sanrensaizi;
+                        this.sanrenxingzou_2();
+                    }
+                }
+            }
+            if (this.sanrenjinzuzu[2] == 1) {
+                /*
+                一定几率删除散人
+                */
+                var shanchushanren = Math.floor(Math.random() * 100);
+                if (shanchushanren > 90) {
+                    this.sanrenjinzuzu[2] = 0;
+                    this.sanrenweizhi[2] = 0;
+                    this.sanrendianshu[2] = 0;
+                    this.sanrenzu1.alpha = 0;
+                }
+                else {
+                    /*
+                    散人投掷塞子
+                    */
+                    var xingzoujilv = Math.floor(Math.random() * 100);
+                    if (xingzoujilv > 50) {
+                        var sanrensaizi = Math.floor(Math.random() * 6) + 1;
+                        this.sanrendianshu[2] = sanrensaizi;
+                        this.sanrenxingzou_3();
+                    }
+                }
+            }
+            if (this.sanrenjinzuzu[3] == 1) {
+                /*
+                一定几率删除散人
+                */
+                var shanchushanren = Math.floor(Math.random() * 100);
+                if (shanchushanren > 90) {
+                    this.sanrenjinzuzu[3] = 0;
+                    this.sanrenweizhi[3] = 0;
+                    this.sanrendianshu[3] = 0;
+                    this.sanrenzu2.alpha = 0;
+                }
+                else {
+                    /*
+                    散人投掷塞子
+                    */
+                    var sanrensaizi = Math.floor(Math.random() * 6) + 1;
+                    var xingzoujilv = Math.floor(Math.random() * 100);
+                    if (xingzoujilv > 50) {
+                        var sanrensaizi_1 = Math.floor(Math.random() * 6) + 1;
+                        this.sanrendianshu[3] = sanrensaizi_1;
+                        this.sanrenxingzou_4();
+                    }
+                }
+            }
+            if (this.sanrenjinzuzu[4] == 1) {
+                /*
+                一定几率删除散人
+                */
+                var shanchushanren = Math.floor(Math.random() * 100);
+                if (shanchushanren > 90) {
+                    this.sanrenjinzuzu[4] = 0;
+                    this.sanrenweizhi[4] = 0;
+                    this.sanrendianshu[4] = 0;
+                    this.sanrenzu3.alpha = 0;
+                }
+                else {
+                    /*
+                    散人投掷塞子
+                    */
+                    var sanrensaizi = Math.floor(Math.random() * 6) + 1;
+                    var xingzoujilv = Math.floor(Math.random() * 100);
+                    if (xingzoujilv > 50) {
+                        var sanrensaizi_2 = Math.floor(Math.random() * 6) + 1;
+                        this.sanrendianshu[4] = sanrensaizi_2;
+                        this.sanrenxingzou_5();
+                    }
+                }
+            }
+            if (this.sanrenjinzuzu[5] == 1) {
+                /*
+                一定几率删除散人
+                */
+                var shanchushanren = Math.floor(Math.random() * 100);
+                if (shanchushanren > 90) {
+                    this.sanrenjinzuzu[5] = 0;
+                    this.sanrenweizhi[5] = 0;
+                    this.sanrendianshu[5] = 0;
+                    this.sanrenzu4.alpha = 0;
+                }
+                else {
+                    /*
+                    散人投掷塞子
+                    */
+                    var sanrensaizi = Math.floor(Math.random() * 6) + 1;
+                    var xingzoujilv = Math.floor(Math.random() * 100);
+                    if (xingzoujilv > 50) {
+                        var sanrensaizi_3 = Math.floor(Math.random() * 6) + 1;
+                        this.sanrendianshu[5] = sanrensaizi_3;
+                        this.sanrenxingzou_6();
+                    }
+                }
+            }
+            if (this.sanrenjinzuzu[6] == 1) {
+                /*
+                一定几率删除散人
+                */
+                var shanchushanren = Math.floor(Math.random() * 100);
+                if (shanchushanren > 90) {
+                    this.sanrenjinzuzu[6] = 0;
+                    this.sanrenweizhi[6] = 0;
+                    this.sanrendianshu[6] = 0;
+                    this.sanrenzu5.alpha = 0;
+                }
+                else {
+                    /*
+                    散人投掷塞子
+                    */
+                    var sanrensaizi = Math.floor(Math.random() * 6) + 1;
+                    var xingzoujilv = Math.floor(Math.random() * 100);
+                    if (xingzoujilv > 50) {
+                        var sanrensaizi_4 = Math.floor(Math.random() * 6) + 1;
+                        this.sanrendianshu[6] = sanrensaizi_4;
+                        this.sanrenxingzou_7();
+                    }
+                }
+            }
+            if (this.sanrenjinzuzu[7] == 1) {
+                /*
+                一定几率删除散人
+                */
+                var shanchushanren = Math.floor(Math.random() * 100);
+                if (shanchushanren > 90) {
+                    this.sanrenjinzuzu[7] = 0;
+                    this.sanrenweizhi[7] = 0;
+                    this.sanrendianshu[7] = 0;
+                    this.sanrenzu6.alpha = 0;
+                }
+                else {
+                    /*
+                    散人投掷塞子
+                    */
+                    var sanrensaizi = Math.floor(Math.random() * 6) + 1;
+                    var xingzoujilv = Math.floor(Math.random() * 100);
+                    if (xingzoujilv > 50) {
+                        var sanrensaizi_5 = Math.floor(Math.random() * 6) + 1;
+                        this.sanrendianshu[7] = sanrensaizi_5;
+                        this.sanrenxingzou_8();
+                    }
+                }
+            }
+            if (this.sanrenjinzuzu[8] == 1) {
+                /*
+                一定几率删除散人
+                */
+                var shanchushanren = Math.floor(Math.random() * 100);
+                if (shanchushanren > 90) {
+                    this.sanrenjinzuzu[8] = 0;
+                    this.sanrenweizhi[8] = 0;
+                    this.sanrendianshu[8] = 0;
+                    this.sanrenzu7.alpha = 0;
+                }
+                else {
+                    /*
+                    散人投掷塞子
+                    */
+                    var sanrensaizi = Math.floor(Math.random() * 6) + 1;
+                    var xingzoujilv = Math.floor(Math.random() * 100);
+                    if (xingzoujilv > 50) {
+                        var sanrensaizi_6 = Math.floor(Math.random() * 6) + 1;
+                        this.sanrendianshu[8] = sanrensaizi_6;
+                        this.sanrenxingzou_9();
+                    }
+                }
+            }
+            if (this.sanrenjinzuzu[9] == 1) {
+                /*
+                一定几率删除散人
+                */
+                var shanchushanren = Math.floor(Math.random() * 100);
+                if (shanchushanren > 90) {
+                    this.sanrenjinzuzu[9] = 0;
+                    this.sanrenweizhi[9] = 0;
+                    this.sanrendianshu[9] = 0;
+                    this.sanrenzu8.alpha = 0;
+                }
+                else {
+                    /*
+                    散人投掷塞子
+                    */
+                    var sanrensaizi = Math.floor(Math.random() * 6) + 1;
+                    var xingzoujilv = Math.floor(Math.random() * 100);
+                    if (xingzoujilv > 50) {
+                        var sanrensaizi_7 = Math.floor(Math.random() * 6) + 1;
+                        this.sanrendianshu[9] = sanrensaizi_7;
+                        this.sanrenxingzou_10();
+                    }
+                }
+            }
+            /*
+            继续开始行走人
+            */
+            this.sanrenxingzoudingshi();
+        }
+    };
+    Dajiejiemian.prototype.sanrenxingzou_1 = function () {
+        var _this = this;
+        if (this.parent) {
+            if (this.sanrendianshu[0] > 0) {
+                switch (this.sanrenweizhi[0]) {
+                    case 1:
+                        this.sanrenweizhi[0] = 2;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 2:
+                        this.sanrenweizhi[0] = 3;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie2.x, y: this.taijie2.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 3:
+                        this.sanrenweizhi[0] = 4;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie3.x, y: this.taijie3.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 4:
+                        this.sanrenweizhi[0] = 5;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie4.x, y: this.taijie4.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 5:
+                        this.sanrenweizhi[0] = 6;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie5.x, y: this.taijie5.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 6:
+                        this.sanrenweizhi[0] = 7;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie6.x, y: this.taijie6.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 7:
+                        this.sanrenweizhi[0] = 8;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie7.x, y: this.taijie7.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 8:
+                        this.sanrenweizhi[0] = 9;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie8.x, y: this.taijie8.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 9:
+                        this.sanrenweizhi[0] = 10;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie9.x, y: this.taijie9.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 10:
+                        this.sanrenweizhi[0] = 11;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie10.x, y: this.taijie10.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 11:
+                        this.sanrenweizhi[0] = 12;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie11.x, y: this.taijie11.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 12:
+                        this.sanrenweizhi[0] = 13;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie12.x, y: this.taijie12.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 13:
+                        this.sanrenweizhi[0] = 14;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie13.x, y: this.taijie13.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 14:
+                        this.sanrenweizhi[0] = 15;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie14.x, y: this.taijie14.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 15:
+                        this.sanrenweizhi[0] = 16;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie15.x, y: this.taijie15.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 16:
+                        this.sanrenweizhi[0] = 17;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie16.x, y: this.taijie16.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 17:
+                        this.sanrenweizhi[0] = 18;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie17.x, y: this.taijie17.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 18:
+                        this.sanrenweizhi[0] = 19;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie18.x, y: this.taijie18.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 19:
+                        this.sanrenweizhi[0] = 20;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie19.x, y: this.taijie19.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 20:
+                        this.sanrenweizhi[0] = 21;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie20.x, y: this.taijie20.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 21:
+                        this.sanrenweizhi[0] = 22;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie21.x, y: this.taijie21.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 22:
+                        this.sanrenweizhi[0] = 23;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie22.x, y: this.taijie22.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 23:
+                        this.sanrenweizhi[0] = 24;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie23.x, y: this.taijie23.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 24:
+                        this.sanrenweizhi[0] = 25;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie24.x, y: this.taijie24.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 25:
+                        this.sanrenweizhi[0] = 26;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie25.x, y: this.taijie25.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 26:
+                        this.sanrenweizhi[0] = 27;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie26.x, y: this.taijie26.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                    case 27:
+                        this.sanrenweizhi[0] = 2;
+                        egret.Tween.get(this.sanrenzu).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[0] -= 1;
+                            _this.sanrenxingzou_1();
+                        });
+                        break;
+                }
+            }
+        }
+    };
+    Dajiejiemian.prototype.sanrenxingzou_2 = function () {
+        var _this = this;
+        if (this.parent) {
+            if (this.sanrendianshu[1] > 0) {
+                switch (this.sanrenweizhi[1]) {
+                    case 1:
+                        this.sanrenweizhi[1] = 2;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 2:
+                        this.sanrenweizhi[1] = 3;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie2.x, y: this.taijie2.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 3:
+                        this.sanrenweizhi[1] = 4;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie3.x, y: this.taijie3.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 4:
+                        this.sanrenweizhi[1] = 5;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie4.x, y: this.taijie4.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 5:
+                        this.sanrenweizhi[1] = 6;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie5.x, y: this.taijie5.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 6:
+                        this.sanrenweizhi[1] = 7;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie6.x, y: this.taijie6.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 7:
+                        this.sanrenweizhi[1] = 8;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie7.x, y: this.taijie7.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 8:
+                        this.sanrenweizhi[1] = 9;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie8.x, y: this.taijie8.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 9:
+                        this.sanrenweizhi[1] = 10;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie9.x, y: this.taijie9.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 10:
+                        this.sanrenweizhi[1] = 11;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie10.x, y: this.taijie10.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 11:
+                        this.sanrenweizhi[1] = 12;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie11.x, y: this.taijie11.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 12:
+                        this.sanrenweizhi[1] = 13;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie12.x, y: this.taijie12.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 13:
+                        this.sanrenweizhi[1] = 14;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie13.x, y: this.taijie13.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 14:
+                        this.sanrenweizhi[1] = 15;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie14.x, y: this.taijie14.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 15:
+                        this.sanrenweizhi[1] = 16;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie15.x, y: this.taijie15.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 16:
+                        this.sanrenweizhi[1] = 17;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie16.x, y: this.taijie16.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 17:
+                        this.sanrenweizhi[1] = 18;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie17.x, y: this.taijie17.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 18:
+                        this.sanrenweizhi[1] = 19;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie18.x, y: this.taijie18.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 19:
+                        this.sanrenweizhi[1] = 20;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie19.x, y: this.taijie19.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 20:
+                        this.sanrenweizhi[1] = 21;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie20.x, y: this.taijie20.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 21:
+                        this.sanrenweizhi[1] = 22;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie21.x, y: this.taijie21.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 22:
+                        this.sanrenweizhi[1] = 23;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie22.x, y: this.taijie22.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 23:
+                        this.sanrenweizhi[1] = 24;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie23.x, y: this.taijie23.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 24:
+                        this.sanrenweizhi[1] = 25;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie24.x, y: this.taijie24.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 25:
+                        this.sanrenweizhi[1] = 26;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie25.x, y: this.taijie25.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 26:
+                        this.sanrenweizhi[1] = 27;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie26.x, y: this.taijie26.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                    case 27:
+                        this.sanrenweizhi[1] = 2;
+                        egret.Tween.get(this.sanrenzu0).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[1] -= 1;
+                            _this.sanrenxingzou_2();
+                        });
+                        break;
+                }
+            }
+        }
+    };
+    Dajiejiemian.prototype.sanrenxingzou_3 = function () {
+        var _this = this;
+        if (this.parent) {
+            if (this.sanrendianshu[2] > 0) {
+                switch (this.sanrenweizhi[2]) {
+                    case 1:
+                        this.sanrenweizhi[2] = 2;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 2:
+                        this.sanrenweizhi[2] = 3;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie2.x, y: this.taijie2.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 3:
+                        this.sanrenweizhi[2] = 4;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie3.x, y: this.taijie3.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 4:
+                        this.sanrenweizhi[2] = 5;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie4.x, y: this.taijie4.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 5:
+                        this.sanrenweizhi[2] = 6;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie5.x, y: this.taijie5.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 6:
+                        this.sanrenweizhi[2] = 7;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie6.x, y: this.taijie6.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 7:
+                        this.sanrenweizhi[2] = 8;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie7.x, y: this.taijie7.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 8:
+                        this.sanrenweizhi[2] = 9;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie8.x, y: this.taijie8.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 9:
+                        this.sanrenweizhi[2] = 10;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie9.x, y: this.taijie9.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 10:
+                        this.sanrenweizhi[2] = 11;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie10.x, y: this.taijie10.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 11:
+                        this.sanrenweizhi[2] = 12;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie11.x, y: this.taijie11.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 12:
+                        this.sanrenweizhi[2] = 13;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie12.x, y: this.taijie12.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 13:
+                        this.sanrenweizhi[2] = 14;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie13.x, y: this.taijie13.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 14:
+                        this.sanrenweizhi[2] = 15;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie14.x, y: this.taijie14.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 15:
+                        this.sanrenweizhi[2] = 16;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie15.x, y: this.taijie15.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 16:
+                        this.sanrenweizhi[2] = 17;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie16.x, y: this.taijie16.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 17:
+                        this.sanrenweizhi[2] = 18;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie17.x, y: this.taijie17.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 18:
+                        this.sanrenweizhi[2] = 19;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie18.x, y: this.taijie18.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 19:
+                        this.sanrenweizhi[2] = 20;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie19.x, y: this.taijie19.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 20:
+                        this.sanrenweizhi[2] = 21;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie20.x, y: this.taijie20.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 21:
+                        this.sanrenweizhi[2] = 22;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie21.x, y: this.taijie21.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 22:
+                        this.sanrenweizhi[2] = 23;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie22.x, y: this.taijie22.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 23:
+                        this.sanrenweizhi[2] = 24;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie23.x, y: this.taijie23.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 24:
+                        this.sanrenweizhi[2] = 25;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie24.x, y: this.taijie24.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 25:
+                        this.sanrenweizhi[2] = 26;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie25.x, y: this.taijie25.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 26:
+                        this.sanrenweizhi[2] = 27;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie26.x, y: this.taijie26.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                    case 27:
+                        this.sanrenweizhi[2] = 2;
+                        egret.Tween.get(this.sanrenzu1).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[2] -= 1;
+                            _this.sanrenxingzou_3();
+                        });
+                        break;
+                }
+            }
+        }
+    };
+    Dajiejiemian.prototype.sanrenxingzou_4 = function () {
+        var _this = this;
+        if (this.parent) {
+            if (this.sanrendianshu[3] > 0) {
+                switch (this.sanrenweizhi[3]) {
+                    case 1:
+                        this.sanrenweizhi[3] = 2;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 2:
+                        this.sanrenweizhi[3] = 3;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie2.x, y: this.taijie2.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 3:
+                        this.sanrenweizhi[3] = 4;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie3.x, y: this.taijie3.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 4:
+                        this.sanrenweizhi[3] = 5;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie4.x, y: this.taijie4.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 5:
+                        this.sanrenweizhi[3] = 6;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie5.x, y: this.taijie5.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 6:
+                        this.sanrenweizhi[3] = 7;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie6.x, y: this.taijie6.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 7:
+                        this.sanrenweizhi[3] = 8;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie7.x, y: this.taijie7.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 8:
+                        this.sanrenweizhi[3] = 9;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie8.x, y: this.taijie8.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 9:
+                        this.sanrenweizhi[3] = 10;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie9.x, y: this.taijie9.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 10:
+                        this.sanrenweizhi[3] = 11;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie10.x, y: this.taijie10.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 11:
+                        this.sanrenweizhi[3] = 12;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie11.x, y: this.taijie11.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 12:
+                        this.sanrenweizhi[3] = 13;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie12.x, y: this.taijie12.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 13:
+                        this.sanrenweizhi[3] = 14;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie13.x, y: this.taijie13.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 14:
+                        this.sanrenweizhi[3] = 15;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie14.x, y: this.taijie14.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 15:
+                        this.sanrenweizhi[3] = 16;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie15.x, y: this.taijie15.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 16:
+                        this.sanrenweizhi[3] = 17;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie16.x, y: this.taijie16.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 17:
+                        this.sanrenweizhi[3] = 18;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie17.x, y: this.taijie17.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 18:
+                        this.sanrenweizhi[3] = 19;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie18.x, y: this.taijie18.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 19:
+                        this.sanrenweizhi[3] = 20;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie19.x, y: this.taijie19.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 20:
+                        this.sanrenweizhi[3] = 21;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie20.x, y: this.taijie20.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 21:
+                        this.sanrenweizhi[3] = 22;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie21.x, y: this.taijie21.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 22:
+                        this.sanrenweizhi[3] = 23;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie22.x, y: this.taijie22.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 23:
+                        this.sanrenweizhi[3] = 24;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie23.x, y: this.taijie23.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 24:
+                        this.sanrenweizhi[3] = 25;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie24.x, y: this.taijie24.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 25:
+                        this.sanrenweizhi[3] = 26;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie25.x, y: this.taijie25.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 26:
+                        this.sanrenweizhi[3] = 27;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie26.x, y: this.taijie26.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                    case 27:
+                        this.sanrenweizhi[3] = 2;
+                        egret.Tween.get(this.sanrenzu2).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[3] -= 1;
+                            _this.sanrenxingzou_4();
+                        });
+                        break;
+                }
+            }
+        }
+    };
+    Dajiejiemian.prototype.sanrenxingzou_5 = function () {
+        var _this = this;
+        if (this.parent) {
+            if (this.sanrendianshu[4] > 0) {
+                switch (this.sanrenweizhi[4]) {
+                    case 1:
+                        this.sanrenweizhi[4] = 2;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 2:
+                        this.sanrenweizhi[4] = 3;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie2.x, y: this.taijie2.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 3:
+                        this.sanrenweizhi[4] = 4;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie3.x, y: this.taijie3.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 4:
+                        this.sanrenweizhi[4] = 5;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie4.x, y: this.taijie4.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 5:
+                        this.sanrenweizhi[4] = 6;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie5.x, y: this.taijie5.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 6:
+                        this.sanrenweizhi[4] = 7;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie6.x, y: this.taijie6.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 7:
+                        this.sanrenweizhi[4] = 8;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie7.x, y: this.taijie7.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 8:
+                        this.sanrenweizhi[4] = 9;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie8.x, y: this.taijie8.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 9:
+                        this.sanrenweizhi[4] = 10;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie9.x, y: this.taijie9.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 10:
+                        this.sanrenweizhi[4] = 11;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie10.x, y: this.taijie10.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 11:
+                        this.sanrenweizhi[4] = 12;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie11.x, y: this.taijie11.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 12:
+                        this.sanrenweizhi[4] = 13;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie12.x, y: this.taijie12.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 13:
+                        this.sanrenweizhi[4] = 14;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie13.x, y: this.taijie13.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 14:
+                        this.sanrenweizhi[4] = 15;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie14.x, y: this.taijie14.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 15:
+                        this.sanrenweizhi[4] = 16;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie15.x, y: this.taijie15.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 16:
+                        this.sanrenweizhi[4] = 17;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie16.x, y: this.taijie16.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 17:
+                        this.sanrenweizhi[4] = 18;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie17.x, y: this.taijie17.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 18:
+                        this.sanrenweizhi[4] = 19;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie18.x, y: this.taijie18.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 19:
+                        this.sanrenweizhi[4] = 20;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie19.x, y: this.taijie19.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 20:
+                        this.sanrenweizhi[4] = 21;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie20.x, y: this.taijie20.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 21:
+                        this.sanrenweizhi[4] = 22;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie21.x, y: this.taijie21.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 22:
+                        this.sanrenweizhi[4] = 23;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie22.x, y: this.taijie22.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 23:
+                        this.sanrenweizhi[4] = 24;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie23.x, y: this.taijie23.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 24:
+                        this.sanrenweizhi[4] = 25;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie24.x, y: this.taijie24.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 25:
+                        this.sanrenweizhi[4] = 26;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie25.x, y: this.taijie25.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 26:
+                        this.sanrenweizhi[4] = 27;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie26.x, y: this.taijie26.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                    case 27:
+                        this.sanrenweizhi[4] = 2;
+                        egret.Tween.get(this.sanrenzu3).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[4] -= 1;
+                            _this.sanrenxingzou_5();
+                        });
+                        break;
+                }
+            }
+        }
+    };
+    Dajiejiemian.prototype.sanrenxingzou_6 = function () {
+        var _this = this;
+        if (this.parent) {
+            if (this.sanrendianshu[5] > 0) {
+                switch (this.sanrenweizhi[5]) {
+                    case 1:
+                        this.sanrenweizhi[5] = 2;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 2:
+                        this.sanrenweizhi[5] = 3;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie2.x, y: this.taijie2.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 3:
+                        this.sanrenweizhi[5] = 4;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie3.x, y: this.taijie3.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 4:
+                        this.sanrenweizhi[5] = 5;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie4.x, y: this.taijie4.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 5:
+                        this.sanrenweizhi[5] = 6;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie5.x, y: this.taijie5.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 6:
+                        this.sanrenweizhi[5] = 7;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie6.x, y: this.taijie6.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 7:
+                        this.sanrenweizhi[5] = 8;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie7.x, y: this.taijie7.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 8:
+                        this.sanrenweizhi[5] = 9;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie8.x, y: this.taijie8.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 9:
+                        this.sanrenweizhi[5] = 10;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie9.x, y: this.taijie9.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 10:
+                        this.sanrenweizhi[5] = 11;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie10.x, y: this.taijie10.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 11:
+                        this.sanrenweizhi[5] = 12;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie11.x, y: this.taijie11.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 12:
+                        this.sanrenweizhi[5] = 13;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie12.x, y: this.taijie12.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 13:
+                        this.sanrenweizhi[5] = 14;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie13.x, y: this.taijie13.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 14:
+                        this.sanrenweizhi[5] = 15;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie14.x, y: this.taijie14.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 15:
+                        this.sanrenweizhi[5] = 16;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie15.x, y: this.taijie15.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 16:
+                        this.sanrenweizhi[5] = 17;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie16.x, y: this.taijie16.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 17:
+                        this.sanrenweizhi[5] = 18;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie17.x, y: this.taijie17.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 18:
+                        this.sanrenweizhi[5] = 19;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie18.x, y: this.taijie18.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 19:
+                        this.sanrenweizhi[5] = 20;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie19.x, y: this.taijie19.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 20:
+                        this.sanrenweizhi[5] = 21;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie20.x, y: this.taijie20.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 21:
+                        this.sanrenweizhi[5] = 22;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie21.x, y: this.taijie21.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 22:
+                        this.sanrenweizhi[5] = 23;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie22.x, y: this.taijie22.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 23:
+                        this.sanrenweizhi[5] = 24;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie23.x, y: this.taijie23.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 24:
+                        this.sanrenweizhi[5] = 25;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie24.x, y: this.taijie24.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 25:
+                        this.sanrenweizhi[5] = 26;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie25.x, y: this.taijie25.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 26:
+                        this.sanrenweizhi[5] = 27;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie26.x, y: this.taijie26.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                    case 27:
+                        this.sanrenweizhi[5] = 2;
+                        egret.Tween.get(this.sanrenzu4).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[5] -= 1;
+                            _this.sanrenxingzou_6();
+                        });
+                        break;
+                }
+            }
+        }
+    };
+    Dajiejiemian.prototype.sanrenxingzou_7 = function () {
+        var _this = this;
+        if (this.parent) {
+            if (this.sanrendianshu[6] > 0) {
+                switch (this.sanrenweizhi[6]) {
+                    case 1:
+                        this.sanrenweizhi[6] = 2;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 2:
+                        this.sanrenweizhi[6] = 3;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie2.x, y: this.taijie2.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 3:
+                        this.sanrenweizhi[6] = 4;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie3.x, y: this.taijie3.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 4:
+                        this.sanrenweizhi[6] = 5;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie4.x, y: this.taijie4.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 5:
+                        this.sanrenweizhi[6] = 6;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie5.x, y: this.taijie5.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 6:
+                        this.sanrenweizhi[6] = 7;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie6.x, y: this.taijie6.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 7:
+                        this.sanrenweizhi[6] = 8;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie7.x, y: this.taijie7.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 8:
+                        this.sanrenweizhi[6] = 9;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie8.x, y: this.taijie8.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 9:
+                        this.sanrenweizhi[6] = 10;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie9.x, y: this.taijie9.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 10:
+                        this.sanrenweizhi[6] = 11;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie10.x, y: this.taijie10.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 11:
+                        this.sanrenweizhi[6] = 12;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie11.x, y: this.taijie11.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 12:
+                        this.sanrenweizhi[6] = 13;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie12.x, y: this.taijie12.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 13:
+                        this.sanrenweizhi[6] = 14;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie13.x, y: this.taijie13.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 14:
+                        this.sanrenweizhi[6] = 15;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie14.x, y: this.taijie14.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 15:
+                        this.sanrenweizhi[6] = 16;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie15.x, y: this.taijie15.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 16:
+                        this.sanrenweizhi[6] = 17;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie16.x, y: this.taijie16.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 17:
+                        this.sanrenweizhi[6] = 18;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie17.x, y: this.taijie17.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 18:
+                        this.sanrenweizhi[6] = 19;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie18.x, y: this.taijie18.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 19:
+                        this.sanrenweizhi[6] = 20;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie19.x, y: this.taijie19.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 20:
+                        this.sanrenweizhi[6] = 21;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie20.x, y: this.taijie20.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 21:
+                        this.sanrenweizhi[6] = 22;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie21.x, y: this.taijie21.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 22:
+                        this.sanrenweizhi[6] = 23;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie22.x, y: this.taijie22.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 23:
+                        this.sanrenweizhi[6] = 24;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie23.x, y: this.taijie23.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 24:
+                        this.sanrenweizhi[6] = 25;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie24.x, y: this.taijie24.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 25:
+                        this.sanrenweizhi[6] = 26;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie25.x, y: this.taijie25.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 26:
+                        this.sanrenweizhi[6] = 27;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie26.x, y: this.taijie26.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                    case 27:
+                        this.sanrenweizhi[6] = 2;
+                        egret.Tween.get(this.sanrenzu5).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[6] -= 1;
+                            _this.sanrenxingzou_7();
+                        });
+                        break;
+                }
+            }
+        }
+    };
+    Dajiejiemian.prototype.sanrenxingzou_8 = function () {
+        var _this = this;
+        if (this.parent) {
+            if (this.sanrendianshu[7] > 0) {
+                switch (this.sanrenweizhi[7]) {
+                    case 1:
+                        this.sanrenweizhi[7] = 2;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 2:
+                        this.sanrenweizhi[7] = 3;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie2.x, y: this.taijie2.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 3:
+                        this.sanrenweizhi[7] = 4;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie3.x, y: this.taijie3.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 4:
+                        this.sanrenweizhi[7] = 5;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie4.x, y: this.taijie4.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 5:
+                        this.sanrenweizhi[7] = 6;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie5.x, y: this.taijie5.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 6:
+                        this.sanrenweizhi[7] = 7;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie6.x, y: this.taijie6.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 7:
+                        this.sanrenweizhi[7] = 8;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie7.x, y: this.taijie7.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 8:
+                        this.sanrenweizhi[7] = 9;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie8.x, y: this.taijie8.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 9:
+                        this.sanrenweizhi[7] = 10;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie9.x, y: this.taijie9.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 10:
+                        this.sanrenweizhi[7] = 11;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie10.x, y: this.taijie10.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 11:
+                        this.sanrenweizhi[7] = 12;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie11.x, y: this.taijie11.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 12:
+                        this.sanrenweizhi[7] = 13;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie12.x, y: this.taijie12.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 13:
+                        this.sanrenweizhi[7] = 14;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie13.x, y: this.taijie13.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 14:
+                        this.sanrenweizhi[7] = 15;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie14.x, y: this.taijie14.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 15:
+                        this.sanrenweizhi[7] = 16;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie15.x, y: this.taijie15.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 16:
+                        this.sanrenweizhi[7] = 17;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie16.x, y: this.taijie16.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 17:
+                        this.sanrenweizhi[7] = 18;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie17.x, y: this.taijie17.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 18:
+                        this.sanrenweizhi[7] = 19;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie18.x, y: this.taijie18.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 19:
+                        this.sanrenweizhi[7] = 20;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie19.x, y: this.taijie19.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 20:
+                        this.sanrenweizhi[7] = 21;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie20.x, y: this.taijie20.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 21:
+                        this.sanrenweizhi[7] = 22;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie21.x, y: this.taijie21.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 22:
+                        this.sanrenweizhi[7] = 23;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie22.x, y: this.taijie22.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 23:
+                        this.sanrenweizhi[7] = 24;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie23.x, y: this.taijie23.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 24:
+                        this.sanrenweizhi[7] = 25;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie24.x, y: this.taijie24.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 25:
+                        this.sanrenweizhi[7] = 26;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie25.x, y: this.taijie25.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 26:
+                        this.sanrenweizhi[7] = 27;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie26.x, y: this.taijie26.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                    case 27:
+                        this.sanrenweizhi[7] = 2;
+                        egret.Tween.get(this.sanrenzu6).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[7] -= 1;
+                            _this.sanrenxingzou_8();
+                        });
+                        break;
+                }
+            }
+        }
+    };
+    Dajiejiemian.prototype.sanrenxingzou_9 = function () {
+        var _this = this;
+        if (this.parent) {
+            if (this.sanrendianshu[8] > 0) {
+                switch (this.sanrenweizhi[8]) {
+                    case 1:
+                        this.sanrenweizhi[8] = 2;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 2:
+                        this.sanrenweizhi[8] = 3;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie2.x, y: this.taijie2.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 3:
+                        this.sanrenweizhi[8] = 4;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie3.x, y: this.taijie3.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 4:
+                        this.sanrenweizhi[8] = 5;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie4.x, y: this.taijie4.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 5:
+                        this.sanrenweizhi[8] = 6;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie5.x, y: this.taijie5.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 6:
+                        this.sanrenweizhi[8] = 7;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie6.x, y: this.taijie6.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 7:
+                        this.sanrenweizhi[8] = 8;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie7.x, y: this.taijie7.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 8:
+                        this.sanrenweizhi[8] = 9;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie8.x, y: this.taijie8.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 9:
+                        this.sanrenweizhi[8] = 10;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie9.x, y: this.taijie9.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 10:
+                        this.sanrenweizhi[8] = 11;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie10.x, y: this.taijie10.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 11:
+                        this.sanrenweizhi[8] = 12;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie11.x, y: this.taijie11.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 12:
+                        this.sanrenweizhi[8] = 13;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie12.x, y: this.taijie12.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 13:
+                        this.sanrenweizhi[8] = 14;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie13.x, y: this.taijie13.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 14:
+                        this.sanrenweizhi[8] = 15;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie14.x, y: this.taijie14.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 15:
+                        this.sanrenweizhi[8] = 16;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie15.x, y: this.taijie15.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 16:
+                        this.sanrenweizhi[8] = 17;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie16.x, y: this.taijie16.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 17:
+                        this.sanrenweizhi[8] = 18;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie17.x, y: this.taijie17.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 18:
+                        this.sanrenweizhi[8] = 19;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie18.x, y: this.taijie18.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 19:
+                        this.sanrenweizhi[8] = 20;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie19.x, y: this.taijie19.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 20:
+                        this.sanrenweizhi[8] = 21;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie20.x, y: this.taijie20.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 21:
+                        this.sanrenweizhi[8] = 22;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie21.x, y: this.taijie21.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 22:
+                        this.sanrenweizhi[8] = 23;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie22.x, y: this.taijie22.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 23:
+                        this.sanrenweizhi[8] = 24;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie23.x, y: this.taijie23.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 24:
+                        this.sanrenweizhi[8] = 25;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie24.x, y: this.taijie24.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 25:
+                        this.sanrenweizhi[8] = 26;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie25.x, y: this.taijie25.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 26:
+                        this.sanrenweizhi[8] = 27;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie26.x, y: this.taijie26.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                    case 27:
+                        this.sanrenweizhi[8] = 2;
+                        egret.Tween.get(this.sanrenzu7).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[8] -= 1;
+                            _this.sanrenxingzou_9();
+                        });
+                        break;
+                }
+            }
+        }
+    };
+    Dajiejiemian.prototype.sanrenxingzou_10 = function () {
+        var _this = this;
+        if (this.parent) {
+            if (this.sanrendianshu[9] > 0) {
+                switch (this.sanrenweizhi[9]) {
+                    case 1:
+                        this.sanrenweizhi[9] = 2;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 2:
+                        this.sanrenweizhi[9] = 3;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie2.x, y: this.taijie2.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 3:
+                        this.sanrenweizhi[9] = 4;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie3.x, y: this.taijie3.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 4:
+                        this.sanrenweizhi[9] = 5;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie4.x, y: this.taijie4.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 5:
+                        this.sanrenweizhi[9] = 6;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie5.x, y: this.taijie5.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 6:
+                        this.sanrenweizhi[9] = 7;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie6.x, y: this.taijie6.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 7:
+                        this.sanrenweizhi[9] = 8;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie7.x, y: this.taijie7.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 8:
+                        this.sanrenweizhi[9] = 9;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie8.x, y: this.taijie8.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 9:
+                        this.sanrenweizhi[9] = 10;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie9.x, y: this.taijie9.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 10:
+                        this.sanrenweizhi[9] = 11;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie10.x, y: this.taijie10.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 11:
+                        this.sanrenweizhi[9] = 12;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie11.x, y: this.taijie11.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 12:
+                        this.sanrenweizhi[9] = 13;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie12.x, y: this.taijie12.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 13:
+                        this.sanrenweizhi[9] = 14;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie13.x, y: this.taijie13.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 14:
+                        this.sanrenweizhi[9] = 15;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie14.x, y: this.taijie14.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 15:
+                        this.sanrenweizhi[9] = 16;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie15.x, y: this.taijie15.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 16:
+                        this.sanrenweizhi[9] = 17;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie16.x, y: this.taijie16.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 17:
+                        this.sanrenweizhi[9] = 18;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie17.x, y: this.taijie17.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 18:
+                        this.sanrenweizhi[9] = 19;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie18.x, y: this.taijie18.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 19:
+                        this.sanrenweizhi[9] = 20;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie19.x, y: this.taijie19.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 20:
+                        this.sanrenweizhi[9] = 21;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie20.x, y: this.taijie20.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 21:
+                        this.sanrenweizhi[9] = 22;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie21.x, y: this.taijie21.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 22:
+                        this.sanrenweizhi[9] = 23;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie22.x, y: this.taijie22.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 23:
+                        this.sanrenweizhi[9] = 24;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie23.x, y: this.taijie23.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 24:
+                        this.sanrenweizhi[9] = 25;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie24.x, y: this.taijie24.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 25:
+                        this.sanrenweizhi[9] = 26;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie25.x, y: this.taijie25.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 26:
+                        this.sanrenweizhi[9] = 27;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie26.x, y: this.taijie26.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                    case 27:
+                        this.sanrenweizhi[9] = 2;
+                        egret.Tween.get(this.sanrenzu8).to({ x: this.taijie1.x, y: this.taijie1.y }, 1000).call(function () {
+                            _this.sanrendianshu[9] -= 1;
+                            _this.sanrenxingzou_10();
+                        });
+                        break;
+                }
+            }
+        }
+    };
+    Dajiejiemian.prototype.sanren1touxiang = function (url) {
+        var youbiaoLoader = new egret.ImageLoader;
+        youbiaoLoader.load(url);
+        youbiaoLoader.once(egret.Event.COMPLETE, this.sanren1touxiangxianshi, this);
+    };
+    Dajiejiemian.prototype.sanren1touxiangxianshi = function (evt) {
+        if (evt.currentTarget.data) {
+            //			egret.log("加载头像成功: " + evt.currentTarget.data);
+            var texture = new egret.Texture();
+            texture.bitmapData = evt.currentTarget.data;
+            var head = new egret.Bitmap(texture);
+            head.x = 0;
+            head.y = 0;
+            head.width = this.sanrentouxiangzu.width;
+            head.height = this.sanrentouxiangzu.height;
+            this.sanrentouxiangzu.addChild(head);
+        }
+    };
+    Dajiejiemian.prototype.sanren2touxiang = function (url) {
+        var youbiaoLoader = new egret.ImageLoader;
+        youbiaoLoader.load(url);
+        youbiaoLoader.once(egret.Event.COMPLETE, this.sanren2touxiangxianshi, this);
+    };
+    Dajiejiemian.prototype.sanren2touxiangxianshi = function (evt) {
+        if (evt.currentTarget.data) {
+            //			egret.log("加载头像成功: " + evt.currentTarget.data);
+            var texture = new egret.Texture();
+            texture.bitmapData = evt.currentTarget.data;
+            var head = new egret.Bitmap(texture);
+            head.x = 0;
+            head.y = 0;
+            head.width = this.sanrentouxiangzu0.width;
+            head.height = this.sanrentouxiangzu0.height;
+            this.sanrentouxiangzu0.addChild(head);
+        }
+    };
+    Dajiejiemian.prototype.sanren3touxiang = function (url) {
+        var youbiaoLoader = new egret.ImageLoader;
+        youbiaoLoader.load(url);
+        youbiaoLoader.once(egret.Event.COMPLETE, this.sanren3touxiangxianshi, this);
+    };
+    Dajiejiemian.prototype.sanren3touxiangxianshi = function (evt) {
+        if (evt.currentTarget.data) {
+            //			egret.log("加载头像成功: " + evt.currentTarget.data);
+            var texture = new egret.Texture();
+            texture.bitmapData = evt.currentTarget.data;
+            var head = new egret.Bitmap(texture);
+            head.x = 0;
+            head.y = 0;
+            head.width = this.sanrentouxiangzu1.width;
+            head.height = this.sanrentouxiangzu1.height;
+            this.sanrentouxiangzu1.addChild(head);
+        }
+    };
+    Dajiejiemian.prototype.sanren4touxiang = function (url) {
+        var youbiaoLoader = new egret.ImageLoader;
+        youbiaoLoader.load(url);
+        youbiaoLoader.once(egret.Event.COMPLETE, this.sanren4touxiangxianshi, this);
+    };
+    Dajiejiemian.prototype.sanren4touxiangxianshi = function (evt) {
+        if (evt.currentTarget.data) {
+            //			egret.log("加载头像成功: " + evt.currentTarget.data);
+            var texture = new egret.Texture();
+            texture.bitmapData = evt.currentTarget.data;
+            var head = new egret.Bitmap(texture);
+            head.x = 0;
+            head.y = 0;
+            head.width = this.sanrentouxiangzu2.width;
+            head.height = this.sanrentouxiangzu2.height;
+            this.sanrentouxiangzu2.addChild(head);
+        }
+    };
+    Dajiejiemian.prototype.sanren5touxiang = function (url) {
+        var youbiaoLoader = new egret.ImageLoader;
+        youbiaoLoader.load(url);
+        youbiaoLoader.once(egret.Event.COMPLETE, this.sanren5touxiangxianshi, this);
+    };
+    Dajiejiemian.prototype.sanren5touxiangxianshi = function (evt) {
+        if (evt.currentTarget.data) {
+            //			egret.log("加载头像成功: " + evt.currentTarget.data);
+            var texture = new egret.Texture();
+            texture.bitmapData = evt.currentTarget.data;
+            var head = new egret.Bitmap(texture);
+            head.x = 0;
+            head.y = 0;
+            head.width = this.sanrentouxiangzu3.width;
+            head.height = this.sanrentouxiangzu3.height;
+            this.sanrentouxiangzu3.addChild(head);
+        }
+    };
+    Dajiejiemian.prototype.sanren6touxiang = function (url) {
+        var youbiaoLoader = new egret.ImageLoader;
+        youbiaoLoader.load(url);
+        youbiaoLoader.once(egret.Event.COMPLETE, this.sanren6touxiangxianshi, this);
+    };
+    Dajiejiemian.prototype.sanren6touxiangxianshi = function (evt) {
+        if (evt.currentTarget.data) {
+            //			egret.log("加载头像成功: " + evt.currentTarget.data);
+            var texture = new egret.Texture();
+            texture.bitmapData = evt.currentTarget.data;
+            var head = new egret.Bitmap(texture);
+            head.x = 0;
+            head.y = 0;
+            head.width = this.sanrentouxiangzu4.width;
+            head.height = this.sanrentouxiangzu4.height;
+            this.sanrentouxiangzu4.addChild(head);
+        }
+    };
+    Dajiejiemian.prototype.sanren7touxiang = function (url) {
+        var youbiaoLoader = new egret.ImageLoader;
+        youbiaoLoader.load(url);
+        youbiaoLoader.once(egret.Event.COMPLETE, this.sanren7touxiangxianshi, this);
+    };
+    Dajiejiemian.prototype.sanren7touxiangxianshi = function (evt) {
+        if (evt.currentTarget.data) {
+            //			egret.log("加载头像成功: " + evt.currentTarget.data);
+            var texture = new egret.Texture();
+            texture.bitmapData = evt.currentTarget.data;
+            var head = new egret.Bitmap(texture);
+            head.x = 0;
+            head.y = 0;
+            head.width = this.sanrentouxiangzu5.width;
+            head.height = this.sanrentouxiangzu5.height;
+            this.sanrentouxiangzu5.addChild(head);
+        }
+    };
+    Dajiejiemian.prototype.sanren8touxiang = function (url) {
+        var youbiaoLoader = new egret.ImageLoader;
+        youbiaoLoader.load(url);
+        youbiaoLoader.once(egret.Event.COMPLETE, this.sanren8touxiangxianshi, this);
+    };
+    Dajiejiemian.prototype.sanren8touxiangxianshi = function (evt) {
+        if (evt.currentTarget.data) {
+            //			egret.log("加载头像成功: " + evt.currentTarget.data);
+            var texture = new egret.Texture();
+            texture.bitmapData = evt.currentTarget.data;
+            var head = new egret.Bitmap(texture);
+            head.x = 0;
+            head.y = 0;
+            head.width = this.sanrentouxiangzu6.width;
+            head.height = this.sanrentouxiangzu6.height;
+            this.sanrentouxiangzu6.addChild(head);
+        }
+    };
+    Dajiejiemian.prototype.sanren9touxiang = function (url) {
+        var youbiaoLoader = new egret.ImageLoader;
+        youbiaoLoader.load(url);
+        youbiaoLoader.once(egret.Event.COMPLETE, this.sanren9touxiangxianshi, this);
+    };
+    Dajiejiemian.prototype.sanren9touxiangxianshi = function (evt) {
+        if (evt.currentTarget.data) {
+            //			egret.log("加载头像成功: " + evt.currentTarget.data);
+            var texture = new egret.Texture();
+            texture.bitmapData = evt.currentTarget.data;
+            var head = new egret.Bitmap(texture);
+            head.x = 0;
+            head.y = 0;
+            head.width = this.sanrentouxiangzu7.width;
+            head.height = this.sanrentouxiangzu7.height;
+            this.sanrentouxiangzu7.addChild(head);
+        }
+    };
+    Dajiejiemian.prototype.sanren10touxiang = function (url) {
+        var youbiaoLoader = new egret.ImageLoader;
+        youbiaoLoader.load(url);
+        youbiaoLoader.once(egret.Event.COMPLETE, this.sanren10touxiangxianshi, this);
+    };
+    Dajiejiemian.prototype.sanren10touxiangxianshi = function (evt) {
+        if (evt.currentTarget.data) {
+            //			egret.log("加载头像成功: " + evt.currentTarget.data);
+            var texture = new egret.Texture();
+            texture.bitmapData = evt.currentTarget.data;
+            var head = new egret.Bitmap(texture);
+            head.x = 0;
+            head.y = 0;
+            head.width = this.sanrentouxiangzu8.width;
+            head.height = this.sanrentouxiangzu8.height;
+            this.sanrentouxiangzu8.addChild(head);
+        }
     };
     Dajiejiemian.prototype.jiedaoteshushijian = function () {
         this.jiedaoteshushijianzu = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -107,7 +2857,7 @@ var Dajiejiemian = (function (_super) {
         */
         for (var j = 2; j < this.jiedaoteshushijianzu.length; j++) {
             var suijishu = Math.floor(Math.random() * 100);
-            if (suijishu >= 60) {
+            if (suijishu >= 90) {
                 this.jiedaoteshushijianzu[j] = "101";
             }
         }
@@ -335,6 +3085,7 @@ var Dajiejiemian = (function (_super) {
         this.tilixiaohao.text = this.dangqianshengyucishu + "/10 ";
     };
     Dajiejiemian.prototype.dianjisaizi = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.but_shaizi.enabled = false;
         this.kaishianniuzu.alpha = 0;
         if (this.dangqianshengyucishu < 10) {
@@ -353,6 +3104,12 @@ var Dajiejiemian = (function (_super) {
             //	this.dangqiansaizi = 1;
             Gameguanli.Kongzhitai().cuowutishixinxi("当前掷出：" + this.dangqiansaizi + "点");
             this.zouluyanshi();
+            if (Gameguanli.Kongzhitai().dibuui.parent) {
+                Gameguanli.Kongzhitai().dibuui.but_hotel1.enabled = false;
+                Gameguanli.Kongzhitai().dibuui.but_gongyuan1.enabled = false;
+                Gameguanli.Kongzhitai().dibuui.but_huijia1.enabled = false;
+                Gameguanli.Kongzhitai().dibuui.but_licai1.enabled = false;
+            }
         }
         else {
             Gameguanli.Kongzhitai().cuowutishixinxi("您本次的上街行动数已用完！请返回其他场景");
@@ -558,468 +3315,552 @@ var Dajiejiemian = (function (_super) {
             this.chufagongneng();
         }
     };
+    /*
+    PK挑战提示界面
+    */
+    Dajiejiemian.prototype.pktiaozhan = function (direnxinxi) {
+        var _this = this;
+        this.suijijiemian = new Daitutanchukuangui();
+        Gameguanli.Kongzhitai().dingbuui.addChild(this.suijijiemian);
+        this.suijijiemian.biaotiwenzidt.text = "厨艺比拼";
+        this.suijijiemian.tishineirongdt.text = "[" + direnxinxi.mingzi + "]想和你切磋切磋厨艺！";
+        this.suijijiemian.tishitupiandt.source = "img_pvpbiaozhi_png";
+        this.suijijiemian.quedinganniudt.enabled = true;
+        this.suijijiemian.quedinganniudt.alpha = 1;
+        this.suijijiemian.quedinganniu0dt.enabled = false;
+        this.suijijiemian.quedinganniu0dt.alpha = 0;
+        this.suijijiemian.quedinganniu1dt.enabled = false;
+        this.suijijiemian.quedinganniu1dt.alpha = 0;
+        this.suijijiemian.quedinganniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+            Gamesound.Soundkongzhi().anniuyinxiao();
+            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.suijijiemian);
+            Gameguanli.Kongzhitai().pvpzhandoujiemian("kai", direnxinxi, "1");
+        }, this);
+        this.suijijiemian.guanbianniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+            Gamesound.Soundkongzhi().anniuyinxiao();
+            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.suijijiemian);
+        }, this);
+    };
     Dajiejiemian.prototype.chufagongneng = function () {
         var _this = this;
-        switch (this.dangqianbushu) {
-            case 1:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "1") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+        if (Gameguanli.Kongzhitai().dibuui.parent) {
+            Gameguanli.Kongzhitai().dibuui.but_hotel1.enabled = true;
+            Gameguanli.Kongzhitai().dibuui.but_gongyuan1.enabled = false;
+            Gameguanli.Kongzhitai().dibuui.but_huijia1.enabled = true;
+            Gameguanli.Kongzhitai().dibuui.but_licai1.enabled = true;
+        }
+        if (this.dangqianbushu == this.sanrenweizhi[0] && this.sanrenjinzuzu[0] == 1) {
+            this.pktiaozhan(this.sanren1xinxi);
+            this.but_shaizi.enabled = true;
+            this.kaishianniuzu.alpha = 1;
+        }
+        else if (this.dangqianbushu == this.sanrenweizhi[1] && this.sanrenjinzuzu[1] == 1) {
+            this.pktiaozhan(this.sanren2xinxi);
+            this.but_shaizi.enabled = true;
+            this.kaishianniuzu.alpha = 1;
+        }
+        else if (this.dangqianbushu == this.sanrenweizhi[2] && this.sanrenjinzuzu[2] == 1) {
+            this.pktiaozhan(this.sanren3xinxi);
+            this.but_shaizi.enabled = true;
+            this.kaishianniuzu.alpha = 1;
+        }
+        else if (this.dangqianbushu == this.sanrenweizhi[3] && this.sanrenjinzuzu[3] == 1) {
+            this.pktiaozhan(this.sanren4xinxi);
+            this.but_shaizi.enabled = true;
+            this.kaishianniuzu.alpha = 1;
+        }
+        else if (this.dangqianbushu == this.sanrenweizhi[4] && this.sanrenjinzuzu[4] == 1) {
+            this.pktiaozhan(this.sanren5xinxi);
+            this.but_shaizi.enabled = true;
+            this.kaishianniuzu.alpha = 1;
+        }
+        else if (this.dangqianbushu == this.sanrenweizhi[5] && this.sanrenjinzuzu[5] == 1) {
+            this.pktiaozhan(this.sanren6xinxi);
+            this.but_shaizi.enabled = true;
+            this.kaishianniuzu.alpha = 1;
+        }
+        else if (this.dangqianbushu == this.sanrenweizhi[6] && this.sanrenjinzuzu[6] == 1) {
+            this.pktiaozhan(this.sanren7xinxi);
+            this.but_shaizi.enabled = true;
+            this.kaishianniuzu.alpha = 1;
+        }
+        else if (this.dangqianbushu == this.sanrenweizhi[7] && this.sanrenjinzuzu[7] == 1) {
+            this.pktiaozhan(this.sanren8xinxi);
+            this.but_shaizi.enabled = true;
+            this.kaishianniuzu.alpha = 1;
+        }
+        else if (this.dangqianbushu == this.sanrenweizhi[8] && this.sanrenjinzuzu[8] == 1) {
+            this.pktiaozhan(this.sanren9xinxi);
+            this.but_shaizi.enabled = true;
+            this.kaishianniuzu.alpha = 1;
+        }
+        else if (this.dangqianbushu == this.sanrenweizhi[9] && this.sanrenjinzuzu[9] == 1) {
+            this.pktiaozhan(this.sanren10xinxi);
+            this.but_shaizi.enabled = true;
+            this.kaishianniuzu.alpha = 1;
+        }
+        else {
+            switch (this.dangqianbushu) {
+                case 1:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "1") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 2:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "2") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 2:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "2") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 3:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "3") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 3:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "3") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 4:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "4") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 4:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "4") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 5:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "5") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 5:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "5") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 6:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "6") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 6:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "6") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 7:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "7") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 7:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "7") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 8:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "8") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 8:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "8") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 9:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "9") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 9:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "9") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 10:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "10") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 10:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "10") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 11:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "11") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 11:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "11") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 12:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "12") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 12:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "12") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 13:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "13") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 13:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "13") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 14:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "14") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 14:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "14") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 15:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "15") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 15:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "15") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 16:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "16") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 16:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "16") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 17:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "17") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 17:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "17") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 18:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "18") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 18:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "18") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 19:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "19") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 19:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "19") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 20:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "20") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 20:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "20") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 21:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "21") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 21:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "21") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 22:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "22") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 22:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "22") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 23:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "23") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 23:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "23") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 24:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "24") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 24:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "24") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 25:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "25") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 25:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "25") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 26:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "26") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 26:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "26") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
-            case 27:
-                this.zhuanchangjiemian = new Dianpurukou();
-                Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
-                for (var i = 0; i < this.jiedaobiao.length; i++) {
-                    if (this.jiedaobiao[i].id == "27") {
-                        this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
-                        this.jiedaopeizhi = this.jiedaobiao[i];
+                    break;
+                case 27:
+                    this.zhuanchangjiemian = new Dianpurukou();
+                    Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuanchangjiemian);
+                    for (var i = 0; i < this.jiedaobiao.length; i++) {
+                        if (this.jiedaobiao[i].id == "27") {
+                            this.zhuanchangjiemian.jinruwenzi.text = this.jiedaobiao[i].ruchangwenzi;
+                            this.jiedaopeizhi = this.jiedaobiao[i];
+                        }
                     }
-                }
-                this.zhuanchangjiemian.alpha = 0;
-                egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
-                    egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
-                        Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
-                        _this.chufadianpu1();
+                    this.zhuanchangjiemian.alpha = 0;
+                    egret.Tween.get(this.zhuanchangjiemian).to({ alpha: 1 }, 1500).wait(2000).call(function () {
+                        egret.Tween.get(_this.zhuanchangjiemian).to({ alpha: 0 }, 1500).call(function () {
+                            Gameguanli.Kongzhitai().dingbuui.removeChild(_this.zhuanchangjiemian);
+                            _this.chufadianpu1();
+                        });
                     });
-                });
-                break;
+                    break;
+            }
         }
     };
     Dajiejiemian.prototype.fandianbufen = function () {
@@ -1158,6 +3999,7 @@ var Dajiejiemian = (function (_super) {
     };
     //雇员界面
     Dajiejiemian.prototype.dianjiguyuan1 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.fandianguyuan = new Dianpuzhaopinui();
         this.fandianjiemian.addChild(this.fandianguyuan);
         this.fandianguyuan.img_heisezhezao1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbiguyuan, this);
@@ -1222,6 +4064,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.dianjiguyuan2 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.fandianguyuan = new Dianpuzhaopinui();
         this.fandianjiemian.addChild(this.fandianguyuan);
         this.fandianguyuan.img_heisezhezao1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbiguyuan, this);
@@ -1286,6 +4129,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.dianjiguyuan3 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.fandianguyuan = new Dianpuzhaopinui();
         this.fandianjiemian.addChild(this.fandianguyuan);
         this.fandianguyuan.img_heisezhezao1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbiguyuan, this);
@@ -1355,6 +4199,7 @@ var Dajiejiemian = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        Gamesound.Soundkongzhi().anniuyinxiao();
                         huidiaodengdai = new egret.Timer(3000, 1);
                         huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.zhaopinguyuan2chenggong, this);
                         huidiaodengdai.start();
@@ -1659,6 +4504,7 @@ var Dajiejiemian = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        Gamesound.Soundkongzhi().anniuyinxiao();
                         huidiaodengdai = new egret.Timer(3000, 1);
                         huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.zhaopinguyuan3chenggong, this);
                         huidiaodengdai.start();
@@ -1963,6 +4809,7 @@ var Dajiejiemian = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        Gamesound.Soundkongzhi().anniuyinxiao();
                         huidiaodengdai = new egret.Timer(3000, 1);
                         huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.zhaopinguyuan1chenggong, this);
                         huidiaodengdai.start();
@@ -2262,6 +5109,7 @@ var Dajiejiemian = (function (_super) {
         });
     };
     Dajiejiemian.prototype.jiepinguyuan1 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.guyuan1leixing = 0;
         this.guyuan1mingzi = "0";
         this.guyuan1touxiang = "0";
@@ -2283,6 +5131,7 @@ var Dajiejiemian = (function (_super) {
         this.dianjiguyuan1();
     };
     Dajiejiemian.prototype.jiepinguyuan2 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.guyuan2leixing = 0;
         this.guyuan2mingzi = "0";
         this.guyuan2touxiang = "0";
@@ -2304,6 +5153,7 @@ var Dajiejiemian = (function (_super) {
         this.dianjiguyuan2();
     };
     Dajiejiemian.prototype.jiepinguyuan3 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.guyuan3leixing = 0;
         this.guyuan3mingzi = "0";
         this.guyuan3touxiang = "0";
@@ -2325,6 +5175,7 @@ var Dajiejiemian = (function (_super) {
         this.dianjiguyuan3();
     };
     Dajiejiemian.prototype.guanbiguyuan = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.fandianjiemian.removeChild(this.fandianguyuan);
     };
     Dajiejiemian.prototype.jiazaiguyuan1touxiangsj = function (youxiangurl) {
@@ -2478,6 +5329,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.xiaofeidianji = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Gameguanli.Kongzhitai().dingbuui.removeChild(this.fandianjiemian);
         this.suijijiemian = new Tongyongquerenkuang();
         Gameguanli.Kongzhitai().dingbuui.addChild(this.suijijiemian);
@@ -2531,6 +5383,7 @@ var Dajiejiemian = (function (_super) {
         this.suijijiemian.but_shuangbei.addEventListener(egret.TouchEvent.TOUCH_TAP, this.suijishuangbei, this);
     };
     Dajiejiemian.prototype.shouyindianji = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Gameguanli.Kongzhitai().dingbuui.removeChild(this.fandianjiemian);
         this.suijijiemian = new Tongyongquerenkuang();
         Gameguanli.Kongzhitai().dingbuui.addChild(this.suijijiemian);
@@ -2548,6 +5401,7 @@ var Dajiejiemian = (function (_super) {
         this.suijijiemian.but_queding0.addEventListener(egret.TouchEvent.TOUCH_TAP, this.quedingquqian, this);
     };
     Dajiejiemian.prototype.quedingquqian = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Gameguanli.Kongzhitai().dingbuui.removeChild(this.suijijiemian);
         this.jianglijiemian = new Jianglijiesuanui();
         Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
@@ -2561,6 +5415,7 @@ var Dajiejiemian = (function (_super) {
             + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
     };
     Dajiejiemian.prototype.shougou = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Gameguanli.Kongzhitai().dingbuui.removeChild(this.fandianjiemian);
         this.suijijiemian = new Tongyongquerenkuang();
         Gameguanli.Kongzhitai().dingbuui.addChild(this.suijijiemian);
@@ -2619,6 +5474,7 @@ var Dajiejiemian = (function (_super) {
         this.suijijiemian.but_queding0.addEventListener(egret.TouchEvent.TOUCH_TAP, this.quedingshougou, this);
     };
     Dajiejiemian.prototype.quedingshougou = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (this.keyishougou == true) {
             Gameguanli.Kongzhitai().dingbuui.removeChild(this.suijijiemian);
             Gameguanli.Kongzhitai().cuowutishixinxi("恭喜您，成功收购[" + this.jiedaopeizhi.name + "]！饭店经营为30天！");
@@ -2904,6 +5760,11 @@ var Dajiejiemian = (function (_super) {
             this.suijijiemian.quedinganniu1dt.enabled = false;
             this.suijijiemian.quedinganniu1dt.alpha = 0;
             this.suijijiemian.quedinganniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gamesound.Soundkongzhi().anniuyinxiao();
+                Gameguanli.Kongzhitai().dingbuui.removeChild(_this.suijijiemian);
+            }, this);
+            this.suijijiemian.guanbianniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gamesound.Soundkongzhi().anniuyinxiao();
                 Gameguanli.Kongzhitai().dingbuui.removeChild(_this.suijijiemian);
             }, this);
         }
@@ -2917,6 +5778,10 @@ var Dajiejiemian = (function (_super) {
             }
             else {
                 kouchushu = Gerenshuxing.jinbizhi;
+            }
+            if (Gerenshuxing.meirirenwuone[3] == "0") {
+                Weblianjie.fasongshuju("code:161", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
+                    + '"zengjialeixing"' + ":" + '"1"' + "}");
             }
             this.suijijiemian = new Daitutanchukuangui();
             Gameguanli.Kongzhitai().dingbuui.addChild(this.suijijiemian);
@@ -2936,13 +5801,20 @@ var Dajiejiemian = (function (_super) {
             this.suijijiemian.quedinganniu1dt.enabled = false;
             this.suijijiemian.quedinganniu1dt.alpha = 0;
             this.suijijiemian.quedinganniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gamesound.Soundkongzhi().anniuyinxiao();
+                Gameguanli.Kongzhitai().dingbuui.removeChild(_this.suijijiemian);
+            }, this);
+            this.suijijiemian.guanbianniudt.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gamesound.Soundkongzhi().anniuyinxiao();
                 Gameguanli.Kongzhitai().dingbuui.removeChild(_this.suijijiemian);
             }, this);
         }
         else {
-            var teshuchufajiemain = new Teshushijianjiemian();
-            this.addChild(teshuchufajiemain);
-            teshuchufajiemain.chushihua(shijianid);
+            if (this.parent) {
+                var teshuchufajiemain = new Teshushijianjiemian();
+                this.addChild(teshuchufajiemain);
+                teshuchufajiemain.chushihua(shijianid);
+            }
         }
     };
     Dajiejiemian.prototype.chaoshimaimai = function () {
@@ -2975,6 +5847,7 @@ var Dajiejiemian = (function (_super) {
     Dajiejiemian.prototype.xianshichaoshishangdianjiemian = function () {
         this.chaoshigoumaiui = new Chaoshishangdianui();
         Gameguanli.Kongzhitai().dingbuui.addChild(this.chaoshigoumaiui);
+        this.chaoshigoumaiui.guanbijiemain.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbichaoshiui, this);
         this.chaoshigoumaiui.heisezhezao.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbichaoshiui, this);
         this.chaoshijiemianchushihua();
     };
@@ -3131,33 +6004,45 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.guanbichaoshiui = function () {
-        Gameguanli.Kongzhitai().dingbuui.removeChild(this.chaoshigoumaiui);
+        Gamesound.Soundkongzhi().anniuyinxiao();
+        if (Gameguanli.Kongzhitai().dingbuui.parent) {
+            Gameguanli.Kongzhitai().dingbuui.removeChild(this.chaoshigoumaiui);
+        }
     };
     Dajiejiemian.prototype.daojutips1 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.chaoshiid[0]);
     };
     Dajiejiemian.prototype.daojutips2 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.chaoshiid[1]);
     };
     Dajiejiemian.prototype.daojutips3 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.chaoshiid[2]);
     };
     Dajiejiemian.prototype.daojutips4 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.chaoshiid[3]);
     };
     Dajiejiemian.prototype.daojutips5 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.chaoshiid[4]);
     };
     Dajiejiemian.prototype.daojutips6 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.chaoshiid[5]);
     };
     Dajiejiemian.prototype.daojutips7 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.chaoshiid[6]);
     };
     Dajiejiemian.prototype.daojutips8 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.chaoshiid[7]);
     };
     Dajiejiemian.prototype.daojutips9 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.chaoshiid[8]);
     };
     Dajiejiemian.prototype.daojutipsjiemian = function (daojuid) {
@@ -3192,11 +6077,18 @@ var Dajiejiemian = (function (_super) {
             }
         }
         this.daojutipsui.heiseguanbi.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbitips, this);
+        this.daojutipsui.shiyonganniu.alpha = 0;
+        this.daojutipsui.shiyonganniu.enabled = false;
+        this.daojutipsui.quedinganniu.alpha = 1;
+        this.daojutipsui.quedinganniu.enabled = true;
+        this.daojutipsui.quedinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbitips, this);
     };
     Dajiejiemian.prototype.guanbitips = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Gameguanli.Kongzhitai().dingbuui.removeChild(this.daojutipsui);
     };
     Dajiejiemian.prototype.chaoshi1keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.chaoshijiage[0])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.chaoshijiage[0]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -3216,6 +6108,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.chaoshi2keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.chaoshijiage[1])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.chaoshijiage[1]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -3232,6 +6125,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.chaoshi3keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.chaoshijiage[2])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.chaoshijiage[2]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -3248,6 +6142,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.chaoshi4keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.chaoshijiage[3])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.chaoshijiage[3]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -3264,6 +6159,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.chaoshi5keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.chaoshijiage[4])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.chaoshijiage[4]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -3280,6 +6176,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.chaoshi6keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.chaoshijiage[5])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.chaoshijiage[5]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -3301,6 +6198,7 @@ var Dajiejiemian = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        Gamesound.Soundkongzhi().anniuyinxiao();
                         this.chaoshigoumaiui.but_goumai5.enabled = false;
                         huidiaodengdai = new egret.Timer(3000, 1);
                         huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.chaoshifudaizhuanfa1, this);
@@ -3330,6 +6228,8 @@ var Dajiejiemian = (function (_super) {
             + '"beishu"' + ":" + '"1"' + "}");
         this.chaoshishuliang[6] = 0;
         this.chaoshijiemianchushihua();
+        var tupianxianshi = Gameguanli.Kongzhitai().daojuxianshiicon(geiyudaoju);
+        Gameguanli.Kongzhitai().jianglijiemian("kai", tupianxianshi, "1");
     };
     Dajiejiemian.prototype.chaoshi8keng = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -3337,6 +6237,7 @@ var Dajiejiemian = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        Gamesound.Soundkongzhi().anniuyinxiao();
                         this.chaoshigoumaiui.but_goumai6.enabled = false;
                         huidiaodengdai = new egret.Timer(3000, 1);
                         huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.chaoshifudaizhuanfa2, this);
@@ -3366,6 +6267,8 @@ var Dajiejiemian = (function (_super) {
             + '"beishu"' + ":" + '"1"' + "}");
         this.chaoshishuliang[7] = 0;
         this.chaoshijiemianchushihua();
+        var tupianxianshi = Gameguanli.Kongzhitai().daojuxianshiicon(geiyudaoju);
+        Gameguanli.Kongzhitai().jianglijiemian("kai", tupianxianshi, "1");
     };
     Dajiejiemian.prototype.chaoshi9keng = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -3373,6 +6276,7 @@ var Dajiejiemian = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        Gamesound.Soundkongzhi().anniuyinxiao();
                         this.chaoshigoumaiui.but_goumai7.enabled = false;
                         huidiaodengdai = new egret.Timer(3000, 1);
                         huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.chaoshifudaizhuanfa3, this);
@@ -3402,6 +6306,8 @@ var Dajiejiemian = (function (_super) {
             + '"beishu"' + ":" + '"1"' + "}");
         this.chaoshishuliang[8] = 0;
         this.chaoshijiemianchushihua();
+        var tupianxianshi = Gameguanli.Kongzhitai().daojuxianshiicon(geiyudaoju);
+        Gameguanli.Kongzhitai().jianglijiemian("kai", tupianxianshi, "1");
     };
     Dajiejiemian.prototype.jiedaosuijichufa = function () {
         this.suijichufaliebiao = this.jiedaopeizhi.suijiliebiao.split(",");
@@ -3472,35 +6378,35 @@ var Dajiejiemian = (function (_super) {
                 this.suijijiemian.jiangli1.text = "+ " + shuliang;
                 break;
             case "6":
-                this.suijijiemian.jiangliicon1.source = "img_daerzibiaoshi_png";
+                this.suijijiemian.jiangliicon1.source = "img_daerzixinqinicon_png";
                 this.suijijiemian.jiangli1.text = "+ " + shuliang;
                 break;
             case "7":
-                this.suijijiemian.jiangliicon1.source = "img_xiaoerzibiaoshi_png";
+                this.suijijiemian.jiangliicon1.source = "img_ererzixinqinicon_png";
                 this.suijijiemian.jiangli1.text = "+ " + shuliang;
                 break;
             case "8":
-                this.suijijiemian.jiangliicon1.source = "img_xifubiaoshi_png";
+                this.suijijiemian.jiangliicon1.source = "img_xifuxinqingicon_png";
                 this.suijijiemian.jiangli1.text = "+ " + shuliang;
                 break;
             case "9":
-                this.suijijiemian.jiangliicon1.source = "img_sunnvbiaoshi_png";
+                this.suijijiemian.jiangliicon1.source = "img_sunnvxinqingicon_png";
                 this.suijijiemian.jiangli1.text = "+ " + shuliang;
                 break;
             case "10":
-                this.suijijiemian.jiangliicon1.source = "img_daerzibiaoshi_png";
+                this.suijijiemian.jiangliicon1.source = "img_daerzinengliicon_png";
                 this.suijijiemian.jiangli1.text = "+ " + shuliang;
                 break;
             case "11":
-                this.suijijiemian.jiangliicon1.source = "img_xiaoerzibiaoshi_png";
+                this.suijijiemian.jiangliicon1.source = "img_ererzinengliicon_png";
                 this.suijijiemian.jiangli1.text = "+ " + shuliang;
                 break;
             case "12":
-                this.suijijiemian.jiangliicon1.source = "img_xifubiaoshi_png";
+                this.suijijiemian.jiangliicon1.source = "img_xifunengliicon_png";
                 this.suijijiemian.jiangli1.text = "+ " + shuliang;
                 break;
             case "13":
-                this.suijijiemian.jiangliicon1.source = "img_sunnvbiaoshi_png";
+                this.suijijiemian.jiangliicon1.source = "img_sunnvnengliicon_png";
                 this.suijijiemian.jiangli1.text = "+ " + shuliang;
                 break;
             default:
@@ -3541,35 +6447,35 @@ var Dajiejiemian = (function (_super) {
                 this.jianglijiemian.jianglishuliang.text = "+ " + shuliang;
                 break;
             case "6":
-                this.jianglijiemian.jiangliicon.source = "img_daerzibiaoshi_png";
+                this.jianglijiemian.jiangliicon.source = "img_daerzixinqinicon_png";
                 this.jianglijiemian.jianglishuliang.text = "+ " + shuliang;
                 break;
             case "7":
-                this.jianglijiemian.jiangliicon.source = "img_xiaoerzibiaoshi_png";
+                this.jianglijiemian.jiangliicon.source = "img_ererzixinqinicon_png";
                 this.jianglijiemian.jianglishuliang.text = "+ " + shuliang;
                 break;
             case "8":
-                this.jianglijiemian.jiangliicon.source = "img_xifubiaoshi_png";
+                this.jianglijiemian.jiangliicon.source = "img_xifuxinqingicon_png";
                 this.jianglijiemian.jianglishuliang.text = "+ " + shuliang;
                 break;
             case "9":
-                this.jianglijiemian.jiangliicon.source = "img_sunnvbiaoshi_png";
+                this.jianglijiemian.jiangliicon.source = "img_sunnvxinqingicon_png";
                 this.jianglijiemian.jianglishuliang.text = "+ " + shuliang;
                 break;
             case "10":
-                this.jianglijiemian.jiangliicon.source = "img_daerzibiaoshi_png";
+                this.jianglijiemian.jiangliicon.source = "img_daerzinengliicon_png";
                 this.jianglijiemian.jianglishuliang.text = "+ " + shuliang;
                 break;
             case "11":
-                this.jianglijiemian.jiangliicon.source = "img_xiaoerzibiaoshi_png";
+                this.jianglijiemian.jiangliicon.source = "img_ererzinengliicon_png";
                 this.jianglijiemian.jianglishuliang.text = "+ " + shuliang;
                 break;
             case "12":
-                this.jianglijiemian.jiangliicon.source = "img_xifubiaoshi_png";
+                this.jianglijiemian.jiangliicon.source = "img_xifunengliicon_png";
                 this.jianglijiemian.jianglishuliang.text = "+ " + shuliang;
                 break;
             case "13":
-                this.jianglijiemian.jiangliicon.source = "img_sunnvbiaoshi_png";
+                this.jianglijiemian.jiangliicon.source = "img_sunnvnengliicon_png";
                 this.jianglijiemian.jianglishuliang.text = "+ " + shuliang;
                 break;
             default:
@@ -3584,7 +6490,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.dajianglipuxianshi = function (leixing, shuliang) {
-        var caipubiao = RES.getRes("shipubiao_json");
+        var caipubiao = Gerenshuxing.shipubiao;
         for (var i = 0; i < caipubiao.length; i++) {
             if (caipubiao[i].id == leixing) {
                 this.jianglijiemian.jiangliicon.source = caipubiao[i].id + "_png";
@@ -3629,35 +6535,35 @@ var Dajiejiemian = (function (_super) {
                 this.suijijiemian.jiangli2.text = "- " + shuliang;
                 break;
             case "6":
-                this.suijijiemian.jiangliicon2.source = "img_daerzibiaoshi_png";
+                this.suijijiemian.jiangliicon2.source = "img_daerzixinqinicon_png";
                 this.suijijiemian.jiangli2.text = "- " + shuliang;
                 break;
             case "7":
-                this.suijijiemian.jiangliicon2.source = "img_xiaoerzibiaoshi_png";
+                this.suijijiemian.jiangliicon2.source = "img_ererzixinqinicon_png";
                 this.suijijiemian.jiangli2.text = "- " + shuliang;
                 break;
             case "8":
-                this.suijijiemian.jiangliicon2.source = "img_xifubiaoshi_png";
+                this.suijijiemian.jiangliicon2.source = "img_xifuxinqingicon_png";
                 this.suijijiemian.jiangli2.text = "- " + shuliang;
                 break;
             case "9":
-                this.suijijiemian.jiangliicon2.source = "img_sunnvbiaoshi_png";
+                this.suijijiemian.jiangliicon2.source = "img_sunnvxinqingicon_png";
                 this.suijijiemian.jiangli2.text = "- " + shuliang;
                 break;
             case "10":
-                this.suijijiemian.jiangliicon2.source = "img_daerzibiaoshi_png";
+                this.suijijiemian.jiangliicon2.source = "img_daerzinengliicon_png";
                 this.suijijiemian.jiangli2.text = "- " + shuliang;
                 break;
             case "11":
-                this.suijijiemian.jiangliicon2.source = "img_xiaoerzibiaoshi_png";
+                this.suijijiemian.jiangliicon2.source = "img_ererzinengliicon_png";
                 this.suijijiemian.jiangli2.text = "- " + shuliang;
                 break;
             case "12":
-                this.suijijiemian.jiangliicon2.source = "img_xifubiaoshi_png";
+                this.suijijiemian.jiangliicon2.source = "img_xifunengliicon_png";
                 this.suijijiemian.jiangli2.text = "- " + shuliang;
                 break;
             case "13":
-                this.suijijiemian.jiangliicon2.source = "img_sunnvbiaoshi_png";
+                this.suijijiemian.jiangliicon2.source = "img_sunnvnengliicon_png";
                 this.suijijiemian.jiangli2.text = "- " + shuliang;
                 break;
             default:
@@ -3672,6 +6578,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.suijiqueding = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Gameguanli.Kongzhitai().dingbuui.removeChild(this.suijijiemian);
         this.but_shaizi.enabled = true;
         this.kaishianniuzu.alpha = 1;
@@ -3744,6 +6651,7 @@ var Dajiejiemian = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        Gamesound.Soundkongzhi().anniuyinxiao();
                         Gameguanli.Kongzhitai().dingbuui.removeChild(this.suijijiemian);
                         this.but_shaizi.enabled = false;
                         huidiaodengdai = new egret.Timer(3000, 1);
@@ -3765,8 +6673,8 @@ var Dajiejiemian = (function (_super) {
                 if (Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)) {
                     this.jianglijiemian = new Jianglijiesuanui();
                     Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
-                    this.fasongjiangli(10);
-                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 10);
+                    this.fasongjiangli(5);
+                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 5);
                     this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbijiangli, this);
                 }
                 else {
@@ -3777,8 +6685,8 @@ var Dajiejiemian = (function (_super) {
                 if (Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)) {
                     this.jianglijiemian = new Jianglijiesuanui();
                     Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
-                    this.fasongjiangli(10);
-                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 10);
+                    this.fasongjiangli(5);
+                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 5);
                     this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbijiangli, this);
                 }
                 else {
@@ -3789,8 +6697,8 @@ var Dajiejiemian = (function (_super) {
                 if (Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)) {
                     this.jianglijiemian = new Jianglijiesuanui();
                     Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
-                    this.fasongjiangli(10);
-                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 10);
+                    this.fasongjiangli(5);
+                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 5);
                     this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbijiangli, this);
                 }
                 else {
@@ -3801,8 +6709,8 @@ var Dajiejiemian = (function (_super) {
                 if (Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)) {
                     this.jianglijiemian = new Jianglijiesuanui();
                     Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
-                    this.fasongjiangli(10);
-                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 10);
+                    this.fasongjiangli(5);
+                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 5);
                     this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbijiangli, this);
                 }
                 else {
@@ -3813,8 +6721,8 @@ var Dajiejiemian = (function (_super) {
                 if (Gerenshuxing.jinbizhi >= parseInt(this.kouchushuliang)) {
                     this.jianglijiemian = new Jianglijiesuanui();
                     Gameguanli.Kongzhitai().dingbuui.addChild(this.jianglijiemian);
-                    this.fasongjiangli(10);
-                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 10);
+                    this.fasongjiangli(5);
+                    this.jianglijiemianjianglitubiao(this.jianglishuliang * 5);
                     this.jianglijiemian.qudinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbijiangli, this);
                 }
                 else {
@@ -3832,10 +6740,11 @@ var Dajiejiemian = (function (_super) {
             + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
     };
     Dajiejiemian.prototype.guanbijiangli = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Gameguanli.Kongzhitai().dingbuui.removeChild(this.jianglijiemian);
     };
     Dajiejiemian.prototype.kouchucaipuxianshi = function (leixing, shuliang) {
-        var caipubiao = RES.getRes("shipubiao_json");
+        var caipubiao = Gerenshuxing.shipubiao;
         for (var i = 0; i < caipubiao.length; i++) {
             if (caipubiao[i].id == leixing) {
                 this.suijijiemian.jiangliicon2.source = caipubiao[i].id + "_png";
@@ -3845,7 +6754,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.jianglicaipuxianshi = function (leixing, shuliang) {
-        var caipubiao = RES.getRes("shipubiao_json");
+        var caipubiao = Gerenshuxing.shipubiao;
         for (var i = 0; i < caipubiao.length; i++) {
             if (caipubiao[i].id == leixing) {
                 this.suijijiemian.jiangliicon1.source = caipubiao[i].id + "_png";
@@ -3906,6 +6815,7 @@ var Dajiejiemian = (function (_super) {
     Dajiejiemian.prototype.xianshiyaodianshangdianjiemian = function () {
         this.chaoshigoumaiui = new Chaoshishangdianui();
         Gameguanli.Kongzhitai().dingbuui.addChild(this.chaoshigoumaiui);
+        this.chaoshigoumaiui.guanbijiemain.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbichaoshiui, this);
         this.chaoshigoumaiui.heisezhezao.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbichaoshiui, this);
         this.yaodianjiemianchushihua();
     };
@@ -4074,33 +6984,43 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.yaodiantips1 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.yaodianid[0]);
     };
     Dajiejiemian.prototype.yaodiantips2 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.yaodianid[1]);
     };
     Dajiejiemian.prototype.yaodiantips3 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.yaodianid[2]);
     };
     Dajiejiemian.prototype.yaodiantips4 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.yaodianid[3]);
     };
     Dajiejiemian.prototype.yaodiantips5 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.yaodianid[4]);
     };
     Dajiejiemian.prototype.yaodiantips6 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.yaodianid[5]);
     };
     Dajiejiemian.prototype.yaodiantips7 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.yaodianid[6]);
     };
     Dajiejiemian.prototype.yaodiantips8 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.yaodianid[7]);
     };
     Dajiejiemian.prototype.yaodiantips9 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.yaodianid[8]);
     };
     Dajiejiemian.prototype.yaodian1keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.yaodianjiage[0])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.yaodianjiage[0]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -4120,6 +7040,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.yaodian2keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.yaodianjiage[1])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.yaodianjiage[1]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -4136,6 +7057,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.yaodian3keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.yaodianjiage[2])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.yaodianjiage[2]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -4152,6 +7074,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.yaodian4keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.yaodianjiage[3])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.yaodianjiage[3]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -4168,6 +7091,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.yaodian5keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.yaodianjiage[4])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.yaodianjiage[4]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -4184,6 +7108,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.yaodian6keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.yaodianjiage[5])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.yaodianjiage[5]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -4205,6 +7130,7 @@ var Dajiejiemian = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        Gamesound.Soundkongzhi().anniuyinxiao();
                         this.chaoshigoumaiui.but_goumai5.enabled = false;
                         huidiaodengdai = new egret.Timer(3000, 1);
                         huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.yaodianfudaizhuanfa1, this);
@@ -4226,6 +7152,8 @@ var Dajiejiemian = (function (_super) {
             + '"beishu"' + ":" + '"1"' + "}");
         this.yaodianshuliang[6] = 0;
         this.yaodianjiemianchushihua();
+        var tupianxianshi = Gameguanli.Kongzhitai().daojuxianshiicon(this.yaodianid[6]);
+        Gameguanli.Kongzhitai().jianglijiemian("kai", tupianxianshi, "1");
     };
     Dajiejiemian.prototype.yaodian8keng = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -4233,6 +7161,7 @@ var Dajiejiemian = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        Gamesound.Soundkongzhi().anniuyinxiao();
                         this.chaoshigoumaiui.but_goumai6.enabled = false;
                         huidiaodengdai = new egret.Timer(3000, 1);
                         huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.yaodianfudaizhuanfa2, this);
@@ -4254,6 +7183,8 @@ var Dajiejiemian = (function (_super) {
             + '"beishu"' + ":" + '"1"' + "}");
         this.yaodianshuliang[7] = 0;
         this.yaodianjiemianchushihua();
+        var tupianxianshi = Gameguanli.Kongzhitai().daojuxianshiicon(this.yaodianid[7]);
+        Gameguanli.Kongzhitai().jianglijiemian("kai", tupianxianshi, "1");
     };
     Dajiejiemian.prototype.yaodian9keng = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -4261,6 +7192,7 @@ var Dajiejiemian = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        Gamesound.Soundkongzhi().anniuyinxiao();
                         this.chaoshigoumaiui.but_goumai7.enabled = false;
                         huidiaodengdai = new egret.Timer(3000, 1);
                         huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.yaodianfudaizhuanfa3, this);
@@ -4282,6 +7214,8 @@ var Dajiejiemian = (function (_super) {
             + '"beishu"' + ":" + '"1"' + "}");
         this.yaodianshuliang[8] = 0;
         this.yaodianjiemianchushihua();
+        var tupianxianshi = Gameguanli.Kongzhitai().daojuxianshiicon(this.yaodianid[8]);
+        Gameguanli.Kongzhitai().jianglijiemian("kai", tupianxianshi, "1");
     };
     /*
 菜市场商店相关内容
@@ -4317,6 +7251,7 @@ var Dajiejiemian = (function (_super) {
     Dajiejiemian.prototype.xianshicaishichangshangdianjiemian = function () {
         this.chaoshigoumaiui = new Chaoshishangdianui();
         Gameguanli.Kongzhitai().dingbuui.addChild(this.chaoshigoumaiui);
+        this.chaoshigoumaiui.guanbijiemain.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbichaoshiui, this);
         this.chaoshigoumaiui.heisezhezao.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbichaoshiui, this);
         this.caishichangjiemianchushihua();
     };
@@ -4485,33 +7420,43 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.caishichangtips1 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.caishichangid[0]);
     };
     Dajiejiemian.prototype.caishichangtips2 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.caishichangid[1]);
     };
     Dajiejiemian.prototype.caishichangtips3 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.caishichangid[2]);
     };
     Dajiejiemian.prototype.caishichangtips4 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.caishichangid[3]);
     };
     Dajiejiemian.prototype.caishichangtips5 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.caishichangid[4]);
     };
     Dajiejiemian.prototype.caishichangtips6 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.caishichangid[5]);
     };
     Dajiejiemian.prototype.caishichangtips7 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.caishichangid[6]);
     };
     Dajiejiemian.prototype.caishichangtips8 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.caishichangid[7]);
     };
     Dajiejiemian.prototype.caishichangtips9 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.caishichangid[8]);
     };
     Dajiejiemian.prototype.caishichang1keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.caishichangjiage[0])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.caishichangjiage[0]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -4531,6 +7476,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.caishichang2keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.caishichangjiage[1])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.caishichangjiage[1]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -4547,6 +7493,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.caishichang3keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.caishichangjiage[2])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.caishichangjiage[2]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -4563,6 +7510,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.caishichang4keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.caishichangjiage[3])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.caishichangjiage[3]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -4579,6 +7527,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.caishichang5keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.caishichangjiage[4])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.caishichangjiage[4]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -4595,6 +7544,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.caishichang6keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.caishichangjiage[5])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.caishichangjiage[5]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -4616,6 +7566,7 @@ var Dajiejiemian = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        Gamesound.Soundkongzhi().anniuyinxiao();
                         this.chaoshigoumaiui.but_goumai5.enabled = false;
                         huidiaodengdai = new egret.Timer(3000, 1);
                         huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.caishichangfudaizhuanfa1, this);
@@ -4637,6 +7588,8 @@ var Dajiejiemian = (function (_super) {
             + '"beishu"' + ":" + '"1"' + "}");
         this.caishichangshuliang[6] = 0;
         this.caishichangjiemianchushihua();
+        var tupianxianshi = Gameguanli.Kongzhitai().daojuxianshiicon(this.caishichangid[6]);
+        Gameguanli.Kongzhitai().jianglijiemian("kai", tupianxianshi, "1");
     };
     Dajiejiemian.prototype.caishichang8keng = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -4644,6 +7597,7 @@ var Dajiejiemian = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        Gamesound.Soundkongzhi().anniuyinxiao();
                         this.chaoshigoumaiui.but_goumai6.enabled = false;
                         huidiaodengdai = new egret.Timer(3000, 1);
                         huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.caishichangfudaizhuanfa2, this);
@@ -4665,6 +7619,8 @@ var Dajiejiemian = (function (_super) {
             + '"beishu"' + ":" + '"1"' + "}");
         this.caishichangshuliang[7] = 0;
         this.caishichangjiemianchushihua();
+        var tupianxianshi = Gameguanli.Kongzhitai().daojuxianshiicon(this.caishichangid[7]);
+        Gameguanli.Kongzhitai().jianglijiemian("kai", tupianxianshi, "1");
     };
     Dajiejiemian.prototype.caishichang9keng = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -4672,6 +7628,7 @@ var Dajiejiemian = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        Gamesound.Soundkongzhi().anniuyinxiao();
                         this.chaoshigoumaiui.but_goumai7.enabled = false;
                         huidiaodengdai = new egret.Timer(3000, 1);
                         huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.caishichangfudaizhuanfa3, this);
@@ -4693,11 +7650,14 @@ var Dajiejiemian = (function (_super) {
             + '"beishu"' + ":" + '"1"' + "}");
         this.caishichangshuliang[8] = 0;
         this.caishichangjiemianchushihua();
+        var tupianxianshi = Gameguanli.Kongzhitai().daojuxianshiicon(this.caishichangid[8]);
+        Gameguanli.Kongzhitai().jianglijiemian("kai", tupianxianshi, "1");
     };
     /*
     菜市场买菜入口
     */
     Dajiejiemian.prototype.caishichangjinru = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Gameguanli.Kongzhitai().maicaijiemian("kai");
     };
     /*
@@ -4734,6 +7694,7 @@ var Dajiejiemian = (function (_super) {
     Dajiejiemian.prototype.xianshipeixunshangdianjiemian = function () {
         this.chaoshigoumaiui = new Chaoshishangdianui();
         Gameguanli.Kongzhitai().dingbuui.addChild(this.chaoshigoumaiui);
+        this.chaoshigoumaiui.guanbijiemain.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbichaoshiui, this);
         this.chaoshigoumaiui.heisezhezao.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbichaoshiui, this);
         this.peixunjiemianchushihua();
     };
@@ -4902,33 +7863,43 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.peixuntips1 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.peixunid[0]);
     };
     Dajiejiemian.prototype.peixuntips2 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.peixunid[1]);
     };
     Dajiejiemian.prototype.peixuntips3 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.peixunid[2]);
     };
     Dajiejiemian.prototype.peixuntips4 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.peixunid[3]);
     };
     Dajiejiemian.prototype.peixuntips5 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.peixunid[4]);
     };
     Dajiejiemian.prototype.peixuntips6 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.peixunid[5]);
     };
     Dajiejiemian.prototype.peixuntips7 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.peixunid[6]);
     };
     Dajiejiemian.prototype.peixuntips8 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.peixunid[7]);
     };
     Dajiejiemian.prototype.peixuntips9 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.daojutipsjiemian(this.peixunid[8]);
     };
     Dajiejiemian.prototype.peixun1keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.peixunjiage[0])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.peixunjiage[0]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -4948,6 +7919,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.peixun2keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.peixunjiage[1])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.peixunjiage[1]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -4964,6 +7936,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.peixun3keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.peixunjiage[2])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.peixunjiage[2]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -4980,6 +7953,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.peixun4keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.peixunjiage[3])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.peixunjiage[3]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -4996,6 +7970,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.peixun5keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.peixunjiage[4])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.peixunjiage[4]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -5012,6 +7987,7 @@ var Dajiejiemian = (function (_super) {
         }
     };
     Dajiejiemian.prototype.peixun6keng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= parseInt(this.peixunjiage[5])) {
             Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.peixunjiage[5]);
             Weblianjie.fasongshuju("code:085", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + ","
@@ -5033,6 +8009,7 @@ var Dajiejiemian = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        Gamesound.Soundkongzhi().anniuyinxiao();
                         this.chaoshigoumaiui.but_goumai5.enabled = false;
                         huidiaodengdai = new egret.Timer(3000, 1);
                         huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.peixunfudaizhuanfa1, this);
@@ -5054,6 +8031,8 @@ var Dajiejiemian = (function (_super) {
             + '"beishu"' + ":" + '"1"' + "}");
         this.peixunshuliang[6] = 0;
         this.peixunjiemianchushihua();
+        var tupianxianshi = Gameguanli.Kongzhitai().daojuxianshiicon(this.peixunid[6]);
+        Gameguanli.Kongzhitai().jianglijiemian("kai", tupianxianshi, "1");
     };
     Dajiejiemian.prototype.peixun8keng = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -5061,6 +8040,7 @@ var Dajiejiemian = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        Gamesound.Soundkongzhi().anniuyinxiao();
                         this.chaoshigoumaiui.but_goumai6.enabled = false;
                         huidiaodengdai = new egret.Timer(3000, 1);
                         huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.peixunfudaizhuanfa2, this);
@@ -5082,6 +8062,8 @@ var Dajiejiemian = (function (_super) {
             + '"beishu"' + ":" + '"1"' + "}");
         this.peixunshuliang[7] = 0;
         this.peixunjiemianchushihua();
+        var tupianxianshi = Gameguanli.Kongzhitai().daojuxianshiicon(this.peixunid[7]);
+        Gameguanli.Kongzhitai().jianglijiemian("kai", tupianxianshi, "1");
     };
     Dajiejiemian.prototype.peixun9keng = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -5089,6 +8071,7 @@ var Dajiejiemian = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        Gamesound.Soundkongzhi().anniuyinxiao();
                         this.chaoshigoumaiui.but_goumai7.enabled = false;
                         huidiaodengdai = new egret.Timer(3000, 1);
                         huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.peixunfudaizhuanfa3, this);
@@ -5110,8 +8093,9 @@ var Dajiejiemian = (function (_super) {
             + '"beishu"' + ":" + '"1"' + "}");
         this.peixunshuliang[8] = 0;
         this.peixunjiemianchushihua();
+        var tupianxianshi = Gameguanli.Kongzhitai().daojuxianshiicon(this.peixunid[8]);
+        Gameguanli.Kongzhitai().jianglijiemian("kai", tupianxianshi, "1");
     };
     return Dajiejiemian;
 }(eui.Component));
 __reflect(Dajiejiemian.prototype, "Dajiejiemian", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Dajiejiemian.js.map

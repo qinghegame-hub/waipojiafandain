@@ -22,4 +22,3 @@ var Chuangjiaohuui = (function (_super) {
     return Chuangjiaohuui;
 }(eui.Component));
 __reflect(Chuangjiaohuui.prototype, "Chuangjiaohuui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Chuangjiaohuui.js.map

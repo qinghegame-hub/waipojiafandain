@@ -22,4 +22,3 @@ var Waimaiduihuakuang = (function (_super) {
     return Waimaiduihuakuang;
 }(eui.Component));
 __reflect(Waimaiduihuakuang.prototype, "Waimaiduihuakuang", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Waimaiduihuakuang.js.map

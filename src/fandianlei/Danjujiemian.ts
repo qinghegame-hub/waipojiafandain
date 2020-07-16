@@ -59,6 +59,7 @@ class Danjujiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjidi1gejiesuo(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(Gerenshuxing.jinbizhi >= this.di1gejinbi){
 			Weblianjie.fasongshuju("code:022","{" + '"danjuid"' +":"+ '"' + this.di1geid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 		}else{
@@ -68,6 +69,7 @@ class Danjujiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjidi2gejiesuo(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(Gerenshuxing.jinbizhi >= this.di2gejinbi){
 			Weblianjie.fasongshuju("code:022","{" + '"danjuid"' +":"+ '"' + this.di2geid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 		}else{
@@ -150,7 +152,7 @@ class Danjujiemian extends eui.Component implements  eui.UIComponent {
 
 	//管理界面数据逻辑的处理
 	public chulishujujiajujiegou(yeqian?:number,yeshu?:number){
-		let guanlileixingleibiao:any = RES.getRes("danjubiao_json");
+		let guanlileixingleibiao:any = Gerenshuxing.danjubiao;
 		let dangqiandanjuliebiao:any = [];
 		let xunhuan:number = 0;
 //接收服务端数据后，处理家具信息

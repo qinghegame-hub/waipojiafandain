@@ -22,4 +22,3 @@ var Jinbiwenben = (function (_super) {
     return Jinbiwenben;
 }(eui.Component));
 __reflect(Jinbiwenben.prototype, "Jinbiwenben", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Jinbiwenben.js.map

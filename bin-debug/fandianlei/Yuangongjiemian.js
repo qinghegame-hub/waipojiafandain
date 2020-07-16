@@ -27,6 +27,7 @@ var Yuangongjiemian = (function (_super) {
         this.but_jiepin.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjijiepin, this);
     };
     Yuangongjiemian.prototype.dianjipinyong = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         var shifouyishiyong = false;
         for (var i = 0; i < Gerenshuxing.shiyongyuangong.length; i++) {
             if (this.yuangongid == Gerenshuxing.shiyongyuangong[i]) {
@@ -39,6 +40,7 @@ var Yuangongjiemian = (function (_super) {
         }
     };
     Yuangongjiemian.prototype.dianjijiepin = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         var shifouyishiyong = false;
         for (var i = 0; i < Gerenshuxing.shiyongyuangong.length; i++) {
             if (this.yuangongid == Gerenshuxing.shiyongyuangong[i]) {
@@ -113,7 +115,7 @@ var Yuangongjiemian = (function (_super) {
     };
     //管理界面数据逻辑的处理
     Yuangongjiemian.prototype.chulishujujiajujiegou = function (yeqian, yeshu) {
-        var guanlileixingleibiao = RES.getRes("yuangongbiao_json");
+        var guanlileixingleibiao = Gerenshuxing.yuangongbiao;
         //接收服务端数据后，处理家具信息
         for (var bi = 0; bi < guanlileixingleibiao.length; bi++) {
             guanlileixingleibiao[bi].ygisshiyong = 0;
@@ -327,4 +329,3 @@ var Yuangongjiemian = (function (_super) {
     return Yuangongjiemian;
 }(eui.Component));
 __reflect(Yuangongjiemian.prototype, "Yuangongjiemian", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Yuangongjiemian.js.map

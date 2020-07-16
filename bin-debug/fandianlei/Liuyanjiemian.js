@@ -103,6 +103,7 @@ var Liuyanjiemian = (function (_super) {
         this.img_haopintiao8.source = Liuyanjiemian.di10tiaopingfen;
     };
     Liuyanjiemian.prototype.dianjiguanbi = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Gameguanli.Kongzhitai().caipujiemian("liuyan", "guan");
     };
     Liuyanjiemian.liuyanneirong = function (neirong, mingzi, pingfen, touxiang) {
@@ -413,4 +414,3 @@ var Liuyanjiemian = (function (_super) {
     return Liuyanjiemian;
 }(eui.Component));
 __reflect(Liuyanjiemian.prototype, "Liuyanjiemian", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Liuyanjiemian.js.map

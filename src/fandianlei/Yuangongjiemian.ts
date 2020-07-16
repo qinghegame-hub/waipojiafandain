@@ -52,6 +52,7 @@ class Yuangongjiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjipinyong(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		let shifouyishiyong=false;
 		for(var i = 0;i<Gerenshuxing.shiyongyuangong.length;i++){
 			if(this.yuangongid == Gerenshuxing.shiyongyuangong[i]){
@@ -66,6 +67,7 @@ class Yuangongjiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjijiepin(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		let shifouyishiyong=false;
 		for(var i = 0;i<Gerenshuxing.shiyongyuangong.length;i++){
 			if(this.yuangongid == Gerenshuxing.shiyongyuangong[i]){
@@ -145,7 +147,7 @@ class Yuangongjiemian extends eui.Component implements  eui.UIComponent {
 
 	//管理界面数据逻辑的处理
 	public chulishujujiajujiegou(yeqian?:number,yeshu?:number){
-		let guanlileixingleibiao:any = RES.getRes("yuangongbiao_json");
+		let guanlileixingleibiao:any = Gerenshuxing.yuangongbiao;
 //接收服务端数据后，处理家具信息
 		for(var bi = 0;bi<guanlileixingleibiao.length;bi ++){
 			guanlileixingleibiao[bi].ygisshiyong = 0;

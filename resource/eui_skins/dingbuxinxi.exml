@@ -52,5 +52,6 @@
 		<e:Image id="img_dangqianshike17" source="img_dangqianshike_png" x="595.5" y="253"/>
 		<e:Image id="img_dangqianshike18" source="img_dangqianshike_png" x="652.5" y="264.1"/>
 		<e:Image id="wangluozhuangtai" source="img_wangluo1_png" x="592.5" y="186" width="60" height="40"/>
+		<e:Image id="shengyinanniu" source="img_shengyinanniu1_png" x="652" y="174" anchorOffsetX="0" anchorOffsetY="0"/>
 	</e:Group>
 </e:Skin>

@@ -22,4 +22,3 @@ var Motuoche = (function (_super) {
     return Motuoche;
 }(eui.Component));
 __reflect(Motuoche.prototype, "Motuoche", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Motuoche.js.map

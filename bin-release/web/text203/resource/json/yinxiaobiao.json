@@ -1,0 +1,6 @@
+[
+{"id":"1001","fangzhitype":"1","selltext":"客流量增加","sellachievement":"20","selltime":"3","sellpay":"1000","sellissock":"1"},
+{"id":"1002","fangzhitype":"1","selltext":"客流量增加","sellachievement":"40","selltime":"5","sellpay":"2000","sellissock":"1"},
+{"id":"1003","fangzhitype":"2","selltext":"口碑值","sellachievement":"20","selltime":"1","sellpay":"1000","sellissock":"1"},
+{"id":"1004","fangzhitype":"2","selltext":"口碑值","sellachievement":"40","selltime":"365","sellpay":"1000000","sellissock":"1"}
+]

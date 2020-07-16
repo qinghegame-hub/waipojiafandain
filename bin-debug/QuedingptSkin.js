@@ -22,4 +22,3 @@ var QuedingptSkin = (function (_super) {
     return QuedingptSkin;
 }(eui.Component));
 __reflect(QuedingptSkin.prototype, "QuedingptSkin", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=QuedingptSkin.js.map

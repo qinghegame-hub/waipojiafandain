@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PvppipeijiemianSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1734ba7d403" ></w:Config>
+	<e:Group id="pipeijiemianzu" x="0" y="0">
+		<e:Image id="pipeibeiijng" source="img_pipeibeijing_png" x="0" y="0"/>
+		<e:Group id="lanfangtouxiang" x="55" y="394">
+			<e:Group id="lanfangtouxiangzu" width="140" height="140" x="11" y="11" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Image id="morentouxianglan" x="0" width="140" height="140" y="0" source="tx1000_png"/>
+			</e:Group>
+			<e:Image id="lanfangtouxiangkuang" source="img_touxiangkuanglan_png" x="0" y="0"/>
+		</e:Group>
+		<e:Group id="hongfangtouxiang" x="534" y="664">
+			<e:Group id="hongfangtouxiangzu" width="140" height="140" x="11" y="11" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Image id="morentouxianghong" x="0" y="0" width="140" height="140" source="kongbaitouxiang_png"/>
+			</e:Group>
+			<e:Image id="hongfangtouxiangkuang" x="0" y="0" source="img_touxiangkuanghong_png"/>
+		</e:Group>
+		<e:Label id="lanfangnicheng" text="第六十四年" x="528" y="362" anchorOffsetX="0" width="190" textAlign="center" verticalAlign="middle" size="30" fontFamily="wodeziti" bold="true" height="30"/>
+		<e:Label id="lanfangmingwang" text="名望：5级" x="389" y="443" anchorOffsetX="0" width="190" textAlign="center" verticalAlign="middle" size="30" fontFamily="wodeziti" bold="true" height="30"/>
+		<e:Label id="hongfangmingwang" text="名望：??级" x="33" y="817" anchorOffsetX="0" width="190" textAlign="center" verticalAlign="middle" size="30" fontFamily="wodeziti" bold="true" height="30"/>
+		<e:Label id="hongfangnicheng" text="？？？？？？" x="223" y="748" anchorOffsetX="0" width="190" textAlign="center" verticalAlign="middle" size="30" fontFamily="wodeziti" bold="true" height="30"/>
+		<e:Label id="shengyu5beicishu" text="今日剩余5倍奖励次数：10" x="111" y="1006" anchorOffsetX="0" width="546" textAlign="center" verticalAlign="middle" size="30" fontFamily="wodeziti" bold="true" height="30"/>
+		<e:Label id="dangqianbeishu" text="当前奖励倍数：1" x="102" y="1064" anchorOffsetX="0" width="311.33" textAlign="center" verticalAlign="middle" size="30" fontFamily="wodeziti" bold="true" height="30" anchorOffsetY="0"/>
+		<e:Label id="dangqiantishi" text="点击“开始匹配”按钮，寻找对手..." x="111" y="1126" anchorOffsetX="0" width="540.66" textAlign="center" verticalAlign="middle" size="30" fontFamily="wodeziti" bold="true" height="30" anchorOffsetY="0" textColor="0xf26413"/>
+		<e:Label id="xiaohaoshuliang" text="- 10" x="379.33" y="1262.67" anchorOffsetX="0" width="112.67" textAlign="left" verticalAlign="middle" size="30" fontFamily="wodeziti" bold="true" height="30" anchorOffsetY="0" textColor="0xf90909"/>
+		<e:Image id="xiaohaoicon" x="326" y="1257.67" width="40" height="40" source="img_jiating_png"/>
+		<e:Button id="kaishipipeianniu" label="" x="233" y="1172.35" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_kaishipipei1_png" source.down="but_kaishipipei2_png" source.disabled="but_kaishipipei2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="fanbeianniu" label="" x="455.85" y="1056.33" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_wubeijiangli_fenxiang1_png" source.down="but_wubeijiangli_fenxiang2_png" source.disabled="but_wubeijiangli_fenxiang2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="guanbijiemiananniu" label="" x="627" y="127.67" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_guanbianniu1_png" source.down="but_guanbianniu2_png" source.disabled="but_guanbianniu2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

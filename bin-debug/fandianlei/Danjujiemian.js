@@ -27,6 +27,7 @@ var Danjujiemian = (function (_super) {
         this.but_jiaona1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjidi2gejiesuo, this);
     };
     Danjujiemian.prototype.dianjidi1gejiesuo = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= this.di1gejinbi) {
             Weblianjie.fasongshuju("code:022", "{" + '"danjuid"' + ":" + '"' + this.di1geid + '"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
         }
@@ -35,6 +36,7 @@ var Danjujiemian = (function (_super) {
         }
     };
     Danjujiemian.prototype.dianjidi2gejiesuo = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (Gerenshuxing.jinbizhi >= this.di2gejinbi) {
             Weblianjie.fasongshuju("code:022", "{" + '"danjuid"' + ":" + '"' + this.di2geid + '"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
         }
@@ -113,7 +115,7 @@ var Danjujiemian = (function (_super) {
     };
     //管理界面数据逻辑的处理
     Danjujiemian.prototype.chulishujujiajujiegou = function (yeqian, yeshu) {
-        var guanlileixingleibiao = RES.getRes("danjubiao_json");
+        var guanlileixingleibiao = Gerenshuxing.danjubiao;
         var dangqiandanjuliebiao = [];
         var xunhuan = 0;
         //接收服务端数据后，处理家具信息
@@ -225,4 +227,3 @@ var Danjujiemian = (function (_super) {
     return Danjujiemian;
 }(eui.Component));
 __reflect(Danjujiemian.prototype, "Danjujiemian", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Danjujiemian.js.map

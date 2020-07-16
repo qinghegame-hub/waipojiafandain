@@ -24,9 +24,11 @@ var Youxitishiui = (function (_super) {
         var _this = this;
         this.heisezhezao.touchEnabled = true;
         this.heisezhezao.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+            Gamesound.Soundkongzhi().anniuyinxiao();
             _this.parent.removeChild(_this);
         }, this);
         this.guanbianniu.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+            Gamesound.Soundkongzhi().anniuyinxiao();
             _this.parent.removeChild(_this);
         }, this);
     };
@@ -36,4 +38,3 @@ var Youxitishiui = (function (_super) {
     return Youxitishiui;
 }(eui.Component));
 __reflect(Youxitishiui.prototype, "Youxitishiui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Youxitishiui.js.map

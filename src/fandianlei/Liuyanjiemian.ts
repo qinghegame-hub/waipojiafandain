@@ -269,6 +269,7 @@ class Liuyanjiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjiguanbi(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Gameguanli.Kongzhitai().caipujiemian("liuyan","guan");
 	}
 

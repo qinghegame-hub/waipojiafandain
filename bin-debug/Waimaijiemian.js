@@ -22,4 +22,3 @@ var Waimaijiemian = (function (_super) {
     return Waimaijiemian;
 }(eui.Component));
 __reflect(Waimaijiemian.prototype, "Waimaijiemian", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Waimaijiemian.js.map

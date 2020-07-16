@@ -22,4 +22,3 @@ var Daitutanchukuangui = (function (_super) {
     return Daitutanchukuangui;
 }(eui.Component));
 __reflect(Daitutanchukuangui.prototype, "Daitutanchukuangui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Daitutanchukuangui.js.map

@@ -3,14 +3,14 @@
 	<w:Config id="16ff1e2afec" ></w:Config>
 	<e:Group id="zhutizu" x="0" y="0">
 		<e:Image id="img_maicaibj" source="img_maicaibj_png" x="0" y="0"/>
-		<e:Label id="jianjinbi" text="-999" x="159" y="63" anchorOffsetY="0" height="20" anchorOffsetX="0" width="47" size="20" verticalAlign="middle" textAlign="right" fontFamily="wodeziti" stroke="2"/>
-		<e:Label id="baicaitext" text="+999" x="159" y="115" anchorOffsetY="0" height="20" anchorOffsetX="0" width="47" size="20" verticalAlign="middle" textAlign="right" fontFamily="wodeziti" stroke="2"/>
-		<e:Label id="yutext" text="+999" x="296" y="63" anchorOffsetY="0" height="20" anchorOffsetX="0" width="47" size="20" verticalAlign="middle" textAlign="right" fontFamily="wodeziti" stroke="2"/>
-		<e:Label id="routext" text="+999" x="438" y="63" anchorOffsetY="0" height="20" anchorOffsetX="0" width="47" size="20" verticalAlign="middle" textAlign="right" fontFamily="wodeziti" stroke="2"/>
-		<e:Label id="tudoutext" text="+999" x="575" y="63" anchorOffsetY="0" height="20" anchorOffsetX="0" width="47" size="20" verticalAlign="middle" textAlign="right" fontFamily="wodeziti" stroke="2"/>
-		<e:Label id="dongguatext" text="+999" x="577" y="114" anchorOffsetY="0" height="20" anchorOffsetX="0" width="47" size="20" verticalAlign="middle" textAlign="right" fontFamily="wodeziti" stroke="2"/>
-		<e:Label id="shuaxintext" text="+999" x="438" y="114" anchorOffsetY="0" height="20" anchorOffsetX="0" width="47" size="20" verticalAlign="middle" textAlign="right" fontFamily="wodeziti" stroke="2"/>
-		<e:Label id="cailanzitext" text="+999" x="296" y="115" anchorOffsetY="0" height="20" anchorOffsetX="0" width="47" size="20" verticalAlign="middle" textAlign="right" fontFamily="wodeziti" stroke="2"/>
+		<e:Label id="jianjinbi" text="-999" x="159" y="63" anchorOffsetY="0" height="20" anchorOffsetX="0" width="47" size="20" verticalAlign="middle" textAlign="right" fontFamily="wodeziti" stroke="2" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="baicaitext" text="+999" x="159" y="115" anchorOffsetY="0" height="20" anchorOffsetX="0" width="47" size="20" verticalAlign="middle" textAlign="right" fontFamily="wodeziti" stroke="2" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="yutext" text="+999" x="296" y="63" anchorOffsetY="0" height="20" anchorOffsetX="0" width="47" size="20" verticalAlign="middle" textAlign="right" fontFamily="wodeziti" stroke="2" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="routext" text="+999" x="438" y="63" anchorOffsetY="0" height="20" anchorOffsetX="0" width="47" size="20" verticalAlign="middle" textAlign="right" fontFamily="wodeziti" stroke="2" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="tudoutext" text="+999" x="575" y="63" anchorOffsetY="0" height="20" anchorOffsetX="0" width="47" size="20" verticalAlign="middle" textAlign="right" fontFamily="wodeziti" stroke="2" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="dongguatext" text="+999" x="577" y="114" anchorOffsetY="0" height="20" anchorOffsetX="0" width="47" size="20" verticalAlign="middle" textAlign="right" fontFamily="wodeziti" stroke="2" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="shuaxintext" text="+999" x="438" y="114" anchorOffsetY="0" height="20" anchorOffsetX="0" width="47" size="20" verticalAlign="middle" textAlign="right" fontFamily="wodeziti" stroke="2" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="cailanzitext" text="+999" x="296" y="115" anchorOffsetY="0" height="20" anchorOffsetX="0" width="47" size="20" verticalAlign="middle" textAlign="right" fontFamily="wodeziti" stroke="2" textColor="0xf97306" strokeColor="0x2c2a26"/>
 		<e:Group id="caizu" x="66" y="223" anchorOffsetY="0" height="1014" anchorOffsetX="0" width="621">
 			<e:Image id="keng1" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="-216" verticalCenter="-413"/>
 			<e:Image id="keng2" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="-4.5" verticalCenter="-413"/>

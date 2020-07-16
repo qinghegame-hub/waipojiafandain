@@ -55,6 +55,8 @@ class Chaoshishangdianui extends eui.Component implements  eui.UIComponent {
 	public goumaianniuzu7:eui.Group;
 	public but_goumai7:eui.Button;
 	public goumaijine7:eui.Label;
+	public guanbijiemain:eui.Button;
+
 
 
 
@@ -71,6 +73,16 @@ class Chaoshishangdianui extends eui.Component implements  eui.UIComponent {
 	protected childrenCreated():void
 	{
 		super.childrenCreated();
+		this.guanbijiemainanniu();
+	}
+
+	public guanbijiemainanniu(){
+		if(this.parent){
+			this.guanbijiemain.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>{
+				Gamesound.Soundkongzhi().anniuyinxiao();
+				this.parent.removeChild(this);
+			},this)
+		}
 	}
 	
 }

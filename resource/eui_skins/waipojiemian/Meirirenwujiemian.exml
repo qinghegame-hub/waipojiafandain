@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MeirirenwujiemianSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="173224f8896" ></w:Config>
+	<e:Group id="meirirenwudazu" left="0" top="0" bottom="0" right="0">
+		<e:Image id="heisebeijingceng" left="0" bottom="0" top="0" right="0" alpha="0.6" source="img_heisezhezao_png"/>
+		<e:Group id="meirirenwuzu" x="89" y="295">
+			<e:Image id="jiemianbeijing" x="0" y="0" source="img_tanchubeijing_png"/>
+			<e:Button id="guanbijiemian" label="" x="481" y="22" enabled="true">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="but_guanbi2_png" source.down="but_guanbi1_png" source.disabled="but_guanbi1_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Label id="meiribiaoti" text="每日行程" x="157" y="28" anchorOffsetX="0" width="234" anchorOffsetY="0" height="46" verticalAlign="middle" textAlign="center" bold="true" fontFamily="wodeziti" textColor="0xf97306" stroke="2" strokeColor="0x2c2a26" size="30"/>
+			<e:Group id="yitiaoernwu" x="53" y="132">
+			<e:Image id="dantiaobeijingdi" source="img_dibudiban_png" x="0" y="0"/>
+			<e:Image id="dantiaotushi" source="img_qinfenkeku_png" x="16" y="14"/>
+			<e:Label id="renwumingcheng" text="日行一善" x="142" y="16" anchorOffsetY="0" height="18" anchorOffsetX="0" width="198" size="18" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" textColor="0xf97306" strokeColor="0x2c2a26"/>
+			<e:Label id="renwushuoming" text="去街道帮助乞丐" x="140" y="50" anchorOffsetY="0" height="30" anchorOffsetX="0" width="198" size="18" verticalAlign="top" textAlign="left" fontFamily="wodeziti" textColor="0xF97306" strokeColor="0x2C2A26"/>
+			<e:Button id="lingquanniu" label="" x="364" y="26" enabled="true">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="but_libao1_png" source.down="but_libao2_png" source.disabled="but_libao2_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Label id="renwujindu" text="进度：（1/2）" x="142" y="86" size="18" fontFamily="wodeziti" textColor="0xf97306" strokeColor="0x2c2a26"/>
+			</e:Group>
+			<e:Group x="53.5" y="280" id="yitiaoernwu0">
+			<e:Image id="dantiaobeijingdi0" source="img_dibudiban_png" x="0" y="0"/>
+			<e:Image id="dantiaotushi0" source="img_qinfenkeku_png" x="16" y="14"/>
+			<e:Label id="renwumingcheng0" text="日行一善" x="142" y="16" anchorOffsetY="0" height="18" anchorOffsetX="0" width="198" size="18" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" textColor="0xF97306" strokeColor="0x2C2A26"/>
+			<e:Label id="renwushuoming0" text="去街道帮助乞丐" x="140" y="50" anchorOffsetY="0" height="30" anchorOffsetX="0" width="198" size="18" verticalAlign="top" textAlign="left" fontFamily="wodeziti" textColor="0xF97306" strokeColor="0x2C2A26"/>
+			<e:Button id="lingquanniu0" label="" x="364" y="26" enabled="true">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="but_libao1_png" source.down="but_libao2_png" source.disabled="but_libao2_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Label text="进度：（1/2）" x="142" y="86" size="18" fontFamily="wodeziti" textColor="0xF97306" strokeColor="0x2C2A26" id="renwujindu0"/>
+			</e:Group>
+			<e:Group x="53.5" y="428" id="yitiaoernwu1">
+			<e:Image id="dantiaobeijingdi1" source="img_dibudiban_png" x="0" y="0"/>
+			<e:Image id="dantiaotushi1" source="img_qinfenkeku_png" x="16" y="14"/>
+			<e:Label id="renwumingcheng1" text="日行一善" x="142" y="16" anchorOffsetY="0" height="18" anchorOffsetX="0" width="198" size="18" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" textColor="0xF97306" strokeColor="0x2C2A26"/>
+			<e:Label id="renwushuoming1" text="去街道帮助乞丐" x="140" y="50" anchorOffsetY="0" height="30" anchorOffsetX="0" width="198" size="18" verticalAlign="top" textAlign="left" fontFamily="wodeziti" textColor="0xF97306" strokeColor="0x2C2A26"/>
+			<e:Button id="lingquanniu1" label="" x="364" y="26" enabled="true">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="but_libao1_png" source.down="but_libao2_png" source.disabled="but_libao2_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Label text="进度：（1/2）" x="142" y="86" size="18" fontFamily="wodeziti" textColor="0xF97306" strokeColor="0x2C2A26" id="renwujindu1"/>
+			</e:Group>
+			<e:Group x="53.5" y="576" id="yitiaoernwu2">
+			<e:Image id="dantiaobeijingdi2" source="img_dibudiban_png" x="0" y="0"/>
+			<e:Image id="dantiaotushi2" source="img_qinfenkeku_png" x="16" y="14"/>
+			<e:Label id="renwumingcheng2" text="日行一善" x="142" y="16" anchorOffsetY="0" height="18" anchorOffsetX="0" width="198" size="18" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" textColor="0xF97306" strokeColor="0x2C2A26"/>
+			<e:Label id="renwushuoming2" text="去街道帮助乞丐" x="140" y="50" anchorOffsetY="0" height="30" anchorOffsetX="0" width="198" size="18" verticalAlign="top" textAlign="left" fontFamily="wodeziti" textColor="0xF97306" strokeColor="0x2C2A26"/>
+			<e:Button id="lingquanniu2" label="" x="364" y="26" enabled="true">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="but_libao1_png" source.down="but_libao2_png" source.disabled="but_libao2_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Label text="进度：（1/2）" x="142" y="86" size="18" fontFamily="wodeziti" textColor="0xF97306" strokeColor="0x2C2A26" id="renwujindu2"/>
+			</e:Group>
+		</e:Group>
+	</e:Group>
+</e:Skin>

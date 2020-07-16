@@ -22,4 +22,3 @@ var Sunnvjiaohuui = (function (_super) {
     return Sunnvjiaohuui;
 }(eui.Component));
 __reflect(Sunnvjiaohuui.prototype, "Sunnvjiaohuui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Sunnvjiaohuui.js.map

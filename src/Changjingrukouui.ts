@@ -36,7 +36,7 @@ class Changjingrukouui extends eui.Component implements  eui.UIComponent {
 		if(this.leixing == "caishichang"){
 			this.img_biaotitu.source = "img_biaoticaishichang_png";
 			this.rukoushuoming.text = "这里是菜市场，当您的饭店缺少食材时，可以在本菜市场进行食材购买。（每次均需消耗一定数量的钱币。）";
-			let changshubiao = RES.getRes("changshubiao_json");
+			let changshubiao = Gerenshuxing.changshubiao;
 			let xiaohaoqianbi:number = 0;
 			for(var i = 0;i<changshubiao.length;i++){
 				if(changshubiao[i].id == 0){
@@ -45,7 +45,7 @@ class Changjingrukouui extends eui.Component implements  eui.UIComponent {
 			}
 			this.xiaohaoqian.text = "-" + xiaohaoqianbi;
 		}else if(this.leixing == "shangjie"){
-			this.img_biaotitu.source = "img_biaoticaishichang_png";
+			this.img_biaotitu.source = "img_biaotijiedao_png";
 			this.rukoushuoming.text = "经常出门转转，多上街走走肯定是极好的，如果运气好，或许还能得到意想不到的收获。";
 			this.img_qian.source = "img_jiating_png";
 			this.xiaohaoqian.text = "- 30";
@@ -54,6 +54,7 @@ class Changjingrukouui extends eui.Component implements  eui.UIComponent {
 	}
 
 	public guanbijiemian(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(this.leixing == "caishichang"){
 			Gameguanli.Kongzhitai().changjingrukou("caishichang","guan");
 		}else if(this.leixing == "shangjie"){
@@ -62,6 +63,7 @@ class Changjingrukouui extends eui.Component implements  eui.UIComponent {
 	}
 
 	public jinrujiemian(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(this.leixing == "caishichang"){
 			if(Gerenshuxing.jinbizhi >= 500){
 				Weblianjie.fasongshuju("code:033","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TaotaoshangdianuiSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="173524479a2" ></w:Config>
+	<e:Group id="chaoshishangdianzu_taotao" left="0" bottom="0" top="0" right="0">
+		<e:Image id="heisezhezao_taotao" source="img_heisezhezao_png" left="0" bottom="0" right="0" top="0"/>
+		<e:Image id="img_chaoshijiemianbj_taotao" x="6.5" y="168.06" source="img_chaoshijiemianbj_png"/>
+		<e:Label id="biaotilan_taotao" text="淘淘商店" x="259.85" y="180.98" anchorOffsetX="0" width="216.67" anchorOffsetY="0" height="46" size="30" fontFamily="wodeziti" verticalAlign="middle" textAlign="center" stroke="4" bold="true" strokeColor="0x2C2A26" textColor="0xF97306"/>
+		<e:Group id="daojuzu_taotao_1" x="68.97" y="284.17" anchorOffsetX="0" width="181" anchorOffsetY="0" height="192">
+		<e:Image id="daojutubiao_taotao_1" source="img_anquanguanli_png" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="0" verticalCenter="0"/>
+		<e:Group id="goumaianniuzu_taotao_1" anchorOffsetY="0" height="42" horizontalCenter="0" bottom="0">
+			<e:Button id="but_goumai_taotao_1" label="" anchorOffsetX="0" enabled="true" horizontalCenter="0" bottom="0">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_chaoshigoumai1_png" source.down="but_chaoshigoumai2_png" source.disabled="but_chaoshigoumai2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Label id="goumaijine_taotao_1" text="-888888" anchorOffsetX="0" width="93.67" verticalAlign="middle" textAlign="center" height="30" size="20" fontFamily="wodeziti" stroke="2" strokeColor="0x2C2A26" touchEnabled="false" textColor="0xF97306" verticalCenter="0" right="0"/>
+			<e:Image id="qianicon_taotao_1" source="img_qian_png" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" touchEnabled="false" verticalCenter="0" left="10"/>
+		</e:Group>
+		</e:Group>
+		<e:Group id="daojuzu_taotao_2" x="285" y="285" anchorOffsetX="0" width="181" height="192">
+		<e:Image id="daojutubiao_taotao_2" source="img_anquanguanli_png" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5" verticalCenter="0" horizontalCenter="0"/>
+		<e:Group id="goumaianniuzu_taotao_2" bottom="0" horizontalCenter="0">
+			<e:Button id="but_goumai_taotao_2" label="" anchorOffsetX="0" width="126" enabled="true" horizontalCenter="0" bottom="0">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_chaoshigoumai1_png" source.down="but_chaoshigoumai2_png" source.disabled="but_chaoshigoumai2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Label id="goumaijine_taotao_2" text="-888888" anchorOffsetX="0" width="88" verticalAlign="middle" textAlign="center" height="30" size="20" fontFamily="wodeziti" stroke="2" strokeColor="0x2C2A26" touchEnabled="false" textColor="0xF97306" right="0" verticalCenter="0"/>
+			<e:Image id="qianicon_taotao_2" source="img_qian_png" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" touchEnabled="false" verticalCenter="0" left="10"/>
+		</e:Group>
+		</e:Group>
+		<e:Group id="daojuzu_taotao_3" x="502.17" y="284.5" width="181" height="192">
+		<e:Image id="daojutubiao_taotao_3" source="img_anquanguanli_png" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="0" verticalCenter="0"/>
+		<e:Group id="goumaianniuzu_taotao_3" horizontalCenter="0" bottom="0">
+			<e:Button id="but_goumai_taotao_3" label="" anchorOffsetX="0" width="126" enabled="true" horizontalCenter="0" bottom="0">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_chaoshigoumai1_png" source.down="but_chaoshigoumai2_png" source.disabled="but_chaoshigoumai2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Label id="goumaijine_taotao_3" text="-888888" anchorOffsetX="0" width="89" verticalAlign="middle" textAlign="center" height="30" size="20" fontFamily="wodeziti" stroke="2" strokeColor="0x2C2A26" touchEnabled="false" textColor="0xF97306" right="0" verticalCenter="0"/>
+			<e:Image id="qianicon_taotao_3" source="img_qian_png" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" touchEnabled="false" left="10" verticalCenter="0"/>
+		</e:Group>
+		</e:Group>
+		<e:Group id="daojuzu_taotao_4" x="68.97" y="509" width="181" height="192">
+		<e:Image id="daojutubiao_taotao_4" source="img_anquanguanli_png" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="0" verticalCenter="0"/>
+		<e:Group id="goumaianniuzu_taotao_4" horizontalCenter="0" bottom="0">
+			<e:Button id="but_goumai_taotao_4" label="" anchorOffsetX="0" width="126" enabled="true" horizontalCenter="0" bottom="0">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_chaoshigoumai1_png" source.down="but_chaoshigoumai2_png" source.disabled="but_chaoshigoumai2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Label id="goumaijine_taotao_4" text="-888888" anchorOffsetX="0" width="91" verticalAlign="middle" textAlign="center" height="30" size="20" fontFamily="wodeziti" stroke="2" strokeColor="0x2C2A26" touchEnabled="false" textColor="0xF97306" right="0" verticalCenter="0"/>
+			<e:Image id="qianicon_taotao_4" source="img_qian_png" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" touchEnabled="false" left="10" verticalCenter="0"/>
+		</e:Group>
+		</e:Group>
+		<e:Group id="daojuzu_taotao_5" x="285.5" y="509" width="181" height="192">
+		<e:Image id="daojutubiao_taotao_5" source="img_anquanguanli_png" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="0" verticalCenter="0"/>
+		<e:Group id="goumaianniuzu_taotao_5" horizontalCenter="0" bottom="0">
+			<e:Button id="but_goumai_taotao_5" label="" anchorOffsetX="0" width="126" enabled="true" horizontalCenter="0" bottom="0">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_chaoshigoumai1_png" source.down="but_chaoshigoumai2_png" source.disabled="but_chaoshigoumai2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Label id="goumaijine_taotao_5" text="-888888" anchorOffsetX="0" width="89" verticalAlign="middle" textAlign="center" height="30" size="20" fontFamily="wodeziti" stroke="2" strokeColor="0x2C2A26" touchEnabled="false" textColor="0xF97306" right="0" verticalCenter="0"/>
+			<e:Image id="qianicon_taotao_5" source="img_qian_png" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" touchEnabled="false" left="10" verticalCenter="0"/>
+		</e:Group>
+		</e:Group>
+		<e:Group id="daojuzu_taotao_6" x="502.17" y="509" width="181" height="192">
+		<e:Image id="daojutubiao_taotao_6" source="img_anquanguanli_png" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="0" verticalCenter="0"/>
+		<e:Group id="goumaianniuzu_taotao_6" horizontalCenter="0" bottom="0">
+			<e:Button id="but_goumai_taotao_6" label="" anchorOffsetX="0" width="126" enabled="true" bottom="0" horizontalCenter="0">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_chaoshigoumai1_png" source.down="but_chaoshigoumai2_png" source.disabled="but_chaoshigoumai2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Label id="goumaijine_taotao_6" text="-888888" anchorOffsetX="0" width="89" verticalAlign="middle" textAlign="center" height="30" size="20" fontFamily="wodeziti" stroke="2" strokeColor="0x2C2A26" touchEnabled="false" textColor="0xF97306" right="0" verticalCenter="0"/>
+			<e:Image id="qianicon_taotao_6" source="img_qian_png" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" touchEnabled="false" left="10" verticalCenter="0"/>
+		</e:Group>
+		</e:Group>
+		<e:Group id="daojuzu_taotao_7" x="68.97" y="733" width="181" height="192">
+		<e:Image id="daojutubiao_taotao_7" source="img_anquanguanli_png" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="0" verticalCenter="0"/>
+		<e:Group id="goumaianniuzu_taotao_7" bottom="0" horizontalCenter="0">
+			<e:Button id="but_goumai_taotao_7" label="" anchorOffsetX="0" width="126" enabled="true" horizontalCenter="0" bottom="0">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="but_chaoshigoumai1_png" source.down="but_chaoshigoumai2_png" source.disabled="but_chaoshigoumai2_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Label id="goumaijine_taotao_7" text="-888888" x="37" anchorOffsetX="0" width="81" verticalAlign="middle" textAlign="center" height="30" size="20" fontFamily="wodeziti" stroke="2" strokeColor="0x2C2A26" touchEnabled="false" textColor="0xF97306" verticalCenter="0"/>
+			<e:Image id="qianicon_taotao_7" source="img_qian_png" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" touchEnabled="false" left="10" verticalCenter="0" x="-18" y="-66" scaleX="1" scaleY="1"/>
+		</e:Group>
+		</e:Group>
+		<e:Group id="daojuzu_taotao_8" x="286" y="733" width="181" height="192">
+		<e:Image id="daojutubiao_taotao_8" source="img_anquanguanli_png" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="0" verticalCenter="0"/>
+		<e:Group id="goumaianniuzu_taotao_8" bottom="0" horizontalCenter="0">
+			<e:Button id="but_goumai_taotao_8" label="" x="0" y="0" anchorOffsetX="0" width="126" enabled="true">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="but_chaoshigoumai1_png" source.down="but_chaoshigoumai2_png" source.disabled="but_chaoshigoumai2_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Label id="goumaijine_taotao_8" text="-888888" x="39" anchorOffsetX="0" width="78" verticalAlign="middle" textAlign="center" height="30" size="20" fontFamily="wodeziti" stroke="2" strokeColor="0x2C2A26" touchEnabled="false" textColor="0xF97306" verticalCenter="0"/>
+			<e:Image id="qianicon_taotao_8" source="img_qian_png" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" touchEnabled="false" left="10" verticalCenter="0" x="-18" y="-66" scaleX="1" scaleY="1"/>
+		</e:Group>
+		</e:Group>
+		<e:Group id="daojuzu_taotao_9" x="502.17" y="733" width="181" height="192">
+		<e:Image id="daojutubiao_taotao_9" source="img_anquanguanli_png" width="120" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5" horizontalCenter="0" verticalCenter="0"/>
+		<e:Group id="goumaianniuzu_taotao_9" bottom="0" horizontalCenter="0">
+			<e:Button id="but_goumai_taotao_9" label="" x="0" y="0" anchorOffsetX="0" width="126" enabled="true">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="but_chaoshigoumai1_png" source.down="but_chaoshigoumai2_png" source.disabled="but_chaoshigoumai2_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Label id="goumaijine_taotao_9" text="-888888" x="38" anchorOffsetX="0" width="81" verticalAlign="middle" textAlign="center" height="30" size="20" fontFamily="wodeziti" stroke="2" strokeColor="0x2C2A26" touchEnabled="false" textColor="0xF97306" verticalCenter="0"/>
+			<e:Image id="qianicon_taotao_9" source="img_qian_png" anchorOffsetX="0" width="24" anchorOffsetY="0" height="24" touchEnabled="false" left="10" verticalCenter="0" x="-18" y="-66" scaleX="1" scaleY="1"/>
+		</e:Group>
+		</e:Group>
+		<e:Button id="guanbijiemain_taotao_9" label="" x="654.36" y="195.87" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_guanbi2_png" source.down="but_guanbi1_png" source.disabled="but_guanbi1_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

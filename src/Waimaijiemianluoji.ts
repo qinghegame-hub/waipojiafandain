@@ -16,7 +16,7 @@ class Waimaijiemianluoji extends egret.DisplayObjectContainer {
 	}
 
 	public chushihua(caideid){
-		this.shipubiao = RES.getRes("shipubiao_json");
+		this.shipubiao = Gerenshuxing.shipubiao;
 		this.xuqiucai = caideid;
 		this.zhuyaojiemian = new Waimaijiemian();
 		Gameguanli.Kongzhitai().dingbuui.addChild(this.zhuyaojiemian);
@@ -29,7 +29,7 @@ class Waimaijiemianluoji extends egret.DisplayObjectContainer {
 		this.motuojiemian.scaleX = 0.5;
 		this.motuojiemian.scaleY = 0.5;
 		this.zhuyaojiemian.img_jiemiandabeijing.source = "img_jiemiandabeijing_png";
-		egret.Tween.get(this.motuojiemian).to({x:this.zhuyaojiemian.width / 2 - this.motuojiemian.width / 11 * 4,scaleX:1,scaleY:1},2000).call(()=>{
+		egret.Tween.get(this.motuojiemian).to({x:this.zhuyaojiemian.width / 2 - this.motuojiemian.width / 11 * 4,scaleX:1,scaleY:1},1000).call(()=>{
 			this.zhuyaojiemian.img_jiemiandabeijing.source = "img_jiemiandabeijing1_png";
 			this.zhuyaojiemian.qipaowenzizu.alpha = 1;
 			this.zhuyaojiemian.dibuzu.alpha = 1;
@@ -292,6 +292,7 @@ class Waimaijiemianluoji extends egret.DisplayObjectContainer {
 	}
 
 	public dianji1geanniu(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.zhuyaojiemian.caizu0.touchEnabled = false;
 		this.zhuyaojiemian.caizu1.touchEnabled = false;
 		this.zhuyaojiemian.caizu2.touchEnabled = false;
@@ -312,6 +313,7 @@ class Waimaijiemianluoji extends egret.DisplayObjectContainer {
 	}
 
 	public dianji2geanniu(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.zhuyaojiemian.caizu0.touchEnabled = false;
 		this.zhuyaojiemian.caizu1.touchEnabled = false;
 		this.zhuyaojiemian.caizu2.touchEnabled = false;
@@ -332,6 +334,7 @@ class Waimaijiemianluoji extends egret.DisplayObjectContainer {
 	}
 
 	public dianji3geanniu(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.zhuyaojiemian.caizu0.touchEnabled = false;
 		this.zhuyaojiemian.caizu1.touchEnabled = false;
 		this.zhuyaojiemian.caizu2.touchEnabled = false;
@@ -352,6 +355,7 @@ class Waimaijiemianluoji extends egret.DisplayObjectContainer {
 	}
 
 	public dianji4geanniu(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.zhuyaojiemian.caizu0.touchEnabled = false;
 		this.zhuyaojiemian.caizu1.touchEnabled = false;
 		this.zhuyaojiemian.caizu2.touchEnabled = false;
@@ -379,7 +383,7 @@ class Waimaijiemianluoji extends egret.DisplayObjectContainer {
 		tishiduihua.y = this.zhuyaojiemian.height / 11 * 6;
 		tishiduihua.dikuangbj.source = "img_zhengqueduihuakuang_png";
 		tishiduihua.shuohuawenzi.text = "对喽，老板手脚挺麻利的嘛！我去送货啦！";
-		egret.Tween.get(tishiduihua).to({y:this.zhuyaojiemian.height / 11 * 4},2000).wait(1000).call(()=>{
+		egret.Tween.get(tishiduihua).to({y:this.zhuyaojiemian.height / 11 * 4},1000).wait(500).call(()=>{
 			Gameguanli.Kongzhitai().dingbuui.removeChild(tishiduihua);
 			for(var i = 0;i<this.shipubiao.length;i++){
 				if(this.shipubiao[i].id == this.xuqiucai){
@@ -395,7 +399,7 @@ class Waimaijiemianluoji extends egret.DisplayObjectContainer {
 			this.zhuyaojiemian.img_jiemiandabeijing.source = "img_jiemiandabeijing_png";
 			this.zhuyaojiemian.qipaowenzizu.alpha = 0;
 			this.zhuyaojiemian.dibuzu.alpha = 0;
-			egret.Tween.get(this.motuojiemian).to({x:0 - this.zhuyaojiemian.width,scaleX:0.5,scaleY:0.5},2000).call(()=>{
+			egret.Tween.get(this.motuojiemian).to({x:0 - this.zhuyaojiemian.width,scaleX:0.5,scaleY:0.5},1000).call(()=>{
 				Gameguanli.Kongzhitai().dingbuui.removeChild(this.zhuyaojiemian);
 			})
 		})
@@ -414,7 +418,7 @@ class Waimaijiemianluoji extends egret.DisplayObjectContainer {
 				break;
 			}
 		}
-		egret.Tween.get(tishiduihua).to({y:this.zhuyaojiemian.height / 11 * 4},2000).wait(1000).call(()=>{
+		egret.Tween.get(tishiduihua).to({y:this.zhuyaojiemian.height / 11 * 4},1000).wait(500).call(()=>{
 			Gameguanli.Kongzhitai().dingbuui.removeChild(tishiduihua);
 			this.zhuyaojiemian.caizu0.touchEnabled = true;
 			this.zhuyaojiemian.caizu1.touchEnabled = true;

@@ -22,4 +22,3 @@ var Dianpurukou = (function (_super) {
     return Dianpurukou;
 }(eui.Component));
 __reflect(Dianpurukou.prototype, "Dianpurukou", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Dianpurukou.js.map

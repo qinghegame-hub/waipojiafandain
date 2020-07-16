@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="NichengxianshiSkin" width="345" height="49" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1730583e9c6" ></w:Config>
+	<e:Group id="nichengxianshizu" x="0" y="0">
+		<e:Image id="diban" source="img_nichengxianshi_png" x="0" y="0"/>
+		<e:Image id="morentouxiang" x="13.5" y="7.75" width="27" height="27" source="kongbaitouxiang_png"/>
+		<e:Group id="touxiang" width="27" height="27" x="13.5" y="7.75"/>
+		<e:Image id="youxiangkuang" source="img_nihcengtouxiang_png" x="7" y="1" width="40" height="40"/>
+		<e:Label id="mingzi" text="游客小小罗" x="66" y="11" anchorOffsetY="0" height="22" anchorOffsetX="0" width="204" size="22" fontFamily="wodeziti" textColor="0xf23609" textAlign="center" verticalAlign="middle" bold="true"/>
+		<e:Button id="quminganniu" label="" x="300" y="2" anchorOffsetX="0" anchorOffsetY="0" enabled="true" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_shurumingzi1_png" source.down="but_shurumingzi2_png" source.disabled="but_shurumingzi2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

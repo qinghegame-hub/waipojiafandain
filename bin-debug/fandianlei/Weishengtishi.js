@@ -22,4 +22,3 @@ var Weishengtishi = (function (_super) {
     return Weishengtishi;
 }(eui.Component));
 __reflect(Weishengtishi.prototype, "Weishengtishi", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Weishengtishi.js.map

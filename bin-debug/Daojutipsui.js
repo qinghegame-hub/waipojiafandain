@@ -18,8 +18,17 @@ var Daojutipsui = (function (_super) {
     };
     Daojutipsui.prototype.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
+        this.chushihua();
+    };
+    Daojutipsui.prototype.chushihua = function () {
+        var _this = this;
+        if (this.parent) {
+            this.guanbianniudaoju.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gamesound.Soundkongzhi().anniuyinxiao();
+                _this.parent.removeChild(_this);
+            }, this);
+        }
     };
     return Daojutipsui;
 }(eui.Component));
 __reflect(Daojutipsui.prototype, "Daojutipsui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Daojutipsui.js.map

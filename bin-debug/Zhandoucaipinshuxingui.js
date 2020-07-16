@@ -20,7 +20,7 @@ var Zhandoucaipinshuxingui = (function (_super) {
         _super.prototype.childrenCreated.call(this);
     };
     Zhandoucaipinshuxingui.prototype.chushihua = function (caiid, qidianshu) {
-        var shipubiao = RES.getRes("shipubiao_json");
+        var shipubiao = Gerenshuxing.shipubiao;
         for (var i = 0; i < shipubiao.length; i++) {
             if (shipubiao[i].id == caiid) {
                 this.caiicondizhi.source = shipubiao[i].id + "_png"; //菜的图片
@@ -29,7 +29,7 @@ var Zhandoucaipinshuxingui = (function (_super) {
             }
         }
         var duqudengji1 = Gerencaipudengji.caipulevel;
-        var caipudengjishuju = RES.getRes("shipulevel_json");
+        var caipudengjishuju = Gerenshuxing.shipudengjibiao;
         var shengjisuoxujingyan = 0;
         var benjijiacheng = 0;
         var benjiweili = 0;
@@ -818,26 +818,30 @@ var Zhandoucaipinshuxingui = (function (_super) {
         this.jinengtu3.addEventListener(egret.TouchEvent.TOUCH_TAP, this.di1gecaidi5jineng, this);
     };
     Zhandoucaipinshuxingui.prototype.di1gecaidi1jineng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.jinengmingzi.text = this.caidejinengmingzi1_9;
         this.jinengtips.text = this.caidejinengwenzi1_9;
     };
     Zhandoucaipinshuxingui.prototype.di1gecaidi2jineng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.jinengmingzi.text = this.caidejinengmingzi1_10;
         this.jinengtips.text = this.caidejinengwenzi1_10;
     };
     Zhandoucaipinshuxingui.prototype.di1gecaidi3jineng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.jinengmingzi.text = this.caidejinengmingzi1_11;
         this.jinengtips.text = this.caidejinengwenzi1_11;
     };
     Zhandoucaipinshuxingui.prototype.di1gecaidi4jineng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.jinengmingzi.text = this.caidejinengmingzi1_12;
         this.jinengtips.text = this.caidejinengwenzi1_12;
     };
     Zhandoucaipinshuxingui.prototype.di1gecaidi5jineng = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.jinengmingzi.text = this.caidejinengmingzi1_13;
         this.jinengtips.text = this.caidejinengwenzi1_13;
     };
     return Zhandoucaipinshuxingui;
 }(eui.Component));
 __reflect(Zhandoucaipinshuxingui.prototype, "Zhandoucaipinshuxingui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Zhandoucaipinshuxingui.js.map

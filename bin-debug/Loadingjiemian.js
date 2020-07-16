@@ -29,4 +29,3 @@ var Loadingjiemian = (function (_super) {
     return Loadingjiemian;
 }(eui.Component));
 __reflect(Loadingjiemian.prototype, "Loadingjiemian", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Loadingjiemian.js.map

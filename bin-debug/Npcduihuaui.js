@@ -129,6 +129,7 @@ var Npcduihuaui = (function (_super) {
         }
     };
     Npcduihuaui.prototype.dianjihuida1 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (this.renwujiangli1 != "-1") {
             this.renwujiangli1 = this.renwujiangli1.split(",");
             var beishu = 1;
@@ -140,6 +141,7 @@ var Npcduihuaui = (function (_super) {
         this.renwuxiafa(this.renwutiaozhuan1);
     };
     Npcduihuaui.prototype.dianjihuida2 = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         if (this.renwujiangli2 != "-1") {
             this.renwujiangli2 = this.renwujiangli2.split(",");
             var beishu = 1;
@@ -151,9 +153,9 @@ var Npcduihuaui = (function (_super) {
         this.renwuxiafa(this.renwutiaozhuan2);
     };
     Npcduihuaui.prototype.guanbiduihuakuang = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Gameguanli.Kongzhitai().dingbuui.removeChild(this);
     };
     return Npcduihuaui;
 }(eui.Component));
 __reflect(Npcduihuaui.prototype, "Npcduihuaui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Npcduihuaui.js.map

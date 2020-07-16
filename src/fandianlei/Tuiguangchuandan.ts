@@ -39,12 +39,13 @@ class Tuiguangchuandan extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjituiguanganniu(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Weblianjie.fasongshuju("code:014","{" + '"tuiguangid"' +":"+ '"' + this.chuandanneirong.id + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 	}
 
 
 	public chulishujuluoji(yeqian?:number,yeshu?:number){
-		let guanlileixingleibiao:any = RES.getRes("yinxiaobiao_json");
+		let guanlileixingleibiao:any = Gerenshuxing.yinxiaobiao;
 		this.chuandanneirong = guanlileixingleibiao[0];
 		this.tuiguangwenzi.text = this.chuandanneirong.selltext;
 		this.tuiguangxiaoguowenzi.text =  "+ " + this.chuandanneirong.sellachievement;

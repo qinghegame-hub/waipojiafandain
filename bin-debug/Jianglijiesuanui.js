@@ -30,4 +30,3 @@ var Jianglijiesuanui = (function (_super) {
     return Jianglijiesuanui;
 }(eui.Component));
 __reflect(Jianglijiesuanui.prototype, "Jianglijiesuanui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Jianglijiesuanui.js.map

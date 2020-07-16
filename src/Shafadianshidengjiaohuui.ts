@@ -1,6 +1,11 @@
 class Shafadianshidengjiaohuui extends eui.Component implements  eui.UIComponent {
 	public zhaxiangxinxi:eui.Group;
+	public heiseguanbi:eui.Image;
+	public zhuyaoxianshizu:eui.Group;
 	public img_tanchubeijing0:eui.Image;
+	public zhezaodikuang:eui.Image;
+	public zhezaodikuang0:eui.Image;
+	public zhezaodikuang1:eui.Image;
 	public biaotiwenzi0:eui.Label;
 	public guanxibiaoqian0:eui.Label;
 	public guanxineirong0:eui.Label;
@@ -12,6 +17,8 @@ class Shafadianshidengjiaohuui extends eui.Component implements  eui.UIComponent
 	public qurenanniu0:eui.Button;
 	public qurenanniu1:eui.Button;
 	public guanbianniu:eui.Button;
+
+
 
 
 
@@ -33,6 +40,10 @@ class Shafadianshidengjiaohuui extends eui.Component implements  eui.UIComponent
 	
 
 	public guanbianniujiaohu(){
-		
+		this.heiseguanbi.touchEnabled = true;
+		this.heiseguanbi.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>{
+			Gamesound.Soundkongzhi().anniuyinxiao();
+			this.parent.removeChild(this);
+		},this);		
 	}
 }

@@ -18,8 +18,17 @@ var Chaoshishangdianui = (function (_super) {
     };
     Chaoshishangdianui.prototype.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
+        this.guanbijiemainanniu();
+    };
+    Chaoshishangdianui.prototype.guanbijiemainanniu = function () {
+        var _this = this;
+        if (this.parent) {
+            this.guanbijiemain.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                Gamesound.Soundkongzhi().anniuyinxiao();
+                _this.parent.removeChild(_this);
+            }, this);
+        }
     };
     return Chaoshishangdianui;
 }(eui.Component));
 __reflect(Chaoshishangdianui.prototype, "Chaoshishangdianui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Chaoshishangdianui.js.map

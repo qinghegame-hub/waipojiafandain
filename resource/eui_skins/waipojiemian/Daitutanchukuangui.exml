@@ -3,9 +3,10 @@
 	<w:Config id="17266183b1b" ></w:Config>
 	<e:Group id="daitutanchuzu" x="105.5" y="310">
 		<e:Image id="beijingtudt" source="img_daitutanchukuang_png" x="0" y="0"/>
-		<e:Label id="biaotiwenzidt" text="带图标题" x="120.5" y="6" anchorOffsetX="0" width="295" anchorOffsetY="0" height="55" size="30" fontFamily="wodeziti" textAlign="center" verticalAlign="middle" bold="true" stroke="2" strokeColor="0x968e8e"/>
+		<e:Image id="dibuzhezao" source="img_tongyongzhezaodikuang_png" x="58" y="375" anchorOffsetX="0" width="426" anchorOffsetY="0" height="213"/>
+		<e:Label id="biaotiwenzidt" text="带图标题" x="173.5" y="20" anchorOffsetX="0" width="200" anchorOffsetY="0" height="43" size="30" fontFamily="wodeziti" textAlign="center" verticalAlign="middle" bold="true" stroke="2" strokeColor="0x2c2a26" textColor="0xf97306"/>
 		<e:Image id="tishitupiandt" source="img_danjuneirong_png" x="149.5" y="117" anchorOffsetX="0" width="240" anchorOffsetY="0" height="240"/>
-		<e:Label id="tishineirongdt" text="很抱歉的通知您很抱歉的通知您很抱歉的通知您很抱歉的通知您很抱歉的通知您很抱歉的通知您很抱歉的通知您" x="112.5" y="376" anchorOffsetX="0" width="313" anchorOffsetY="0" height="167" size="24" fontFamily="wodeziti" stroke="2" strokeColor="0x706a6a" lineSpacing="10"/>
+		<e:Label id="tishineirongdt" text="很抱歉的通知您很抱歉的通知您很抱歉的通知您很抱歉的通知您很抱歉的通知您很抱歉的通知您很抱歉的通知您" x="77.5" y="393" anchorOffsetX="0" width="388" anchorOffsetY="0" height="189" size="24" fontFamily="wodeziti" stroke="2" strokeColor="0x2c2a26" lineSpacing="10" textColor="0xf97306"/>
 		<e:Button id="quedinganniudt" label="" x="183" y="607" enabled="true">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">

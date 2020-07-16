@@ -76,4 +76,3 @@ var Jinbidonghua = (function (_super) {
     return Jinbidonghua;
 }(egret.DisplayObjectContainer));
 __reflect(Jinbidonghua.prototype, "Jinbidonghua");
-//# sourceMappingURL=Jinbidonghua.js.map

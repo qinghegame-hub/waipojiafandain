@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ZhucejiemianSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="172929dd276" ></w:Config>
+	<e:Group id="zhanghaoshuruzu" x="27.5" y="457.5">
+		<e:Image id="img_tongyongtishikuang" source="img_tongyongtishikuang_png" x="0" y="0"/>
+		<e:Label id="zhanghao" text="账号" x="89.5" y="139.5" anchorOffsetX="0" width="120.67" anchorOffsetY="0" height="46" textAlign="center" verticalAlign="middle" size="30" fontFamily="wodeziti" textColor="0xf9550e" stroke="2" strokeColor="0x706868"/>
+		<e:EditableText id="ceshizhanghaoshuru" width="386.67" height="40" text="" x="221.5" y="143.5" anchorOffsetY="0" textAlign="center" verticalAlign="middle" anchorOffsetX="0" size="30" fontFamily="wodeziti" textColor="0x2041ea" promptColor="0x8c8383" stroke="2" strokeColor="0x8c8686" background="true" backgroundColor="0xc1f442"/>
+		<e:Button id="quedingjinru" label="" x="262.5" y="334.83" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="img_tishiqueding1_png" source.down="img_tishiqueding2_png" source.disabled="img_tishiqueding2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

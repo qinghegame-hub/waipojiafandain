@@ -1,16 +1,12 @@
 class Gerenshuxingjiemian extends eui.Component implements  eui.UIComponent {
-	public guanbianniu:eui.Button;
-	public shuominganniu:eui.Button;
-	public shuominganniu0:eui.Button;
-	public shuominganniu1:eui.Button;
-	public shuominganniu2:eui.Button;
-	public shuominganniu3:eui.Button;
-	public shuominganniu4:eui.Button;
-	public shuominganniu5:eui.Button;
-	public shuominganniu6:eui.Button;
 	public gerenshuxingjieshaozu:eui.Group;
 	public img_heisezhezao:eui.Image;
 	public img_tongyongpinghejiemianpng:eui.Image;
+	public jiemiandikuang:eui.Image;
+	public jiemiandikuang0:eui.Image;
+	public jiemiandikuang1:eui.Image;
+	public jiemiandikuang2:eui.Image;
+	public jiemiandikuang3:eui.Image;
 	public wanjiatouxiang:eui.Group;
 	public img_shangxiangkuang:eui.Image;
 	public biaotiwenzi:eui.Label;
@@ -44,6 +40,16 @@ class Gerenshuxingjiemian extends eui.Component implements  eui.UIComponent {
 	public jinxiuanniuzu:eui.Group;
 	public jinxinganniu:eui.Button;
 	public jinxiuanniuwenzi:eui.Label;
+	public guanbianniu:eui.Button;
+	public shuominganniu:eui.Button;
+	public shuominganniu0:eui.Button;
+	public shuominganniu1:eui.Button;
+	public shuominganniu2:eui.Button;
+	public shuominganniu3:eui.Button;
+	public shuominganniu4:eui.Button;
+	public shuominganniu5:eui.Button;
+	public shuominganniu6:eui.Button;
+
 
 	public youxitishibiao:any;
 
@@ -81,6 +87,7 @@ class Gerenshuxingjiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming1(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "19"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -90,6 +97,7 @@ class Gerenshuxingjiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming2(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "20"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -99,6 +107,7 @@ class Gerenshuxingjiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming3(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "21"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -108,6 +117,7 @@ class Gerenshuxingjiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming4(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "22"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -117,6 +127,7 @@ class Gerenshuxingjiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming5(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "23"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -126,6 +137,7 @@ class Gerenshuxingjiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming6(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "24"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -135,6 +147,7 @@ class Gerenshuxingjiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming7(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "25"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -144,6 +157,7 @@ class Gerenshuxingjiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public shuoming8(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "26"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);

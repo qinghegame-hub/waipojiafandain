@@ -64,7 +64,9 @@ var Caipinjieshaojiemian = (function (_super) {
             var zhudongzhuanfa;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
+                    case 0:
+                        Gamesound.Soundkongzhi().anniuyinxiao();
+                        return [4 /*yield*/, platform.shareAppMessage("第六十四年", Gerenshuxing.fenxianglianjiedizhi, 11)];
                     case 1:
                         zhudongzhuanfa = _a.sent();
                         console.log("主动转发回调函数:" + zhudongzhuanfa);
@@ -76,4 +78,3 @@ var Caipinjieshaojiemian = (function (_super) {
     return Caipinjieshaojiemian;
 }(eui.Component));
 __reflect(Caipinjieshaojiemian.prototype, "Caipinjieshaojiemian", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Caipinjieshaojiemian.js.map

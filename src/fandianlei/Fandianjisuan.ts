@@ -31,7 +31,7 @@ class Fandianjisuan extends egret.DisplayObjectContainer{
     public static jisuanfandianshuju(){
         Fandianjisuan.chushihuajisuan(1);
         this.kaishijisuanwaimai();
-        this.jinlairenshu = 0;
+        this.jinlairenshu = 1;
         let zuidakeren:number = 0;
         if(Gerenshuxing.zzkeliuliang <= Gerenshuxing.zzkerongliang){
             zuidakeren = Math.floor(Gerenshuxing.zzkeliuliang / 10);
@@ -61,18 +61,35 @@ class Fandianjisuan extends egret.DisplayObjectContainer{
 
     public static kaishishengchengjuese(){
         this.jinlairenshu = this.jinlairenshu - 1;
-        let suijichupve = Math.floor(Math.random() * 10);
-        if(suijichupve >= 9){
-            let kaishichuren = new Donghuabifang("pve","0");
+        let suijichupve = Math.floor(Math.random() * 100);
+        if(suijichupve >= 95){
+            if(Gameguanli.Kongzhitai().zhujiemian.parent){
+                let kaishichuren = new Donghuabifang("pve","0");
+            }
         }else{
-            let caipuliebiao:any = RES.getRes("shipubiao_json");
+            let caipuliebiao:any = Gerenshuxing.shipubiao;
             let gukexuqiucai:any;
             let caipinming:string;
-            var xuqiucaiid = Math.floor( Math.random() * Gerenshuxing.jiesuocaipin.length);
+            let kexuanyongzu:any = [];
+            for(var r = 0;r < Gerenshuxing.jiesuocaipin.length;r++){
+                if(Gerenshuxing.jiesuoxiaochao == "1" && parseInt(Gerenshuxing.jiesuocaipin[r]) >= 1000 && parseInt(Gerenshuxing.jiesuocaipin[r]) < 2000){
+                    kexuanyongzu.push(Gerenshuxing.jiesuocaipin[r]);
+                }
+                if(Gerenshuxing.jiesuohuoguo == "1" && parseInt(Gerenshuxing.jiesuocaipin[r]) >= 2000 && parseInt(Gerenshuxing.jiesuocaipin[r]) < 3000){
+                    kexuanyongzu.push(Gerenshuxing.jiesuocaipin[r]);
+                }
+                if(Gerenshuxing.jiesuoxiaochi == "1" && parseInt(Gerenshuxing.jiesuocaipin[r]) >= 3000 && parseInt(Gerenshuxing.jiesuocaipin[r]) < 4000){
+                    kexuanyongzu.push(Gerenshuxing.jiesuocaipin[r]);
+                }
+                if(Gerenshuxing.jiesuozaocan == "1" && parseInt(Gerenshuxing.jiesuocaipin[r]) >= 4000 && parseInt(Gerenshuxing.jiesuocaipin[r]) < 5000){
+                    kexuanyongzu.push(Gerenshuxing.jiesuocaipin[r]);
+                }
+            }
+            var xuqiucaiid = Math.floor( Math.random() * kexuanyongzu.length);
             for (var o = 0;o < caipuliebiao.length;o++){
-                if(caipuliebiao[o].id == Gerenshuxing.jiesuocaipin[xuqiucaiid]){
+                if(parseInt(caipuliebiao[o].id) == parseInt(kexuanyongzu[xuqiucaiid])){
                     //这里可以按照天气和日期设置客户需求的用餐类型和几率
-                    gukexuqiucai = caipuliebiao[o].id;
+                    gukexuqiucai = parseInt(caipuliebiao[o].id);
                     caipinming = caipuliebiao[o].foodName;
                     break;
                 }
@@ -105,18 +122,11 @@ class Fandianjisuan extends egret.DisplayObjectContainer{
     public static kaishijisuanwaimai(){
         let waimaicaijilv = Math.floor(Math.random() * 100);
         if(Gerenshuxing.waimaixiaolv >= waimaicaijilv){
-            let caipubiao:any = RES.getRes("shipubiao_json");
+            let caipubiao:any = Gerenshuxing.shipubiao;
             let dingdancaiid:any;
             let tiaoxuancai = Math.floor( Math.random() * Gerenshuxing.jiesuocaipin.length);
-            for (var h = 0;h < caipubiao.length;h++){
-                if(caipubiao[h].id == Gerenshuxing.jiesuocaipin[tiaoxuancai]){
-                    //这里可以按照天气和日期设置客户需求的用餐类型和几率
-                    dingdancaiid = caipubiao[h].id;
-                    Waimailuoji.zhujiemianluoji(dingdancaiid);
-                    break;
-                }
-            }
-
+            dingdancaiid = Gerenshuxing.jiesuocaipin[tiaoxuancai];
+            Waimailuoji.zhujiemianluoji(dingdancaiid);
         }
 
     }

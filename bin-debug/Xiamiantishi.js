@@ -22,4 +22,3 @@ var Xiamiantishi = (function (_super) {
     return Xiamiantishi;
 }(eui.Component));
 __reflect(Xiamiantishi.prototype, "Xiamiantishi", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Xiamiantishi.js.map

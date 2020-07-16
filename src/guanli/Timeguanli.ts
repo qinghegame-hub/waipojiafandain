@@ -29,11 +29,25 @@ class Timeguanli extends egret.DisplayObjectContainer{
 		}
 		//根据成员的亲和值，计算成员每天可谈话的次数
 		if(Gerenshuxing.xianshishijian == 8){
-			Gerenshuxing.daerzijiaotan = Math.floor(parseInt(Gerenshuxing.daerzixinxi[0]) / 100 + 5);
-			Gerenshuxing.ererzijiaotan = Math.floor(parseInt(Gerenshuxing.ererzixinxi[0]) / 100 + 5);
-			Gerenshuxing.xifujiaotan = Math.floor(parseInt(Gerenshuxing.xifuxinxi[0]) / 100 + 5);
-			Gerenshuxing.sunnvjiaotan = Math.floor(parseInt(Gerenshuxing.sunnvxinxi[0]) / 100 + 5);
+			Gerenshuxing.daerzijiaotan = Math.floor(parseInt(Gerenshuxing.daerzixinxi[0]) / 100 + 2);
+			Gerenshuxing.ererzijiaotan = Math.floor(parseInt(Gerenshuxing.ererzixinxi[0]) / 100 + 2);
+			Gerenshuxing.xifujiaotan = Math.floor(parseInt(Gerenshuxing.xifuxinxi[0]) / 100 + 2);
+			Gerenshuxing.sunnvjiaotan = Math.floor(parseInt(Gerenshuxing.sunnvxinxi[0]) / 100 + 2);
 			this.jiatingchengyuanlijia();
+		}
+
+		//新手引导到床时，根据时间变更状态
+		if(Gerenshuxing.xianshishijian == 21){
+			if(Gerenshuxing.guideuiyindao < 9){
+				Weblianjie.fasongshuju("code:158","{"+ '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' +  "," +  '"buzou"' +":"+ '"9"'+"}");
+			}
+		}
+
+		//新手引导到饭店，根据时间变更状态
+		if(Gerenshuxing.xianshishijian == 8){
+			if(Gerenshuxing.guideuiyindao == 20){
+				Weblianjie.fasongshuju("code:158","{"+ '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' +  "," +  '"buzou"' +":"+ '"21"'+"}");
+			}
 		}
 		
 		//当前日期计算
@@ -284,8 +298,10 @@ class Timeguanli extends egret.DisplayObjectContainer{
 	}
 
 	public static jiatingchengyuanlijia(){
-		Weblianjie.fasongshuju("code:052","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
+		if(Gerenshuxing.guideuiyindao > 5){
+			Weblianjie.fasongshuju("code:052","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
 				+ '"ererzi"' +":"+ '"0"' +"}");
+		}
 	}
 
 	public static meirichengyuanguijia(){

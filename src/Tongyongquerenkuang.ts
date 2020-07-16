@@ -40,6 +40,7 @@ class Tongyongquerenkuang extends eui.Component implements  eui.UIComponent {
 	}
 
 	public guanbijiemian(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.parent.removeChild(this);
 	}
 	

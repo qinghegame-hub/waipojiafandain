@@ -46,6 +46,7 @@ var Guanlijiemian = (function (_super) {
         this.but_danju.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjidanju, this);
     };
     Guanlijiemian.prototype.dianjishangfanye = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         switch (Guanlijiemian.dangqianleixing) {
             case 1:
                 if (Guanlijiemian.dangqianyeshu > 1) {
@@ -118,6 +119,7 @@ var Guanlijiemian = (function (_super) {
         }
     };
     Guanlijiemian.prototype.dianjixiafanye = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         switch (Guanlijiemian.dangqianleixing) {
             case 1:
                 if (Guanlijiemian.dangqianyeqianshu == 1 && Guanlijiemian.dangqianyeshu < this.neiRongZhanShi.xiaochaoyeshu) {
@@ -248,6 +250,7 @@ var Guanlijiemian = (function (_super) {
     };
     //关闭按钮处理
     Guanlijiemian.prototype.guanbianniu = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Gameguanli.Kongzhitai().caipujiemian("guanli", "guan");
     };
     //初始化管理界面
@@ -269,6 +272,7 @@ var Guanlijiemian = (function (_super) {
     };
     //点击装修按钮时触发
     Guanlijiemian.prototype.dianjizhuangxiu = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.but_yuangong.enabled = true;
         this.but_yinxiao.enabled = true;
         this.but_danju.enabled = true;
@@ -302,6 +306,7 @@ var Guanlijiemian = (function (_super) {
         this.neiRongZhanShi.but_tiandian.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjidianxin, this);
     };
     Guanlijiemian.prototype.dianjixiaocai = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         //调用移除当前已显示界面内容；
         if (Gerenshuxing.jiesuoxiaochao == "1") {
             this.neiRongZhanShi.but_kuaican.enabled = false;
@@ -320,6 +325,7 @@ var Guanlijiemian = (function (_super) {
         }
     };
     Guanlijiemian.prototype.dianjihuoguo = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         //调用移除当前已显示界面内容；
         if (Gerenshuxing.jiesuohuoguo == "1") {
             this.neiRongZhanShi.but_kuaican.enabled = true;
@@ -338,6 +344,7 @@ var Guanlijiemian = (function (_super) {
         }
     };
     Guanlijiemian.prototype.dianjixiaochi = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         //调用移除当前已显示界面内容；
         if (Gerenshuxing.jiesuoxiaochi == "1") {
             this.neiRongZhanShi.but_kuaican.enabled = true;
@@ -356,6 +363,7 @@ var Guanlijiemian = (function (_super) {
         }
     };
     Guanlijiemian.prototype.dianjidianxin = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         //调用移除当前已显示界面内容；
         if (Gerenshuxing.jiesuozaocan == "1") {
             this.neiRongZhanShi.but_kuaican.enabled = true;
@@ -375,6 +383,7 @@ var Guanlijiemian = (function (_super) {
     };
     //点击员工按钮时触发
     Guanlijiemian.prototype.dianjiyuangong = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.but_yuangong.enabled = false;
         this.but_yinxiao.enabled = true;
         this.but_danju.enabled = true;
@@ -392,6 +401,7 @@ var Guanlijiemian = (function (_super) {
     ;
     //点击营销按钮时触发
     Guanlijiemian.prototype.dianjiyinxiao = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.but_yuangong.enabled = true;
         this.but_yinxiao.enabled = false;
         this.but_danju.enabled = true;
@@ -409,6 +419,7 @@ var Guanlijiemian = (function (_super) {
     ;
     //点击单据按钮时触发
     Guanlijiemian.prototype.dianjidanju = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.but_yuangong.enabled = true;
         this.but_yinxiao.enabled = true;
         this.but_danju.enabled = false;
@@ -454,4 +465,3 @@ var Guanlijiemian = (function (_super) {
     return Guanlijiemian;
 }(eui.Component));
 __reflect(Guanlijiemian.prototype, "Guanlijiemian", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Guanlijiemian.js.map

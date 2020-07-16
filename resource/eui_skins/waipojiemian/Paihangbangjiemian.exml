@@ -1,72 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="PaihangbangjiemianSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
 	<w:Config id="171a7970bde" ></w:Config>
-	<e:Group id="paihangbangzu" bottom="0" right="0" left="0" height="1196">
-		<e:Image id="img_paihangbg" source="img_paihangbg_png" x="0" y="0"/>
-		<e:Image id="biaotitupian" source="img_biaotishijie_png" x="228.5" y="152"/>
-		<e:Button id="but_shijie" label="" x="8" y="435" anchorOffsetY="0" height="306" anchorOffsetX="0" width="64" enabled="true">
+	<e:Group id="paihangbangzu" bottom="0" right="0" left="0" top="0">
+		<e:Image id="beijingzhezhao" left="0" top="0" bottom="0" right="0" alpha="0.5" source="img_heisezhezao_png"/>
+		<e:Group id="zhuxianshizu" x="87" y="307.67">
+			<e:Image id="img_paihangbg" x="0" y="0" source="img_paihangbangbeijing_png"/>
+			<e:Button id="but_shijie" label="" x="543" y="255.5" anchorOffsetY="0" anchorOffsetX="0" enabled="true">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="but_shijiepaihang1_png" source.down="but_shijiepaihang2_png" source.disabled="but_shijiepaihang2_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="but_haoyou" label="" x="545" y="388" anchorOffsetY="0" anchorOffsetX="0" enabled="true">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="but_haoyoupaihang1_png" source.down="but_haoyoupaihang2_png" source.disabled="but_haoyoupaihang2_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="but_shangyiye" label="" x="68.5" y="645" anchorOffsetY="0" anchorOffsetX="0" enabled="true">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="but_paihangshangyiye1_png" source.down="but_paihangshangyiye2_png" source.disabled="but_paihangshangyiye2_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="but_xiayiye" label="" x="309" y="645" anchorOffsetY="0" anchorOffsetX="0" enabled="true">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="but_paihangxiayiye1_png" source.down="but_paihangxiayiye2_png" source.disabled="but_paihangxiayiye2_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Group id="xiaoxizu" x="33.5" y="132">
+				<e:Image id="img_mingciditu" source="img_diyiming_png" x="0" y="10"/>
+				<e:Label id="nicheng" text="昵称七八个自" x="275.5" y="0" anchorOffsetX="0" width="196" anchorOffsetY="0" height="46" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti" bold="true" stroke="4" strokeColor="0x4b64f4" textColor="0x8ff709"/>
+				<e:Label id="fenshu" text="888888" x="275.5" y="66.5" anchorOffsetX="0" width="196" anchorOffsetY="0" height="46" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti" bold="true" stroke="4" strokeColor="0x624FF7" textColor="0x8ff709"/>
+				<e:Group id="touxiang" width="81" height="77" x="164.5" y="13" anchorOffsetY="0" anchorOffsetX="0"/>
+				<e:Image id="xiangkuang" source="img_shangxiangkuang_png" x="144" y="-4"/>
+				<e:Label id="paiming" text="99" x="61" y="42" anchorOffsetX="0" width="32" size="24" verticalAlign="middle" textAlign="center" textColor="0x3ed608" bold="true" fontFamily="wodeziti"/>
+			</e:Group>
+			<e:Group x="33.5" y="264" id="xiaoxizu0">
+				<e:Image id="img_mingciditu0" source="img_diyiming_png" x="0" y="10"/>
+				<e:Label id="nicheng0" text="昵称七八个自" x="275.5" y="0" anchorOffsetX="0" width="196" anchorOffsetY="0" height="46" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti" bold="true" stroke="4" strokeColor="0x4B64F4" textColor="0x8FF709"/>
+				<e:Label id="fenshu0" text="888888" x="275.5" y="66.5" anchorOffsetX="0" width="196" anchorOffsetY="0" height="46" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti" bold="true" stroke="4" strokeColor="0x624FF7" textColor="0x8FF709"/>
+				<e:Group width="89" height="78" x="160.5" y="14" anchorOffsetY="0" anchorOffsetX="0" id="touxiang0"/>
+				<e:Image source="img_shangxiangkuang_png" x="144" y="-4" id="xiangkuang0"/>
+				<e:Label text="99" x="59" y="42.5" anchorOffsetX="0" width="32" size="24" verticalAlign="middle" textAlign="center" textColor="0x3ED608" bold="true" id="paiming0" scaleX="1" scaleY="1" fontFamily="wodeziti"/>
+			</e:Group>
+			<e:Group x="33.5" y="396" id="xiaoxizu1">
+				<e:Image id="img_mingciditu1" source="img_diyiming_png" x="0" y="10"/>
+				<e:Label id="nicheng1" text="昵称七八个自" x="275.5" y="0" anchorOffsetX="0" width="196" anchorOffsetY="0" height="46" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti" bold="true" stroke="4" strokeColor="0x4B64F4" textColor="0x8FF709"/>
+				<e:Label id="fenshu1" text="888888" x="275.5" y="66.5" anchorOffsetX="0" width="196" anchorOffsetY="0" height="46" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti" bold="true" stroke="4" strokeColor="0x624FF7" textColor="0x8FF709"/>
+				<e:Group width="89" height="78" x="160.5" y="15" anchorOffsetY="0" anchorOffsetX="0" id="touxiang1"/>
+				<e:Image source="img_shangxiangkuang_png" x="144" y="-4" id="xiangkuang1"/>
+				<e:Label text="99" x="61" y="42" anchorOffsetX="0" width="32" size="24" verticalAlign="middle" textAlign="center" textColor="0x3ED608" bold="true" id="paiming1" scaleX="1" scaleY="1" fontFamily="wodeziti"/>
+			</e:Group>
+			<e:Group x="33.5" y="522" id="xiaoxizu2">
+				<e:Image id="img_mingciditu2" source="img_diyiming_png" x="0" y="10"/>
+				<e:Label id="nicheng2" text="昵称七八个自" x="275.5" y="0" anchorOffsetX="0" width="196" anchorOffsetY="0" height="46" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti" bold="true" stroke="4" strokeColor="0x4B64F4" textColor="0x8FF709"/>
+				<e:Label id="fenshu2" text="888888" x="275.5" y="66.5" anchorOffsetX="0" width="196" anchorOffsetY="0" height="46" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti" bold="true" stroke="4" strokeColor="0x624FF7" textColor="0x8FF709"/>
+				<e:Group width="86" height="74" x="162.5" y="18" anchorOffsetY="0" anchorOffsetX="0" id="touxiang2"/>
+				<e:Image source="img_shangxiangkuang_png" x="144" y="-4" id="xiangkuang2"/>
+				<e:Label text="99" x="60" y="42" anchorOffsetX="0" width="32" size="24" verticalAlign="middle" textAlign="center" textColor="0x3ED608" bold="true" id="paiming2" scaleX="1" scaleY="1" fontFamily="wodeziti"/>
+			</e:Group>
+			<e:Button id="paihangguanbi" label="" x="480.98" y="21.33" enabled="true">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="but_guanbi2_png" source.down="but_guanbi1_png" source.disabled="but_guanbi1_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Label id="paihangbiaoti" text="世界排行榜" x="156" y="28.33" anchorOffsetX="0" width="236.67" anchorOffsetY="0" height="46" verticalAlign="middle" textAlign="center" bold="true" fontFamily="wodeziti" textColor="0xf97306" size="30" stroke="2" strokeColor="0x2c2a26"/>
+		</e:Group>
+		<e:Button id="paihanglingjianganniu" label="" x="313.5" y="1058.67" enabled="true">
 			<e:skinName>
-			<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" source="but_shijie1_png" source.down="but_shijie2_png" source.disabled="but_shijie2_png"/>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="but_paihanglingjiang1_png" source.down="but_paihanglingjiang2_png" source.disabled="but_paihanglingjiang2_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-			</e:Skin>
+				</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button id="but_haoyou" label="" x="670" y="435" anchorOffsetY="0" height="306" anchorOffsetX="0" width="64" enabled="true">
-			<e:skinName>
-			<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" source="but_haoyou1_png" source.down="but_haoyou2_png" source.disabled="but_haoyou2_png"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-			</e:Skin>
-			</e:skinName>
-		</e:Button>
-		<e:Button id="but_shangyiye" label="" x="128.5" y="823" anchorOffsetY="0" height="74" anchorOffsetX="0" width="200" enabled="true">
-			<e:skinName>
-			<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" source="but_shangyiye1_png" source.down="but_shangyiye1_png" source.disabled="but_shangyiye1_png"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-			</e:Skin>
-			</e:skinName>
-		</e:Button>
-		<e:Button id="but_xiayiye" label="" x="397.5" y="823" anchorOffsetY="0" height="74" anchorOffsetX="0" width="200" enabled="true">
-			<e:skinName>
-			<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" source="but_shangyiye_png" source.down="but_shangyiye_png" source.disabled="but_shangyiye_png"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-			</e:Skin>
-			</e:skinName>
-		</e:Button>
-		<e:Group id="xiaoxizu" x="122.5" y="284">
-			<e:Image id="img_mingciditu" source="img_diyiming_png" x="0" y="10"/>
-			<e:Label id="nicheng" text="昵称七八个自" x="275.5" y="0" anchorOffsetX="0" width="196" anchorOffsetY="0" height="46" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti" bold="true" stroke="4" strokeColor="0x4b64f4" textColor="0x8ff709"/>
-			<e:Label id="fenshu" text="888888" x="275.5" y="66.5" anchorOffsetX="0" width="196" anchorOffsetY="0" height="46" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti" bold="true" stroke="4" strokeColor="0x624FF7" textColor="0x8ff709"/>
-			<e:Group id="touxiang" width="81" height="77" x="164.5" y="13" anchorOffsetY="0" anchorOffsetX="0"/>
-			<e:Image id="xiangkuang" source="img_shangxiangkuang_png" x="144" y="-4"/>
-			<e:Label id="paiming" text="99" x="61" y="42" anchorOffsetX="0" width="32" size="24" verticalAlign="middle" textAlign="center" textColor="0x3ed608" bold="true"/>
-		</e:Group>
-		<e:Group x="122.5" y="416" id="xiaoxizu0">
-			<e:Image id="img_mingciditu0" source="img_diyiming_png" x="0" y="10"/>
-			<e:Label id="nicheng0" text="昵称七八个自" x="275.5" y="0" anchorOffsetX="0" width="196" anchorOffsetY="0" height="46" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti" bold="true" stroke="4" strokeColor="0x4B64F4" textColor="0x8FF709"/>
-			<e:Label id="fenshu0" text="888888" x="275.5" y="66.5" anchorOffsetX="0" width="196" anchorOffsetY="0" height="46" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti" bold="true" stroke="4" strokeColor="0x624FF7" textColor="0x8FF709"/>
-			<e:Group width="89" height="78" x="160.5" y="14" anchorOffsetY="0" anchorOffsetX="0" id="touxiang0"/>
-			<e:Image source="img_shangxiangkuang_png" x="144" y="-4" id="xiangkuang0"/>
-			<e:Label text="99" x="59" y="42.5" anchorOffsetX="0" width="32" size="24" verticalAlign="middle" textAlign="center" textColor="0x3ED608" bold="true" id="paiming0" scaleX="1" scaleY="1"/>
-		</e:Group>
-		<e:Group x="122.5" y="548" id="xiaoxizu1">
-			<e:Image id="img_mingciditu1" source="img_diyiming_png" x="0" y="10"/>
-			<e:Label id="nicheng1" text="昵称七八个自" x="275.5" y="0" anchorOffsetX="0" width="196" anchorOffsetY="0" height="46" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti" bold="true" stroke="4" strokeColor="0x4B64F4" textColor="0x8FF709"/>
-			<e:Label id="fenshu1" text="888888" x="275.5" y="66.5" anchorOffsetX="0" width="196" anchorOffsetY="0" height="46" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti" bold="true" stroke="4" strokeColor="0x624FF7" textColor="0x8FF709"/>
-			<e:Group width="89" height="78" x="160.5" y="15" anchorOffsetY="0" anchorOffsetX="0" id="touxiang1"/>
-			<e:Image source="img_shangxiangkuang_png" x="144" y="-4" id="xiangkuang1"/>
-			<e:Label text="99" x="61" y="42" anchorOffsetX="0" width="32" size="24" verticalAlign="middle" textAlign="center" textColor="0x3ED608" bold="true" id="paiming1" scaleX="1" scaleY="1"/>
-		</e:Group>
-		<e:Group x="122.5" y="674" id="xiaoxizu2">
-			<e:Image id="img_mingciditu2" source="img_diyiming_png" x="0" y="10"/>
-			<e:Label id="nicheng2" text="昵称七八个自" x="275.5" y="0" anchorOffsetX="0" width="196" anchorOffsetY="0" height="46" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti" bold="true" stroke="4" strokeColor="0x4B64F4" textColor="0x8FF709"/>
-			<e:Label id="fenshu2" text="888888" x="275.5" y="66.5" anchorOffsetX="0" width="196" anchorOffsetY="0" height="46" verticalAlign="middle" textAlign="center" size="24" fontFamily="wodeziti" bold="true" stroke="4" strokeColor="0x624FF7" textColor="0x8FF709"/>
-			<e:Group width="86" height="74" x="162.5" y="18" anchorOffsetY="0" anchorOffsetX="0" id="touxiang2"/>
-			<e:Image source="img_shangxiangkuang_png" x="144" y="-4" id="xiangkuang2"/>
-			<e:Label text="99" x="60" y="42" anchorOffsetX="0" width="32" size="24" verticalAlign="middle" textAlign="center" textColor="0x3ED608" bold="true" id="paiming2" scaleX="1" scaleY="1"/>
-		</e:Group>
 	</e:Group>
 </e:Skin>

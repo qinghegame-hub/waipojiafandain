@@ -58,13 +58,13 @@ class Dasaodonghua extends egret.DisplayObjectContainer{
         this.cunfangrongqisb.x = this.zongX;
         this.cunfangrongqisb.y = this.zongY;
         //启动骨骼动画播放
-        this.jinbigujia.animation.play(this.jinbimingcheng);
+        this.jinbigujia.animation.play(this.jinbimingcheng,1);
 		this.jinbigujia.animation.timeScale = 1.5;
        //添加到世界时钟里
         dragonBones.WorldClock.clock.add(this.jinbigujia);
 
-		egret.Tween.get(this.cunfangrongqisb).wait(1000).call(()=>{
-			dragonBones.WorldClock.clock.remove(this.jinbigujia);
+        this.jinbigujia.addEventListener(egret.Event.LOOP_COMPLETE,()=>{
+            dragonBones.WorldClock.clock.remove(this.jinbigujia);
             if(this.jinbixianshi.parent){
                 this.cunfangrongqisb.removeChild(this.jinbixianshi);
             }
@@ -73,7 +73,7 @@ class Dasaodonghua extends egret.DisplayObjectContainer{
             }
 			this.jinbixianshi = null;
             this.jinbigujia = null;
-		})
+        },this);
 	}
 	
 }

@@ -137,4 +137,3 @@ var Paimingtishi = (function (_super) {
     return Paimingtishi;
 }(egret.DisplayObjectContainer));
 __reflect(Paimingtishi.prototype, "Paimingtishi");
-//# sourceMappingURL=Paimingtishi.js.map

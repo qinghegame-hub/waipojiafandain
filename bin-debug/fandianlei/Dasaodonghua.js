@@ -44,11 +44,11 @@ var Dasaodonghua = (function (_super) {
         this.cunfangrongqisb.x = this.zongX;
         this.cunfangrongqisb.y = this.zongY;
         //启动骨骼动画播放
-        this.jinbigujia.animation.play(this.jinbimingcheng);
+        this.jinbigujia.animation.play(this.jinbimingcheng, 1);
         this.jinbigujia.animation.timeScale = 1.5;
         //添加到世界时钟里
         dragonBones.WorldClock.clock.add(this.jinbigujia);
-        egret.Tween.get(this.cunfangrongqisb).wait(1000).call(function () {
+        this.jinbigujia.addEventListener(egret.Event.LOOP_COMPLETE, function () {
             dragonBones.WorldClock.clock.remove(_this.jinbigujia);
             if (_this.jinbixianshi.parent) {
                 _this.cunfangrongqisb.removeChild(_this.jinbixianshi);
@@ -58,9 +58,8 @@ var Dasaodonghua = (function (_super) {
             }
             _this.jinbixianshi = null;
             _this.jinbigujia = null;
-        });
+        }, this);
     };
     return Dasaodonghua;
 }(egret.DisplayObjectContainer));
 __reflect(Dasaodonghua.prototype, "Dasaodonghua");
-//# sourceMappingURL=Dasaodonghua.js.map

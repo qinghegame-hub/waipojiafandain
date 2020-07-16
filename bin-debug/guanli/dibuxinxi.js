@@ -21,44 +21,75 @@ var dibuxinxi = (function (_super) {
         this.dibuchushihua(); //初始化入口
     };
     dibuxinxi.prototype.dibuchushihua = function () {
+        this.jiesuokongzhi();
+        Gameguanli.Kongzhitai().dibuui.but_hotel1.enabled = true;
         this.but_hotel1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.openfandian, this);
-        this.but_gongyuan1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.opendajie, this);
+        Gameguanli.Kongzhitai().dibuui.but_huijia1.enabled = false;
         this.but_huijia1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.openhuijia, this);
-        this.but_licai1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.openpaihang, this);
-        Gameguanli.Kongzhitai().dibuui.but_hotel1.enabled = false;
         Gameguanli.Kongzhitai().dibuui.but_gongyuan1.enabled = true;
-        Gameguanli.Kongzhitai().dibuui.but_huijia1.enabled = true;
+        this.but_gongyuan1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.opendajie, this);
         Gameguanli.Kongzhitai().dibuui.but_licai1.enabled = true;
+        this.but_licai1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.openpaihang, this);
+    };
+    dibuxinxi.prototype.jiesuokongzhi = function () {
+        if (Gerenshuxing.guideuiyindao < 11) {
+            this.fandiansuo.source = "img_xiamiandaisuoanniu_png";
+        }
+        else {
+            this.fandiansuo.source = "";
+        }
+        if (Gerenshuxing.guideuiyindao < 21) {
+            this.dajiesuo.source = "img_xiamiandaisuoanniu_png";
+        }
+        else {
+            this.dajiesuo.source = "";
+        }
+        if (Gerenshuxing.guideuiyindao < 19) {
+            this.paihangsuo.source = "img_xiamiandaisuoanniu_png";
+        }
+        else {
+            this.paihangsuo.source = "";
+        }
+        this.huijiasuo.source = "";
     };
     dibuxinxi.prototype.openfandian = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Gameguanli.Kongzhitai().dibuui.but_hotel1.enabled = false;
         Gameguanli.Kongzhitai().dibuui.but_gongyuan1.enabled = true;
         Gameguanli.Kongzhitai().dibuui.but_huijia1.enabled = true;
         Gameguanli.Kongzhitai().dibuui.but_licai1.enabled = true;
+        //关闭家庭界面
+        Gameguanli.Kongzhitai().jiatingjiemianguanbi();
         //		向界面管理中加入打开主界面参数;
         Gameguanli.Kongzhitai().jiemianxianshi("zhujiemian");
     };
     dibuxinxi.prototype.opendajie = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         //		向界面管理中加入打开主界面参数;
         Gameguanli.Kongzhitai().jiemianxianshi("shangjie");
     };
     dibuxinxi.prototype.openhuijia = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Gameguanli.Kongzhitai().dibuui.but_hotel1.enabled = true;
         Gameguanli.Kongzhitai().dibuui.but_gongyuan1.enabled = true;
         Gameguanli.Kongzhitai().dibuui.but_huijia1.enabled = false;
         Gameguanli.Kongzhitai().dibuui.but_licai1.enabled = true;
+        //关闭家庭界面
+        Gameguanli.Kongzhitai().jiatingjiemianguanbi();
         //		向界面管理中加入打开主界面参数;
         Gameguanli.Kongzhitai().jiemianxianshi("huijia");
     };
     dibuxinxi.prototype.openpaihang = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Gameguanli.Kongzhitai().dibuui.but_hotel1.enabled = true;
         Gameguanli.Kongzhitai().dibuui.but_gongyuan1.enabled = true;
         Gameguanli.Kongzhitai().dibuui.but_huijia1.enabled = true;
         Gameguanli.Kongzhitai().dibuui.but_licai1.enabled = false;
+        //关闭家庭界面
+        Gameguanli.Kongzhitai().jiatingjiemianguanbi();
         //		向界面管理中加入打开主界面参数;
-        Gameguanli.Kongzhitai().jiemianxianshi("paihang");
+        Gameguanli.Kongzhitai().jiemianxianshi("gonggao");
     };
     return dibuxinxi;
 }(eui.Component));
 __reflect(dibuxinxi.prototype, "dibuxinxi", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=dibuxinxi.js.map

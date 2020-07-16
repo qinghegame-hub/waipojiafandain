@@ -4,38 +4,43 @@
 	<e:Group id="gerenshuxingjieshaozu" left="0" top="0" bottom="0" right="0">
 		<e:Image id="img_heisezhezao" source="img_heisezhezao_png" alpha="0.5" left="0" top="0" bottom="0" right="0"/>
 		<e:Image id="img_tongyongpinghejiemianpng" x="97" y="219" anchorOffsetX="0" width="556" anchorOffsetY="0" height="761" source="img_tanchubeijing_png"/>
-		<e:Group id="wanjiatouxiang" width="108" height="99" x="198" y="367" anchorOffsetY="0" anchorOffsetX="0"/>
-		<e:Image id="img_shangxiangkuang" source="img_shangxiangkuang_png" x="170" y="341.33" anchorOffsetX="0" width="160" anchorOffsetY="0" height="160"/>
-		<e:Label id="biaotiwenzi" text="个人信息" x="270" y="241" anchorOffsetX="0" width="210" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" textColor="0xf2780c" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xf4eded"/>
-		<e:Label id="nicheng" text="昵称" x="351" y="353" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0xF2780C" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="24"/>
-		<e:Label id="nichengwenzi" text="昵称七八个自吧" x="421" y="353" anchorOffsetX="0" width="184" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="18" textColor="0x0ba1ef"/>
-		<e:Label id="cunhuo" text="存活" x="351" y="399" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0xF2780C" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="24"/>
-		<e:Label id="cunhuoshijian" text="99年89月20天" x="421" y="399" anchorOffsetX="0" width="184" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="18"/>
-		<e:Label id="xingfudengji" text="等级" x="351" y="449" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0xF2780C" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="24"/>
-		<e:Label id="dengjineirong" text="20级" x="421" y="449" anchorOffsetX="0" width="184" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="18"/>
-		<e:Label id="xingfuzhi" text="名望值" x="144.5" y="517" anchorOffsetX="0" width="89" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0xF2780C" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="24"/>
-		<e:Label id="shuxingzhi" text="厨艺属性" x="144.5" y="633" anchorOffsetX="0" width="113" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0xF2780C" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="24"/>
-		<e:Label id="xingfuzhishu" text="188888888/888888888" x="233.5" y="517" anchorOffsetX="0" width="209" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="18"/>
-		<e:Label id="naixin" text="耐心" x="189" y="675" anchorOffsetX="0" width="52" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="20" textColor="0xed2d0b"/>
-		<e:Label id="naixinzhi" text="80(进修+10%)" x="252" y="675" anchorOffsetX="0" width="123" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="18"/>
-		<e:Label id="yizhi" text="意志" x="400" y="675" anchorOffsetX="0" width="52" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0xED2D0B" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="20"/>
-		<e:Label id="yizhizhi" text="80(进修+10%)" x="463" y="675" anchorOffsetX="0" width="125" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="18"/>
-		<e:Label id="xingzhi" text="兴致" x="189" y="725" anchorOffsetX="0" width="52" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0xED2D0B" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="20"/>
-		<e:Label id="xingzhizhi" text="80(进修+10%)" x="252" y="725" anchorOffsetX="0" width="121" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="18"/>
-		<e:Group id="jingyanjinduzu" x="189" y="568">
-			<e:Label id="jindubaifenbi" text="30%" x="269.5" y="7" anchorOffsetX="0" width="142" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="18"/>
+		<e:Image id="jiemiandikuang" source="img_tongyongzhezaodikuang_png" x="136" y="671" anchorOffsetY="0" height="196" anchorOffsetX="0" width="459"/>
+		<e:Image source="img_tongyongzhezaodikuang_png" x="410" y="356" anchorOffsetY="0" height="36" anchorOffsetX="0" width="181" id="jiemiandikuang0"/>
+		<e:Image source="img_tongyongzhezaodikuang_png" x="410" y="405" anchorOffsetY="0" height="36" anchorOffsetX="0" width="181" id="jiemiandikuang1"/>
+		<e:Image source="img_tongyongzhezaodikuang_png" x="411" y="452" anchorOffsetY="0" height="36" anchorOffsetX="0" width="181" id="jiemiandikuang2"/>
+		<e:Image source="img_tongyongzhezaodikuang_png" x="229" y="520" anchorOffsetY="0" height="36" anchorOffsetX="0" width="207.67" id="jiemiandikuang3"/>
+		<e:Group id="wanjiatouxiang" width="108" height="99" x="167.36" y="367" anchorOffsetY="0" anchorOffsetX="0"/>
+		<e:Image id="img_shangxiangkuang" source="img_shangxiangkuang_png" x="139.36" y="341.33" anchorOffsetX="0" width="160" anchorOffsetY="0" height="160"/>
+		<e:Label id="biaotiwenzi" text="个人信息" x="257.5" y="251" anchorOffsetX="0" width="210" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" bold="true" anchorOffsetY="0" height="42" stroke="4" strokeColor="0x2c2a26" textColor="0xf97306"/>
+		<e:Label id="nicheng" text="昵称" x="351" y="353" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="24" textColor="0xf97306"/>
+		<e:Label id="nichengwenzi" text="昵称七八个自吧" x="421" y="353" anchorOffsetX="0" width="173.33" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="18" textColor="0x0ba1ef"/>
+		<e:Label id="cunhuo" text="存活" x="351" y="399" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="24" textColor="0xf97306"/>
+		<e:Label id="cunhuoshijian" text="99年89月20天" x="421" y="399" anchorOffsetX="0" width="174.67" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="18"/>
+		<e:Label id="xingfudengji" text="等级" x="351" y="449" anchorOffsetX="0" width="59" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="24" textColor="0xf97306"/>
+		<e:Label id="dengjineirong" text="20级" x="421" y="449" anchorOffsetX="0" width="172" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="18"/>
+		<e:Label id="xingfuzhi" text="名望值" x="144.5" y="517" anchorOffsetX="0" width="89" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="24" textColor="0xf97306"/>
+		<e:Label id="shuxingzhi" text="厨艺属性" x="144.5" y="633" anchorOffsetX="0" width="113" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="24" textColor="0xf97306"/>
+		<e:Label id="xingfuzhishu" text="188888888/888888888" x="233.5" y="517" anchorOffsetX="0" width="209" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="18"/>
+		<e:Label id="naixin" text="耐心" x="147" y="675" anchorOffsetX="0" width="52" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="20" textColor="0xce985c"/>
+		<e:Label id="naixinzhi" text="80(进修+10%)" x="210" y="675" anchorOffsetX="0" width="123" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="18"/>
+		<e:Label id="yizhi" text="意志" x="365" y="675" anchorOffsetX="0" width="52" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="20" textColor="0xce985c"/>
+		<e:Label id="yizhizhi" text="80(进修+10%)" x="421" y="675" anchorOffsetX="0" width="125" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="18"/>
+		<e:Label id="xingzhi" text="兴致" x="144.5" y="725" anchorOffsetX="0" width="52" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="20" textColor="0xce985c"/>
+		<e:Label id="xingzhizhi" text="80(进修+10%)" x="210" y="725" anchorOffsetX="0" width="121" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="18"/>
+		<e:Group id="jingyanjinduzu" x="167" y="565">
+			<e:Label id="jindubaifenbi" text="30%" x="269.5" y="7" anchorOffsetX="0" width="142" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="18"/>
 			<e:Image id="img_jindutiaobeijing" source="img_jindutiaobeijing_png" x="0" y="0"/>
 			<e:Image id="jindutiao" source="img_jindutiaogundong_png" x="73" y="16" anchorOffsetX="0" width="177"/>
 		</e:Group>
-		<e:Image id="laxijingtong" source="img_laicon_png" x="189" y="770" anchorOffsetX="0" width="40" anchorOffsetY="0" height="40"/>
-		<e:Label id="laxizhi" text="80(进修+10%)" x="251" y="767" anchorOffsetX="0" width="120" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="18"/>
-		<e:Image id="maxijingtong" x="400" y="770" anchorOffsetX="0" width="40" anchorOffsetY="0" height="40" source="img_maicon_png"/>
-		<e:Label id="maxizhi" text="80(进修+10%)" x="463" y="767" anchorOffsetX="0" width="121" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="18"/>
-		<e:Image id="suanxijingtong" x="189" y="820" anchorOffsetX="0" width="40" anchorOffsetY="0" height="40" source="img_suanicon_png"/>
-		<e:Label id="suanxizhi" text="80(进修+10%)" x="250" y="820" anchorOffsetX="0" width="119" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="18"/>
-		<e:Image id="tianxijingtong" x="400" y="820" anchorOffsetX="0" width="40" anchorOffsetY="0" height="40" source="img_tianicon_png"/>
-		<e:Label id="tianxizhi" text="80(进修+10%)" x="463" y="820" anchorOffsetX="0" width="123" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED" size="18"/>
-		<e:Group id="jinxiuanniuzu" x="275" y="873">
+		<e:Image id="laxijingtong" source="img_laicon_png" x="144.5" y="770" anchorOffsetX="0" width="40" anchorOffsetY="0" height="40"/>
+		<e:Label id="laxizhi" text="80(进修+10%)" x="209" y="767" anchorOffsetX="0" width="120" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="18"/>
+		<e:Image id="maxijingtong" x="365" y="770" anchorOffsetX="0" width="40" anchorOffsetY="0" height="40" source="img_maicon_png"/>
+		<e:Label id="maxizhi" text="80(进修+10%)" x="421" y="767" anchorOffsetX="0" width="121" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="18"/>
+		<e:Image id="suanxijingtong" x="147" y="822" anchorOffsetX="0" width="40" anchorOffsetY="0" height="40" source="img_suanicon_png"/>
+		<e:Label id="suanxizhi" text="80(进修+10%)" x="208" y="820" anchorOffsetX="0" width="119" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="18"/>
+		<e:Image id="tianxijingtong" x="365" y="820" anchorOffsetX="0" width="40" anchorOffsetY="0" height="40" source="img_tianicon_png"/>
+		<e:Label id="tianxizhi" text="80(进修+10%)" x="421" y="820" anchorOffsetX="0" width="123" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" textColor="0x0BA1EF" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0x2c2a26" size="18"/>
+		<e:Group id="jinxiuanniuzu" x="254" y="873">
 			<e:Button id="jinxinganniu" label="" x="0" y="0" scaleX="1" scaleY="1" enabled="true" anchorOffsetX="0" width="200" height="60">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
@@ -46,7 +51,7 @@
 			</e:Button>
 			<e:Label id="jinxiuanniuwenzi" text="进  修" x="0" y="0" anchorOffsetX="0" width="200" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" bold="true" anchorOffsetY="0" height="60" stroke="3" strokeColor="0x7a7474" size="32" textColor="0xeff4f7" touchEnabled="false"/>
 		</e:Group>
-		<e:Button id="guanbianniu" label="" x="558.5" y="219" enabled="true">
+		<e:Button id="guanbianniu" label="" x="563" y="241" enabled="true">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_guanbi2_png" source.down="but_guanbi1_png" source.disabled="but_guanbi1_png"/>
@@ -54,7 +59,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button id="shuominganniu" label="" x="421" y="527.5" enabled="true">
+		<e:Button id="shuominganniu" label="" x="446.5" y="527.5" enabled="true">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -62,7 +67,7 @@
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="370" y="685.5" enabled="true" id="shuominganniu0">
+		<e:Button label="" x="333" y="685.5" enabled="true" id="shuominganniu0">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -70,7 +75,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="584" y="685.5" enabled="true" id="shuominganniu1">
+		<e:Button label="" x="557.5" y="685.5" enabled="true" id="shuominganniu1">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -78,7 +83,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="369" y="735.5" enabled="true" id="shuominganniu2">
+		<e:Button label="" x="333" y="735.5" enabled="true" id="shuominganniu2">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -86,7 +91,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="371" y="777.5" enabled="true" id="shuominganniu3">
+		<e:Button label="" x="333" y="777.5" enabled="true" id="shuominganniu3">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -94,7 +99,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="584" y="777.5" enabled="true" id="shuominganniu4">
+		<e:Button label="" x="557.5" y="777.5" enabled="true" id="shuominganniu4">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -102,7 +107,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="369" y="829.5" enabled="true" id="shuominganniu5">
+		<e:Button label="" x="333" y="829.5" enabled="true" id="shuominganniu5">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -110,7 +115,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="584" y="830.5" enabled="true" id="shuominganniu6">
+		<e:Button label="" x="557.5" y="830.5" enabled="true" id="shuominganniu6">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>

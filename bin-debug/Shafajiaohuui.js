@@ -22,4 +22,3 @@ var Shafajiaohuui = (function (_super) {
     return Shafajiaohuui;
 }(eui.Component));
 __reflect(Shafajiaohuui.prototype, "Shafajiaohuui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Shafajiaohuui.js.map

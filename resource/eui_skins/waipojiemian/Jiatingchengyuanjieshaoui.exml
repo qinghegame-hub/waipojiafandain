@@ -3,16 +3,20 @@
 	<w:Config id="1712a7a9da2" ></w:Config>
 	<e:Group id="xinxijiemianzu" horizontalCenter="0" verticalCenter="0">
 		<e:Image id="img_tanchubeijing" source="img_tanchubeijing_png" x="0" y="0"/>
-		<e:Label id="biaotiwenzi" text="信息" x="23.5" y="12" anchorOffsetX="0" width="517" verticalAlign="middle" size="30" fontFamily="wodeziti" textAlign="center" stroke="2" strokeColor="0x494646" textColor="0xffa005" anchorOffsetY="0" height="56"/>
-		<e:Label id="guanxibiaoqian" text="关系" x="61" y="109" anchorOffsetX="0" width="100" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xacff05" anchorOffsetY="0" height="30"/>
-		<e:Label id="guanxineirong" text="关系" x="174" y="109" anchorOffsetX="0" width="340" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xf2eee8" height="30"/>
-		<e:Label id="qinhelibiaoqian" text="关系" x="61" y="158" anchorOffsetX="0" width="100" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xc2ff05" anchorOffsetY="0" height="30"/>
-		<e:Label id="qinghelizhi" text="关系" x="174" y="158" anchorOffsetX="0" width="340" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xede9e3" height="30"/>
-		<e:Label id="gongzuobiaoqian" text="关系" x="61" y="222" anchorOffsetX="0" width="100" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xb7ff05" anchorOffsetY="0" height="30"/>
-		<e:Label id="gongzuozhi" text="关系" x="174" y="222" anchorOffsetX="0" width="340" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xe8e1d7" height="30"/>
-		<e:Label id="jiesaobiaoqian" text="关系" x="61" y="279" anchorOffsetX="0" width="100" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" textColor="0xbcff05" height="30"/>
-		<e:Label id="jiesaoneirong" text="关系" x="61" y="339" anchorOffsetX="0" width="450" verticalAlign="top" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x494646" anchorOffsetY="0" height="312" textColor="0xe0dad0" lineSpacing="10"/>
-		<e:Button id="guanbiananniu" label="" x="470.5" y="4" enabled="true">
+		<e:Image id="beijingdiban" source="img_tongyongzhezaodikuang_png" x="62.01" y="355" anchorOffsetX="0" width="429" anchorOffsetY="0" height="335"/>
+		<e:Image source="img_tongyongzhezaodikuang_png" x="343.33" y="238" anchorOffsetX="0" width="145" anchorOffsetY="0" height="32" id="beijingdiban2"/>
+		<e:Image source="img_tongyongzhezaodikuang_png" x="343" y="178" anchorOffsetX="0" width="145" anchorOffsetY="0" height="32" id="beijingdiban1"/>
+		<e:Image source="img_tongyongzhezaodikuang_png" x="343" y="126" anchorOffsetX="0" width="145" anchorOffsetY="0" height="32" id="beijingdiban0"/>
+		<e:Label id="biaotiwenzi" text="信息" x="153" y="23" anchorOffsetX="0" width="245" verticalAlign="middle" size="30" fontFamily="wodeziti" textAlign="center" stroke="4" strokeColor="0x2c2a26" anchorOffsetY="0" height="56" textColor="0xf97306" bold="true"/>
+		<e:Label id="guanxibiaoqian" text="关系" x="236" y="127" anchorOffsetX="0" width="100" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x2c2a26" anchorOffsetY="0" height="30" textColor="0xf97306"/>
+		<e:Label id="guanxineirong" text="关系" x="349" y="127" anchorOffsetX="0" width="148" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x2c2a26" height="30" textColor="0x92e80d"/>
+		<e:Label id="qinhelibiaoqian" text="关系" x="236" y="181" anchorOffsetX="0" width="100" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x2c2a26" anchorOffsetY="0" height="30" textColor="0xf97306"/>
+		<e:Label id="qinghelizhi" text="关系" x="349" y="181" anchorOffsetX="0" width="156" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x2c2a26" height="30" textColor="0x92e80d"/>
+		<e:Label id="gongzuobiaoqian" text="关系" x="236" y="240" anchorOffsetX="0" width="100" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x2c2a26" anchorOffsetY="0" height="30" textColor="0xf97306"/>
+		<e:Label id="gongzuozhi" text="关系" x="349" y="240" anchorOffsetX="0" width="158" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x2c2a26" height="30" textColor="0x92e80d"/>
+		<e:Label id="jiesaobiaoqian" text="关系" x="62.01" y="308.98" anchorOffsetX="0" width="100" verticalAlign="middle" size="24" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x2c2a26" height="30" textColor="0xf97306"/>
+		<e:Label id="jiesaoneirong" text="关系" x="75" y="380" anchorOffsetX="0" width="405" verticalAlign="top" size="20" fontFamily="wodeziti" textAlign="left" stroke="2" strokeColor="0x2c2a26" anchorOffsetY="0" height="284" lineSpacing="10" textColor="0x92e80d"/>
+		<e:Button id="guanbiananniu" label="" x="482" y="21" enabled="true">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_guanbi2_png" source.down="but_guanbi1_png" source.disabled="but_guanbi1_png"/>
@@ -20,5 +24,6 @@
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
+		<e:Image id="renwutouxiang" source="img_sunnvbiaoshi_png" x="54" y="130" width="140" height="140"/>
 	</e:Group>
 </e:Skin>

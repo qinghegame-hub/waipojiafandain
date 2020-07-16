@@ -5,7 +5,7 @@
 		<e:Image id="img_caipujieshaobg" source="img_caipujieshaobg_png" horizontalCenter="0" verticalCenter="0"/>
 		<e:Group id="biaotizu" horizontalCenter="0.5" verticalCenter="-594.5">
 			<e:Image id="img_biaoticaipujieshao" source="img_biaoticaipujieshao_png" horizontalCenter="0" verticalCenter="0.5" scaleX="1.4" scaleY="1.4"/>
-			<e:Label id="caipinmingcheng" text="香辣回锅肉啊哈哈" x="-1" y="-1.5" anchorOffsetX="0" width="327" anchorOffsetY="0" height="82" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" size="32" textColor="0xf7f4f4" stroke="3" strokeColor="0x6d6868" bold="true" locked="true"/>
+			<e:Label id="caipinmingcheng" text="香辣回锅肉啊哈哈" x="-1" y="-1.5" anchorOffsetX="0" width="327" anchorOffsetY="0" height="82" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" size="32" textColor="0xf7f4f4" stroke="3" strokeColor="0x6d6868" bold="true"/>
 		</e:Group>
 		<e:Button id="but_zhuanfa" label="" horizontalCenter="275.5" verticalCenter="-420.5" enabled="true">
 			<e:skinName>
@@ -25,19 +25,19 @@
 		</e:Button>
 		<e:Group id="caipinshuxingzu" horizontalCenter="38" verticalCenter="118">
 		</e:Group>
-		<e:Label id="jianjie" text="农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉" anchorOffsetX="0" width="496" anchorOffsetY="0" height="94" textAlign="left" verticalAlign="top" size="18" horizontalCenter="13" verticalCenter="435" fontFamily="wodeziti" bold="true"/>
-		<e:Label id="jinengshuoming" text="农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉" anchorOffsetX="0" width="504" anchorOffsetY="0" height="66" textAlign="left" verticalAlign="top" size="18" horizontalCenter="9" verticalCenter="257" fontFamily="wodeziti" bold="true"/>
-		<e:Label id="jinengmingzi" text="基恩闹革命你" anchorOffsetX="0" width="279" anchorOffsetY="0" height="29" textAlign="left" verticalAlign="middle" size="18" horizontalCenter="-103.5" verticalCenter="202.5" fontFamily="wodeziti" bold="true" textColor="0x5ef20e"/>
+		<e:Label id="jianjie" text="农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉" anchorOffsetX="0" width="496" anchorOffsetY="0" height="94" textAlign="left" verticalAlign="top" size="18" horizontalCenter="13" verticalCenter="435" fontFamily="wodeziti" bold="true" textColor="0x92e80d" stroke="2" strokeColor="0x2c2a26" lineSpacing="10"/>
+		<e:Label id="jinengshuoming" text="农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉农家小炒肉" anchorOffsetX="0" width="504" anchorOffsetY="0" height="82" textAlign="left" verticalAlign="top" size="18" horizontalCenter="9" verticalCenter="258" fontFamily="wodeziti" stroke="2" strokeColor="0x2c2a26" lineSpacing="10" textColor="0x92e80d"/>
+		<e:Label id="jinengmingzi" text="基恩闹革命你" anchorOffsetX="0" width="279" anchorOffsetY="0" height="29" textAlign="left" verticalAlign="middle" size="18" horizontalCenter="-103.5" verticalCenter="198.5" fontFamily="wodeziti" bold="true" stroke="2" strokeColor="0x2c2a26" textColor="0xf97306"/>
 		<e:Image id="caipindeicon" source="1007_png" x="247.4" y="144.3" scaleX="1.2" scaleY="1.2"/>
-		<e:Label id="chushoudanjia" text="出售单价：584(+56)" anchorOffsetX="0" width="179" anchorOffsetY="0" height="30" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="197" y="540" bold="true"/>
-		<e:Label id="lashuxing" text="出售单价：584(+56)" anchorOffsetX="0" width="190" anchorOffsetY="0" height="32" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="194" y="586" bold="true"/>
-		<e:Label id="mashuxing" text="出售单价：584(+56)" anchorOffsetX="0" width="190" anchorOffsetY="0" height="32" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="194" y="632" bold="true"/>
-		<e:Label id="suanshuxing" text="出售单价：584(+56)" anchorOffsetX="0" width="190" anchorOffsetY="0" height="32" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="450" y="586" bold="true"/>
-		<e:Label id="tianshuxing" text="出售单价：584(+56)" anchorOffsetX="0" width="190" anchorOffsetY="0" height="32" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="450" y="632" bold="true"/>
-		<e:Label id="xiaohaoshicai" text="消耗食材：584" anchorOffsetX="0" width="179" anchorOffsetY="0" height="32" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="452" y="540" bold="true"/>
+		<e:Label id="chushoudanjia" text="出售单价：584(+56)" anchorOffsetX="0" width="179" anchorOffsetY="0" height="30" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="197" y="540" textColor="0xf97306" stroke="2" strokeColor="0x2c2a26"/>
+		<e:Label id="lashuxing" text="出售单价：584(+56)" anchorOffsetX="0" width="190" anchorOffsetY="0" height="32" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="194" y="586" textColor="0xf97306" strokeColor="0x2c2a26" stroke="2"/>
+		<e:Label id="mashuxing" text="出售单价：584(+56)" anchorOffsetX="0" width="190" anchorOffsetY="0" height="32" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="194" y="632" textColor="0xf97306" stroke="2" strokeColor="0x2c2a26"/>
+		<e:Label id="suanshuxing" text="出售单价：584(+56)" anchorOffsetX="0" width="190" anchorOffsetY="0" height="32" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="450" y="586" textColor="0xf97306" stroke="2" strokeColor="0x2c2a26"/>
+		<e:Label id="tianshuxing" text="出售单价：584(+56)" anchorOffsetX="0" width="190" anchorOffsetY="0" height="32" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="450" y="632" textColor="0xf97306" stroke="2" strokeColor="0x2c2a26"/>
+		<e:Label id="xiaohaoshicai" text="消耗食材：584" anchorOffsetX="0" width="179" anchorOffsetY="0" height="32" textAlign="left" verticalAlign="middle" fontFamily="wodeziti" size="24" x="452" y="540" textColor="0xf97306" stroke="2" strokeColor="0x2c2a26"/>
 		<e:Image id="img_jindutiaobeijing" source="img_jindutiaobeijing_png" x="240.37" y="395.67" width="250" height="52"/>
 		<e:Image id="img_jindutiaogundong" source="img_jindutiaogundong_png" x="313.5" y="412.02" anchorOffsetY="0.5" anchorOffsetX="0" width="176" height="26"/>
-		<e:Label id="jinduwenzi" text="(200/18888888)" x="243.5" y="379" anchorOffsetX="0" width="310" size="24" verticalAlign="middle" textAlign="center" fontFamily="wodeziti"/>
+		<e:Label id="jinduwenzi" text="(200/18888888)" x="243.5" y="379" anchorOffsetX="0" width="310" size="24" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2" strokeColor="0x2c2a26" textColor="0xf2e4da" bold="true"/>
 		<e:Label id="lengjiwenzi" text="20" x="258.17" y="406" anchorOffsetX="0" width="31" size="24" verticalAlign="middle" textAlign="center" stroke="2" fontFamily="wodeziti"/>
 		<e:Image id="img_laicon" source="img_laicon_png" x="138" y="576" anchorOffsetX="0" width="50" anchorOffsetY="0" height="50"/>
 		<e:Image id="img_maicon" source="img_maicon_png" x="140" y="626" width="50" height="50"/>

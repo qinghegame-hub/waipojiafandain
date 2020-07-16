@@ -77,6 +77,7 @@ class Guanlijiemian extends eui.Component implements  eui.UIComponent {
 
 
 	public dianjishangfanye(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		switch(Guanlijiemian.dangqianleixing){
 			case 1:
 				if(Guanlijiemian.dangqianyeshu > 1){
@@ -150,6 +151,7 @@ class Guanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public dianjixiafanye(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		switch(Guanlijiemian.dangqianleixing){
 			case 1:
 				if(Guanlijiemian.dangqianyeqianshu == 1 && Guanlijiemian.dangqianyeshu < this.neiRongZhanShi.xiaochaoyeshu){
@@ -280,6 +282,7 @@ class Guanlijiemian extends eui.Component implements  eui.UIComponent {
 
 //关闭按钮处理
 	protected guanbianniu(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Gameguanli.Kongzhitai().caipujiemian("guanli","guan");
 	}
 
@@ -304,6 +307,7 @@ class Guanlijiemian extends eui.Component implements  eui.UIComponent {
 
 //点击装修按钮时触发
 	protected dianjizhuangxiu() {
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.but_yuangong.enabled = true;
 		this.but_yinxiao.enabled = true;
 		this.but_danju.enabled = true;
@@ -338,6 +342,7 @@ class Guanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjixiaocai(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		//调用移除当前已显示界面内容；
 		if(Gerenshuxing.jiesuoxiaochao == "1"){
 			this.neiRongZhanShi.but_kuaican.enabled = false;
@@ -356,6 +361,7 @@ class Guanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjihuoguo(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		//调用移除当前已显示界面内容；
 		if(Gerenshuxing.jiesuohuoguo == "1"){
 			this.neiRongZhanShi.but_kuaican.enabled = true;
@@ -374,6 +380,7 @@ class Guanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjixiaochi(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		//调用移除当前已显示界面内容；
 		if(Gerenshuxing.jiesuoxiaochi == "1"){
 			this.neiRongZhanShi.but_kuaican.enabled = true;
@@ -392,6 +399,7 @@ class Guanlijiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjidianxin(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		//调用移除当前已显示界面内容；
 		if(Gerenshuxing.jiesuozaocan == "1"){
 			this.neiRongZhanShi.but_kuaican.enabled = true;
@@ -411,6 +419,7 @@ class Guanlijiemian extends eui.Component implements  eui.UIComponent {
 
 //点击员工按钮时触发
 	protected dianjiyuangong(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.but_yuangong.enabled = false;
 		this.but_yinxiao.enabled = true;
 		this.but_danju.enabled = true;
@@ -428,6 +437,7 @@ class Guanlijiemian extends eui.Component implements  eui.UIComponent {
 
 //点击营销按钮时触发
 	protected dianjiyinxiao(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.but_yuangong.enabled = true;
 		this.but_yinxiao.enabled = false;
 		this.but_danju.enabled = true;
@@ -445,6 +455,7 @@ class Guanlijiemian extends eui.Component implements  eui.UIComponent {
 
 //点击单据按钮时触发
 	protected dianjidanju(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.but_yuangong.enabled = true;
 		this.but_yinxiao.enabled = true;
 		this.but_danju.enabled = false;

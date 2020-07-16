@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="XinshouyindaodakuangSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="172b7738fd1" ></w:Config>
+	<e:Group id="yindaozu" left="0" bottom="0" top="0" right="0">
+		<e:Image id="heisezhezhaodianji" source="img_heisezhezao_png" scaleX="1" scaleY="1" left="0" top="0" right="0" bottom="0" alpha="0.1"/>
+		<e:Group id="dakuangzu" x="0" y="161">
+			<e:Image id="yindaodatukuang" source="img_xinshouduihuakuang_png" x="0" y="0"/>
+			<e:Label id="dakuangwenzi" text="对话内容" x="100.5" y="69" anchorOffsetX="0" width="414" anchorOffsetY="0" height="116" size="24" fontFamily="wodeziti" textColor="0xf97306" stroke="2" strokeColor="0x2c2a26" lineSpacing="10"/>
+		</e:Group>
+		<e:Image id="yindaoshouzhi" source="img_yindaoxiashouzhi_png" x="0.5" y="0"/>
+		<e:Group id="xiaokuangzu" x="89.5" y="9">
+			<e:Image id="yindaoxiaokuang" source="img_wenzitishikuang_png" x="0" y="0"/>
+			<e:Label id="xiaokuanwenzi" text="对话内容" x="21" y="13" anchorOffsetX="0" width="407" anchorOffsetY="0" height="57" size="24" fontFamily="wodeziti" textColor="0xF97306" stroke="2" strokeColor="0x2C2A26" lineSpacing="10" verticalAlign="middle" textAlign="center"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

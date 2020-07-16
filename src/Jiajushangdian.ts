@@ -142,30 +142,39 @@ class Jiajushangdian extends egret.DisplayObjectContainer{
 	}
 
 	public guanbichaoshiui(){
-		Gameguanli.Kongzhitai().dingbuui.removeChild(this.chaoshigoumaiui);
+		Gamesound.Soundkongzhi().anniuyinxiao();
+		if(Gameguanli.Kongzhitai().dingbuui.parent){
+			Gameguanli.Kongzhitai().dingbuui.removeChild(this.chaoshigoumaiui);
+		}
 	}
 
 	public daojutips1(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.daojutipsjiemian(this.chaoshiid[0]);
 	}
 
 	public daojutips2(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.daojutipsjiemian(this.chaoshiid[1]);
 	}
 
 	public daojutips3(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.daojutipsjiemian(this.chaoshiid[2]);
 	}
 
 	public daojutips4(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.daojutipsjiemian(this.chaoshiid[3]);
 	}
 
 	public daojutips5(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.daojutipsjiemian(this.chaoshiid[4]);
 	}
 
 	public daojutips6(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.daojutipsjiemian(this.chaoshiid[5]);
 	}
 
@@ -181,14 +190,21 @@ class Jiajushangdian extends egret.DisplayObjectContainer{
 			}
 		}
 		this.daojutipsui.heiseguanbi.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbitips,this);
+		this.daojutipsui.shiyonganniu.alpha = 0;
+		this.daojutipsui.shiyonganniu.enabled = false;
+		this.daojutipsui.quedinganniu.alpha = 1;
+		this.daojutipsui.quedinganniu.enabled = true;
+		this.daojutipsui.quedinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.guanbitips,this);
 	}
 
 	public guanbitips(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Gameguanli.Kongzhitai().dingbuui.removeChild(this.daojutipsui);
 	}
 
 
 	public chaoshi1keng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(Gerenshuxing.jinbizhi >= parseInt(this.chaoshijiage[0])){
 			Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.chaoshijiage[0]);
 			Weblianjie.fasongshuju("code:085","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
@@ -208,6 +224,7 @@ class Jiajushangdian extends egret.DisplayObjectContainer{
 	}
 
 	public chaoshi2keng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(Gerenshuxing.jinbizhi >= parseInt(this.chaoshijiage[1])){
 			Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.chaoshijiage[1]);
 			Weblianjie.fasongshuju("code:085","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
@@ -224,6 +241,7 @@ class Jiajushangdian extends egret.DisplayObjectContainer{
 	}
 
 	public chaoshi3keng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(Gerenshuxing.jinbizhi >= parseInt(this.chaoshijiage[2])){
 			Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.chaoshijiage[2]);
 			Weblianjie.fasongshuju("code:085","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
@@ -240,6 +258,7 @@ class Jiajushangdian extends egret.DisplayObjectContainer{
 	}
 
 	public chaoshi4keng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(Gerenshuxing.jinbizhi >= parseInt(this.chaoshijiage[3])){
 			Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.chaoshijiage[3]);
 			Weblianjie.fasongshuju("code:085","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
@@ -256,6 +275,7 @@ class Jiajushangdian extends egret.DisplayObjectContainer{
 	}
 
 	public chaoshi5keng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(Gerenshuxing.jinbizhi >= parseInt(this.chaoshijiage[4])){
 			Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.chaoshijiage[4]);
 			Weblianjie.fasongshuju("code:085","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","
@@ -272,6 +292,7 @@ class Jiajushangdian extends egret.DisplayObjectContainer{
 	}
 
 	public chaoshi6keng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(Gerenshuxing.jinbizhi >= parseInt(this.chaoshijiage[5])){
 			Gerenshuxing.jinbizhi = Gerenshuxing.jinbizhi - parseInt(this.chaoshijiage[5]);
 			Weblianjie.fasongshuju("code:085","{" + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + ","

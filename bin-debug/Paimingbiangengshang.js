@@ -22,4 +22,3 @@ var Paimingbiangengshang = (function (_super) {
     return Paimingbiangengshang;
 }(eui.Component));
 __reflect(Paimingbiangengshang.prototype, "Paimingbiangengshang", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Paimingbiangengshang.js.map

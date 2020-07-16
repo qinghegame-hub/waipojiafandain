@@ -22,4 +22,3 @@ var Dianpuzhaopinui = (function (_super) {
     return Dianpuzhaopinui;
 }(eui.Component));
 __reflect(Dianpuzhaopinui.prototype, "Dianpuzhaopinui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Dianpuzhaopinui.js.map

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ZuofanliziSkin" width="32" height="29" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1729a00e626" ></w:Config>
+	<e:Image id="liziming" source="img_jingyanlizi_png" horizontalCenter="0" verticalCenter="0"/>
+</e:Skin>

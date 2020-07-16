@@ -104,6 +104,7 @@ var Meirijiesuan = (function (_super) {
         this.jiatingchengyuanxianshi();
     };
     Meirijiesuan.prototype.guanbianniu = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Gameguanli.Kongzhitai().meirijiesuanjiemian("guan");
     };
     Meirijiesuan.prototype.jiatingchengyuanxianshi = function () {
@@ -126,25 +127,24 @@ var Meirijiesuan = (function (_super) {
             this.zhuangtai0.text = "空闲中";
         }
         if (parseInt(Gerenshuxing.xifuxinxi[2]) != 0 && parseInt(Gerenshuxing.xifuxinxi[3]) == 0) {
-            this.zhuangtai0.text = "已完成";
+            this.zhuangtai1.text = "已完成";
         }
         else if (parseInt(Gerenshuxing.xifuxinxi[2]) != 0 && parseInt(Gerenshuxing.xifuxinxi[3]) != 0) {
-            this.zhuangtai0.text = "家务中";
+            this.zhuangtai1.text = "家务中";
         }
         else {
-            this.zhuangtai0.text = "空闲中";
+            this.zhuangtai1.text = "空闲中";
         }
         if (parseInt(Gerenshuxing.sunnvxinxi[2]) != 0 && parseInt(Gerenshuxing.sunnvxinxi[3]) == 0) {
-            this.zhuangtai0.text = "已完成";
+            this.zhuangtai2.text = "已完成";
         }
         else if (parseInt(Gerenshuxing.sunnvxinxi[2]) != 0 && parseInt(Gerenshuxing.sunnvxinxi[3]) != 0) {
-            this.zhuangtai0.text = "玩耍中";
+            this.zhuangtai2.text = "玩耍中";
         }
         else {
-            this.zhuangtai0.text = "空闲中";
+            this.zhuangtai2.text = "空闲中";
         }
     };
     return Meirijiesuan;
 }(eui.Component));
 __reflect(Meirijiesuan.prototype, "Meirijiesuan", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Meirijiesuan.js.map

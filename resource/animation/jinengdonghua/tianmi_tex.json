@@ -1,1 +1,1 @@
-{"SubTexture":[{"width":53,"y":1,"height":44,"name":"tianmi","x":1}],"width":64,"height":64,"name":"tianmi","imagePath":"tianmi_tex.png"}
+{"width":64,"imagePath":"tianmi_tex.png","name":"tianmi","SubTexture":[{"width":32,"y":1,"height":26,"name":"tianmi","x":1}],"height":32}

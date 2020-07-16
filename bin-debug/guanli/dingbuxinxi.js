@@ -11,7 +11,9 @@ r.prototype = e.prototype, t.prototype = new r();
 var dingbuxinxi = (function (_super) {
     __extends(dingbuxinxi, _super);
     function dingbuxinxi() {
-        return _super.call(this) || this;
+        var _this = _super.call(this) || this;
+        _this.gerenshuxingui = new Gerenshuxingjiemian();
+        return _this;
     }
     dingbuxinxi.prototype.partAdded = function (partName, instance) {
         _super.prototype.partAdded.call(this, partName, instance);
@@ -54,6 +56,8 @@ var dingbuxinxi = (function (_super) {
         //		this.but_seting0.addEventListener(egret.TouchEvent.TOUCH_TAP,this.shezhi,this);
         //网络连接提示
         this.wangluolianjietishi();
+        //声音按钮状态
+        this.shengyinanniuzhuangtai();
     };
     dingbuxinxi.prototype.wangluolianjietishi = function () {
         var _this = this;
@@ -70,6 +74,7 @@ var dingbuxinxi = (function (_super) {
         }
     };
     dingbuxinxi.prototype.dianjiriqi = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Gameguanli.Kongzhitai().meirijiesuanjiemian("kai", Gerenshuxing.yuangongxupin, Gerenshuxing.yuangongjiepin);
     };
     dingbuxinxi.prototype.shezhi = function () {
@@ -476,7 +481,11 @@ var dingbuxinxi = (function (_super) {
         }
     };
     dingbuxinxi.prototype.chakangerenshuxing = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.gerenshuxingui = new Gerenshuxingjiemian();
+        if (this.gerenshuxingui.parent) {
+            this.parent.removeChild(this.gerenshuxingui);
+        }
         this.addChild(this.gerenshuxingui);
         this.chengchengjiemianneirong();
     };
@@ -520,12 +529,17 @@ var dingbuxinxi = (function (_super) {
         this.gerenshuxingui.tianxizhi.text = Gerenshuxing.gerentian + "(" + Gerenshuxing.tishengxingfutian + ")";
     };
     dingbuxinxi.prototype.dakaijinxiu = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         var jinxiujiemian = new Gerendaojujiemian();
         this.addChild(jinxiujiemian);
         jinxiujiemian.chushihua("1");
     };
     dingbuxinxi.prototype.guanbigerenshuxing = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.removeChild(this.gerenshuxingui);
+        if (Gerenshuxing.guideuiyindao == 17) {
+            Weblianjie.fasongshuju("code:158", "{" + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "," + '"buzou"' + ":" + '"18"' + "}");
+        }
     };
     dingbuxinxi.prototype.xianshitouxiang = function () {
         var imgLoader = new egret.ImageLoader;
@@ -553,6 +567,7 @@ var dingbuxinxi = (function (_super) {
         }
     };
     dingbuxinxi.prototype.kaixinjieshao = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         for (var i = 0; i < this.youxitishibiao.length; i++) {
             if (this.youxitishibiao[i].id == "27") {
                 this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -561,6 +576,7 @@ var dingbuxinxi = (function (_super) {
         }
     };
     dingbuxinxi.prototype.tilijieshao = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         for (var i = 0; i < this.youxitishibiao.length; i++) {
             if (this.youxitishibiao[i].id == "28") {
                 this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -569,6 +585,7 @@ var dingbuxinxi = (function (_super) {
         }
     };
     dingbuxinxi.prototype.jinbijieshao = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         for (var i = 0; i < this.youxitishibiao.length; i++) {
             if (this.youxitishibiao[i].id == "29") {
                 this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -577,6 +594,7 @@ var dingbuxinxi = (function (_super) {
         }
     };
     dingbuxinxi.prototype.jiankangjieshao = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         for (var i = 0; i < this.youxitishibiao.length; i++) {
             if (this.youxitishibiao[i].id == "30") {
                 this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -589,7 +607,27 @@ var dingbuxinxi = (function (_super) {
         this.addChild(tishijiemian);
         tishijiemian.xianshineirong(neirong);
     };
+    dingbuxinxi.prototype.shengyinanniuzhuangtai = function () {
+        var _this = this;
+        if (Gamesound.Soundkongzhi().yinxiao == false) {
+            this.shengyinanniu.source = "img_shengyinanniu2_png";
+            this.shengyinanniu.touchEnabled = true;
+            this.shengyinanniu.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                _this.shengyinanniu.source = "img_shengyinanniu1_png";
+                Gamesound.Soundkongzhi().bofangzanting("kai");
+                _this.shengyinanniuzhuangtai();
+            }, this);
+        }
+        else {
+            this.shengyinanniu.source = "img_shengyinanniu1_png";
+            this.shengyinanniu.touchEnabled = true;
+            this.shengyinanniu.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                _this.shengyinanniu.source = "img_shengyinanniu2_png";
+                Gamesound.Soundkongzhi().bofangzanting("guan");
+                _this.shengyinanniuzhuangtai();
+            }, this);
+        }
+    };
     return dingbuxinxi;
 }(eui.Component));
 __reflect(dingbuxinxi.prototype, "dingbuxinxi", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=dingbuxinxi.js.map

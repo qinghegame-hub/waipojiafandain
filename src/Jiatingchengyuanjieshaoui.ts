@@ -1,7 +1,10 @@
 class Jiatingchengyuanjieshaoui extends eui.Component implements  eui.UIComponent {
-	public guanbiananniu:eui.Button;
 	public xinxijiemianzu:eui.Group;
 	public img_tanchubeijing:eui.Image;
+	public beijingdiban:eui.Image;
+	public beijingdiban2:eui.Image;
+	public beijingdiban1:eui.Image;
+	public beijingdiban0:eui.Image;
 	public biaotiwenzi:eui.Label;
 	public guanxibiaoqian:eui.Label;
 	public guanxineirong:eui.Label;
@@ -11,6 +14,9 @@ class Jiatingchengyuanjieshaoui extends eui.Component implements  eui.UIComponen
 	public gongzuozhi:eui.Label;
 	public jiesaobiaoqian:eui.Label;
 	public jiesaoneirong:eui.Label;
+	public guanbiananniu:eui.Button;
+	public renwutouxiang:eui.Image;
+
 
 
 

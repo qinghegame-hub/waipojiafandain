@@ -39,6 +39,7 @@ var Jiajugoumai = (function (_super) {
         this.but_jiajugoumai3.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjidi4gejiesuo, this);
     };
     Jiajugoumai.prototype.dianjidi1geshiyong = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Weblianjie.fasongshuju("code:004", "{" + '"jiajuid"' + ":" + '"' + this.di1geid + '"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
         switch (this.panduanyeqian) {
             case 1:
@@ -72,6 +73,7 @@ var Jiajugoumai = (function (_super) {
         }
     };
     Jiajugoumai.prototype.dianjidi2geshiyong = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Weblianjie.fasongshuju("code:004", "{" + '"jiajuid"' + ":" + '"' + this.di2geid + '"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
         switch (this.panduanyeqian) {
             case 1:
@@ -105,6 +107,7 @@ var Jiajugoumai = (function (_super) {
         }
     };
     Jiajugoumai.prototype.dianjidi3geshiyong = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Weblianjie.fasongshuju("code:004", "{" + '"jiajuid"' + ":" + '"' + this.di3geid + '"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
         switch (this.panduanyeqian) {
             case 1:
@@ -138,6 +141,7 @@ var Jiajugoumai = (function (_super) {
         }
     };
     Jiajugoumai.prototype.dianjidi4geshiyong = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Weblianjie.fasongshuju("code:004", "{" + '"jiajuid"' + ":" + '"' + this.di4geid + '"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
         switch (this.panduanyeqian) {
             case 1:
@@ -171,15 +175,19 @@ var Jiajugoumai = (function (_super) {
         }
     };
     Jiajugoumai.prototype.dianjidi1gejiesuo = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Weblianjie.fasongshuju("code:008", "{" + '"jiajuid"' + ":" + '"' + this.di1geid + '"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
     };
     Jiajugoumai.prototype.dianjidi2gejiesuo = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Weblianjie.fasongshuju("code:008", "{" + '"jiajuid"' + ":" + '"' + this.di2geid + '"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
     };
     Jiajugoumai.prototype.dianjidi3gejiesuo = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Weblianjie.fasongshuju("code:008", "{" + '"jiajuid"' + ":" + '"' + this.di3geid + '"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
     };
     Jiajugoumai.prototype.dianjidi4gejiesuo = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Weblianjie.fasongshuju("code:008", "{" + '"jiajuid"' + ":" + '"' + this.di4geid + '"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
     };
     //修改饭店界面的家具的小吃区域显示内容和判断使用是否成功
@@ -485,7 +493,7 @@ var Jiajugoumai = (function (_super) {
     };
     //管理界面数据逻辑的处理
     Jiajugoumai.prototype.chulishujujiajujiegou = function (yeqian, yeshu) {
-        var guanlileixingleibiao = RES.getRes("jiajubiao_json");
+        var guanlileixingleibiao = Gerenshuxing.jiajubiao;
         //		console.log(guanlileixingleibiao);
         //		console.log(this.dangqianyeqianshu);
         //接收服务端数据后，处理家具信息
@@ -800,4 +808,3 @@ var Jiajugoumai = (function (_super) {
     return Jiajugoumai;
 }(eui.Component));
 __reflect(Jiajugoumai.prototype, "Jiajugoumai", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Jiajugoumai.js.map

@@ -62,6 +62,7 @@ class Jiatingchengyuandaojuui extends eui.Component implements  eui.UIComponent 
 
 	public guanbianniuguanbi(){
 		this.guanbianniu.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>{
+			Gamesound.Soundkongzhi().anniuyinxiao();
 			this.parent.removeChild(this);
 		},this)
 	}

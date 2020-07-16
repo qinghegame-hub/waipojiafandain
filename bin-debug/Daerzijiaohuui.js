@@ -22,4 +22,3 @@ var Daerzijiaohuui = (function (_super) {
     return Daerzijiaohuui;
 }(eui.Component));
 __reflect(Daerzijiaohuui.prototype, "Daerzijiaohuui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Daerzijiaohuui.js.map

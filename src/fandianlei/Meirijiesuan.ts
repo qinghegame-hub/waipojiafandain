@@ -250,6 +250,7 @@ class Meirijiesuan extends eui.Component implements  eui.UIComponent {
 	}
 
 	public guanbianniu(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Gameguanli.Kongzhitai().meirijiesuanjiemian("guan");
 	}
 
@@ -269,18 +270,18 @@ class Meirijiesuan extends eui.Component implements  eui.UIComponent {
 			this.zhuangtai0.text = "空闲中";
 		}
 		if(parseInt(Gerenshuxing.xifuxinxi[2]) != 0 && parseInt(Gerenshuxing.xifuxinxi[3]) == 0){
-			this.zhuangtai0.text = "已完成";
+			this.zhuangtai1.text = "已完成";
 		}else if(parseInt(Gerenshuxing.xifuxinxi[2]) != 0 && parseInt(Gerenshuxing.xifuxinxi[3]) != 0){
-			this.zhuangtai0.text = "家务中";
+			this.zhuangtai1.text = "家务中";
 		}else{
-			this.zhuangtai0.text = "空闲中";
+			this.zhuangtai1.text = "空闲中";
 		}
 		if(parseInt(Gerenshuxing.sunnvxinxi[2]) != 0 && parseInt(Gerenshuxing.sunnvxinxi[3]) == 0){
-			this.zhuangtai0.text = "已完成";
+			this.zhuangtai2.text = "已完成";
 		}else if(parseInt(Gerenshuxing.sunnvxinxi[2]) != 0 && parseInt(Gerenshuxing.sunnvxinxi[3]) != 0){
-			this.zhuangtai0.text = "玩耍中";
+			this.zhuangtai2.text = "玩耍中";
 		}else{
-			this.zhuangtai0.text = "空闲中";
+			this.zhuangtai2.text = "空闲中";
 		}
 	}
 	

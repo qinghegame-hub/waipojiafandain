@@ -22,4 +22,3 @@ var Dianshijiaohuui = (function (_super) {
     return Dianshijiaohuui;
 }(eui.Component));
 __reflect(Dianshijiaohuui.prototype, "Dianshijiaohuui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Dianshijiaohuui.js.map

@@ -22,4 +22,3 @@ var Tanmujiemian = (function (_super) {
     return Tanmujiemian;
 }(eui.Component));
 __reflect(Tanmujiemian.prototype, "Tanmujiemian", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Tanmujiemian.js.map

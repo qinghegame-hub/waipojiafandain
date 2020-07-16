@@ -3,7 +3,7 @@
 	<w:Config id="16fbd40e734" ></w:Config>
 	<e:Group id="jingyinguanlizu" left="0" bottom="0" right="0" top="0">
 		<e:Image id="img_heisezhezao" source="img_heisezhezao_png" left="0" bottom="0" top="0" right="0"/>
-		<e:Image id="img_baobiaodiban" source="img_baobiaodiban_png" x="52" y="128"/>
+		<e:Image id="img_baobiaodiban" source="img_baobiaodiban_png" x="40" y="123"/>
 		<e:Button id="but_guanbi" label="" x="614" y="134" enabled="true">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
@@ -12,28 +12,28 @@
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Label id="keliuliangtext" text="98999" x="284" y="335" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
-		<e:Label id="kerongliangtext" text="98999" x="284" y="384" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
-		<e:Label id="lixianshouyitext" text="98999" x="518" y="335" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
-		<e:Label id="waimaishouyitext" text="98999" x="518" y="387" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
-		<e:Label id="yuangongxinzitext" text="98999" x="299" y="500" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
-		<e:Label id="zujinshouru" text="98999" x="210" y="586.5" anchorOffsetX="0" width="136" size="20" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2" bold="true" anchorOffsetY="0" height="19"/>
-		<e:Label id="meiqishouru" text="98999" x="425" y="526.5" anchorOffsetX="0" width="136" size="20" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2" bold="true" anchorOffsetY="0" height="19"/>
-		<e:Label id="fadanshouru" text="98999" x="425" y="586.5" anchorOffsetX="0" width="136" size="20" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2" bold="true" anchorOffsetY="0" height="19"/>
-		<e:Label id="fangwuzujintext" text="98999" x="299" y="561.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
-		<e:Label id="shuidianmeiqitext" text="98999" x="515" y="500" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
-		<e:Label id="jingyinfadantext" text="98999" x="515" y="559.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
-		<e:Label id="weishentext" text="98999" x="299" y="680.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
-		<e:Label id="anbaotext" text="98999" x="299" y="741.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
-		<e:Label id="xiaochaotijiatext" text="98999" x="299" y="795.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
-		<e:Label id="xiaochitijiatext" text="98999" x="299" y="855.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
-		<e:Label id="shangcaisudutext" text="98999" x="299" y="911.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
-		<e:Label id="shicaichubeitext" text="98999" x="515" y="680.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
-		<e:Label id="fandiankoubeitext" text="98999" x="515" y="740.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
-		<e:Label id="huoguotijiatext" text="98999" x="516" y="795.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
-		<e:Label id="zaocantijiatext" text="98999" x="515" y="855.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
-		<e:Label id="shihaojiangditext" text="98999" x="515" y="911.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true"/>
-		<e:Button id="shuomingbut" label="" x="347" y="334" enabled="true">
+		<e:Label id="keliuliangtext" text="98999" x="284" y="326" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" bold="true" textColor="0xf76a09" stroke="2" strokeColor="0x2c2a26"/>
+		<e:Label id="kerongliangtext" text="98999" x="284" y="375" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" bold="true" textColor="0xf97306" stroke="2" strokeColor="0x2c2a26"/>
+		<e:Label id="lixianshouyitext" text="98999" x="518" y="326" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" strokeColor="0x2c2a26" textColor="0xf97306"/>
+		<e:Label id="waimaishouyitext" text="98999" x="518" y="378" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="yuangongxinzitext" text="98999" x="299" y="492" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="zujinshouru" text="98999" x="210" y="578.5" anchorOffsetX="0" width="136" size="20" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2" bold="true" anchorOffsetY="0" height="19" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="meiqishouru" text="98999" x="425" y="519.5" anchorOffsetX="0" width="136" size="20" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2" bold="true" anchorOffsetY="0" height="19" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="fadanshouru" text="98999" x="425" y="579.5" anchorOffsetX="0" width="136" size="20" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" stroke="2" bold="true" anchorOffsetY="0" height="19" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="fangwuzujintext" text="98999" x="299" y="554.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="shuidianmeiqitext" text="98999" x="515" y="493" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="jingyinfadantext" text="98999" x="515" y="552.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="weishentext" text="98999" x="299" y="673.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="anbaotext" text="98999" x="299" y="734.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="xiaochaotijiatext" text="98999" x="299" y="788.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="xiaochitijiatext" text="98999" x="299" y="848.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="shangcaisudutext" text="98999" x="299" y="904.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="shicaichubeitext" text="98999" x="515" y="673.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="fandiankoubeitext" text="98999" x="515" y="733.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="huoguotijiatext" text="98999" x="516" y="788.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="zaocantijiatext" text="98999" x="515" y="848.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Label id="shihaojiangditext" text="98999" x="515" y="904.5" anchorOffsetX="0" width="84" size="20" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" textColor="0xf97306" strokeColor="0x2c2a26"/>
+		<e:Button id="shuomingbut" label="" x="347" y="327" enabled="true">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -41,7 +41,7 @@
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="579" y="334" enabled="true" id="shuomingbut0">
+		<e:Button label="" x="579" y="327" enabled="true" id="shuomingbut0">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -49,7 +49,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="347" y="383" enabled="true" id="shuomingbut1">
+		<e:Button label="" x="347" y="376" enabled="true" id="shuomingbut1">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -57,7 +57,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="579" y="384" enabled="true" id="shuomingbut2">
+		<e:Button label="" x="579" y="377" enabled="true" id="shuomingbut2">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -65,7 +65,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="354" y="499" enabled="true" id="shuomingbut3">
+		<e:Button label="" x="354" y="492" enabled="true" id="shuomingbut3">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -73,7 +73,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="581" y="499" enabled="true" id="shuomingbut4">
+		<e:Button label="" x="581" y="492" enabled="true" id="shuomingbut4">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -81,7 +81,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="357.5" y="559" enabled="true" id="shuomingbut5">
+		<e:Button label="" x="357.5" y="552" enabled="true" id="shuomingbut5">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -89,7 +89,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="579" y="558.5" enabled="true" id="shuomingbut6">
+		<e:Button label="" x="579" y="551.5" enabled="true" id="shuomingbut6">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -97,7 +97,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="354" y="680.5" enabled="true" id="shuomingbut7">
+		<e:Button label="" x="354" y="673.5" enabled="true" id="shuomingbut7">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -105,7 +105,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="578" y="679.5" enabled="true" id="shuomingbut8">
+		<e:Button label="" x="578" y="672.5" enabled="true" id="shuomingbut8">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -113,7 +113,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="357.5" y="741.5" enabled="true" id="shuomingbut9">
+		<e:Button label="" x="357.5" y="734.5" enabled="true" id="shuomingbut9">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -121,7 +121,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="578" y="739.5" enabled="true" id="shuomingbut10">
+		<e:Button label="" x="578" y="732.5" enabled="true" id="shuomingbut10">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -129,7 +129,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="357.5" y="795.5" enabled="true" id="shuomingbut11">
+		<e:Button label="" x="357.5" y="788.5" enabled="true" id="shuomingbut11">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -137,7 +137,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="578" y="795" enabled="true" id="shuomingbut12">
+		<e:Button label="" x="578" y="788" enabled="true" id="shuomingbut12">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -145,7 +145,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="357.5" y="855.5" enabled="true" id="shuomingbut13">
+		<e:Button label="" x="357.5" y="848.5" enabled="true" id="shuomingbut13">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -153,7 +153,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="578" y="855.5" enabled="true" id="shuomingbut14">
+		<e:Button label="" x="578" y="848.5" enabled="true" id="shuomingbut14">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -161,7 +161,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="357.5" y="911.5" enabled="true" id="shuomingbut15">
+		<e:Button label="" x="357.5" y="904.5" enabled="true" id="shuomingbut15">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -169,7 +169,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="" x="581" y="910.5" enabled="true" id="shuomingbut16">
+		<e:Button label="" x="581" y="903.5" enabled="true" id="shuomingbut16">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_shuoming1_png" source.down="but_shuoming2_png" source.disabled="but_shuoming2_png"/>
@@ -177,5 +177,6 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
+		<e:Image id="biaotitupian" source="img_baobiaobiaoti_png" x="257.5" y="121"/>
 	</e:Group>
 </e:Skin>

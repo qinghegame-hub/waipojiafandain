@@ -62,4 +62,3 @@ var Zhandoutexiaomokuai = (function (_super) {
     return Zhandoutexiaomokuai;
 }(egret.DisplayObjectContainer));
 __reflect(Zhandoutexiaomokuai.prototype, "Zhandoutexiaomokuai");
-//# sourceMappingURL=Zhandoutexiaomokuai.js.map

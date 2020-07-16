@@ -3,7 +3,7 @@
 	<w:Config id="16f9d5b4388" ></w:Config>
 	<e:Group id="zhuyaozu" top="0" left="0" right="0" bottom="0" touchThrough="true">
 		<e:Image id="img_tiziqianduan" source="img_tiziqianduan_png" top="0" bottom="0" right="0" left="0" x="0" y="0" scaleX="1" scaleY="1" touchEnabled="false" pixelHitTest="true" anchorOffsetX="0" anchorOffsetY="0"/>
-		<e:Group id="zhongbuzu1" touchThrough="true" height="339" width="712" x="9" y="748">
+		<e:Group id="zhongbuzu1" touchThrough="true" height="339" width="712" x="9" y="748" locked="true">
 			<e:Button id="but_caipu1" x="615.5" y="243" width="96" height="96" enabled="true">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
@@ -54,5 +54,10 @@
 			<e:Image id="img_saoba" x="0" y="52" source="img_saoba_png"/>
 			<e:Image id="img_shicaibuzu" source="img_shicaibuzu_png" x="9" y="-56" scaleX="1" scaleY="1"/>
 		</e:Group>
+		<e:Image id="yinxiaoicon" source="img_chuandanbiaozhi_png" x="7" y="339" width="30" height="30"/>
+		<e:Image source="img_chuandanbiaozhi_png" x="44.5" y="333" width="30" height="30" id="yinxiaoicon0"/>
+		<e:Image source="img_chuandanbiaozhi_png" x="85" y="324" width="30" height="30" id="yinxiaoicon1"/>
+		<e:Image source="img_chuandanbiaozhi_png" x="126.5" y="318" width="30" height="30" id="yinxiaoicon2"/>
+		<e:Image source="img_chuandanbiaozhi_png" x="168" y="309" width="30" height="30" id="yinxiaoicon3"/>
 	</e:Group>
 </e:Skin>

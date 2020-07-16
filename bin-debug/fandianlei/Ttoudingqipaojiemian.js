@@ -22,4 +22,3 @@ var Ttoudingqipaojiemian = (function (_super) {
     return Ttoudingqipaojiemian;
 }(eui.Component));
 __reflect(Ttoudingqipaojiemian.prototype, "Ttoudingqipaojiemian", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Ttoudingqipaojiemian.js.map

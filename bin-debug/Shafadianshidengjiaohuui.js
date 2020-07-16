@@ -21,8 +21,13 @@ var Shafadianshidengjiaohuui = (function (_super) {
         //		this.guanbianniujiaohu();
     };
     Shafadianshidengjiaohuui.prototype.guanbianniujiaohu = function () {
+        var _this = this;
+        this.heiseguanbi.touchEnabled = true;
+        this.heiseguanbi.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+            Gamesound.Soundkongzhi().anniuyinxiao();
+            _this.parent.removeChild(_this);
+        }, this);
     };
     return Shafadianshidengjiaohuui;
 }(eui.Component));
 __reflect(Shafadianshidengjiaohuui.prototype, "Shafadianshidengjiaohuui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Shafadianshidengjiaohuui.js.map

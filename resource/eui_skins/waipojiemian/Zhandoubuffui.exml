@@ -3,9 +3,9 @@
 	<w:Config id="17226af237e" ></w:Config>
 	<e:Group id="gerenshuxingjieshaozu" left="0" top="0" bottom="0" right="0">
 		<e:Image id="img_heisezhezao0" source="img_heisezhezao_png" alpha="0.5" left="0" top="0" bottom="0" right="0"/>
-		<e:Image id="img_tongyongpinghejiemianpng0" source="img_tongyongpinghejiemianpng_png" x="97" y="219" anchorOffsetX="0" width="556" anchorOffsetY="0" height="761"/>
-		<e:Label id="biaotiwenzi0" text="附加状态" x="270" y="241" anchorOffsetX="0" width="210" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" textColor="0xF2780C" bold="true" anchorOffsetY="0" height="42" stroke="2" strokeColor="0xF4EDED"/>
-		<e:Button id="guanbianniu0" label="" x="558.5" y="219" enabled="true">
+		<e:Image id="img_tongyongpinghejiemianpng0" x="97" y="219" anchorOffsetX="0" width="556" anchorOffsetY="0" height="761" source="img_tanchubeijing_png"/>
+		<e:Label id="biaotiwenzi0" text="附加状态" x="244" y="246" anchorOffsetX="0" width="236" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" bold="true" anchorOffsetY="0" height="52" stroke="4" strokeColor="0x2c2a26" textColor="0xf97306" size="30"/>
+		<e:Button id="guanbianniu0" label="" x="562" y="241" enabled="true">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
 			<e:Image width="100%" height="100%" source="but_guanbi2_png" source.down="but_guanbi1_png" source.disabled="but_guanbi1_png"/>
@@ -13,8 +13,8 @@
 			</e:Skin>
 		</e:skinName>
 		</e:Button>
-		<e:Scroller width="456" height="552" x="148" y="353" anchorOffsetX="0" anchorOffsetY="0">
-			<e:Group anchorOffsetX="0" width="406" anchorOffsetY="0" height="860" x="38.5">
+		<e:Scroller width="456" height="552" x="135" y="353" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Group anchorOffsetX="0" width="406" anchorOffsetY="0" height="860" x="-13">
 				<e:Group id="yitiaoshuju" x="27" y="6">
 					<e:Image id="jinengtu" x="0" y="12" width="80" height="80" source=""/>
 					<e:Label id="jinengmingcheng" text="" x="96" y="8" size="24" fontFamily="wodeziti" textColor="0xf77b3b" verticalAlign="middle" textAlign="left" anchorOffsetX="0" width="120" bold="true" stroke="2" strokeColor="0x423e3e" height="24"/>

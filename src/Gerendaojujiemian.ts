@@ -94,7 +94,7 @@ class Gerendaojujiemian extends eui.Component implements  eui.UIComponent {
 	/*
 	道具弹出框实例
 	*/
-	public daojutanchukuang:Tongyongquerenkuang;
+	public daojutanchukuang:Daojutipsui;
 
 	/*
 	奖励展示界面实例
@@ -179,6 +179,7 @@ class Gerendaojujiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public guanbizhujiemian(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.parent.removeChild(this);
 	}
 /*
@@ -470,50 +471,62 @@ class Gerendaojujiemian extends eui.Component implements  eui.UIComponent {
 	点击每个坑时，弹出通用提示界面，使用道具
 	*/
 	public dianji1keng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.dangqianid = "0";
 		this.shiyongdaojutanchu(this.di1kengid);
 	}
 	public dianji2keng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.dangqianid = "0";
 		this.shiyongdaojutanchu(this.di2kengid);
 	}
 	public dianji3keng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.dangqianid = "0";
 		this.shiyongdaojutanchu(this.di3kengid);
 	}
 	public dianji4keng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.dangqianid = "0";
 		this.shiyongdaojutanchu(this.di4kengid);
 	}
 	public dianji5keng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.dangqianid = "0";
 		this.shiyongdaojutanchu(this.di5kengid);
 	}
 	public dianji6keng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.dangqianid = "0";
 		this.shiyongdaojutanchu(this.di6kengid);
 	}
 	public dianji7keng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.dangqianid = "0";
 		this.shiyongdaojutanchu(this.di7kengid);
 	}
 	public dianji8keng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.dangqianid = "0";
 		this.shiyongdaojutanchu(this.di8kengid);
 	}
 	public dianji9keng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.dangqianid = "0";
 		this.shiyongdaojutanchu(this.di9kengid);
 	}
 	public dianji10keng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.dangqianid = "0";
 		this.shiyongdaojutanchu(this.di10kengid);
 	}
 	public dianji11keng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.dangqianid = "0";
 		this.shiyongdaojutanchu(this.di11kengid);
 	}
 	public dianji12keng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.dangqianid = "0";
 		this.shiyongdaojutanchu(this.di12kengid);
 	}
@@ -522,61 +535,33 @@ class Gerendaojujiemian extends eui.Component implements  eui.UIComponent {
 	统一的道具使用弹出框
 	*/
 	public shiyongdaojutanchu(id){
-		this.daojutanchukuang = new Tongyongquerenkuang();
+		this.daojutanchukuang = new Daojutipsui();
 		this.addChild(this.daojutanchukuang);
-		this.daojutanchukuang.but_shuangbei.enabled = false;
-		this.daojutanchukuang.but_shuangbei.alpha = 0;
-		this.daojutanchukuang.but_queding.enabled = false;
-		this.daojutanchukuang.but_queding.alpha = 0;
-		this.daojutanchukuang.but_queding0.enabled = true;
-		this.daojutanchukuang.but_queding0.alpha = 1;
-		let daojushuoming:string = "您尚未拥有该道具，在某些机缘巧合之下或许能获得，多出去走走吧！"
+		for(var j = 0;j<Gerenshuxing.daojubiao.length;j++){
+			if(Gerenshuxing.daojubiao[j].id == id){
+				this.daojutanchukuang.shuomingneirong.text = Gerenshuxing.daojubiao[j].tips;
+				this.daojutanchukuang.leixingming.text = Gerenshuxing.daojubiao[j].daojuleixing;
+				this.daojutanchukuang.daojumingzi.text = Gerenshuxing.daojubiao[j].mingcheng;
+				this.daojutanchukuang.daojuicon.source = Gerenshuxing.daojubiao[j].xianshiicon;
+				break;
+			}
+		}
 		if(parseInt(Gerencaipudengji.daoju[id][0]) > 0){
 			this.dangqianid = id;
-			for(var j = 0;j<Gerenshuxing.daojubiao.length;j++){
-				if(Gerenshuxing.daojubiao[j].id == id){
-					daojushuoming = Gerenshuxing.daojubiao[j].tips;
-					this.daojutanchukuang.jiangliicon2.source = Gerenshuxing.daojubiao[j].xianshiicon;
-					this.daojutanchukuang.jiangli2.text = "- 1";
-					if(id == "10021" || id == "10022" || id == "10023"){
-						this.daojutanchukuang.jiangliicon1.source = "img_meiweijienng_png";
-						this.daojutanchukuang.jiangli1.text = "精修X1";
-					}else if(id == "10024"){
-						this.daojutanchukuang.jiangliicon1.source = "img_maicon_png";
-						this.daojutanchukuang.jiangli1.text = "提升:1%~20%";
-					}else if(id == "10025"){
-						this.daojutanchukuang.jiangliicon1.source = "img_laicon_png";
-						this.daojutanchukuang.jiangli1.text = "提升:1%~20%";
-					}else if(id == "10026"){
-						this.daojutanchukuang.jiangliicon1.source = "img_tianicon_png";
-						this.daojutanchukuang.jiangli1.text = "提升:1%~20%";
-					}else if(id == "10027"){
-						this.daojutanchukuang.jiangliicon1.source = "img_suanicon_png";
-						this.daojutanchukuang.jiangli1.text = "提升:1%~20%";
-					}else if(id == "10028"){
-						this.daojutanchukuang.jiangliicon1.source = "img_laicon_png";
-						this.daojutanchukuang.jiangli1.text = "增加:1~5";
-					}else if(id == "10029"){
-						this.daojutanchukuang.jiangliicon1.source = "img_maicon_png";
-						this.daojutanchukuang.jiangli1.text = "增加:1~5";
-					}else if(id == "10030"){
-						this.daojutanchukuang.jiangliicon1.source = "img_suanicon_png";
-						this.daojutanchukuang.jiangli1.text = "增加:1~5";
-					}else if(id == "10031"){
-						this.daojutanchukuang.jiangliicon1.source = "img_tianicon_png";
-						this.daojutanchukuang.jiangli1.text = "增加:1~5";
-					}
-					break;
-				}
-			}
+			this.daojutanchukuang.quedinganniu.alpha = 0;
+			this.daojutanchukuang.quedinganniu.enabled = false;
+			this.daojutanchukuang.shiyonganniu.alpha = 1;
+			this.daojutanchukuang.shiyonganniu.enabled = true;
+			this.daojutanchukuang.shiyonganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjishiyong,this);
+
 		}else{
-			this.daojutanchukuang.jiangliicon2.source = "";
-			this.daojutanchukuang.jiangli2.text = "";
-			this.daojutanchukuang.jiangliicon1.source = "";
-			this.daojutanchukuang.jiangli1.text = "";
+			this.daojutanchukuang.quedinganniu.alpha = 1;
+			this.daojutanchukuang.quedinganniu.enabled = true;
+			this.daojutanchukuang.shiyonganniu.alpha = 0;
+			this.daojutanchukuang.shiyonganniu.enabled = false;
+			this.daojutanchukuang.quedinganniu.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjishiyong,this);
 		}
-		this.daojutanchukuang.tishiwenzi.text = daojushuoming;
-		this.daojutanchukuang.but_queding0.addEventListener(egret.TouchEvent.TOUCH_TAP,this.dianjishiyong,this);
+
 
 	}
 
@@ -584,6 +569,7 @@ class Gerendaojujiemian extends eui.Component implements  eui.UIComponent {
 	点击确定按钮，需要向服务器请求发送奖励了
 	*/
 	public dianjishiyong(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(this.dangqianid == "0"){
 			this.removeChild(this.daojutanchukuang);
 		}else{
@@ -896,6 +882,7 @@ class Gerendaojujiemian extends eui.Component implements  eui.UIComponent {
 
 
 	public guanbijiangli(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.removeChild(this.jianglijiemian);
 		this.chushihua(this.dangqianshiyongleixing,this.dangqiancaiid);
 		if(Gameguanli.Kongzhitai().dingbuui.gerenshuxingui.parent){

@@ -22,4 +22,3 @@ var Caipucaiping = (function (_super) {
     return Caipucaiping;
 }(eui.Component));
 __reflect(Caipucaiping.prototype, "Caipucaiping", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Caipucaiping.js.map

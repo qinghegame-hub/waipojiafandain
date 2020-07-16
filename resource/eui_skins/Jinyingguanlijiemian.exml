@@ -4,7 +4,7 @@
 	<e:Group id="jingyinguanlizu" left="0" bottom="0" right="0" top="0">
 		<e:Image id="img_heisezhezao" source="img_heisezhezao_png" left="0" bottom="0" top="0" right="0"/>
 		<e:Image id="img_baobiaodiban" source="img_baobiaodiban_png" x="52" y="128"/>
-		<e:Button id="but_guanbi" label="" x="614" y="134" enabled="true">
+		<e:Button id="but_guanbi" label="" x="626" y="140" enabled="true">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_guanbi2_png" source.down="but_guanbi1_png" source.disabled="but_guanbi1_png"/>
@@ -12,8 +12,8 @@
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Label id="keliuliangtext" text="98999" x="284" y="335" anchorOffsetX="0" width="84" size="18" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" height="20"/>
-		<e:Label id="kerongliangtext" text="98999" x="284" y="384" anchorOffsetX="0" width="84" size="18" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" height="20"/>
+		<e:Label id="keliuliangtext" text="98999" x="295" y="333" anchorOffsetX="0" width="84" size="18" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" height="20"/>
+		<e:Label id="kerongliangtext" text="98999" x="294" y="384" anchorOffsetX="0" width="84" size="18" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" height="20"/>
 		<e:Label id="lixianshouyitext" text="98999" x="518" y="335" anchorOffsetX="0" width="84" size="18" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" height="20"/>
 		<e:Label id="waimaishouyitext" text="98999" x="518" y="387" anchorOffsetX="0" width="84" size="18" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" height="20"/>
 		<e:Label id="yuangongxinzitext" text="98999" x="299" y="500" anchorOffsetX="0" width="84" size="18" verticalAlign="middle" textAlign="left" fontFamily="wodeziti" stroke="2" bold="true" height="20"/>

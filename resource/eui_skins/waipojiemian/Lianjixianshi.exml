@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="LianjixianshiSkin" width="127" height="60" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="17299c1f63d" ></w:Config>
+	<e:Image id="lianjixianshiming" source="img_wanmeix1_png" x="0" y="0"/>
+</e:Skin>

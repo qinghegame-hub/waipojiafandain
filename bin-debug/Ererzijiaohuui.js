@@ -22,4 +22,3 @@ var Ererzijiaohuui = (function (_super) {
     return Ererzijiaohuui;
 }(eui.Component));
 __reflect(Ererzijiaohuui.prototype, "Ererzijiaohuui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Ererzijiaohuui.js.map

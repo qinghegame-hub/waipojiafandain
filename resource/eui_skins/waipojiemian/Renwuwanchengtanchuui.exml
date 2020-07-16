@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="RenwuwanchengtanchuuiSkin" width="357" height="60" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="173233419ab" ></w:Config>
+	<e:Group id="renwutanchuzu" x="0" y="0">
+		<e:Image id="tanchubeijing" source="img_meiritanchutishi_png" x="0" y="0"/>
+		<e:Image id="renwutushi" source="img_qinfenkeku_png" x="16" y="8" anchorOffsetX="0" width="42" anchorOffsetY="0" height="42"/>
+		<e:Label id="renwumingzi" text="日行一善" x="87" y="20" anchorOffsetX="0" width="136" fontFamily="wodeziti" textColor="0xf97306" textAlign="center" verticalAlign="middle" size="22"/>
+		<e:Label id="renwuwanchengdu" text="进度:3/3" x="244" y="20" anchorOffsetX="0" width="91" fontFamily="wodeziti" textColor="0xF97306" textAlign="center" verticalAlign="middle" size="22"/>
+	</e:Group>
+</e:Skin>

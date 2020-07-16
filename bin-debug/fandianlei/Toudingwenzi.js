@@ -22,4 +22,3 @@ var Toudingwenzi = (function (_super) {
     return Toudingwenzi;
 }(eui.Component));
 __reflect(Toudingwenzi.prototype, "Toudingwenzi", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Toudingwenzi.js.map

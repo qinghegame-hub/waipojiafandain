@@ -22,4 +22,3 @@ var Waimaitishi = (function (_super) {
     return Waimaitishi;
 }(eui.Component));
 __reflect(Waimaitishi.prototype, "Waimaitishi", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Waimaitishi.js.map

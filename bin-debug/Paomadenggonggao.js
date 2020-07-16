@@ -22,4 +22,3 @@ var Paomadenggonggao = (function (_super) {
     return Paomadenggonggao;
 }(eui.Component));
 __reflect(Paomadenggonggao.prototype, "Paomadenggonggao", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Paomadenggonggao.js.map

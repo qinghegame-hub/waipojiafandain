@@ -22,4 +22,3 @@ var Fandiandonghuarongqi = (function (_super) {
     return Fandiandonghuarongqi;
 }(eui.Component));
 __reflect(Fandiandonghuarongqi.prototype, "Fandiandonghuarongqi", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Fandiandonghuarongqi.js.map

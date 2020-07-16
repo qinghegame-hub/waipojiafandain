@@ -70,8 +70,19 @@ class Main extends eui.UILayer {
                 console.error(e);
             }
             this.dengluyouxi();
-        }else{
-            this.dengluyouxi();
+        }else if(this.banben == "0"){
+            let zhanghaojiemian = new Zhucejiemian();
+            this.stage.addChild(zhanghaojiemian);
+            zhanghaojiemian.quedingjinru.enabled = true;
+            zhanghaojiemian.quedingjinru.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>{
+                Gamesound.Soundkongzhi().anniuyinxiao();
+                if(zhanghaojiemian.ceshizhanghaoshuru.text != null && zhanghaojiemian.ceshizhanghaoshuru.text != "请输入一个测试账号"){
+                    Gerenshuxing.uid = zhanghaojiemian.ceshizhanghaoshuru.text;
+                    this.stage.removeChild(zhanghaojiemian);
+                    console.log("您本次登录的id为:" + Gerenshuxing.uid);
+                    this.dengluyouxi();
+                }
+            },this);
         }
 
     }
@@ -86,7 +97,18 @@ class Main extends eui.UILayer {
             this.kaishiyouxianniu.x = this.stage.width / 2 -  this.kaishiyouxianniu.width / 2;
             this.kaishiyouxianniu.y = this.stage.height / 10 * 8
             const userInfo = await platform.getUserInfo(this.kaishiyouxianniu.x,this.kaishiyouxianniu.y,this.kaishiyouxianniu.width,this.kaishiyouxianniu.height);
-            Gerenshuxing.gerenshuju = userInfo;
+            if(userInfo == "jujue"){
+                let suijimingzi = this.suijimingzi();
+                let userinfo = {
+                    nickName:suijimingzi,
+                    avatarUrl:"https://www.qinghegame.com/loading/tongyitouxiang.png",
+                    gender:"1",
+                    province:"hunan"
+                }
+                Gerenshuxing.gerenshuju = userinfo;
+            }else{
+                Gerenshuxing.gerenshuju = userInfo;
+            }
             this.stage.removeChild(this.kaishiyouxianniu);
             this.stage.removeChild(this.loadingView);
             this.createGameScene();
@@ -107,7 +129,7 @@ class Main extends eui.UILayer {
                 time:(new Date()).getFullYear() + 2,
                 uid:Gerenshuxing.uid
             })
-        }else{
+        }else if(this.banben == "0"){
             this.kaishiyouxianniu = new egret.Bitmap()
             this.kaishiyouxianniu.texture = RES.getRes('but_kaishiyouxi_png');
             this.stage.addChild(this.kaishiyouxianniu);
@@ -121,6 +143,7 @@ class Main extends eui.UILayer {
     }
 
     private async dianjikaishiyouxi() {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.stage.removeChild(this.kaishiyouxianniu);
         this.stage.removeChild(this.loadingView);
         this.createGameScene();
@@ -130,7 +153,8 @@ class Main extends eui.UILayer {
 
     private async loadResource() {
         try {
-            await RES.loadConfig("default.res.json", "http://47.114.145.229/resource/");
+            //await RES.loadConfig("default.res.json", "http://192.168.1.4/res/resource/resource");
+            await RES.loadConfig("default.res.json", "https://www.qinghegame.com/res_wx/resource");
             await this.loadTheme();
             await RES.loadGroup("loading");
             /*const loadingjie = new Loadingjiemian()
@@ -153,7 +177,8 @@ class Main extends eui.UILayer {
 //            EXML.prefixURL = "http://192.168.1.1/res/resource/resource/eui_skins/";//更改目录位置,这里要填入服务器的ip地址
             // load skin theme configuration file, you can manually modify the file. And replace the default skin.
             //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
-            let theme = new eui.Theme("http://47.114.145.229/resource/default.thm.json", this.stage);
+            //let theme = new eui.Theme("http://192.168.1.4/res/resource/resource/default.thm.json", this.stage);
+            let theme = new eui.Theme("https://www.qinghegame.com/res_wx/resource/default.thm.json", this.stage);
             theme.addEventListener(eui.UIEvent.COMPLETE, () => {
                 resolve();
             }, this);
@@ -190,8 +215,6 @@ class Main extends eui.UILayer {
         let shijianstart:Timekongzhi = new Timekongzhi(); 
         //进入游戏主界面
         this.addChild(Gameguanli.Kongzhitai());
-        //默认进行1次垃圾添加
-		Chuangzaolaji.shengchenglaji(21);
     }
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
@@ -244,6 +267,22 @@ class Main extends eui.UILayer {
         panel.verticalCenter = 0;
         this.addChild(panel);
     }
+
+    /*
+    随机名字生成
+    */
+    public suijimingzi(){
+        let xingmingku = RES.getRes("xingmingku_json");
+        let suijixing1 = Math.floor(Math.random() * xingmingku.length);
+        let xing1 = xingmingku[suijixing1].xing1;
+        let suijixing2 = Math.floor(Math.random() * xingmingku.length);
+        let xing2 = xingmingku[suijixing2].xing2;
+        let suijixing3 = Math.floor(Math.random() * xingmingku.length);
+        let xing3 = xingmingku[suijixing3].xing3;
+        let xingmingquan = xing1 + xing2 + xing3;
+        return xingmingquan;
+    }
+
 
 
 }

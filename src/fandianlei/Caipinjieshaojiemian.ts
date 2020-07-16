@@ -61,6 +61,7 @@ class Caipinjieshaojiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public async zhudongzhuanfa(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		const zhudongzhuanfa = await platform.shareAppMessage("第六十四年",Gerenshuxing.fenxianglianjiedizhi,11);
 		console.log("主动转发回调函数:" + zhudongzhuanfa);
 	}

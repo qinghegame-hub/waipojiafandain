@@ -167,26 +167,32 @@ class Caipujiemian extends eui.Component implements  eui.UIComponent {
 
 //点击菜品解锁时逻辑处理
 	protected dianjicaijiesuo1(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Weblianjie.fasongshuju("code:002","{" + '"caipin"' +":"+ '"' + this.di1caiid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 	}
 
 	protected dianjicaijiesuo2(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Weblianjie.fasongshuju("code:002","{" + '"caipin"' +":"+ '"' + this.di2caiid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 	}
 
 	protected dianjicaijiesuo3(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Weblianjie.fasongshuju("code:002","{" + '"caipin"' +":"+ '"' + this.di3caiid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 	}
 
 	protected dianjicaijiesuo4(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Weblianjie.fasongshuju("code:002","{" + '"caipin"' +":"+ '"' + this.di4caiid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 	}
 
 	protected dianjicaijiesuo5(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Weblianjie.fasongshuju("code:002","{" + '"caipin"' +":"+ '"' + this.di5caiid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 	}
 
 	protected dianjicaijiesuo6(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Weblianjie.fasongshuju("code:002","{" + '"caipin"' +":"+ '"' + this.di6caiid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 	}
 //点击菜品介绍相关界面时处理
@@ -195,12 +201,14 @@ class Caipujiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected guanbijieshao(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(this.caiPingjieshao.parent){
 			this.removeChild(this.caiPingjieshao);
 		}
 	}
 
 	protected dianjicai1(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(this.caiPingjieshao.parent){
 			this.removeChild(this.caiPingjieshao);
 		}
@@ -210,6 +218,7 @@ class Caipujiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjicai2(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(this.caiPingjieshao.parent){
 			this.removeChild(this.caiPingjieshao);
 		}
@@ -219,6 +228,7 @@ class Caipujiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjicai3(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(this.caiPingjieshao.parent){
 			this.removeChild(this.caiPingjieshao);
 		}
@@ -228,6 +238,7 @@ class Caipujiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjicai4(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(this.caiPingjieshao.parent){
 			this.removeChild(this.caiPingjieshao);
 		}
@@ -237,6 +248,7 @@ class Caipujiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjicai5(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(this.caiPingjieshao.parent){
 			this.removeChild(this.caiPingjieshao);
 		}
@@ -246,6 +258,7 @@ class Caipujiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjicai6(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(this.caiPingjieshao.parent){
 			this.removeChild(this.caiPingjieshao);
 		}
@@ -255,7 +268,7 @@ class Caipujiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public panduancaiid(){
-		let shupubiao = RES.getRes("shipubiao_json");
+		let shupubiao = Gerenshuxing.shipubiao;
 		for(var j = 0;j<shupubiao.length;j++){
 			if(shupubiao[j].id == this.dangqiancaipinid){
 				this.dianjicaipin1(shupubiao[j].foodName,shupubiao[j].id,shupubiao[j].foodPrice,shupubiao[j].foodMaterials,shupubiao[j].foodIntroduce,this.dangqiancaipinid);
@@ -310,32 +323,38 @@ class Caipujiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public dianjizhizuo(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		let caipinyanzhijiemian = new Gerendaojujiemian();
 		this.addChild(caipinyanzhijiemian);
 		caipinyanzhijiemian.chushihua("2",this.dangqiancaipinid);
 	}
 
 	public di1gecaidi1jineng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.caiPingjieshao.jinengmingzi.text = this.caidejinengmingzi1_9;
 		this.caiPingjieshao.jinengshuoming.text = this.caidejinengwenzi1_9;
 	}
 
 	public di1gecaidi2jineng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.caiPingjieshao.jinengmingzi.text = this.caidejinengmingzi1_10;
 		this.caiPingjieshao.jinengshuoming.text = this.caidejinengwenzi1_10;
 	}
 
 	public di1gecaidi3jineng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.caiPingjieshao.jinengmingzi.text = this.caidejinengmingzi1_11;
 		this.caiPingjieshao.jinengshuoming.text = this.caidejinengwenzi1_11;
 	}
 
 	public di1gecaidi4jineng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.caiPingjieshao.jinengmingzi.text = this.caidejinengmingzi1_12;
 		this.caiPingjieshao.jinengshuoming.text = this.caidejinengwenzi1_12;
 	}
 
 	public di1gecaidi5jineng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.caiPingjieshao.jinengmingzi.text = this.caidejinengmingzi1_13;
 		this.caiPingjieshao.jinengshuoming.text = this.caidejinengwenzi1_13;
 	}
@@ -347,7 +366,7 @@ class Caipujiemian extends eui.Component implements  eui.UIComponent {
 		this.caidetupian1 = tupian + "_png";
 		this.caidejieshao1 = jieshao;
 		let duqudengji1 = Gerencaipudengji.caipulevel;
-		let caipudengjishuju = RES.getRes("shipulevel_json");
+		let caipudengjishuju = Gerenshuxing.shipudengjibiao;
 		let shengjisuoxujingyan = 0;
 		let benjijiacheng = 0;
 		let benjiweili = 0;
@@ -1006,6 +1025,7 @@ class Caipujiemian extends eui.Component implements  eui.UIComponent {
 
 
 	protected dianjishangfanye(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(this.dangqianyeshu > 1){
 			this.dangqianyeshu = this.dangqianyeshu - 1;
 			this.but_down.enabled = true;
@@ -1017,6 +1037,7 @@ class Caipujiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjixiafanye(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(this.dangqianyeqianshu == 1 && this.dangqianyeshu < this.xiaochaoyeshu){
 			this.dangqianyeshu += 1;
 			this.but_up.enabled = true;
@@ -1051,10 +1072,12 @@ class Caipujiemian extends eui.Component implements  eui.UIComponent {
 
 
 	protected guanbianniu(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Gameguanli.Kongzhitai().caipujiemian("fandian","guan");
 	}
 
 	protected dianjixiaocai(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		//调用移除当前已显示界面内容；
 		this.but_peng.enabled = false;
 		this.but_jian.enabled = true;
@@ -1067,6 +1090,7 @@ class Caipujiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjihuoguo(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		//调用移除当前已显示界面内容；
 		this.but_peng.enabled = true;
 		this.but_jian.enabled = true;
@@ -1078,6 +1102,7 @@ class Caipujiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjixiaochi(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		//调用移除当前已显示界面内容；
 		this.but_peng.enabled = true;
 		this.but_jian.enabled = false;
@@ -1089,6 +1114,7 @@ class Caipujiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjidianxin(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		//调用移除当前已显示界面内容；
 		this.but_peng.enabled = true;
 		this.but_jian.enabled = true;
@@ -1575,7 +1601,7 @@ class Caipujiemian extends eui.Component implements  eui.UIComponent {
 //小菜界面数据逻辑的处理
 	public chulishujujiegou(yeqian?:number,yeshu?:number){
 		this.yichucaipingneirong();
-		let shipupingleibiao:any = RES.getRes("shipubiao_json");
+		let shipupingleibiao:any = Gerenshuxing.shipubiao;
 //读取服务器数据，获取解锁相关数据
 		for(var bi = 0;bi<shipupingleibiao.length;bi ++){
 			for(var ki = 0;ki<Gerenshuxing.jiesuocaipin.length;ki ++){

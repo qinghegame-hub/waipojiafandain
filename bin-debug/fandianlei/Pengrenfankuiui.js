@@ -22,4 +22,3 @@ var Pengrenfankuiui = (function (_super) {
     return Pengrenfankuiui;
 }(eui.Component));
 __reflect(Pengrenfankuiui.prototype, "Pengrenfankuiui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Pengrenfankuiui.js.map

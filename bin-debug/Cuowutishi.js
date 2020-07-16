@@ -23,4 +23,3 @@ var Cuowutishi = (function (_super) {
     return Cuowutishi;
 }(eui.Component));
 __reflect(Cuowutishi.prototype, "Cuowutishi", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Cuowutishi.js.map

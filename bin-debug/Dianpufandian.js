@@ -22,4 +22,3 @@ var Dianpufandian = (function (_super) {
     return Dianpufandian;
 }(eui.Component));
 __reflect(Dianpufandian.prototype, "Dianpufandian", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Dianpufandian.js.map

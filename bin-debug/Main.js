@@ -100,7 +100,8 @@ var Main = (function (_super) {
     };
     Main.prototype.runGame = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var denglu, e_1;
+            var _this = this;
+            var denglu, e_1, zhanghaojiemian_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.loadResource()];
@@ -124,7 +125,20 @@ var Main = (function (_super) {
                         this.dengluyouxi();
                         return [3 /*break*/, 7];
                     case 6:
-                        this.dengluyouxi();
+                        if (this.banben == "0") {
+                            zhanghaojiemian_1 = new Zhucejiemian();
+                            this.stage.addChild(zhanghaojiemian_1);
+                            zhanghaojiemian_1.quedingjinru.enabled = true;
+                            zhanghaojiemian_1.quedingjinru.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+                                Gamesound.Soundkongzhi().anniuyinxiao();
+                                if (zhanghaojiemian_1.ceshizhanghaoshuru.text != null && zhanghaojiemian_1.ceshizhanghaoshuru.text != "请输入一个测试账号") {
+                                    Gerenshuxing.uid = zhanghaojiemian_1.ceshizhanghaoshuru.text;
+                                    _this.stage.removeChild(zhanghaojiemian_1);
+                                    console.log("您本次登录的id为:" + Gerenshuxing.uid);
+                                    _this.dengluyouxi();
+                                }
+                            }, this);
+                        }
                         _a.label = 7;
                     case 7: return [2 /*return*/];
                 }
@@ -133,7 +147,7 @@ var Main = (function (_super) {
     };
     Main.prototype.dengluyouxi = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var userInfo, result, beidongzhuanfa;
+            var userInfo, suijimingzi, userinfo, result, beidongzhuanfa;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -146,7 +160,19 @@ var Main = (function (_super) {
                         return [4 /*yield*/, platform.getUserInfo(this.kaishiyouxianniu.x, this.kaishiyouxianniu.y, this.kaishiyouxianniu.width, this.kaishiyouxianniu.height)];
                     case 1:
                         userInfo = _a.sent();
-                        Gerenshuxing.gerenshuju = userInfo;
+                        if (userInfo == "jujue") {
+                            suijimingzi = this.suijimingzi();
+                            userinfo = {
+                                nickName: suijimingzi,
+                                avatarUrl: "https://www.qinghegame.com/loading/tongyitouxiang.png",
+                                gender: "1",
+                                province: "hunan"
+                            };
+                            Gerenshuxing.gerenshuju = userinfo;
+                        }
+                        else {
+                            Gerenshuxing.gerenshuju = userInfo;
+                        }
                         this.stage.removeChild(this.kaishiyouxianniu);
                         this.stage.removeChild(this.loadingView);
                         this.createGameScene();
@@ -174,15 +200,17 @@ var Main = (function (_super) {
                         _a.sent();
                         return [3 /*break*/, 7];
                     case 6:
-                        this.kaishiyouxianniu = new egret.Bitmap();
-                        this.kaishiyouxianniu.texture = RES.getRes('but_kaishiyouxi_png');
-                        this.stage.addChild(this.kaishiyouxianniu);
-                        //           this.kaishiyouxianniu.anchorOffsetX = this.kaishiyouxianniu.width / 2
-                        //           this.kaishiyouxianniu.anchorOffsetY = this.kaishiyouxianniu.height / 2
-                        this.kaishiyouxianniu.x = this.stage.width / 2 - this.kaishiyouxianniu.width / 2;
-                        this.kaishiyouxianniu.y = this.stage.height / 10 * 8;
-                        this.kaishiyouxianniu.touchEnabled = true;
-                        this.kaishiyouxianniu.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjikaishiyouxi, this);
+                        if (this.banben == "0") {
+                            this.kaishiyouxianniu = new egret.Bitmap();
+                            this.kaishiyouxianniu.texture = RES.getRes('but_kaishiyouxi_png');
+                            this.stage.addChild(this.kaishiyouxianniu);
+                            //           this.kaishiyouxianniu.anchorOffsetX = this.kaishiyouxianniu.width / 2
+                            //           this.kaishiyouxianniu.anchorOffsetY = this.kaishiyouxianniu.height / 2
+                            this.kaishiyouxianniu.x = this.stage.width / 2 - this.kaishiyouxianniu.width / 2;
+                            this.kaishiyouxianniu.y = this.stage.height / 10 * 8;
+                            this.kaishiyouxianniu.touchEnabled = true;
+                            this.kaishiyouxianniu.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjikaishiyouxi, this);
+                        }
                         _a.label = 7;
                     case 7: return [2 /*return*/];
                 }
@@ -195,6 +223,7 @@ var Main = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        Gamesound.Soundkongzhi().anniuyinxiao();
                         this.stage.removeChild(this.kaishiyouxianniu);
                         this.stage.removeChild(this.loadingView);
                         this.createGameScene();
@@ -214,8 +243,10 @@ var Main = (function (_super) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 5, , 6]);
-                        return [4 /*yield*/, RES.loadConfig("default.res.json", "http://47.114.145.229/resource/")];
+                        //await RES.loadConfig("default.res.json", "http://192.168.1.4/res/resource/resource");
+                        return [4 /*yield*/, RES.loadConfig("default.res.json", "https://www.qinghegame.com/res_wx/resource")];
                     case 1:
+                        //await RES.loadConfig("default.res.json", "http://192.168.1.4/res/resource/resource");
                         _a.sent();
                         return [4 /*yield*/, this.loadTheme()];
                     case 2:
@@ -250,7 +281,8 @@ var Main = (function (_super) {
             //            EXML.prefixURL = "http://192.168.1.1/res/resource/resource/eui_skins/";//更改目录位置,这里要填入服务器的ip地址
             // load skin theme configuration file, you can manually modify the file. And replace the default skin.
             //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
-            var theme = new eui.Theme("http://47.114.145.229/resource/default.thm.json", _this.stage);
+            //let theme = new eui.Theme("http://192.168.1.4/res/resource/resource/default.thm.json", this.stage);
+            var theme = new eui.Theme("https://www.qinghegame.com/res_wx/resource/default.thm.json", _this.stage);
             theme.addEventListener(eui.UIEvent.COMPLETE, function () {
                 resolve();
             }, _this);
@@ -283,8 +315,6 @@ var Main = (function (_super) {
         var shijianstart = new Timekongzhi();
         //进入游戏主界面
         this.addChild(Gameguanli.Kongzhitai());
-        //默认进行1次垃圾添加
-        Chuangzaolaji.shengchenglaji(21);
     };
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
@@ -334,7 +364,20 @@ var Main = (function (_super) {
         panel.verticalCenter = 0;
         this.addChild(panel);
     };
+    /*
+    随机名字生成
+    */
+    Main.prototype.suijimingzi = function () {
+        var xingmingku = RES.getRes("xingmingku_json");
+        var suijixing1 = Math.floor(Math.random() * xingmingku.length);
+        var xing1 = xingmingku[suijixing1].xing1;
+        var suijixing2 = Math.floor(Math.random() * xingmingku.length);
+        var xing2 = xingmingku[suijixing2].xing2;
+        var suijixing3 = Math.floor(Math.random() * xingmingku.length);
+        var xing3 = xingmingku[suijixing3].xing3;
+        var xingmingquan = xing1 + xing2 + xing3;
+        return xingmingquan;
+    };
     return Main;
 }(eui.UILayer));
 __reflect(Main.prototype, "Main");
-//# sourceMappingURL=Main.js.map

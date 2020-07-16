@@ -34,7 +34,7 @@ var Fandianjisuan = (function (_super) {
     Fandianjisuan.jisuanfandianshuju = function () {
         Fandianjisuan.chushihuajisuan(1);
         this.kaishijisuanwaimai();
-        this.jinlairenshu = 0;
+        this.jinlairenshu = 1;
         var zuidakeren = 0;
         if (Gerenshuxing.zzkeliuliang <= Gerenshuxing.zzkerongliang) {
             zuidakeren = Math.floor(Gerenshuxing.zzkeliuliang / 10);
@@ -61,19 +61,36 @@ var Fandianjisuan = (function (_super) {
     };
     Fandianjisuan.kaishishengchengjuese = function () {
         this.jinlairenshu = this.jinlairenshu - 1;
-        var suijichupve = Math.floor(Math.random() * 10);
-        if (suijichupve >= 9) {
-            var kaishichuren = new Donghuabifang("pve", "0");
+        var suijichupve = Math.floor(Math.random() * 100);
+        if (suijichupve >= 95) {
+            if (Gameguanli.Kongzhitai().zhujiemian.parent) {
+                var kaishichuren = new Donghuabifang("pve", "0");
+            }
         }
         else {
-            var caipuliebiao = RES.getRes("shipubiao_json");
+            var caipuliebiao = Gerenshuxing.shipubiao;
             var gukexuqiucai = void 0;
             var caipinming = void 0;
-            var xuqiucaiid = Math.floor(Math.random() * Gerenshuxing.jiesuocaipin.length);
+            var kexuanyongzu = [];
+            for (var r = 0; r < Gerenshuxing.jiesuocaipin.length; r++) {
+                if (Gerenshuxing.jiesuoxiaochao == "1" && parseInt(Gerenshuxing.jiesuocaipin[r]) >= 1000 && parseInt(Gerenshuxing.jiesuocaipin[r]) < 2000) {
+                    kexuanyongzu.push(Gerenshuxing.jiesuocaipin[r]);
+                }
+                if (Gerenshuxing.jiesuohuoguo == "1" && parseInt(Gerenshuxing.jiesuocaipin[r]) >= 2000 && parseInt(Gerenshuxing.jiesuocaipin[r]) < 3000) {
+                    kexuanyongzu.push(Gerenshuxing.jiesuocaipin[r]);
+                }
+                if (Gerenshuxing.jiesuoxiaochi == "1" && parseInt(Gerenshuxing.jiesuocaipin[r]) >= 3000 && parseInt(Gerenshuxing.jiesuocaipin[r]) < 4000) {
+                    kexuanyongzu.push(Gerenshuxing.jiesuocaipin[r]);
+                }
+                if (Gerenshuxing.jiesuozaocan == "1" && parseInt(Gerenshuxing.jiesuocaipin[r]) >= 4000 && parseInt(Gerenshuxing.jiesuocaipin[r]) < 5000) {
+                    kexuanyongzu.push(Gerenshuxing.jiesuocaipin[r]);
+                }
+            }
+            var xuqiucaiid = Math.floor(Math.random() * kexuanyongzu.length);
             for (var o = 0; o < caipuliebiao.length; o++) {
-                if (caipuliebiao[o].id == Gerenshuxing.jiesuocaipin[xuqiucaiid]) {
+                if (parseInt(caipuliebiao[o].id) == parseInt(kexuanyongzu[xuqiucaiid])) {
                     //这里可以按照天气和日期设置客户需求的用餐类型和几率
-                    gukexuqiucai = caipuliebiao[o].id;
+                    gukexuqiucai = parseInt(caipuliebiao[o].id);
                     caipinming = caipuliebiao[o].foodName;
                     break;
                 }
@@ -107,21 +124,14 @@ var Fandianjisuan = (function (_super) {
     Fandianjisuan.kaishijisuanwaimai = function () {
         var waimaicaijilv = Math.floor(Math.random() * 100);
         if (Gerenshuxing.waimaixiaolv >= waimaicaijilv) {
-            var caipubiao = RES.getRes("shipubiao_json");
+            var caipubiao = Gerenshuxing.shipubiao;
             var dingdancaiid = void 0;
             var tiaoxuancai = Math.floor(Math.random() * Gerenshuxing.jiesuocaipin.length);
-            for (var h = 0; h < caipubiao.length; h++) {
-                if (caipubiao[h].id == Gerenshuxing.jiesuocaipin[tiaoxuancai]) {
-                    //这里可以按照天气和日期设置客户需求的用餐类型和几率
-                    dingdancaiid = caipubiao[h].id;
-                    Waimailuoji.zhujiemianluoji(dingdancaiid);
-                    break;
-                }
-            }
+            dingdancaiid = Gerenshuxing.jiesuocaipin[tiaoxuancai];
+            Waimailuoji.zhujiemianluoji(dingdancaiid);
         }
     };
     Fandianjisuan.shangcaisudu = 0;
     return Fandianjisuan;
 }(egret.DisplayObjectContainer));
 __reflect(Fandianjisuan.prototype, "Fandianjisuan");
-//# sourceMappingURL=Fandianjisuan.js.map

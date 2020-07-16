@@ -61,10 +61,70 @@
 		</e:Group>
 		<e:Image id="img_dianpu" source="img_dianpu_png" x="0" y="0" anchorOffsetX="0" width="750"/>
 		<e:Group id="juesezu" x="59.5" y="1163.67" anchorOffsetY="96.5" anchorOffsetX="25.5">
-			<e:Image id="juesetubiao" source="img_xingren_png" x="0" y="0" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+			<e:Image id="juesetubiao" x="0" y="0" anchorOffsetX="0.5" anchorOffsetY="0.5" source="img_jiedaozijitubiao_png"/>
 			<e:Image id="touxiang" source="tx1000_png" x="12" y="24.02" anchorOffsetX="0" width="30" anchorOffsetY="0" height="30"/>
 			<e:Group id="youbiaotouxiangzu" width="30" height="30" x="12" y="24.2" anchorOffsetX="0" anchorOffsetY="0"/>
 			<e:Image id="touxiangkuang" source="img_xingren2_png" x="6.5" y="17.48" anchorOffsetX="0" anchorOffsetY="-1.07" scaleX="0.5" scaleY="0.5"/>
+		</e:Group>
+		<e:Group id="sanrenzu" x="69.5" y="1173.67" anchorOffsetY="96.5" anchorOffsetX="25.5">
+			<e:Image id="sanrentubiao" source="img_xingren_png" x="0" y="0" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+			<e:Image id="sanrentouxiang" source="tx1000_png" x="12" y="24.02" anchorOffsetX="0" width="30" anchorOffsetY="0" height="30"/>
+			<e:Group id="sanrentouxiangzu" width="30" height="30" x="12" y="24.2" anchorOffsetX="0" anchorOffsetY="0"/>
+			<e:Image id="sanrentouxiangkuang" source="img_xingren2_png" x="6.5" y="17.48" anchorOffsetX="0" anchorOffsetY="-1.07" scaleX="0.5" scaleY="0.5"/>
+		</e:Group>
+		<e:Group id="sanrenzu0" x="79.5" y="1183.67" anchorOffsetY="96.5" anchorOffsetX="25.5">
+			<e:Image id="sanrentubiao0" source="img_xingren_png" x="0" y="0" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+			<e:Image id="sanrentouxiang0" source="tx1000_png" x="12" y="24.02" anchorOffsetX="0" width="30" anchorOffsetY="0" height="30"/>
+			<e:Group id="sanrentouxiangzu0" width="30" height="30" x="12" y="24.2" anchorOffsetX="0" anchorOffsetY="0"/>
+			<e:Image id="sanrentouxiangkuang0" source="img_xingren2_png" x="6.5" y="17.48" anchorOffsetX="0" anchorOffsetY="-1.07" scaleX="0.5" scaleY="0.5"/>
+		</e:Group>
+		<e:Group id="sanrenzu1" x="89.5" y="1193.67" anchorOffsetY="96.5" anchorOffsetX="25.5">
+			<e:Image id="sanrentubiao1" source="img_xingren_png" x="0" y="0" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+			<e:Image id="sanrentouxiang1" source="tx1000_png" x="12" y="24.02" anchorOffsetX="0" width="30" anchorOffsetY="0" height="30"/>
+			<e:Group id="sanrentouxiangzu1" width="30" height="30" x="12" y="24.2" anchorOffsetX="0" anchorOffsetY="0"/>
+			<e:Image id="sanrentouxiangkuang1" source="img_xingren2_png" x="6.5" y="17.48" anchorOffsetX="0" anchorOffsetY="-1.07" scaleX="0.5" scaleY="0.5"/>
+		</e:Group>
+		<e:Group id="sanrenzu2" x="99.5" y="1203.67" anchorOffsetY="96.5" anchorOffsetX="25.5">
+			<e:Image id="sanrentubiao2" source="img_xingren_png" x="0" y="0" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+			<e:Image id="sanrentouxiang2" source="tx1000_png" x="12" y="24.02" anchorOffsetX="0" width="30" anchorOffsetY="0" height="30"/>
+			<e:Group id="sanrentouxiangzu2" width="30" height="30" x="12" y="24.2" anchorOffsetX="0" anchorOffsetY="0"/>
+			<e:Image id="sanrentouxiangkuang2" source="img_xingren2_png" x="6.5" y="17.48" anchorOffsetX="0" anchorOffsetY="-1.07" scaleX="0.5" scaleY="0.5"/>
+		</e:Group>
+		<e:Group id="sanrenzu3" x="109.5" y="1213.67" anchorOffsetY="96.5" anchorOffsetX="25.5">
+			<e:Image id="sanrentubiao3" source="img_xingren_png" x="0" y="0" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+			<e:Image id="sanrentouxiang3" source="tx1000_png" x="12" y="24.02" anchorOffsetX="0" width="30" anchorOffsetY="0" height="30"/>
+			<e:Group id="sanrentouxiangzu3" width="30" height="30" x="12" y="24.2" anchorOffsetX="0" anchorOffsetY="0"/>
+			<e:Image id="sanrentouxiangkuang3" source="img_xingren2_png" x="6.5" y="17.48" anchorOffsetX="0" anchorOffsetY="-1.07" scaleX="0.5" scaleY="0.5"/>
+		</e:Group>
+		<e:Group id="sanrenzu4" x="119.5" y="1223.67" anchorOffsetY="96.5" anchorOffsetX="25.5">
+			<e:Image id="sanrentubiao4" source="img_xingren_png" x="0" y="0" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+			<e:Image id="sanrentouxiang4" source="tx1000_png" x="12" y="24.02" anchorOffsetX="0" width="30" anchorOffsetY="0" height="30"/>
+			<e:Group id="sanrentouxiangzu4" width="30" height="30" x="12" y="24.2" anchorOffsetX="0" anchorOffsetY="0"/>
+			<e:Image id="sanrentouxiangkuang4" source="img_xingren2_png" x="6.5" y="17.48" anchorOffsetX="0" anchorOffsetY="-1.07" scaleX="0.5" scaleY="0.5"/>
+		</e:Group>
+		<e:Group id="sanrenzu5" x="129.5" y="1233.67" anchorOffsetY="96.5" anchorOffsetX="25.5">
+			<e:Image id="sanrentubiao5" source="img_xingren_png" x="0" y="0" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+			<e:Image id="sanrentouxiang5" source="tx1000_png" x="12" y="24.02" anchorOffsetX="0" width="30" anchorOffsetY="0" height="30"/>
+			<e:Group id="sanrentouxiangzu5" width="30" height="30" x="12" y="24.2" anchorOffsetX="0" anchorOffsetY="0"/>
+			<e:Image id="sanrentouxiangkuang5" source="img_xingren2_png" x="6.5" y="17.48" anchorOffsetX="0" anchorOffsetY="-1.07" scaleX="0.5" scaleY="0.5"/>
+		</e:Group>
+		<e:Group id="sanrenzu6" x="139.5" y="1243.67" anchorOffsetY="96.5" anchorOffsetX="25.5">
+			<e:Image id="sanrentubiao6" source="img_xingren_png" x="0" y="0" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+			<e:Image id="sanrentouxiang6" source="tx1000_png" x="12" y="24.02" anchorOffsetX="0" width="30" anchorOffsetY="0" height="30"/>
+			<e:Group id="sanrentouxiangzu6" width="30" height="30" x="12" y="24.2" anchorOffsetX="0" anchorOffsetY="0"/>
+			<e:Image id="sanrentouxiangkuang6" source="img_xingren2_png" x="6.5" y="17.48" anchorOffsetX="0" anchorOffsetY="-1.07" scaleX="0.5" scaleY="0.5"/>
+		</e:Group>
+		<e:Group id="sanrenzu7" x="149.5" y="1253.67" anchorOffsetY="96.5" anchorOffsetX="25.5">
+			<e:Image id="sanrentubiao7" source="img_xingren_png" x="0" y="0" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+			<e:Image id="sanrentouxiang7" source="tx1000_png" x="12" y="24.02" anchorOffsetX="0" width="30" anchorOffsetY="0" height="30"/>
+			<e:Group id="sanrentouxiangzu7" width="30" height="30" x="12" y="24.2" anchorOffsetX="0" anchorOffsetY="0"/>
+			<e:Image id="sanrentouxiangkuang7" source="img_xingren2_png" x="6.5" y="17.48" anchorOffsetX="0" anchorOffsetY="-1.07" scaleX="0.5" scaleY="0.5"/>
+		</e:Group>
+		<e:Group id="sanrenzu8" x="159.5" y="1263.67" anchorOffsetY="96.5" anchorOffsetX="25.5">
+			<e:Image id="sanrentubiao8" source="img_xingren_png" x="0" y="0" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+			<e:Image id="sanrentouxiang8" source="tx1000_png" x="12" y="24.02" anchorOffsetX="0" width="30" anchorOffsetY="0" height="30"/>
+			<e:Group id="sanrentouxiangzu8" width="30" height="30" x="12" y="24.2" anchorOffsetX="0" anchorOffsetY="0"/>
+			<e:Image id="sanrentouxiangkuang8" source="img_xingren2_png" x="6.5" y="17.48" anchorOffsetX="0" anchorOffsetY="-1.07" scaleX="0.5" scaleY="0.5"/>
 		</e:Group>
 		<e:Group id="kaishianniuzu" x="250.5" y="772">
 			<e:Button id="but_shaizi" label="" x="0" y="0" enabled="true">
@@ -76,7 +136,7 @@
 				</e:skinName>
 			</e:Button>
 			<e:Image id="img_tilitishibj" source="img_tilitishibj_png" x="29.5" y="267.83"/>
-			<e:Label id="tilixiaohao" text="1/50" x="36.5" y="275.83" anchorOffsetX="0" width="178" fontFamily="wodeziti" stroke="2" size="30" verticalAlign="middle" textAlign="center" height="30"/>
+			<e:Label id="tilixiaohao" text="1/50" x="36.5" y="275.83" anchorOffsetX="0" width="178" fontFamily="wodeziti" stroke="2" size="30" verticalAlign="middle" textAlign="center" height="30" textColor="0xf97306" strokeColor="0x2c2a26"/>
 		</e:Group>
 	</e:Group>
 </e:Skin>

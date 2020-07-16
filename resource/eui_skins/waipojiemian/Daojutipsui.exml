@@ -3,15 +3,46 @@
 	<w:Config id="171d6292a22" ></w:Config>
 	<e:Group id="daojuzu" left="0" top="0" bottom="0" right="0" alpha="1">
 		<e:Image id="heiseguanbi" source="img_heisezhezao_png" left="0" top="0" bottom="0" right="0" alpha="0.4"/>
-		<e:Group id="tipszu" x="232" y="393">
+		<e:Group id="tipszu" horizontalCenter="0" verticalCenter="0">
 			<e:Image id="img_daojutipsbj" source="img_daojutipsbj_png" x="0" y="0"/>
-			<e:Image id="daojuicon" source="img_anquanguanli_png" x="39" y="43" anchorOffsetX="0.5" width="80" anchorOffsetY="0.5" height="80"/>
-			<e:Label id="mingcheng" text="名称" x="140" y="35" verticalAlign="middle" textAlign="left" size="20" fontFamily="wodeziti" bold="true" textColor="0xf48709" width="50" height="20" stroke="2" strokeColor="0x726f6f"/>
-			<e:Label id="daojumingzi" text="这是道具名称" x="140" y="62.5" verticalAlign="middle" textAlign="left" size="16" fontFamily="wodeziti" bold="true" width="102" height="20" stroke="2" strokeColor="0x726F6F" anchorOffsetX="0" textColor="0x93f409"/>
-			<e:Label id="leixing" text="类型" x="140" y="87.5" verticalAlign="middle" textAlign="left" size="20" fontFamily="wodeziti" bold="true" textColor="0xF48709" width="50" height="20" stroke="2" strokeColor="0x726F6F"/>
-			<e:Label id="leixingming" text="家用电器" x="140" y="115" verticalAlign="middle" textAlign="left" size="16" fontFamily="wodeziti" bold="true" textColor="0x93F409" width="102" height="20" stroke="2" strokeColor="0x726F6F" anchorOffsetX="0"/>
-			<e:Label id="shuoming" text="说明" x="28.5" y="144.5" verticalAlign="middle" textAlign="left" size="20" fontFamily="wodeziti" bold="true" textColor="0xF48709" width="50" height="20" stroke="2" strokeColor="0x726F6F"/>
-			<e:Label id="shuomingneirong" text="家用电器" x="28.5" y="173" verticalAlign="top" textAlign="left" size="16" fontFamily="wodeziti" bold="true" textColor="0x93F409" width="198" height="83" stroke="2" strokeColor="0x726F6F" anchorOffsetX="0" anchorOffsetY="0" lineSpacing="10"/>
+			<e:Image id="zhezaodikuang" source="img_tongyongzhezaodikuang_png" x="66" y="321" anchorOffsetX="0" width="374" anchorOffsetY="0" height="150"/>
+			<e:Image id="zhezhaodikuang1" source="img_tongyongzhezaodikuang_png" x="250.5" y="140" anchorOffsetX="0" width="191" anchorOffsetY="0" height="38"/>
+			<e:Image id="zhezaodikuang0" source="img_tongyongzhezaodikuang_png" x="250" y="221.5" anchorOffsetX="0" width="191" anchorOffsetY="0" height="38"/>
+			<e:Label id="mingcheng" text="名称" x="254" y="112" verticalAlign="middle" textAlign="left" size="24" fontFamily="wodeziti" bold="true" width="196" height="28" stroke="2" strokeColor="0x2c2a26" anchorOffsetX="0" anchorOffsetY="0" textColor="0xf97306"/>
+			<e:Label id="daojumingzi" text="这是道具名称" x="254.5" y="148" verticalAlign="middle" textAlign="left" size="20" fontFamily="wodeziti" width="194" height="27" stroke="2" strokeColor="0x2c2a26" anchorOffsetX="0" anchorOffsetY="0" textColor="0x92e80d"/>
+			<e:Label id="leixing" text="类型" x="255.5" y="189" verticalAlign="middle" textAlign="left" size="24" fontFamily="wodeziti" bold="true" width="186" height="28" stroke="2" strokeColor="0x2c2a26" anchorOffsetX="0" anchorOffsetY="0" textColor="0xf97306"/>
+			<e:Label id="leixingming" text="家用电器" x="254.5" y="226" verticalAlign="middle" textAlign="left" size="20" fontFamily="wodeziti" width="191" height="27" stroke="2" strokeColor="0x2c2a26" anchorOffsetX="0" anchorOffsetY="0" textColor="0x92e80d"/>
+			<e:Label id="shuoming" text="说明" x="68.5" y="281" verticalAlign="middle" textAlign="left" size="24" fontFamily="wodeziti" bold="true" width="374" height="26" stroke="2" strokeColor="0x2c2a26" anchorOffsetX="0" anchorOffsetY="0" textColor="0xf97306"/>
+			<e:Label id="shuomingneirong" text="家用电器" x="79.5" y="328.5" verticalAlign="top" textAlign="left" size="20" fontFamily="wodeziti" width="349" height="125" stroke="2" strokeColor="0x2c2a26" anchorOffsetX="0" anchorOffsetY="0" lineSpacing="10" textColor="0x92e80d"/>
+			<e:Group id="daojuiconzu" x="81" y="111.5">
+				<e:Image id="daojuicon" source="img_anquanguanli_png" x="0.5" y="0" anchorOffsetX="0.5" width="140" anchorOffsetY="0.5" height="140"/>
+				<e:Image id="daojubiankuang" source="img_daojutipszhezhao_png" x="0" y="0.5"/>
+			</e:Group>
+			<e:Button id="guanbianniudaoju" label="" x="418" y="11" enabled="true">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="but_guanbi2_png" source.down="but_guanbi1_png" source.disabled="but_guanbi1_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Label id="biaotiwenzi" text="道具说明" x="166" y="19" anchorOffsetX="0" width="169" anchorOffsetY="0" height="38" verticalAlign="middle" textAlign="center" size="30" fontFamily="wodeziti" textColor="0xf97306" stroke="4" strokeColor="0x2c2a26"/>
+			<e:Button id="shiyonganniu" label="" x="166" y="487.5" enabled="true">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="but_shiyonganniu1_png" source.down="but_shiyonganniu2_png" source.disabled="but_shiyonganniu2_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="quedinganniu" label="" x="166" y="487.5" enabled="true">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="img_tishiqueding1_png" source.down="img_tishiqueding2_png" source.disabled="img_tishiqueding2_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
 		</e:Group>
 	</e:Group>
 </e:Skin>

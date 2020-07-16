@@ -164,6 +164,7 @@ class Npcduihuaui extends eui.Component implements  eui.UIComponent {
 	}
 
 	public dianjihuida1(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(this.renwujiangli1 != "-1"){
 			this.renwujiangli1 = this.renwujiangli1.split(",");
 			let beishu = 1;
@@ -176,6 +177,7 @@ class Npcduihuaui extends eui.Component implements  eui.UIComponent {
 	}
 
 	public dianjihuida2(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		if(this.renwujiangli2 != "-1"){
 			this.renwujiangli2 = this.renwujiangli2.split(",");
 			let beishu = 1;
@@ -188,6 +190,7 @@ class Npcduihuaui extends eui.Component implements  eui.UIComponent {
 	}
 
 	public guanbiduihuakuang(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Gameguanli.Kongzhitai().dingbuui.removeChild(this);
 	}
 

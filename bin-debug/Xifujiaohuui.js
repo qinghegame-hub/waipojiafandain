@@ -22,4 +22,3 @@ var Xifujiaohuui = (function (_super) {
     return Xifujiaohuui;
 }(eui.Component));
 __reflect(Xifujiaohuui.prototype, "Xifujiaohuui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Xifujiaohuui.js.map

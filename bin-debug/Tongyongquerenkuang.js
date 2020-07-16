@@ -24,9 +24,9 @@ var Tongyongquerenkuang = (function (_super) {
         this.heisediban.addEventListener(egret.TouchEvent.TOUCH_TAP, this.guanbijiemian, this);
     };
     Tongyongquerenkuang.prototype.guanbijiemian = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.parent.removeChild(this);
     };
     return Tongyongquerenkuang;
 }(eui.Component));
 __reflect(Tongyongquerenkuang.prototype, "Tongyongquerenkuang", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Tongyongquerenkuang.js.map

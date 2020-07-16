@@ -4,9 +4,9 @@
 	<e:Group id="shuomingzu" left="0" top="0" bottom="0" right="0" alpha="1">
 		<e:Image id="heisezhezao" source="img_heisezhezao_png" left="0" top="0" bottom="0" right="0" alpha="0.3"/>
 		<e:Image id="tishibeijing" source="img_tanchubeijing_png" x="91" y="302"/>
-		<e:Label id="shuomingjieshao" text="说明介绍" x="118" y="316" anchorOffsetX="0" width="514" anchorOffsetY="0" height="57" verticalAlign="middle" textAlign="center" bold="true" fontFamily="wodeziti" textColor="0xf26a1d" stroke="2" strokeColor="0x706969"/>
-		<e:Label id="shuomingneirong" text="" x="135" y="405" anchorOffsetX="0" width="481" anchorOffsetY="0" height="566" size="24" fontFamily="wodeziti" verticalAlign="top" textAlign="left" stroke="2" strokeColor="0x6d6767" lineSpacing="10"/>
-		<e:Button id="guanbianniu" label="" x="563" y="303.5" enabled="true">
+		<e:Label id="shuomingjieshao" text="说明介绍" x="242" y="324.5" anchorOffsetX="0" width="246" anchorOffsetY="0" height="57" verticalAlign="middle" textAlign="center" bold="true" fontFamily="wodeziti" stroke="4" strokeColor="0x2c2a26" size="30" textColor="0xf97306"/>
+		<e:Label id="shuomingneirong" text="" x="139" y="444" anchorOffsetX="0" width="457" anchorOffsetY="0" height="527" size="24" fontFamily="wodeziti" verticalAlign="top" textAlign="left" stroke="2" strokeColor="0x2c2a26" lineSpacing="10" textColor="0xf97306"/>
+		<e:Button id="guanbianniu" label="" x="572" y="323" enabled="true">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_guanbi2_png" source.down="but_guanbi1_png" source.disabled="but_guanbi1_png"/>

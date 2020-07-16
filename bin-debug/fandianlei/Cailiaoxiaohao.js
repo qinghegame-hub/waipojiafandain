@@ -22,4 +22,3 @@ var Cailiaoxiaohao = (function (_super) {
     return Cailiaoxiaohao;
 }(eui.Component));
 __reflect(Cailiaoxiaohao.prototype, "Cailiaoxiaohao", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Cailiaoxiaohao.js.map

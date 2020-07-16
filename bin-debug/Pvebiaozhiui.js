@@ -22,4 +22,3 @@ var Pvebiaozhiui = (function (_super) {
     return Pvebiaozhiui;
 }(eui.Component));
 __reflect(Pvebiaozhiui.prototype, "Pvebiaozhiui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Pvebiaozhiui.js.map

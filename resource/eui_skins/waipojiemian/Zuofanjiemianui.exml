@@ -5,17 +5,25 @@
 		<e:Image id="img_xiaceng" source="img_xiaceng_png" x="0" y="0"/>
 		<e:Image id="huoyantupian" source="img_dahuohou_png" x="0" y="0"/>
 		<e:Image id="img_shangcengbudong" source="img_shangcengbudong_png" y="247" x="0"/>
-		<e:Image id="dangqiantishi" source="img_dangqianzhishi_png" x="279" y="290"/>
-		<e:Image id="xiaoshitishi" source="img_huisezhishi_png" x="125" y="344"/>
-		<e:Image id="weilaitishi" source="img_huisezhishi_png" x="493" y="344"/>
-		<e:Image id="xiaoshitishitu" source="img_lajiao_png" x="139" y="352" width="102" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
-		<e:Image id="weilaitishitu" source="img_lajiao_png" x="511" y="354" width="102" height="120" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
-		<e:Image id="dangqiantishitu" source="img_lajiao_png" x="315.5" y="317.5" width="120" height="138" anchorOffsetX="0.5" anchorOffsetY="0.5" scaleX="1" scaleY="1"/>
-		<e:Image id="jindutiao" source="img_jindutiao_png" x="39" y="815"/>
+		<e:Group id="dangqianzu" x="279" y="290">
+			<e:Image id="dangqiantishi" source="img_dangqianzhishi_png" x="0" y="0"/>
+			<e:Image id="dangqiantishitu" source="img_lajiao_png" anchorOffsetX="0.5" anchorOffsetY="0.5" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0"/>
+		</e:Group>
+		<e:Group id="xiaoshizu" x="125" y="344">
+			<e:Image id="xiaoshitishi" source="img_huisezhishi_png" x="0" y="0"/>
+			<e:Image id="xiaoshitishitu" source="img_lajiao_png" anchorOffsetX="0.5" anchorOffsetY="0.5" scaleX="0.8" scaleY="0.8" horizontalCenter="0" verticalCenter="0"/>
+		</e:Group>
+		<e:Group id="weilaizu" x="493" y="344">
+			<e:Image id="weilaitishi" source="img_huisezhishi_png" x="0" y="0"/>
+			<e:Image id="weilaitishitu" source="img_lajiao_png" anchorOffsetX="0.5" anchorOffsetY="0.5" scaleX="0.8" scaleY="0.8" horizontalCenter="0" verticalCenter="0"/>
+		</e:Group>
+		<e:Image id="jindutiao" x="53" y="827.36" source="img_jindutiaodi_png"/>
 		<e:Image id="dingbulan" source="img_dingbu_png" verticalCenter="-540" horizontalCenter="-5"/>
 		<e:Label id="shijianwenzi" text="5:30" x="146" y="114" anchorOffsetX="0" width="94" anchorOffsetY="0" height="32" size="24" fontFamily="wodeziti" verticalAlign="middle" textAlign="right" bold="true" stroke="2"/>
-		<e:Label id="caocaijinduwenzi" text="5:30" x="362" y="113" anchorOffsetX="0" width="94" anchorOffsetY="0" height="32" size="24" fontFamily="wodeziti" verticalAlign="middle" textAlign="right" bold="true" stroke="2"/>
+		<e:Label id="shijianwenzi0" text="完成度：90%" x="265.84" y="247" anchorOffsetX="0" width="220.66" anchorOffsetY="0" height="32" size="24" fontFamily="wodeziti" verticalAlign="middle" textAlign="center" bold="true" stroke="2"/>
+		<e:Label id="caocaijinduwenzi" text="5:30" x="364.66" y="113" anchorOffsetX="0" width="91.34" anchorOffsetY="0" height="32" size="24" fontFamily="wodeziti" verticalAlign="middle" textAlign="right" bold="true" stroke="2"/>
 		<e:Label id="shiwucishuwenzi" text="5:30" x="574" y="112" anchorOffsetX="0" width="94" anchorOffsetY="0" height="32" size="24" fontFamily="wodeziti" verticalAlign="middle" textAlign="right" bold="true" stroke="2"/>
+		<e:Image id="caitubiao" source="1001_png" x="279" y="87" width="80" height="80"/>
 		<e:Button id="but_queding" label="" x="253.5" y="1012" enabled="true">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
@@ -24,15 +32,25 @@
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Image id="youbiao" source="img_youbiao_png" x="134" y="820"/>
-		<e:Group id="lvsecaizu" width="123" height="109" x="84" y="903" anchorOffsetY="0" anchorOffsetX="0">
-			<e:Image id="lvsexuanxiang" source="img_xiaohuo_png" x="24.5" y="3.5" anchorOffsetX="0.5" anchorOffsetY="0.5" scaleX="1" scaleY="1"/>
+		<e:Group id="lvsecaizu" x="60.96" y="889.36" anchorOffsetY="0" anchorOffsetX="0" width="140" height="140">
+			<e:Image id="lvsexuanxiang" source="img_xiaohuo_png" anchorOffsetX="0.5" anchorOffsetY="0.5" scaleX="1" scaleY="1" verticalCenter="0" horizontalCenter="0"/>
 		</e:Group>
-		<e:Group id="zisezu" width="123" height="109" x="308.5" y="903" anchorOffsetY="0" anchorOffsetX="0">
-			<e:Image id="zisexuanxiang" source="img_baicai1_png" x="12" y="2" anchorOffsetX="0.5" anchorOffsetY="0.5"/>
+		<e:Group id="zisezu" x="279" y="889.36" anchorOffsetY="0" anchorOffsetX="0" width="140" height="140">
+			<e:Image id="zisexuanxiang" anchorOffsetX="0.5" anchorOffsetY="0.5" source="img_zhonghuo_png" horizontalCenter="0" verticalCenter="0"/>
 		</e:Group>
-		<e:Group id="chengsezu" width="123" height="109" x="533.5" y="903" anchorOffsetY="0" anchorOffsetX="0">
-			<e:Image id="chengsexuanxiang" source="img_rou1_png" x="10.5" y="15.5" anchorOffsetX="0.5" anchorOffsetY="0.5" scaleX="1" scaleY="1"/>
+		<e:Group id="chengsezu" x="506.5" y="889.86" anchorOffsetY="0" anchorOffsetX="0" width="140" height="140">
+			<e:Image id="chengsexuanxiang" anchorOffsetX="0.5" anchorOffsetY="0.5" scaleX="1" scaleY="1" source="img_dahuo_png" horizontalCenter="0" verticalCenter="0"/>
 		</e:Group>
+		<e:Image id="shangjindutiaodi" source="img_shangjindudi_png" x="42" y="220"/>
+		<e:Image id="shangjindutiaojindu" source="img_shangjindushang_png" x="42" y="220"/>
+		<e:Group id="tishiwenzizu" x="151.46" y="498.67">
+			<e:Image id="tishiwenzidi" source="img_tishiwenzidi_png" x="0" y="0"/>
+			<e:Label id="tishiwenzi" text="Label" x="3.54" y="4" anchorOffsetY="0" height="20" anchorOffsetX="0" width="440" size="18" verticalAlign="middle" textAlign="center" fontFamily="wodeziti" textColor="0xf46349" stroke="2" strokeColor="0xefe8e8"/>
+		</e:Group>
+		<e:Group id="jinduyoubiao" x="217" y="828.69">
+			<e:Image id="jindutiaozhibiao" source="img_chupengdiban_png" x="0" y="0"/>
+			<e:Image id="shansuojindu" source="img_shanguangdian_png" x="96" y="1.98"/>
+		</e:Group>
+		<e:Image id="youbiao" source="img_youbiao_png" x="130.96" y="808.69" width="40" height="80"/>
 	</e:Group>
 </e:Skin>

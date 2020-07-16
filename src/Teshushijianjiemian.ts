@@ -3,11 +3,13 @@ class Teshushijianjiemian extends eui.Component implements  eui.UIComponent {
 	public heisediban0:eui.Image;
 	public tongyongtishizu0:eui.Group;
 	public img_tongyongtishikuang0:eui.Image;
+	public huangsezhezao:eui.Image;
 	public tishiwenzi0:eui.Label;
 	public but_queding1:eui.Button;
 	public but_shuangbei0:eui.Button;
 	public biaotiwenzi:eui.Label;
 	public tupiantishi:eui.Image;
+
 
 
 	public dangqianshijian:string;
@@ -32,7 +34,7 @@ class Teshushijianjiemian extends eui.Component implements  eui.UIComponent {
 
 	public chushihua(shijianid){
 		this.dangqianshijian = shijianid;
-		let teshushijianbiao = RES.getRes("teshushijianbiao_json");
+		let teshushijianbiao = Gerenshuxing.teshushijianbiao;
 		this.biaotiwenzi.text = "天降鸿运";
 		for(var i = 0;i<teshushijianbiao.length;i++){
 			if(teshushijianbiao[i].id == this.dangqianshijian){
@@ -48,10 +50,12 @@ class Teshushijianjiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public guanbijiemain(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.parent.removeChild(this);
 	}
 
 	public async quedingguangao(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		let huidiaodengdai = new egret.Timer(3000,1);
 		huidiaodengdai.addEventListener(egret.TimerEvent.TIMER,this.fasongjiangli,this);
 		huidiaodengdai.start();
@@ -94,7 +98,7 @@ class Teshushijianjiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public jiesuo16neirong(){
-		let jiajubiao = RES.getRes("jiajubiao_json");
+		let jiajubiao = Gerenshuxing.jiajubiao;
 		let suoyoukejiesuo = [];
 		let kejiesuoliebiao = [];
 		for(var i = 0;i<jiajubiao.length;i++){
@@ -149,7 +153,7 @@ class Teshushijianjiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public jiesuo17neirong(){
-		let chengyuanhudongbiao = RES.getRes("chengyuanhudongbiao_json");
+		let chengyuanhudongbiao = Gerenshuxing.jiatingchengyuanhudongbiao;
 		let chengyuankejiesuo = [];
 		let jiesuochengyuanliebiao = [];
 		for(var i = 0;i<chengyuanhudongbiao.length;i++){
@@ -204,7 +208,7 @@ class Teshushijianjiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public jiesuo18neirong(){
-		let chengyuanhudongbiao = RES.getRes("chengyuanhudongbiao_json");
+		let chengyuanhudongbiao = Gerenshuxing.jiatingchengyuanhudongbiao;
 		let chengyuankejiesuo = [];
 		let jiesuochengyuanliebiao = [];
 		for(var i = 0;i<chengyuanhudongbiao.length;i++){
@@ -256,7 +260,7 @@ class Teshushijianjiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public jiesuo19neirong(){
-		let chengyuanhudongbiao = RES.getRes("chengyuanhudongbiao_json");
+		let chengyuanhudongbiao = Gerenshuxing.jiatingchengyuanhudongbiao;
 		let chengyuankejiesuo = [];
 		let jiesuochengyuanliebiao = [];
 		for(var i = 0;i<chengyuanhudongbiao.length;i++){
@@ -308,7 +312,7 @@ class Teshushijianjiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public jiesuo20neirong(){
-		let chengyuanhudongbiao = RES.getRes("chengyuanhudongbiao_json");
+		let chengyuanhudongbiao = Gerenshuxing.jiatingchengyuanhudongbiao;
 		let chengyuankejiesuo = [];
 		let jiesuochengyuanliebiao = [];
 		for(var i = 0;i<chengyuanhudongbiao.length;i++){
@@ -360,7 +364,7 @@ class Teshushijianjiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public jiesuo21neirong(){
-		let chengyuanhudongbiao = RES.getRes("yuangongbiao_json");
+		let chengyuanhudongbiao = Gerenshuxing.yuangongbiao;
 		let chengyuankejiesuo = [];
 		let jiesuochengyuanliebiao = [];
 		for(var i = 0;i<chengyuanhudongbiao.length;i++){
@@ -421,7 +425,7 @@ class Teshushijianjiemian extends eui.Component implements  eui.UIComponent {
 	}
 
 	public jiesuo23neirong(){
-		let chengyuanhudongbiao = RES.getRes("shipubiao_json");
+		let chengyuanhudongbiao = Gerenshuxing.shipubiao;
 		let chengyuankejiesuo = [];
 		let jiesuochengyuanliebiao = [];
 		for(var i = 0;i<chengyuanhudongbiao.length;i++){

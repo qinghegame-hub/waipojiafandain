@@ -29,4 +29,3 @@ var Jiatingchengyuanjieshaoui = (function (_super) {
     return Jiatingchengyuanjieshaoui;
 }(eui.Component));
 __reflect(Jiatingchengyuanjieshaoui.prototype, "Jiatingchengyuanjieshaoui", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Jiatingchengyuanjieshaoui.js.map

@@ -64,8 +64,8 @@ var LoadingUI = (function (_super) {
         this.jindutiaoshang = new egret.Bitmap();
         this.jindutiaoshang.texture = RES.getRes('img_jindutiaoshang_png');
         //设置锚点
-        this.jindutiaoshang.x = this.width / 2 - this.jindutiaoshang.width / 2;
-        this.jindutiaoshang.y = this.height / 10 * 8;
+        this.jindutiaoshang.x = this.width / 2 - this.jindutiaoshang.width / 2 + this.jindutiaodi.width / 600;
+        this.jindutiaoshang.y = this.height / 10 * 8 + this.jindutiaodi.height / 6;
         this.jindutiaoshang.width = 0;
         this.jindukuan = this.width / 10 * 7;
         this.addChild(this.jindutiaoshang);
@@ -77,6 +77,7 @@ var LoadingUI = (function (_super) {
         this.textField.height = 100;
         this.textField.x = this.width / 2 - this.textField.width / 2;
         this.textField.y = this.height / 10 * 8.5;
+        this.textField.textColor = 161719;
         this.textField.textAlign = "center";
     };
     LoadingUI.prototype.onProgress = function (current, total) {
@@ -88,4 +89,3 @@ var LoadingUI = (function (_super) {
     return LoadingUI;
 }(egret.Sprite));
 __reflect(LoadingUI.prototype, "LoadingUI", ["RES.PromiseTaskReporter"]);
-//# sourceMappingURL=LoadingUI.js.map

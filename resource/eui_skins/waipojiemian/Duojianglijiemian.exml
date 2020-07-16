@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DuojianglijiemianSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="172a26845ba" ></w:Config>
+	<e:Group id="duogejianglizu" x="0" y="0">
+		<e:Image id="img_huodebeijing001" source="img_huodebeijing_png" x="0" y="0"/>
+		<e:Group id="yitiaojianglizu" x="133.5" y="362">
+			<e:Image id="jiangliicon0" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" source="1001_png" width="140" height="140"/>
+			<e:Label id="jianglishuliang0" text="X1" x="11.5" y="145.5" anchorOffsetX="0" width="113" fontFamily="wodeziti" verticalAlign="middle" textAlign="center" bold="true" stroke="2" size="24" anchorOffsetY="0" height="78"/>
+		</e:Group>
+		<e:Group x="315" y="362" id="yitiaojianglizu0">
+			<e:Image id="jiangliicon1" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" source="1001_png" width="140" height="140"/>
+			<e:Label id="jianglishuliang1" text="X1" x="11.5" y="145.5" anchorOffsetX="0" width="113" fontFamily="wodeziti" verticalAlign="middle" textAlign="center" bold="true" stroke="2" size="24" anchorOffsetY="0" height="78"/>
+		</e:Group>
+		<e:Group x="502.5" y="361.5" id="yitiaojianglizu1">
+			<e:Image id="jiangliicon2" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" source="1001_png" width="140" height="140"/>
+			<e:Label id="jianglishuliang2" text="X1" x="11.5" y="145.5" anchorOffsetX="0" width="113" fontFamily="wodeziti" verticalAlign="middle" textAlign="center" bold="true" stroke="2" size="24" anchorOffsetY="0" height="78"/>
+		</e:Group>
+		<e:Group x="133.5" y="624.5" id="yitiaojianglizu2">
+			<e:Image id="jiangliicon3" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" source="1001_png" width="140" height="140"/>
+			<e:Label id="jianglishuliang3" text="9999" x="11.5" y="145.5" anchorOffsetX="0" width="113" fontFamily="wodeziti" verticalAlign="middle" textAlign="center" bold="true" stroke="2" size="24" anchorOffsetY="0" height="78"/>
+		</e:Group>
+		<e:Group x="313" y="624.5" id="yitiaojianglizu3">
+			<e:Image id="jiangliicon4" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" source="1001_png" width="140" height="140"/>
+			<e:Label id="jianglishuliang4" text="X1" x="11.5" y="145.5" anchorOffsetX="0" width="113" fontFamily="wodeziti" verticalAlign="middle" textAlign="center" bold="true" stroke="2" size="24" anchorOffsetY="0" height="78"/>
+		</e:Group>
+		<e:Group x="502.5" y="624" id="yitiaojianglizu4">
+			<e:Image id="jiangliicon5" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" source="1001_png" width="140" height="140"/>
+			<e:Label id="jianglishuliang5" text="X1" x="11.5" y="145.5" anchorOffsetX="0" width="113" fontFamily="wodeziti" verticalAlign="middle" textAlign="center" bold="true" stroke="2" size="24" anchorOffsetY="0" height="78"/>
+		</e:Group>
+		<e:Button id="qudinganniu001" label="" x="246.5" y="903" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="but_caipuqueding1_png" source.down="but_caipuqueding2_png" source.disabled="but_caipuqueding2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Image id="img_jianglibiaoti001" source="img_jianglibiaoti_png" x="225.5" y="212"/>
+	</e:Group>
+</e:Skin>

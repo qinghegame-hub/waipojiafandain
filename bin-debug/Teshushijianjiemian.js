@@ -56,7 +56,7 @@ var Teshushijianjiemian = (function (_super) {
     };
     Teshushijianjiemian.prototype.chushihua = function (shijianid) {
         this.dangqianshijian = shijianid;
-        var teshushijianbiao = RES.getRes("teshushijianbiao_json");
+        var teshushijianbiao = Gerenshuxing.teshushijianbiao;
         this.biaotiwenzi.text = "天降鸿运";
         for (var i = 0; i < teshushijianbiao.length; i++) {
             if (teshushijianbiao[i].id == this.dangqianshijian) {
@@ -71,6 +71,7 @@ var Teshushijianjiemian = (function (_super) {
         this.but_shuangbei0.addEventListener(egret.TouchEvent.TOUCH_TAP, this.quedingguangao, this);
     };
     Teshushijianjiemian.prototype.guanbijiemain = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         this.parent.removeChild(this);
     };
     Teshushijianjiemian.prototype.quedingguangao = function () {
@@ -79,6 +80,7 @@ var Teshushijianjiemian = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        Gamesound.Soundkongzhi().anniuyinxiao();
                         huidiaodengdai = new egret.Timer(3000, 1);
                         huidiaodengdai.addEventListener(egret.TimerEvent.TIMER, this.fasongjiangli, this);
                         huidiaodengdai.start();
@@ -122,7 +124,7 @@ var Teshushijianjiemian = (function (_super) {
         }
     };
     Teshushijianjiemian.prototype.jiesuo16neirong = function () {
-        var jiajubiao = RES.getRes("jiajubiao_json");
+        var jiajubiao = Gerenshuxing.jiajubiao;
         var suoyoukejiesuo = [];
         var kejiesuoliebiao = [];
         for (var i = 0; i < jiajubiao.length; i++) {
@@ -177,7 +179,7 @@ var Teshushijianjiemian = (function (_super) {
         }
     };
     Teshushijianjiemian.prototype.jiesuo17neirong = function () {
-        var chengyuanhudongbiao = RES.getRes("chengyuanhudongbiao_json");
+        var chengyuanhudongbiao = Gerenshuxing.jiatingchengyuanhudongbiao;
         var chengyuankejiesuo = [];
         var jiesuochengyuanliebiao = [];
         for (var i = 0; i < chengyuanhudongbiao.length; i++) {
@@ -232,7 +234,7 @@ var Teshushijianjiemian = (function (_super) {
         }
     };
     Teshushijianjiemian.prototype.jiesuo18neirong = function () {
-        var chengyuanhudongbiao = RES.getRes("chengyuanhudongbiao_json");
+        var chengyuanhudongbiao = Gerenshuxing.jiatingchengyuanhudongbiao;
         var chengyuankejiesuo = [];
         var jiesuochengyuanliebiao = [];
         for (var i = 0; i < chengyuanhudongbiao.length; i++) {
@@ -284,7 +286,7 @@ var Teshushijianjiemian = (function (_super) {
         }
     };
     Teshushijianjiemian.prototype.jiesuo19neirong = function () {
-        var chengyuanhudongbiao = RES.getRes("chengyuanhudongbiao_json");
+        var chengyuanhudongbiao = Gerenshuxing.jiatingchengyuanhudongbiao;
         var chengyuankejiesuo = [];
         var jiesuochengyuanliebiao = [];
         for (var i = 0; i < chengyuanhudongbiao.length; i++) {
@@ -336,7 +338,7 @@ var Teshushijianjiemian = (function (_super) {
         }
     };
     Teshushijianjiemian.prototype.jiesuo20neirong = function () {
-        var chengyuanhudongbiao = RES.getRes("chengyuanhudongbiao_json");
+        var chengyuanhudongbiao = Gerenshuxing.jiatingchengyuanhudongbiao;
         var chengyuankejiesuo = [];
         var jiesuochengyuanliebiao = [];
         for (var i = 0; i < chengyuanhudongbiao.length; i++) {
@@ -388,7 +390,7 @@ var Teshushijianjiemian = (function (_super) {
         }
     };
     Teshushijianjiemian.prototype.jiesuo21neirong = function () {
-        var chengyuanhudongbiao = RES.getRes("yuangongbiao_json");
+        var chengyuanhudongbiao = Gerenshuxing.yuangongbiao;
         var chengyuankejiesuo = [];
         var jiesuochengyuanliebiao = [];
         for (var i = 0; i < chengyuanhudongbiao.length; i++) {
@@ -448,7 +450,7 @@ var Teshushijianjiemian = (function (_super) {
         this.fasongjianglijiemian(fasongtupian, fasongwenzi);
     };
     Teshushijianjiemian.prototype.jiesuo23neirong = function () {
-        var chengyuanhudongbiao = RES.getRes("shipubiao_json");
+        var chengyuanhudongbiao = Gerenshuxing.shipubiao;
         var chengyuankejiesuo = [];
         var jiesuochengyuanliebiao = [];
         for (var i = 0; i < chengyuanhudongbiao.length; i++) {
@@ -522,4 +524,3 @@ var Teshushijianjiemian = (function (_super) {
     return Teshushijianjiemian;
 }(eui.Component));
 __reflect(Teshushijianjiemian.prototype, "Teshushijianjiemian", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Teshushijianjiemian.js.map

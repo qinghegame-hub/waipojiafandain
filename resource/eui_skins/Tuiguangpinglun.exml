@@ -3,15 +3,15 @@
 	<w:Config id="16f7f62cd97" ></w:Config>
 	<e:Group id="tuiguangpinglunzu" bottom="0" top="0" touchThrough="true" left="0" right="0">
 		<e:Group id="dianshiliebiaozu0" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" left="88" top="156" bottom="418" right="79">
-		<e:Image id="img_dianshiguanggao0" x="-29.32" y="0" source="img_pinluntuiguang_png"/>
-		<e:Label id="tuiguangwenzi1" text="客流量增加" x="133.34" y="592.67" anchorOffsetX="0" width="140.66" textAlign="left" verticalAlign="middle" size="24" fontFamily="wodeziti" stroke="2" strokeColor="0x777373" textColor="0xf7efef" bold="true"/>
-		<e:Label id="chixushijianwenzi1" text="3天" x="134.66" y="666.35" anchorOffsetX="0" width="117.33" textAlign="left" verticalAlign="middle" size="24" fontFamily="wodeziti" stroke="2" strokeColor="0x7a7474" bold="true" textColor="0xf7f2f2"/>
-		<e:Label id="tuiguangfeiyongwenzi1" text="-2000000" x="308.67" y="669.04" anchorOffsetX="0" width="105.33" textAlign="left" verticalAlign="middle" size="24" fontFamily="wodeziti" stroke="2" strokeColor="0xF7EFEF" textColor="0xf70c0c" bold="true"/>
-		<e:Label id="tuiguangxiaoguowenzi1" text="+ 10%" x="275.35" y="592.67" anchorOffsetX="0" width="140.66" textAlign="left" verticalAlign="middle" size="24" fontFamily="wodeziti" stroke="2" strokeColor="0xF7EFEF" bold="true" textColor="0xf26809"/>
-		<e:Label id="tuiguangshengyu1" text="剩余" x="440.66" y="628.38" anchorOffsetX="0" width="103.66" textAlign="center" verticalAlign="middle" size="24" textColor="0x1C1A1A" fontFamily="wodeziti" stroke="1" strokeColor="0xF7EFEF"/>
-		<e:Label id="tuiguangshengyuwenzi1" text="365天" x="440.66" y="665.01" anchorOffsetX="0" width="103.66" textAlign="center" verticalAlign="middle" size="24" textColor="0x1C1A1A" fontFamily="wodeziti" stroke="1" strokeColor="0xF7EFEF"/>
-		<e:Image id="img_qian1" source="img_qian_png" x="252.01" y="657.37" width="40" height="40"/>
-		<e:Button id="but_tuiguanganniu1" label="" x="403" y="565.35" enabled="true">
+		<e:Image id="img_dianshiguanggao0" source="img_pinluntuiguang_png" width="560" height="700" horizontalCenter="0" verticalCenter="0"/>
+		<e:Label id="tuiguangwenzi1" text="客流量增加" x="168.01" y="606.38" anchorOffsetX="0" width="140.66" textAlign="left" verticalAlign="middle" size="24" fontFamily="wodeziti" stroke="2" strokeColor="0x2c2a26" bold="true" textColor="0xf97306"/>
+		<e:Label id="chixushijianwenzi1" text="3天" x="165.67" y="675.37" anchorOffsetX="0" width="117.33" textAlign="center" verticalAlign="middle" size="24" fontFamily="wodeziti" stroke="2" strokeColor="0x2c2a26" bold="true" textColor="0xf97306"/>
+		<e:Label id="tuiguangfeiyongwenzi1" text="-2000000" x="329.67" y="674.04" anchorOffsetX="0" width="105.33" textAlign="left" verticalAlign="middle" size="24" fontFamily="wodeziti" stroke="2" strokeColor="0xF7EFEF" textColor="0xf70c0c" bold="true"/>
+		<e:Label id="tuiguangxiaoguowenzi1" text="+ 10%" x="308.67" y="604.38" anchorOffsetX="0" width="140.66" textAlign="left" verticalAlign="middle" size="24" fontFamily="wodeziti" stroke="2" strokeColor="0xF7EFEF" bold="true" textColor="0xf26809"/>
+		<e:Label id="tuiguangshengyu1" text="剩余" x="427.66" y="628.38" anchorOffsetX="0" width="103.66" textAlign="center" verticalAlign="middle" size="24" fontFamily="wodeziti" stroke="2" strokeColor="0x2c2a26" textColor="0x92e80d"/>
+		<e:Label id="tuiguangshengyuwenzi1" text="365天" x="426.66" y="665.01" anchorOffsetX="0" width="103.66" textAlign="center" verticalAlign="middle" size="24" fontFamily="wodeziti" stroke="2" strokeColor="0x2c2a26" textColor="0x92e80d"/>
+		<e:Image id="img_qian1" source="img_qian_png" x="282.01" y="667.37" width="40" height="40"/>
+		<e:Button id="but_tuiguanganniu1" label="" x="389" y="565.35" enabled="true">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="but_tuiguanganniu1_png" source.down="but_tuiguanganniu2_png" source.disabled="but_tuiguanganniu2_png"/>

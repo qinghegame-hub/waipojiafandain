@@ -25,10 +25,11 @@ var Tuiguangdaiyan = (function (_super) {
         this.but_tuiguanganniu0.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dianjituiguanganniu, this);
     };
     Tuiguangdaiyan.prototype.dianjituiguanganniu = function () {
+        Gamesound.Soundkongzhi().anniuyinxiao();
         Weblianjie.fasongshuju("code:017", "{" + '"tuiguangid"' + ":" + '"' + this.chuandanneirong.id + '"' + "," + '"uid"' + ":" + '"' + Gerenshuxing.uid + '"' + "}");
     };
     Tuiguangdaiyan.prototype.chulishujuluoji = function (yeqian, yeshu) {
-        var guanlileixingleibiao = RES.getRes("yinxiaobiao_json");
+        var guanlileixingleibiao = Gerenshuxing.yinxiaobiao;
         this.chuandanneirong = guanlileixingleibiao[3];
         this.tuiguangwenzi0.text = this.chuandanneirong.selltext;
         this.tuiguangxiaoguowenzi0.text = "+ " + this.chuandanneirong.sellachievement;
@@ -52,4 +53,3 @@ var Tuiguangdaiyan = (function (_super) {
     return Tuiguangdaiyan;
 }(eui.Component));
 __reflect(Tuiguangdaiyan.prototype, "Tuiguangdaiyan", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Tuiguangdaiyan.js.map

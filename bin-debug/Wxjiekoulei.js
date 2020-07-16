@@ -57,4 +57,3 @@ var Wxjiekoulei = (function () {
     return Wxjiekoulei;
 }());
 __reflect(Wxjiekoulei.prototype, "Wxjiekoulei");
-//# sourceMappingURL=Wxjiekoulei.js.map

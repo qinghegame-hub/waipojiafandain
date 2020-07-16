@@ -1,1 +1,1 @@
-{"SubTexture":[{"width":82,"y":1,"height":105,"name":"jiansuxiaoren","x":1},{"width":58,"y":1,"height":98,"name":"leidian","x":85}],"width":256,"height":128,"name":"dapengwuding","imagePath":"dapengwuding_tex.png"}
+{"width":128,"imagePath":"dapengwuding_tex.png","height":128,"name":"dapengwuding","SubTexture":[{"width":57,"y":1,"height":74,"name":"jiansuxiaoren","x":1},{"width":41,"y":1,"height":69,"name":"leidian","x":60}]}

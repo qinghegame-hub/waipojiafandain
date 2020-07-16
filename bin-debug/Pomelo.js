@@ -328,4 +328,3 @@ var pomeloClient;
     }());
     __reflect(Protocol.prototype, "Protocol");
 })(pomeloClient || (pomeloClient = {}));
-//# sourceMappingURL=Pomelo.js.map

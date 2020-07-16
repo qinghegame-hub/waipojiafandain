@@ -106,6 +106,7 @@ class Jiajugoumai extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjidi1geshiyong(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Weblianjie.fasongshuju("code:004","{" + '"jiajuid"' +":"+ '"' + this.di1geid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 		switch(this.panduanyeqian){
 			case 1:
@@ -140,6 +141,7 @@ class Jiajugoumai extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjidi2geshiyong(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Weblianjie.fasongshuju("code:004","{" + '"jiajuid"' +":"+ '"' + this.di2geid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 		switch(this.panduanyeqian){
 			case 1:
@@ -174,6 +176,7 @@ class Jiajugoumai extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjidi3geshiyong(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Weblianjie.fasongshuju("code:004","{" + '"jiajuid"' +":"+ '"' + this.di3geid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 		switch(this.panduanyeqian){
 			case 1:
@@ -208,6 +211,7 @@ class Jiajugoumai extends eui.Component implements  eui.UIComponent {
 	}
 
 	protected dianjidi4geshiyong(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Weblianjie.fasongshuju("code:004","{" + '"jiajuid"' +":"+ '"' + this.di4geid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 		switch(this.panduanyeqian){
 			case 1:
@@ -243,18 +247,22 @@ class Jiajugoumai extends eui.Component implements  eui.UIComponent {
 
 
 	protected dianjidi1gejiesuo(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Weblianjie.fasongshuju("code:008","{" + '"jiajuid"' +":"+ '"' + this.di1geid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 	}
 
 	protected dianjidi2gejiesuo(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Weblianjie.fasongshuju("code:008","{" + '"jiajuid"' +":"+ '"' + this.di2geid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 	}
 
 	protected dianjidi3gejiesuo(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Weblianjie.fasongshuju("code:008","{" + '"jiajuid"' +":"+ '"' + this.di3geid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 	}
 
 	protected dianjidi4gejiesuo(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Weblianjie.fasongshuju("code:008","{" + '"jiajuid"' +":"+ '"' + this.di4geid + '"' +"," + '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' + "}");
 	}
 
@@ -566,7 +574,7 @@ class Jiajugoumai extends eui.Component implements  eui.UIComponent {
 
 	//管理界面数据逻辑的处理
 	public chulishujujiajujiegou(yeqian?:number,yeshu?:number){
-		let guanlileixingleibiao:any = RES.getRes("jiajubiao_json");
+		let guanlileixingleibiao:any = Gerenshuxing.jiajubiao;
 //		console.log(guanlileixingleibiao);
 //		console.log(this.dangqianyeqianshu);
 //接收服务端数据后，处理家具信息

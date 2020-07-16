@@ -22,4 +22,3 @@ var Zhandoupiaozi = (function (_super) {
     return Zhandoupiaozi;
 }(eui.Component));
 __reflect(Zhandoupiaozi.prototype, "Zhandoupiaozi", ["eui.UIComponent", "egret.DisplayObject"]);
-//# sourceMappingURL=Zhandoupiaozi.js.map

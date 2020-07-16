@@ -1,5 +1,6 @@
 class Gerenshuxing extends egret.DisplayObjectContainer{
-    public static gerencode:any;//个人登录code；
+    public static gerencode:any = "undefined";//个人登录code；
+    public static shouci:string = "true";//主要用于微信用户，记录是否首次登记;
     public static jiankangzhi:number = 0;  //个人属性：健康值
     public static xingfuzhi:number =0;    //个人属性：幸福值
     public static kaixinzhi:number=0;    //个人属性：开心值
@@ -37,7 +38,7 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static chushishangcaisudu:number=30000;//初始上菜速度
     public static yuanliaoxiaohao:number = 0;//原材料消耗减少
     public static weishengjilv:number = 0;//有清洁工时，每个清洁工控制的垃圾的产出几率
-    public static mingzi:string;//个人名字;
+    public static mingzi:string = "罗英";//个人名字;
     public static touxiang:string = "https://wx.qlogo.cn/mmopen/vi_32/MF7PLicF44H0djnvbeGDWKKPu60fbrbLKfx8jATpsN9d6paWg0ictyCnY8uAqiaXPcfDLAI1q7IQGHI22ZQZAV4HQ/132";//个人头像服务器;
     public static shengfen:string;//个人省份;
     public static xingbie:string;//个人性别;
@@ -65,6 +66,35 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static jinengbiao:any = [];//从服务器获取技能表
     public static gerendengjibiao:any = [];//从服务器获取个人等级表
     public static guaiwubiao:any = [];//从服务器获取怪物表
+
+    public static changshubiao:any = [];//从服务器获取常数表
+    //RES.getRes("changshubiao_json")
+    public static jiedaobiao:any = [];//从服务器获取街道表
+    //RES.getRes("jiedaobiao_json");
+    public static jiedaosuijibiao:any = [];//从服务器获取街道随机表
+    //RES.getRes("jiedaosuijibiao_json");
+    public static jiatingchengyuanhudongbiao:any = [];//从服务器获取家庭成员互动表
+    //RES.getRes("chengyuanhudongbiao_json");
+    public static danjubiao:any = [];//从服务器获取单据表
+    //RES.getRes("danjubiao_json")
+    public static jiajubiao:any = [];//从服务器获取家具表
+    //RES.getRes("jiajubiao_json")
+    public static jiatingchengyuan:any = [];//从服务器获取家庭成员表
+    //RES.getRes("jiatingchengyuanbiao_json")
+    public static zhuozijiesuobiao:any = [];//从服务器获取桌子解锁表
+    //RES.getRes("lobbyzhuozi_json")
+    public static meirirenwubiao:any = [];//从服务器获取每日任务表
+    //RES.getRes("meirirenwubiao_json")
+    public static shipudengjibiao:any = [];//从服务器获取食谱等级表
+    //RES.getRes("shipulevel_json")
+    public static shipubiao:any = [];//从服务器获取食谱表
+    //RES.getRes("shipubiao_json")
+    public static teshushijianbiao:any = [];//从服务器获取特殊事件表
+    //RES.getRes("teshushijianbiao_json")
+    public static yinxiaobiao:any = [];//从服务器获取营销表
+    //RES.getRes("yinxiaobiao_json")
+    public static yuangongbiao:any = [];//从服务器获取员工表
+
     public static xingfudengji:number = 1;//个人等级;
     public static xingfunaixin:number = 0;//个人耐心值;
     public static xingfuyizhi:number = 0;//个人意志值;
@@ -94,7 +124,15 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
     public static wangluolianjie:boolean;//服务器连接状态;
     public static gerenshuju:any = null;//从平台处取得的个人数据;
     public static dibaokeliushijian:number;//通过低保获得的客流量增加;
-    public static fenxianglianjiedizhi:string = "https://www.123fp.cn/loading/img_beijingloading.png"
+    public static fenxianglianjiedizhi:string = "https://www.qinghegame.com/loading/fenxiangtutu.png";
+    public static weishengyidasao:boolean = true;//初始卫生是否已加载;
+    public static guideuiyindao:number = -1;//当前新手引导步骤
+    public static kaiqiguanggao:boolean = true;//是否开启视频广告
+    public static meirirenwuone:any = [1,1,0,0];//每日任务1（任务id,需要完成个数，已完成个数，是否已领取）
+    public static meirirenwutwo:any = [2,1,0,0];//每日任务2（任务id,需要完成个数，已完成个数，是否已领取）
+    public static meirirenwutre:any = [3,1,0,0];//每日任务3（任务id,需要完成个数，已完成个数，是否已领取）
+    public static meirirenwufor:any = [4,1,0,0];//每日任务4（任务id,需要完成个数，已完成个数，是否已领取）
+    public static tiaozhanbeishu:any = [0,1,0];//每日匹配奖励状态（剩余翻倍次数，当前翻倍倍数,排行榜奖励是否已领取）;
 
 
     public static touxiangbaocunzhuangtai:boolean = false;
@@ -216,7 +254,7 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
 
     public static yuangongshuxing(){
         //每次进来都要初始化该计算数据
-        let yuangongbiao:any = RES.getRes("yuangongbiao_json");
+        let yuangongbiao:any = Gerenshuxing.yuangongbiao;
         let yuangongjiasu:number = 0;       //员工增加的上菜速度
         let yuangongjiaweisheng:number = 0; //员工增加的卫生值
         let yuangongjiaanbao:number = 0;    //员工增加的安宝值
@@ -246,7 +284,7 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
         }
 
 //当前客容量计算
-        let jiajubiaobianli:any = RES.getRes("jiajubiao_json");
+        let jiajubiaobianli:any = Gerenshuxing.jiajubiao;
         for(var i = 0 ;i<jiajubiaobianli.length;i++){
             if(jiajubiaobianli[i].id == Gerenshuxing.usexiaochao || jiajubiaobianli[i].id == Gerenshuxing.usehuoguo
             || jiajubiaobianli[i].id == Gerenshuxing.usexiaochi || jiajubiaobianli[i].id == Gerenshuxing.usezaocan){
@@ -260,7 +298,7 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
         } 
 
 //当前客流量计算
-        let yinxiaobiao:any = RES.getRes("yinxiaobiao_json");
+        let yinxiaobiao:any = Gerenshuxing.yinxiaobiao;
         if(Gerenshuxing.shengyuchuandan > 0){
             tuiguangkeliu += parseInt(yinxiaobiao[0].sellachievement);
         }
@@ -410,7 +448,7 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
         let xianzaishijian6 = (new Date()).valueOf();
             if(parseInt(Gerenshuxing.lixianjiangli[0]) < parseInt(Gerenshuxing.lixianjiangli[1])){
                 if(xianzaishijian6 >= parseInt(Gerenshuxing.lixianjiangli[2])){
-                    let zengjialixian = Math.floor(parseInt(Gerenshuxing.daerzixinxi[1]));
+                    let zengjialixian = Math.floor(parseInt(Gerenshuxing.daerzixinxi[1]) / 100) + 1;
                     let xiajieduanshijian1 = xianzaishijian6 + 60000;
                     let chaochushijian1 = xianzaishijian6 - parseInt(Gerenshuxing.lixianjiangli[2]);
                     chaochushijian1 = Math.floor(chaochushijian1 / 60000) + 1;
@@ -460,8 +498,12 @@ class Gerenshuxing extends egret.DisplayObjectContainer{
                 }
             }
         }
+        let xingzhishangxian = Gerenshuxing.kaixinzhi;
+        if(xingzhishangxian > 1000){
+            xingzhishangxian = 1000;
+        }
         Gerenshuxing.gerenaixin = Gerenshuxing.xingfunaixin + Math.floor(Gerenshuxing.xingfunaixin * Gerenshuxing.jiankangzhi / 1000);
-        Gerenshuxing.gerenyizhi = Gerenshuxing.xingfuyizhi + Math.floor(Gerenshuxing.xingfuyizhi * Gerenshuxing.kaixinzhi / 1000);
+        Gerenshuxing.gerenyizhi = Gerenshuxing.xingfuyizhi + Math.floor(Gerenshuxing.xingfuyizhi * xingzhishangxian / 1000);
         Gerenshuxing.gerenxingzhi = Gerenshuxing.xingfuxingzhi;
         Gerenshuxing.gerenla = Gerenshuxing.xingfula + Gerenshuxing.tishengxingfula;
         Gerenshuxing.gerenma = Gerenshuxing.xingfuma + Gerenshuxing.tishengxingfuma;

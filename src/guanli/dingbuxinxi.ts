@@ -43,6 +43,8 @@ class dingbuxinxi extends eui.Component implements  eui.UIComponent {
 	public img_dangqianshike17:eui.Image;
 	public img_dangqianshike18:eui.Image;
 	public wangluozhuangtai:eui.Image;
+	public shengyinanniu:eui.Image;
+
 
 
 
@@ -61,6 +63,7 @@ class dingbuxinxi extends eui.Component implements  eui.UIComponent {
 
 	public constructor() {
 		super();
+		this.gerenshuxingui = new Gerenshuxingjiemian();
 	}
 
 	protected partAdded(partName:string,instance:any):void
@@ -109,6 +112,8 @@ class dingbuxinxi extends eui.Component implements  eui.UIComponent {
 //		this.but_seting0.addEventListener(egret.TouchEvent.TOUCH_TAP,this.shezhi,this);
 		//网络连接提示
 		this.wangluolianjietishi();
+		//声音按钮状态
+		this.shengyinanniuzhuangtai();
 	}
 
 	public wangluolianjietishi(){
@@ -126,6 +131,7 @@ class dingbuxinxi extends eui.Component implements  eui.UIComponent {
 
 
 	public dianjiriqi(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		Gameguanli.Kongzhitai().meirijiesuanjiemian("kai",Gerenshuxing.yuangongxupin,Gerenshuxing.yuangongjiepin);
 	}
 	
@@ -538,7 +544,11 @@ class dingbuxinxi extends eui.Component implements  eui.UIComponent {
 	}
 
 	public chakangerenshuxing(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.gerenshuxingui = new Gerenshuxingjiemian();
+		if(this.gerenshuxingui.parent){
+			this.parent.removeChild(this.gerenshuxingui);
+		}
 		this.addChild(this.gerenshuxingui);
 		this.chengchengjiemianneirong();
 	}
@@ -584,6 +594,7 @@ class dingbuxinxi extends eui.Component implements  eui.UIComponent {
 	}
 
 	public dakaijinxiu(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		let jinxiujiemian = new Gerendaojujiemian();
 		this.addChild(jinxiujiemian);
 		jinxiujiemian.chushihua("1");
@@ -591,7 +602,11 @@ class dingbuxinxi extends eui.Component implements  eui.UIComponent {
 
 
 	public guanbigerenshuxing(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.removeChild(this.gerenshuxingui);
+		if(Gerenshuxing.guideuiyindao == 17){
+			Weblianjie.fasongshuju("code:158","{"+ '"uid"' + ":"+ '"' + Gerenshuxing.uid + '"' +  "," +  '"buzou"' +":"+ '"18"'+"}");
+		}
 	}
 
 	public xianshitouxiang(){
@@ -623,6 +638,7 @@ class dingbuxinxi extends eui.Component implements  eui.UIComponent {
 
 
 	public kaixinjieshao(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "27"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -632,6 +648,7 @@ class dingbuxinxi extends eui.Component implements  eui.UIComponent {
 	}
 
 	public tilijieshao(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "28"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -641,6 +658,7 @@ class dingbuxinxi extends eui.Component implements  eui.UIComponent {
 	}
 
 	public jinbijieshao(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "29"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -650,6 +668,7 @@ class dingbuxinxi extends eui.Component implements  eui.UIComponent {
 	}
 
 	public jiankangjieshao(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		for(var i = 0;i<this.youxitishibiao.length;i++){
 			if(this.youxitishibiao[i].id == "30"){
 				this.youxitishijiemian(this.youxitishibiao[i].neirong);
@@ -663,6 +682,26 @@ class dingbuxinxi extends eui.Component implements  eui.UIComponent {
 		let tishijiemian = new Youxitishiui();
 		this.addChild(tishijiemian);
 		tishijiemian.xianshineirong(neirong);
+	}
+
+	public shengyinanniuzhuangtai(){
+		if(Gamesound.Soundkongzhi().yinxiao == false){
+			this.shengyinanniu.source = "img_shengyinanniu2_png";
+			this.shengyinanniu.touchEnabled = true;
+			this.shengyinanniu.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>{
+				this.shengyinanniu.source = "img_shengyinanniu1_png";
+				Gamesound.Soundkongzhi().bofangzanting("kai");
+				this.shengyinanniuzhuangtai();
+			},this);
+		}else{
+			this.shengyinanniu.source = "img_shengyinanniu1_png";
+			this.shengyinanniu.touchEnabled = true;
+			this.shengyinanniu.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>{
+				this.shengyinanniu.source = "img_shengyinanniu2_png";
+				Gamesound.Soundkongzhi().bofangzanting("guan");
+				this.shengyinanniuzhuangtai();
+			},this);
+		}
 	}
 	
 }

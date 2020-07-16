@@ -2,6 +2,11 @@ class Zhandoucaipinshuxingui extends eui.Component implements  eui.UIComponent {
 	public caipinshuxingzu:eui.Group;
 	public img_heisezhezao0:eui.Image;
 	public img_tongyongpinghejiemianpng0:eui.Image;
+	public zhezaodikuang:eui.Image;
+	public zhezaodikuang0:eui.Image;
+	public zhezaodikuang2:eui.Image;
+	public zhezaodikuang3:eui.Image;
+	public zhezaodikuang1:eui.Image;
 	public biaotiwenzi0:eui.Label;
 	public nicheng0:eui.Label;
 	public nichengwenzi0:eui.Label;
@@ -31,6 +36,7 @@ class Zhandoucaipinshuxingui extends eui.Component implements  eui.UIComponent {
 	public cailiaotu0:eui.Image;
 	public cailiaotu1:eui.Image;
 	public cailiaotu2:eui.Image;
+
 
 
 	public caidejineng1_9:string;
@@ -86,7 +92,7 @@ class Zhandoucaipinshuxingui extends eui.Component implements  eui.UIComponent {
 	}
 
 	public chushihua(caiid:string,qidianshu:number){
-		let shipubiao = RES.getRes("shipubiao_json");
+		let shipubiao = Gerenshuxing.shipubiao;
 		for(var i = 0;i<shipubiao.length;i++){
 			if(shipubiao[i].id == caiid){
 				this.caiicondizhi.source = shipubiao[i].id + "_png";  //菜的图片
@@ -95,7 +101,7 @@ class Zhandoucaipinshuxingui extends eui.Component implements  eui.UIComponent {
 			}
 		}
 		let duqudengji1 = Gerencaipudengji.caipulevel;
-		let caipudengjishuju = RES.getRes("shipulevel_json");
+		let caipudengjishuju = Gerenshuxing.shipudengjibiao;
 		let shengjisuoxujingyan = 0;
 		let benjijiacheng = 0;
 		let benjiweili = 0;
@@ -790,26 +796,31 @@ class Zhandoucaipinshuxingui extends eui.Component implements  eui.UIComponent {
 	}
 
 	public di1gecaidi1jineng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.jinengmingzi.text = this.caidejinengmingzi1_9;
 		this.jinengtips.text = this.caidejinengwenzi1_9;
 	}
 
 	public di1gecaidi2jineng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.jinengmingzi.text = this.caidejinengmingzi1_10;
 		this.jinengtips.text = this.caidejinengwenzi1_10;
 	}
 
 	public di1gecaidi3jineng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.jinengmingzi.text = this.caidejinengmingzi1_11;
 		this.jinengtips.text = this.caidejinengwenzi1_11;
 	}
 
 	public di1gecaidi4jineng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.jinengmingzi.text = this.caidejinengmingzi1_12;
 		this.jinengtips.text = this.caidejinengwenzi1_12;
 	}
 
 	public di1gecaidi5jineng(){
+		Gamesound.Soundkongzhi().anniuyinxiao();
 		this.jinengmingzi.text = this.caidejinengmingzi1_13;
 		this.jinengtips.text = this.caidejinengwenzi1_13;
 	}

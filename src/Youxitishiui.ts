@@ -25,9 +25,11 @@ class Youxitishiui extends eui.Component implements  eui.UIComponent {
 	public chushihua(){
 		this.heisezhezao.touchEnabled = true;
 		this.heisezhezao.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>{
+			Gamesound.Soundkongzhi().anniuyinxiao();
 			this.parent.removeChild(this);
 		},this);
 		this.guanbianniu.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>{
+			Gamesound.Soundkongzhi().anniuyinxiao();
 			this.parent.removeChild(this);
 		},this);
 	}
